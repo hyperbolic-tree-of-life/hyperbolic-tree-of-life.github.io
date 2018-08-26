@@ -1,0 +1,1701 @@
+{
+    "name": "",
+    "children": [
+        {
+            "name": "Xenarthra",
+            "children": [
+                {
+                    "name": "Cingulata",
+                    "children": [
+                        {
+                            "name": "Chlamyphoridae",
+                            "children": [
+                                {
+                                    "name": "",
+                                    "children": [
+                                        {
+                                            "name": "",
+                                            "children": [
+                                                {
+                                                    "name": "Chaetophractus villosus",
+                                                    "ottId": "ott180375",
+                                                    "tips": 1,
+                                                    "weight": 1
+                                                },
+                                                {
+                                                    "name": "",
+                                                    "children": [
+                                                        {
+                                                            "name": "",
+                                                            "children": [
+                                                                {
+                                                                    "name": "Chaetophractus vellerosus",
+                                                                    "ottId": "ott627609",
+                                                                    "tips": 1,
+                                                                    "weight": 1
+                                                                },
+                                                                {
+                                                                    "name": "Chaetophractus nationi",
+                                                                    "ottId": "ott4119189",
+                                                                    "tips": 1,
+                                                                    "weight": 1
+                                                                }
+                                                            ],
+                                                            "ottId": "mrcaott627609ott4119189",
+                                                            "tips": 2,
+                                                            "weight": 3
+                                                        },
+                                                        {
+                                                            "name": "Zaedyus",
+                                                            "children": [
+                                                                {
+                                                                    "name": "Zaedyus pichiy",
+                                                                    "ottId": "ott1002419",
+                                                                    "tips": 1,
+                                                                    "weight": 1
+                                                                }
+                                                            ],
+                                                            "ottId": "ott1002420",
+                                                            "tips": 1,
+                                                            "weight": 2
+                                                        }
+                                                    ],
+                                                    "ottId": "mrcaott627609ott1002419",
+                                                    "tips": 3,
+                                                    "weight": 6
+                                                }
+                                            ],
+                                            "ottId": "mrcaott180375ott627609",
+                                            "tips": 4,
+                                            "weight": 8
+                                        },
+                                        {
+                                            "name": "Euphractus",
+                                            "children": [
+                                                {
+                                                    "name": "Euphractus sexcinctus",
+                                                    "children": [
+                                                        {
+                                                            "name": "Euphractus sexcinctus flavimanus",
+                                                            "ottId": "ott5925663",
+                                                            "tips": 1,
+                                                            "weight": 1
+                                                        }
+                                                    ],
+                                                    "ottId": "ott292508",
+                                                    "tips": 1,
+                                                    "weight": 2
+                                                }
+                                            ],
+                                            "ottId": "ott588273",
+                                            "tips": 1,
+                                            "weight": 3
+                                        }
+                                    ],
+                                    "ottId": "mrcaott180375ott5925663",
+                                    "tips": 5,
+                                    "weight": 12
+                                },
+                                {
+                                    "name": "",
+                                    "children": [
+                                        {
+                                            "name": "",
+                                            "children": [
+                                                {
+                                                    "name": "Calyptophractus",
+                                                    "children": [
+                                                        {
+                                                            "name": "Calyptophractus retusus",
+                                                            "ottId": "ott390325",
+                                                            "tips": 1,
+                                                            "weight": 1
+                                                        }
+                                                    ],
+                                                    "ottId": "ott390324",
+                                                    "tips": 1,
+                                                    "weight": 2
+                                                },
+                                                {
+                                                    "name": "Chlamyphorus",
+                                                    "children": [
+                                                        {
+                                                            "name": "Chlamyphorus truncatus",
+                                                            "ottId": "ott552069",
+                                                            "tips": 1,
+                                                            "weight": 1
+                                                        }
+                                                    ],
+                                                    "ottId": "ott552071",
+                                                    "tips": 1,
+                                                    "weight": 2
+                                                }
+                                            ],
+                                            "ottId": "mrcaott390325ott552069",
+                                            "tips": 2,
+                                            "weight": 5
+                                        },
+                                        {
+                                            "name": "",
+                                            "children": [
+                                                {
+                                                    "name": "",
+                                                    "children": [
+                                                        {
+                                                            "name": "Tolypeutes",
+                                                            "children": [
+                                                                {
+                                                                    "name": "Tolypeutes tricinctus",
+                                                                    "ottId": "ott476111",
+                                                                    "tips": 1,
+                                                                    "weight": 1
+                                                                },
+                                                                {
+                                                                    "name": "Tolypeutes matacus",
+                                                                    "ottId": "ott515354",
+                                                                    "tips": 1,
+                                                                    "weight": 1
+                                                                }
+                                                            ],
+                                                            "ottId": "ott1002439",
+                                                            "tips": 2,
+                                                            "weight": 3
+                                                        },
+                                                        {
+                                                            "name": "Cabassous",
+                                                            "children": [
+                                                                {
+                                                                    "name": "",
+                                                                    "children": [
+                                                                        {
+                                                                            "name": "",
+                                                                            "children": [
+                                                                                {
+                                                                                    "name": "Cabassous unicinctus",
+                                                                                    "ottId": "ott1014321",
+                                                                                    "tips": 1,
+                                                                                    "weight": 1
+                                                                                },
+                                                                                {
+                                                                                    "name": "Cabassous centralis",
+                                                                                    "ottId": "ott4119200",
+                                                                                    "tips": 1,
+                                                                                    "weight": 1
+                                                                                }
+                                                                            ],
+                                                                            "ottId": "mrcaott1014321ott4119200",
+                                                                            "tips": 2,
+                                                                            "weight": 3
+                                                                        },
+                                                                        {
+                                                                            "name": "Cabassous chacoensis",
+                                                                            "ottId": "ott4119201",
+                                                                            "tips": 1,
+                                                                            "weight": 1
+                                                                        }
+                                                                    ],
+                                                                    "ottId": "mrcaott1014321ott4119201",
+                                                                    "tips": 3,
+                                                                    "weight": 5
+                                                                },
+                                                                {
+                                                                    "name": "Cabassous tatouay",
+                                                                    "ottId": "ott4119202",
+                                                                    "tips": 1,
+                                                                    "weight": 1
+                                                                }
+                                                            ],
+                                                            "ottId": "ott1014326",
+                                                            "tips": 4,
+                                                            "weight": 7
+                                                        }
+                                                    ],
+                                                    "ottId": "mrcaott476111ott1014321",
+                                                    "tips": 6,
+                                                    "weight": 11
+                                                },
+                                                {
+                                                    "name": "Priodontes",
+                                                    "children": [
+                                                        {
+                                                            "name": "Priodontes maximus",
+                                                            "ottId": "ott476113",
+                                                            "tips": 1,
+                                                            "weight": 1
+                                                        }
+                                                    ],
+                                                    "ottId": "ott476112",
+                                                    "tips": 1,
+                                                    "weight": 2
+                                                }
+                                            ],
+                                            "ottId": "mrcaott476111ott476113",
+                                            "tips": 7,
+                                            "weight": 14
+                                        }
+                                    ],
+                                    "ottId": "mrcaott390325ott476111",
+                                    "tips": 9,
+                                    "weight": 20
+                                }
+                            ],
+                            "ottId": "ott5925660",
+                            "tips": 14,
+                            "weight": 33
+                        },
+                        {
+                            "name": "Dasypodidae",
+                            "children": [
+                                {
+                                    "name": "Dasypus",
+                                    "children": [
+                                        {
+                                            "name": "",
+                                            "ottId": "'Dasypus sp. VJL-2004 ott251923'",
+                                            "tips": 1,
+                                            "weight": 1
+                                        },
+                                        {
+                                            "name": "",
+                                            "children": [
+                                                {
+                                                    "name": "",
+                                                    "children": [
+                                                        {
+                                                            "name": "Dasypus novemcinctus",
+                                                            "ottId": "ott796672",
+                                                            "tips": 1,
+                                                            "weight": 1
+                                                        },
+                                                        {
+                                                            "name": "",
+                                                            "children": [
+                                                                {
+                                                                    "name": "",
+                                                                    "children": [
+                                                                        {
+                                                                            "name": "Dasypus sabanicola",
+                                                                            "ottId": "ott4119191",
+                                                                            "tips": 1,
+                                                                            "weight": 1
+                                                                        },
+                                                                        {
+                                                                            "name": "Dasypus yepesi",
+                                                                            "ottId": "ott4119192",
+                                                                            "tips": 1,
+                                                                            "weight": 1
+                                                                        }
+                                                                    ],
+                                                                    "ottId": "mrcaott4119191ott4119192",
+                                                                    "tips": 2,
+                                                                    "weight": 3
+                                                                },
+                                                                {
+                                                                    "name": "Dasypus pilosus",
+                                                                    "ottId": "ott4119194",
+                                                                    "tips": 1,
+                                                                    "weight": 1
+                                                                }
+                                                            ],
+                                                            "ottId": "mrcaott4119191ott4119194",
+                                                            "tips": 3,
+                                                            "weight": 5
+                                                        }
+                                                    ],
+                                                    "ottId": "mrcaott796672ott4119191",
+                                                    "tips": 4,
+                                                    "weight": 7
+                                                },
+                                                {
+                                                    "name": "",
+                                                    "children": [
+                                                        {
+                                                            "name": "Dasypus hybridus",
+                                                            "ottId": "ott4119193",
+                                                            "tips": 1,
+                                                            "weight": 1
+                                                        },
+                                                        {
+                                                            "name": "Dasypus septemcinctus",
+                                                            "ottId": "ott4119195",
+                                                            "tips": 1,
+                                                            "weight": 1
+                                                        }
+                                                    ],
+                                                    "ottId": "mrcaott4119193ott4119195",
+                                                    "tips": 2,
+                                                    "weight": 3
+                                                }
+                                            ],
+                                            "ottId": "mrcaott796672ott4119193",
+                                            "tips": 6,
+                                            "weight": 11
+                                        },
+                                        {
+                                            "name": "Dasypus kappleri",
+                                            "ottId": "ott905104",
+                                            "tips": 1,
+                                            "weight": 1
+                                        }
+                                    ],
+                                    "ottId": "ott796671",
+                                    "tips": 8,
+                                    "weight": 14
+                                }
+                            ],
+                            "ottId": "ott273244",
+                            "tips": 8,
+                            "weight": 15
+                        }
+                    ],
+                    "ottId": "ott495017",
+                    "tips": 22,
+                    "weight": 49
+                },
+                {
+                    "name": "Pilosa",
+                    "children": [
+                        {
+                            "name": "Vermilingua",
+                            "children": [
+                                {
+                                    "name": "Myrmecophagidae",
+                                    "children": [
+                                        {
+                                            "name": "Tamandua",
+                                            "children": [
+                                                {
+                                                    "name": "Tamandua mexicana",
+                                                    "ottId": "ott273227",
+                                                    "tips": 1,
+                                                    "weight": 1
+                                                },
+                                                {
+                                                    "name": "Tamandua tetradactyla",
+                                                    "ottId": "ott1014324",
+                                                    "tips": 1,
+                                                    "weight": 1
+                                                }
+                                            ],
+                                            "ottId": "ott273230",
+                                            "tips": 2,
+                                            "weight": 3
+                                        },
+                                        {
+                                            "name": "Myrmecophaga",
+                                            "children": [
+                                                {
+                                                    "name": "Myrmecophaga tridactyla",
+                                                    "ottId": "ott490538",
+                                                    "tips": 1,
+                                                    "weight": 1
+                                                }
+                                            ],
+                                            "ottId": "ott490533",
+                                            "tips": 1,
+                                            "weight": 2
+                                        }
+                                    ],
+                                    "ottId": "ott847766",
+                                    "tips": 3,
+                                    "weight": 6
+                                },
+                                {
+                                    "name": "Cyclopedidae",
+                                    "children": [
+                                        {
+                                            "name": "Cyclopes",
+                                            "children": [
+                                                {
+                                                    "name": "Cyclopes didactylus",
+                                                    "ottId": "ott675099",
+                                                    "tips": 1,
+                                                    "weight": 1
+                                                }
+                                            ],
+                                            "ottId": "ott675116",
+                                            "tips": 1,
+                                            "weight": 2
+                                        }
+                                    ],
+                                    "ottId": "ott495019",
+                                    "tips": 1,
+                                    "weight": 3
+                                }
+                            ],
+                            "ottId": "ott495016",
+                            "tips": 4,
+                            "weight": 10
+                        },
+                        {
+                            "name": "Folivora",
+                            "children": [
+                                {
+                                    "name": "Megalonychidae",
+                                    "children": [
+                                        {
+                                            "name": "Choloepus",
+                                            "children": [
+                                                {
+                                                    "name": "Choloepus hoffmanni",
+                                                    "ottId": "ott273247",
+                                                    "tips": 1,
+                                                    "weight": 1
+                                                },
+                                                {
+                                                    "name": "Choloepus didactylus",
+                                                    "ottId": "ott977390",
+                                                    "tips": 1,
+                                                    "weight": 1
+                                                },
+                                                {
+                                                    "name": "Choloepus hoffinanni",
+                                                    "ottId": "ott3607351",
+                                                    "tips": 1,
+                                                    "weight": 1
+                                                }
+                                            ],
+                                            "ottId": "ott527321",
+                                            "tips": 3,
+                                            "weight": 4
+                                        },
+                                        {
+                                            "name": "Synocnus",
+                                            "children": [
+                                                {
+                                                    "name": "Synocnus comes",
+                                                    "ottId": "ott3607364",
+                                                    "tips": 1,
+                                                    "weight": 1
+                                                }
+                                            ],
+                                            "ottId": "ott3607365",
+                                            "tips": 1,
+                                            "weight": 2
+                                        }
+                                    ],
+                                    "ottId": "ott1025073",
+                                    "tips": 4,
+                                    "weight": 7
+                                },
+                                {
+                                    "name": "Bradypodidae",
+                                    "children": [
+                                        {
+                                            "name": "Bradypus",
+                                            "children": [
+                                                {
+                                                    "name": "",
+                                                    "children": [
+                                                        {
+                                                            "name": "",
+                                                            "children": [
+                                                                {
+                                                                    "name": "Bradypus tridactylus",
+                                                                    "ottId": "ott527342",
+                                                                    "tips": 1,
+                                                                    "weight": 1
+                                                                },
+                                                                {
+                                                                    "name": "Bradypus variegatus",
+                                                                    "children": [
+                                                                        {
+                                                                            "name": "Bradypus variegatus infuscatus",
+                                                                            "ottId": "ott726530",
+                                                                            "tips": 1,
+                                                                            "weight": 1
+                                                                        }
+                                                                    ],
+                                                                    "ottId": "ott273233",
+                                                                    "tips": 1,
+                                                                    "weight": 2
+                                                                }
+                                                            ],
+                                                            "ottId": "mrcaott527342ott726530",
+                                                            "tips": 2,
+                                                            "weight": 4
+                                                        },
+                                                        {
+                                                            "name": "Bradypus pygmaeus",
+                                                            "ottId": "ott736497",
+                                                            "tips": 1,
+                                                            "weight": 1
+                                                        }
+                                                    ],
+                                                    "ottId": "mrcaott527342ott736497",
+                                                    "tips": 3,
+                                                    "weight": 6
+                                                },
+                                                {
+                                                    "name": "Bradypus torquatus",
+                                                    "ottId": "ott759319",
+                                                    "tips": 1,
+                                                    "weight": 1
+                                                },
+                                                {
+                                                    "name": "",
+                                                    "ottId": "'Bradypus sp. DEW-2006 ott1041996'",
+                                                    "tips": 1,
+                                                    "weight": 1
+                                                },
+                                                {
+                                                    "name": "Bradypus didactylus",
+                                                    "ottId": "ott3607379",
+                                                    "tips": 1,
+                                                    "weight": 1
+                                                },
+                                                {
+                                                    "name": "Bradypus striatus",
+                                                    "ottId": "ott6147649",
+                                                    "tips": 1,
+                                                    "weight": 1
+                                                },
+                                                {
+                                                    "name": "Bradypus ursinus",
+                                                    "ottId": "ott6147650",
+                                                    "tips": 1,
+                                                    "weight": 1
+                                                }
+                                            ],
+                                            "ottId": "ott527308",
+                                            "tips": 8,
+                                            "weight": 12
+                                        }
+                                    ],
+                                    "ottId": "ott273225",
+                                    "tips": 8,
+                                    "weight": 13
+                                }
+                            ],
+                            "ottId": "ott495015",
+                            "tips": 12,
+                            "weight": 21
+                        },
+                        {
+                            "name": "",
+                            "branch_length": null,
+                            "ottId": "'Pilosa sp. BOLD",
+                            "tips": 1,
+                            "weight": 1
+                        }
+                    ],
+                    "ottId": "ott495018",
+                    "tips": 17,
+                    "weight": 33
+                }
+            ],
+            "ottId": "ott847764",
+            "tips": 39,
+            "weight": 83
+        },
+        {
+            "name": "Afrotheria",
+            "numLeafs": 121,
+            "ottId": "ott746703",
+            "children": [
+                {
+                    "name": "",
+                    "numLeafs": 98,
+                    "ottId": "mrcaott82081ott292026",
+                    "children": [
+                        {
+                            "name": "Tubulidentata",
+                            "numLeafs": 1,
+                            "ottId": "ott561100",
+                            "children": [
+                                {
+                                    "name": "Orycteropodidae",
+                                    "numLeafs": 1,
+                                    "ottId": "ott561103",
+                                    "children": [
+                                        {
+                                            "name": "Orycteropus",
+                                            "numLeafs": 1,
+                                            "ottId": "ott561106",
+                                            "children": [
+                                                {
+                                                    "name": "Orycteropus afer",
+                                                    "numLeafs": 1,
+                                                    "ottId": "ott561087",
+                                                    "children": [
+                                                        {
+                                                            "name": "Orycteropus afer afer",
+                                                            "numLeafs": 0,
+                                                            "ottId": "ott292026"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "",
+                            "numLeafs": 97,
+                            "ottId": "mrcaott82081ott176483",
+                            "children": [
+                                {
+                                    "name": "Macroscelidea",
+                                    "numLeafs": 29,
+                                    "ottId": "ott604023",
+                                    "children": [
+                                        {
+                                            "name": "Macroscelididae",
+                                            "numLeafs": 29,
+                                            "ottId": "ott604022",
+                                            "children": [
+                                                {
+                                                    "name": "Petrosaltator",
+                                                    "numLeafs": 1,
+                                                    "ottId": "ott6144009",
+                                                    "children": [
+                                                        {
+                                                            "name": "Petrosaltator rozeti",
+                                                            "numLeafs": 0,
+                                                            "ottId": "ott805842"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "name": "Petrodromus",
+                                                    "numLeafs": 1,
+                                                    "ottId": "ott741353",
+                                                    "children": [
+                                                        {
+                                                            "name": "Petrodromus tetradactylus",
+                                                            "numLeafs": 0,
+                                                            "ottId": "ott741350"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "name": "Macroscelides",
+                                                    "numLeafs": 3,
+                                                    "ottId": "ott180377",
+                                                    "children": [
+                                                        {
+                                                            "name": "Macroscelides micus",
+                                                            "numLeafs": 0,
+                                                            "ottId": "ott5819810"
+                                                        },
+                                                        {
+                                                            "name": "Macroscelides flavicaudatus",
+                                                            "numLeafs": 0,
+                                                            "ottId": "ott928175"
+                                                        },
+                                                        {
+                                                            "name": "Macroscelides proboscideus",
+                                                            "numLeafs": 1,
+                                                            "ottId": "ott180378",
+                                                            "children": [
+                                                                {
+                                                                    "name": "Macroscelides proboscideus proboscideus",
+                                                                    "numLeafs": 0,
+                                                                    "ottId": "ott436300"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "name": "Rhynchocyon",
+                                                    "numLeafs": 6,
+                                                    "ottId": "ott1019438",
+                                                    "children": [
+                                                        {
+                                                            "name": "Rhynchocyon cirnei",
+                                                            "numLeafs": 1,
+                                                            "ottId": "ott627114",
+                                                            "children": [
+                                                                {
+                                                                    "name": "Rhynchocyon cirnei reichardi",
+                                                                    "numLeafs": 0,
+                                                                    "ottId": "ott5223258"
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "name": "Rhynchocyon udzungwensis",
+                                                            "numLeafs": 0,
+                                                            "ottId": "ott3607339"
+                                                        },
+                                                        {
+                                                            "name": "Rhynchocyon sp. OM2001",
+                                                            "numLeafs": 0,
+                                                            "ottId": "ott1019439"
+                                                        },
+                                                        {
+                                                            "name": "Rhynchocyon petersi",
+                                                            "numLeafs": 0,
+                                                            "ottId": "ott940522"
+                                                        },
+                                                        {
+                                                            "name": "Rhynchocyon sp. CJD-2003",
+                                                            "numLeafs": 0,
+                                                            "ottId": "ott805841"
+                                                        },
+                                                        {
+                                                            "name": "Rhynchocyon chrysopygus",
+                                                            "numLeafs": 0,
+                                                            "ottId": "ott340418"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "name": "Elephantulus",
+                                                    "numLeafs": 18,
+                                                    "ottId": "ott604029",
+                                                    "children": [
+                                                        {
+                                                            "name": "Elephantulus brachyrhyncus",
+                                                            "numLeafs": 0,
+                                                            "ottId": "ott3607341"
+                                                        },
+                                                        {
+                                                            "name": "Elephantulus sp. HAS-2006-1",
+                                                            "numLeafs": 0,
+                                                            "ottId": "ott894110"
+                                                        },
+                                                        {
+                                                            "name": "Elephantulus rupestris",
+                                                            "numLeafs": 0,
+                                                            "ottId": "ott741359"
+                                                        },
+                                                        {
+                                                            "name": "Elephantulus brachyrhynchus",
+                                                            "numLeafs": 0,
+                                                            "ottId": "ott741348"
+                                                        },
+                                                        {
+                                                            "name": "Elephantulus myurus",
+                                                            "numLeafs": 0,
+                                                            "ottId": "ott741345"
+                                                        },
+                                                        {
+                                                            "name": "Elephantulus intufi",
+                                                            "numLeafs": 0,
+                                                            "ottId": "ott741343"
+                                                        },
+                                                        {
+                                                            "name": "Elephantulus edwardii",
+                                                            "numLeafs": 0,
+                                                            "ottId": "ott604025"
+                                                        },
+                                                        {
+                                                            "name": "Elephantulus rufescens",
+                                                            "numLeafs": 0,
+                                                            "ottId": "ott584365"
+                                                        },
+                                                        {
+                                                            "name": "Elephantulus sp. 07ZR7#22",
+                                                            "numLeafs": 0,
+                                                            "ottId": "ott528699"
+                                                        },
+                                                        {
+                                                            "name": "Elephantulus sp. VB001",
+                                                            "numLeafs": 0,
+                                                            "ottId": "ott442719"
+                                                        },
+                                                        {
+                                                            "name": "Elephantulus sp. HAS-2006-2",
+                                                            "numLeafs": 0,
+                                                            "ottId": "ott369024"
+                                                        },
+                                                        {
+                                                            "name": "Elephantulus sp. karoensis",
+                                                            "numLeafs": 0,
+                                                            "ottId": "ott369023"
+                                                        },
+                                                        {
+                                                            "name": "Elephantulus sp. capensis",
+                                                            "numLeafs": 0,
+                                                            "ottId": "ott369022"
+                                                        },
+                                                        {
+                                                            "name": "Elephantulus fuscipes",
+                                                            "numLeafs": 0,
+                                                            "ottId": "ott334238"
+                                                        },
+                                                        {
+                                                            "name": "Elephantulus fuscus",
+                                                            "numLeafs": 0,
+                                                            "ottId": "ott334236"
+                                                        },
+                                                        {
+                                                            "name": "Elephantulus revoili",
+                                                            "numLeafs": 0,
+                                                            "ottId": "ott334233"
+                                                        },
+                                                        {
+                                                            "name": "Elephantulus sp. HS451",
+                                                            "numLeafs": 0,
+                                                            "ottId": "ott263599"
+                                                        },
+                                                        {
+                                                            "name": "Elephantulus sp. HAS-2007",
+                                                            "numLeafs": 0,
+                                                            "ottId": "ott176483"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "",
+                                    "numLeafs": 68,
+                                    "ottId": "mrcaott82081ott117566",
+                                    "children": [
+                                        {
+                                            "name": "Chrysochloridae",
+                                            "numLeafs": 31,
+                                            "ottId": "ott54168",
+                                            "children": [
+                                                {
+                                                    "name": "Chrysochlorinae",
+                                                    "numLeafs": 13,
+                                                    "ottId": "ott702190",
+                                                    "children": [
+                                                        {
+                                                            "name": "Chrysochloris",
+                                                            "numLeafs": 4,
+                                                            "ottId": "ott1094520",
+                                                            "children": [
+                                                                {
+                                                                    "name": "Chrysochloris holosericea",
+                                                                    "numLeafs": 0,
+                                                                    "ottId": "ott6143956"
+                                                                },
+                                                                {
+                                                                    "name": "Chrysochloris visagiei",
+                                                                    "numLeafs": 0,
+                                                                    "ottId": "ott3607173"
+                                                                },
+                                                                {
+                                                                    "name": "Chrysochloris asiatica",
+                                                                    "numLeafs": 0,
+                                                                    "ottId": "ott1094517"
+                                                                },
+                                                                {
+                                                                    "name": "Chrysochloris stuhlmanni",
+                                                                    "numLeafs": 0,
+                                                                    "ottId": "ott1071320"
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "name": "Huetia",
+                                                            "numLeafs": 1,
+                                                            "ottId": "ott278839",
+                                                            "children": [
+                                                                {
+                                                                    "name": "Huetia leucorhinus",
+                                                                    "numLeafs": 0,
+                                                                    "ottId": "ott702192"
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "name": "Cryptochloris",
+                                                            "numLeafs": 2,
+                                                            "ottId": "ott702178",
+                                                            "children": [
+                                                                {
+                                                                    "name": "Cryptochloris zyli",
+                                                                    "numLeafs": 0,
+                                                                    "ottId": "ott3607176"
+                                                                },
+                                                                {
+                                                                    "name": "Cryptochloris wintoni",
+                                                                    "numLeafs": 0,
+                                                                    "ottId": "ott702185"
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "name": "Eremitalpa",
+                                                            "numLeafs": 2,
+                                                            "ottId": "ott672747",
+                                                            "children": [
+                                                                {
+                                                                    "name": "Eremitalpha granti",
+                                                                    "numLeafs": 0,
+                                                                    "ottId": "ott6143957"
+                                                                },
+                                                                {
+                                                                    "name": "Eremitalpa granti",
+                                                                    "numLeafs": 0,
+                                                                    "ottId": "ott672748"
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "name": "Chrysospalax",
+                                                            "numLeafs": 2,
+                                                            "ottId": "ott347642",
+                                                            "children": [
+                                                                {
+                                                                    "name": "Chrysospalax villosus",
+                                                                    "numLeafs": 0,
+                                                                    "ottId": "ott702180"
+                                                                },
+                                                                {
+                                                                    "name": "Chrysospalax trevelyani",
+                                                                    "numLeafs": 0,
+                                                                    "ottId": "ott347650"
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "name": "Calcochloris",
+                                                            "numLeafs": 2,
+                                                            "ottId": "ott178881",
+                                                            "children": [
+                                                                {
+                                                                    "name": "Calcochloris tytonis",
+                                                                    "numLeafs": 0,
+                                                                    "ottId": "ott3607174"
+                                                                },
+                                                                {
+                                                                    "name": "Calcochloris obtusirostris",
+                                                                    "numLeafs": 0,
+                                                                    "ottId": "ott178883"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "name": "Chlorotalpa",
+                                                    "numLeafs": 2,
+                                                    "ottId": "ott178892",
+                                                    "children": [
+                                                        {
+                                                            "name": "Chlorotalpa duthieae",
+                                                            "numLeafs": 0,
+                                                            "ottId": "ott178894"
+                                                        },
+                                                        {
+                                                            "name": "Chlorotalpa sclateri",
+                                                            "numLeafs": 0,
+                                                            "ottId": "ott178869"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "name": "Amblysominae",
+                                                    "numLeafs": 16,
+                                                    "ottId": "ott909611",
+                                                    "children": [
+                                                        {
+                                                            "name": "Neamblysomus",
+                                                            "numLeafs": 2,
+                                                            "ottId": "ott702183",
+                                                            "children": [
+                                                                {
+                                                                    "name": "Neamblysomus gunningi",
+                                                                    "numLeafs": 0,
+                                                                    "ottId": "ott909649"
+                                                                },
+                                                                {
+                                                                    "name": "Neamblysomus julianae",
+                                                                    "numLeafs": 0,
+                                                                    "ottId": "ott909638"
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "name": "Carpitalpa",
+                                                            "numLeafs": 1,
+                                                            "ottId": "ott853640",
+                                                            "children": [
+                                                                {
+                                                                    "name": "Carpitalpa arendsi",
+                                                                    "numLeafs": 0,
+                                                                    "ottId": "ott178898"
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "name": "Amblysomus",
+                                                            "numLeafs": 13,
+                                                            "ottId": "ott574738",
+                                                            "children": [
+                                                                {
+                                                                    "name": "Amblysomus sp. UM",
+                                                                    "numLeafs": 0,
+                                                                    "ottId": "ott5925514"
+                                                                },
+                                                                {
+                                                                    "name": "Amblysomus sp. NF",
+                                                                    "numLeafs": 0,
+                                                                    "ottId": "ott5925513"
+                                                                },
+                                                                {
+                                                                    "name": "Amblysomus corriae",
+                                                                    "numLeafs": 1,
+                                                                    "ottId": "ott753114",
+                                                                    "children": [
+                                                                        {
+                                                                            "name": "Amblysomus corriae corriae",
+                                                                            "numLeafs": 0,
+                                                                            "ottId": "ott5925512"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "name": "Amblysomus hottentotus",
+                                                                    "numLeafs": 6,
+                                                                    "ottId": "ott574736",
+                                                                    "children": [
+                                                                        {
+                                                                            "name": "Amblysomus hottentotus longiceps",
+                                                                            "numLeafs": 0,
+                                                                            "ottId": "ott5827959"
+                                                                        },
+                                                                        {
+                                                                            "name": "Amblysomus hottentotus pondoliae",
+                                                                            "numLeafs": 0,
+                                                                            "ottId": "ott5827958"
+                                                                        },
+                                                                        {
+                                                                            "name": "Amblysomus hottentotus meesteri",
+                                                                            "numLeafs": 0,
+                                                                            "ottId": "ott5827957"
+                                                                        },
+                                                                        {
+                                                                            "name": "Amblysomus hottentotus iris",
+                                                                            "numLeafs": 0,
+                                                                            "ottId": "ott5827956"
+                                                                        },
+                                                                        {
+                                                                            "name": "Amblysomus hottentotus natalensis",
+                                                                            "numLeafs": 0,
+                                                                            "ottId": "ott5827955"
+                                                                        },
+                                                                        {
+                                                                            "name": "Amblysomus hottentotus hottentotus",
+                                                                            "numLeafs": 0,
+                                                                            "ottId": "ott5827954"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "name": "Amblysomus iris",
+                                                                    "numLeafs": 0,
+                                                                    "ottId": "ott768487"
+                                                                },
+                                                                {
+                                                                    "name": "Amblysomus septentrionalis",
+                                                                    "numLeafs": 0,
+                                                                    "ottId": "ott178889"
+                                                                },
+                                                                {
+                                                                    "name": "Amblysomus robustus",
+                                                                    "numLeafs": 0,
+                                                                    "ottId": "ott178886"
+                                                                },
+                                                                {
+                                                                    "name": "Amblysomus marleyi",
+                                                                    "numLeafs": 0,
+                                                                    "ottId": "ott117566"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "Tenrecidae",
+                                            "numLeafs": 37,
+                                            "ottId": "ott796652",
+                                            "children": [
+                                                {
+                                                    "name": "Potamogalinae",
+                                                    "numLeafs": 3,
+                                                    "ottId": "ott922728",
+                                                    "children": [
+                                                        {
+                                                            "name": "Potamogale",
+                                                            "numLeafs": 1,
+                                                            "ottId": "ott36293",
+                                                            "children": [
+                                                                {
+                                                                    "name": "Potamogale velox",
+                                                                    "numLeafs": 0,
+                                                                    "ottId": "ott922751"
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "name": "Micropotamogale",
+                                                            "numLeafs": 2,
+                                                            "ottId": "ott321802",
+                                                            "children": [
+                                                                {
+                                                                    "name": "Micropotamogale ruwenzorii",
+                                                                    "numLeafs": 0,
+                                                                    "ottId": "ott3607191"
+                                                                },
+                                                                {
+                                                                    "name": "Micropotamogale lamottei",
+                                                                    "numLeafs": 0,
+                                                                    "ottId": "ott321803"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "name": "",
+                                                    "numLeafs": 34,
+                                                    "ottId": "mrcaott82081ott222351",
+                                                    "children": [
+                                                        {
+                                                            "name": "Tenrecinae",
+                                                            "numLeafs": 5,
+                                                            "ottId": "ott922729",
+                                                            "children": [
+                                                                {
+                                                                    "name": "",
+                                                                    "numLeafs": 3,
+                                                                    "ottId": "mrcaott542054ott680963",
+                                                                    "children": [
+                                                                        {
+                                                                            "name": "Tenrec",
+                                                                            "numLeafs": 1,
+                                                                            "ottId": "ott680966",
+                                                                            "children": [
+                                                                                {
+                                                                                    "name": "Tenrec ecaudatus",
+                                                                                    "numLeafs": 0,
+                                                                                    "ottId": "ott680963"
+                                                                                }
+                                                                            ]
+                                                                        },
+                                                                        {
+                                                                            "name": "Hemicentetes",
+                                                                            "numLeafs": 2,
+                                                                            "ottId": "ott542053",
+                                                                            "children": [
+                                                                                {
+                                                                                    "name": "Hemicentetes nigriceps",
+                                                                                    "numLeafs": 0,
+                                                                                    "ottId": "ott3607192"
+                                                                                },
+                                                                                {
+                                                                                    "name": "Hemicentetes semispinosus",
+                                                                                    "numLeafs": 0,
+                                                                                    "ottId": "ott542054"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "name": "",
+                                                                    "numLeafs": 2,
+                                                                    "ottId": "mrcaott222351ott542059",
+                                                                    "children": [
+                                                                        {
+                                                                            "name": "Setifer",
+                                                                            "numLeafs": 1,
+                                                                            "ottId": "ott542058",
+                                                                            "children": [
+                                                                                {
+                                                                                    "name": "Setifer setosus",
+                                                                                    "numLeafs": 0,
+                                                                                    "ottId": "ott542059"
+                                                                                }
+                                                                            ]
+                                                                        },
+                                                                        {
+                                                                            "name": "Echinops",
+                                                                            "numLeafs": 1,
+                                                                            "ottId": "ott222356",
+                                                                            "children": [
+                                                                                {
+                                                                                    "name": "Echinops telfairi",
+                                                                                    "numLeafs": 0,
+                                                                                    "ottId": "ott222351"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "name": "",
+                                                            "numLeafs": 29,
+                                                            "ottId": "mrcaott82081ott922733",
+                                                            "children": [
+                                                                {
+                                                                    "name": "Geogalinae",
+                                                                    "numLeafs": 2,
+                                                                    "ottId": "ott922731",
+                                                                    "children": [
+                                                                        {
+                                                                            "name": "Geogale",
+                                                                            "numLeafs": 2,
+                                                                            "ottId": "ott922732",
+                                                                            "children": [
+                                                                                {
+                                                                                    "name": "Geogale sp. KME-2016a",
+                                                                                    "numLeafs": 0,
+                                                                                    "ottId": "ott5925518"
+                                                                                },
+                                                                                {
+                                                                                    "name": "Geogale aurita",
+                                                                                    "numLeafs": 0,
+                                                                                    "ottId": "ott922733"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "name": "Oryzorictinae",
+                                                                    "numLeafs": 27,
+                                                                    "ottId": "ott922730",
+                                                                    "children": [
+                                                                        {
+                                                                            "name": "Oryzorictes",
+                                                                            "numLeafs": 3,
+                                                                            "ottId": "ott680970",
+                                                                            "children": [
+                                                                                {
+                                                                                    "name": "Oryzorictes tetradactylus",
+                                                                                    "numLeafs": 0,
+                                                                                    "ottId": "ott3607190"
+                                                                                },
+                                                                                {
+                                                                                    "name": "Oryzorictes talpoides",
+                                                                                    "numLeafs": 0,
+                                                                                    "ottId": "ott680967"
+                                                                                },
+                                                                                {
+                                                                                    "name": "Oryzorictes hova",
+                                                                                    "numLeafs": 0,
+                                                                                    "ottId": "ott542048"
+                                                                                }
+                                                                            ]
+                                                                        },
+                                                                        {
+                                                                            "name": "",
+                                                                            "numLeafs": 24,
+                                                                            "ottId": "mrcaott82081ott153398",
+                                                                            "children": [
+                                                                                {
+                                                                                    "name": "Microgale grandidieri",
+                                                                                    "numLeafs": 0,
+                                                                                    "ottId": "ott5925519"
+                                                                                },
+                                                                                {
+                                                                                    "name": "Microgale gymnorhyncha",
+                                                                                    "numLeafs": 0,
+                                                                                    "ottId": "ott3607189"
+                                                                                },
+                                                                                {
+                                                                                    "name": "Microgale nasoloi",
+                                                                                    "numLeafs": 0,
+                                                                                    "ottId": "ott3607188"
+                                                                                },
+                                                                                {
+                                                                                    "name": "Microgale dryas",
+                                                                                    "numLeafs": 0,
+                                                                                    "ottId": "ott3607187"
+                                                                                },
+                                                                                {
+                                                                                    "name": "Microgale fotsifotsy",
+                                                                                    "numLeafs": 0,
+                                                                                    "ottId": "ott3607186"
+                                                                                },
+                                                                                {
+                                                                                    "name": "Microgale soricoides",
+                                                                                    "numLeafs": 0,
+                                                                                    "ottId": "ott3607185"
+                                                                                },
+                                                                                {
+                                                                                    "name": "Microgale gracilis",
+                                                                                    "numLeafs": 0,
+                                                                                    "ottId": "ott3607184"
+                                                                                },
+                                                                                {
+                                                                                    "name": "Microgale drouhardi",
+                                                                                    "numLeafs": 0,
+                                                                                    "ottId": "ott3607183"
+                                                                                },
+                                                                                {
+                                                                                    "name": "Microgale parvula",
+                                                                                    "numLeafs": 0,
+                                                                                    "ottId": "ott3607182"
+                                                                                },
+                                                                                {
+                                                                                    "name": "Microgale jenkinsae",
+                                                                                    "numLeafs": 0,
+                                                                                    "ottId": "ott3607181"
+                                                                                },
+                                                                                {
+                                                                                    "name": "Microgale monticola",
+                                                                                    "numLeafs": 0,
+                                                                                    "ottId": "ott3607180"
+                                                                                },
+                                                                                {
+                                                                                    "name": "Microgale thomasi",
+                                                                                    "numLeafs": 0,
+                                                                                    "ottId": "ott3607179"
+                                                                                },
+                                                                                {
+                                                                                    "name": "Microgale jobihely",
+                                                                                    "numLeafs": 0,
+                                                                                    "ottId": "ott1037948"
+                                                                                },
+                                                                                {
+                                                                                    "name": "Microgale taiva",
+                                                                                    "numLeafs": 0,
+                                                                                    "ottId": "ott1037946"
+                                                                                },
+                                                                                {
+                                                                                    "name": "Microgale longicaudata",
+                                                                                    "numLeafs": 0,
+                                                                                    "ottId": "ott792176"
+                                                                                },
+                                                                                {
+                                                                                    "name": "Microgale pusilla",
+                                                                                    "numLeafs": 0,
+                                                                                    "ottId": "ott792174"
+                                                                                },
+                                                                                {
+                                                                                    "name": "Microgale cowani",
+                                                                                    "numLeafs": 0,
+                                                                                    "ottId": "ott544762"
+                                                                                },
+                                                                                {
+                                                                                    "name": "",
+                                                                                    "numLeafs": 2,
+                                                                                    "ottId": "mrcaott542051ott894939",
+                                                                                    "children": [
+                                                                                        {
+                                                                                            "name": "Microgale cf. parvula",
+                                                                                            "numLeafs": 0,
+                                                                                            "ottId": "ott894939"
+                                                                                        },
+                                                                                        {
+                                                                                            "name": "Limnogale",
+                                                                                            "numLeafs": 1,
+                                                                                            "ottId": "ott542050",
+                                                                                            "children": [
+                                                                                                {
+                                                                                                    "name": "Limnogale mergulus",
+                                                                                                    "numLeafs": 0,
+                                                                                                    "ottId": "ott542051"
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    ]
+                                                                                },
+                                                                                {
+                                                                                    "name": "Microgale brevicaudata",
+                                                                                    "numLeafs": 0,
+                                                                                    "ottId": "ott542046"
+                                                                                },
+                                                                                {
+                                                                                    "name": "Microgale principula",
+                                                                                    "numLeafs": 0,
+                                                                                    "ottId": "ott351005"
+                                                                                },
+                                                                                {
+                                                                                    "name": "Microgale talazaci",
+                                                                                    "numLeafs": 0,
+                                                                                    "ottId": "ott211383"
+                                                                                },
+                                                                                {
+                                                                                    "name": "Microgale majori",
+                                                                                    "numLeafs": 0,
+                                                                                    "ottId": "ott153398"
+                                                                                },
+                                                                                {
+                                                                                    "name": "Microgale dobsoni",
+                                                                                    "numLeafs": 0,
+                                                                                    "ottId": "ott82081"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "",
+                    "numLeafs": 23,
+                    "ottId": "mrcaott72667ott90404",
+                    "children": [
+                        {
+                            "name": "",
+                            "numLeafs": 17,
+                            "ottId": "mrcaott90404ott298128",
+                            "children": [
+                                {
+                                    "name": "Proboscidea",
+                                    "numLeafs": 10,
+                                    "ottId": "ott226176",
+                                    "children": [
+                                        {
+                                            "name": "Elephantidae",
+                                            "numLeafs": 10,
+                                            "ottId": "ott541924",
+                                            "children": [
+                                                {
+                                                    "name": "Loxodonta",
+                                                    "numLeafs": 2,
+                                                    "ottId": "ott541933",
+                                                    "children": [
+                                                        {
+                                                            "name": "Loxodonta africana",
+                                                            "numLeafs": 1,
+                                                            "ottId": "ott541936",
+                                                            "children": [
+                                                                {
+                                                                    "name": "Loxodonta africana knochenhaueri",
+                                                                    "numLeafs": 0,
+                                                                    "ottId": "ott904474"
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "name": "Loxodonta cyclotis",
+                                                            "numLeafs": 0,
+                                                            "ottId": "ott418570"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "name": "Elephas",
+                                                    "numLeafs": 8,
+                                                    "ottId": "ott541927",
+                                                    "children": [
+                                                        {
+                                                            "name": "Elephas celebensis",
+                                                            "numLeafs": 0,
+                                                            "ottId": "ott6144032"
+                                                        },
+                                                        {
+                                                            "name": "Elephas planifrons",
+                                                            "numLeafs": 0,
+                                                            "ottId": "ott3607200"
+                                                        },
+                                                        {
+                                                            "name": "Elephas bombifrons",
+                                                            "numLeafs": 0,
+                                                            "ottId": "ott3607197"
+                                                        },
+                                                        {
+                                                            "name": "Elephas maximus",
+                                                            "numLeafs": 5,
+                                                            "ottId": "ott541928",
+                                                            "children": [
+                                                                {
+                                                                    "name": "Elephas maximus indicus",
+                                                                    "numLeafs": 0,
+                                                                    "ottId": "ott995649"
+                                                                },
+                                                                {
+                                                                    "name": "Elephas maximus maximus",
+                                                                    "numLeafs": 0,
+                                                                    "ottId": "ott995648"
+                                                                },
+                                                                {
+                                                                    "name": "Elephas maximus borneensis",
+                                                                    "numLeafs": 0,
+                                                                    "ottId": "ott890943"
+                                                                },
+                                                                {
+                                                                    "name": "Elephas maximus asurus",
+                                                                    "numLeafs": 0,
+                                                                    "ottId": "ott798322"
+                                                                },
+                                                                {
+                                                                    "name": "Elephas maximus sumatranus",
+                                                                    "numLeafs": 0,
+                                                                    "ottId": "ott298128"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Hyracoidea",
+                                    "numLeafs": 7,
+                                    "ottId": "ott561107",
+                                    "children": [
+                                        {
+                                            "name": "Hyracoidea sp. BOLD:AAU2359",
+                                            "numLeafs": 0,
+                                            "ottId": "ott4119181"
+                                        },
+                                        {
+                                            "name": "Procaviidae",
+                                            "numLeafs": 6,
+                                            "ottId": "ott561109",
+                                            "children": [
+                                                {
+                                                    "name": "Heterohyrax",
+                                                    "numLeafs": 2,
+                                                    "ottId": "ott681025",
+                                                    "children": [
+                                                        {
+                                                            "name": "Heterohyrax chapini",
+                                                            "numLeafs": 0,
+                                                            "ottId": "ott5819807"
+                                                        },
+                                                        {
+                                                            "name": "Heterohyrax brucei",
+                                                            "numLeafs": 0,
+                                                            "ottId": "ott681079"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "name": "Dendrohyrax",
+                                                    "numLeafs": 2,
+                                                    "ottId": "ott285368",
+                                                    "children": [
+                                                        {
+                                                            "name": "Dendrohyrax arboreus",
+                                                            "numLeafs": 0,
+                                                            "ottId": "ott1079385"
+                                                        },
+                                                        {
+                                                            "name": "Dendrohyrax dorsalis",
+                                                            "numLeafs": 0,
+                                                            "ottId": "ott285372"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "name": "Procavia",
+                                                    "numLeafs": 2,
+                                                    "ottId": "ott561113",
+                                                    "children": [
+                                                        {
+                                                            "name": "Procavia capensis",
+                                                            "numLeafs": 1,
+                                                            "ottId": "ott561114",
+                                                            "children": [
+                                                                {
+                                                                    "name": "Procavia capensis habessinica",
+                                                                    "numLeafs": 0,
+                                                                    "ottId": "ott561098"
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "name": "Procavia johnstoni",
+                                                            "numLeafs": 0,
+                                                            "ottId": "ott90404"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Sirenia",
+                            "numLeafs": 6,
+                            "ottId": "ott226183",
+                            "children": [
+                                {
+                                    "name": "Sirenia sp. BOLD:AAH8089",
+                                    "numLeafs": 0,
+                                    "ottId": "ott4119178"
+                                },
+                                {
+                                    "name": "Dugongidae",
+                                    "numLeafs": 1,
+                                    "ottId": "ott835321",
+                                    "children": [
+                                        {
+                                            "name": "Dugong",
+                                            "numLeafs": 1,
+                                            "ottId": "ott835323",
+                                            "children": [
+                                                {
+                                                    "name": "Dugong dugon",
+                                                    "numLeafs": 0,
+                                                    "ottId": "ott835324"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Trichechidae",
+                                    "numLeafs": 4,
+                                    "ottId": "ott226181",
+                                    "children": [
+                                        {
+                                            "name": "Trichechus",
+                                            "numLeafs": 4,
+                                            "ottId": "ott226189",
+                                            "children": [
+                                                {
+                                                    "name": "Trichechus manatus",
+                                                    "numLeafs": 2,
+                                                    "ottId": "ott226178",
+                                                    "children": [
+                                                        {
+                                                            "name": "Trichechus manatus manatus",
+                                                            "numLeafs": 0,
+                                                            "ottId": "ott5827953"
+                                                        },
+                                                        {
+                                                            "name": "Trichechus manatus latirostris",
+                                                            "numLeafs": 0,
+                                                            "ottId": "ott816446"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "name": "Trichechus inunguis",
+                                                    "numLeafs": 0,
+                                                    "ottId": "ott226185"
+                                                },
+                                                {
+                                                    "name": "Trichechus senegalensis",
+                                                    "numLeafs": 0,
+                                                    "ottId": "ott72667"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]  
+} 
