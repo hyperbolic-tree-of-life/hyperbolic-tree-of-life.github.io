@@ -36,7 +36,7 @@
             const isValidBrowser = !/MSIE/i.test(ua) && !/Trident/i.test(ua) && !/Edge\/\d./i.test(ua)
             console.log(ua, isMobile, isValidBrowser)
             if (isMobile || !isValidBrowser)
-                document.body.innerHTML = '<p style="text-align:center; color:#fff;"><br><br>Sorry, your browser/device is not supported yet 😿 <br>Please use Chrome, Firefox or Safari,<br>on a device at least the size of a tablet.'
+                document.body.innerHTML = '<p style="text-align:center; color:#000;"><br><br>Sorry, your browser/device is not supported yet 😿 <br>Please use Chrome, Firefox or Safari,<br>on a device at least the size of a tablet.'
             else {                
                 const script = document.createElement('script')
                 script.src = 'hypertree-of-life.min.js'
