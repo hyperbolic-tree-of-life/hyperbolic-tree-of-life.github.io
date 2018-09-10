@@ -25,7 +25,7 @@
   margin-top: .6em; }
 
 .unitdisk-nav .tool-bar .tool-seperator:first-child {
-  margin-top: .32em; }
+  margin-top: 1em; }
 
 .unitdisk-nav .tool-bar .tool-active {
   background-color: #333; }
@@ -134,7 +134,7 @@
   word-spacing: .3em;
   position: absolute;
   top: -1.6em;
-  left: 18em; }
+  left: 7em; }
 
 .absolute-center {
   margin: auto;
@@ -7415,6 +7415,13 @@ input[type=range]::-ms-thumb {
   position: absolute;
   width: 100%;
   height: 100%; }
+  .slides-header #logo {
+    height: 150%;
+    margin-top: -.05em;
+    margin-left: .0em;
+    cursor: pointer;
+    box-shadow: 0em 0.1em 0.4em #00000036;
+    border-radius: 2em; }
   .slides-header .btn-icon-darklightswitch {
     margin-top: .0rem; }
   .slides-header .pn {
@@ -7426,6 +7433,7 @@ input[type=range]::-ms-thumb {
     padding: 0 .0rem;
     margin-top: .1rem; }
   .slides-header > .header {
+    z-index: 1;
     width: 100%;
     height: 3em;
     padding: .3em .3em .1em .3em; }
@@ -7455,9 +7463,6 @@ input[type=range]::-ms-thumb {
       .slides-header > .header > .configline #navlink > i {
         font-size: 1.6em;
         vertical-align: inherit; }
-      .slides-header > .header > .configline .patron {
-        height: 2.2em;
-        margin-right: .3em; }
       .slides-header > .header > .configline .side-nav .user-view .circle {
         height: 64px;
         width: 96px; }
@@ -7472,7 +7477,21 @@ input[type=range]::-ms-thumb {
   .slides-header > .content {
     position: relative;
     width: 100%;
-    height: 100%; }
+    height: 100%;
+    z-index: 0; }
+    .slides-header > .content .patron {
+      z-index: 1;
+      height: 2.2em;
+      position: absolute; }
+    .slides-header > .content a:nth-child(1) .patron {
+      left: .2em;
+      bottom: 4.6em; }
+    .slides-header > .content a:nth-child(2) .patron {
+      left: .2em;
+      bottom: 2.4em; }
+    .slides-header > .content a:nth-child(3) .patron {
+      left: .2em;
+      bottom: .2em; }
 
 .breadcrumb {
   vertical-align: sub;
@@ -7481,6 +7500,9 @@ input[type=range]::-ms-thumb {
 .slides-header > .header {
   background-color: #252526;
   box-shadow: inset 0 -1px 3px rgba(0, 0, 0, 0.08); }
+
+.slides-header #logo {
+  opacity: .8; }
 
 .btn.disabled {
   background-color: #2e2e2e !important; }
@@ -7546,6 +7568,9 @@ input[type=range]::-ms-thumb {
 .splitter > .gutter {
   background-color: rgba(0, 0, 0, 0.1);
   border-right: #171717 solid 1pt; }
+
+.splitter > .left {
+  background-image: linear-gradient(to right, #1a1a1a, #111, #1a1a1a); }
 
 .splitter > .right {
   background-color: #1e1e1e; }
