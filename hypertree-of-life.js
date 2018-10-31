@@ -32636,12 +32636,11 @@ class Navigation //implements Controller<NavigationArgs, HTMLElement>
         this.golast = () => {
             if (this.view.hypertree.isAnimationRunning())
                 return;
-            console.log('Going to /');
-            /*
+            //console.error('Going to /')
             gtag('config', 'UA-124333733-1', {
-                'page_title' : '/',
+                'page_title': '/',
                 'page_path': '/'
-            })*/
+            });
             this.model.last();
             this.updatecurrent();
         };
@@ -32663,16 +32662,15 @@ class Navigation //implements Controller<NavigationArgs, HTMLElement>
             hypertreemodel.interaction.onCenterNodeChange = (n, s) => this.view.ui.breadcrumb2.innerText = s;
             hypertreemodel.interaction.onNodeClick = (n, m, l) => {
                 if (this.model.islast() && n && n.data) {
-                    console.log('Going to ', n.data.name);
-                    /*
+                    //console.error('Going to ', n.data.name)
                     gtag('config', 'UA-124333733-1', {
-                        'page_title' : n.data.name,
-                        'page_path': '/'+n.data.name
-                    })
-                    */
+                        'page_title': n.data.name,
+                        'page_path': '/' + n.data.name
+                    });
                     this.goidx(n.data.idx)();
                 }
                 else if (n.mergeId !== l.view.unitdisk.args.transformation.cache.centerNode.mergeId) {
+                    //console.error('What is this?', n.data.name)
                     //console.log('not same --> goto node')
                     l.view.hypertree.api.goto(d3_hypertree_2.CmulR({ re: n.layout.z.re, im: n.layout.z.im }, -1), null)
                         .then(() => l.view.hypertree.drawDetailFrame());
@@ -32756,12 +32754,11 @@ class Navigation //implements Controller<NavigationArgs, HTMLElement>
             if (this.model.islast() && n && n.data) {
                 this.goidx(n.data.idx)();
                 console.log('##########', n.data.name, n);
-                console.log('Going to ', n.data.name);
-                /*
+                //console.error('Going to ', n.data.name)
                 gtag('config', 'UA-124333733-1', {
-                    'page_title' : n.data.name,
-                    'page_path': '/'+n.data.name
-                })*/
+                    'page_title': n.data.name,
+                    'page_path': '/' + n.data.name
+                });
             }
             else if (n.mergeId !== l.view.unitdisk.args.transformation.cache.centerNode.mergeId) {
                 //console.log('not same --> goto node')
