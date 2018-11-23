@@ -152,11 +152,15 @@
   outline: none;
   border: none; }
 
-/*
+#main-toolbar {
+  margin-top: 1.2em; }
+
+#main-toolbar #btnquery {
+  visibility: collapse; }
+
 #path-toolbar {
-    visibility: hidden;
-}
-*/
+  visibility: hidden; }
+
 #query-input {
   background-color: #333;
   border: .35em solid #333; }
