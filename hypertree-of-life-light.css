@@ -820,6 +820,51 @@ body {
 body {
   background-color: #fff; }
 
+.topic {
+  font-size: 2em;
+  margin-top: 1.5em;
+  margin-bottom: .5em; }
+
+#info {
+  position: absolute;
+  right: calc(50% + 10em);
+  width: 25em;
+  text-align: justify;
+  padding-top: 6em;
+  padding-right: 2em; }
+
+#maintree {
+  position: absolute;
+  left: calc(50% - 7em);
+  width: 45rem;
+  height: 60rem;
+  font-size: 20px; }
+
+.footer {
+  height: 2.1em;
+  background-color: #fafafa;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+
+.footer > svg {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 1px;
+  width: 100%; }
+
+.footer > svg > path {
+  fill: none;
+  stroke: #dedede;
+  stroke-width: 5;
+  stroke-dasharray: 1, .8; }
+
+.emph {
+  font-style: italic;
+  font-weight: bold; }
+
 .materialize-red {
   background-color: #e51c23 !important; }
 
@@ -7450,6 +7495,7 @@ input[type=range]::-ms-thumb {
     height: 3em;
     padding: .3em .3em .1em .3em; }
     .slides-header > .header > span > #breadcrumb {
+      text-transform: capitalize;
       margin-left: .75em;
       position: absolute;
       top: -.2em;

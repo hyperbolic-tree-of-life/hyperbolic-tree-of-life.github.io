@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+    <head>
+        <title>Hyperbolic tree</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+        <link rel="icon"       href="img/avatar-light.png"/>
+        <link rel="stylesheet" href="hypertree-of-life-light.css" id="ldswitch">      
+
+        <script src="hypertree-of-life.js"></script>
+    </head>
+
+    <body>
+        <script>
+            const c = new URLSearchParams(document.location.search.substring(1)).get('c') 
+            const l = 'en'
+
+            function createHypertree(p, file) {
+                const π = Math.PI
+                const iconmap = new htol.Icons()
+                const hasLazy =          n=> (n.hasOutChildren && n.isOutλ)
+                const isLeaf =           n=> !n.children || !n.children.length
+                const isRoot =           n=> !n.parent 
+                const hasCircle =        n=> hasLazy(n) || isRoot(n) || isLeaf(n)
+                const nodeInitR =        (c)=> (ud, d)=> c * ((d.children && d.parent) ? innerNodeScale(d) : 1)     
+                const nodeInitRNoInner = (c)=> (ud, d)=> c
+                const nodeScale =        d=> d.distScale * (hasLazy(d) ? .8 : 1)    
+                const nodeScaleNoInner = d=> d.distScale    
+                const innerNodeScale =   d=> d.precalc.weightScale
+                                
+                const htree = new htol.Hypertree(
+                    { parent:p }, 
+                    {
+                        dataloader: htol.loaders.fromFile(`hierarchies/Open-Tree-of-Life/${c}.d3.json`),
+                        langloader: htol.loaders.fromLangFile('langmaps/en.lang.json'),
+                        dataInitBFS: (ht, n)=> {
+                            const id = n.data.name
+                            n.precalc.imageHref = iconmap.fileName2IconUrl(id, n.data.type)
+                            n.precalc.icon = iconmap.emojimap[id]    
+                            
+                            if (n.children && n.height%2 === 0)
+                                n.children = n.children.reverse()
+                        },
+                        langInitBFS: (ht, n)=> {                
+                            const id = n.data && n.data.name
+                            const l  = ht.langMap && ht.langMap[id] && '𝐖 ' + ht.langMap[id] 
+                            n.precalc.wiki = l
+                            n.precalc.label = l || id
+                            n.precalc.clickable = Boolean(l)              
+                        },
+                        layout: {            
+                            weight: (n)=> (isLeaf(n)?1:0),            
+                            rootWedge: {    
+                                orientation: 3*π/2,
+                                angle: .7*π/2
+                            }
+                        },
+                        geometry: {
+                            nodeRadius: nodeInitR(.0075),
+                            captionFont: '8px Roboto',
+                            captionHeight: .05
+                        },
+                        interaction: {              
+                            λbounds: [1/40, .55],
+                            onCenterNodeChange: (n, s)=> {                                
+                                app.navigation.view.ui.breadcrumb2.innerText = s
+                                const l = 'de'
+                                const a = n.data.name
+                                if (!a || a === '') 
+                                    return
+                                const newSrc = `https://${l}.m.wikipedia.org/wiki/${a}`
+                                
+                                if (app.focusview && newSrc !== app.focusview.ui.src)
+                                    app.focusview.ui.src = newSrc                                
+                            }
+                        }
+                    }
+                )
+                htree.initPromise
+                    .then(()=> new Promise((ok, err)=> htree.animateUp(ok, err)))
+                    .then(()=> htree.api.goto({ re: 0, im: .5 }, null))
+                    .then(()=> htree.api.gotoλ(.15))
+                    .then(()=> htree.drawDetailFrame())
+                return htree
+            }
+            
+            const app = {
+                root: document.querySelector('body'),
+                navigation: null,
+                splitter: null,
+                hypertree: null,
+                focusview: null,
+            }           
+
+            app.navigation = new htol.Navigation2( 
+                { parent: app.root }, 
+                {
+                    languages: ['en', 'de'], 
+                    title: "fsdfgs",
+                    path: ['mgl', 'Hyperbolic Map', 'Open Tree of Life', c],
+                    pathLinks: ['mgl', 'www.orf.at', '', ''],
+                    subpath: ["Welcome"],
+                    content: (p)=> {
+                        app.splitter = new htol.Splitter({
+                            parent: p,
+                            splitterProportion: 68
+                        })
+                        app.hypertree = createHypertree(app.splitter.ui.left)
+                        app.focusview = new htol.WikiUi({
+                            parent: app.splitter.ui.right,
+                            visible: false
+                        }) 
+                        return app.splitter
+                    }
+                }
+            )
+        </script>        
+    </body>
+</html>
