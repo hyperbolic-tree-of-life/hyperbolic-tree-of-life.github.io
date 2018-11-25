@@ -19813,6 +19813,7 @@ const hypertreehtml = `<div class="unitdisk-nav">
 class Hypertree {
     constructor(view, args) {
         this.log = [];
+        this.isInitializing = false;
         /*
         * this functions modyfy model/view (this class internal state)
         * and call the according update function(s)
@@ -19820,6 +19821,7 @@ class Hypertree {
         this.api = {
             setModel: (model) => new Promise((ok, err) => {
                 //model = mergeDeep_(presets[model.baseCfg], model)
+                this.isInitializing = true;
                 const base = preset_base_1.presets.modelBase();
                 console.group("set model: merging ", model, ' into ', base);
                 //this.args = mergeDeep(model, base)
@@ -19835,13 +19837,15 @@ class Hypertree {
                 console.group("langloader initiate");
                 this.args.langloader = ll;
                 this.args.langloader((langMap, t1, dl) => {
-                    console.group("langloader", langMap && langMap.length);
+                    console.group("langloader", langMap && Object.keys(langMap).length || 0);
                     this.langMap = langMap || {};
                     this.updateLang_(dl);
-                    this.update.data();
+                    requestAnimationFrame(() => this.update.data());
                     console.groupEnd();
-                    if (this.data)
+                    if (this.data) {
+                        this.isInitializing = false;
                         ok();
+                    }
                 });
                 console.groupEnd();
             },
@@ -19854,8 +19858,10 @@ class Hypertree {
                     console.group("dataloader");
                     this.initData(d3h, t0, t1, dl);
                     console.groupEnd();
-                    if (this.langMap)
+                    if (this.langMap) {
+                        this.isInitializing = false;
                         ok();
+                    }
                 });
                 console.groupEnd();
             },
@@ -19871,7 +19877,7 @@ class Hypertree {
             //addPath: (pathid, node:N)=> { this.addPath(pathid, node) },
             //removePath: (pathid, node:N)=> { this.removePath(pathid, node) },
             setPathHead: (pathType, n) => {
-                if (!this.isAnimationRunning()) {
+                if (!this.isInitializing && !this.isAnimationRunning()) {
                     this.setPathHead(pathType, n);
                     this.update.pathes();
                 }
@@ -20004,7 +20010,7 @@ class Hypertree {
         this.args.objects.selections = [];
         this.args.objects.pathes = [];
         this.args.objects.traces = [];
-        this.update.data();
+        requestAnimationFrame(() => this.update.data());
     }
     initData(d3h, t0, t1, dl) {
         console.log("_initData");
@@ -20274,8 +20280,8 @@ class Hypertree {
         });
     }
     isAnimationRunning() {
-        var view = this.unitdisk && this.unitdisk.isDraging;
-        var nav = this.unitdisk && this.unitdisk.isDraging;
+        const view = this.unitdisk && this.unitdisk.isDraging;
+        const nav = this.unitdisk && this.unitdisk.isDraging;
         const lowdetail = this.transition ? this.transition.lowdetail : false;
         return view || nav || lowdetail;
     }
@@ -27203,8 +27209,11 @@ class InteractionLayer2 {
     fireMouseMove() {
         if (this.mousedown)
             this.fireMouseEvent('onPointerMove');
-        else
-            this.htapi.setPathHead(this.hoverpath, this.findNodeByCell());
+        else {
+            if (!this.view.hypertree.isInitializing
+                && !this.view.hypertree.isAnimationRunning())
+                this.htapi.setPathHead(this.hoverpath, this.findNodeByCell());
+        }
     }
     fireMouseUp() {
         this.mousedown = false;
@@ -27350,7 +27359,7 @@ class InteractionLayer2 {
         return true;
     }
     //-----------------------------------------------------------------------------------------
-    ripple(m, n) {
+    ripple(m, n, ok) {
         const rippleClip = this.view.parent
             .append('clipPath')
             .attr('id', `cell-clip-${n.mergeId}`)
@@ -27368,15 +27377,23 @@ class InteractionLayer2 {
             .on('animationend', () => {
             rippleCircle.remove();
             rippleClip.remove();
+            ok();
         });
     }
     click(m) {
         const q = this.view.unitdisk.cache.voronoiDiagram.find(m.re, m.im);
         const n = q ? q.data : undefined;
-        this.ripple(m, n);
         console.log('click', this.dist(this.panStart, m), n, this.view.unitdisk.args.transformation.cache.centerNode);
-        if (!this.view.hypertree.isAnimationRunning())
-            this.view.hypertree.args.interaction.onNodeClick(n, m, this);
+        if (!this.view.unitdisk.layerStack.layers['cells'].args.invisible) {
+            this.ripple(m, n, () => {
+                if (!this.view.hypertree.isAnimationRunning())
+                    this.view.hypertree.args.interaction.onNodeClick(n, m, this);
+            });
+        }
+        else {
+            if (!this.view.hypertree.isAnimationRunning())
+                this.view.hypertree.args.interaction.onNodeClick(n, m, this);
+        }
         /*
         if (n.mergeId !== this.view.unitdisk.args.transformation.cache.centerNode.mergeId) {
             //console.log('not same --> goto node')
@@ -27854,7 +27871,9 @@ var htmlbread = `<a href="#!" class="breadcrumb">Files</a>`;
 var html = `<div class="slides-header">
         <div class="header">
             <span>
-                <img id="logo" src="img/avatar-light.png">
+                <a href="/">
+                    <img id="logo" src="img/avatar-light.png">
+                </a>
                 <!--
                 <button id="btnroot" class="btn btn-small waves-effect waves-orange pn">🌍️</button>                
                 
@@ -27902,7 +27921,7 @@ function NavigationHTML(args) {
     var ui = ducd_1.HTML.parse(html)();
     args.parent.appendChild(ui); // <-- den strichpunkt braucht man :D
     // zumindest wenn ein ( folgt
-    ui.querySelector('#logo').onclick = args.onRootClick;
+    //(<HTMLElement>ui.querySelector('#logo')).onclick = ()=> window.location.href = `/`;    
     /*
     (<HTMLElement>ui.querySelector('#btnprev')).onclick = args.onPrevClick; // <-- den strichpunkt braucht man :D
     (<HTMLElement>ui.querySelector('#btnnext')).onclick = args.onNextClick;
@@ -51394,7 +51413,6 @@ class Navigation //implements Controller<NavigationArgs, HTMLElement>
             parent: this.view.parent,
             onNextClick: this.next(+1),
             onPrevClick: this.next(-1),
-            onRootClick: this.golast,
             onLangChange: this.updateLang,
             onQuery: queryStr => this.view.hypertree.api.selectQuery(queryStr, undefined)
             //onCssChange:    this.updateCss
@@ -77979,7 +77997,6 @@ class Navigation2 //implements Controller<NavigationArgs, HTMLElement>
             parent: this.view.parent,
             onNextClick: {},
             onPrevClick: {},
-            onRootClick: {},
             onLangChange: this.updateLang,
             onQuery: {}
         });
@@ -77995,8 +78012,9 @@ class Navigation2 //implements Controller<NavigationArgs, HTMLElement>
             .data(path.slice(1))
             .enter().append('a')
             .classed('breadcrumb', true)
-            .attr('href', '/intro.html')
-            .text(d => d.split('-').join(' '));
+            .attr('href', d => d.href)
+            .attr('target', d => d.target)
+            .text(d => d.label.split('-').join(' '));
     }
 }
 exports.Navigation2 = Navigation2;

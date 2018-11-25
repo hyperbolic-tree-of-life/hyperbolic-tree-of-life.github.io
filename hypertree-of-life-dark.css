@@ -7493,6 +7493,15 @@ input[type=range]::-ms-thumb {
       position: absolute;
       top: -.2em;
       font-size: 1.3em; }
+      .slides-header > .header > span > #breadcrumb .breadcrumb {
+        vertical-align: sub;
+        font-weight: 300;
+        cursor: pointer; }
+      .slides-header > .header > span > #breadcrumb .breadcrumb:hover {
+        text-decoration: underline; }
+      .slides-header > .header > span > #breadcrumb .breadcrumb:before {
+        vertical-align: sub;
+        font-size: 1.2em; }
     .slides-header > .header > span > #breadcrumb2 {
       margin-left: 1.3em;
       position: absolute;
@@ -7555,10 +7564,6 @@ input[type=range]::-ms-thumb {
     .slides-header > .content a:nth-child(4) .patron {
       left: .2em;
       bottom: 6.8em; }
-
-.breadcrumb {
-  vertical-align: sub;
-  font-weight: 300; }
 
 .slides-header > .header {
   background-color: #252526;

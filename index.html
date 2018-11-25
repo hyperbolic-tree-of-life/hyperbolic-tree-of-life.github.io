@@ -6,42 +6,209 @@
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
         <link rel="icon"       href="img/avatar-light.png"/>
-        <link rel="stylesheet" href="hypertree-of-life-light.css" id="ldswitch">    
-        
-        <script src="hypertree-of-life.js"></script>    
+        <link rel="stylesheet" href="hypertree-of-life-light.css" id="ldswitch">
 
-        <!--
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124333733-1"></script>        
         <script>
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'UA-124333733-1');
-        </script>
-        -->
+        </script>        
 
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:site" content="@GlatzhoferM">
         <meta name="twitter:creator" content="@GlatzhoferM">
-        <meta name="twitter:image" content="https://hyperbolic-tree-of-life.github.io/img/preview.png">
-        <meta property="og:url" content="https://http://hyperbolic-tree-of-life.github.io" />
+        <meta property="og:url" content="https://http://hyperbolic-tree-of-life.github.io " />
         <meta property="og:title" content="Hyperbolic Tree of Life" />
-        <meta property="og:description" content="An Interactive Evolutionary Tree Visualisation" />
-        <meta property="og:image" content="https://hyperbolic-tree-of-life.github.io/img/preview.png" />    
-             
+        <meta property="og:description" content="A Interactive Evolutionary Tree Visualisation" />
+        <meta property="og:image" content="https://http://hyperbolic-tree-of-life.github.io/img/preview.png" />    
+      
     </head>
 
-    <body>        
+    <body>    
+        <style>
+            .unitdisk-nav svg, .unitdisk-nav svg .mouse-circle-cursor {
+                cursor: pointer;
+            }
+        </style>
         <script>
-            const language = window.navigator.userLanguage || window.navigator.language
-            const languageCode = language.split('-')[0]
-            console.log(languageCode)
+            const ua = navigator.userAgent
+            const isMobile = window.matchMedia("only screen and (max-width: 760px)").matches
+            const isValidBrowser = !/MSIE/i.test(ua) && !/Trident/i.test(ua) && !/Edge\/\d./i.test(ua)
+            console.log(ua, isMobile, isValidBrowser)
 
-            this.controllerTree = new htol.Navigation(
-                { parent: document.body }, 
-                new htol.NavigationModel(languageCode, 15), 
-            )
-        </script>    
+            if (isMobile || !isValidBrowser)
+                document.body.innerHTML = '<p style="text-align:center; color:#fff;"><br><br>Sorry, your browser/device is not supported yet 😿 <br>Please use Chrome, Firefox or Safari,<br>on a device at least the size of a tablet.'
+            else {                
+                const script = document.createElement('script')
+                script.src = 'hypertree-of-life.js'
+                document.head.appendChild(script)
+                document.body.onload = function() {
+                    initMainPage()
+                }                
+            }
+
+            function initMainPage() {
+                const language = window.navigator.userLanguage || window.navigator.language
+                const l = language.split('-')[0]
+                console.log(l)
+
+                this.controllerTree = new htol.Navigation2(
+                    { parent: document.body }, 
+                    { 
+                        title: "Hyperbolic Tree of Life",
+                        language: l,
+                        languages: ['en', 'de'],
+                        content: p=> {
+                            var d = document.createElement('div')                   
+                            d.innerHTML = html        
+                            p.appendChild(d)
+
+                            const π = Math.PI
+                            const iconmap = new htol.Icons()
+                            const hasLazy =          n=> (n.hasOutChildren && n.isOutλ)
+                            const isLeaf =           n=> !n.children || !n.children.length
+                            const isRoot =           n=> !n.parent 
+                            const hasCircle =        n=> hasLazy(n) || isRoot(n) || isLeaf(n)
+                            const nodeInitR =        (c)=> (ud, d)=> c * ((d.children && d.parent) ? innerNodeScale(d) : 1)     
+                            const nodeInitRNoInner = (c)=> (ud, d)=> c
+                            const nodeScale =        d=> d.distScale * (hasLazy(d) ? .8 : 1)    
+                            const nodeScaleNoInner = d=> d.distScale    
+                            const innerNodeScale =   d=> d.precalc.weightScale
+                            
+                            const otolSetModel = new htol.OtolSetModel()
+
+                            const htree = new htol.Hypertree(
+                                { parent:document.querySelector('#maintree') }, 
+                                {
+                                    dataloader: htol.loaders.fromFile(`hierarchies/eukaryota.d3.json`),
+                                    langloader: htol.loaders.fromLangFile(`langmaps/${l}.lang.json`),
+                                    dataInitBFS: (ht, n)=> {
+                                        const id = n.data.name
+                                        n.precalc.imageHref = iconmap.fileName2IconUrl(id, n.data.type)
+                                        n.precalc.icon = iconmap.emojimap[id]    
+                                        
+                                        if (n.children)
+                                            if (n.height%2 === 0)
+                                                n.children = n.children.reverse()
+                                    },
+                                    langInitBFS: (ht, n)=> {                
+                                        const id = n.data && n.data.name
+                                        const l  = ht.langMap && ht.langMap[id] && '𝐖 ' + ht.langMap[id] 
+                                        n.precalc.wiki = l
+                                        n.precalc.label = l || id
+                                        n.precalc.clickable = otolSetModel.fileExists(id)
+                                    },
+                                    layout: {            
+                                        weight: (n)=> (isLeaf(n)?1:0),            
+                                        rootWedge: {    
+                                            orientation: 3*π/2,
+                                            angle: .7*π/2
+                                        }
+                                    },
+                                    geometry: {
+                                        nodeRadius: nodeInitR(.0075),
+                                        captionFont: '8px Roboto',
+                                        captionHeight: .05,
+                                        layerOptions: {
+                                            'cells': {
+                                                hideOnDrag: false,
+                                                invisible: false
+                                            },
+                                            'labels': {
+                                                hideOnDrag: true,
+                                                invisible: true
+                                            },
+                                            'labels-force': {
+                                                hideOnDrag: true,
+                                                invisible: false
+                                            },
+                                        }
+                                    },
+                                    interaction: {              
+                                        λbounds: [1/40, 1/10],
+                                        onNodeClick: (n, m, l)=> { 
+                                            window.location.href = `/otol.html?c=${n.data.name.toLowerCase()}`
+                                            /*
+                                            l.ripple(n, m, ()=> {
+                                                console.log("+++++++++++", n.data.name, m)                                                
+                                                
+                                            })
+                                            */
+                                        }                                        
+                                    }
+                                }
+                            )
+                            htree.initPromise
+                                .then(()=> new Promise((ok, err)=> htree.animateUp(ok, err)))
+                                .then(()=> htree.api.goto({ re: 0, im: .6 }, null))
+                                .then(()=> htree.api.gotoλ(.055))  
+                                .then(()=> htree.drawDetailFrame())
+                        }
+                    }            
+                )
+            }
+
+        const html = `<div id='info'>               
+                        <div class="topic">Hyperbolic Tree of Life</div>    
+                        Hyperbolic tree of life visualizes a evolutionary tree provided by the
+                        <a href="opentreeoflife.org">Open Tree of Life</a>
+                        project. It contains more than two million species,
+                        grouped in seven branches.
+                        <b class="emph">Click on a branch to open it.</b>
+                        Like on a map you can pan and zoom,
+                        in this case to browse clades and species. 
+                        The Wikipedia page of the species next to the center will be 
+                        opened automatically. The clades eukariots, embryophyte and insects do not jet
+                        show all subspecies due to technical reasons. 
+                        <!--You can also 
+                        <a href="upload">upload</a>
+                        and visualize your own Newick file.-->
+                                                
+                        <div class="topic">d3-hypertree</div>
+                        Hyperbolic tree of life is based on <a href="https://github.com/glouwa/d3-hypertree">d3-hypertree</a>, 
+                        a MIT licenced hyperbolic browsing web component avaliable on 
+                        github. This <a href="https://github.com/glouwa/d3-hypertree">documentation</a> describes how to integrate it 
+                        in your website.
+
+                        It can visualize various file formats, and apearance may be customized, 
+                        see 
+                        <a href="https://glouwa.github.io/d3-hypertree-examples/feature-slides/rslidy.html">feature slides</a>
+                        for details. 
+                        If you are interested in how it works, 
+                        take a loik on the <a href="https://glouwa.github.io/d3-hypertree-examples/hyperbolictree-slides/">hyperbolic browsing</a> slides.                        
+                        <br>
+                        
+                        <br>
+                        Have fun at exploring earths creatures, 
+                        and if you like it, <a href="">donate</a> here.
+                    </div>
+                    <div id="maintree"></div>
+                    <div class="footer">
+                        <svg viewBox='0 0 300 1' preserveAspectRatio='none'>
+                            <path d='M0,0 300,0' />
+                        </svg>
+                    </div>`
+            /*
+            what is it (pose with # of nodes), how to interact, data from otol, upload own file, 
+
+            what is it, dev link, history slides, feature slides, developer demos.
+            examples for: web1, web2, python, R, observable.
+
+            2 
+            9 5
+            2
+
+            hy<pertree of life shows braches of the tree of life 
+            in sizes up to 100 000 nodes
+
+            click on a branch of the tree on the right,
+            to view sucha a tree in detail.
+            */
+        </script>                
     </body>
 </html>
+
+
 
