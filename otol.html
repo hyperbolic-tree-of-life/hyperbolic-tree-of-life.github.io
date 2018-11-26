@@ -17,8 +17,7 @@
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'UA-124333733-1');
-        </script>
-        
+        </script>        
 
     </head>
 
@@ -27,7 +26,7 @@
             const c = new URLSearchParams(document.location.search.substring(1)).get('c') 
             const language = window.navigator.userLanguage || window.navigator.language
             const l = language.split('-')[0]
-            console.log(l)            
+            console.log(l)
 
             function createHypertree(p, file) {
                 const π = Math.PI
@@ -93,11 +92,8 @@
                         }
                     }
                 )
-                htree.initPromise
-                    .then(()=> new Promise((ok, err)=> htree.animateUp(ok, err)))
-                    .then(()=> htree.api.goto({ re: 0, im: .5 }, null))
-                    .then(()=> htree.api.gotoλ(.15))
-                    .then(()=> htree.drawDetailFrame())
+                console.log(c)
+                htol.initpromise[c](htree.initPromise, htree)                
                 return htree
             }
             
@@ -113,7 +109,7 @@
             app.navigation = new htol.Navigation2(                 
                 { parent: app.root }, 
                 {
-                    languages: ['en', 'de'], 
+                    languages: htol.alllanguages, 
                     onLangChange:  l=> {
                         console.log("lang change", l)                        
                         app.focusview.ui.src = `https://${l}.m.wikipedia.org/wiki/${app.currentNode}`

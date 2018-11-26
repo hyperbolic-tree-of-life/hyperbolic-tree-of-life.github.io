@@ -796,21 +796,21 @@ body {
   background-color: #1f1f1f; }
 
 .topic {
-  font-size: 2em;
-  margin-top: 1.5em;
+  font-size: 2.655em;
+  margin-top: .5em;
   margin-bottom: .5em; }
 
 #info {
   position: absolute;
-  right: calc(50% + 10em);
-  width: 25em;
+  right: calc(50% + 7em);
+  width: 28em;
   text-align: justify;
   padding-top: 6em;
   padding-right: 2em; }
 
 #maintree {
   position: absolute;
-  left: calc(50% - 7em);
+  left: calc(50% - 4em);
   width: 45rem;
   height: 60rem;
   font-size: 20px; }
