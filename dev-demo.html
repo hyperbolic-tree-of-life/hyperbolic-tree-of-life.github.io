@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+    <head>
+        <title>Hyperbolic tree</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+        <link rel="icon"       href="img/avatar-light.png"/>
+        <link rel="stylesheet" href="hypertree-of-life-light.css" id="ldswitch">    
+        
+        <script src="hypertree-of-life.js"></script>        
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124333733-1"></script>        
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-124333733-1');
+        </script>
+        
+
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@GlatzhoferM">
+        <meta name="twitter:creator" content="@GlatzhoferM">
+        <meta name="twitter:image" content="https://hyperbolic-tree-of-life.github.io/img/preview.png">
+        <meta property="og:url" content="https://http://hyperbolic-tree-of-life.github.io" />
+        <meta property="og:title" content="Hyperbolic Tree of Life" />
+        <meta property="og:description" content="An Interactive Evolutionary Tree Visualisation" />
+        <meta property="og:image" content="https://hyperbolic-tree-of-life.github.io/img/preview.png" />    
+                
+    </head>
+
+    <body>        
+        <script>            
+            const language = window.navigator.userLanguage || window.navigator.language
+            const languageCode = language.split('-')[0]
+            console.log(languageCode)
+
+            this.controllerTree = new htol.Navigation(
+                { parent: document.body }, 
+                new htol.NavigationModel(languageCode, -1), 
+            )
+        </script>
+    </body>
+</html>
+

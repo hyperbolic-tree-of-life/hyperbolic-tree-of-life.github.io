@@ -9003,7 +9003,7 @@ class LabelLayer {
                 .text(this.args.text),
             updateColor: s => s.style("stroke", d => d.pathes && d.pathes.labelcolor),
             updateTransform: s => s.attr("transform", (d, i, v) => this.args.transform(d, this.args.delta(d, i, v)))
-            //.text(                   this.args.text)
+            //                         .text(                   this.args.text)
         });
         this.d3updatePattern2 = new d3updatePattern_1.D3UpdatePattern({
             parent: this.view.parent,
@@ -9021,7 +9021,6 @@ class LabelLayer {
                 .attr('y2', d => d.forcepoints2.y || 0)
                 .attr("stroke-width", d => .002)
                 .attr("stroke-linecap", d => "round")
-            //.text(                   this.args.text)
         });
     }
 }
@@ -19840,7 +19839,8 @@ class Hypertree {
                     console.group("langloader", langMap && Object.keys(langMap).length || 0);
                     this.langMap = langMap || {};
                     this.updateLang_(dl);
-                    requestAnimationFrame(() => this.update.data());
+                    //requestAnimationFrame(()=> this.update.data())
+                    this.update.data();
                     console.groupEnd();
                     if (this.data) {
                         this.isInitializing = false;
@@ -51473,8 +51473,9 @@ class Navigation //implements Controller<NavigationArgs, HTMLElement>
         this.view.hypertree = new d3_hypertree_1.HypertreeEx({ parent: this.view.splitter.ui.left }, hypertreemodel);
         this.view.hypertree.initPromise
             .then(() => new Promise((ok, err) => this.view.hypertree.animateUp(ok, err)))
-            .then(() => this.view.hypertree.api.goto({ re: 0, im: .5 }, null))
-            .then(() => this.view.hypertree.api.gotoλ(.15))
+            .then(() => this.view.hypertree.api.goto({ re: .25, im: .24 }, null))
+            //.then(()=> this.view.hypertree.api.goto({ re:  0, im: .5 }, null))
+            //.then(()=> this.view.hypertree.api.gotoλ(.15))  
             .then(() => this.view.hypertree.drawDetailFrame());
         /*.then(()=> this.view.hypertree.api.goto({ re: -.6, im: .6 }, null))
         .then(()=> this.view.hypertree.api.goto({ re: -.738, im: .36 }, null))
@@ -77987,9 +77988,8 @@ class Navigation2 //implements Controller<NavigationArgs, HTMLElement>
     constructor(view, model) {
         this.updateLang = (langId, lang) => {
             this.model.currentlang = langId;
-            const newlangloader = this.model.currentdemo.langloader(this.model.currentlang);
-            //this.view.hypertree.api.setLangloader(()=>{}, ()=>{}, newlangloader)
             document.body.lang = this.model.currentlang;
+            this.model.onLangChange(this.model.currentlang);
         };
         this.view = view;
         this.model = model;
