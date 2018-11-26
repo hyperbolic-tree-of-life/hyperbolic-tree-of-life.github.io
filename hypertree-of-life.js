@@ -32859,6 +32859,11 @@ exports.initpromise = {
         .then(() => t.api.goto({ re: 0, im: .5 }, null))
         .then(() => t.api.gotoλ(.15))
         .then(() => t.drawDetailFrame()),
+    'aves': (p, t) => p
+        .then(() => new Promise((ok, err) => t.animateUp(ok, err)))
+        .then(() => t.api.goto({ re: .03, im: .73 }, null))
+        .then(() => t.api.gotoλ(.1))
+        .then(() => t.drawDetailFrame()),
 };
 
 
