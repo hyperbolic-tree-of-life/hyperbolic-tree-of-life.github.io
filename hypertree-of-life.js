@@ -32823,10 +32823,15 @@ exports.initpromise = {
         .then(() => t.api.goto({ re: 0, im: .4 }, null))
         .then(() => t.api.gotoλ(.25))
         .then(() => t.drawDetailFrame()),
+    'tetrapoda': (p, t) => p
+        .then(() => new Promise((ok, err) => t.animateUp(ok, err)))
+        .then(() => t.api.goto({ re: 0, im: .5 }, null))
+        .then(() => t.api.gotoλ(.1))
+        .then(() => t.drawDetailFrame()),
     'vertebrata': (p, t) => p
         .then(() => new Promise((ok, err) => t.animateUp(ok, err)))
         .then(() => t.api.goto({ re: 0, im: .5 }, null))
-        .then(() => t.api.gotoλ(.15))
+        .then(() => t.api.gotoλ(.1))
         .then(() => t.drawDetailFrame()),
     'mammalia': (p, t) => p
         .then(() => new Promise((ok, err) => t.animateUp(ok, err)))
