@@ -179,7 +179,7 @@
                             )                            
                             app.hypertree.initPromise
                                 .then(()=> new Promise((ok, err)=> app.hypertree.animateUp(ok, err)))
-                                .then(()=> app.hypertree.api.goto({ re:-.5, im: .85 }, null))
+                                .then(()=> app.hypertree.api.goto({ re:-.05, im: .85 }, null))
                                 .then(()=> app.hypertree.api.gotoλ(.06))  
                                 .then(()=> app.hypertree.drawDetailFrame())
                         }
