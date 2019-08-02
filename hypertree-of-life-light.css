@@ -210,8 +210,7 @@
             transition-duration: 0ms;
             transition-timing-function: ease-in-out;
             transition-delay: 150ms;   
-            */
-  animation: fade-in 750ms ease-in-out; }
+            */ }
 
 .unitdisk-nav svg .caption-icon {
   font-family: 'NotoColorEmoji', Roboto;
@@ -220,14 +219,12 @@
   transition-duration: 0ms; }
 
 .unitdisk-nav svg .caption-background {
-  pointer-events: none;
-  animation: fade-in 750ms ease-in-out; }
+  pointer-events: none; }
 
 .unitdisk-nav svg .label-link {
   stroke-width: .02;
   stroke-dasharray: .001;
-  stroke-linecap: round;
-  animation: fade-in 750ms ease-in-out; }
+  stroke-linecap: round; }
 
 .unitdisk-nav svg .background-circle {
   pointer-events: none; }
@@ -365,7 +362,7 @@
 
 .unitdisk-nav svg .label-link {
   /*stroke: #2196F3;            */
-  stroke: #0f0;
+  stroke: #195e04;
   opacity: .6;
   stroke-width: .001;
   stroke-dasharray: .018, .015; }
@@ -769,7 +766,8 @@ body {
   margin: 0;
   overflow: hidden;
   font-family: 'Roboto';
-  font-weight: 300; }
+  font-weight: 300;
+  touch-action: none; }
 
 .unitdisk-nav #meta {
   z-index: 21; }
@@ -821,8 +819,11 @@ body {
 body {
   background-color: #fff; }
 
+body {
+  touch-action: none; }
+
 .topic {
-  font-size: 2.655em;
+  font-size: 2.65em;
   margin-top: .5em;
   margin-bottom: .5em; }
 
@@ -5629,7 +5630,7 @@ textarea.materialize-textarea + label:after, .select-wrapper + label:after {
     .input-field > label:not(.label-icon).active {
       transform: translateY(-14px) scale(0.8);
       transform-origin: 0 0; }
-  .input-field > input[type]:-webkit-autofill:not(.browser-default) + label,
+  .input-field > input[type]:-webkit-autofill:not(.browser-default):not([type="search"]) + label,
   .input-field > input[type=date]:not(.browser-default) + label,
   .input-field > input[type=time]:not(.browser-default) + label {
     transform: translateY(-14px) scale(0.8);
@@ -7033,7 +7034,7 @@ input[type=range]::-ms-thumb {
   .tap-target-wrapper.open .tap-target-wave::after {
     visibility: visible;
     animation: pulse-animation 1s cubic-bezier(0.24, 0, 0.38, 1) infinite;
-    transition: opacity .3s, transform .3s, visibility 0s 1s; }
+    transition: opacity .3s, transform .3s, visibility 0s 1s; }
 
 .tap-target {
   position: absolute;
@@ -7068,7 +7069,7 @@ input[type=range]::-ms-thumb {
     transition: transform .3s; }
   .tap-target-wave::after {
     visibility: hidden;
-    transition: opacity .3s, transform .3s, visibility 0s;
+    transition: opacity .3s, transform .3s, visibility 0s;
     z-index: -1; }
 
 .tap-target-origin {
