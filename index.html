@@ -71,7 +71,7 @@
                         languages: ['en'],
                         onLangChange:  l=> {
                             console.log("lang change", l)                        
-                            app.text.innerHTML = html[l]
+                            app.text.innerHTML = hero.hasOwnProperty(l) ? html[l] : html['en']
 
                             const nl = htol.loaders.fromLangFile(`langmaps/${l}.lang.json`)
                             app.hypertree.api.setLangloader(()=> {
@@ -81,7 +81,7 @@
                         }, 
                         content: p=> {
                             var d = document.createElement('div')                   
-                            console.log(html[l])                            
+                            console.log(hero.hasOwnProperty(l) ? html[l] : html['en'])                            
                             d.innerHTML = `
                                 <div id='info'>               
                                     <div class="topic">Hyperbolic Tree of Life</div>
@@ -94,8 +94,8 @@
                                     </svg>
                                 </div>`
                             p.appendChild(d)
-                            app.text = d.querySelector('#text')
-                            app.text.innerHTML = html[l]
+                            app.text = d.querySelector('#text')                            
+                            app.text.innerHTML = hero.hasOwnProperty(l) ? html[l] : html['en']
                             
 
                             const π = Math.PI
