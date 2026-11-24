@@ -1,0 +1,1098 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tree>
+  <declarations>
+    <attributeDecl name="name" type="String"/>
+  </declarations>
+  <branch>
+    <attribute name="name" value="食肉目"/>
+    <branch>
+      <attribute name="name" value="貓型亞目"/>
+      <branch>
+        <attribute name="name" value="Viverravidae"/>
+      </branch>
+      <branch>
+        <attribute name="name" value="獵貓科"/>
+      </branch>
+      <branch>
+        <attribute name="name" value="猫科"/>
+        <branch>
+          <attribute name="name" value="猫亚科"/>
+          <branch>
+            <attribute name="name" value="猎豹"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="獰貓"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="金貓屬"/>
+            <branch>
+              <attribute name="name" value="婆羅洲金貓"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="金貓"/>
+            </branch>
+          </branch>
+          <branch>
+            <attribute name="name" value="貓屬"/>
+            <branch>
+              <attribute name="name" value="荒漠貓"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="猫"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="丛林猫"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="兔猻"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="沙漠猫"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="黑足貓"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="斑貓"/>
+            </branch>
+          </branch>
+          <branch>
+            <attribute name="name" value="虎貓屬"/>
+            <branch>
+              <attribute name="name" value="潘塔纳尔猫"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="南美草原貓"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="喬氏貓"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="南美林貓"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="山原貓"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="潘帕斯猫"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="虎貓"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="小斑虎貓"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="長尾虎貓"/>
+            </branch>
+          </branch>
+          <branch>
+            <attribute name="name" value="藪貓"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Lynx"/>
+            <branch>
+              <attribute name="name" value="加拿大猞猁"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="歐亞猞猁"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="伊比利亞猞猁"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="短尾貓"/>
+            </branch>
+          </branch>
+          <branch>
+            <attribute name="name" value="纹猫"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="豹貓屬"/>
+            <branch>
+              <attribute name="name" value="豹貓"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Prionailurus iriomotensis"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="扁頭豹貓"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="鏽斑豹貓"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="漁貓"/>
+            </branch>
+          </branch>
+          <branch>
+            <attribute name="name" value="非洲金貓"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="PUMA"/>
+            <branch>
+              <attribute name="name" value="細腰貓"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="美洲狮"/>
+            </branch>
+          </branch>
+        </branch>
+        <branch>
+          <attribute name="name" value="豹亚科"/>
+          <branch>
+            <attribute name="name" value="豹属"/>
+            <branch>
+              <attribute name="name" value="狮"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="美洲豹"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="豹"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="虎"/>
+            </branch>
+          </branch>
+          <branch>
+            <attribute name="name" value="雲豹"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Uncia uncia"/>
+          </branch>
+        </branch>
+      </branch>
+      <branch>
+        <attribute name="name" value="灵猫科"/>
+        <branch>
+          <attribute name="name" value="林狸属"/>
+          <branch>
+            <attribute name="name" value="條紋林狸"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="斑林狸"/>
+          </branch>
+        </branch>
+        <branch>
+          <attribute name="name" value="Viverrinae"/>
+          <branch>
+            <attribute name="name" value="非洲靈貓"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="獛属"/>
+            <branch>
+              <attribute name="name" value="Genetta abyssinica"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Genetta angolensis"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Genetta bourloni"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Genetta cristata"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Genetta genetta"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Genetta johnstoni"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Genetta maculata"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Genetta pardina"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="水獛"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Genetta poensis"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Genetta servalina"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Genetta thierryi"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Genetta tigrina"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Genetta victoriae"/>
+            </branch>
+          </branch>
+          <branch>
+            <attribute name="name" value="非洲林狸属"/>
+            <branch>
+              <attribute name="name" value="Poiana leightoni"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Poiana richardsonii"/>
+            </branch>
+          </branch>
+          <branch>
+            <attribute name="name" value="灵猫属"/>
+            <branch>
+              <attribute name="name" value="馬拉巴靈貓"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="大斑靈貓"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Viverra tangalunga"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="大靈貓"/>
+            </branch>
+          </branch>
+          <branch>
+            <attribute name="name" value="小靈貓"/>
+          </branch>
+        </branch>
+        <branch>
+          <attribute name="name" value="棕櫚貍亞科"/>
+          <branch>
+            <attribute name="name" value="熊狸"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="小齿狸"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="马氏灵猫"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="果子狸"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="椰子猫属"/>
+            <branch>
+              <attribute name="name" value="椰子貓"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="傑氏椰子貓"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Paradoxurus zeylonensis"/>
+            </branch>
+          </branch>
+        </branch>
+        <branch>
+          <attribute name="name" value="缟狸亚科"/>
+          <branch>
+            <attribute name="name" value="长颌带狸"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="獺狸貓"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="霍氏缟灵猫"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="縞椰子貓"/>
+          </branch>
+        </branch>
+      </branch>
+      <branch>
+        <attribute name="name" value="獴科"/>
+        <branch>
+          <attribute name="name" value="沼澤獴"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="臭獴屬"/>
+          <branch>
+            <attribute name="name" value="Bdeogale crassicauda"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Bdeogale jacksoni"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Bdeogale nigripes"/>
+          </branch>
+        </branch>
+        <branch>
+          <attribute name="name" value="長毛獴屬"/>
+          <branch>
+            <attribute name="name" value="Crossarchus alexandri"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Crossarchus ansorgei"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Crossarchus obscurus"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Crossarchus platycephalus"/>
+          </branch>
+        </branch>
+        <branch>
+          <attribute name="name" value="筆尾獴"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="草原獴"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="貂獴屬"/>
+          <branch>
+            <attribute name="name" value="Galerella flavescens"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Galerella ochracea"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Galerella pulverulenta"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Galerella sanguinea"/>
+          </branch>
+        </branch>
+        <branch>
+          <attribute name="name" value="侏獴屬"/>
+          <branch>
+            <attribute name="name" value="Helogale hirtula"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="侏獴"/>
+          </branch>
+        </branch>
+        <branch>
+          <attribute name="name" value="獴属"/>
+          <branch>
+            <attribute name="name" value="短尾獴"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="灰獴"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="褐獴"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="埃及獴"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="紅頰獴"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="长鼻獴"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="领獴"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="赤獴"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="食蟹獴"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="纹颈獴"/>
+          </branch>
+        </branch>
+        <branch>
+          <attribute name="name" value="白尾獴"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="庫氏獴"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="缟獴属"/>
+          <branch>
+            <attribute name="name" value="Mungos gambianus"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="缟獴"/>
+          </branch>
+        </branch>
+        <branch>
+          <attribute name="name" value="Paracynictis selousi"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="梅氏獴"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="狐獴"/>
+        </branch>
+      </branch>
+      <branch>
+        <attribute name="name" value="鬣狗科"/>
+        <branch>
+          <attribute name="name" value="鬣狗属"/>
+          <branch>
+            <attribute name="name" value="褐鬣狗"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="条纹鬣狗"/>
+          </branch>
+        </branch>
+        <branch>
+          <attribute name="name" value="斑鬣狗"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="土狼"/>
+        </branch>
+      </branch>
+      <branch>
+        <attribute name="name" value="非洲椰子猫"/>
+      </branch>
+      <branch>
+        <attribute name="name" value="食蟻狸科"/>
+        <branch>
+          <attribute name="name" value="Euplerinae"/>
+          <branch>
+            <attribute name="name" value="馬島長尾狸貓"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="尖吻靈貓"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="馬島靈貓"/>
+          </branch>
+        </branch>
+        <branch>
+          <attribute name="name" value="Galidiinae"/>
+          <branch>
+            <attribute name="name" value="環尾獴"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="寬尾獴屬"/>
+            <branch>
+              <attribute name="name" value="Galidictis fasciata"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Galidictis grandidieri"/>
+            </branch>
+          </branch>
+          <branch>
+            <attribute name="name" value="窄紋獴"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="純色獴"/>
+          </branch>
+        </branch>
+      </branch>
+    </branch>
+    <branch>
+      <attribute name="name" value="犬型亚目"/>
+      <branch>
+        <attribute name="name" value="細齒獸類"/>
+      </branch>
+      <branch>
+        <attribute name="name" value="犬科"/>
+        <branch>
+          <attribute name="name" value="狐属"/>
+          <branch>
+            <attribute name="name" value="北極狐"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Vulpes macrotis"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Vulpes pallida"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="孟加拉狐"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="阿富汗狐"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Vulpes chama"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="沙狐"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="藏狐"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Vulpes rueppellii"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="草原狐"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="赤狐"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="耳廓狐"/>
+          </branch>
+        </branch>
+        <branch>
+          <attribute name="name" value="小耳犬"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="犬属"/>
+          <branch>
+            <attribute name="name" value="Canis adustus"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="亞洲胡狼"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="郊狼"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="狼"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="黑背胡狼"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="衣索比亞狼"/>
+          </branch>
+        </branch>
+        <branch>
+          <attribute name="name" value="食蟹狐"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="鬃狼"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="豺"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="福克蘭狼"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="伪狐属"/>
+          <branch>
+            <attribute name="name" value="山狐"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Lycalopex fulvipes"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="阿根廷狐"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="河狐"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Lycalopex sechurae"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Lycalopex vetulus"/>
+          </branch>
+        </branch>
+        <branch>
+          <attribute name="name" value="非洲野犬"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="貉"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="大耳狐"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="藪犬"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="灰狐屬"/>
+          <branch>
+            <attribute name="name" value="灰狐"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="島嶼灰狐"/>
+          </branch>
+        </branch>
+      </branch>
+      <branch>
+        <attribute name="name" value="小熊猫"/>
+      </branch>
+      <branch>
+        <attribute name="name" value="犬熊"/>
+      </branch>
+      <branch>
+        <attribute name="name" value="熊科"/>
+        <branch>
+          <attribute name="name" value="美洲黑熊"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="棕熊"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="北極熊"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="亞洲黑熊"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="大熊猫"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="马来熊"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="懒熊"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="眼鏡熊"/>
+        </branch>
+      </branch>
+      <branch>
+        <attribute name="name" value="半狗科"/>
+      </branch>
+      <branch>
+        <attribute name="name" value="臭鼬科"/>
+        <branch>
+          <attribute name="name" value="獾臭鼬"/>
+          <branch>
+            <attribute name="name" value="Conepatus chinga"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="巴塔戈尼亞獾臭鼬"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Conepatus leuconotus"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Conepatus semistriatus"/>
+          </branch>
+        </branch>
+        <branch>
+          <attribute name="name" value="臭鼬屬"/>
+          <branch>
+            <attribute name="name" value="Mephitis macroura"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="臭鼬"/>
+          </branch>
+        </branch>
+        <branch>
+          <attribute name="name" value="臭獾屬"/>
+          <branch>
+            <attribute name="name" value="Mydaus javanensis"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Mydaus marchei"/>
+          </branch>
+        </branch>
+        <branch>
+          <attribute name="name" value="斑臭鼬屬"/>
+          <branch>
+            <attribute name="name" value="Spilogale aquaticus"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Spilogale angustifrons"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Spilogale gracilis"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Spilogale putorius"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Spilogale pygmaea"/>
+          </branch>
+        </branch>
+      </branch>
+      <branch>
+        <attribute name="name" value="鼬科"/>
+        <branch>
+          <attribute name="name" value="鼬亞科"/>
+          <branch>
+            <attribute name="name" value="鼬屬"/>
+            <branch>
+              <attribute name="name" value="白鼬"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="艾鼬"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Mustela africana"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="香鼬"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Mustela felipei"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Mustela frenata"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Mustela itatsi"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="黃腹鼬"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="歐洲水鼬"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Mustela lutreolina"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="黑足鼬"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="伶鼬"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Mustela nudipes"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Mustela putorius"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="黄鼬"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="纹鼬"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Mustela subpalmata"/>
+            </branch>
+          </branch>
+          <branch>
+            <attribute name="name" value="豬獾"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="巢鼬屬"/>
+            <branch>
+              <attribute name="name" value="Galictis cuja"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="大巢鼬"/>
+            </branch>
+          </branch>
+          <branch>
+            <attribute name="name" value="貂熊"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="非洲艾虎屬"/>
+            <branch>
+              <attribute name="name" value="Ictonyx libyca"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="非洲艾虎"/>
+            </branch>
+          </branch>
+          <branch>
+            <attribute name="name" value="草原鼬"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="貂屬"/>
+            <branch>
+              <attribute name="name" value="Martes americana"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="黃喉貂"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="石貂"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="格氏貂"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="松貂"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Martes melampus"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Martes pennanti"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="紫貂"/>
+            </branch>
+          </branch>
+          <branch>
+            <attribute name="name" value="Meles"/>
+            <branch>
+              <attribute name="name" value="Meles anakuma"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Meles leucurus"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="獾"/>
+            </branch>
+          </branch>
+          <branch>
+            <attribute name="name" value="蜜獾"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="鼬獾屬"/>
+            <branch>
+              <attribute name="name" value="Melogale everetti"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="鼬獾"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Melogale orientalis"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="缅甸鼬獾"/>
+            </branch>
+          </branch>
+          <branch>
+            <attribute name="name" value="Neovison"/>
+            <branch>
+              <attribute name="name" value="海貂"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Neovison vison"/>
+            </branch>
+          </branch>
+          <branch>
+            <attribute name="name" value="白頸鼬"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="美洲獾"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="虎鼬"/>
+          </branch>
+        </branch>
+        <branch>
+          <attribute name="name" value="水獺"/>
+          <branch>
+            <attribute name="name" value="小爪水獺屬"/>
+            <branch>
+              <attribute name="name" value="Aonyx capensis"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="亞洲小爪水獺"/>
+            </branch>
+          </branch>
+          <branch>
+            <attribute name="name" value="海獺"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Hydrictis maculicollis"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="北美水獺"/>
+            <branch>
+              <attribute name="name" value="北美水獺"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="秘魯水獺"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="長尾水獺"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="智利水獺"/>
+            </branch>
+          </branch>
+          <branch>
+            <attribute name="name" value="水獺屬"/>
+            <branch>
+              <attribute name="name" value="歐亞水獺"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="日本水獺"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="毛鼻水獺"/>
+            </branch>
+          </branch>
+          <branch>
+            <attribute name="name" value="江獺"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="巨獺"/>
+          </branch>
+        </branch>
+      </branch>
+      <branch>
+        <attribute name="name" value="浣熊科"/>
+        <branch>
+          <attribute name="name" value="犬浣熊属"/>
+          <branch>
+            <attribute name="name" value="Bassaricyon alleni"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Bassaricyon beddardi"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="加氏犬浣熊"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Bassaricyon lasius"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Bassaricyon pauli"/>
+          </branch>
+        </branch>
+        <branch>
+          <attribute name="name" value="蓬尾浣熊属"/>
+          <branch>
+            <attribute name="name" value="Bassariscus astutus"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="中美蓬尾浣熊"/>
+          </branch>
+        </branch>
+        <branch>
+          <attribute name="name" value="南美浣熊属"/>
+          <branch>
+            <attribute name="name" value="白鼻浣熊"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Nasua nasua"/>
+          </branch>
+        </branch>
+        <branch>
+          <attribute name="name" value="长鼻浣熊"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="蜜熊"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="Procyon"/>
+          <branch>
+            <attribute name="name" value="Procyon cancrivorus"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="浣熊"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Procyon pygmaeus"/>
+          </branch>
+        </branch>
+      </branch>
+      <branch>
+        <attribute name="name" value="Pinnipedia (Phocoidea)"/>
+        <branch>
+          <attribute name="name" value="海豹"/>
+          <branch>
+            <attribute name="name" value="冠海豹"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="髯海豹"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="灰海豹"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="環海豹"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="豹海豹"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="韋德爾氏海豹"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="食蟹海豹"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="象海豹属"/>
+            <branch>
+              <attribute name="name" value="北象海豹"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="南象海豹"/>
+            </branch>
+          </branch>
+          <branch>
+            <attribute name="name" value="僧海豹"/>
+            <branch>
+              <attribute name="name" value="地中海僧海豹"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="夏威夷僧海豹"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="加勒比僧海豹"/>
+            </branch>
+          </branch>
+          <branch>
+            <attribute name="name" value="大眼海豹"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="豎琴海豹"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="海豹屬"/>
+            <branch>
+              <attribute name="name" value="港海豹"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="斑海豹"/>
+            </branch>
+          </branch>
+          <branch>
+            <attribute name="name" value="Pusa"/>
+            <branch>
+              <attribute name="name" value="裡海海豹"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="环斑海豹"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="贝加尔海豹"/>
+            </branch>
+          </branch>
+        </branch>
+        <branch>
+          <attribute name="name" value="海象"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="海獅科"/>
+          <branch>
+            <attribute name="name" value="毛皮海狮属"/>
+            <branch>
+              <attribute name="name" value="南美毛皮海狮"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="新澳毛皮海狮"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="赤道毛皮海狮"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="南极毛皮海狮"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="智利毛皮海狮"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="非洲毛皮海狮"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="北美毛皮海狮"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="安岛海狗"/>
+            </branch>
+          </branch>
+          <branch>
+            <attribute name="name" value="北海狗"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="北海狮"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="澳洲海獅"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="南海狮"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="新西兰海狮"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Zalophus"/>
+            <branch>
+              <attribute name="name" value="加州海獅"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="日本海獅"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Zalophus wollebaeki"/>
+            </branch>
+          </branch>
+        </branch>
+      </branch>
+    </branch>
+  </branch>
+</tree>

@@ -9,17 +9,14 @@
         <link rel="stylesheet" href="hypertree-of-life-light.css" id="ldswitch">
 
         <!--
-        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-        -->
-        
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124333733-1"></script>        
         <script>
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'UA-124333733-1');
+            gtag('js', new Date());            
+            gtag('config', 'UA-124333733-1', { 'page_title' : '/', 'page_path': '/' })
         </script>        
-        
+        -->    
 
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:site" content="@GlatzhoferM">
@@ -59,19 +56,18 @@
                 hypertree: null
             }
             function initMainPage() {
-                const language = window.navigator.userLanguage || window.navigator.language
-                const l = language.split('-')[0]
-                console.log(l)
+                // ?lang= of a choice, else the system language (settings.ts)
+                const l = htol.settings.language(htol.alllanguages)
 
                 this.controllerTree = new htol.Navigation2(
                     { parent: document.body }, 
                     { 
                         title: "Hyperbolic Tree of Life",
                         language: l,
-                        languages: ['en'],
+                        languages: htol.alllanguages,
                         onLangChange:  l=> {
-                            console.log("lang change", l)                        
-                            app.text.innerHTML = html.hasOwnProperty(l) ? html[l] : html['en']
+                            console.log("lang change", l)
+                            showText(l)
 
                             const nl = htol.loaders.fromLangFile(`langmaps/${l}.lang.json`)
                             app.hypertree.api.setLangloader(()=> {
@@ -80,8 +76,7 @@
                             }, ()=>{}, nl)  
                         }, 
                         content: p=> {
-                            var d = document.createElement('div')                   
-                            console.log(html.hasOwnProperty(l) ? html[l] : html['en'])                            
+                            var d = document.createElement('div')
                             d.innerHTML = `
                                 <div id='info'>               
                                     <div class="topic">Hyperbolic Tree of Life</div>
@@ -94,8 +89,8 @@
                                     </svg>
                                 </div>`
                             p.appendChild(d)
-                            app.text = d.querySelector('#text')                            
-                            app.text.innerHTML = html.hasOwnProperty(l) ? html[l] : html['en']
+                            app.text = d.querySelector('#text')
+                            showText(l)
                             
 
                             const π = Math.PI
@@ -111,17 +106,34 @@
                             const innerNodeScale =   d=> d.precalc.weightScale
                             
                             const otolSetModel = new htol.OtolSetModel()
+                            // Branch pages: the clades of the new data pipeline
+                            // (docs/DATA-PIPELINE.md) listed in clades-16.1.json (written by
+                            // npm run otol:convert: name -> tree file); without that file the
+                            // old ones (OtolSetModel, <clade>.d3.json). The tree data waits for
+                            // the list, so langInitBFS knows which nodes have a page.
+                            let branchIndex = null
+                            // the main page tree: the same tree with the felt importance of
+                            // npm run otol:wikidata when the list names it (main), else as is
+                            let mainTree = 'eukaryota'
+                            const branchIndexLoaded = fetch('hierarchies/Open-Tree-of-Life/clades-16.1.json')
+                                .then(r=> r.ok ? r.json() : null)
+                                .then(j=> { branchIndex = j && j.clades; mainTree = (j && j.main) || mainTree })
+                                .catch(()=> {})
+                            const hasBranchPage = name=> branchIndex ? Boolean(name && branchIndex[name]) : otolSetModel.fileExists(name)
+                            const branchFile = name=> branchIndex && branchIndex[name] ? branchIndex[name].file : name.toLowerCase()
 
                             app.hypertree = new htol.Hypertree(
                                 { parent:document.querySelector('#maintree') }, 
                                 {
-                                    dataloader: htol.loaders.fromFile(`hierarchies/eukaryota.d3.json`),
+                                    dataloader: ok=> branchIndexLoaded.then(()=> htol.loaders.fromFile(`hierarchies/${mainTree}.d3.json`)(ok)),
                                     langloader: htol.loaders.fromLangFile(`langmaps/${l}.lang.json`),
                                     dataInitBFS: (ht, n)=> {
                                         const id = n.data.name
                                         n.precalc.imageHref = iconmap.fileName2IconUrl(id, n.data.type)
                                         n.precalc.icon = iconmap.emojimap[id]    
                                         
+                                        // the main page tree is balanced by hand (its file);
+                                        // no layout.childOrder 'balanced' here
                                         if (n.children)
                                             if (n.height%2 === 0)
                                                 n.children = n.children.reverse()
@@ -129,22 +141,38 @@
                                     langInitBFS: (ht, n)=> {                
                                         const id = n.data && n.data.name
                                         const l  = ht.langMap && ht.langMap[id] && '𝐖 ' + ht.langMap[id] 
-                                        if (!otolSetModel.fileExists(id)) {
+                                        if (!hasBranchPage(id)) {
+                                            // no branch page: labelled only when it is the node
+                                            // under the mouse (labelOnHover); if it has a name it is
+                                            // clickable, so it has a voronoi cell and can be hovered
+                                            // at all (unnamed nodes, many in the Open Tree, have
+                                            // nothing to show); a click opens the branch page of its
+                                            // nearest ancestor (onNodeClick)
                                             n.precalc.wiki = ""
-                                            n.precalc.label = ""
-                                            n.precalc.clickable = false
+                                            n.precalc.label = l || id || ""
+                                            n.precalc.labelOnHover = true
+                                            n.precalc.clickable = Boolean(n.precalc.label)
                                         }
                                         else {
                                             n.precalc.wiki = l
                                             n.precalc.label = l || id
-                                            n.precalc.clickable = otolSetModel.fileExists(id)
+                                            n.precalc.clickable = true
                                         }
                                     },
-                                    layout: {            
-                                        weight: (n)=> (isLeaf(n)?1:0),            
-                                        rootWedge: {    
+                                    layout: {
+                                        weight: (n)=> (isLeaf(n)?1:0),
+                                        rootWedge: {
                                             orientation: 3*π/2,
                                             angle: .7*π/2
+                                        }
+                                    },
+                                    filter: {
+                                        // labels by felt importance (Wikipedia articles), when
+                                        // the tree has it; else by subtree size
+                                        labelScore: n=> n.data.importance === undefined ? undefined : Math.expm1(n.data.importance),
+                                        weightFilter: {
+                                            //rangeCullingWeight: { min:0, max:1 },
+                                            rangeNodes:         { min:1000, max:1500 }                                            
                                         }
                                     },
                                     geometry: {
@@ -155,22 +183,42 @@
                                             'cells': {
                                                 hideOnDrag: false,
                                                 invisible: false,
-                                                strokeWidth: n=> 0,
+                                                strokeWidth: n=> 0
                                             },
+                                            // hoverLabel: always a label for the node under the
+                                            // mouse (not for its path, unlike the branch pages)
                                             'labels': {
                                                 hideOnDrag: true,
-                                                invisible: true
+                                                invisible: true,
+                                                hoverLabel: true
                                             },
                                             'labels-force': {
-                                                hideOnDrag: true,
-                                                invisible: false
+                                                hideOnDrag: false,
+                                                invisible: false,
+                                                hoverLabel: true,
+                                                // every linked branch (49) gets a label; only
+                                                // those have permanent labels (labelOnHover)
+                                                maxLabels: 50
                                             },
                                         }
                                     },
                                     interaction: {              
                                         λbounds: [1/40, 1/10],
-                                        onNodeClick: (n, m, l)=> { 
-                                            window.location.href = `/otol.html?c=${n.data.name.toLowerCase()}`
+                                        // the tree never fills less than 90 % of the disk: the
+                                        // lower λ bound per tree (d3-hypertree minFill)
+                                        minFill: .9,
+                                        // a link in the middle at most 8 % of the radius (set by
+                                        // hand): the main page tree is long chains (1-2 children
+                                        // per node, 69 levels); with longer links (λ > .15) the
+                                        // chains reach the rim in two or three links, the tree
+                                        // falls apart at the rim and the hovered cell grows
+                                        // huge (d3-hypertree maxLinkLength; branch pages .25)
+                                        maxLinkLength: .08,
+                                        onNodeClick: (n, m, l)=> {
+                                            // the node itself or its nearest ancestor with a branch page
+                                            const page = n && n.ancestors().find(a=> hasBranchPage(a.data.name))
+                                            if (page)
+                                                window.location.href = htol.settings.withChoices(`/otol.html?c=${branchFile(page.data.name)}`)
                                             /*
                                             l.ripple(n, m, ()=> {
                                                 console.log("+++++++++++", n.data.name, m)                                                
@@ -183,8 +231,10 @@
                             )                            
                             app.hypertree.initPromise
                                 .then(()=> new Promise((ok, err)=> app.hypertree.animateUp(ok, err)))
-                                .then(()=> app.hypertree.api.goto({ re:-.05, im: .85 }, null))
-                                .then(()=> app.hypertree.api.gotoλ(.06))  
+                                // start view (2026-11-24, fitted to a screenshot: the root at
+                                // the bottom, Passeriformes at the top); P and λ together, a
+                                // gotoλ after goto would move the view again
+                                .then(()=> app.hypertree.api.goto({ re: .025, im: .755 }, .0525))
                                 .then(()=> app.hypertree.drawDetailFrame())
                         }
                     }            
@@ -208,16 +258,16 @@
             en: `       A phylogenetic tree or evolutionary tree is a branching diagram or "tree"
                         showing the evolutionary relationships among various biological species.<sup>Wiki</sup>
                         <br><br>
-                        The <a href="//opentreeoflife.org">Open Tree of Life</a>
+                        The <a href="https://opentreeoflife.org">Open Tree of Life</a>
                         project provides a phylogenetic tree containing more than 2 million species.
                         This dataset receives updates from scientific sources since 2015.
                         <br><br>
-                        A Hyperbolic browser is an interactive "tree" visualization, 
+                        A Hyperbolic browser is an interactive "tree" visualization,
                         similar to a map application.
-                        The "tree" can be explored by panning. 
+                        The "tree" can be explored by panning.
                         Pinch gestures and mouse wheel can be used to focus in and out.
                         <br><br>
-                        Unfortunately the entire dataset can not be rendered yet, 
+                        Unfortunately the entire dataset can not be rendered yet,
                         hence it is split in branches,
                         each containing up to 50 000 species.                                                
                         <b class="emph">
@@ -229,48 +279,226 @@
                         Branches near the stem hide clades with less than ten species.  
                         <br><br>
                         Have fun with exploring earths creatures. 
-                        Hyperbolic Tree of life is based on                         
+                        Hyperbolic Tree of Life is based on
                         <a href="https://github.com/glouwa/d3-hypertree/">d3-hypertree</a>,
-                        a open source hyperbolic browser.
+                        an open source hyperbolic browser.
                         Participation is welcome in many ways:                         
                         <a href="https://github.com/glouwa/d3-hypertree/issues/new/choose">feedback</a>,
                         <a href="https://github.com/glouwa/d3-hypertree/blob/master/CONTRIBUTING.md">code contributions</a>,
                         and of course also <a href="https://www.patreon.com/user?u=11112015">donations</a>.
                 `,
-            de: `       A phylogenetic tree or evolutionary tree is a branching diagram or "tree"
-                        showing the evolutionary relationships among various biological species.<sup>Wiki</sup>
+            de: `       Ein phylogenetischer Baum oder Stammbaum ist ein verzweigtes Diagramm, das die
+                        Verwandtschaft zwischen verschiedenen biologischen Arten zeigt.<sup>Wiki</sup>
                         <br><br>
-                        The <a href="//opentreeoflife.org">Open Tree of Life</a>
-                        project provides a phylogenetic tree containing more than 2 million species.
-                        This dataset receives updates from scientific sources since 2015.
+                        Das Projekt <a href="https://opentreeoflife.org">Open Tree of Life</a>
+                        stellt einen Stammbaum mit mehr als 2 Millionen Arten bereit.
+                        Dieser Datensatz wird seit 2015 laufend aus wissenschaftlichen Quellen aktualisiert.
                         <br><br>
-                        A Hyperbolic browser is an interactive "tree" visualization, 
-                        similar to a map application.
-                        The "tree" can be explored by panning. 
-                        Pinch gestures and mouse wheel can be used to focus in and out.
+                        Ein hyperbolischer Browser ist eine interaktive Darstellung von Bäumen,
+                        ähnlich einer Kartenanwendung.
+                        Den Baum erkundest du durch Verschieben;
+                        mit zwei Fingern oder dem Mausrad zoomst du hinein und heraus.
                         <br><br>
-                        Unfortunately the entire dataset can not be rendered yet, 
-                        hence it is split in branches,
-                        each containing up to 50 000 species.                                                
+                        Leider lässt sich der ganze Datensatz noch nicht auf einmal darstellen.
+                        Er ist daher in Äste aufgeteilt, die jeweils bis zu 50 000 Arten enthalten.
                         <b class="emph">
-                        Click on a branch
-                        </b> 
-                        of the "tree" on the right, to open such a branch and browse its species.
-                        The Wikipedia page of the species next to the center will be shown automatically.
-                        Branches above vertebrates show all known species.
-                        Branches near the stem hide clades with less than ten species.  
+                        Klicke auf einen Ast
+                        </b>
+                        des Baums rechts, um ihn zu öffnen und seine Arten zu durchstöbern.
+                        Die Wikipedia-Seite der Art in der Mitte wird automatisch angezeigt.
+                        Äste oberhalb der Wirbeltiere zeigen alle bekannten Arten,
+                        Äste nahe am Stamm blenden Gruppen mit weniger als zehn Arten aus.
                         <br><br>
-                        Have fun with exploring earths creatures. 
-                        Hyperbolic Tree of life is based on                         
+                        Viel Spaß beim Erkunden der Lebewesen unserer Erde!
+                        Hyperbolic Tree of Life beruht auf
                         <a href="https://github.com/glouwa/d3-hypertree/">d3-hypertree</a>,
-                        a open source hyperbolic browser.
-                        Participation is welcome in many ways:                         
+                        einem quelloffenen hyperbolischen Browser.
+                        Mitmachen ist auf viele Arten willkommen:
+                        <a href="https://github.com/glouwa/d3-hypertree/issues/new/choose">Rückmeldungen</a>,
+                        <a href="https://github.com/glouwa/d3-hypertree/blob/master/CONTRIBUTING.md">Code-Beiträge</a>
+                        und natürlich auch <a href="https://www.patreon.com/user?u=11112015">Spenden</a>.
+                `,
+            es: `       Un árbol filogenético o árbol evolutivo es un diagrama ramificado que muestra
+                        las relaciones evolutivas entre distintas especies biológicas.<sup>Wiki</sup>
+                        <br><br>
+                        El proyecto <a href="https://opentreeoflife.org">Open Tree of Life</a>
+                        ofrece un árbol filogenético con más de 2 millones de especies.
+                        Este conjunto de datos se actualiza desde 2015 con fuentes científicas.
+                        <br><br>
+                        Un navegador hiperbólico es una visualización interactiva de árboles,
+                        parecida a una aplicación de mapas.
+                        El árbol se explora desplazándolo;
+                        con dos dedos o la rueda del ratón se acerca y se aleja.
+                        <br><br>
+                        Por desgracia, todavía no es posible mostrar todo el conjunto de datos a la vez.
+                        Por eso está dividido en ramas de hasta 50 000 especies cada una.
+                        <b class="emph">
+                        Haz clic en una rama
+                        </b>
+                        del árbol de la derecha para abrirla y explorar sus especies.
+                        La página de Wikipedia de la especie más cercana al centro se muestra automáticamente.
+                        Las ramas por encima de los vertebrados muestran todas las especies conocidas;
+                        las ramas cercanas al tronco ocultan los grupos con menos de diez especies.
+                        <br><br>
+                        ¡Diviértete explorando los seres vivos de la Tierra!
+                        Hyperbolic Tree of Life se basa en
+                        <a href="https://github.com/glouwa/d3-hypertree/">d3-hypertree</a>,
+                        un navegador hiperbólico de código abierto.
+                        Toda participación es bienvenida:
+                        <a href="https://github.com/glouwa/d3-hypertree/issues/new/choose">comentarios</a>,
+                        <a href="https://github.com/glouwa/d3-hypertree/blob/master/CONTRIBUTING.md">contribuciones de código</a>
+                        y, por supuesto, también <a href="https://www.patreon.com/user?u=11112015">donaciones</a>.
+                `,
+            nl: `       Een fylogenetische boom of stamboom is een vertakt diagram dat de
+                        evolutionaire verwantschap tussen verschillende biologische soorten toont.<sup>Wiki</sup>
+                        <br><br>
+                        Het project <a href="https://opentreeoflife.org">Open Tree of Life</a>
+                        biedt een stamboom met meer dan 2 miljoen soorten.
+                        Deze dataset wordt sinds 2015 bijgewerkt vanuit wetenschappelijke bronnen.
+                        <br><br>
+                        Een hyperbolische browser is een interactieve weergave van bomen,
+                        vergelijkbaar met een kaartapplicatie.
+                        Je verkent de boom door hem te verschuiven;
+                        met twee vingers of het muiswiel zoom je in en uit.
+                        <br><br>
+                        Helaas kan de hele dataset nog niet in één keer worden weergegeven.
+                        Daarom is hij opgedeeld in takken van elk maximaal 50 000 soorten.
+                        <b class="emph">
+                        Klik op een tak
+                        </b>
+                        van de boom rechts om hem te openen en zijn soorten te bekijken.
+                        De Wikipedia-pagina van de soort het dichtst bij het midden wordt automatisch getoond.
+                        Takken boven de gewervelde dieren tonen alle bekende soorten;
+                        takken dicht bij de stam verbergen groepen met minder dan tien soorten.
+                        <br><br>
+                        Veel plezier bij het verkennen van de levende wezens op aarde!
+                        Hyperbolic Tree of Life is gebaseerd op
+                        <a href="https://github.com/glouwa/d3-hypertree/">d3-hypertree</a>,
+                        een open-source hyperbolische browser.
+                        Meedoen is op veel manieren welkom:
                         <a href="https://github.com/glouwa/d3-hypertree/issues/new/choose">feedback</a>,
-                        <a href="https://github.com/glouwa/d3-hypertree/blob/master/CONTRIBUTING.md">code contributions</a>,
-                        and of course also <a href="https://www.patreon.com/user?u=11112015">donations</a>.
+                        <a href="https://github.com/glouwa/d3-hypertree/blob/master/CONTRIBUTING.md">codebijdragen</a>
+                        en natuurlijk ook <a href="https://www.patreon.com/user?u=11112015">donaties</a>.
+                `,
+            ro: `       Un arbore filogenetic sau arbore evolutiv este o diagramă ramificată care arată
+                        relațiile evolutive dintre diferite specii biologice.<sup>Wiki</sup>
+                        <br><br>
+                        Proiectul <a href="https://opentreeoflife.org">Open Tree of Life</a>
+                        oferă un arbore filogenetic cu peste 2 milioane de specii.
+                        Acest set de date este actualizat din surse științifice începând din 2015.
+                        <br><br>
+                        Un browser hiperbolic este o vizualizare interactivă a arborilor,
+                        asemănătoare unei aplicații de hărți.
+                        Arborele se explorează prin deplasare;
+                        cu două degete sau cu rotița mouse-ului poți mări și micșora.
+                        <br><br>
+                        Din păcate, întregul set de date nu poate fi încă afișat dintr-odată.
+                        De aceea este împărțit în ramuri de până la 50 000 de specii fiecare.
+                        <b class="emph">
+                        Fă clic pe o ramură
+                        </b>
+                        a arborelui din dreapta pentru a o deschide și a-i explora speciile.
+                        Pagina Wikipedia a speciei celei mai apropiate de centru se afișează automat.
+                        Ramurile de deasupra vertebratelor arată toate speciile cunoscute;
+                        ramurile de lângă trunchi ascund grupurile cu mai puțin de zece specii.
+                        <br><br>
+                        Distracție plăcută în explorarea viețuitoarelor Pământului!
+                        Hyperbolic Tree of Life se bazează pe
+                        <a href="https://github.com/glouwa/d3-hypertree/">d3-hypertree</a>,
+                        un browser hiperbolic open source.
+                        Orice contribuție este binevenită:
+                        <a href="https://github.com/glouwa/d3-hypertree/issues/new/choose">păreri</a>,
+                        <a href="https://github.com/glouwa/d3-hypertree/blob/master/CONTRIBUTING.md">contribuții de cod</a>
+                        și, desigur, <a href="https://www.patreon.com/user?u=11112015">donații</a>.
+                `,
+            ru: `       Филогенетическое, или эволюционное, дерево — это ветвящаяся схема, которая показывает
+                        эволюционные связи между различными биологическими видами.<sup>Wiki</sup>
+                        <br><br>
+                        Проект <a href="https://opentreeoflife.org">Open Tree of Life</a>
+                        предоставляет филогенетическое дерево, в котором более 2 миллионов видов.
+                        С 2015 года эти данные пополняются из научных источников.
+                        <br><br>
+                        Гиперболический браузер — это интерактивное отображение деревьев,
+                        похожее на картографическое приложение.
+                        Дерево можно исследовать, перетаскивая его;
+                        двумя пальцами или колёсиком мыши можно приближать и отдалять.
+                        <br><br>
+                        К сожалению, весь набор данных пока нельзя показать целиком.
+                        Поэтому он разделён на ветви, в каждой до 50 000 видов.
+                        <b class="emph">
+                        Нажмите на ветвь
+                        </b>
+                        дерева справа, чтобы открыть её и просмотреть её виды.
+                        Страница Википедии о виде ближе всего к центру открывается автоматически.
+                        Ветви выше позвоночных показывают все известные виды;
+                        ветви у ствола скрывают группы, в которых меньше десяти видов.
+                        <br><br>
+                        Приятного знакомства с живыми существами Земли!
+                        Hyperbolic Tree of Life основан на
+                        <a href="https://github.com/glouwa/d3-hypertree/">d3-hypertree</a>,
+                        гиперболическом браузере с открытым исходным кодом.
+                        Участие приветствуется в любой форме:
+                        <a href="https://github.com/glouwa/d3-hypertree/issues/new/choose">отзывы</a>,
+                        <a href="https://github.com/glouwa/d3-hypertree/blob/master/CONTRIBUTING.md">вклад в код</a>
+                        и, конечно, <a href="https://www.patreon.com/user?u=11112015">пожертвования</a>.
+                `,
+            zh: `       系统发生树（又称演化树）是一种分支图，用来展示不同生物物种之间的演化关系。<sup>Wiki</sup>
+                        <br><br>
+                        <a href="https://opentreeoflife.org">Open Tree of Life</a>（开放生命之树）项目
+                        提供了一棵包含两百多万个物种的系统发生树。
+                        自 2015 年起，这些数据持续根据科学文献更新。
+                        <br><br>
+                        双曲浏览器是一种交互式的树状可视化方式，类似地图应用。
+                        拖动即可浏览这棵树；用双指或鼠标滚轮可以放大和缩小。
+                        <br><br>
+                        遗憾的是，目前还无法一次显示全部数据，
+                        因此数据被分成若干分支，每个分支最多包含 50 000 个物种。
+                        <b class="emph">点击右侧树上的一个分支</b>，
+                        即可打开它并浏览其中的物种。
+                        最靠近中心的物种的维基百科页面会自动显示。
+                        脊椎动物以上的分支显示所有已知物种；
+                        靠近主干的分支会隐藏少于十个物种的类群。
+                        <br><br>
+                        祝你探索地球生物愉快！
+                        Hyperbolic Tree of Life 基于开源的双曲浏览器
+                        <a href="https://github.com/glouwa/d3-hypertree/">d3-hypertree</a>。
+                        欢迎以各种方式参与：
+                        <a href="https://github.com/glouwa/d3-hypertree/issues/new/choose">反馈</a>、
+                        <a href="https://github.com/glouwa/d3-hypertree/blob/master/CONTRIBUTING.md">贡献代码</a>，
+                        当然也欢迎<a href="https://www.patreon.com/user?u=11112015">捐助</a>。
+                `,
+            fa: `       درخت فیلوژنتیک یا درخت تکاملی نموداری شاخه‌دار است که روابط تکاملی
+                        میان گونه‌های گوناگون زیستی را نشان می‌دهد.<sup>Wiki</sup>
+                        <br><br>
+                        پروژهٔ <a href="https://opentreeoflife.org">Open Tree of Life</a>
+                        درختی فیلوژنتیک با بیش از ۲ میلیون گونه فراهم می‌کند.
+                        این داده‌ها از سال ۲۰۱۵ از منابع علمی به‌روزرسانی می‌شوند.
+                        <br><br>
+                        مرورگر هذلولوی نمایشی تعاملی از درخت‌هاست، مانند یک برنامهٔ نقشه.
+                        با جابه‌جا کردن می‌توانید درخت را بگردید؛
+                        با دو انگشت یا چرخ ماوس بزرگ‌نمایی و کوچک‌نمایی می‌کنید.
+                        <br><br>
+                        متأسفانه هنوز نمی‌توان همهٔ داده‌ها را یک‌جا نمایش داد.
+                        از این رو به شاخه‌هایی تقسیم شده‌اند که هر کدام تا ۵۰٬۰۰۰ گونه دارند.
+                        <b class="emph">
+                        روی یک شاخه کلیک کنید
+                        </b>
+                        در درخت سمت راست تا باز شود و گونه‌هایش را ببینید.
+                        صفحهٔ ویکی‌پدیای گونهٔ نزدیک به مرکز خودکار نمایش داده می‌شود.
+                        شاخه‌های بالاتر از مهره‌داران همهٔ گونه‌های شناخته‌شده را نشان می‌دهند؛
+                        شاخه‌های نزدیک به تنه گروه‌های کمتر از ده گونه را پنهان می‌کنند.
+                        <br><br>
+                        از گشت‌وگذار در میان جانداران زمین لذت ببرید!
+                        Hyperbolic Tree of Life بر پایهٔ
+                        <a href="https://github.com/glouwa/d3-hypertree/">d3-hypertree</a>
+                        ساخته شده است، یک مرورگر هذلولوی متن‌باز.
+                        مشارکت به هر شکلی خوشایند است:
+                        <a href="https://github.com/glouwa/d3-hypertree/issues/new/choose">بازخورد</a>،
+                        <a href="https://github.com/glouwa/d3-hypertree/blob/master/CONTRIBUTING.md">مشارکت در کد</a>
+                        و البته <a href="https://www.patreon.com/user?u=11112015">کمک مالی</a>.
                 `,
             dev: `      Hyperbolic tree of life visualizes a evolutionary tree provided by the
-                        <a href="//opentreeoflife.org">Open Tree of Life</a>
+                        <a href="opentreeoflife.org">Open Tree of Life</a>
                         project. It contains more than two million species,
                         grouped in seven branches.
                         <b class="emph">Click on a branch to open it.</b>
@@ -302,16 +530,14 @@
                         and if you like it, <a href="">donate</a> here.
                   `
         }
-        /*
-        what is it (pose with # of nodes), how to interact, data from otol, upload own file, 
-
-        what is it, dev link, history slides, feature slides, developer demos.
-        examples for: web1, web2, python, R, observable.
-
-        2 
-        9 5
-        2
-        */
+        // the text in the chosen language; sci (scientific names) and languages without
+        // a text: English
+        const textFor = l=> html[l] || html.en
+        // the text in the language, written right to left for fa (and ar, he)
+        const showText = l=> {
+            app.text.innerHTML = textFor(l)
+            app.text.dir = ['fa', 'ar', 'he'].includes(l) ? 'rtl' : 'ltr'
+        }
         </script>                
     </body>
 </html>

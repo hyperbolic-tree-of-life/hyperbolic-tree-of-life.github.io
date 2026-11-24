@@ -1,0 +1,1080 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tree>
+  <declarations>
+    <attributeDecl name="name" type="String"/>
+  </declarations>
+  <branch>
+    <attribute name="name" value="Raubtiere"/>
+    <branch>
+      <attribute name="name" value="Katzenartige"/>
+      <branch>
+        <attribute name="name" value="Nimravidae"/>
+      </branch>
+      <branch>
+        <attribute name="name" value="Felidae"/>
+        <branch>
+          <attribute name="name" value="Kleinkatzen"/>
+          <branch>
+            <attribute name="name" value="Gepard"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Karakal"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Asiatische Goldkatzen"/>
+            <branch>
+              <attribute name="name" value="Borneo-Goldkatze"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Asiatische Goldkatze"/>
+            </branch>
+          </branch>
+          <branch>
+            <attribute name="name" value="Echte Katzen"/>
+            <branch>
+              <attribute name="name" value="Graukatze"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Hauskatze"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Rohrkatze"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Manul"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Sandkatze"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Schwarzfußkatze"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Wildkatze"/>
+            </branch>
+          </branch>
+          <branch>
+            <attribute name="name" value="Leopardus"/>
+            <branch>
+              <attribute name="name" value="Leopardus braccatus"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Colocolo"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Kleinfleckkatze"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Chilenische Waldkatze"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Bergkatze"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Leopardus pajeros"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Ozelot"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Tigerkatze"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Langschwanzkatze"/>
+            </branch>
+          </branch>
+          <branch>
+            <attribute name="name" value="Serval"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Lynx"/>
+            <branch>
+              <attribute name="name" value="Kanadischer Luchs"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Eurasischer Luchs"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Pardelluchs"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Rotluchs"/>
+            </branch>
+          </branch>
+          <branch>
+            <attribute name="name" value="Marmorkatze"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Altkatzen"/>
+            <branch>
+              <attribute name="name" value="Bengalkatze"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Iriomote-Katze"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Flachkopfkatze"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Rostkatze"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Fischkatze"/>
+            </branch>
+          </branch>
+          <branch>
+            <attribute name="name" value="Afrikanische Goldkatze"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Puma"/>
+            <branch>
+              <attribute name="name" value="Jaguarundi"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Puma"/>
+            </branch>
+          </branch>
+        </branch>
+        <branch>
+          <attribute name="name" value="Großkatzen"/>
+          <branch>
+            <attribute name="name" value="Eigentliche Großkatzen"/>
+            <branch>
+              <attribute name="name" value="Löwe"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Jaguar"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Leopard"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Tiger"/>
+            </branch>
+          </branch>
+          <branch>
+            <attribute name="name" value="Nebelparder"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Schneeleopard"/>
+          </branch>
+        </branch>
+      </branch>
+      <branch>
+        <attribute name="name" value="Schleichkatzen"/>
+        <branch>
+          <attribute name="name" value="Linsangs"/>
+          <branch>
+            <attribute name="name" value="Bänderlinsang"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Fleckenlinsang"/>
+          </branch>
+        </branch>
+        <branch>
+          <attribute name="name" value="Zibetkatzen"/>
+          <branch>
+            <attribute name="name" value="Afrikanische Zibetkatze"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Ginsterkatzen"/>
+            <branch>
+              <attribute name="name" value="Äthiopische Ginsterkatze"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Angola-Ginsterkatze"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Bourlon-Genette"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Hauben-Ginsterkatze"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Kleinfleck-Ginsterkatze"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Liberia-Genette"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Großfleck-Ginsterkatze"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Pardelgenette"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Wasserzivette"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Königsgenette"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Serval-Ginsterkatze"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Haussa-Ginsterkatze"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Südliche Großfleck-Ginsterkatze"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Riesenginsterkatze"/>
+            </branch>
+          </branch>
+          <branch>
+            <attribute name="name" value="Poiana"/>
+            <branch>
+              <attribute name="name" value="Westafrikanischer Linsang"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Zentralafrikanischer Linsang"/>
+            </branch>
+          </branch>
+          <branch>
+            <attribute name="name" value="Asiatische Zibetkatzen"/>
+            <branch>
+              <attribute name="name" value="Malabar-Zibetkatze"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Großfleck-Zibetkatze"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Malaiische Zibetkatze"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Indische Zibetkatze"/>
+            </branch>
+          </branch>
+          <branch>
+            <attribute name="name" value="Kleine Indische Zibetkatze"/>
+          </branch>
+        </branch>
+        <branch>
+          <attribute name="name" value="Palmenroller"/>
+          <branch>
+            <attribute name="name" value="Binturong"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Streifenroller"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Sulawesi-Roller"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Larvenroller"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Musangs"/>
+            <branch>
+              <attribute name="name" value="Fleckenmusang"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Jerdon-Musang"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Goldmusang"/>
+            </branch>
+          </branch>
+        </branch>
+        <branch>
+          <attribute name="name" value="Bänder- und Otterzivetten"/>
+          <branch>
+            <attribute name="name" value="Fleckenroller"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Otterzivette"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Schlichtroller"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Bänderroller"/>
+          </branch>
+        </branch>
+      </branch>
+      <branch>
+        <attribute name="name" value="Mangusten"/>
+        <branch>
+          <attribute name="name" value="Sumpfmanguste"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="Schwarzfußmangusten"/>
+          <branch>
+            <attribute name="name" value="Buschschwanzmanguste"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Jackson-Manguste"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Schwarzfußmanguste"/>
+          </branch>
+        </branch>
+        <branch>
+          <attribute name="name" value="Kusimansen"/>
+          <branch>
+            <attribute name="name" value="Kongo-Kusimanse"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Angola-Kusimanse"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Dunkelkusimanse"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Flachkopf-Kusimanse"/>
+          </branch>
+        </branch>
+        <branch>
+          <attribute name="name" value="Fuchsmanguste"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="Listige Manguste"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="Schlankmangusten"/>
+          <branch>
+            <attribute name="name" value="Kaokoveld-Schlankmanguste"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Somali-Manguste"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Kleinichneumon"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Schlankmanguste"/>
+          </branch>
+        </branch>
+        <branch>
+          <attribute name="name" value="Zwergmangusten"/>
+          <branch>
+            <attribute name="name" value="Östliche Zwergmanguste"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Südliche Zwergmanguste"/>
+          </branch>
+        </branch>
+        <branch>
+          <attribute name="name" value="Herpestes"/>
+          <branch>
+            <attribute name="name" value="Kurzschwanzmanguste"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Indische Kurzschwanzmanguste"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Ichneumon"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Kleiner Mungo"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Halsbandmanguste"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Indische Rotmanguste"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Krabbenmanguste"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Halsstreifenmanguste"/>
+          </branch>
+        </branch>
+        <branch>
+          <attribute name="name" value="Weißschwanzmanguste"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="Liberia-Manguste"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="Mungos"/>
+          <branch>
+            <attribute name="name" value="Gambia-Manguste"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Zebramanguste"/>
+          </branch>
+        </branch>
+        <branch>
+          <attribute name="name" value="Trugmanguste"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="Meller-Manguste"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="Erdmännchen"/>
+        </branch>
+      </branch>
+      <branch>
+        <attribute name="name" value="Hyänen"/>
+        <branch>
+          <attribute name="name" value="Streifenhyäne"/>
+          <branch>
+            <attribute name="name" value="Schabrackenhyäne"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Streifenhyäne"/>
+          </branch>
+        </branch>
+        <branch>
+          <attribute name="name" value="Tüpfelhyäne"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="Erdwolf"/>
+        </branch>
+      </branch>
+      <branch>
+        <attribute name="name" value="Pardelroller"/>
+      </branch>
+      <branch>
+        <attribute name="name" value="Madagassische Raubtiere"/>
+        <branch>
+          <attribute name="name" value="Madagassische Raubtiere"/>
+          <branch>
+            <attribute name="name" value="Fossa"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Falanuk"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Fanaloka"/>
+          </branch>
+        </branch>
+        <branch>
+          <attribute name="name" value="Madagaskar-Mangusten"/>
+          <branch>
+            <attribute name="name" value="Ringelschwanzmungo"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Breitstreifenmungos"/>
+            <branch>
+              <attribute name="name" value="Breitstreifenmungo"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Großer Breitstreifenmungo"/>
+            </branch>
+          </branch>
+          <branch>
+            <attribute name="name" value="Schmalstreifenmungo"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Schlichtmungo"/>
+          </branch>
+        </branch>
+      </branch>
+    </branch>
+    <branch>
+      <attribute name="name" value="Hundeartige"/>
+      <branch>
+        <attribute name="name" value="Hunde"/>
+        <branch>
+          <attribute name="name" value="Vulpes"/>
+          <branch>
+            <attribute name="name" value="Polarfuchs"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Kitfuchs"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Blassfuchs"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Bengalfuchs"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Afghanfuchs"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Kapfuchs"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Steppenfuchs"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Tibetfuchs"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Rüppellfuchs"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Swiftfuchs"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Rotfuchs"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Fennek"/>
+          </branch>
+        </branch>
+        <branch>
+          <attribute name="name" value="Kurzohrfuchs"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="Canis"/>
+          <branch>
+            <attribute name="name" value="Streifenschakal"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Goldschakal"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Kojote"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Wolf"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Schabrackenschakal"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Äthiopischer Wolf"/>
+          </branch>
+        </branch>
+        <branch>
+          <attribute name="name" value="Maikong"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="Mähnenwolf"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="Rothund"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="Falklandfuchs"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="Lycalopex"/>
+          <branch>
+            <attribute name="name" value="Andenschakal"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Darwin-Fuchs"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Argentinischer Kampfuchs"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Pampasfuchs"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Sechurafuchs"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Brasilianischer Kampfuchs"/>
+          </branch>
+        </branch>
+        <branch>
+          <attribute name="name" value="Afrikanischer Wildhund"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="Marderhund"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="Löffelhund"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="Waldhund"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="Graufüchse"/>
+          <branch>
+            <attribute name="name" value="Graufuchs"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Insel-Graufuchs"/>
+          </branch>
+        </branch>
+      </branch>      
+      <branch>
+        <attribute name="name" value="Amphicyonidae"/>
+      </branch>
+      <branch>
+        <attribute name="name" value="Bären"/>
+        <branch>
+          <attribute name="name" value="Amerikanischer Schwarzbär"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="Braunbär"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="Eisbär"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="Kragenbär"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="Großer Panda"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="Malaienbär"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="Lippenbär"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="Brillenbär"/>
+        </branch>
+      </branch>
+      <branch>
+        <attribute name="name" value="Skunks"/>
+        <branch>
+          <attribute name="name" value="Weißrüsselskunks"/>
+          <branch>
+            <attribute name="name" value="Anden-Skunk"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Patagonischer Skunk"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Ferkelskunk"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Amazonas-Skunk"/>
+          </branch>
+        </branch>
+        <branch>
+          <attribute name="name" value="Mephitis"/>
+          <branch>
+            <attribute name="name" value="Haubenskunk"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Streifenskunk"/>
+          </branch>
+        </branch>
+        <branch>
+          <attribute name="name" value="Stinkdachse"/>
+          <branch>
+            <attribute name="name" value="Sunda-Stinkdachs"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Palawan-Stinkdachs"/>
+          </branch>
+        </branch>
+        <branch>
+          <attribute name="name" value="Fleckenskunks"/>
+          <branch>
+            <attribute name="name" value="Südlicher Fleckenskunk"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Westlicher Fleckenskunk"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Östlicher Fleckenskunk"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Zwerg-Fleckenskunk"/>
+          </branch>
+        </branch>
+      </branch>
+      <branch>
+        <attribute name="name" value="Marder"/>
+        <branch>
+          <attribute name="name" value="Mustelinae"/>
+          <branch>
+            <attribute name="name" value="Mustela"/>
+            <branch>
+              <attribute name="name" value="Hermelin"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Steppeniltis"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Tropisches Wiesel"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Altaiwiesel"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Kolumbianisches Wiesel"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Langschwanzwiesel"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Japan-Wiesel"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Gelbbauchwiesel"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Europäischer Nerz"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Indonesisches Bergwiesel"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Schwarzfußiltis"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Mauswiesel"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Nacktfußwiesel"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Europäischer Iltis"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Feuerwiesel"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Rückenstreifenwiesel"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Ägyptisches Wiesel"/>
+            </branch>
+          </branch>
+          <branch>
+            <attribute name="name" value="Schweinsdachs"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Grisons"/>
+            <branch>
+              <attribute name="name" value="Kleingrison"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Großgrison"/>
+            </branch>
+          </branch>
+          <branch>
+            <attribute name="name" value="Vielfraß"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Ictonyx"/>
+            <branch>
+              <attribute name="name" value="Libysches Streifenwiesel"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Zorilla"/>
+            </branch>
+          </branch>
+          <branch>
+            <attribute name="name" value="Patagonisches Wiesel"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Martes"/>
+            <branch>
+              <attribute name="name" value="Fichtenmarder"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Buntmarder"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Steinmarder"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Südindischer Buntmarder"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Baummarder"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Japanischer Marder"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Fischermarder"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Zobel"/>
+            </branch>
+          </branch>
+          <branch>
+            <attribute name="name" value="Meles"/>
+            <branch>
+              <attribute name="name" value="Japanischer Dachs"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Asiatischer Dachs"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Europäischer Dachs"/>
+            </branch>
+          </branch>
+          <branch>
+            <attribute name="name" value="Honigdachs"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Sonnendachse"/>
+            <branch>
+              <attribute name="name" value="Borneo-Sonnendachs"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Chinesischer Sonnendachs"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Java-Sonnendachs"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Burma-Sonnendachs"/>
+            </branch>
+          </branch>
+          <branch>
+            <attribute name="name" value="Amerikanischer Nerz"/>
+            <branch>
+              <attribute name="name" value="Seenerz"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Amerikanischer Nerz"/>
+            </branch>
+          </branch>
+          <branch>
+            <attribute name="name" value="Weißnackenwiesel"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Silberdachs"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Tigeriltis"/>
+          </branch>
+        </branch>
+        <branch>
+          <attribute name="name" value="Otter"/>
+          <branch>
+            <attribute name="name" value="Fingerotter"/>
+            <branch>
+              <attribute name="name" value="Kapotter"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Zwergotter"/>
+            </branch>
+          </branch>
+          <branch>
+            <attribute name="name" value="Seeotter"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Fleckenhalsotter"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Neuweltotter"/>
+            <branch>
+              <attribute name="name" value="Nordamerikanischer Fischotter"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Küstenotter"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Südamerikanischer Fischotter"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Südlicher Flussotter"/>
+            </branch>
+          </branch>
+          <branch>
+            <attribute name="name" value="Altweltotter"/>
+            <branch>
+              <attribute name="name" value="Fischotter"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Japanischer Fischotter"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Haarnasenotter"/>
+            </branch>
+          </branch>
+          <branch>
+            <attribute name="name" value="Indischer Fischotter"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Riesenotter"/>
+          </branch>
+        </branch>
+      </branch>
+      <branch>
+        <attribute name="name" value="Kleiner Panda"/>
+      </branch>
+      <branch>
+        <attribute name="name" value="Kleinbären"/>
+        <branch>
+          <attribute name="name" value="Makibären"/>
+          <branch>
+            <attribute name="name" value="Makibär"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Beddards Makibär"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Schlankbär"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Harris-Makibär"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Chiriqui-Makibär"/>
+          </branch>
+        </branch>
+        <branch>
+          <attribute name="name" value="Katzenfrette"/>
+          <branch>
+            <attribute name="name" value="Nordamerikanisches Katzenfrett"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Mittelamerikanisches Katzenfrett"/>
+          </branch>
+        </branch>
+        <branch>
+          <attribute name="name" value="Nasenbären"/>
+          <branch>
+            <attribute name="name" value="Weißrüssel-Nasenbär"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Südamerikanischer Nasenbär"/>
+          </branch>
+        </branch>
+        <branch>
+          <attribute name="name" value="Bergnasenbär"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="Wickelbär"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="Procyon"/>
+          <branch>
+            <attribute name="name" value="Krabbenwaschbär"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Waschbär"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Cozumel-Waschbär"/>
+          </branch>
+        </branch>
+      </branch>
+      <branch>
+        <attribute name="name" value="Pinnipedia (Phocoidea)"/>
+        <branch>
+          <attribute name="name" value="Hundsrobben"/>
+          <branch>
+            <attribute name="name" value="Klappmütze"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Bartrobbe"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Kegelrobbe"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Bandrobbe"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Seeleopard"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Weddellrobbe"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Krabbenfresser"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="See-Elefanten"/>
+            <branch>
+              <attribute name="name" value="Nördlicher See-Elefant"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Südlicher See-Elefant"/>
+            </branch>
+          </branch>
+          <branch>
+            <attribute name="name" value="Monachus"/>
+            <branch>
+              <attribute name="name" value="Mittelmeer-Mönchsrobbe"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Hawaii-Mönchsrobbe"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Karibische Mönchsrobbe"/>
+            </branch>
+          </branch>
+          <branch>
+            <attribute name="name" value="Rossrobbe"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Sattelrobbe"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Echte Hundsrobben"/>
+            <branch>
+              <attribute name="name" value="Seehund"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Largha-Robbe"/>
+            </branch>
+          </branch>
+          <branch>
+            <attribute name="name" value="Pusa"/>
+            <branch>
+              <attribute name="name" value="Kaspische Robbe"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Ringelrobbe"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Baikalrobbe"/>
+            </branch>
+          </branch>
+        </branch>
+        <branch>
+          <attribute name="name" value="Walross"/>
+        </branch>
+        <branch>
+          <attribute name="name" value="Ohrenrobben"/>
+          <branch>
+            <attribute name="name" value="Südliche Seebären"/>
+            <branch>
+              <attribute name="name" value="Südamerikanischer Seebär"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Neuseeländischer Seebär"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Galápagos-Seebär"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Antarktischer Seebär"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Juan-Fernández-Seebär"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Südafrikanischer Seebär"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Guadalupe-Seebär"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Subantarktischer Seebär"/>
+            </branch>
+          </branch>
+          <branch>
+            <attribute name="name" value="Nördlicher Seebär"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Stellerscher Seelöwe"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Australischer Seelöwe"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Mähnenrobbe"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Neuseeländischer Seelöwe"/>
+          </branch>
+          <branch>
+            <attribute name="name" value="Zalophus"/>
+            <branch>
+              <attribute name="name" value="Kalifornischer Seelöwe"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Japanischer Seelöwe"/>
+            </branch>
+            <branch>
+              <attribute name="name" value="Galápagos-Seelöwe"/>
+            </branch>
+          </branch>
+        </branch>
+      </branch>
+    </branch>
+  </branch>
+</tree>
