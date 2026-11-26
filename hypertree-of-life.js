@@ -43,7 +43,194 @@ var htol = (function(exports) {
 				return `img/vscode-great-icons/${this.iconmap.iconDefinitions[iconid].iconPath}`;
 			};
 			this.emojimap = {
+				"Macaca mulatta": "🐒",
+				"Gorilla gorilla": "🦍",
+				"Pongo pygmaeus": "🦧",
+				"Pan troglodytes": "🐵",
+				"Cacajao calvus": "🙈",
+				"Alouatta palliata": "🙉",
+				"Macaca fuscata": "🙊",
 				"Homo sapiens": "🧔🏽",
+				"Canis lupus familiaris": "🐕",
+				"Canis lupus": "🐺",
+				"Vulpes vulpes": "🦊",
+				"Procyon lotor": "🦝",
+				"Felis catus": "🐈",
+				"Panthera leo": "🦁",
+				"Panthera tigris": "🐅",
+				"Panthera pardus": "🐆",
+				"Equus caballus": "🐎",
+				"Monodon monoceros": "🦄",
+				"Equus burchellii": "🦓",
+				"Equus asinus": "🫏",
+				"Alces alces": "🫎",
+				"Cervus elaphus": "🦌",
+				"Bison bison": "🦬",
+				"Bos taurus": "🐄",
+				"Bos primigenius": "🐂",
+				"Bubalus bubalis": "🐃",
+				"Sus scrofa domesticus": "🐖",
+				"Sus scrofa": "🐗",
+				"Ovis aries": "🐏",
+				"Ovis orientalis": "🐑",
+				"Capra hircus": "🐐",
+				"Camelus dromedarius": "🐪",
+				"Camelus bactrianus": "🐫",
+				"Lama glama": "🦙",
+				"Giraffa camelopardalis": "🦒",
+				"Loxodonta africana": "🐘",
+				"Mammuthus primigenius": "🦣",
+				"Ceratotherium simum": "🦏",
+				"Hippopotamus amphibius": "🦛",
+				"Mus musculus": "🐁",
+				"Rattus norvegicus": "🐀",
+				"Mesocricetus auratus": "🐹",
+				"Oryctolagus cuniculus": "🐇",
+				"Sciurus vulgaris": "🐿️",
+				"Castor fiber": "🦫",
+				"Erinaceus europaeus": "🦔",
+				"Pipistrellus pipistrellus": "🦇",
+				"Ursus arctos": "🐻",
+				"Ursus maritimus": "🐻‍❄️",
+				"Phascolarctos cinereus": "🐨",
+				"Ailuropoda melanoleuca": "🐼",
+				"Bradypus variegatus": "🦥",
+				"Lutra lutra": "🦦",
+				"Mephitis mephitis": "🦨",
+				"Osphranter rufus": "🦘",
+				"Meles meles": "🦡",
+				"Balaenoptera musculus": "🐳",
+				"Physeter catodon": "🐋",
+				"Tursiops truncatus": "🐬",
+				"Phoca vitulina": "🦭",
+				"Meleagris gallopavo": "🦃",
+				"Gallus gallus": "🐓",
+				"Gallus gallus gallus": "🐣",
+				"Passer domesticus": "🐦",
+				"Corvus corax": "🐦‍⬛",
+				"Aptenodytes forsteri": "🐧",
+				"Columba livia": "🕊️",
+				"Haliaeetus leucocephalus": "🦅",
+				"Anas platyrhynchos": "🦆",
+				"Cygnus olor": "🦢",
+				"Bubo bubo": "🦉",
+				"Raphus cucullatus": "🦤",
+				"Phoenicopterus roseus": "🦩",
+				"Pavo cristatus": "🦚",
+				"Ara macao": "🦜",
+				"Anser anser": "🪿",
+				"Serinus canaria": "🐤",
+				"Crocodylus niloticus": "🐊",
+				"Chelonia mydas": "🐢",
+				"Iguana iguana": "🦎",
+				"Python regius": "🐍",
+				"Varanus komodoensis": "🐉",
+				"Draco volans": "🐲",
+				"Dinosauria": "🦕",
+				"Tyrannosaurus": "🦖",
+				"Rana temporaria": "🐸",
+				"Gadus morhua": "🐟",
+				"Amphiprion ocellaris": "🐠",
+				"Takifugu rubripes": "🐡",
+				"Carcharodon carcharias": "🦈",
+				"Salmo salar": "🍣",
+				"Octopoda": "🐙",
+				"Sepiidae": "🦑",
+				"Brachyura": "🦀",
+				"Nephrops": "🦞",
+				"Crangon": "🦐",
+				"Ostrea": "🦪",
+				"Charonia": "🐚",
+				"Acropora millepora": "🪸",
+				"Aurelia aurita": "🪼",
+				"Cnidaria": "👻",
+				"Spongia officinalis": "🧽",
+				"Asterias": "✴️",
+				"Cornu aspersum": "🐌",
+				"Danaus plexippus": "🦋",
+				"Bombyx": "🐛",
+				"Formica rufa": "🐜",
+				"Apis mellifera": "🐝",
+				"Lucanus cervus": "🪲",
+				"Coccinella septempunctata": "🐞",
+				"Gryllus campestris": "🦗",
+				"Blatta": "🪳",
+				"Araneus": "🕷️",
+				"Argiope": "🕸️",
+				"Androctonus": "🦂",
+				"Aedes aegypti": "🦟",
+				"Musca domestica": "🪰",
+				"Lumbricus terrestris complex": "🪱",
+				"Caenorhabditis": "〰️",
+				"Saccharomyces cerevisiae": "🧬",
+				"Plasmodium falciparum": "🦠",
+				"Amanita muscaria": "🍄",
+				"Agaricus bisporus": "🍄‍🟫",
+				"Prunus serrulata": "🌸",
+				"Prunus mume": "💮",
+				"Nelumbo": "🪷",
+				"Magnolia officinalis": "🏵️",
+				"Rosa chinensis": "🌹",
+				"Rosa multiflora": "🥀",
+				"Hibiscus sabdariffa": "🌺",
+				"Helianthus annuus": "🌻",
+				"Leucanthemum vulgare": "🌼",
+				"Tulipa armena": "🌷",
+				"Lavandula angustifolia": "🪻",
+				"Embryophyta": "🌱",
+				"Monstera": "🪴",
+				"Picea abies": "🌲",
+				"Abies alba": "🎄",
+				"Quercus robur": "🌳",
+				"Phoenix loureiroi": "🌴",
+				"Cocos": "🥥",
+				"Opuntia engelmannii": "🌵",
+				"Triticum aestivum": "🌾",
+				"Polypodium someyae": "🌿",
+				"Trifolium subterraneum": "☘️",
+				"Trifolium lupinaster": "🍀",
+				"Acer saccharum": "🍁",
+				"Fagus sylvatica": "🍂",
+				"Fagus grandifolia": "🍃",
+				"Bryophyta": "🥗",
+				"Vitis vinifera": "🍇",
+				"Cucumis melo": "🍈",
+				"Citrullus lanatus": "🍉",
+				"Citrus medica": "🍋",
+				"Musa acuminata": "🍌",
+				"Ananas comosus": "🍍",
+				"Malus coronaria": "🍎",
+				"Malus baccata": "🍏",
+				"Prunus persica": "🍑",
+				"Prunus serotina": "🍒",
+				"Fragaria vesca": "🍓",
+				"Vaccinium smallii": "🫐",
+				"Actinidia deliciosa": "🥝",
+				"Solanum peruvianum": "🍅",
+				"Olea europaea": "🫒",
+				"Persea americana": "🥑",
+				"Daucus carota": "🥕",
+				"Zea mays": "🌽",
+				"Capsicum annuum": "🌶️",
+				"Cucumis sativus": "🥒",
+				"Brassica rapa": "🥬",
+				"Brassica oleracea": "🥦",
+				"Allium canadense": "🧄",
+				"Allium": "🧅",
+				"Arachis hypogaea": "🥜",
+				"Phaseolus vulgaris": "🫘",
+				"Castanea": "🌰",
+				"Zingiber": "🫚",
+				"Pisum sativum": "🫛",
+				"Ipomoea pes-caprae": "🍠",
+				"Phyllostachys aureosulcata": "🎋",
+				"Cucurbita pepo": "🎃",
+				"Coffea liberica": "☕",
+				"Camellia sinensis": "🍵",
+				"Humulus lupulus": "🍺",
+				"Oryza sativa": "🍚",
+				"Saccharum officinarum complex": "🍬",
+				"Nicotiana": "🚬",
 				Alouatta: "🙉",
 				Cacajao: "🙈",
 				Macaca: "🙊",
@@ -52,7 +239,6 @@ var htol = (function(exports) {
 				Elephas: "🐘",
 				Afrotheria: "🐘",
 				Hippotigris: "🦓",
-				"Bos taurus": "🐄",
 				Giraffidae: "🦒",
 				Caprinae: "🐐",
 				Ovis: "🐏",
@@ -74,14 +260,11 @@ var htol = (function(exports) {
 				Chiroptera: "🦇",
 				Canidae: "🐕",
 				Vulpes: "🦊",
-				"Canis lupus": "🐺",
 				Felidae: "🐅",
 				Felis: "🐈",
 				Ursidae: "🐻",
-				"Panthera leo": "🦁",
 				"Ailuropoda": "🐼",
 				"Leopardus": "🐆",
-				"Panthera tigris": "🐯",
 				Haplorrhini: "🐒",
 				Diprotodontia: "🐨",
 				Lagomorpha: "🐇",
@@ -93,7 +276,6 @@ var htol = (function(exports) {
 				Salamandroidea: "🐉",
 				Passeriformes: "🐦",
 				Archosauria: "🐊",
-				Dinosauria: "🦕",
 				Theropoda: "🦖",
 				Testudines: "🐢",
 				Squamata: "🦎",
@@ -116,7 +298,6 @@ var htol = (function(exports) {
 				Cyclostomata: "️️️️️️〰️",
 				Gastropoda: "🐌",
 				Incirrata: "🐙",
-				Sepiidae: "🦑",
 				Platyhelminthes: "〰️",
 				Malacostraca: "🦀",
 				Copepoda: "🦐",
@@ -134,12 +315,10 @@ var htol = (function(exports) {
 				"Lophotrochozoa": "🐚",
 				Clitellata: "〰️",
 				"Echinodermata": "✴️",
-				Cnidaria: "👻",
 				Diptera: "🦟",
 				Porifera: "🧽",
 				Palaeacanthocephala: "〰️",
 				Basidiomycota: "🍄",
-				Bryophyta: "🥗",
 				Polypodiidae: "🌿",
 				Acrogymnospermae: "🌲",
 				Solanaceae: "🍅",
@@ -161,9 +340,7 @@ var htol = (function(exports) {
 				Hippocastanaceae: "🌰",
 				Fragaria: "🍓",
 				Citrus: "🍋",
-				"Malus baccata": "🍎",
 				Pyrus: "🍐",
-				"Prunus serotina": "🍒",
 				Capsicum: "🌶️",
 				Triticeae: "🌾",
 				Bambusoideae: "🎋",
@@ -1071,70 +1248,6 @@ var htol = (function(exports) {
 		const reverse = stop < start, inc = reverse ? tickIncrement(stop, start, count) : tickIncrement(start, stop, count);
 		return (reverse ? -1 : 1) * (inc < 0 ? 1 / -inc : inc);
 	}
-	var noop$1 = { value: () => {} };
-	function dispatch() {
-		for (var i = 0, n = arguments.length, _ = {}, t; i < n; ++i) {
-			if (!(t = arguments[i] + "") || t in _ || /[\s.]/.test(t)) throw new Error("illegal type: " + t);
-			_[t] = [];
-		}
-		return new Dispatch(_);
-	}
-	function Dispatch(_) {
-		this._ = _;
-	}
-	function parseTypenames$1(typenames, types) {
-		return typenames.trim().split(/^|\s+/).map(function(t) {
-			var name = "", i = t.indexOf(".");
-			if (i >= 0) name = t.slice(i + 1), t = t.slice(0, i);
-			if (t && !types.hasOwnProperty(t)) throw new Error("unknown type: " + t);
-			return {
-				type: t,
-				name
-			};
-		});
-	}
-	Dispatch.prototype = dispatch.prototype = {
-		constructor: Dispatch,
-		on: function(typename, callback) {
-			var _ = this._, T = parseTypenames$1(typename + "", _), t, i = -1, n = T.length;
-			if (arguments.length < 2) {
-				while (++i < n) if ((t = (typename = T[i]).type) && (t = get$1(_[t], typename.name))) return t;
-				return;
-			}
-			if (callback != null && typeof callback !== "function") throw new Error("invalid callback: " + callback);
-			while (++i < n) if (t = (typename = T[i]).type) _[t] = set$1(_[t], typename.name, callback);
-			else if (callback == null) for (t in _) _[t] = set$1(_[t], typename.name, null);
-			return this;
-		},
-		copy: function() {
-			var copy = {}, _ = this._;
-			for (var t in _) copy[t] = _[t].slice();
-			return new Dispatch(copy);
-		},
-		call: function(type, that) {
-			if ((n = arguments.length - 2) > 0) for (var args = new Array(n), i = 0, n, t; i < n; ++i) args[i] = arguments[i + 2];
-			if (!this._.hasOwnProperty(type)) throw new Error("unknown type: " + type);
-			for (t = this._[type], i = 0, n = t.length; i < n; ++i) t[i].value.apply(that, args);
-		},
-		apply: function(type, that, args) {
-			if (!this._.hasOwnProperty(type)) throw new Error("unknown type: " + type);
-			for (var t = this._[type], i = 0, n = t.length; i < n; ++i) t[i].value.apply(that, args);
-		}
-	};
-	function get$1(type, name) {
-		for (var i = 0, n = type.length, c; i < n; ++i) if ((c = type[i]).name === name) return c.value;
-	}
-	function set$1(type, name, callback) {
-		for (var i = 0, n = type.length; i < n; ++i) if (type[i].name === name) {
-			type[i] = noop$1, type = type.slice(0, i).concat(type.slice(i + 1));
-			break;
-		}
-		if (callback != null) type.push({
-			name,
-			value: callback
-		});
-		return type;
-	}
 	var xhtml$1 = "http://www.w3.org/1999/xhtml";
 	var namespaces$1 = {
 		svg: "http://www.w3.org/2000/svg",
@@ -1272,7 +1385,7 @@ var htol = (function(exports) {
 			return this._parent.querySelectorAll(selector);
 		}
 	};
-	function constant$3(x) {
+	function constant$2(x) {
 		return function() {
 			return x;
 		};
@@ -1308,7 +1421,7 @@ var htol = (function(exports) {
 	function selection_data$1(value, key) {
 		if (!arguments.length) return Array.from(this, datum$1);
 		var bind = key ? bindKey$1 : bindIndex$1, parents = this._parents, groups = this._groups;
-		if (typeof value !== "function") value = constant$3(value);
+		if (typeof value !== "function") value = constant$2(value);
 		for (var m = groups.length, update = new Array(m), enter = new Array(m), exit = new Array(m), j = 0; j < m; ++j) {
 			var parent = parents[j], group = groups[j], groupLength = group.length, data = arraylike$1(value.call(parent, parent && parent.__data__, j, parents)), dataLength = data.length, enterGroup = enter[j] = new Array(dataLength), updateGroup = update[j] = new Array(dataLength);
 			bind(parent, group, enterGroup, updateGroup, exit[j] = new Array(groupLength), data, key);
@@ -1633,7 +1746,7 @@ var htol = (function(exports) {
 			listener.call(this, event, this.__data__);
 		};
 	}
-	function parseTypenames$2(typenames) {
+	function parseTypenames$1(typenames) {
 		return typenames.trim().split(/^|\s+/).map(function(t) {
 			var name = "", i = t.indexOf(".");
 			if (i >= 0) name = t.slice(i + 1), t = t.slice(0, i);
@@ -1677,7 +1790,7 @@ var htol = (function(exports) {
 		};
 	}
 	function selection_on$1(typename, value, options) {
-		var typenames = parseTypenames$2(typename + ""), i, n = typenames.length, t;
+		var typenames = parseTypenames$1(typename + ""), i, n = typenames.length, t;
 		if (arguments.length < 2) {
 			var on = this.node().__on;
 			if (on) {
@@ -1814,95 +1927,6 @@ var htol = (function(exports) {
 		}
 		return [event.pageX, event.pageY];
 	}
-	var nonpassivecapture = {
-		capture: true,
-		passive: false
-	};
-	function noevent$1(event) {
-		event.preventDefault();
-		event.stopImmediatePropagation();
-	}
-	function nodrag(view) {
-		var root = view.document.documentElement, selection = select$1(view).on("dragstart.drag", noevent$1, nonpassivecapture);
-		if ("onselectstart" in root) selection.on("selectstart.drag", noevent$1, nonpassivecapture);
-		else {
-			root.__noselect = root.style.MozUserSelect;
-			root.style.MozUserSelect = "none";
-		}
-	}
-	function yesdrag(view, noclick) {
-		var root = view.document.documentElement, selection = select$1(view).on("dragstart.drag", null);
-		if (noclick) {
-			selection.on("click.drag", noevent$1, nonpassivecapture);
-			setTimeout(function() {
-				selection.on("click.drag", null);
-			}, 0);
-		}
-		if ("onselectstart" in root) selection.on("selectstart.drag", null);
-		else {
-			root.style.MozUserSelect = root.__noselect;
-			delete root.__noselect;
-		}
-	}
-	function DragEvent(type, { sourceEvent, subject, target, identifier, active, x, y, dx, dy, dispatch }) {
-		Object.defineProperties(this, {
-			type: {
-				value: type,
-				enumerable: true,
-				configurable: true
-			},
-			sourceEvent: {
-				value: sourceEvent,
-				enumerable: true,
-				configurable: true
-			},
-			subject: {
-				value: subject,
-				enumerable: true,
-				configurable: true
-			},
-			target: {
-				value: target,
-				enumerable: true,
-				configurable: true
-			},
-			identifier: {
-				value: identifier,
-				enumerable: true,
-				configurable: true
-			},
-			active: {
-				value: active,
-				enumerable: true,
-				configurable: true
-			},
-			x: {
-				value: x,
-				enumerable: true,
-				configurable: true
-			},
-			y: {
-				value: y,
-				enumerable: true,
-				configurable: true
-			},
-			dx: {
-				value: dx,
-				enumerable: true,
-				configurable: true
-			},
-			dy: {
-				value: dy,
-				enumerable: true,
-				configurable: true
-			},
-			_: { value: dispatch }
-		});
-	}
-	DragEvent.prototype.on = function() {
-		var value = this._.on.apply(this._, arguments);
-		return value === this._ ? this : value;
-	};
 	function define$1(constructor, factory, prototype) {
 		constructor.prototype = factory.prototype = prototype;
 		prototype.constructor = constructor;
@@ -2375,7 +2399,7 @@ var htol = (function(exports) {
 			return basis((t - i / n) * n, v0, v1, v2, v3);
 		};
 	}
-	var constant$2 = (x) => () => x;
+	var constant$1 = (x) => () => x;
 	function linear$1(a, d) {
 		return function(t) {
 			return a + t * d;
@@ -2388,16 +2412,16 @@ var htol = (function(exports) {
 	}
 	function hue$1(a, b) {
 		var d = b - a;
-		return d ? linear$1(a, d > 180 || d < -180 ? d - 360 * Math.round(d / 360) : d) : constant$2(isNaN(a) ? b : a);
+		return d ? linear$1(a, d > 180 || d < -180 ? d - 360 * Math.round(d / 360) : d) : constant$1(isNaN(a) ? b : a);
 	}
 	function gamma(y) {
 		return (y = +y) === 1 ? nogamma : function(a, b) {
-			return b - a ? exponential(a, b, y) : constant$2(isNaN(a) ? b : a);
+			return b - a ? exponential(a, b, y) : constant$1(isNaN(a) ? b : a);
 		};
 	}
 	function nogamma(a, b) {
 		var d = b - a;
-		return d ? linear$1(a, d) : constant$2(isNaN(a) ? b : a);
+		return d ? linear$1(a, d) : constant$1(isNaN(a) ? b : a);
 	}
 	var rgb = (function rgbGamma(y) {
 		var color = gamma(y);
@@ -2523,112 +2547,13 @@ var htol = (function(exports) {
 	}
 	function value(a, b) {
 		var t = typeof b, c;
-		return b == null || t === "boolean" ? constant$2(b) : (t === "number" ? number : t === "string" ? (c = color(b)) ? (b = c, rgb) : string : b instanceof color ? rgb : b instanceof Date ? date : isNumberArray(b) ? numberArray : Array.isArray(b) ? genericArray : typeof b.valueOf !== "function" && typeof b.toString !== "function" || isNaN(b) ? object : number)(a, b);
+		return b == null || t === "boolean" ? constant$1(b) : (t === "number" ? number : t === "string" ? (c = color(b)) ? (b = c, rgb) : string : b instanceof color ? rgb : b instanceof Date ? date : isNumberArray(b) ? numberArray : Array.isArray(b) ? genericArray : typeof b.valueOf !== "function" && typeof b.toString !== "function" || isNaN(b) ? object : number)(a, b);
 	}
 	function round(a, b) {
 		return a = +a, b = +b, function(t) {
 			return Math.round(a * (1 - t) + b * t);
 		};
 	}
-	var degrees = 180 / Math.PI;
-	var identity$3 = {
-		translateX: 0,
-		translateY: 0,
-		rotate: 0,
-		skewX: 0,
-		scaleX: 1,
-		scaleY: 1
-	};
-	function decompose(a, b, c, d, e, f) {
-		var scaleX, scaleY, skewX;
-		if (scaleX = Math.sqrt(a * a + b * b)) a /= scaleX, b /= scaleX;
-		if (skewX = a * c + b * d) c -= a * skewX, d -= b * skewX;
-		if (scaleY = Math.sqrt(c * c + d * d)) c /= scaleY, d /= scaleY, skewX /= scaleY;
-		if (a * d < b * c) a = -a, b = -b, skewX = -skewX, scaleX = -scaleX;
-		return {
-			translateX: e,
-			translateY: f,
-			rotate: Math.atan2(b, a) * degrees,
-			skewX: Math.atan(skewX) * degrees,
-			scaleX,
-			scaleY
-		};
-	}
-	var svgNode;
-	function parseCss(value) {
-		const m = new (typeof DOMMatrix === "function" ? DOMMatrix : WebKitCSSMatrix)(value + "");
-		return m.isIdentity ? identity$3 : decompose(m.a, m.b, m.c, m.d, m.e, m.f);
-	}
-	function parseSvg(value) {
-		if (value == null) return identity$3;
-		if (!svgNode) svgNode = document.createElementNS("http://www.w3.org/2000/svg", "g");
-		svgNode.setAttribute("transform", value);
-		if (!(value = svgNode.transform.baseVal.consolidate())) return identity$3;
-		value = value.matrix;
-		return decompose(value.a, value.b, value.c, value.d, value.e, value.f);
-	}
-	function interpolateTransform(parse, pxComma, pxParen, degParen) {
-		function pop(s) {
-			return s.length ? s.pop() + " " : "";
-		}
-		function translate(xa, ya, xb, yb, s, q) {
-			if (xa !== xb || ya !== yb) {
-				var i = s.push("translate(", null, pxComma, null, pxParen);
-				q.push({
-					i: i - 4,
-					x: number(xa, xb)
-				}, {
-					i: i - 2,
-					x: number(ya, yb)
-				});
-			} else if (xb || yb) s.push("translate(" + xb + pxComma + yb + pxParen);
-		}
-		function rotate(a, b, s, q) {
-			if (a !== b) {
-				if (a - b > 180) b += 360;
-				else if (b - a > 180) a += 360;
-				q.push({
-					i: s.push(pop(s) + "rotate(", null, degParen) - 2,
-					x: number(a, b)
-				});
-			} else if (b) s.push(pop(s) + "rotate(" + b + degParen);
-		}
-		function skewX(a, b, s, q) {
-			if (a !== b) q.push({
-				i: s.push(pop(s) + "skewX(", null, degParen) - 2,
-				x: number(a, b)
-			});
-			else if (b) s.push(pop(s) + "skewX(" + b + degParen);
-		}
-		function scale(xa, ya, xb, yb, s, q) {
-			if (xa !== xb || ya !== yb) {
-				var i = s.push(pop(s) + "scale(", null, ",", null, ")");
-				q.push({
-					i: i - 4,
-					x: number(xa, xb)
-				}, {
-					i: i - 2,
-					x: number(ya, yb)
-				});
-			} else if (xb !== 1 || yb !== 1) s.push(pop(s) + "scale(" + xb + "," + yb + ")");
-		}
-		return function(a, b) {
-			var s = [], q = [];
-			a = parse(a), b = parse(b);
-			translate(a.translateX, a.translateY, b.translateX, b.translateY, s, q);
-			rotate(a.rotate, b.rotate, s, q);
-			skewX(a.skewX, b.skewX, s, q);
-			scale(a.scaleX, a.scaleY, b.scaleX, b.scaleY, s, q);
-			a = b = null;
-			return function(t) {
-				var i = -1, n = q.length, o;
-				while (++i < n) s[(o = q[i]).i] = o.x(t);
-				return s.join("");
-			};
-		};
-	}
-	var interpolateTransformCss = interpolateTransform(parseCss, "px, ", "px)", "deg)");
-	var interpolateTransformSvg = interpolateTransform(parseSvg, ", ", ")", ")");
 	var epsilon2 = 1e-12;
 	function cosh(x) {
 		return ((x = Math.exp(x)) + 1 / x) / 2;
@@ -2639,7 +2564,7 @@ var htol = (function(exports) {
 	function tanh(x) {
 		return ((x = Math.exp(2 * x)) - 1) / (x + 1);
 	}
-	var zoom$1 = (function zoomRho(rho, rho2, rho4) {
+	(function zoomRho(rho, rho2, rho4) {
 		function zoom(p0, p1) {
 			var ux0 = p0[0], uy0 = p0[1], w0 = p0[2], ux1 = p1[0], uy1 = p1[1], w1 = p1[2], dx = ux1 - ux0, dy = uy1 - uy0, d2 = dx * dx + dy * dy, i, S;
 			if (d2 < epsilon2) {
@@ -2672,19 +2597,6 @@ var htol = (function(exports) {
 		};
 		return zoom;
 	})(Math.SQRT2, 2, 4);
-	function hcl(hue) {
-		return function(start, end) {
-			var h = hue((start = hcl$1(start)).h, (end = hcl$1(end)).h), c = nogamma(start.c, end.c), l = nogamma(start.l, end.l), opacity = nogamma(start.opacity, end.opacity);
-			return function(t) {
-				start.h = h(t);
-				start.c = c(t);
-				start.l = l(t);
-				start.opacity = opacity(t);
-				return start + "";
-			};
-		};
-	}
-	var hcl_default = hcl(hue$1);
 	function cubehelix$2(hue) {
 		return (function cubehelixGamma(y) {
 			y = +y;
@@ -2704,787 +2616,6 @@ var htol = (function(exports) {
 	}
 	cubehelix$2(hue$1);
 	var cubehelixLong = cubehelix$2(nogamma);
-	var frame = 0;
-	var timeout$1 = 0;
-	var interval$1 = 0;
-	var pokeDelay = 1e3;
-	var taskHead;
-	var taskTail;
-	var clockLast = 0;
-	var clockNow = 0;
-	var clockSkew = 0;
-	var clock = typeof performance === "object" && performance.now ? performance : Date;
-	var setFrame = typeof window === "object" && window.requestAnimationFrame ? window.requestAnimationFrame.bind(window) : function(f) {
-		setTimeout(f, 17);
-	};
-	function now() {
-		return clockNow || (setFrame(clearNow), clockNow = clock.now() + clockSkew);
-	}
-	function clearNow() {
-		clockNow = 0;
-	}
-	function Timer() {
-		this._call = this._time = this._next = null;
-	}
-	Timer.prototype = timer.prototype = {
-		constructor: Timer,
-		restart: function(callback, delay, time) {
-			if (typeof callback !== "function") throw new TypeError("callback is not a function");
-			time = (time == null ? now() : +time) + (delay == null ? 0 : +delay);
-			if (!this._next && taskTail !== this) {
-				if (taskTail) taskTail._next = this;
-				else taskHead = this;
-				taskTail = this;
-			}
-			this._call = callback;
-			this._time = time;
-			sleep();
-		},
-		stop: function() {
-			if (this._call) {
-				this._call = null;
-				this._time = Infinity;
-				sleep();
-			}
-		}
-	};
-	function timer(callback, delay, time) {
-		var t = new Timer();
-		t.restart(callback, delay, time);
-		return t;
-	}
-	function timerFlush() {
-		now();
-		++frame;
-		var t = taskHead, e;
-		while (t) {
-			if ((e = clockNow - t._time) >= 0) t._call.call(void 0, e);
-			t = t._next;
-		}
-		--frame;
-	}
-	function wake() {
-		clockNow = (clockLast = clock.now()) + clockSkew;
-		frame = timeout$1 = 0;
-		try {
-			timerFlush();
-		} finally {
-			frame = 0;
-			nap();
-			clockNow = 0;
-		}
-	}
-	function poke() {
-		var now = clock.now(), delay = now - clockLast;
-		if (delay > pokeDelay) clockSkew -= delay, clockLast = now;
-	}
-	function nap() {
-		var t0, t1 = taskHead, t2, time = Infinity;
-		while (t1) if (t1._call) {
-			if (time > t1._time) time = t1._time;
-			t0 = t1, t1 = t1._next;
-		} else {
-			t2 = t1._next, t1._next = null;
-			t1 = t0 ? t0._next = t2 : taskHead = t2;
-		}
-		taskTail = t0;
-		sleep(time);
-	}
-	function sleep(time) {
-		if (frame) return;
-		if (timeout$1) timeout$1 = clearTimeout(timeout$1);
-		if (time - clockNow > 24) {
-			if (time < Infinity) timeout$1 = setTimeout(wake, Math.ceil(time - clock.now() - clockSkew) + 1);
-			if (interval$1) interval$1 = clearInterval(interval$1);
-		} else {
-			if (!interval$1) clockLast = clock.now(), interval$1 = setInterval(poke, pokeDelay);
-			frame = 1, setFrame(wake);
-		}
-	}
-	function timeout(callback, delay, time) {
-		var t = new Timer();
-		delay = delay == null ? 0 : +delay;
-		t.restart((elapsed) => {
-			t.stop();
-			callback(elapsed + delay);
-		}, delay, time);
-		return t;
-	}
-	function cubicInOut(t) {
-		return ((t *= 2) <= 1 ? t * t * t : (t -= 2) * t * t + 2) / 2;
-	}
-	var exponent$1 = 3;
-	(function custom(e) {
-		e = +e;
-		function polyIn(t) {
-			return Math.pow(t, e);
-		}
-		polyIn.exponent = custom;
-		return polyIn;
-	})(exponent$1);
-	(function custom(e) {
-		e = +e;
-		function polyOut(t) {
-			return 1 - Math.pow(1 - t, e);
-		}
-		polyOut.exponent = custom;
-		return polyOut;
-	})(exponent$1);
-	(function custom(e) {
-		e = +e;
-		function polyInOut(t) {
-			return ((t *= 2) <= 1 ? Math.pow(t, e) : 2 - Math.pow(2 - t, e)) / 2;
-		}
-		polyInOut.exponent = custom;
-		return polyInOut;
-	})(exponent$1);
-	function tpmt(x) {
-		return (Math.pow(2, -10 * x) - .0009765625) * 1.0009775171065494;
-	}
-	var b1 = 4 / 11;
-	1 / b1 / b1;
-	var overshoot = 1.70158;
-	(function custom(s) {
-		s = +s;
-		function backIn(t) {
-			return (t = +t) * t * (s * (t - 1) + t);
-		}
-		backIn.overshoot = custom;
-		return backIn;
-	})(overshoot);
-	(function custom(s) {
-		s = +s;
-		function backOut(t) {
-			return --t * t * ((t + 1) * s + t) + 1;
-		}
-		backOut.overshoot = custom;
-		return backOut;
-	})(overshoot);
-	(function custom(s) {
-		s = +s;
-		function backInOut(t) {
-			return ((t *= 2) < 1 ? t * t * ((s + 1) * t - s) : (t -= 2) * t * ((s + 1) * t + s) + 2) / 2;
-		}
-		backInOut.overshoot = custom;
-		return backInOut;
-	})(overshoot);
-	var tau$3 = 2 * Math.PI;
-	var amplitude = 1;
-	var period = .3;
-	(function custom(a, p) {
-		var s = Math.asin(1 / (a = Math.max(1, a))) * (p /= tau$3);
-		function elasticIn(t) {
-			return a * tpmt(- --t) * Math.sin((s - t) / p);
-		}
-		elasticIn.amplitude = function(a) {
-			return custom(a, p * tau$3);
-		};
-		elasticIn.period = function(p) {
-			return custom(a, p);
-		};
-		return elasticIn;
-	})(amplitude, period);
-	(function custom(a, p) {
-		var s = Math.asin(1 / (a = Math.max(1, a))) * (p /= tau$3);
-		function elasticOut(t) {
-			return 1 - a * tpmt(t = +t) * Math.sin((t + s) / p);
-		}
-		elasticOut.amplitude = function(a) {
-			return custom(a, p * tau$3);
-		};
-		elasticOut.period = function(p) {
-			return custom(a, p);
-		};
-		return elasticOut;
-	})(amplitude, period);
-	(function custom(a, p) {
-		var s = Math.asin(1 / (a = Math.max(1, a))) * (p /= tau$3);
-		function elasticInOut(t) {
-			return ((t = t * 2 - 1) < 0 ? a * tpmt(-t) * Math.sin((s - t) / p) : 2 - a * tpmt(t) * Math.sin((s + t) / p)) / 2;
-		}
-		elasticInOut.amplitude = function(a) {
-			return custom(a, p * tau$3);
-		};
-		elasticInOut.period = function(p) {
-			return custom(a, p);
-		};
-		return elasticInOut;
-	})(amplitude, period);
-	var emptyOn = dispatch("start", "end", "cancel", "interrupt");
-	var emptyTween = [];
-	var CREATED = 0;
-	var SCHEDULED = 1;
-	var STARTING = 2;
-	var STARTED = 3;
-	var RUNNING = 4;
-	var ENDING = 5;
-	var ENDED = 6;
-	function schedule(node, name, id, index, group, timing) {
-		var schedules = node.__transition;
-		if (!schedules) node.__transition = {};
-		else if (id in schedules) return;
-		create(node, id, {
-			name,
-			index,
-			group,
-			on: emptyOn,
-			tween: emptyTween,
-			time: timing.time,
-			delay: timing.delay,
-			duration: timing.duration,
-			ease: timing.ease,
-			timer: null,
-			state: CREATED
-		});
-	}
-	function init(node, id) {
-		var schedule = get(node, id);
-		if (schedule.state > CREATED) throw new Error("too late; already scheduled");
-		return schedule;
-	}
-	function set(node, id) {
-		var schedule = get(node, id);
-		if (schedule.state > STARTED) throw new Error("too late; already running");
-		return schedule;
-	}
-	function get(node, id) {
-		var schedule = node.__transition;
-		if (!schedule || !(schedule = schedule[id])) throw new Error("transition not found");
-		return schedule;
-	}
-	function create(node, id, self) {
-		var schedules = node.__transition, tween;
-		schedules[id] = self;
-		self.timer = timer(schedule, 0, self.time);
-		function schedule(elapsed) {
-			self.state = SCHEDULED;
-			self.timer.restart(start, self.delay, self.time);
-			if (self.delay <= elapsed) start(elapsed - self.delay);
-		}
-		function start(elapsed) {
-			var i, j, n, o;
-			if (self.state !== SCHEDULED) return stop();
-			for (i in schedules) {
-				o = schedules[i];
-				if (o.name !== self.name) continue;
-				if (o.state === STARTED) return timeout(start);
-				if (o.state === RUNNING) {
-					o.state = ENDED;
-					o.timer.stop();
-					o.on.call("interrupt", node, node.__data__, o.index, o.group);
-					delete schedules[i];
-				} else if (+i < id) {
-					o.state = ENDED;
-					o.timer.stop();
-					o.on.call("cancel", node, node.__data__, o.index, o.group);
-					delete schedules[i];
-				}
-			}
-			timeout(function() {
-				if (self.state === STARTED) {
-					self.state = RUNNING;
-					self.timer.restart(tick, self.delay, self.time);
-					tick(elapsed);
-				}
-			});
-			self.state = STARTING;
-			self.on.call("start", node, node.__data__, self.index, self.group);
-			if (self.state !== STARTING) return;
-			self.state = STARTED;
-			tween = new Array(n = self.tween.length);
-			for (i = 0, j = -1; i < n; ++i) if (o = self.tween[i].value.call(node, node.__data__, self.index, self.group)) tween[++j] = o;
-			tween.length = j + 1;
-		}
-		function tick(elapsed) {
-			var t = elapsed < self.duration ? self.ease.call(null, elapsed / self.duration) : (self.timer.restart(stop), self.state = ENDING, 1), i = -1, n = tween.length;
-			while (++i < n) tween[i].call(node, t);
-			if (self.state === ENDING) {
-				self.on.call("end", node, node.__data__, self.index, self.group);
-				stop();
-			}
-		}
-		function stop() {
-			self.state = ENDED;
-			self.timer.stop();
-			delete schedules[id];
-			for (var i in schedules) return;
-			delete node.__transition;
-		}
-	}
-	function interrupt(node, name) {
-		var schedules = node.__transition, schedule, active, empty = true, i;
-		if (!schedules) return;
-		name = name == null ? null : name + "";
-		for (i in schedules) {
-			if ((schedule = schedules[i]).name !== name) {
-				empty = false;
-				continue;
-			}
-			active = schedule.state > STARTING && schedule.state < ENDING;
-			schedule.state = ENDED;
-			schedule.timer.stop();
-			schedule.on.call(active ? "interrupt" : "cancel", node, node.__data__, schedule.index, schedule.group);
-			delete schedules[i];
-		}
-		if (empty) delete node.__transition;
-	}
-	function selection_interrupt(name) {
-		return this.each(function() {
-			interrupt(this, name);
-		});
-	}
-	function tweenRemove(id, name) {
-		var tween0, tween1;
-		return function() {
-			var schedule = set(this, id), tween = schedule.tween;
-			if (tween !== tween0) {
-				tween1 = tween0 = tween;
-				for (var i = 0, n = tween1.length; i < n; ++i) if (tween1[i].name === name) {
-					tween1 = tween1.slice();
-					tween1.splice(i, 1);
-					break;
-				}
-			}
-			schedule.tween = tween1;
-		};
-	}
-	function tweenFunction(id, name, value) {
-		var tween0, tween1;
-		if (typeof value !== "function") throw new Error();
-		return function() {
-			var schedule = set(this, id), tween = schedule.tween;
-			if (tween !== tween0) {
-				tween1 = (tween0 = tween).slice();
-				for (var t = {
-					name,
-					value
-				}, i = 0, n = tween1.length; i < n; ++i) if (tween1[i].name === name) {
-					tween1[i] = t;
-					break;
-				}
-				if (i === n) tween1.push(t);
-			}
-			schedule.tween = tween1;
-		};
-	}
-	function transition_tween(name, value) {
-		var id = this._id;
-		name += "";
-		if (arguments.length < 2) {
-			var tween = get(this.node(), id).tween;
-			for (var i = 0, n = tween.length, t; i < n; ++i) if ((t = tween[i]).name === name) return t.value;
-			return null;
-		}
-		return this.each((value == null ? tweenRemove : tweenFunction)(id, name, value));
-	}
-	function tweenValue(transition, name, value) {
-		var id = transition._id;
-		transition.each(function() {
-			var schedule = set(this, id);
-			(schedule.value || (schedule.value = {}))[name] = value.apply(this, arguments);
-		});
-		return function(node) {
-			return get(node, id).value[name];
-		};
-	}
-	function interpolate(a, b) {
-		var c;
-		return (typeof b === "number" ? number : b instanceof color ? rgb : (c = color(b)) ? (b = c, rgb) : string)(a, b);
-	}
-	function attrRemove$2(name) {
-		return function() {
-			this.removeAttribute(name);
-		};
-	}
-	function attrRemoveNS$2(fullname) {
-		return function() {
-			this.removeAttributeNS(fullname.space, fullname.local);
-		};
-	}
-	function attrConstant$2(name, interpolate, value1) {
-		var string00, string1 = value1 + "", interpolate0;
-		return function() {
-			var string0 = this.getAttribute(name);
-			return string0 === string1 ? null : string0 === string00 ? interpolate0 : interpolate0 = interpolate(string00 = string0, value1);
-		};
-	}
-	function attrConstantNS$2(fullname, interpolate, value1) {
-		var string00, string1 = value1 + "", interpolate0;
-		return function() {
-			var string0 = this.getAttributeNS(fullname.space, fullname.local);
-			return string0 === string1 ? null : string0 === string00 ? interpolate0 : interpolate0 = interpolate(string00 = string0, value1);
-		};
-	}
-	function attrFunction$2(name, interpolate, value) {
-		var string00, string10, interpolate0;
-		return function() {
-			var string0, value1 = value(this), string1;
-			if (value1 == null) return void this.removeAttribute(name);
-			string0 = this.getAttribute(name);
-			string1 = value1 + "";
-			return string0 === string1 ? null : string0 === string00 && string1 === string10 ? interpolate0 : (string10 = string1, interpolate0 = interpolate(string00 = string0, value1));
-		};
-	}
-	function attrFunctionNS$2(fullname, interpolate, value) {
-		var string00, string10, interpolate0;
-		return function() {
-			var string0, value1 = value(this), string1;
-			if (value1 == null) return void this.removeAttributeNS(fullname.space, fullname.local);
-			string0 = this.getAttributeNS(fullname.space, fullname.local);
-			string1 = value1 + "";
-			return string0 === string1 ? null : string0 === string00 && string1 === string10 ? interpolate0 : (string10 = string1, interpolate0 = interpolate(string00 = string0, value1));
-		};
-	}
-	function transition_attr(name, value) {
-		var fullname = namespace$1(name), i = fullname === "transform" ? interpolateTransformSvg : interpolate;
-		return this.attrTween(name, typeof value === "function" ? (fullname.local ? attrFunctionNS$2 : attrFunction$2)(fullname, i, tweenValue(this, "attr." + name, value)) : value == null ? (fullname.local ? attrRemoveNS$2 : attrRemove$2)(fullname) : (fullname.local ? attrConstantNS$2 : attrConstant$2)(fullname, i, value));
-	}
-	function attrInterpolate(name, i) {
-		return function(t) {
-			this.setAttribute(name, i.call(this, t));
-		};
-	}
-	function attrInterpolateNS(fullname, i) {
-		return function(t) {
-			this.setAttributeNS(fullname.space, fullname.local, i.call(this, t));
-		};
-	}
-	function attrTweenNS(fullname, value) {
-		var t0, i0;
-		function tween() {
-			var i = value.apply(this, arguments);
-			if (i !== i0) t0 = (i0 = i) && attrInterpolateNS(fullname, i);
-			return t0;
-		}
-		tween._value = value;
-		return tween;
-	}
-	function attrTween(name, value) {
-		var t0, i0;
-		function tween() {
-			var i = value.apply(this, arguments);
-			if (i !== i0) t0 = (i0 = i) && attrInterpolate(name, i);
-			return t0;
-		}
-		tween._value = value;
-		return tween;
-	}
-	function transition_attrTween(name, value) {
-		var key = "attr." + name;
-		if (arguments.length < 2) return (key = this.tween(key)) && key._value;
-		if (value == null) return this.tween(key, null);
-		if (typeof value !== "function") throw new Error();
-		var fullname = namespace$1(name);
-		return this.tween(key, (fullname.local ? attrTweenNS : attrTween)(fullname, value));
-	}
-	function delayFunction(id, value) {
-		return function() {
-			init(this, id).delay = +value.apply(this, arguments);
-		};
-	}
-	function delayConstant(id, value) {
-		return value = +value, function() {
-			init(this, id).delay = value;
-		};
-	}
-	function transition_delay(value) {
-		var id = this._id;
-		return arguments.length ? this.each((typeof value === "function" ? delayFunction : delayConstant)(id, value)) : get(this.node(), id).delay;
-	}
-	function durationFunction(id, value) {
-		return function() {
-			set(this, id).duration = +value.apply(this, arguments);
-		};
-	}
-	function durationConstant(id, value) {
-		return value = +value, function() {
-			set(this, id).duration = value;
-		};
-	}
-	function transition_duration(value) {
-		var id = this._id;
-		return arguments.length ? this.each((typeof value === "function" ? durationFunction : durationConstant)(id, value)) : get(this.node(), id).duration;
-	}
-	function easeConstant(id, value) {
-		if (typeof value !== "function") throw new Error();
-		return function() {
-			set(this, id).ease = value;
-		};
-	}
-	function transition_ease(value) {
-		var id = this._id;
-		return arguments.length ? this.each(easeConstant(id, value)) : get(this.node(), id).ease;
-	}
-	function easeVarying(id, value) {
-		return function() {
-			var v = value.apply(this, arguments);
-			if (typeof v !== "function") throw new Error();
-			set(this, id).ease = v;
-		};
-	}
-	function transition_easeVarying(value) {
-		if (typeof value !== "function") throw new Error();
-		return this.each(easeVarying(this._id, value));
-	}
-	function transition_filter(match) {
-		if (typeof match !== "function") match = matcher$1(match);
-		for (var groups = this._groups, m = groups.length, subgroups = new Array(m), j = 0; j < m; ++j) for (var group = groups[j], n = group.length, subgroup = subgroups[j] = [], node, i = 0; i < n; ++i) if ((node = group[i]) && match.call(node, node.__data__, i, group)) subgroup.push(node);
-		return new Transition$1(subgroups, this._parents, this._name, this._id);
-	}
-	function transition_merge(transition) {
-		if (transition._id !== this._id) throw new Error();
-		for (var groups0 = this._groups, groups1 = transition._groups, m0 = groups0.length, m1 = groups1.length, m = Math.min(m0, m1), merges = new Array(m0), j = 0; j < m; ++j) for (var group0 = groups0[j], group1 = groups1[j], n = group0.length, merge = merges[j] = new Array(n), node, i = 0; i < n; ++i) if (node = group0[i] || group1[i]) merge[i] = node;
-		for (; j < m0; ++j) merges[j] = groups0[j];
-		return new Transition$1(merges, this._parents, this._name, this._id);
-	}
-	function start(name) {
-		return (name + "").trim().split(/^|\s+/).every(function(t) {
-			var i = t.indexOf(".");
-			if (i >= 0) t = t.slice(0, i);
-			return !t || t === "start";
-		});
-	}
-	function onFunction(id, name, listener) {
-		var on0, on1, sit = start(name) ? init : set;
-		return function() {
-			var schedule = sit(this, id), on = schedule.on;
-			if (on !== on0) (on1 = (on0 = on).copy()).on(name, listener);
-			schedule.on = on1;
-		};
-	}
-	function transition_on(name, listener) {
-		var id = this._id;
-		return arguments.length < 2 ? get(this.node(), id).on.on(name) : this.each(onFunction(id, name, listener));
-	}
-	function removeFunction(id) {
-		return function() {
-			var parent = this.parentNode;
-			for (var i in this.__transition) if (+i !== id) return;
-			if (parent) parent.removeChild(this);
-		};
-	}
-	function transition_remove() {
-		return this.on("end.remove", removeFunction(this._id));
-	}
-	function transition_select(select) {
-		var name = this._name, id = this._id;
-		if (typeof select !== "function") select = selector$1(select);
-		for (var groups = this._groups, m = groups.length, subgroups = new Array(m), j = 0; j < m; ++j) for (var group = groups[j], n = group.length, subgroup = subgroups[j] = new Array(n), node, subnode, i = 0; i < n; ++i) if ((node = group[i]) && (subnode = select.call(node, node.__data__, i, group))) {
-			if ("__data__" in node) subnode.__data__ = node.__data__;
-			subgroup[i] = subnode;
-			schedule(subgroup[i], name, id, i, subgroup, get(node, id));
-		}
-		return new Transition$1(subgroups, this._parents, name, id);
-	}
-	function transition_selectAll(select) {
-		var name = this._name, id = this._id;
-		if (typeof select !== "function") select = selectorAll$1(select);
-		for (var groups = this._groups, m = groups.length, subgroups = [], parents = [], j = 0; j < m; ++j) for (var group = groups[j], n = group.length, node, i = 0; i < n; ++i) if (node = group[i]) {
-			for (var children = select.call(node, node.__data__, i, group), child, inherit = get(node, id), k = 0, l = children.length; k < l; ++k) if (child = children[k]) schedule(child, name, id, k, children, inherit);
-			subgroups.push(children);
-			parents.push(node);
-		}
-		return new Transition$1(subgroups, parents, name, id);
-	}
-	var Selection$2 = selection$1.prototype.constructor;
-	function transition_selection() {
-		return new Selection$2(this._groups, this._parents);
-	}
-	function styleNull(name, interpolate) {
-		var string00, string10, interpolate0;
-		return function() {
-			var string0 = styleValue$1(this, name), string1 = (this.style.removeProperty(name), styleValue$1(this, name));
-			return string0 === string1 ? null : string0 === string00 && string1 === string10 ? interpolate0 : interpolate0 = interpolate(string00 = string0, string10 = string1);
-		};
-	}
-	function styleRemove$2(name) {
-		return function() {
-			this.style.removeProperty(name);
-		};
-	}
-	function styleConstant$2(name, interpolate, value1) {
-		var string00, string1 = value1 + "", interpolate0;
-		return function() {
-			var string0 = styleValue$1(this, name);
-			return string0 === string1 ? null : string0 === string00 ? interpolate0 : interpolate0 = interpolate(string00 = string0, value1);
-		};
-	}
-	function styleFunction$2(name, interpolate, value) {
-		var string00, string10, interpolate0;
-		return function() {
-			var string0 = styleValue$1(this, name), value1 = value(this), string1 = value1 + "";
-			if (value1 == null) string1 = value1 = (this.style.removeProperty(name), styleValue$1(this, name));
-			return string0 === string1 ? null : string0 === string00 && string1 === string10 ? interpolate0 : (string10 = string1, interpolate0 = interpolate(string00 = string0, value1));
-		};
-	}
-	function styleMaybeRemove(id, name) {
-		var on0, on1, listener0, key = "style." + name, event = "end." + key, remove;
-		return function() {
-			var schedule = set(this, id), on = schedule.on, listener = schedule.value[key] == null ? remove || (remove = styleRemove$2(name)) : void 0;
-			if (on !== on0 || listener0 !== listener) (on1 = (on0 = on).copy()).on(event, listener0 = listener);
-			schedule.on = on1;
-		};
-	}
-	function transition_style(name, value, priority) {
-		var i = (name += "") === "transform" ? interpolateTransformCss : interpolate;
-		return value == null ? this.styleTween(name, styleNull(name, i)).on("end.style." + name, styleRemove$2(name)) : typeof value === "function" ? this.styleTween(name, styleFunction$2(name, i, tweenValue(this, "style." + name, value))).each(styleMaybeRemove(this._id, name)) : this.styleTween(name, styleConstant$2(name, i, value), priority).on("end.style." + name, null);
-	}
-	function styleInterpolate(name, i, priority) {
-		return function(t) {
-			this.style.setProperty(name, i.call(this, t), priority);
-		};
-	}
-	function styleTween(name, value, priority) {
-		var t, i0;
-		function tween() {
-			var i = value.apply(this, arguments);
-			if (i !== i0) t = (i0 = i) && styleInterpolate(name, i, priority);
-			return t;
-		}
-		tween._value = value;
-		return tween;
-	}
-	function transition_styleTween(name, value, priority) {
-		var key = "style." + (name += "");
-		if (arguments.length < 2) return (key = this.tween(key)) && key._value;
-		if (value == null) return this.tween(key, null);
-		if (typeof value !== "function") throw new Error();
-		return this.tween(key, styleTween(name, value, priority == null ? "" : priority));
-	}
-	function textConstant$2(value) {
-		return function() {
-			this.textContent = value;
-		};
-	}
-	function textFunction$2(value) {
-		return function() {
-			var value1 = value(this);
-			this.textContent = value1 == null ? "" : value1;
-		};
-	}
-	function transition_text(value) {
-		return this.tween("text", typeof value === "function" ? textFunction$2(tweenValue(this, "text", value)) : textConstant$2(value == null ? "" : value + ""));
-	}
-	function textInterpolate(i) {
-		return function(t) {
-			this.textContent = i.call(this, t);
-		};
-	}
-	function textTween(value) {
-		var t0, i0;
-		function tween() {
-			var i = value.apply(this, arguments);
-			if (i !== i0) t0 = (i0 = i) && textInterpolate(i);
-			return t0;
-		}
-		tween._value = value;
-		return tween;
-	}
-	function transition_textTween(value) {
-		var key = "text";
-		if (arguments.length < 1) return (key = this.tween(key)) && key._value;
-		if (value == null) return this.tween(key, null);
-		if (typeof value !== "function") throw new Error();
-		return this.tween(key, textTween(value));
-	}
-	function transition_transition() {
-		var name = this._name, id0 = this._id, id1 = newId();
-		for (var groups = this._groups, m = groups.length, j = 0; j < m; ++j) for (var group = groups[j], n = group.length, node, i = 0; i < n; ++i) if (node = group[i]) {
-			var inherit = get(node, id0);
-			schedule(node, name, id1, i, group, {
-				time: inherit.time + inherit.delay + inherit.duration,
-				delay: 0,
-				duration: inherit.duration,
-				ease: inherit.ease
-			});
-		}
-		return new Transition$1(groups, this._parents, name, id1);
-	}
-	function transition_end() {
-		var on0, on1, that = this, id = that._id, size = that.size();
-		return new Promise(function(resolve, reject) {
-			var cancel = { value: reject }, end = { value: function() {
-				if (--size === 0) resolve();
-			} };
-			that.each(function() {
-				var schedule = set(this, id), on = schedule.on;
-				if (on !== on0) {
-					on1 = (on0 = on).copy();
-					on1._.cancel.push(cancel);
-					on1._.interrupt.push(cancel);
-					on1._.end.push(end);
-				}
-				schedule.on = on1;
-			});
-			if (size === 0) resolve();
-		});
-	}
-	var id = 0;
-	function Transition$1(groups, parents, name, id) {
-		this._groups = groups;
-		this._parents = parents;
-		this._name = name;
-		this._id = id;
-	}
-	function transition(name) {
-		return selection$1().transition(name);
-	}
-	function newId() {
-		return ++id;
-	}
-	var selection_prototype = selection$1.prototype;
-	Transition$1.prototype = transition.prototype = {
-		constructor: Transition$1,
-		select: transition_select,
-		selectAll: transition_selectAll,
-		selectChild: selection_prototype.selectChild,
-		selectChildren: selection_prototype.selectChildren,
-		filter: transition_filter,
-		merge: transition_merge,
-		selection: transition_selection,
-		transition: transition_transition,
-		call: selection_prototype.call,
-		nodes: selection_prototype.nodes,
-		node: selection_prototype.node,
-		size: selection_prototype.size,
-		empty: selection_prototype.empty,
-		each: selection_prototype.each,
-		on: transition_on,
-		attr: transition_attr,
-		attrTween: transition_attrTween,
-		style: transition_style,
-		styleTween: transition_styleTween,
-		text: transition_text,
-		textTween: transition_textTween,
-		remove: transition_remove,
-		tween: transition_tween,
-		delay: transition_delay,
-		duration: transition_duration,
-		ease: transition_ease,
-		easeVarying: transition_easeVarying,
-		end: transition_end,
-		[Symbol.iterator]: selection_prototype[Symbol.iterator]
-	};
-	var defaultTiming = {
-		time: null,
-		delay: 0,
-		duration: 250,
-		ease: cubicInOut
-	};
-	function inherit(node, id) {
-		var timing;
-		while (!(timing = node.__transition) || !(timing = timing[id])) if (!(node = node.parentNode)) throw new Error(`transition ${id} not found`);
-		return timing;
-	}
-	function selection_transition(name) {
-		var id, timing;
-		if (name instanceof Transition$1) id = name._id, name = name._name;
-		else id = newId(), (timing = defaultTiming).time = now(), name = name == null ? null : name + "";
-		for (var groups = this._groups, m = groups.length, j = 0; j < m; ++j) for (var group = groups[j], n = group.length, node, i = 0; i < n; ++i) if (node = group[i]) schedule(node, name, id, i, group, timing || inherit(node, id));
-		return new Transition$1(groups, this._parents, name, id);
-	}
-	selection$1.prototype.interrupt = selection_interrupt;
-	selection$1.prototype.transition = selection_transition;
 	var pi$1 = Math.PI;
 	var tau$2 = 2 * pi$1;
 	var epsilon$3 = 1e-6;
@@ -5235,7 +4366,7 @@ var htol = (function(exports) {
 		"X": (x) => Math.round(x).toString(16).toUpperCase(),
 		"x": (x) => Math.round(x).toString(16)
 	};
-	function identity$2(x) {
+	function identity(x) {
 		return x;
 	}
 	var map = Array.prototype.map;
@@ -5259,7 +4390,7 @@ var htol = (function(exports) {
 		"Y"
 	];
 	function formatLocale(locale) {
-		var group = locale.grouping === void 0 || locale.thousands === void 0 ? identity$2 : formatGroup(map.call(locale.grouping, Number), locale.thousands + ""), currencyPrefix = locale.currency === void 0 ? "" : locale.currency[0] + "", currencySuffix = locale.currency === void 0 ? "" : locale.currency[1] + "", decimal = locale.decimal === void 0 ? "." : locale.decimal + "", numerals = locale.numerals === void 0 ? identity$2 : formatNumerals(map.call(locale.numerals, String)), percent = locale.percent === void 0 ? "%" : locale.percent + "", minus = locale.minus === void 0 ? "−" : locale.minus + "", nan = locale.nan === void 0 ? "NaN" : locale.nan + "";
+		var group = locale.grouping === void 0 || locale.thousands === void 0 ? identity : formatGroup(map.call(locale.grouping, Number), locale.thousands + ""), currencyPrefix = locale.currency === void 0 ? "" : locale.currency[0] + "", currencySuffix = locale.currency === void 0 ? "" : locale.currency[1] + "", decimal = locale.decimal === void 0 ? "." : locale.decimal + "", numerals = locale.numerals === void 0 ? identity : formatNumerals(map.call(locale.numerals, String)), percent = locale.percent === void 0 ? "%" : locale.percent + "", minus = locale.minus === void 0 ? "−" : locale.minus + "", nan = locale.nan === void 0 ? "NaN" : locale.nan + "";
 		function newFormat(specifier, options) {
 			specifier = formatSpecifier(specifier);
 			var fill = specifier.fill, align = specifier.align, sign = specifier.sign, symbol = specifier.symbol, zero = specifier.zero, width = specifier.width, comma = specifier.comma, precision = specifier.precision, trim = specifier.trim, type = specifier.type;
@@ -5857,7 +4988,7 @@ var htol = (function(exports) {
 	function identity$1(x) {
 		return x;
 	}
-	function normalize(a, b) {
+	function normalize$2(a, b) {
 		return (b -= a = +a) ? function(x) {
 			return (x - a) / b;
 		} : constants(isNaN(b) ? NaN : .5);
@@ -5871,8 +5002,8 @@ var htol = (function(exports) {
 	}
 	function bimap(domain, range, interpolate) {
 		var d0 = domain[0], d1 = domain[1], r0 = range[0], r1 = range[1];
-		if (d1 < d0) d0 = normalize(d1, d0), r0 = interpolate(r1, r0);
-		else d0 = normalize(d0, d1), r0 = interpolate(r0, r1);
+		if (d1 < d0) d0 = normalize$2(d1, d0), r0 = interpolate(r1, r0);
+		else d0 = normalize$2(d0, d1), r0 = interpolate(r0, r1);
 		return function(x) {
 			return r0(d0(x));
 		};
@@ -5884,7 +5015,7 @@ var htol = (function(exports) {
 			range = range.slice().reverse();
 		}
 		while (++i < j) {
-			d[i] = normalize(domain[i], domain[i + 1]);
+			d[i] = normalize$2(domain[i], domain[i + 1]);
 			r[i] = interpolate(range[i], range[i + 1]);
 		}
 		return function(x) {
@@ -6212,7 +5343,7 @@ var htol = (function(exports) {
 	ramp(colors("00000401000501010601010802010902020b02020d03030f03031204041405041606051806051a07061c08071e0907200a08220b09240c09260d0a290e0b2b100b2d110c2f120d31130d34140e36150e38160f3b180f3d19103f1a10421c10441d11471e114920114b21114e22115024125325125527125829115a2a115c2c115f2d11612f116331116533106734106936106b38106c390f6e3b0f703d0f713f0f72400f74420f75440f764510774710784910784a10794c117a4e117b4f127b51127c52137c54137d56147d57157e59157e5a167e5c167f5d177f5f187f601880621980641a80651a80671b80681c816a1c816b1d816d1d816e1e81701f81721f817320817521817621817822817922827b23827c23827e24828025828125818326818426818627818827818928818b29818c29818e2a81902a81912b81932b80942c80962c80982d80992d809b2e7f9c2e7f9e2f7fa02f7fa1307ea3307ea5317ea6317da8327daa337dab337cad347cae347bb0357bb2357bb3367ab5367ab73779b83779ba3878bc3978bd3977bf3a77c03a76c23b75c43c75c53c74c73d73c83e73ca3e72cc3f71cd4071cf4070d0416fd2426fd3436ed5446dd6456cd8456cd9466bdb476adc4869de4968df4a68e04c67e24d66e34e65e44f64e55064e75263e85362e95462ea5661eb5760ec5860ed5a5fee5b5eef5d5ef05f5ef1605df2625df2645cf3655cf4675cf4695cf56b5cf66c5cf66e5cf7705cf7725cf8745cf8765cf9785df9795df97b5dfa7d5efa7f5efa815ffb835ffb8560fb8761fc8961fc8a62fc8c63fc8e64fc9065fd9266fd9467fd9668fd9869fd9a6afd9b6bfe9d6cfe9f6dfea16efea36ffea571fea772fea973feaa74feac76feae77feb078feb27afeb47bfeb67cfeb77efeb97ffebb81febd82febf84fec185fec287fec488fec68afec88cfeca8dfecc8ffecd90fecf92fed194fed395fed597fed799fed89afdda9cfddc9efddea0fde0a1fde2a3fde3a5fde5a7fde7a9fde9aafdebacfcecaefceeb0fcf0b2fcf2b4fcf4b6fcf6b8fcf7b9fcf9bbfcfbbdfcfdbf"));
 	ramp(colors("00000401000501010601010802010a02020c02020e03021004031204031405041706041907051b08051d09061f0a07220b07240c08260d08290e092b10092d110a30120a32140b34150b37160b39180c3c190c3e1b0c411c0c431e0c451f0c48210c4a230c4c240c4f260c51280b53290b552b0b572d0b592f0a5b310a5c320a5e340a5f3609613809623909633b09643d09653e0966400a67420a68440a68450a69470b6a490b6a4a0c6b4c0c6b4d0d6c4f0d6c510e6c520e6d540f6d550f6d57106e59106e5a116e5c126e5d126e5f136e61136e62146e64156e65156e67166e69166e6a176e6c186e6d186e6f196e71196e721a6e741a6e751b6e771c6d781c6d7a1d6d7c1d6d7d1e6d7f1e6c801f6c82206c84206b85216b87216b88226a8a226a8c23698d23698f24699025689225689326679526679727669827669a28659b29649d29649f2a63a02a63a22b62a32c61a52c60a62d60a82e5fa92e5eab2f5ead305dae305cb0315bb1325ab3325ab43359b63458b73557b93556ba3655bc3754bd3853bf3952c03a51c13a50c33b4fc43c4ec63d4dc73e4cc83f4bca404acb4149cc4248ce4347cf4446d04545d24644d34743d44842d54a41d74b3fd84c3ed94d3dda4e3cdb503bdd513ade5238df5337e05536e15635e25734e35933e45a31e55c30e65d2fe75e2ee8602de9612bea632aeb6429eb6628ec6726ed6925ee6a24ef6c23ef6e21f06f20f1711ff1731df2741cf3761bf37819f47918f57b17f57d15f67e14f68013f78212f78410f8850ff8870ef8890cf98b0bf98c0af98e09fa9008fa9207fa9407fb9606fb9706fb9906fb9b06fb9d07fc9f07fca108fca309fca50afca60cfca80dfcaa0ffcac11fcae12fcb014fcb216fcb418fbb61afbb81dfbba1ffbbc21fbbe23fac026fac228fac42afac62df9c72ff9c932f9cb35f8cd37f8cf3af7d13df7d340f6d543f6d746f5d949f5db4cf4dd4ff4df53f4e156f3e35af3e55df2e661f2e865f2ea69f1ec6df1ed71f1ef75f1f179f2f27df2f482f3f586f3f68af4f88ef5f992f6fa96f8fb9af9fc9dfafda1fcffa4"));
 	ramp(colors("0d088710078813078916078a19068c1b068d1d068e20068f2206902406912605912805922a05932c05942e05952f059631059733059735049837049938049a3a049a3c049b3e049c3f049c41049d43039e44039e46039f48039f4903a04b03a14c02a14e02a25002a25102a35302a35502a45601a45801a45901a55b01a55c01a65e01a66001a66100a76300a76400a76600a76700a86900a86a00a86c00a86e00a86f00a87100a87201a87401a87501a87701a87801a87a02a87b02a87d03a87e03a88004a88104a78305a78405a78606a68707a68808a68a09a58b0aa58d0ba58e0ca48f0da4910ea3920fa39410a29511a19613a19814a099159f9a169f9c179e9d189d9e199da01a9ca11b9ba21d9aa31e9aa51f99a62098a72197a82296aa2395ab2494ac2694ad2793ae2892b02991b12a90b22b8fb32c8eb42e8db52f8cb6308bb7318ab83289ba3388bb3488bc3587bd3786be3885bf3984c03a83c13b82c23c81c33d80c43e7fc5407ec6417dc7427cc8437bc9447aca457acb4679cc4778cc4977cd4a76ce4b75cf4c74d04d73d14e72d24f71d35171d45270d5536fd5546ed6556dd7566cd8576bd9586ada5a6ada5b69db5c68dc5d67dd5e66de5f65de6164df6263e06363e16462e26561e26660e3685fe4695ee56a5de56b5de66c5ce76e5be76f5ae87059e97158e97257ea7457eb7556eb7655ec7754ed7953ed7a52ee7b51ef7c51ef7e50f07f4ff0804ef1814df1834cf2844bf3854bf3874af48849f48948f58b47f58c46f68d45f68f44f79044f79143f79342f89441f89540f9973ff9983ef99a3efa9b3dfa9c3cfa9e3bfb9f3afba139fba238fca338fca537fca636fca835fca934fdab33fdac33fdae32fdaf31fdb130fdb22ffdb42ffdb52efeb72dfeb82cfeba2cfebb2bfebd2afebe2afec029fdc229fdc328fdc527fdc627fdc827fdca26fdcb26fccd25fcce25fcd025fcd225fbd324fbd524fbd724fad824fada24f9dc24f9dd25f8df25f8e125f7e225f7e425f6e626f6e826f5e926f5eb27f4ed27f3ee27f3f027f2f227f1f426f1f525f0f724f0f921"));
-	function constant$1(x) {
+	function constant$3(x) {
 		return function constant() {
 			return x;
 		};
@@ -6331,8 +5462,8 @@ var htol = (function(exports) {
 	(1 / sqrt(12) / 2 + 1) * 3;
 	function Symbol$1(type, size) {
 		let context = null, path = withPath(symbol);
-		type = typeof type === "function" ? type : constant$1(type || circle);
-		size = typeof size === "function" ? size : constant$1(size === void 0 ? 64 : +size);
+		type = typeof type === "function" ? type : constant$3(type || circle);
+		size = typeof size === "function" ? size : constant$3(size === void 0 ? 64 : +size);
 		function symbol() {
 			let buffer;
 			if (!context) context = buffer = path();
@@ -6340,10 +5471,10 @@ var htol = (function(exports) {
 			if (buffer) return context = null, buffer + "" || null;
 		}
 		symbol.type = function(_) {
-			return arguments.length ? (type = typeof _ === "function" ? _ : constant$1(_), symbol) : type;
+			return arguments.length ? (type = typeof _ === "function" ? _ : constant$3(_), symbol) : type;
 		};
 		symbol.size = function(_) {
-			return arguments.length ? (size = typeof _ === "function" ? _ : constant$1(+_), symbol) : size;
+			return arguments.length ? (size = typeof _ === "function" ? _ : constant$3(+_), symbol) : size;
 		};
 		symbol.context = function(_) {
 			return arguments.length ? (context = _ == null ? null : _, symbol) : context;
@@ -7055,382 +6186,6 @@ var htol = (function(exports) {
 			this._x = x, this._y = y;
 		}
 	};
-	var constant$4 = (x) => () => x;
-	function ZoomEvent(type, { sourceEvent, target, transform, dispatch }) {
-		Object.defineProperties(this, {
-			type: {
-				value: type,
-				enumerable: true,
-				configurable: true
-			},
-			sourceEvent: {
-				value: sourceEvent,
-				enumerable: true,
-				configurable: true
-			},
-			target: {
-				value: target,
-				enumerable: true,
-				configurable: true
-			},
-			transform: {
-				value: transform,
-				enumerable: true,
-				configurable: true
-			},
-			_: { value: dispatch }
-		});
-	}
-	function Transform(k, x, y) {
-		this.k = k;
-		this.x = x;
-		this.y = y;
-	}
-	Transform.prototype = {
-		constructor: Transform,
-		scale: function(k) {
-			return k === 1 ? this : new Transform(this.k * k, this.x, this.y);
-		},
-		translate: function(x, y) {
-			return x === 0 & y === 0 ? this : new Transform(this.k, this.x + this.k * x, this.y + this.k * y);
-		},
-		apply: function(point) {
-			return [point[0] * this.k + this.x, point[1] * this.k + this.y];
-		},
-		applyX: function(x) {
-			return x * this.k + this.x;
-		},
-		applyY: function(y) {
-			return y * this.k + this.y;
-		},
-		invert: function(location) {
-			return [(location[0] - this.x) / this.k, (location[1] - this.y) / this.k];
-		},
-		invertX: function(x) {
-			return (x - this.x) / this.k;
-		},
-		invertY: function(y) {
-			return (y - this.y) / this.k;
-		},
-		rescaleX: function(x) {
-			return x.copy().domain(x.range().map(this.invertX, this).map(x.invert, x));
-		},
-		rescaleY: function(y) {
-			return y.copy().domain(y.range().map(this.invertY, this).map(y.invert, y));
-		},
-		toString: function() {
-			return "translate(" + this.x + "," + this.y + ") scale(" + this.k + ")";
-		}
-	};
-	var identity = new Transform(1, 0, 0);
-	transform.prototype = Transform.prototype;
-	function transform(node) {
-		while (!node.__zoom) if (!(node = node.parentNode)) return identity;
-		return node.__zoom;
-	}
-	function nopropagation(event) {
-		event.stopImmediatePropagation();
-	}
-	function noevent(event) {
-		event.preventDefault();
-		event.stopImmediatePropagation();
-	}
-	function defaultFilter(event) {
-		return (!event.ctrlKey || event.type === "wheel") && !event.button;
-	}
-	function defaultExtent() {
-		var e = this;
-		if (e instanceof SVGElement) {
-			e = e.ownerSVGElement || e;
-			if (e.hasAttribute("viewBox")) {
-				e = e.viewBox.baseVal;
-				return [[e.x, e.y], [e.x + e.width, e.y + e.height]];
-			}
-			return [[0, 0], [e.width.baseVal.value, e.height.baseVal.value]];
-		}
-		return [[0, 0], [e.clientWidth, e.clientHeight]];
-	}
-	function defaultTransform() {
-		return this.__zoom || identity;
-	}
-	function defaultWheelDelta(event) {
-		return -event.deltaY * (event.deltaMode === 1 ? .05 : event.deltaMode ? 1 : .002) * (event.ctrlKey ? 10 : 1);
-	}
-	function defaultTouchable() {
-		return navigator.maxTouchPoints || "ontouchstart" in this;
-	}
-	function defaultConstrain(transform, extent, translateExtent) {
-		var dx0 = transform.invertX(extent[0][0]) - translateExtent[0][0], dx1 = transform.invertX(extent[1][0]) - translateExtent[1][0], dy0 = transform.invertY(extent[0][1]) - translateExtent[0][1], dy1 = transform.invertY(extent[1][1]) - translateExtent[1][1];
-		return transform.translate(dx1 > dx0 ? (dx0 + dx1) / 2 : Math.min(0, dx0) || Math.max(0, dx1), dy1 > dy0 ? (dy0 + dy1) / 2 : Math.min(0, dy0) || Math.max(0, dy1));
-	}
-	function zoom() {
-		var filter = defaultFilter, extent = defaultExtent, constrain = defaultConstrain, wheelDelta = defaultWheelDelta, touchable = defaultTouchable, scaleExtent = [0, Infinity], translateExtent = [[-Infinity, -Infinity], [Infinity, Infinity]], duration = 250, interpolate = zoom$1, listeners = dispatch("start", "zoom", "end"), touchstarting, touchfirst, touchending, touchDelay = 500, wheelDelay = 150, clickDistance2 = 0, tapDistance = 10;
-		function zoom(selection) {
-			selection.property("__zoom", defaultTransform).on("wheel.zoom", wheeled, { passive: false }).on("mousedown.zoom", mousedowned).on("dblclick.zoom", dblclicked).filter(touchable).on("touchstart.zoom", touchstarted).on("touchmove.zoom", touchmoved).on("touchend.zoom touchcancel.zoom", touchended).style("-webkit-tap-highlight-color", "rgba(0,0,0,0)");
-		}
-		zoom.transform = function(collection, transform, point, event) {
-			var selection = collection.selection ? collection.selection() : collection;
-			selection.property("__zoom", defaultTransform);
-			if (collection !== selection) schedule(collection, transform, point, event);
-			else selection.interrupt().each(function() {
-				gesture(this, arguments).event(event).start().zoom(null, typeof transform === "function" ? transform.apply(this, arguments) : transform).end();
-			});
-		};
-		zoom.scaleBy = function(selection, k, p, event) {
-			zoom.scaleTo(selection, function() {
-				return this.__zoom.k * (typeof k === "function" ? k.apply(this, arguments) : k);
-			}, p, event);
-		};
-		zoom.scaleTo = function(selection, k, p, event) {
-			zoom.transform(selection, function() {
-				var e = extent.apply(this, arguments), t0 = this.__zoom, p0 = p == null ? centroid(e) : typeof p === "function" ? p.apply(this, arguments) : p, p1 = t0.invert(p0), k1 = typeof k === "function" ? k.apply(this, arguments) : k;
-				return constrain(translate(scale(t0, k1), p0, p1), e, translateExtent);
-			}, p, event);
-		};
-		zoom.translateBy = function(selection, x, y, event) {
-			zoom.transform(selection, function() {
-				return constrain(this.__zoom.translate(typeof x === "function" ? x.apply(this, arguments) : x, typeof y === "function" ? y.apply(this, arguments) : y), extent.apply(this, arguments), translateExtent);
-			}, null, event);
-		};
-		zoom.translateTo = function(selection, x, y, p, event) {
-			zoom.transform(selection, function() {
-				var e = extent.apply(this, arguments), t = this.__zoom, p0 = p == null ? centroid(e) : typeof p === "function" ? p.apply(this, arguments) : p;
-				return constrain(identity.translate(p0[0], p0[1]).scale(t.k).translate(typeof x === "function" ? -x.apply(this, arguments) : -x, typeof y === "function" ? -y.apply(this, arguments) : -y), e, translateExtent);
-			}, p, event);
-		};
-		function scale(transform, k) {
-			k = Math.max(scaleExtent[0], Math.min(scaleExtent[1], k));
-			return k === transform.k ? transform : new Transform(k, transform.x, transform.y);
-		}
-		function translate(transform, p0, p1) {
-			var x = p0[0] - p1[0] * transform.k, y = p0[1] - p1[1] * transform.k;
-			return x === transform.x && y === transform.y ? transform : new Transform(transform.k, x, y);
-		}
-		function centroid(extent) {
-			return [(+extent[0][0] + +extent[1][0]) / 2, (+extent[0][1] + +extent[1][1]) / 2];
-		}
-		function schedule(transition, transform, point, event) {
-			transition.on("start.zoom", function() {
-				gesture(this, arguments).event(event).start();
-			}).on("interrupt.zoom end.zoom", function() {
-				gesture(this, arguments).event(event).end();
-			}).tween("zoom", function() {
-				var that = this, args = arguments, g = gesture(that, args).event(event), e = extent.apply(that, args), p = point == null ? centroid(e) : typeof point === "function" ? point.apply(that, args) : point, w = Math.max(e[1][0] - e[0][0], e[1][1] - e[0][1]), a = that.__zoom, b = typeof transform === "function" ? transform.apply(that, args) : transform, i = interpolate(a.invert(p).concat(w / a.k), b.invert(p).concat(w / b.k));
-				return function(t) {
-					if (t === 1) t = b;
-					else {
-						var l = i(t), k = w / l[2];
-						t = new Transform(k, p[0] - l[0] * k, p[1] - l[1] * k);
-					}
-					g.zoom(null, t);
-				};
-			});
-		}
-		function gesture(that, args, clean) {
-			return !clean && that.__zooming || new Gesture(that, args);
-		}
-		function Gesture(that, args) {
-			this.that = that;
-			this.args = args;
-			this.active = 0;
-			this.sourceEvent = null;
-			this.extent = extent.apply(that, args);
-			this.taps = 0;
-		}
-		Gesture.prototype = {
-			event: function(event) {
-				if (event) this.sourceEvent = event;
-				return this;
-			},
-			start: function() {
-				if (++this.active === 1) {
-					this.that.__zooming = this;
-					this.emit("start");
-				}
-				return this;
-			},
-			zoom: function(key, transform) {
-				if (this.mouse && key !== "mouse") this.mouse[1] = transform.invert(this.mouse[0]);
-				if (this.touch0 && key !== "touch") this.touch0[1] = transform.invert(this.touch0[0]);
-				if (this.touch1 && key !== "touch") this.touch1[1] = transform.invert(this.touch1[0]);
-				this.that.__zoom = transform;
-				this.emit("zoom");
-				return this;
-			},
-			end: function() {
-				if (--this.active === 0) {
-					delete this.that.__zooming;
-					this.emit("end");
-				}
-				return this;
-			},
-			emit: function(type) {
-				var d = select$1(this.that).datum();
-				listeners.call(type, this.that, new ZoomEvent(type, {
-					sourceEvent: this.sourceEvent,
-					target: zoom,
-					transform: this.that.__zoom,
-					dispatch: listeners
-				}), d);
-			}
-		};
-		function wheeled(event, ...args) {
-			if (!filter.apply(this, arguments)) return;
-			var g = gesture(this, args).event(event), t = this.__zoom, k = Math.max(scaleExtent[0], Math.min(scaleExtent[1], t.k * Math.pow(2, wheelDelta.apply(this, arguments)))), p = pointer(event);
-			if (g.wheel) {
-				if (g.mouse[0][0] !== p[0] || g.mouse[0][1] !== p[1]) g.mouse[1] = t.invert(g.mouse[0] = p);
-				clearTimeout(g.wheel);
-			} else if (t.k === k) return;
-			else {
-				g.mouse = [p, t.invert(p)];
-				interrupt(this);
-				g.start();
-			}
-			noevent(event);
-			g.wheel = setTimeout(wheelidled, wheelDelay);
-			g.zoom("mouse", constrain(translate(scale(t, k), g.mouse[0], g.mouse[1]), g.extent, translateExtent));
-			function wheelidled() {
-				g.wheel = null;
-				g.end();
-			}
-		}
-		function mousedowned(event, ...args) {
-			if (touchending || !filter.apply(this, arguments)) return;
-			var currentTarget = event.currentTarget, g = gesture(this, args, true).event(event), v = select$1(event.view).on("mousemove.zoom", mousemoved, true).on("mouseup.zoom", mouseupped, true), p = pointer(event, currentTarget), x0 = event.clientX, y0 = event.clientY;
-			nodrag(event.view);
-			nopropagation(event);
-			g.mouse = [p, this.__zoom.invert(p)];
-			interrupt(this);
-			g.start();
-			function mousemoved(event) {
-				noevent(event);
-				if (!g.moved) {
-					var dx = event.clientX - x0, dy = event.clientY - y0;
-					g.moved = dx * dx + dy * dy > clickDistance2;
-				}
-				g.event(event).zoom("mouse", constrain(translate(g.that.__zoom, g.mouse[0] = pointer(event, currentTarget), g.mouse[1]), g.extent, translateExtent));
-			}
-			function mouseupped(event) {
-				v.on("mousemove.zoom mouseup.zoom", null);
-				yesdrag(event.view, g.moved);
-				noevent(event);
-				g.event(event).end();
-			}
-		}
-		function dblclicked(event, ...args) {
-			if (!filter.apply(this, arguments)) return;
-			var t0 = this.__zoom, p0 = pointer(event.changedTouches ? event.changedTouches[0] : event, this), p1 = t0.invert(p0), k1 = t0.k * (event.shiftKey ? .5 : 2), t1 = constrain(translate(scale(t0, k1), p0, p1), extent.apply(this, args), translateExtent);
-			noevent(event);
-			if (duration > 0) select$1(this).transition().duration(duration).call(schedule, t1, p0, event);
-			else select$1(this).call(zoom.transform, t1, p0, event);
-		}
-		function touchstarted(event, ...args) {
-			if (!filter.apply(this, arguments)) return;
-			var touches = event.touches, n = touches.length, g = gesture(this, args, event.changedTouches.length === n).event(event), started, i, t, p;
-			nopropagation(event);
-			for (i = 0; i < n; ++i) {
-				t = touches[i], p = pointer(t, this);
-				p = [
-					p,
-					this.__zoom.invert(p),
-					t.identifier
-				];
-				if (!g.touch0) g.touch0 = p, started = true, g.taps = 1 + !!touchstarting;
-				else if (!g.touch1 && g.touch0[2] !== p[2]) g.touch1 = p, g.taps = 0;
-			}
-			if (touchstarting) touchstarting = clearTimeout(touchstarting);
-			if (started) {
-				if (g.taps < 2) touchfirst = p[0], touchstarting = setTimeout(function() {
-					touchstarting = null;
-				}, touchDelay);
-				interrupt(this);
-				g.start();
-			}
-		}
-		function touchmoved(event, ...args) {
-			if (!this.__zooming) return;
-			var g = gesture(this, args).event(event), touches = event.changedTouches, n = touches.length, i, t, p, l;
-			noevent(event);
-			for (i = 0; i < n; ++i) {
-				t = touches[i], p = pointer(t, this);
-				if (g.touch0 && g.touch0[2] === t.identifier) g.touch0[0] = p;
-				else if (g.touch1 && g.touch1[2] === t.identifier) g.touch1[0] = p;
-			}
-			t = g.that.__zoom;
-			if (g.touch1) {
-				var p0 = g.touch0[0], l0 = g.touch0[1], p1 = g.touch1[0], l1 = g.touch1[1], dp = (dp = p1[0] - p0[0]) * dp + (dp = p1[1] - p0[1]) * dp, dl = (dl = l1[0] - l0[0]) * dl + (dl = l1[1] - l0[1]) * dl;
-				t = scale(t, Math.sqrt(dp / dl));
-				p = [(p0[0] + p1[0]) / 2, (p0[1] + p1[1]) / 2];
-				l = [(l0[0] + l1[0]) / 2, (l0[1] + l1[1]) / 2];
-			} else if (g.touch0) p = g.touch0[0], l = g.touch0[1];
-			else return;
-			g.zoom("touch", constrain(translate(t, p, l), g.extent, translateExtent));
-		}
-		function touchended(event, ...args) {
-			if (!this.__zooming) return;
-			var g = gesture(this, args).event(event), touches = event.changedTouches, n = touches.length, i, t;
-			nopropagation(event);
-			if (touchending) clearTimeout(touchending);
-			touchending = setTimeout(function() {
-				touchending = null;
-			}, touchDelay);
-			for (i = 0; i < n; ++i) {
-				t = touches[i];
-				if (g.touch0 && g.touch0[2] === t.identifier) delete g.touch0;
-				else if (g.touch1 && g.touch1[2] === t.identifier) delete g.touch1;
-			}
-			if (g.touch1 && !g.touch0) g.touch0 = g.touch1, delete g.touch1;
-			if (g.touch0) g.touch0[1] = this.__zoom.invert(g.touch0[0]);
-			else {
-				g.end();
-				if (g.taps === 2) {
-					t = pointer(t, this);
-					if (Math.hypot(touchfirst[0] - t[0], touchfirst[1] - t[1]) < tapDistance) {
-						var p = select$1(this).on("dblclick.zoom");
-						if (p) p.apply(this, arguments);
-					}
-				}
-			}
-		}
-		zoom.wheelDelta = function(_) {
-			return arguments.length ? (wheelDelta = typeof _ === "function" ? _ : constant$4(+_), zoom) : wheelDelta;
-		};
-		zoom.filter = function(_) {
-			return arguments.length ? (filter = typeof _ === "function" ? _ : constant$4(!!_), zoom) : filter;
-		};
-		zoom.touchable = function(_) {
-			return arguments.length ? (touchable = typeof _ === "function" ? _ : constant$4(!!_), zoom) : touchable;
-		};
-		zoom.extent = function(_) {
-			return arguments.length ? (extent = typeof _ === "function" ? _ : constant$4([[+_[0][0], +_[0][1]], [+_[1][0], +_[1][1]]]), zoom) : extent;
-		};
-		zoom.scaleExtent = function(_) {
-			return arguments.length ? (scaleExtent[0] = +_[0], scaleExtent[1] = +_[1], zoom) : [scaleExtent[0], scaleExtent[1]];
-		};
-		zoom.translateExtent = function(_) {
-			return arguments.length ? (translateExtent[0][0] = +_[0][0], translateExtent[1][0] = +_[1][0], translateExtent[0][1] = +_[0][1], translateExtent[1][1] = +_[1][1], zoom) : [[translateExtent[0][0], translateExtent[0][1]], [translateExtent[1][0], translateExtent[1][1]]];
-		};
-		zoom.constrain = function(_) {
-			return arguments.length ? (constrain = _, zoom) : constrain;
-		};
-		zoom.duration = function(_) {
-			return arguments.length ? (duration = +_, zoom) : duration;
-		};
-		zoom.interpolate = function(_) {
-			return arguments.length ? (interpolate = _, zoom) : interpolate;
-		};
-		zoom.on = function() {
-			var value = listeners.on.apply(listeners, arguments);
-			return value === listeners ? zoom : value;
-		};
-		zoom.clickDistance = function(_) {
-			return arguments.length ? (clickDistance2 = (_ = +_) * _, zoom) : Math.sqrt(clickDistance2);
-		};
-		zoom.tapDistance = function(_) {
-			return arguments.length ? (tapDistance = +_, zoom) : tapDistance;
-		};
-		return zoom;
-	}
 	var HTML$1 = class {
 		static parse(htmlstr) {
 			return function() {
@@ -7445,18 +6200,6 @@ var htol = (function(exports) {
 				}
 			};
 		}
-	};
-	var t = (m) => m[0].map((x, i) => m.map((x) => x[i]));
-	var isPrimitive = (item) => typeof item !== "object";
-	var isObject = (item) => typeof item === "object" && !Array.isArray(item);
-	var isArray = (item) => typeof item === "object" && Array.isArray(item);
-	var mergeDeep = (target, source) => {
-		console.assert(isObject(target) && isObject(source) || isArray(target) && isArray(source));
-		for (const key in source) if (isObject(source[key])) target[key] = mergeDeep(target[key] || Object.create(Object.getPrototypeOf(source[key])), source[key]);
-		else if (isArray(source[key])) target[key] = mergeDeep(target[key] || [], source[key]);
-		else if (isPrimitive(source[key])) target[key] = source[key];
-		else console.assert(false);
-		return target;
 	};
 	function clone$1(o) {
 		return JSON.parse(JSON.stringify(o));
@@ -7671,7 +6414,6 @@ var htol = (function(exports) {
 			im: ap.r / bp.r * Math.sin(ap.θ - bp.θ)
 		};
 	}
-	var CtoStr = (c) => `${c.re} ${c.im}`;
 	var unitVectors = [
 		{
 			re: 1,
@@ -7774,6 +6516,7 @@ var htol = (function(exports) {
 		w.α = CktoCp(h2e(t, pα)).θ;
 		w.Ω = CktoCp(h2e(t, pΩ)).θ;
 	}
+	var FAN_STEP = .15;
 	function layoutBergé(n, λ, noRecursion = false) {
 		let count = 0;
 		function layoutNode(n) {
@@ -7785,8 +6528,8 @@ var htol = (function(exports) {
 			if (n.parent) {
 				const angleWidth = πify(wedge.Ω - wedge.α);
 				const bisectionAngle = wedge.α + angleWidth / 2;
-				let deflen = 1;
-				if (!n.parent.parent) deflen = .5;
+				let deflen = n.precalc.linkFactor !== void 0 ? n.precalc.linkFactor : 1;
+				if (n.precalc.linkFactor === void 0 && !n.parent.parent) deflen = .5;
 				const nz1 = CptoCk({
 					θ: bisectionAngle,
 					r: λ * (deflen + L || 1)
@@ -7809,17 +6552,31 @@ var htol = (function(exports) {
 			let liner = 0;
 			let resetCount = 0;
 			let anglesum = 0;
-			const parentWeight = (n.children || []).reduce((a, ccn) => a + ccn.precalc.layoutWeight, 0);
+			const weight = (c) => c.precalc.angleWeight !== void 0 ? c.precalc.angleWeight : c.precalc.layoutWeight;
+			const parentWeight = (n.children || []).reduce((a, ccn) => a + weight(ccn), 0);
 			const rowcount = cllen / Math.log(cllen) / 2;
+			const fanRun = n.precalc.fanRun;
+			let leafIndex = 0;
 			cl.forEach((cn, i) => {
-				const angleWeight = cn.precalc.layoutWeight / parentWeight;
+				const angleWeight = parentWeight ? weight(cn) / parentWeight : 1 / cllen;
 				anglesum += angleWeight;
 				const angleOffset = angleWidth * angleWeight;
 				const α = currentAngle;
 				currentAngle += angleOffset;
+				const Ω = πify(currentAngle);
+				if (fanRun !== void 0) {
+					const w = {
+						α,
+						Ω,
+						L: !cn.children || !cn.children.length ? FAN_STEP * (leafIndex++ % fanRun) : 0
+					};
+					cn.layout = cn.layout || { wedge: w };
+					cn.layout.wedge = w;
+					return;
+				}
 				const w = {
 					α,
-					Ω: πify(currentAngle),
+					Ω,
 					L: liner
 				};
 				cn.layout = cn.layout || { wedge: w };
@@ -7837,6 +6594,4508 @@ var htol = (function(exports) {
 		}
 		layoutNode(n);
 	}
+	var HyperbolicTransformation = class {
+		constructor(tp) {
+			this.cache = new TransformationCache();
+			this.maxMouseR = .95;
+			this.transformPoint = (p) => h2e(this.state, p);
+			this.transformDist = (p) => lengthDilledation(p);
+			this.onDragStart = (m) => this.dST = clone(this.state);
+			this.onDragEnd = (m) => this.dST = void 0;
+			this.isMoving = () => this.dST !== void 0;
+			this.onDragP = (s, e) => {
+				const nt = compose(this.dST, shift(this.dST, s, maxR(e, this.maxMouseR)));
+				this.state.P = nt.P;
+				this.state.θ = nt.θ;
+			};
+			this.onDragθ = (s, e) => {};
+			this.onDragλ = (l) => this.state.λ = l;
+			this.state = tp;
+		}
+	};
+	var TransformationCache = class {
+		constructor() {
+			this.cells = [];
+		}
+	};
+	var π$1 = Math.PI;
+	var isLeaf$1 = (n) => !n.children || !n.children.length;
+	var isRoot = (n) => !n.parent;
+	var hasLazy = (n) => n.hasOutChildren && n.isOutλ;
+	var hasCircle = (n) => hasLazy(n) || isRoot(n) || isLeaf$1(n);
+	/**
+	* The core defaults (everything but the layers; those come from the layer classes,
+	* layers/index.ts). A fresh object on every call: a model holds state
+	* (transformation, selections).
+	*/
+	var coreDefaults = () => ({
+		langloader: (ok) => ok(),
+		dataInitBFS: (ht, n) => {
+			n.precalc.imageHref = void 0;
+			n.precalc.icon = void 0;
+			n.precalc.clickable = true;
+			n.precalc.cell = true;
+		},
+		langInitBFS: (ht, n) => {
+			n.precalc.label = ht.langMap && n.data ? ht.langMap[n.data.name] : void 0;
+			n.precalc.wiki = void 0;
+		},
+		objects: {
+			selections: [],
+			pathes: [],
+			traces: []
+		},
+		layout: {
+			type: layoutBergé,
+			weight: (n) => isLeaf$1(n) ? 1 : 0,
+			childOrder: "data",
+			multirowHighDegreeNodes: true,
+			rootLinkLength: null,
+			initSize: .97,
+			rootWedge: {
+				orientation: 3 * π$1 / 2,
+				angle: 3 * π$1 / 2
+			}
+		},
+		filter: {
+			cullingRadius: .99,
+			weightFilter: {
+				alpha: 1.05,
+				weight: (n) => isLeaf$1(n) ? 1 : n.height * n.height,
+				rangeNodes: {
+					min: 150,
+					max: 500
+				}
+			},
+			focusExtension: 1.6,
+			maxFocusRadius: .85,
+			wikiRadius: .85,
+			labelScore: null
+		},
+		geometry: {
+			view: "disk",
+			diskSize: .96,
+			layers: [],
+			layerOptions: {},
+			clipRadius: 1,
+			nodeRadius: (ud, d) => {
+				return ud.args.model.geometry.linkWidth(d) / (d.distScale > 1e-9 ? d.distScale : 1) * (isLeaf$1(d) ? 1.5 : .5);
+			},
+			nodeScale: (d) => d.distScale * (hasLazy(d) ? .8 : 1),
+			nodeFilter: hasCircle,
+			linkWidth: (d) => .025 * d.distScale * d.precalc.weightScale,
+			linkCurvature: "-",
+			shrinkAtRim: "damped",
+			captionBackground: "all",
+			captionFont: "6.5px Roboto",
+			captionHeight: .04,
+			transformation: new HyperbolicTransformation({
+				P: {
+					re: 0,
+					im: 0
+				},
+				θ: {
+					re: 1,
+					im: 0
+				},
+				λ: .1
+			}),
+			startPosition: null
+		},
+		interaction: {
+			mouseRadius: .9,
+			hover: "pointer",
+			selection: "multi",
+			maxSelections: 10,
+			clickAction: "none",
+			onNodeClick: (n, m) => {},
+			onNodeSelect: () => {},
+			onNodeHold: null,
+			holdDuration: 500,
+			onNodeHover: () => {},
+			onHoverNodeChange: (n) => {},
+			onCenterNodeChange: (n) => {},
+			λbounds: [1 / 40, .45],
+			minFill: null,
+			maxLinkLength: null,
+			animationDuration: 750,
+			animationEasing: sigmoid01,
+			wheelFactor: 1.175
+		}
+	});
+	var affects = {
+		"dataloader": "data",
+		"langloader": "data",
+		"langmap": "data",
+		"iconmap": "data",
+		"dataInitBFS": "data",
+		"langInitBFS": "data",
+		"objects": "style",
+		"layout": "layout",
+		"layout.rootWedge": "data",
+		"filter": "frame",
+		"filter.weightFilter.weight": "layout",
+		"filter.labelScore": "frame",
+		"geometry": "frame",
+		"geometry.view": "layers",
+		"geometry.layers": "layers",
+		"geometry.layerOptions": "layers",
+		"geometry.captionFont": "labels",
+		"geometry.captionHeight": "labels",
+		"geometry.diskSize": "layers",
+		"geometry.clipRadius": "layers",
+		"geometry.linkCurvature": "layers",
+		"interaction": "none",
+		"interaction.mouseRadius": "layers",
+		"interaction.λbounds": "frame",
+		"interaction.minFill": "data",
+		"interaction.maxLinkLength": "data"
+	};
+	/** The effect of a changed option path (e.g. 'geometry.captionHeight'). */
+	function effectOf(path) {
+		let best = "frame", bestLen = -1;
+		for (const prefix in affects) if ((path === prefix || path.startsWith(prefix + ".")) && prefix.length > bestLen) {
+			best = affects[prefix];
+			bestLen = prefix.length;
+		}
+		return best;
+	}
+	var isPlain = (v) => v !== null && typeof v === "object" && !Array.isArray(v) && (Object.getPrototypeOf(v) === Object.prototype || Object.getPrototypeOf(v) === null);
+	/**
+	* Merges overlay into target (in place) and records in prov, per option path, the
+	* name of the overlay that set it.
+	*/
+	function mergeInto(target, overlay, source = "overlay", prov, path = "") {
+		if (!isPlain(overlay)) return target;
+		for (const key of Object.keys(overlay)) {
+			const v = overlay[key];
+			if (v === void 0) continue;
+			const p = path ? `${path}.${key}` : key;
+			if (isPlain(v) && isPlain(target[key])) {
+				mergeInto(target[key], v, source, prov, p);
+				continue;
+			}
+			target[key] = isPlain(v) ? mergeInto({}, v, source, prov, p) : v;
+			if (prov) prov[p] = source;
+		}
+		return target;
+	}
+	/**
+	* The complete model: the defaults with the overlays applied in order. Each overlay
+	* is { name, overlay }; the name goes into the provenance ('defaults' for the
+	* defaults themselves).
+	*/
+	function resolveModel(defaults, overlays) {
+		const provenance = {};
+		const model = mergeInto({}, defaults, "defaults", provenance);
+		for (const o of overlays) if (o && o.overlay) mergeInto(model, o.overlay, o.name, provenance);
+		return {
+			model,
+			provenance
+		};
+	}
+	/** The option paths an overlay sets (leaves of its plain objects). */
+	function pathsOf(overlay, path = "", out = []) {
+		if (!isPlain(overlay)) {
+			if (path) out.push(path);
+			return out;
+		}
+		for (const key of Object.keys(overlay)) {
+			if (overlay[key] === void 0) continue;
+			pathsOf(overlay[key], path ? `${path}.${key}` : key, out);
+		}
+		return out;
+	}
+	/** Several overlays as one (for presets built from parts; the later ones win). */
+	function composeOverlays(...overlays) {
+		const out = {};
+		for (const o of overlays) if (o) mergeInto(out, o);
+		return out;
+	}
+	var warned = /* @__PURE__ */ new Set();
+	function deprecated(old, now) {
+		if (warned.has(old)) return;
+		warned.add(old);
+		console.warn(`d3-hypertree: ${old} is deprecated, use ${now}`);
+	}
+	var removedLineLayers = {
+		"link-lines": "link-arcs",
+		"path-lines": "path-arcs"
+	};
+	var labelLayers = [
+		"labels",
+		"labels-force",
+		"labels-placed"
+	];
+	/**
+	* Returns a copy of the model (only the touched branches are copied) with:
+	* - renamed options mapped to their current names:
+	*   layerOptions[*].nodeColor -> fill, linkColor -> stroke,
+	*   interaction.wheelSensitivity -> wheelFactor,
+	*   geometry.animateUpRadius -> layout.initSize,
+	*   geometry.halfPlane -> geometry.view 'halfplane',
+	*   filter.cullingWeight -> filter.weightFilter.rangeNodes,
+	*   filter.maxlabels -> layerOptions[label layers].maxLabels,
+	*   filter.transformation.P -> geometry.startPosition
+	* - geometry.addLayer / removeLayer (layer names) as layerOptions; the removed
+	*   layers link-lines / path-lines become link-arcs / path-arcs with linkCurvature 'l'
+	* - langmap as the language loader's result (unless a langloader is given)
+	* - geometry.decorator and geometry.cacheUpdate (the unit disk class and the frame
+	*   function were options until v1) dropped with a warning
+	*/
+	function migrate(input) {
+		const model = Object.assign({}, input || {});
+		const branch = (k) => model[k] = Object.assign({}, model[k] || {});
+		if (input && input.interaction && input.interaction.wheelSensitivity !== void 0) {
+			deprecated("interaction.wheelSensitivity", "interaction.wheelFactor");
+			const i = branch("interaction");
+			if (i.wheelFactor === void 0) i.wheelFactor = i.wheelSensitivity;
+			delete i.wheelSensitivity;
+		}
+		const g = input && input.geometry;
+		if (g) {
+			if (g.animateUpRadius !== void 0) {
+				deprecated("geometry.animateUpRadius", "layout.initSize");
+				const l = branch("layout");
+				if (l.initSize === void 0) l.initSize = g.animateUpRadius;
+				delete branch("geometry").animateUpRadius;
+			}
+			if (g.halfPlane !== void 0) {
+				deprecated("geometry.halfPlane", "geometry.view: 'halfplane'");
+				const geometry = branch("geometry");
+				if (geometry.view === void 0) geometry.view = g.halfPlane ? "halfplane" : "disk";
+				delete geometry.halfPlane;
+			}
+			if (g.decorator !== void 0) {
+				deprecated("geometry.decorator", "geometry.view (a Projection)");
+				delete branch("geometry").decorator;
+			}
+			if (g.cacheUpdate !== void 0) {
+				deprecated("geometry.cacheUpdate", "nothing (the frame is not an option)");
+				delete branch("geometry").cacheUpdate;
+			}
+			if (g.layerOptions || g.addLayer || g.removeLayer) {
+				const geometry = branch("geometry");
+				const layerOptions = geometry.layerOptions = Object.assign({}, g.layerOptions || {});
+				const layer = (name) => layerOptions[name] = Object.assign({}, layerOptions[name] || {});
+				for (const name of Object.keys(layerOptions)) {
+					const o = layerOptions[name];
+					if (o && o.nodeColor !== void 0) {
+						deprecated("layerOptions[...].nodeColor", "fill");
+						const l = layer(name);
+						if (l.fill === void 0) l.fill = l.nodeColor;
+						delete l.nodeColor;
+					}
+					if (o && o.linkColor !== void 0) {
+						deprecated("layerOptions[...].linkColor", "stroke");
+						const l = layer(name);
+						if (l.stroke === void 0) l.stroke = l.linkColor;
+						delete l.linkColor;
+					}
+				}
+				for (const name of g.addLayer || []) {
+					const arcs = removedLineLayers[name];
+					if (arcs) {
+						deprecated(`layer ${name}`, `${arcs} with geometry.linkCurvature: 'l'`);
+						if (geometry.linkCurvature === void 0) geometry.linkCurvature = "l";
+						layer(arcs).invisible = false;
+					} else layer(name).invisible = false;
+				}
+				for (const name of g.removeLayer || []) layer(name).removed = true;
+				delete geometry.addLayer;
+				delete geometry.removeLayer;
+			}
+		}
+		const f = input && input.filter;
+		if (f) {
+			if (f.cullingWeight !== void 0) {
+				deprecated("filter.cullingWeight", "filter.weightFilter.rangeNodes");
+				const filter = branch("filter");
+				if (filter.weightFilter !== null) {
+					filter.weightFilter = Object.assign({}, filter.weightFilter || {});
+					if (filter.weightFilter.rangeNodes === void 0) filter.weightFilter.rangeNodes = f.cullingWeight;
+				}
+				delete filter.cullingWeight;
+			}
+			if (f.maxlabels !== void 0) {
+				deprecated("filter.maxlabels", "geometry.layerOptions['labels'].maxLabels (per label layer)");
+				const geometry = branch("geometry");
+				const layerOptions = geometry.layerOptions = Object.assign({}, geometry.layerOptions || {});
+				for (const name of labelLayers) {
+					const o = layerOptions[name] = Object.assign({}, layerOptions[name] || {});
+					if (o.maxLabels === void 0) o.maxLabels = f.maxlabels;
+				}
+				delete branch("filter").maxlabels;
+			}
+			if (f.transformation && f.transformation.P !== void 0) {
+				deprecated("filter.transformation.P", "geometry.startPosition");
+				const geometry = branch("geometry");
+				if (geometry.startPosition === void 0) geometry.startPosition = f.transformation.P;
+				const filter = branch("filter");
+				delete filter.transformation;
+			}
+			if (f.type !== void 0) delete branch("filter").type;
+		}
+		if (input && input.langmap && !input.langloader) model.langloader = (ok) => ok(input.langmap);
+		return model;
+	}
+	var planes = [
+		"disk",
+		"content",
+		"overlay"
+	];
+	var compositedPlanes = ["disk", "content"];
+	var compositing = { mode: "planes" };
+	var diskLayers = [
+		"background",
+		"culling-r",
+		"mouse-r",
+		"focus-r",
+		"labels-r-𝐖",
+		"λ",
+		"(0,0)"
+	];
+	var overlayLayers = [
+		"traces",
+		"interaction",
+		"interaction-2"
+	];
+	/** The plane of a layer: its option plane, else by its name (content for all others). */
+	function planeOf(layer) {
+		const option = layer.args && layer.args.plane;
+		if (option && planes.includes(option)) return option;
+		if (diskLayers.includes(layer.name)) return "disk";
+		if (overlayLayers.includes(layer.name)) return "overlay";
+		return "content";
+	}
+	var paddingLeftRight = .08;
+	var paddingTopBottom = .02;
+	function paddingsFor(captionHeight) {
+		return {
+			lr: captionHeight * paddingLeftRight / .05,
+			tb: captionHeight * paddingTopBottom / .05
+		};
+	}
+	function rimScale(ctx, d) {
+		const mode = ctx.model.geometry.shrinkAtRim;
+		return mode === "none" ? 1 : mode === "full" ? d.distScale : d.dampedDistScale;
+	}
+	function sizeAt(ctx, scale, d) {
+		const s = scale === void 0 || scale === null ? 1 : typeof scale === "function" ? scale(d) : scale;
+		return rimScale(ctx, d) * s;
+	}
+	var offsetFactor = (ctx, d) => rimScale(ctx, d) / d.dampedDistScale;
+	/** The offset that puts a label's box beside its node, on the side away from the center. */
+	var bboxOval = (d, cacheId = "labelslen", θn = void 0) => {
+		var w = d.precalc[cacheId];
+		var h = .045;
+		console.assert(w);
+		const θ = θn ? θn.θ : d.cachep.θ;
+		const result = {
+			re: (paddingLeftRight / 2 + w / 2) * Math.cos(θ) - w / 2,
+			im: (paddingTopBottom / 2 + h / 2) * Math.sin(θ) + h / 3
+		};
+		console.assert(!!result.re);
+		return result;
+	};
+	/** The offset of a label from its node: outward by the node radius, then its box beside the node. */
+	function labelOffset(ctx, d, cacheId = "labelslen") {
+		const r = ctx.model.geometry.nodeRadius(ctx.unitdisk, d) * d.distScale * 1.5;
+		return CaddC(CptoCk({
+			θ: d.cachep.θ,
+			r
+		}), bboxOval(d, cacheId));
+	}
+	/** The direction away from the center (unit vector, view coordinates). */
+	function outward(n, projection) {
+		return projection.outward(n.cache);
+	}
+	var smoothstep = (a, b, x) => {
+		const t = Math.max(0, Math.min(1, (x - a) / (b - a)));
+		return t * t * (3 - 2 * t);
+	};
+	/** 0 in the center (label above its node) .. 1 near the rim (label outward). */
+	function rimness(n, projection) {
+		return smoothstep(.3, .85, projection.rim(n.cache));
+	}
+	/** The box of a label: width from the measured text, height from the caption height. */
+	function labelSize(n, lenprop, captionHeight, k) {
+		const lines = String(n.precalc.label || "").split("\n").length;
+		return {
+			w: (n.precalc[lenprop] || 0) * k,
+			h: captionHeight * lines * k
+		};
+	}
+	/** The center of a box at distance `gap` from the node in direction u (box edge to node). */
+	function besideNode(n, u, w, h, gap) {
+		const d = Math.abs(u.re) * w / 2 + Math.abs(u.im) * h / 2 + gap;
+		return {
+			re: n.cache.re + u.re * d,
+			im: n.cache.im + u.im * d
+		};
+	}
+	/** The rest position (box center): above the node in the center, outward toward the rim. */
+	function restCenter(n, w, h, gap, projection) {
+		const t = rimness(n, projection);
+		const above = besideNode(n, {
+			re: 0,
+			im: -1
+		}, w, h, gap);
+		const out = besideNode(n, outward(n, projection), w, h, gap);
+		return {
+			re: above.re + (out.re - above.re) * t,
+			im: above.im + (out.im - above.im) * t
+		};
+	}
+	/** Overlap of two boxes along x and y (both > 0: they overlap), with a margin. */
+	function overlap(a, b, margin = 0) {
+		return {
+			x: (a.w + b.w) / 2 + margin - Math.abs(a.x - b.x),
+			y: (a.h + b.h) / 2 + margin - Math.abs(a.y - b.y)
+		};
+	}
+	var overlapping = (a, b, margin = 0) => {
+		const o = overlap(a, b, margin);
+		return o.x > 0 && o.y > 0;
+	};
+	/** Distance from a point to a box (0 inside). */
+	function distanceToBox(p, b) {
+		const dx = Math.max(0, Math.abs(p.re - b.x) - b.w / 2);
+		const dy = Math.max(0, Math.abs(p.im - b.y) - b.h / 2);
+		return Math.hypot(dx, dy);
+	}
+	var canvases = /* @__PURE__ */ new WeakMap();
+	var waiting = /* @__PURE__ */ new WeakSet();
+	/**
+	* The canvas font and the factor from canvas pixels to the units of the SVG labels,
+	* from a caption measured in this tree's SVG: the font the labels are drawn with
+	* (family, weight and size from the CSS, e.g. the larger :lang(zh) size), so the
+	* widths fit for every language and screen scaling. Until v1 the widths came from
+	* geometry.captionFont divided by devicePixelRatio: too narrow on scaled screens
+	* (125 %, 150 %) and with the CSS weight 300 vs 400, so label backgrounds were too
+	* small for their text.
+	*/
+	var centers = /* @__PURE__ */ new WeakMap();
+	/**
+	* Where a caption's text sits: center (the middle of its first line's box above the
+	* baseline, negative) and line (the distance of its lines), in label units. undefined
+	* until the labels were measured in an SVG.
+	*/
+	function captionBox(ht) {
+		return centers.get(ht);
+	}
+	function captionMetrics(ht, context) {
+		const html = ht.view_ && ht.view_.html;
+		const svg = html && (html.querySelector(".unitdisk-nav svg") || html.querySelector("svg"));
+		if (!svg) return null;
+		const sample = "Hyperbolic Tree of Life 0123456789";
+		const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+		text.setAttribute("class", "caption");
+		text.textContent = sample;
+		const parent = svg.querySelector(".unitDisc") || svg;
+		parent.appendChild(text);
+		let width = 0, bb, cs;
+		try {
+			bb = text.getBBox();
+			width = bb.width;
+			const s = getComputedStyle(text);
+			cs = {
+				fontStyle: s.fontStyle,
+				fontWeight: s.fontWeight,
+				fontFamily: s.fontFamily,
+				fontSize: s.fontSize
+			};
+		} catch (e) {
+			width = 0;
+		}
+		parent.removeChild(text);
+		if (!width || !cs || !cs.fontFamily) return null;
+		centers.set(ht, {
+			center: bb.y + bb.height / 2,
+			line: 1.2 * parseFloat(cs.fontSize)
+		});
+		const font = `${cs.fontStyle} ${cs.fontWeight} 100px ${cs.fontFamily}`;
+		context.font = font;
+		const canvasWidth = context.measureText(sample).width;
+		return canvasWidth ? {
+			font,
+			factor: width / canvasWidth,
+			probe: `${cs.fontStyle} ${cs.fontWeight} 16px ${cs.fontFamily}`
+		} : null;
+	}
+	/**
+	* Measures every label and emoji of the tree (precalc.labelslen, labels-forcelen,
+	* labels-placedlen, emojislen). When the web font is not loaded yet, it is loaded and
+	* the labels are measured again and redrawn when it is there.
+	*/
+	function measureLabels(ht) {
+		let context = canvases.get(ht);
+		if (!context) canvases.set(ht, context = document.createElement("canvas").getContext("2d"));
+		const metrics = captionMetrics(ht, context);
+		const font = metrics ? metrics.font : ht.args.geometry.captionFont;
+		const factor = metrics ? metrics.factor : 1 / 200;
+		context.font = font;
+		const fonts = document.fonts;
+		if (metrics && fonts && !waiting.has(ht)) {
+			let missing = false;
+			try {
+				missing = !fonts.check(metrics.probe);
+			} catch (e) {
+				missing = false;
+			}
+			if (missing) {
+				waiting.add(ht);
+				fonts.load(metrics.probe).catch(() => {}).then(() => {
+					waiting.delete(ht);
+					if (!ht.data) return;
+					let still = false;
+					try {
+						still = !fonts.check(metrics.probe);
+					} catch (e) {}
+					if (still) return;
+					measureLabels(ht);
+					ht.update.data();
+				});
+			}
+		}
+		const measure = (txtprop, lenprop) => {
+			ht.data.each((n) => {
+				if (n.precalc[txtprop]) {
+					const lines = String(n.precalc[txtprop]).split("\n");
+					const width = Math.max(...lines.map((l) => context.measureText(l).width));
+					n.precalc[lenprop] = width * factor;
+					console.assert(typeof n.precalc[lenprop] === "number");
+				} else n.precalc[lenprop] = void 0;
+			});
+		};
+		measure("label", "labels-forcelen");
+		measure("label", "labelslen");
+		measure("label", "labels-placedlen");
+		measure("icon", "emojislen");
+	}
+	var D3UpdatePattern = class {
+		constructor(args) {
+			this.update = {
+				parent: () => this.updateParent(),
+				data: () => this.updateData(),
+				transformation: () => this.elements.call(this.args.updateTransform),
+				style: () => this.elements.call(this.args.updateColor)
+			};
+			this.mayEval = (d) => typeof d === "function" ? d() : d;
+			this.args = args;
+			this.updateParent();
+		}
+		updateParent() {
+			this.mainSvgGroup = this.args.parent.append("g").attr("id", this.args.name).attr("clip-path", this.args.clip ? `url(${this.args.clip})` : void 0).style("transform", compositing.mode === "layers" ? "translateZ(0)" : null);
+			this.elements = this.mainSvgGroup.selectAll(this.args.elementType);
+		}
+		updateData() {
+			this.data = [];
+			var isAnimating = this.args.layer.view.hypertree.isAnimationRunning();
+			const layerArgs = this.args.layer.args;
+			if (!layerArgs.invisible && !(isAnimating && layerArgs.hideOnDrag)) this.data = this.mayEval(this.args.data);
+			this.elements = this.elements.data(this.data, (d) => d && d.mergeId);
+			this.elements.exit().remove();
+			const newElements = this.elements.enter().append(this.args.elementType).attr("class", this.args.className).call(this.args.create);
+			this.elements = this.elements.merge(newElements).call(this.args.updateTransform).call(this.args.updateColor);
+		}
+		addTextBackgroundRects(paddingLeftRight, paddingTopBottom, height, layername, background = true) {
+			this.mainSvgGroup.selectAll("rect.caption-background").remove();
+			var svgRootHere = this.mainSvgGroup;
+			var geometry = this.args.layer.view.model.geometry;
+			var hypertree = this.args.layer.view.hypertree;
+			this.mainSvgGroup.selectAll("text").each(function(d, i, v) {
+				var view = v[i];
+				var w = d.precalc[layername + "len"] || 0;
+				var lines = view.childElementCount || 1;
+				var ch = geometry.captionHeight;
+				var h = ch * lines;
+				var pad = paddingsFor(ch);
+				var box = captionBox(hypertree) || {
+					center: -pad.tb / 2,
+					line: 0
+				};
+				var H = h + pad.tb;
+				var middle = box.center + (lines - 1) * box.line / 2;
+				const b = typeof background === "function" ? background(d) : background;
+				const text = this;
+				const prev = text.previousElementSibling;
+				const before = prev && prev.classList.contains("caption-hover") ? prev : text;
+				if (w && b) svgRootHere.insert("rect", (d) => before).attr("x", (x) => -pad.lr / 2).attr("y", (x) => middle - H / 2).attr("rx", (x) => .01 * ch / .05).attr("ry", (x) => .03 * ch / .05).attr("width", (x) => w + pad.lr).attr("height", (x) => H).attr("transform", (x) => view.attributes.transform.value).classed("caption-background", true).style("fill", typeof b === "string" ? b : null);
+			});
+		}
+	};
+	var _BackgroundLayer;
+	var BackgroundLayer = class {
+		constructor(view, name, args) {
+			this.needs = ["data"];
+			this.update = {
+				parent: () => this.attach(),
+				data: () => this.d3updatePattern.update.data(),
+				transformation: () => this.d3updatePattern.update.transformation(),
+				style: () => this.d3updatePattern.update.style()
+			};
+			this.view = view;
+			this.args = args;
+			this.name = name;
+		}
+		attach() {
+			const bg = this.view.projection.background();
+			this.d3updatePattern = new D3UpdatePattern({
+				parent: this.view.parent,
+				layer: this,
+				data: [1],
+				name: this.name,
+				className: bg.className,
+				elementType: bg.elementType,
+				create: bg.create,
+				updateColor: (s) => {},
+				updateTransform: (s) => {}
+			});
+		}
+	};
+	_BackgroundLayer = BackgroundLayer;
+	_BackgroundLayer.type = {
+		defaults: () => ({
+			invisible: false,
+			hideOnDrag: false
+		}),
+		create: (ctx, name, args) => new _BackgroundLayer(ctx, name, args)
+	};
+	/** The data of a layer as an array: the cache channel or the function's result. */
+	function layerData(ctx, data, layer) {
+		if (typeof data === "function") return data(layer) || [];
+		if (typeof data === "string") return ctx.cache[data] || [];
+		return [];
+	}
+	var _CellLayer;
+	var CellLayer = class {
+		constructor(view, name, args) {
+			this.needs = [
+				"data",
+				"transform",
+				"style"
+			];
+			this.update = {
+				parent: () => this.attach(),
+				data: () => this.d3updatePattern.update.data(),
+				transformation: () => this.d3updatePattern.update.transformation(),
+				style: () => this.d3updatePattern.update.style()
+			};
+			this.view = view;
+			this.args = args;
+			this.name = name;
+		}
+		attach() {
+			this.d3updatePattern = new D3UpdatePattern({
+				parent: this.view.parent,
+				layer: this,
+				clip: "#circle-clip" + this.view.model.geometry.clipRadius,
+				data: () => layerData(this.view, this.args.data, this),
+				name: this.name,
+				className: "cell",
+				elementType: "polygon",
+				create: (s) => s.attr("id", (d) => "cell-" + d.data.mergeId).classed("leaf", false).classed("lazy", true).style("stroke", (d) => d.pathes && d.pathes.labelcolor || this.args.stroke(d)).style("stroke-width", (d) => d.pathes && d.pathes.labelcolor || this.args.strokeWidth(d)),
+				updateColor: (s) => {
+					const showHover = this.args.hover !== false;
+					const showSelection = this.args.selection !== false;
+					return s.classed("hovered", (d) => showHover && !!d.data.hovered).classed("selected", (d) => showSelection && !!d.data.selected).style("fill", (d) => d.pathes && d.pathes.labelcolor || this.args.fill(d));
+				},
+				updateTransform: (s) => s.attr("points", (d) => d && d.join(" "))
+			});
+		}
+	};
+	_CellLayer = CellLayer;
+	_CellLayer.type = {
+		defaults: () => ({
+			invisible: true,
+			hideOnDrag: true,
+			data: "cells",
+			hover: true,
+			selection: true,
+			fill: (n) => void 0,
+			stroke: (n) => void 0,
+			strokeWidth: (n) => void 0
+		}),
+		create: (ctx, name, args) => new _CellLayer(ctx, name, args)
+	};
+	var _FocusLayer;
+	var FocusLayer = class {
+		constructor(view, name, args) {
+			this.needs = ["data", "transform"];
+			this.update = {
+				parent: () => this.attach(),
+				data: () => this.d3updatePattern.update.data(),
+				transformation: () => this.d3updatePattern.update.transformation(),
+				style: () => this.d3updatePattern.update.style()
+			};
+			this.view = view;
+			this.args = args;
+			this.name = name;
+		}
+		transform() {
+			const v = this.view.projection.circle(this.args.center(this.view), this.args.r(this.view));
+			return v ? `translate(${v.cx} ${v.cy}) scale(${v.r})` : "translate(0 0) scale(0)";
+		}
+		attach() {
+			this.d3updatePattern = new D3UpdatePattern({
+				parent: this.view.parent,
+				layer: this,
+				data: [1],
+				name: this.name,
+				className: this.args.className,
+				elementType: "circle",
+				create: (s) => s.attr("r", 1),
+				updateColor: (s) => {},
+				updateTransform: (s) => s.attr("transform", this.transform())
+			});
+		}
+	};
+	_FocusLayer = FocusLayer;
+	_FocusLayer.type = {
+		defaults: () => ({
+			invisible: true,
+			hideOnDrag: true,
+			className: "focus-circle",
+			r: () => 1,
+			center: () => ({
+				re: 0,
+				im: 0
+			})
+		}),
+		create: (ctx, name, args) => new _FocusLayer(ctx, name, args)
+	};
+	function showsState(mode, d, kind, defaultMode = "path") {
+		if (mode === false || mode === "none" || !d) return false;
+		if ((mode === void 0 || mode === true ? defaultMode : mode) === "node") return !!(kind === "hover" ? d.hovered : d.selected);
+		return !!(d.pathes && (kind === "hover" ? d.pathes.isPartOfAnyHoverPath : d.pathes.isPartOfAnySelectionPath));
+	}
+	var _NodeLayer;
+	var NodeLayer = class {
+		constructor(view, name, args) {
+			this.needs = [
+				"data",
+				"transform",
+				"style"
+			];
+			this.update = {
+				parent: () => this.attach(),
+				data: () => this.d3updatePattern.update.data(),
+				transformation: () => this.d3updatePattern.update.transformation(),
+				style: () => this.d3updatePattern.update.style()
+			};
+			this.view = view;
+			this.args = args;
+			this.name = name;
+		}
+		data() {
+			if (this.args.data) return layerData(this.view, this.args.data, this);
+			const show = this.args.show, cache = this.view.cache;
+			if (!show || show === "leaves") return cache.leafOrLazy;
+			if (show === "all") return cache.unculledNodes;
+			return cache.unculledNodes.filter(show);
+		}
+		radius(d) {
+			const r = this.args.r(d);
+			return d.hasOutChildren ? r * this.args.lazyScale : r;
+		}
+		attach() {
+			const $this = this;
+			this.d3updatePattern = new D3UpdatePattern({
+				parent: this.view.parent,
+				layer: this,
+				data: () => this.data(),
+				name: this.name,
+				className: this.args.className,
+				elementType: "circle",
+				create: (s) => s.attr("r", (d) => this.radius(d)).classed("root", (d) => !d.parent).classed("lazy", (d) => !!d.hasOutChildren).classed("leaf", (d) => d.parent).classed("exit", (d) => (!d.children || !d.children.length) && d.data && d.data.numLeafs).style("stroke", (d) => d.pathes && d.pathes.labelcolor || this.args.stroke(d)).style("stroke-width", (d) => d.pathes && d.pathes.labelcolor || this.args.strokeWidth(d)),
+				updateColor: (s) => s.classed("hovered", (d) => showsState(this.args.hover, d, "hover")).classed("selected", (d) => showsState(this.args.selection, d, "selection")).style("fill", (d) => d.pathes && d.pathes.labelcolor || this.args.fill(d)),
+				updateTransform: (s) => s.attr("transform", (d) => this.args.transform(d)).each(function(d) {
+					const r = $this.radius(d);
+					if (this.__r !== r) {
+						this.setAttribute("r", String(r));
+						this.__r = r;
+					}
+					const lazy = !!d.hasOutChildren;
+					if (this.__lazy !== lazy) {
+						this.classList.toggle("lazy", lazy);
+						this.__lazy = lazy;
+					}
+				})
+			});
+		}
+	};
+	_NodeLayer = NodeLayer;
+	_NodeLayer.type = {
+		defaults: (ctx) => ({
+			invisible: false,
+			hideOnDrag: false,
+			className: "node",
+			show: "leaves",
+			r: (d) => ctx.model.geometry.nodeRadius(ctx.unitdisk, d),
+			transform: (d) => d.transformStrCache + ` scale(${ctx.model.geometry.nodeScale(d)})`,
+			fill: (n) => void 0,
+			stroke: (n) => void 0,
+			strokeWidth: (n) => void 0,
+			hover: "path",
+			selection: "path",
+			lazyScale: 1.5
+		}),
+		create: (ctx, name, args) => new _NodeLayer(ctx, name, args)
+	};
+	var _ArcLayer;
+	var ArcLayer = class {
+		constructor(view, name, args) {
+			this.needs = [
+				"data",
+				"transform",
+				"style"
+			];
+			this.update = {
+				parent: () => this.attach(),
+				data: () => this.d3updatePattern.update.data(),
+				transformation: () => this.d3updatePattern.update.transformation(),
+				style: () => this.args.role === "paths" ? this.d3updatePattern.update.data() : this.d3updatePattern.update.style()
+			};
+			this.view = view;
+			this.args = args;
+			this.name = name;
+		}
+		data() {
+			const nodes = layerData(this.view, this.args.data, this);
+			if (this.args.role !== "paths") return nodes;
+			const off = (m) => m === false || m === "none";
+			if (!off(this.args.hover) && !off(this.args.selection)) return nodes;
+			return nodes.filter((d) => d.pathes.partof.some((p) => p.type === "HoverPath" ? !off(this.args.hover) : p.type === "SelectionPath" ? !off(this.args.selection) : true));
+		}
+		path(d) {
+			const p = this.view.projection;
+			return d.parent ? p.geodesic(d.cache, d.parent.cache, this.args.curvature) : p.stem(d.cache, this.args.curvature);
+		}
+		attach() {
+			const style = this.args.role === "paths" ? (s) => s.classed("hovered-path", (d) => d.pathes && d.pathes.isPartOfAnyHoverPath).classed("selected-path", (d) => d.pathes && d.pathes.isPartOfAnySelectionPath).style("stroke", (d) => d.pathes && d.pathes.finalcolor) : (s) => s.style("stroke", (d) => d.pathes && d.pathes.finalcolor || this.args.stroke(d)).classed("hovered", (d) => showsState(this.args.hover, d, "hover")).classed("selected", (d) => showsState(this.args.selection, d, "selection"));
+			this.d3updatePattern = new D3UpdatePattern({
+				parent: this.view.parent,
+				layer: this,
+				clip: this.args.role === "links" ? "#circle-clip" + this.view.model.geometry.clipRadius : void 0,
+				data: () => this.data(),
+				name: this.name,
+				className: this.args.className,
+				elementType: this.args.curvature === "l" ? "line" : "path",
+				create: (s) => s.attr("stroke-linecap", "round"),
+				updateColor: style,
+				updateTransform: (s) => {
+					if (this.args.curvature == "l") s.attr("x1", (d) => d.cache.re).attr("y1", (d) => d.cache.im).attr("x2", (d) => d.parent ? d.parent.cache.re : d.cache.re).attr("y2", (d) => d.parent ? d.parent.cache.im : 1).attr("stroke-width", (d) => this.args.strokeWidth(d));
+					else s.attr("d", (d) => this.path(d)).attr("stroke-width", (d) => this.args.strokeWidth(d));
+				}
+			});
+		}
+	};
+	_ArcLayer = ArcLayer;
+	_ArcLayer.links = {
+		defaults: (ctx) => ({
+			invisible: false,
+			hideOnDrag: false,
+			data: "links",
+			className: "arc",
+			role: "links",
+			curvature: ctx.model.geometry.linkCurvature,
+			stroke: (n) => void 0,
+			strokeWidth: (d) => ctx.model.geometry.linkWidth(d),
+			hover: "path",
+			selection: "path"
+		}),
+		create: (ctx, name, args) => new _ArcLayer(ctx, name, args)
+	};
+	_ArcLayer.paths = {
+		defaults: (ctx) => ({
+			invisible: false,
+			hideOnDrag: false,
+			data: "paths",
+			className: "arc",
+			role: "paths",
+			curvature: ctx.model.geometry.linkCurvature,
+			stroke: (n) => void 0,
+			strokeWidth: (d) => ctx.model.geometry.linkWidth(d) + .013 * d.dampedDistScale,
+			hover: "path",
+			selection: "path"
+		}),
+		create: (ctx, name, args) => new _ArcLayer(ctx, name, args)
+	};
+	var _StemLayer;
+	var StemLayer = class {
+		constructor(view, name, args) {
+			this.needs = [
+				"data",
+				"transform",
+				"style"
+			];
+			this.update = {
+				parent: () => this.attach(),
+				data: () => {
+					this.d3updatePattern.update.data();
+					this.d3updatePattern2.update.data();
+				},
+				transformation: () => {
+					this.d3updatePattern.update.transformation();
+					this.d3updatePattern2.update.transformation();
+				},
+				style: () => {
+					this.d3updatePattern.update.style();
+					this.d3updatePattern2.update.style();
+				}
+			};
+			this.view = view;
+			this.args = args;
+			this.name = name;
+		}
+		attach() {
+			const root = () => this.view.hypertree.data ? [this.view.hypertree.data] : [];
+			const path = (d) => this.view.projection.stem(d.cache, this.args.curvature);
+			const w = this.args.width;
+			this.d3updatePattern = new D3UpdatePattern({
+				parent: this.view.parent,
+				layer: this,
+				clip: "#circle-clip" + this.view.model.geometry.clipRadius,
+				data: root,
+				name: "stem-link",
+				className: this.args.className,
+				elementType: "path",
+				create: (s) => s.attr("stroke-linecap", "round"),
+				updateColor: (s) => s.classed("hovered", (d) => d.pathes && d.pathes.isPartOfAnyHoverPath).classed("selected", (d) => d.pathes && d.pathes.isPartOfAnySelectionPath).style("stroke", (d) => d.pathes && d.pathes.finalcolor).attr("stroke-width", (d) => w(d)),
+				updateTransform: (s) => s.attr("d", (d) => path(d)).attr("stroke-width", (d) => w(d) + .015)
+			});
+			this.d3updatePattern2 = new D3UpdatePattern({
+				parent: this.view.parent,
+				layer: this,
+				clip: "#circle-clip" + this.view.model.geometry.clipRadius,
+				data: root,
+				name: "stem-path",
+				className: this.args.className,
+				elementType: "path",
+				create: (s) => s.attr("stroke-linecap", "round"),
+				updateColor: (s) => s.classed("hovered-path", (d) => d.pathes && d.pathes.isPartOfAnyHoverPath).classed("selected-path", (d) => d.pathes && d.pathes.isPartOfAnySelectionPath).style("stroke", (d) => d.pathes && d.pathes.finalcolor).attr("stroke-width", (d) => w(d) + (d.pathes && d.pathes.isPartOfAnySelectionPath || d.pathes && d.pathes.isPartOfAnyHoverPath ? .015 : 0)),
+				updateTransform: (s) => s.attr("d", (d) => path(d)).attr("stroke-width", (d) => w(d) + .015)
+			});
+		}
+	};
+	_StemLayer = StemLayer;
+	_StemLayer.type = {
+		defaults: (ctx) => ({
+			invisible: false,
+			hideOnDrag: false,
+			className: "arc",
+			curvature: "+",
+			width: (d) => ctx.model.geometry.linkWidth(d)
+		}),
+		create: (ctx, name, args) => new _StemLayer(ctx, name, args)
+	};
+	var _SymbolLayer;
+	var d_star = Symbol$1().size(.0012).type(star$1)();
+	var SymbolLayer = class {
+		constructor(view, name, args) {
+			this.needs = [
+				"data",
+				"transform",
+				"style"
+			];
+			this.update = {
+				parent: () => this.attach(),
+				data: () => this.d3updatePattern.update.data(),
+				transformation: () => this.d3updatePattern.update.transformation(),
+				style: () => this.d3updatePattern.update.style()
+			};
+			this.view = view;
+			this.args = args;
+			this.name = name;
+		}
+		attach() {
+			this.d3updatePattern = new D3UpdatePattern({
+				parent: this.view.parent,
+				layer: this,
+				data: () => layerData(this.view, this.args.data, this),
+				name: this.name,
+				className: "node",
+				elementType: "path",
+				create: (s) => s.classed("root", (d) => !d.parent).classed("lazy", (d) => d.hasOutChildren).classed("leaf", (d) => d.parent).classed("exit", (d) => (!d.children || !d.children.length) && d.data && d.data.numLeafs),
+				updateColor: (s) => s.classed("hovered", (d) => showsState(this.args.hover, d, "hover") && d.parent).classed("selected", (d) => showsState(this.args.selection, d, "selection") && d.parent),
+				updateTransform: (s) => s.attr("transform", (d) => this.args.transform(d)).attr("d", (d) => d_star)
+			});
+		}
+	};
+	_SymbolLayer = SymbolLayer;
+	_SymbolLayer.type = {
+		defaults: () => ({
+			invisible: false,
+			hideOnDrag: false,
+			data: "spezialNodes",
+			transform: (d) => d.transformStrCache + ` scale(${d.dampedDistScale})`,
+			hover: "path",
+			selection: "path"
+		}),
+		create: (ctx, name, args) => new _SymbolLayer(ctx, name, args)
+	};
+	var _ImageLayer;
+	var ImageLayer = class {
+		constructor(view, name, args) {
+			this.needs = ["data", "transform"];
+			this.update = {
+				parent: () => this.attach(),
+				data: () => this.d3updatePattern.update.data(),
+				transformation: () => this.d3updatePattern.update.transformation(),
+				style: () => this.d3updatePattern.update.style()
+			};
+			this.view = view;
+			this.args = args;
+			this.name = name;
+		}
+		attach() {
+			this.d3updatePattern = new D3UpdatePattern({
+				parent: this.view.parent,
+				layer: this,
+				data: () => layerData(this.view, this.args.data, this),
+				name: this.name,
+				className: "node",
+				elementType: "image",
+				create: (s) => s.attr("xlink:href", (d) => this.args.imagehref(d)).attr("width", this.args.width).attr("height", this.args.height),
+				updateColor: (s) => {},
+				updateTransform: (s) => s.attr("transform", (d) => {
+					return ` translate(${-this.args.width * d.distScale / 2} ${-this.args.height * d.distScale / 2}) translate(${d.cache.re} ${d.cache.im}) scale(${d.distScale})`;
+				})
+			});
+		}
+	};
+	_ImageLayer = ImageLayer;
+	_ImageLayer.type = {
+		defaults: () => ({
+			invisible: false,
+			hideOnDrag: false,
+			data: "images",
+			width: .05,
+			height: .05,
+			imagehref: (d) => d.precalc.imageHref
+		}),
+		create: (ctx, name, args) => new _ImageLayer(ctx, name, args)
+	};
+	function doVoronoiStuff(ud, cache) {
+		cache.voronoiDiagram = ud.voronoiLayout(cache.unculledNodes.filter((n) => n.precalc.clickable));
+		cache.cells = cache.voronoiDiagram.polygons();
+	}
+	function doLabelStuff(ud, cache) {
+		cache.labels = selectLabels(ud, cache, 25);
+		cache.labelsByMax = {};
+	}
+	function doImageStuff(ud, cache) {
+		cache.images = cache.unculledNodes.filter((e) => e.precalc.imageHref);
+	}
+	/**
+	* The labels of a label layer with the layer option maxLabels (the default limit
+	* gives cache.labels). Computed once per update and limit.
+	*/
+	function labelsFor(ud, max) {
+		const cache = ud.cache;
+		if (max === void 0 || max === null || max === 25) return cache.labels;
+		if (!cache.labelsByMax) cache.labelsByMax = {};
+		return cache.labelsByMax[max] || (cache.labelsByMax[max] = selectLabels(ud, cache, max));
+	}
+	/**
+	* The labels of a label layer: labelsFor(maxLabels), plus as its options ask
+	*   hoverLabel:      the node under the mouse (n.hovered)
+	*   hoverPathLabels: every node on the path from it to the root
+	* if they are visible and have a label. These come on top of the limit. Nodes with
+	* precalc.labelOnHover show their label only this way.
+	*/
+	function labelsWithHover(ud, args) {
+		const base = labelsFor(ud, args.maxLabels);
+		if (!args.hoverLabel && !args.hoverPathLabels) return base;
+		const extra = ud.cache.unculledNodes.filter((n) => n.precalc.label && !n.outOfView && (args.hoverLabel && n.hovered || args.hoverPathLabels && n.pathes && n.pathes.isPartOfAnyHoverPath));
+		if (!extra.length) return base;
+		const inBase = new Set(base);
+		return base.concat(extra.filter((n) => !inBase.has(n)));
+	}
+	/**
+	* The weight of a node when choosing labels (label layers, labels-placed priority):
+	* filter.labelScore (e.g. a felt importance), else (or when it gives undefined, null
+	* or NaN) the subtree weight precalc.cullingWeight.
+	*/
+	function labelWeight(ud, n) {
+		const labelScore = ud.args.model.filter.labelScore;
+		const s = labelScore ? labelScore(n) : void 0;
+		return s === void 0 || s === null || isNaN(s) ? n.precalc.cullingWeight || 1 : s;
+	}
+	function selectLabels(ud, cache, max) {
+		const candidates = cache.unculledNodes.filter((n) => n.precalc.label && !n.outOfView && !n.precalc.labelOnHover);
+		const root = candidates.find((n) => !n.parent);
+		const others = candidates.filter((n) => n !== root);
+		const score = (n) => labelWeight(ud, n) * n.distScale * n.distScale;
+		if (others.length > max) others.sort((a, b) => score(b) - score(a));
+		const n = Math.max(0, root ? max - 1 : max);
+		const nearest = others.length > n ? others.slice(0, n) : others;
+		return root ? [root, ...nearest] : nearest;
+	}
+	var _LabelLayer;
+	var LabelLayer = class {
+		constructor(view, name, args) {
+			this.needs = [
+				"data",
+				"transform",
+				"style"
+			];
+			this.update = {
+				parent: () => this.attach(),
+				data: () => {
+					this.d3updatePattern.update.data();
+					if (this.args.background) this.d3updatePattern.addTextBackgroundRects(paddingLeftRight, paddingTopBottom, .05, this.name, this.args.background);
+				},
+				transformation: () => this.d3updatePattern.update.transformation(),
+				style: () => this.update.data()
+			};
+			this.view = view;
+			this.args = args;
+			this.name = name;
+		}
+		transform(d, i, v) {
+			const f = offsetFactor(this.view, d), delta = this.args.delta(d, i, v);
+			const k = sizeAt(this.view, this.args.scale, d) * (this.args.kind === "emoji" ? 2 : 1);
+			return ` translate(${d.cache.re + delta.re * f} ${d.cache.im + delta.im * f}) scale(${k})`;
+		}
+		attach() {
+			const $this = this;
+			const offset = (d, i, v) => this.transform(d, i, v);
+			const data = () => typeof this.args.data === "function" ? this.args.data(this) || [] : layerData(this.view, this.args.data);
+			if (this.args.asImage) {
+				const className = this.args.className;
+				const linux = navigator.platform.includes("inux");
+				this.d3updatePattern = new D3UpdatePattern({
+					parent: this.view.parent,
+					layer: this,
+					data,
+					name: this.name,
+					className: this.args.className,
+					elementType: "image",
+					create: (s) => s.each(function(d) {
+						const image = textImage(this.parentNode, className + (linux && d.precalc.icon ? " caption-icon" : ""), $this.args.text(d), $this.args.kind === "emoji");
+						if (!image) return;
+						this.setAttribute("href", image.href);
+						this.setAttribute("x", String(image.x));
+						this.setAttribute("y", String(image.y));
+						this.setAttribute("width", String(image.w));
+						this.setAttribute("height", String(image.h));
+					}),
+					updateColor: (s) => s,
+					updateTransform: (s) => s.attr("transform", offset)
+				});
+				return;
+			}
+			this.d3updatePattern = new D3UpdatePattern({
+				parent: this.view.parent,
+				layer: this,
+				data,
+				name: this.name,
+				className: this.args.className,
+				elementType: "text",
+				create: (s) => s.classed("P", (d) => d.name == "P").classed("caption-icon", (d) => d.precalc.icon && navigator.platform.includes("inux")).attr("text-anchor", this.args.kind === "emoji" ? "middle" : null).attr("dominant-baseline", this.args.kind === "emoji" ? "central" : null).style("stroke", (d) => d.pathes && d.pathes.labelcolor).style("fill", (d) => this.args.color(d)).call((s) => setLabelText(s, this.args.text)),
+				updateColor: (s) => s.style("stroke", (d) => d.pathes && d.pathes.labelcolor).style("fill", (d) => this.args.color(d)).call(markHoveredLabel),
+				updateTransform: (s) => s.attr("transform", offset).call(markHoveredLabel)
+			});
+		}
+	};
+	_LabelLayer = LabelLayer;
+	_LabelLayer.text = {
+		defaults: (ctx) => ({
+			invisible: false,
+			hideOnDrag: false,
+			className: "caption",
+			kind: "text",
+			data: (layer) => labelsWithHover(ctx.unitdisk, layer.args),
+			text: (d) => d.precalc.label,
+			delta: (d) => labelOffset(ctx, d, "labelslen"),
+			color: () => void 0,
+			background: false,
+			scale: 1,
+			maxLabels: 25,
+			hoverLabel: false,
+			hoverPathLabels: false,
+			asImage: false
+		}),
+		create: (ctx, name, args) => new _LabelLayer(ctx, name, args)
+	};
+	_LabelLayer.emoji = {
+		defaults: (ctx) => ({
+			invisible: false,
+			hideOnDrag: false,
+			className: "caption",
+			kind: "emoji",
+			data: "emojis",
+			text: (d) => d.precalc.icon,
+			delta: () => ({
+				re: 0,
+				im: 0
+			}),
+			color: () => void 0,
+			background: false,
+			scale: 1,
+			asImage: true
+		}),
+		create: (ctx, name, args) => new _LabelLayer(ctx, name, args)
+	};
+	/**
+	* Text as a bitmap (option asImage, used by the emoji layer). Emoji glyphs drawn as
+	* SVG text get re-rasterized on every update, which made the emoji layer the most
+	* expensive one. Each distinct text is measured once as SVG text in its layer (so
+	* size and position match the text it replaces), drawn once on a canvas in the same
+	* font, and then reused as an <image> with a data URL.
+	*/
+	var textImages = /* @__PURE__ */ new Map();
+	/**
+	* centered: the bitmap holds only the ink of the text and is centered on the origin
+	* (the emojis: their middle exactly on the node). Otherwise it covers the text's box
+	* at the text's own position (labels).
+	*/
+	function textImage(group, className, text, centered = false) {
+		const key = className + "\0" + text + (centered ? "\0c" : "");
+		let image = textImages.get(key);
+		if (image) return image;
+		const svgText = document.createElementNS("http://www.w3.org/2000/svg", "text");
+		svgText.setAttribute("class", className);
+		svgText.textContent = text;
+		group.appendChild(svgText);
+		const bb = svgText.getBBox();
+		const family = getComputedStyle(svgText).fontFamily;
+		group.removeChild(svgText);
+		if (!bb.width || !bb.height) return void 0;
+		const px = 96 * (window.devicePixelRatio || 1);
+		const canvas = document.createElement("canvas");
+		const ctx = canvas.getContext("2d");
+		ctx.font = `${px}px ${family}`;
+		const m = ctx.measureText(text);
+		const ascent = m.fontBoundingBoxAscent || px * .9, descent = m.fontBoundingBoxDescent || px * .25;
+		if (centered) {
+			const left = m.actualBoundingBoxLeft || 0, right = m.actualBoundingBoxRight || m.width;
+			const up = m.actualBoundingBoxAscent || ascent, down = m.actualBoundingBoxDescent || descent;
+			const pad = 1, inkW = left + right, inkH = up + down;
+			canvas.width = Math.max(1, Math.ceil(inkW + 2));
+			canvas.height = Math.max(1, Math.ceil(inkH + 2));
+			ctx.font = `${px}px ${family}`;
+			ctx.textBaseline = "alphabetic";
+			ctx.fillText(text, pad + left, pad + up);
+			const unit = bb.height / (ascent + descent);
+			const w = canvas.width * unit, h = canvas.height * unit;
+			image = {
+				href: canvas.toDataURL(),
+				x: -w / 2,
+				y: -h / 2,
+				w,
+				h
+			};
+			textImages.set(key, image);
+			return image;
+		}
+		canvas.width = Math.max(1, Math.ceil(m.width));
+		canvas.height = Math.max(1, Math.ceil(ascent + descent));
+		ctx.font = `${px}px ${family}`;
+		ctx.textBaseline = "alphabetic";
+		const inkLeft = m.actualBoundingBoxLeft || 0, inkWidth = (m.actualBoundingBoxRight || m.width) + inkLeft;
+		ctx.fillText(text, (canvas.width - inkWidth) / 2 + inkLeft, ascent);
+		image = {
+			href: canvas.toDataURL(),
+			x: bb.x,
+			y: bb.y,
+			w: bb.width,
+			h: bb.height
+		};
+		textImages.set(key, image);
+		return image;
+	}
+	/**
+	* Sets the text of label elements. A '\n' in the text gives several lines (tspans
+	* below each other, 1.2 em apart); the first line stays where a one-line label is.
+	*/
+	function setLabelText(s, text) {
+		return s.each(function(d) {
+			const t = text(d);
+			if (this.__labelText === t && this.__labelText !== void 0) return;
+			this.__labelText = t;
+			const lines = typeof t === "string" ? t.split("\n") : [t];
+			if (lines.length === 1) {
+				this.textContent = t === void 0 || t === null ? "" : t;
+				return;
+			}
+			this.textContent = "";
+			lines.forEach((line, i) => {
+				const span = document.createElementNS("http://www.w3.org/2000/svg", "tspan");
+				span.setAttribute("x", "0");
+				if (i > 0) span.setAttribute("dy", "1.2em");
+				span.textContent = line;
+				this.appendChild(span);
+			});
+		});
+	}
+	/**
+	* The label of the hovered node stands out (all label layers): class caption-hovered
+	* on its text (an opaque halo, CSS) and an opaque box with a border behind it
+	* (rect.caption-hover, in the label's group just before the text, with the text's
+	* transform). Called with the layer's text elements on every style and transform
+	* update; a label can be hovered by pointing at the label itself
+	* (interaction-layer-2.ts: labelNodeAt).
+	*/
+	function markHoveredLabel(s) {
+		s.classed("caption-hovered", (d) => Boolean(d && d.hovered));
+		const first = s.node();
+		const group = first && first.parentNode;
+		if (!group) return;
+		let hovered = null;
+		s.each(function(d) {
+			if (d && d.hovered) hovered = this;
+		});
+		let rect = group.querySelector(":scope > rect.caption-hover");
+		if (!hovered) {
+			if (rect) rect.remove();
+			return;
+		}
+		if (!rect) {
+			rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+			rect.setAttribute("class", "caption-hover");
+		}
+		if (rect.nextSibling !== hovered) group.insertBefore(rect, hovered);
+		let background = rect.previousElementSibling;
+		if (background && !background.classList.contains("caption-background")) background = null;
+		if (background) for (const a of [
+			"x",
+			"y",
+			"width",
+			"height",
+			"rx",
+			"ry"
+		]) rect.setAttribute(a, background.getAttribute(a) || "0");
+		else {
+			const b = hovered.getBBox();
+			if (!b.width) {
+				rect.setAttribute("width", "0");
+				return;
+			}
+			const pad = b.height * .25;
+			rect.setAttribute("x", String(b.x - pad));
+			rect.setAttribute("y", String(b.y - pad * .5));
+			rect.setAttribute("width", String(b.width + 2 * pad));
+			rect.setAttribute("height", String(b.height + pad));
+			rect.setAttribute("rx", String(pad));
+			rect.removeAttribute("ry");
+		}
+		const t = hovered.getAttribute("transform");
+		if (t) rect.setAttribute("transform", t);
+		else rect.removeAttribute("transform");
+	}
+	var FOLLOW = 70;
+	var MAX_SPEED = .001;
+	var MAX_DT = 50;
+	var IDLE_DT = 16;
+	var ease = (g) => g * g * (3 - 2 * g);
+	var LabelTransitions = class {
+		/**
+		* duration: ms of growing and shrinking (0: none)
+		* redraw:   draws the layer (called on animation frames while anything moves)
+		* active:   false while the layer is invisible: no frames
+		* instant:  labels without animation (e.g. the hovered node's, layer option
+		*           hoverTransition false): full size and in place at once, gone at once
+		*/
+		constructor(duration, redraw, active, instant = () => false) {
+			this.duration = duration;
+			this.redraw = redraw;
+			this.active = active;
+			this.instant = instant;
+			this.states = /* @__PURE__ */ new Map();
+			this.last = 0;
+			this.dt = 0;
+			this.frame = 0;
+			this.moving = false;
+		}
+		get animated() {
+			return this.duration() > 0;
+		}
+		/**
+		* Starts a frame: the shown labels grow, the others shrink. A shrinking label is
+		* dropped when it reaches 0 or its node is no longer visible (its position is no
+		* longer updated). Returns the labels to draw: the shown ones (their order), then
+		* the shrinking ones.
+		*/
+		advance(shown, visible) {
+			const now = performance.now();
+			const gap = this.last ? now - this.last : 0;
+			this.dt = gap > MAX_DT ? IDLE_DT : gap;
+			this.last = now;
+			this.moving = false;
+			const step = this.animated ? this.dt / this.duration() : 1;
+			const isShown = new Set(shown);
+			for (const n of shown) {
+				const instant = this.instant(n);
+				const s = this.states.get(n);
+				if (s) {
+					s.show = true;
+					s.instant = instant;
+					if (instant) s.g = 1;
+				} else this.states.set(n, {
+					g: this.animated && !instant ? 0 : 1,
+					show: true,
+					instant,
+					tx: NaN,
+					ty: NaN,
+					dx: NaN,
+					dy: NaN
+				});
+			}
+			const leaving = [];
+			for (const [n, s] of this.states) {
+				if (!isShown.has(n)) {
+					s.show = false;
+					if (s.instant) s.g = 0;
+				}
+				s.g = Math.max(0, Math.min(1, s.g + (s.show ? step : -step)));
+				if (s.show ? s.g < 1 : s.g > 0) this.moving = true;
+				if (!s.show) {
+					if (s.g <= 0 || !visible(n)) this.states.delete(n);
+					else leaving.push(n);
+				}
+			}
+			return leaving.length ? shown.concat(leaving) : shown;
+		}
+		/** The growth of a label, eased: 0 (not visible) .. 1 (full size). */
+		growth(n) {
+			const s = this.states.get(n);
+			return s ? ease(s.g) : 1;
+		}
+		/** The offset computed in the last frame (undefined for a new label). */
+		target(n) {
+			const s = this.states.get(n);
+			return s && !isNaN(s.tx) ? {
+				dx: s.tx,
+				dy: s.ty
+			} : void 0;
+		}
+		/**
+		* Sets the computed offset of a label from its node (undefined: keep the last one,
+		* e.g. for a shrinking label) and returns the offset to draw, which follows it
+		* smoothly (a new label starts at its computed offset).
+		*/
+		follow(n, tx, ty) {
+			const s = this.states.get(n);
+			if (!s) return {
+				dx: tx || 0,
+				dy: ty || 0
+			};
+			if (tx !== void 0) {
+				s.tx = tx;
+				s.ty = ty;
+			}
+			if (isNaN(s.dx) || !this.animated || s.instant) {
+				s.dx = s.tx;
+				s.dy = s.ty;
+			} else {
+				const f = 1 - Math.exp(-this.dt / FOLLOW);
+				let mx = (s.tx - s.dx) * f, my = (s.ty - s.dy) * f;
+				const len = Math.hypot(mx, my), max = MAX_SPEED * this.dt;
+				if (len > max) {
+					mx *= max / len;
+					my *= max / len;
+				}
+				s.dx += mx;
+				s.dy += my;
+				if (Math.abs(s.tx - s.dx) + Math.abs(s.ty - s.dy) > 1e-4) this.moving = true;
+				else {
+					s.dx = s.tx;
+					s.dy = s.ty;
+				}
+			}
+			return {
+				dx: s.dx,
+				dy: s.dy
+			};
+		}
+		/** Ends a frame: while anything moves, the layer is drawn again on the next frame. */
+		finish() {
+			if (!this.moving || this.frame || typeof requestAnimationFrame === "undefined") return;
+			this.frame = requestAnimationFrame(() => {
+				this.frame = 0;
+				if (!this.active()) return;
+				if (performance.now() - this.last < 8) {
+					this.moving = true;
+					this.finish();
+					return;
+				}
+				this.redraw();
+			});
+		}
+	};
+	var _LabelForceLayer;
+	var ITERATIONS_MOVING = 8;
+	var ITERATIONS_SETTLED = 40;
+	var PULL = .25;
+	var INWARD = .25;
+	var MARGIN$1 = .004;
+	var LabelForceLayer = class {
+		constructor(view, name, args) {
+			this.needs = [
+				"data",
+				"transform",
+				"style"
+			];
+			this.drawn = [];
+			this.transitions = new LabelTransitions(() => this.args.transition, () => this.update.data(), () => !!this.d3updatePattern && !this.args.invisible, (n) => this.args.hoverTransition === false && !!n.hovered);
+			this.update = {
+				parent: () => this.attach(),
+				force: () => {
+					if (this.args.invisible) return;
+					if (this.view.hypertree.isAnimationRunning() && this.args.hideOnDrag) return;
+					this.relax(this.view.hypertree.isAnimationRunning() ? ITERATIONS_MOVING : ITERATIONS_SETTLED);
+				},
+				data: () => {
+					this.update.force();
+					this.d3updatePattern.update.data();
+					this.d3updatePattern2.update.data();
+					if (this.args.background) this.d3updatePattern.addTextBackgroundRects(paddingLeftRight, paddingTopBottom, .05, this.name);
+				},
+				transformation: () => {
+					this.update.force();
+					this.d3updatePattern.update.transformation();
+					this.d3updatePattern2.update.transformation();
+				},
+				style: () => {
+					if (this.args.hoverLabel || this.args.hoverPathLabels) {
+						this.update.data();
+						return;
+					}
+					this.d3updatePattern.update.style();
+					this.d3updatePattern2.update.style();
+				}
+			};
+			this.view = view;
+			this.args = args;
+			this.name = name;
+		}
+		growth(n) {
+			return this.transitions.growth(n);
+		}
+		size(n) {
+			return sizeAt(this.view, this.args.scale, n) * this.growth(n);
+		}
+		box(n) {
+			const k = this.size(n);
+			const { w, h } = labelSize(n, this.name + "len", this.view.model.geometry.captionHeight, k);
+			const fp = n.forcepoints;
+			return {
+				x: fp.x,
+				y: fp.y,
+				w: w + paddingsFor(this.view.model.geometry.captionHeight).lr * k / 2,
+				h
+			};
+		}
+		gap(n) {
+			return .012 * this.size(n);
+		}
+		data() {
+			return layerData(this.view, this.args.data, this);
+		}
+		relax(iterations) {
+			const visible = new Set(this.view.cache.unculledNodes || []);
+			const labels = this.drawn = this.transitions.advance(this.data(), (n) => visible.has(n) && !n.outOfView);
+			const proj = this.view.projection;
+			const rest = /* @__PURE__ */ new Map();
+			for (const n of labels) {
+				const k = this.size(n);
+				const { w, h } = labelSize(n, this.name + "len", this.view.model.geometry.captionHeight, k);
+				const r = restCenter(n, w, h, this.gap(n), proj);
+				rest.set(n, {
+					x: r.re,
+					y: r.im
+				});
+				const t = this.transitions.target(n);
+				n.forcepoints = t ? {
+					x: n.cache.re + t.dx,
+					y: n.cache.im + t.dy
+				} : {
+					x: r.re,
+					y: r.im
+				};
+			}
+			const grown = labels.map((n) => this.growth(n));
+			for (let it = 0; it < iterations; it++) {
+				for (const n of labels) {
+					const r = rest.get(n), fp = n.forcepoints;
+					fp.x += (r.x - fp.x) * PULL;
+					fp.y += (r.y - fp.y) * PULL;
+				}
+				const boxes = labels.map((n) => this.box(n));
+				for (let i = 0; i < labels.length; i++) for (let j = i + 1; j < labels.length; j++) {
+					const a = boxes[i], b = boxes[j];
+					const o = overlap(a, b, MARGIN$1 * Math.min(grown[i], grown[j]));
+					if (o.x <= 0 || o.y <= 0) continue;
+					const alongX = o.x < o.y;
+					const s = alongX ? o.x : o.y;
+					const sign = alongX ? Math.sign(a.x - b.x || 1) : Math.sign(a.y - b.y || 1);
+					const da = alongX ? {
+						re: sign,
+						im: 0
+					} : {
+						re: 0,
+						im: sign
+					};
+					const ua = outward(labels[i], proj), ub = outward(labels[j], proj);
+					const wa = da.re * ua.re + da.im * ua.im < 0 ? INWARD : 1;
+					const wb = -da.re * ub.re - da.im * ub.im < 0 ? INWARD : 1;
+					const sa = s * wa / (wa + wb), sb = s * wb / (wa + wb);
+					const fa = labels[i].forcepoints, fb = labels[j].forcepoints;
+					fa.x += da.re * sa;
+					fa.y += da.im * sa;
+					fb.x -= da.re * sb;
+					fb.y -= da.im * sb;
+					a.x = fa.x;
+					a.y = fa.y;
+					b.x = fb.x;
+					b.y = fb.y;
+				}
+			}
+			for (const n of labels) {
+				const o = this.transitions.follow(n, n.forcepoints.x - n.cache.re, n.forcepoints.y - n.cache.im);
+				n.forcepoints = {
+					x: n.cache.re + o.dx,
+					y: n.cache.im + o.dy
+				};
+			}
+			this.transitions.finish();
+		}
+		labellen(d) {
+			return d.precalc[this.name + "len"] || 0;
+		}
+		showsLine(d) {
+			const mode = this.args.leaderLines;
+			if (mode === "never" || !d.forcepoints) return false;
+			if (mode === "always") return true;
+			return distanceToBox({
+				re: d.cache.re,
+				im: d.cache.im
+			}, this.box(d)) > this.gap(d) * 1.8;
+		}
+		attach() {
+			const T = this;
+			function calctransform(d, i, v) {
+				if (!d.forcepoints) return ` translate(${d.cache.re} ${d.cache.im})`;
+				const k = T.size(d);
+				return ` translate(${(d.forcepoints.x || 0) - T.labellen(d) / 2 * k} ${d.forcepoints.y || 0}) scale(${k})`;
+			}
+			this.d3updatePattern = new D3UpdatePattern({
+				parent: this.view.parent,
+				layer: this,
+				data: () => this.drawn,
+				name: this.name,
+				className: this.args.className,
+				elementType: "text",
+				create: (s) => s.classed("P", (d) => d.name == "P").classed("caption-icon", (d) => d.precalc.icon && navigator.platform.includes("inux")).style("fill", (d) => d.pathes && d.pathes.labelcolor || this.args.color(d)).call((s) => setLabelText(s, this.args.text)).attr("transform", calctransform),
+				updateColor: (s) => s.style("fill", (d) => d.pathes && d.pathes.labelcolor || this.args.color(d)).call(markHoveredLabel),
+				updateTransform: (s) => s.attr("transform", calctransform).call((s) => setLabelText(s, this.args.text)).call(markHoveredLabel)
+			});
+			const lineEnd = (d) => {
+				const b = this.box(d);
+				return {
+					x: Math.max(b.x - b.w / 2, Math.min(b.x + b.w / 2, d.cache.re)),
+					y: Math.max(b.y - b.h / 2, Math.min(b.y + b.h / 2, d.cache.im))
+				};
+			};
+			this.d3updatePattern2 = new D3UpdatePattern({
+				parent: this.view.parent,
+				layer: this,
+				data: () => this.drawn,
+				name: "label-link",
+				className: "label-link",
+				elementType: "line",
+				create: (s) => {},
+				updateColor: (s) => {},
+				updateTransform: (s) => s.style("display", (d) => this.showsLine(d) ? null : "none").style("opacity", (d) => {
+					const g = this.growth(d);
+					return g < 1 ? g : null;
+				}).attr("x1", (d) => d.forcepoints ? lineEnd(d).x : d.cache.re).attr("y1", (d) => d.forcepoints ? lineEnd(d).y : d.cache.im).attr("x2", (d) => d.cache.re).attr("y2", (d) => d.cache.im)
+			});
+		}
+	};
+	_LabelForceLayer = LabelForceLayer;
+	_LabelForceLayer.type = {
+		defaults: (ctx) => ({
+			invisible: true,
+			hideOnDrag: true,
+			className: "caption caption-label",
+			data: (layer) => labelsWithHover(ctx.unitdisk, layer.args),
+			text: (d) => d.precalc.label,
+			color: (d) => void 0,
+			background: (n) => !n.parent,
+			scale: 1,
+			maxLabels: 25,
+			hoverLabel: false,
+			hoverPathLabels: false,
+			leaderLines: "auto",
+			transition: 250,
+			hoverTransition: true
+		}),
+		create: (ctx, name, args) => new _LabelForceLayer(ctx, name, args)
+	};
+	var _LabelPlacementLayer;
+	var MARGIN = .004;
+	var LabelPlacementLayer = class {
+		constructor(view, name, args) {
+			this.needs = [
+				"data",
+				"transform",
+				"style"
+			];
+			this.placed = [];
+			this.drawn = [];
+			this.boxes = /* @__PURE__ */ new Map();
+			this.last = /* @__PURE__ */ new Map();
+			this.transitions = new LabelTransitions(() => this.args.transition, () => this.update.data(), () => !!this.d3updatePattern && !this.args.invisible);
+			this.update = {
+				parent: () => this.attach(),
+				data: () => {
+					this.place();
+					this.redraw(true);
+				},
+				transformation: () => {
+					if (this.place()) this.redraw(true);
+					else this.redraw(false);
+				},
+				style: () => {
+					if (this.args.hoverLabel || this.args.hoverPathLabels) {
+						this.update.data();
+						return;
+					}
+					this.d3updatePattern.update.style();
+					this.d3updatePattern2.update.style();
+				}
+			};
+			this.view = view;
+			this.args = args;
+			this.name = name;
+		}
+		size(n) {
+			return sizeAt(this.view, this.args.scale, n);
+		}
+		gap(n) {
+			return .012 * this.size(n);
+		}
+		data() {
+			return layerData(this.view, this.args.data, this);
+		}
+		drawnBox(n) {
+			const b = this.boxes.get(n), g = this.transitions.growth(n);
+			return b && {
+				x: b.x,
+				y: b.y,
+				w: b.w * g,
+				h: b.h * g
+			};
+		}
+		priority(n) {
+			if (n.hovered) return 0xaa87bee538000;
+			if (n.pathes && n.pathes.isPartOfAnyHoverPath) return 0x71afd498d0000 + (1e3 - n.depth);
+			if (!n.parent) return 0x38d7ea4c68000;
+			return labelWeight(this.view.unitdisk, n) * n.distScale * n.distScale;
+		}
+		candidates(n, w, h) {
+			const gap = this.gap(n), proj = this.view.projection;
+			const rest = restCenter(n, w, h, gap, proj);
+			const list = [{
+				id: "rest",
+				c: rest
+			}];
+			for (let i = 0; i < 8; i++) {
+				const a = -Math.PI / 2 + i * Math.PI / 4;
+				list.push({
+					id: "d" + i,
+					c: besideNode(n, {
+						re: Math.cos(a),
+						im: Math.sin(a)
+					}, w, h, gap)
+				});
+			}
+			const u = outward(n, proj);
+			for (const turn of [
+				0,
+				.45,
+				-.45
+			]) for (const far of [
+				1,
+				1.8,
+				2.6
+			]) {
+				const v = {
+					re: u.re * Math.cos(turn) - u.im * Math.sin(turn),
+					im: u.re * Math.sin(turn) + u.im * Math.cos(turn)
+				};
+				list.push({
+					id: `o${turn}:${far}`,
+					c: besideNode(n, v, w, h, gap + (far - 1) * (h + w * .3))
+				});
+			}
+			const d = (c) => Math.hypot(c.re - rest.re, c.im - rest.im);
+			return list.sort((a, b) => d(a.c) - d(b.c));
+		}
+		/** Places the labels; returns true if the set of drawn labels changed. */
+		place() {
+			const labels = this.data().slice().sort((a, b) => this.priority(b) - this.priority(a));
+			const captionHeight = this.view.model.geometry.captionHeight;
+			const boxes = [];
+			const placed = [];
+			const last = /* @__PURE__ */ new Map();
+			for (const n of labels) {
+				const k = this.size(n);
+				const { w, h } = labelSize(n, this.name + "len", captionHeight, k);
+				if (!w) continue;
+				const W = w + paddingsFor(captionHeight).lr * k / 2;
+				const cands = this.candidates(n, W, h);
+				const prev = this.last.get(n);
+				if (prev) {
+					const i = cands.findIndex((c) => c.id === prev);
+					if (i > 0) cands.unshift(cands.splice(i, 1)[0]);
+				}
+				for (const cand of cands) {
+					const b = {
+						x: cand.c.re,
+						y: cand.c.im,
+						w: W,
+						h
+					};
+					if (boxes.some((o) => overlapping(o, b, MARGIN))) continue;
+					boxes.push(b);
+					placed.push(n);
+					n.placedLabel = b;
+					last.set(n, cand.id);
+					break;
+				}
+			}
+			this.last = last;
+			this.placed = placed;
+			const visible = new Set(this.view.cache.unculledNodes || []);
+			const drawn = this.transitions.advance(placed, (n) => visible.has(n) && !n.outOfView);
+			const isPlaced = new Set(placed);
+			const drawnBoxes = /* @__PURE__ */ new Map();
+			for (const n of drawn) {
+				const b = isPlaced.has(n) ? n.placedLabel : this.boxes.get(n);
+				if (!b) continue;
+				const o = isPlaced.has(n) ? this.transitions.follow(n, b.x - n.cache.re, b.y - n.cache.im) : this.transitions.follow(n);
+				drawnBoxes.set(n, {
+					x: n.cache.re + o.dx,
+					y: n.cache.im + o.dy,
+					w: b.w,
+					h: b.h
+				});
+			}
+			const prev = this.drawn;
+			this.drawn = drawn.filter((n) => drawnBoxes.has(n));
+			this.boxes = drawnBoxes;
+			this.transitions.finish();
+			return prev.length !== this.drawn.length || prev.some((n, i) => n !== this.drawn[i]);
+		}
+		redraw(dataChanged) {
+			if (dataChanged) {
+				this.d3updatePattern.update.data();
+				this.d3updatePattern2.update.data();
+				if (this.args.background) this.d3updatePattern.addTextBackgroundRects(paddingLeftRight, paddingTopBottom, .05, this.name, this.args.background);
+			} else {
+				this.d3updatePattern.update.transformation();
+				this.d3updatePattern2.update.transformation();
+			}
+		}
+		showsLine(d) {
+			const mode = this.args.leaderLines;
+			const b = this.drawnBox(d);
+			if (mode === "never" || !b) return false;
+			if (mode === "always") return true;
+			return distanceToBox({
+				re: d.cache.re,
+				im: d.cache.im
+			}, b) > this.gap(d) * 1.8;
+		}
+		attach() {
+			const transform = (d) => {
+				const b = this.boxes.get(d), k = this.size(d) * this.transitions.growth(d);
+				const w = (d.precalc[this.name + "len"] || 0) * k;
+				return b ? ` translate(${b.x - w / 2} ${b.y}) scale(${k})` : ` translate(${d.cache.re} ${d.cache.im})`;
+			};
+			this.d3updatePattern = new D3UpdatePattern({
+				parent: this.view.parent,
+				layer: this,
+				data: () => this.drawn,
+				name: this.name,
+				className: this.args.className,
+				elementType: "text",
+				create: (s) => s.style("fill", (d) => d.pathes && d.pathes.labelcolor).call((s) => setLabelText(s, this.args.text)).attr("transform", transform),
+				updateColor: (s) => s.style("fill", (d) => d.pathes && d.pathes.labelcolor).call(markHoveredLabel),
+				updateTransform: (s) => s.attr("transform", transform).call((s) => setLabelText(s, this.args.text)).call(markHoveredLabel)
+			});
+			const lineEnd = (d) => {
+				const b = this.drawnBox(d);
+				return {
+					x: Math.max(b.x - b.w / 2, Math.min(b.x + b.w / 2, d.cache.re)),
+					y: Math.max(b.y - b.h / 2, Math.min(b.y + b.h / 2, d.cache.im))
+				};
+			};
+			this.d3updatePattern2 = new D3UpdatePattern({
+				parent: this.view.parent,
+				layer: this,
+				data: () => this.drawn,
+				name: this.name + "-link",
+				className: "label-link",
+				elementType: "line",
+				create: (s) => {},
+				updateColor: (s) => {},
+				updateTransform: (s) => s.style("display", (d) => this.showsLine(d) ? null : "none").style("opacity", (d) => {
+					const g = this.transitions.growth(d);
+					return g < 1 ? g : null;
+				}).attr("x1", (d) => lineEnd(d).x).attr("y1", (d) => lineEnd(d).y).attr("x2", (d) => d.cache.re).attr("y2", (d) => d.cache.im)
+			});
+		}
+	};
+	_LabelPlacementLayer = LabelPlacementLayer;
+	_LabelPlacementLayer.type = {
+		defaults: (ctx) => ({
+			invisible: true,
+			hideOnDrag: false,
+			className: "caption caption-label",
+			data: (layer) => labelsWithHover(ctx.unitdisk, layer.args),
+			text: (d) => d.precalc.label,
+			background: false,
+			scale: 1,
+			maxLabels: 25,
+			hoverLabel: false,
+			hoverPathLabels: false,
+			leaderLines: "auto",
+			transition: 250
+		}),
+		create: (ctx, name, args) => new _LabelPlacementLayer(ctx, name, args)
+	};
+	var _EmojiBackgroundLayer;
+	var EmojiBackgroundLayer = class {
+		constructor(view, name, args) {
+			this.needs = ["data", "transform"];
+			this.update = {
+				parent: () => this.attach(),
+				data: () => this.d3updatePattern.update.data(),
+				transformation: () => this.d3updatePattern.update.transformation(),
+				style: () => this.d3updatePattern.update.style()
+			};
+			this.view = view;
+			this.args = args;
+			this.name = name;
+		}
+		emojiArgs() {
+			const layer = this.view.layerstack.layers && this.view.layerstack.layers[this.args.emojiLayer];
+			return layer ? layer.args : {};
+		}
+		radius(group, d) {
+			const e = this.emojiArgs();
+			const linux = navigator.platform.includes("inux");
+			const text = e.text ? e.text(d) : d.precalc.icon;
+			const image = text ? textImage(group, (e.className || "caption") + (linux ? " caption-icon" : ""), text, true) : void 0;
+			return (image ? Math.max(image.w, image.h) / 2 : .025) * this.args.padding;
+		}
+		transform(d) {
+			const k = sizeAt(this.view, this.emojiArgs().scale, d) * 2;
+			return `translate(${d.cache.re} ${d.cache.im}) scale(${k})`;
+		}
+		attach() {
+			const $this = this;
+			this.d3updatePattern = new D3UpdatePattern({
+				parent: this.view.parent,
+				layer: this,
+				data: () => layerData(this.view, this.args.data, this),
+				name: this.name,
+				className: this.args.className,
+				elementType: "circle",
+				create: (s) => s.each(function(d) {
+					this.setAttribute("r", String($this.radius(this.parentNode, d)));
+				}).style("fill", (d) => this.args.fill(d)).style("stroke", (d) => this.args.stroke(d)),
+				updateColor: (s) => s,
+				updateTransform: (s) => s.attr("transform", (d) => this.transform(d))
+			});
+		}
+	};
+	_EmojiBackgroundLayer = EmojiBackgroundLayer;
+	_EmojiBackgroundLayer.type = {
+		defaults: () => ({
+			invisible: true,
+			hideOnDrag: false,
+			className: "emoji-background",
+			data: "emojis",
+			emojiLayer: "emojis",
+			padding: 1.2,
+			fill: (n) => void 0,
+			stroke: (n) => void 0
+		}),
+		create: (ctx, name, args) => new _EmojiBackgroundLayer(ctx, name, args)
+	};
+	var ONE = {
+		re: 1,
+		im: 0
+	};
+	var rotate = (z, g) => ({
+		re: z.re * g.re - z.im * g.im,
+		im: z.re * g.im + z.im * g.re
+	});
+	var unrotate = (z, g) => ({
+		re: z.re * g.re + z.im * g.im,
+		im: z.im * g.re - z.re * g.im
+	});
+	function toHalfPlane(z, g = ONE) {
+		z = unrotate(z, g);
+		const d = (1 - z.re) * (1 - z.re) + z.im * z.im;
+		return {
+			re: -2 * z.im / d,
+			im: (1 - z.re * z.re - z.im * z.im) / d
+		};
+	}
+	function toView(z, g = ONE) {
+		const w = toHalfPlane(z, g);
+		return {
+			re: w.re,
+			im: w.im - 1
+		};
+	}
+	var viewY = (imw) => imw - 1;
+	/**
+	* The image of the disk circle |z − c| = r in the view: a Möbius map takes circles to
+	* circles, so it is the circle through the images of three of its points. null when it
+	* goes through the point at infinity (a straight line in the view).
+	*/
+	function circleToView(c, r, g = ONE) {
+		const [a, b, d] = [
+			0,
+			2 * Math.PI / 3,
+			4 * Math.PI / 3
+		].map((a) => toView({
+			re: c.re + r * Math.cos(a),
+			im: c.im + r * Math.sin(a)
+		}, g));
+		const den = 2 * (a.re * (b.im - d.im) + b.re * (d.im - a.im) + d.re * (a.im - b.im));
+		if (!isFinite(den) || Math.abs(den) < 1e-12) return null;
+		const a2 = a.re * a.re + a.im * a.im, b2 = b.re * b.re + b.im * b.im, d2 = d.re * d.re + d.im * d.im;
+		const cx = (a2 * (b.im - d.im) + b2 * (d.im - a.im) + d2 * (a.im - b.im)) / den;
+		const cy = (a2 * (d.re - b.re) + b2 * (a.re - d.re) + d2 * (b.re - a.re)) / den;
+		const rad = Math.hypot(a.re - cx, a.im - cy);
+		return isFinite(rad) ? {
+			cx,
+			cy,
+			r: rad
+		} : null;
+	}
+	/** The direction that goes to infinity: the middle of the gap of the root wedge. */
+	function infinityOf(rootWedge) {
+		const a = rootWedge ? rootWedge.orientation + Math.PI : Math.PI / 2;
+		return {
+			re: Math.cos(a),
+			im: Math.sin(a)
+		};
+	}
+	/** A point of the view (pointer position) back into the disk: z = (w − i) / (w + i). */
+	function viewToDisk(p, g = ONE) {
+		const wr = p.re, wi = p.im + 1;
+		const nr = wr, ni = wi - 1;
+		const dr = wr, di = wi + 1;
+		const d = dr * dr + di * di;
+		return rotate({
+			re: (nr * dr + ni * di) / d,
+			im: (ni * dr - nr * di) / d
+		}, g);
+	}
+	/** Local scale of the map |dw/dz| = 2 / |1 − z|²: sizes in the view. */
+	function viewScale(z, g = ONE) {
+		z = unrotate(z, g);
+		return 2 / ((1 - z.re) * (1 - z.re) + z.im * z.im);
+	}
+	var maxHeight = 3;
+	var maxDrawnHeight = 1e6;
+	/**
+	* Maps the visible nodes of a frame into the view (call after culling): keeps the disk
+	* position in n.cacheDisk (interaction), sets n.cache and the derived strings to the
+	* view position and multiplies the distance scale with the scale of the map (capped).
+	* Every node is mapped (a link needs both ends in the view coordinates); nodes far
+	* below the view (toward infinity) get n.outOfView.
+	*/
+	function mapToView(nodes, g = ONE) {
+		for (const n of nodes) {
+			const z = {
+				re: n.cache.re,
+				im: n.cache.im
+			};
+			const w = toHalfPlane(z, g);
+			if (!(w.im < maxDrawnHeight)) {
+				w.im = maxDrawnHeight;
+				if (!isFinite(w.re)) w.re = 0;
+			}
+			n.outOfView = w.im > maxHeight;
+			n.cacheDisk = z;
+			n.cache = {
+				re: w.re,
+				im: viewY(w.im)
+			};
+			n.cachep = CktoCp(n.cache);
+			n.distScale = Math.min(n.distScale * viewScale(z, g) / 2, 1);
+			n.dampedDistScale = n.distScale * (.5 / n.distScale + .5);
+			n.strCache = `${n.cache.re} ${n.cache.im}`;
+			n.transformStrCache = ` translate(${n.strCache})`;
+			n.scaleStrText = ` scale(${n.dampedDistScale})`;
+		}
+		return nodes;
+	}
+	/** The disk position of a node (n.cache holds the view position in the half-plane view). */
+	var diskPos = (n) => n.cacheDisk || n.cache;
+	var _InteractionLayer;
+	var NODE_HIT_PX = 8;
+	var InteractionLayer2 = class InteractionLayer2 {
+		constructor(view, name, args) {
+			this.needs = [];
+			this.wheelSettleTimer = void 0;
+			this.update = {
+				parent: () => this.updateParent(),
+				data: () => {},
+				transformation: () => {},
+				style: () => {}
+			};
+			this.hoverNode = void 0;
+			this.holdTimer = null;
+			this.held = false;
+			this.pointerQueue = [];
+			this.pointerFlushScheduled = false;
+			this.panStart = null;
+			this.pinchInitDist = null;
+			this.pinchInitλp = null;
+			this.nopinch = null;
+			this.pinchcenter = null;
+			this.pinchPreservingNode = null;
+			this.toDisk = (p) => this.view.projection.toDisk(p);
+			this.toViewPos = (z) => this.view.projection.toView(z);
+			this.mousePosAsC = (e) => ArrtoC(pointer(e, this.view.parent.node()));
+			this.nodeAt = (v, cellToo = true) => {
+				const q = this.view.cache.voronoiDiagram && this.view.cache.voronoiDiagram.find(v.re, v.im);
+				const cell = q ? q.data : void 0;
+				if (cell && cell.cache && this.screenDistance(v, cell.cache) <= NODE_HIT_PX) return cell;
+				return this.labelNodeAt(v) || (cellToo ? cell : void 0);
+			};
+			this.findUnculledNodeByCell = (m) => {
+				let best = void 0, bestD = Infinity;
+				for (const n of this.view.cache.unculledNodes) {
+					const z = diskPos(n);
+					const dx = z.re - m.re, dy = z.im - m.im;
+					const d = dx * dx + dy * dy;
+					if (d < bestD) {
+						bestD = d;
+						best = n;
+					}
+				}
+				return best;
+			};
+			this.view = view;
+			this.args = args;
+			this.name = name;
+			this.htapi = this.view.hypertree.api;
+			this.hoverpath = this.view.model.objects.pathes[0];
+			this.mousedown = false;
+		}
+		get interaction() {
+			return this.view.model.interaction;
+		}
+		get traces() {
+			return this.view.model.objects.traces;
+		}
+		set traces(t) {
+			this.view.model.objects.traces = t;
+		}
+		get transformation() {
+			return this.view.unitdisk.args.transformation;
+		}
+		updateParent() {
+			const mousehandlers = (de) => de.on("wheel", (e) => this.fireMouseWheelEvent(e)).on("mousedown", (e) => this.fireMouseDown(e)).on("mousemove", (e) => this.fireMouseMove(e)).on("mouseup", (e) => this.fireMouseUp(e)).on("mouseout", (e) => {
+				this.setHoverNode(void 0);
+				this.htapi.setPathHead(this.hoverpath, void 0);
+			}).on("touchstart", (e) => this.fireTouchEvent(e, "onPointerStart")).on("touchmove", (e) => this.fireTouchEvent(e, "onPointerMove")).on("touchend", (e) => this.fireTouchEvent(e, "onPointerEnd")).on("touchcancel", (e) => this.fireTouchEvent(e, "onPointerEnd"));
+			this.view.parent.append("circle").attr("class", "mouse-circle").attr("r", 5).call(mousehandlers);
+			this.view.parent.append("circle").attr("class", "mouse-circle-cursor").attr("r", this.args.mouseRadius).call(mousehandlers);
+		}
+		fireMouseDown(e) {
+			this.mousedown = true;
+			this.fireMouseEvent(e, "onPointerStart");
+		}
+		fireMouseMove(e) {
+			if (this.mousedown) this.fireMouseEvent(e, "onPointerMove");
+			else if (!this.view.hypertree.isInitializing && !this.view.hypertree.isAnimationRunning()) {
+				const p = this.mousePosAsC(e), m = this.toDisk(p);
+				const n = !(this.interaction.hover !== "none") ? void 0 : this.nodeAt(p, m.re * m.re + m.im * m.im <= 1);
+				this.setHoverNode(n);
+				this.htapi.setPathHead(this.hoverpath, n);
+			}
+		}
+		setHoverNode(n) {
+			if (n === this.hoverNode) return;
+			this.hoverNode = n;
+			const i = this.interaction;
+			if (i.onNodeHover) i.onNodeHover(n);
+			if (i.onHoverNodeChange) i.onHoverNodeChange(n);
+		}
+		startHoldTimer(m) {
+			this.cancelHoldTimer();
+			this.held = false;
+			const i = this.interaction;
+			if (!i.onNodeHold) return;
+			this.holdTimer = setTimeout(() => {
+				this.holdTimer = null;
+				if (this.traces.length !== 1 || !this.nopinch) return;
+				const v = this.toViewPos(m);
+				this.held = true;
+				i.onNodeHold(this.nodeAt(v), v, this);
+			}, i.holdDuration);
+		}
+		cancelHoldTimer() {
+			if (this.holdTimer) clearTimeout(this.holdTimer);
+			this.holdTimer = null;
+		}
+		fireMouseUp(e) {
+			this.mousedown = false;
+			this.fireMouseEvent(e, "onPointerEnd");
+		}
+		fireMouseEvent(e, eventName) {
+			e.stopPropagation();
+			e.preventDefault();
+			this.enqueuePointerEvent(eventName, "mouse", this.toDisk(this.mousePosAsC(e)));
+		}
+		enqueuePointerEvent(name, pid, m) {
+			const last = this.pointerQueue[this.pointerQueue.length - 1];
+			if (name === "onPointerMove" && last && last.name === name && last.pid === pid) last.m = m;
+			else this.pointerQueue.push({
+				name,
+				pid,
+				m
+			});
+			if (this.pointerFlushScheduled) return;
+			this.pointerFlushScheduled = true;
+			requestAnimationFrame(() => {
+				this.pointerFlushScheduled = false;
+				const queue = this.pointerQueue;
+				this.pointerQueue = [];
+				let update = false;
+				for (const e of queue) update = this[e.name](e.pid, e.m) || update;
+				if (update) this.view.hypertree.update.transformation();
+			});
+		}
+		fireMouseWheelEvent(e) {
+			e.stopPropagation();
+			e.preventDefault();
+			this.view.hypertree.stopAnimation();
+			const mΔ = e.deltaY;
+			const oldλp = this.transformation.state.λ;
+			const Δsens = this.interaction.wheelFactor;
+			const newλp = this.view.hypertree.clampλ(mΔ >= 0 ? oldλp / Δsens : oldλp * Δsens);
+			if (newλp !== oldλp) {
+				const m = this.toDisk(this.mousePosAsC(e));
+				const ud = this.view.unitdisk;
+				ud.isWheeling = true;
+				clearTimeout(this.wheelSettleTimer);
+				this.wheelSettleTimer = setTimeout(() => {
+					ud.isWheeling = false;
+					this.view.hypertree.update.transformation();
+				}, InteractionLayer2.wheelSettle);
+				requestAnimationFrame(() => {
+					const t = this.transformation;
+					const preservingNode = this.findUnculledNodeByCell(m);
+					t.onDragλ(newλp);
+					this.view.hypertree.updateLayoutPath_(preservingNode);
+					t.state.P = compose(t.state, shift(t.state, {
+						re: 0,
+						im: 0
+					}, diskPos(preservingNode))).P;
+					this.view.hypertree.update.transformation();
+				});
+			}
+		}
+		fireTouchEvent(e, eventName) {
+			e.stopPropagation();
+			e.preventDefault();
+			const changedTouches = e.changedTouches;
+			for (let i = 0; i < changedTouches.length; ++i) this.enqueuePointerEvent(eventName, changedTouches[i].identifier, this.toDisk(this.mousePosAsC(changedTouches[i])));
+		}
+		onPointerStart(pid, m) {
+			if (CktoCp(m).r >= 1) return false;
+			this.traces.push({
+				id: pid,
+				points: [m]
+			});
+			if (this.traces.length === 1) {
+				this.view.hypertree.stopAnimation();
+				this.dST = clone(this.transformation.state);
+				this.view.unitdisk.isDraging = true;
+				this.panStart = m;
+				this.nopinch = true;
+				this.startHoldTimer(m);
+			} else if (this.traces.length === 2) {
+				this.cancelHoldTimer();
+				const t0 = this.traces[0];
+				const t0e = t0.points[t0.points.length - 1];
+				this.pinchcenter = CmulR(CaddC(t0e, m), .5);
+				this.view.unitdisk.pinchcenter = this.pinchcenter;
+				this.pinchPreservingNode = this.findUnculledNodeByCell(this.pinchcenter);
+				this.pinchInitDist = this.dist(t0e, m);
+				this.pinchInitλp = this.transformation.state.λ;
+				this.nopinch = false;
+			}
+			return false;
+		}
+		onPointerMove(pid, m) {
+			const trace = this.findTrace(pid);
+			if (!trace) return false;
+			trace.points.push(m);
+			if (this.holdTimer && this.dist(this.panStart, m) >= .006) this.cancelHoldTimer();
+			if (this.traces.length === 1) {
+				const t = this.transformation;
+				t.state.P = compose(this.dST, shift(this.dST, this.panStart, maxR(m, .9))).P;
+			} else if (this.traces.length === 2) {
+				const t0 = this.traces[0];
+				const t0e = t0.points[t0.points.length - 1];
+				const t1 = this.traces[1];
+				const t1e = t1.points[t1.points.length - 1];
+				const f = this.dist(t0e, t1e) / this.pinchInitDist;
+				const newλp = this.view.hypertree.clampλ(this.pinchInitλp * f);
+				const pinchcenter2 = maxR(CmulR(CaddC(t0e, t1e), .5), this.args.mouseRadius);
+				const t = this.transformation;
+				t.onDragλ(newλp);
+				this.view.hypertree.updateLayoutPath_(this.pinchPreservingNode);
+				t.state.P = compose(t.state, shift(t.state, {
+					re: 0,
+					im: 0
+				}, diskPos(this.pinchPreservingNode))).P;
+				t.state.P = compose(t.state, shift(t.state, this.pinchcenter, pinchcenter2)).P;
+				this.pinchcenter = CmulR(CaddC(this.pinchcenter, pinchcenter2), .5);
+				this.view.unitdisk.pinchcenter = this.pinchcenter;
+			}
+			return true;
+		}
+		onPointerEnd(pid, m) {
+			this.traces = this.traces.filter((e) => e.id !== pid);
+			this.pinchcenter = void 0;
+			this.view.unitdisk.pinchcenter = this.pinchcenter;
+			this.pinchPreservingNode = void 0;
+			if (this.traces.length === 0) {
+				this.dST = void 0;
+				this.view.unitdisk.isDraging = false;
+				this.cancelHoldTimer();
+				if (this.held) {
+					this.held = false;
+					return false;
+				}
+				if (this.dist(this.panStart, m) < .006 && this.nopinch) {
+					if (CktoCp(m).r < 1) {
+						this.click(m);
+						return false;
+					}
+				}
+			} else if (this.traces.length === 1) {
+				const otherPoints = this.traces[0].points;
+				this.panStart = otherPoints[otherPoints.length - 1];
+				this.dST = clone(this.transformation.state);
+				this.view.unitdisk.isDraging = true;
+			}
+			return true;
+		}
+		ripple(n, m, ok, useClip = true) {
+			const cells = this.view.unitdisk.layerStack.layers["cells"];
+			if (useClip && cells && !cells.args.invisible) {
+				const rippleClip = this.view.parent.append("clipPath").attr("id", `cell-clip-${n.mergeId}`).html(`<use xlink:href="#cell-${n.mergeId}"></use>`);
+				const rippleCircle = this.view.parent.insert("g", ":first-child").attr("class", "ripple-world").attr("clip-path", `url(#cell-clip-${n.mergeId})`).append("circle").attr("class", "ripple-circle").attr("r", .1).attr("cx", m.re).attr("cy", m.im).attr("transform-origin", `${m.re}  ${m.im}`).on("animationend", () => {
+					rippleCircle.remove();
+					rippleClip.remove();
+					ok();
+				});
+			} else {
+				const rippleCircle = this.view.parent.insert("g", ":first-child").attr("class", "ripple-world").append("circle").attr("class", "ripple-circle").attr("r", .1).attr("cx", m.re).attr("cy", m.im).attr("transform-origin", `${m.re}  ${m.im}`).on("animationend", () => {
+					rippleCircle.remove();
+					ok();
+				});
+			}
+		}
+		click(m) {
+			const v = this.toViewPos(m);
+			const n = this.nodeAt(v);
+			if (!this.view.hypertree.isAnimationRunning()) {
+				const i = this.interaction;
+				if (n && i.clickAction === "select") this.view.hypertree.api.toggleSelection(n);
+				if (n && i.clickAction === "goto") this.view.hypertree.api.gotoNode(n);
+				i.onNodeClick(n, v, this);
+			}
+		}
+		findTrace(pid) {
+			return this.traces.find((e) => e.id === pid);
+		}
+		screenDistance(a, b) {
+			const plane = this.view.parent && this.view.parent.node && this.view.parent.node();
+			const ctm = plane && plane.getScreenCTM && plane.getScreenCTM();
+			const scale = ctm ? Math.hypot(ctm.a, ctm.b) : 1;
+			return Math.hypot(a.re - b.re, a.im - b.im) * scale;
+		}
+		labelNodeAt(v) {
+			const plane = this.view.parent && this.view.parent.node && this.view.parent.node();
+			const stack = plane && plane.parentNode;
+			const ctm = plane && plane.getScreenCTM && plane.getScreenCTM();
+			if (!stack || !ctm) return void 0;
+			const x = ctm.a * v.re + ctm.c * v.im + ctm.e;
+			const y = ctm.b * v.re + ctm.d * v.im + ctm.f;
+			const PAD = 2;
+			let hit = void 0;
+			const texts = stack.querySelectorAll("[id=\"labels\"] text, [id=\"labels-force\"] text, [id=\"labels-placed\"] text");
+			for (let i = 0; i < texts.length; i++) {
+				const t = texts[i];
+				if (!t.__data__) continue;
+				const r = t.getBoundingClientRect();
+				if (r.width < 2 || r.height < 2) continue;
+				if (x >= r.left - PAD && x <= r.right + PAD && y >= r.top - PAD && y <= r.bottom + PAD) hit = t.__data__;
+			}
+			return hit;
+		}
+		dist(a, b) {
+			const diff = CsubC(a, b);
+			return Math.sqrt(diff.re * diff.re + diff.im * diff.im);
+		}
+	};
+	_InteractionLayer = InteractionLayer2;
+	_InteractionLayer.type = {
+		defaults: (ctx) => ({ mouseRadius: ctx.model.interaction.mouseRadius }),
+		create: (ctx, name, args) => new _InteractionLayer(ctx, name, args)
+	};
+	_InteractionLayer.wheelSettle = 150;
+	var _TraceLayer;
+	var TraceLayer = class {
+		constructor(view, name, args) {
+			this.needs = ["data", "transform"];
+			this.update = {
+				parent: () => this.attach(),
+				data: () => this.d3updatePattern.update.data(),
+				transformation: () => this.d3updatePattern.update.transformation(),
+				style: () => this.d3updatePattern.update.style()
+			};
+			this.view = view;
+			this.args = args;
+			this.name = name;
+		}
+		attach() {
+			this.d3updatePattern = new D3UpdatePattern({
+				parent: this.view.parent,
+				layer: this,
+				data: () => layerData(this.view, this.args.data, this),
+				name: this.name,
+				className: "trace-polyline",
+				elementType: "polyline",
+				create: (s) => {},
+				updateColor: (s) => {},
+				updateTransform: (s) => s.attr("points", (d) => d.points.map((e) => `${e.re}, ${e.im}`).join(" "))
+			});
+		}
+	};
+	_TraceLayer = TraceLayer;
+	_TraceLayer.type = {
+		defaults: (ctx) => ({
+			invisible: true,
+			hideOnDrag: true,
+			data: () => ctx.model.objects.traces
+		}),
+		create: (ctx, name, args) => new _TraceLayer(ctx, name, args)
+	};
+	var layerTypes = {
+		"background": BackgroundLayer.type,
+		"cells": CellLayer.type,
+		"focus": FocusLayer.type,
+		"nodes": NodeLayer.type,
+		"arcs": ArcLayer.links,
+		"paths": ArcLayer.paths,
+		"stem": StemLayer.type,
+		"symbols": SymbolLayer.type,
+		"images": ImageLayer.type,
+		"labels": LabelLayer.text,
+		"emojis": LabelLayer.emoji,
+		"emoji-backgrounds": EmojiBackgroundLayer.type,
+		"labels-force": LabelForceLayer.type,
+		"labels-placed": LabelPlacementLayer.type,
+		"interaction": InteractionLayer2.type,
+		"traces": TraceLayer.type
+	};
+	/** The default layer stack, in drawing order (a fresh list on every call). */
+	var defaultLayers = () => [
+		{
+			type: "background",
+			name: "background"
+		},
+		{
+			type: "cells",
+			name: "cells"
+		},
+		{
+			type: "focus",
+			name: "culling-r",
+			options: { r: (ctx) => ctx.model.filter.cullingRadius }
+		},
+		{
+			type: "focus",
+			name: "mouse-r",
+			options: { r: (ctx) => ctx.model.interaction.mouseRadius }
+		},
+		{
+			type: "focus",
+			name: "focus-r",
+			options: { r: (ctx) => ctx.cache.focusR }
+		},
+		{
+			type: "focus",
+			name: "labels-r-𝐖",
+			options: { r: (ctx) => ctx.model.filter.wikiRadius }
+		},
+		{
+			type: "focus",
+			name: "λ",
+			options: {
+				invisible: false,
+				hideOnDrag: false,
+				r: (ctx) => ctx.model.geometry.transformation.state.λ,
+				center: (ctx) => ctx.unitdisk.pinchcenter || {
+					re: 0,
+					im: 0
+				}
+			}
+		},
+		{
+			type: "focus",
+			name: "(0,0)",
+			options: {
+				invisible: false,
+				hideOnDrag: false,
+				className: "zerozero-circle",
+				r: () => .004
+			}
+		},
+		{
+			type: "nodes",
+			name: "center-node",
+			options: {
+				invisible: true,
+				hideOnDrag: true,
+				className: "center-node",
+				r: () => .1,
+				data: (layer) => layer.view.cache.centerNode ? [layer.view.cache.centerNode] : []
+			}
+		},
+		{
+			type: "paths",
+			name: "path-arcs"
+		},
+		{
+			type: "arcs",
+			name: "link-arcs"
+		},
+		{
+			type: "stem",
+			name: "stem-arc"
+		},
+		{
+			type: "nodes",
+			name: "nodes"
+		},
+		{
+			type: "symbols",
+			name: "symbols"
+		},
+		{
+			type: "images",
+			name: "images"
+		},
+		{
+			type: "emoji-backgrounds",
+			name: "emoji-backgrounds"
+		},
+		{
+			type: "emojis",
+			name: "emojis"
+		},
+		{
+			type: "labels",
+			name: "labels"
+		},
+		{
+			type: "labels-force",
+			name: "labels-force"
+		},
+		{
+			type: "labels-placed",
+			name: "labels-placed"
+		},
+		{
+			type: "interaction",
+			name: "interaction-2"
+		},
+		{
+			type: "traces",
+			name: "traces"
+		}
+	];
+	var nodeValues = {
+		weight: (n) => n.precalc.visWeight || 1,
+		depth: (n) => n.depth,
+		height: (n) => n.height,
+		value: (n) => n.data && typeof n.data.value === "number" ? n.data.value : NaN
+	};
+	var dataValues = /* @__PURE__ */ new Map();
+	var dataValue = (key) => {
+		if (!dataValues.has(key)) dataValues.set(key, (n) => n.data && typeof n.data[key] === "number" ? n.data[key] : NaN);
+		return dataValues.get(key);
+	};
+	var extents = /* @__PURE__ */ new Map();
+	function extentOf(value, n, scale) {
+		let root = n;
+		while (root.parent) root = root.parent;
+		if (!extents.has(scale)) extents.set(scale, /* @__PURE__ */ new WeakMap());
+		const perScale = extents.get(scale);
+		let perRoot = perScale.get(value);
+		if (!perRoot) perScale.set(value, perRoot = /* @__PURE__ */ new WeakMap());
+		let e = perRoot.get(root);
+		if (!e) {
+			const ok = (v) => isFinite(v) && (scale !== "log" || v > 0);
+			const [lo, hi] = extent(root.descendants(), (d) => {
+				const v = value(d);
+				return ok(v) ? v : void 0;
+			});
+			e = [lo === void 0 ? 1 : lo, hi === void 0 ? 2 : hi];
+			if (e[0] === e[1]) e = [e[0], e[0] * 2 || 1];
+			perRoot.set(root, e);
+		}
+		return e;
+	}
+	function unit(value, n, scale, v) {
+		const domain = extentOf(value, n, scale);
+		return (scale === "log" ? log() : scale === "linear" ? linear() : sqrt$1()).domain(domain).range([0, 1]).clamp(true)(scale === "log" ? Math.max(v, domain[0]) : v);
+	}
+	/** A color per node: the value over the tree's range (linear, sqrt or log scale) into a d3 color interpolator. */
+	function colorBy(value, interpolator = viridis, opacity = 1, scale = "sqrt") {
+		const cache = /* @__PURE__ */ new WeakMap();
+		return (n) => {
+			if (!n) return void 0;
+			if (cache.has(n)) return cache.get(n);
+			const v = value(n);
+			let s = void 0;
+			if (isFinite(v)) {
+				const c = color(interpolator(unit(value, n, scale, v)));
+				if (opacity < 1) c.opacity = opacity;
+				s = c.formatRgb();
+			}
+			cache.set(n, s);
+			return s;
+		};
+	}
+	/** A size per node: the value over the tree's range (sqrt: area true to the value, or log) into [min, max]. */
+	function sizeBy(value, range, scale = "sqrt") {
+		const cache = /* @__PURE__ */ new WeakMap();
+		return (n) => {
+			if (cache.has(n)) return cache.get(n);
+			const v = value(n);
+			const s = isFinite(v) ? range[0] + (range[1] - range[0]) * unit(value, n, scale, v) : range[0];
+			cache.set(n, s);
+			return s;
+		};
+	}
+	var toValue = (v, d) => typeof v === "function" ? v : typeof v === "string" && v.startsWith("data.") ? dataValue(v.slice(5)) : typeof v === "string" && nodeValues[v] || d;
+	var radiusRange = [.006, .035];
+	var widthRange = [.002, .03];
+	/**
+	* infovis: a value as node radius and link width, a (second) value as color of the
+	* links, node disks (every node), voronoi cells and label backgrounds; each color
+	* target can have its own value and interpolator (options.colors).
+	*/
+	function infovisModel(o = {}) {
+		const scale = o.scale || "sqrt";
+		const value = toValue(o.value, nodeValues.weight);
+		const colorValue = toValue(o.colorValue, value);
+		const colorOf = (target, opacity = 1) => {
+			const c = o.colors && o.colors[target];
+			if (c === false) return void 0;
+			const spec = c && typeof c === "object" ? c : {
+				value: c,
+				interpolator: void 0
+			};
+			return colorBy(toValue(spec.value, colorValue), spec.interpolator || o.interpolator, opacity, scale);
+		};
+		const cells = colorOf("cells", .25);
+		const radius = sizeBy(toValue(o.radiusValue, value), radiusRange, scale);
+		const width = sizeBy(toValue(o.widthValue, value), widthRange, scale);
+		return {
+			geometry: {
+				nodeRadius: (ud, n) => radius(n),
+				linkWidth: (n) => width(n) * n.distScale,
+				shrinkAtRim: "full",
+				layerOptions: {
+					"nodes": {
+						show: "all",
+						fill: colorOf("nodes"),
+						hover: "node"
+					},
+					"link-arcs": { stroke: colorOf("links") },
+					"cells": {
+						invisible: false,
+						fill: cells ? (p) => cells(p && p.data) : void 0
+					},
+					"labels": { background: colorOf("labels", .25) || false }
+				}
+			},
+			interaction: {
+				clickAction: "select",
+				selection: "multi",
+				maxSelections: 5
+			}
+		};
+	}
+	var formatBytes = (b) => {
+		const units = [
+			"B",
+			"KB",
+			"MB",
+			"GB",
+			"TB"
+		];
+		let i = 0;
+		while (b >= 1024 && i < units.length - 1) {
+			b /= 1024;
+			i++;
+		}
+		return `${b < 10 && i ? b.toFixed(1) : Math.round(b)} ${units[i]}`;
+	};
+	/**
+	* infovis for a file system tree (nodes with data.size in bytes and data.files, the
+	* number of files below; see test/fixtures/filesystem.d3.json): the size as cell
+	* color and disk radius, the number of files as link color and width (log scales);
+	* folder labels on two lines with their size.
+	*/
+	function infovisFilesModel(o = {}) {
+		const model = infovisModel(Object.assign({
+			scale: "log",
+			radiusValue: "data.size",
+			widthValue: "data.files",
+			colorValue: "data.size",
+			colors: {
+				cells: "data.size",
+				nodes: "data.size",
+				links: {
+					value: "data.files",
+					interpolator: (t) => YlOrRd(.3 + .7 * t)
+				},
+				labels: false
+			}
+		}, o));
+		model.langInitBFS = (ht, n) => {
+			const d = n.data || {};
+			n.precalc.label = d.type === "dir" && typeof d.size === "number" ? `${d.name}\n${formatBytes(d.size)}` : d.name;
+		};
+		return model;
+	}
+	/**
+	* infovis with emojis: emoji size bound to the value, labels without background,
+	* links and disks colored by the (color) value.
+	*/
+	function infovisEmojiModel(o = {}) {
+		const scale = o.scale || "sqrt";
+		const value = toValue(o.value, nodeValues.weight);
+		const color = colorBy(toValue(o.colorValue, value), o.interpolator, 1, scale);
+		const width = sizeBy(value, widthRange, scale);
+		return {
+			geometry: {
+				linkWidth: (n) => width(n) * n.distScale,
+				linkCurvature: "0",
+				shrinkAtRim: "none",
+				layerOptions: {
+					"nodes": { fill: color },
+					"link-arcs": { stroke: color },
+					"path-arcs": { hover: "none" },
+					"emojis": {
+						invisible: false,
+						scale: sizeBy(value, [.7, 1.8], scale)
+					},
+					"images": { invisible: false },
+					"labels": { background: false }
+				}
+			},
+			interaction: {
+				clickAction: "select",
+				selection: "single"
+			}
+		};
+	}
+	/** The complete defaults: the core options and the default layer stack (a fresh object). */
+	function defaults() {
+		const d = coreDefaults();
+		d.geometry.layers = defaultLayers();
+		return d;
+	}
+	var presets = {
+		/** the defaults (every option, for reading them; as an overlay it changes nothing) */
+		modelBase: () => defaults(),
+		infovis: (o) => infovisModel(o),
+		infovisEmoji: (o) => infovisEmojiModel(o),
+		infovisFiles: (o) => infovisFilesModel(o)
+	};
+	var DiskProjection = class {
+		constructor() {
+			this.kind = "disk";
+			this.followsSize = false;
+		}
+		project(nodes) {
+			return nodes;
+		}
+		toDisk(view) {
+			return view;
+		}
+		toView(disk) {
+			return disk;
+		}
+		geodesic(a, b, curvature) {
+			if (curvature === "0" || curvature === "l") return `M ${a.re} ${a.im} L ${b.re} ${b.im}`;
+			const arc = arcCenter(a, b);
+			let r = CktoCp(CsubC(b, arc.c)).r;
+			if (isNaN(r) || r > 1e3) r = 0;
+			const f = arc.d > 0 === (curvature === "+") ? "1" : "0";
+			return `M ${a.re} ${a.im} A ${r} ${r}, 0, 0, ${f}, ${b.re} ${b.im}`;
+		}
+		stem(root, curvature) {
+			return this.geodesic(root, {
+				re: root.re,
+				im: 1
+			}, curvature);
+		}
+		circle(center, r) {
+			return {
+				cx: center.re,
+				cy: center.im,
+				r
+			};
+		}
+		outward(view) {
+			const r = Math.hypot(view.re, view.im);
+			return r > 1e-9 ? {
+				re: view.re / r,
+				im: view.im / r
+			} : {
+				re: 0,
+				im: -1
+			};
+		}
+		rim(view) {
+			return Math.hypot(view.re, view.im);
+		}
+		viewBox(width, height, diskSize) {
+			return {
+				viewBox: "0 0 1000 1000",
+				transform: `translate(500,500) scale(${500 * diskSize})`
+			};
+		}
+		clip(clipPath, clipRadius) {
+			clipPath.append("circle").attr("r", clipRadius);
+		}
+		voronoiExtent() {
+			return [[-2, -2], [2, 2]];
+		}
+		background() {
+			return {
+				elementType: "circle",
+				className: "background-circle",
+				create: (s) => s.attr("r", 1).attr("fill", "url(#exampleGradient)")
+			};
+		}
+		overviewClamp(P) {
+			return P;
+		}
+	};
+	function _typeof(o) {
+		"@babel/helpers - typeof";
+		return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o) {
+			return typeof o;
+		} : function(o) {
+			return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
+		}, _typeof(o);
+	}
+	function toPrimitive(t, r) {
+		if ("object" != _typeof(t) || !t) return t;
+		var e = t[Symbol.toPrimitive];
+		if (void 0 !== e) {
+			var i = e.call(t, r || "default");
+			if ("object" != _typeof(i)) return i;
+			throw new TypeError("@@toPrimitive must return a primitive value.");
+		}
+		return ("string" === r ? String : Number)(t);
+	}
+	function toPropertyKey(t) {
+		var i = toPrimitive(t, "string");
+		return "symbol" == _typeof(i) ? i : i + "";
+	}
+	function _defineProperty(e, r, t) {
+		return (r = toPropertyKey(r)) in e ? Object.defineProperty(e, r, {
+			value: t,
+			enumerable: !0,
+			configurable: !0,
+			writable: !0
+		}) : e[r] = t, e;
+	}
+	function ownKeys(e, r) {
+		var t = Object.keys(e);
+		if (Object.getOwnPropertySymbols) {
+			var o = Object.getOwnPropertySymbols(e);
+			r && (o = o.filter(function(r) {
+				return Object.getOwnPropertyDescriptor(e, r).enumerable;
+			})), t.push.apply(t, o);
+		}
+		return t;
+	}
+	function _objectSpread2(e) {
+		for (var r = 1; r < arguments.length; r++) {
+			var t = null != arguments[r] ? arguments[r] : {};
+			r % 2 ? ownKeys(Object(t), !0).forEach(function(r) {
+				_defineProperty(e, r, t[r]);
+			}) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function(r) {
+				Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r));
+			});
+		}
+		return e;
+	}
+	var HalfPlaneProjection = class {
+		constructor(rootWedge) {
+			this.kind = "halfplane";
+			this.followsSize = true;
+			this.g = infinityOf(rootWedge);
+		}
+		project(nodes) {
+			return mapToView(nodes, this.g);
+		}
+		toDisk(view) {
+			return viewToDisk(view, this.g);
+		}
+		toView(disk) {
+			return toView(disk, this.g);
+		}
+		geodesic(a, b, curvature) {
+			if (curvature === "0" || curvature === "l") return `M ${a.re} ${a.im} L ${b.re} ${b.im}`;
+			const x1 = a.re, y1 = a.im - -1, x2 = b.re, y2 = b.im - -1;
+			if (Math.abs(x1 - x2) < 1e-9 * (1 + Math.abs(x1))) return `M ${x1} ${a.im} L ${x2} ${b.im}`;
+			const c = (x1 * x1 + y1 * y1 - x2 * x2 - y2 * y2) / (2 * (x1 - x2));
+			const r = Math.hypot(x1 - c, y1);
+			return `M ${x1} ${a.im} A ${r} ${r}, 0, 0, ${x1 < x2 ? 0 : 1}, ${x2} ${b.im}`;
+		}
+		stem(root, curvature) {
+			return `M ${root.re} ${root.im} L ${root.re} 3`;
+		}
+		circle(center, r) {
+			return r > 0 && Math.hypot(center.re, center.im) + r < 1 ? circleToView(center, r, this.g) : null;
+		}
+		outward(view) {
+			return {
+				re: 0,
+				im: -1
+			};
+		}
+		rim(view) {
+			return Math.max(0, -view.im);
+		}
+		viewBox(width, height, diskSize) {
+			const aspect = width > 0 && height > 0 ? width / height : 1.6;
+			const w = Math.round(1e3 * aspect);
+			return {
+				viewBox: `0 0 ${w} 1000`,
+				transform: `translate(${w / 2},500) scale(480)`
+			};
+		}
+		clip(clipPath, clipRadius) {
+			clipPath.append("rect").attr("x", -20).attr("y", -1).attr("width", 40).attr("height", 3);
+		}
+		voronoiExtent() {
+			return [[-20, -1], [20, 2]];
+		}
+		background() {
+			return {
+				elementType: "g",
+				className: "background-halfplane",
+				create: (s) => s.each(function() {
+					halfPlaneGrid(this);
+				})
+			};
+		}
+		overviewClamp(P) {
+			const r = Math.hypot(P.re, P.im), max = .85 / 2.85;
+			return r > max ? {
+				re: P.re * max / r,
+				im: P.im * max / r
+			} : P;
+		}
+	};
+	function halfPlaneGrid(g) {
+		const NS = "http://www.w3.org/2000/svg";
+		const add = (tag, attrs, text) => {
+			const e = document.createElementNS(NS, tag);
+			for (const k in attrs) e.setAttribute(k, String(attrs[k]));
+			if (text !== void 0) e.textContent = text;
+			g.appendChild(e);
+			return e;
+		};
+		const top = -1, bottom = 2, X = 20, line = "rgba(128,128,128,.22)", axis = "rgba(128,128,128,.55)";
+		const ink = "rgba(128,128,128,.85)", font = {
+			"font-size": .028,
+			"font-family": "sans-serif"
+		};
+		const num = (v) => v === 0 ? "0" : (v < 0 ? "−" : "") + Math.abs(v);
+		add("rect", {
+			x: -20,
+			y: top,
+			width: 40,
+			height: 3,
+			fill: "rgba(128,128,128,.07)",
+			"class": "background-halfplane-area"
+		});
+		for (let x = -20; x <= X; x += .5) add("line", {
+			x1: x,
+			y1: top,
+			x2: x,
+			y2: bottom,
+			stroke: x === 0 ? axis : line,
+			"stroke-width": x % 1 ? .0015 : .0025,
+			"class": "halfplane-grid"
+		});
+		for (let h = 0; h <= 3; h += .5) add("line", {
+			x1: -20,
+			y1: top + h,
+			x2: X,
+			y2: top + h,
+			stroke: h === 0 ? axis : line,
+			"stroke-width": h === 0 ? .004 : h % 1 ? .0015 : .0025,
+			"class": "halfplane-grid"
+		});
+		for (let x = -20; x <= X; x++) if (Math.abs(x) > 1) add("text", _objectSpread2(_objectSpread2({
+			x: x + .01,
+			y: -.965,
+			fill: ink
+		}, font), {}, { "class": "halfplane-grid-label" }), num(x));
+		for (let h = 2; h <= 3; h++) add("text", _objectSpread2(_objectSpread2({
+			x: .01,
+			y: top + h - .01,
+			fill: ink
+		}, font), {}, { "class": "halfplane-grid-label" }), `${num(-h)}i`);
+		for (const [x, h, label] of [
+			[
+				0,
+				0,
+				"(0,0)"
+			],
+			[
+				0,
+				1,
+				"(0,−1)  disk center"
+			],
+			[
+				1,
+				0,
+				"(1,0)"
+			],
+			[
+				-1,
+				0,
+				"(−1,0)"
+			]
+		]) {
+			add("circle", {
+				cx: x,
+				cy: top + h,
+				r: .006,
+				fill: ink,
+				"class": "halfplane-grid-point"
+			});
+			add("text", _objectSpread2(_objectSpread2({
+				x: x + .012,
+				y: top + h + (h === 0 ? .035 : -.012),
+				fill: ink
+			}, font), {}, {
+				"font-weight": "bold",
+				"class": "halfplane-grid-label"
+			}), label);
+		}
+	}
+	/** The projection of geometry.view: 'disk', 'halfplane' or an own Projection. */
+	function createProjection(view, rootWedge) {
+		if (view && typeof view === "object") return view;
+		if (view === "halfplane") return new HalfPlaneProjection(rootWedge);
+		return new DiskProjection();
+	}
+	/** Leaves per run of the staircase of k leaf children (one or two leaves: no
+	*  compression, each its own angle; the layout as until v1). */
+	function fanRun(k) {
+		return k < 3 ? 1 : Math.ceil(k / Math.log(k) / 2);
+	}
+	/** The number of runs (columns) of the staircase of k leaf children. */
+	function fanColumns(k) {
+		return k ? Math.ceil(k / fanRun(k)) : 0;
+	}
+	/**
+	* precalc.angleWeight and precalc.fanRun of every node, bottom-up.
+	* multirow: the weight of the leaf children compressed to the columns of their
+	* staircase, fanRun the leaves per run (undefined below 3 leaves: the layout as until
+	* v1). Otherwise the subtree's layout weight and fanRun 1: one row.
+	*/
+	function angleWeights(root, ownWeight, multirow = true) {
+		root.eachAfter((n) => {
+			const children = n.children;
+			if (!multirow) {
+				n.precalc.angleWeight = n.precalc.layoutWeight;
+				n.precalc.fanRun = children && children.length ? 1 : void 0;
+				return;
+			}
+			const own = +ownWeight(n) || 0;
+			if (!children || !children.length) {
+				n.precalc.angleWeight = own;
+				n.precalc.fanRun = void 0;
+				return;
+			}
+			let inner = 0, leaves = 0, k = 0;
+			for (const c of children) if (c.children && c.children.length) inner += c.precalc.angleWeight;
+			else {
+				leaves += c.precalc.angleWeight;
+				k++;
+			}
+			n.precalc.fanRun = k >= 3 ? fanRun(k) : void 0;
+			n.precalc.angleWeight = own + inner + (k ? leaves * fanColumns(k) / k : 0);
+		});
+	}
+	function sumUp(root, value, target) {
+		root.eachAfter((node) => {
+			let sum = +value(node) || 0;
+			const children = node.children;
+			var i = children && children.length;
+			while (--i >= 0) sum += children[i].precalc[target];
+			node.precalc[target] = sum;
+		});
+	}
+	function computeWeights(root, model) {
+		sumUp(root, model.layout.weight, "layoutWeight");
+		angleWeights(root, model.layout.weight, model.layout.multirowHighDegreeNodes !== false);
+		const f0 = model.layout.rootLinkLength;
+		root.each((n) => {
+			if (f0 === void 0 || f0 === null || !n.parent) {
+				n.precalc.linkFactor = void 0;
+				return;
+			}
+			const t = n.depth - 1 + n.height > 0 ? (n.depth - 1) / (n.depth - 1 + n.height) : 1;
+			n.precalc.linkFactor = f0 + (1 - f0) * t;
+		});
+		sumUp(root, model.filter.weightFilter ? model.filter.weightFilter.weight : ((n) => 1), "cullingWeight");
+		sumUp(root, model.layout.weight, "visWeight");
+		root.each((n) => n.precalc.weightScale = (Math.log2(n.precalc.visWeight) || 1) / (Math.log2(root.precalc.visWeight || root.children.length) || 1));
+	}
+	/** Orders the children of every node of the tree (weights: precalc.angleWeight, the
+	*  part of the wedge; precalc.layoutWeight without it). */
+	function balanceChildren(root) {
+		const todo = [root];
+		while (todo.length) {
+			const n = todo.pop();
+			if (!n.children || !n.children.length) continue;
+			if (n.children.length > 1) n.children = balanced(n.children, n.depth % 2 === 0);
+			for (const c of n.children) todo.push(c);
+		}
+	}
+	/** The balanced order of a list of children (exported for the tests). */
+	function balanced(children, firstLeft) {
+		const w = (c) => (c.precalc.angleWeight !== void 0 ? c.precalc.angleWeight : c.precalc.layoutWeight) || 0;
+		const sorted = children.map((c, i) => ({
+			c,
+			i
+		})).sort((a, b) => w(b.c) - w(a.c) || a.i - b.i).map((x) => x.c);
+		const left = [], right = [];
+		let wl = 0, wr = 0;
+		for (const c of sorted.slice(1)) if (wl < wr || wl === wr && firstLeft) {
+			left.push(c);
+			wl += w(c);
+		} else {
+			right.push(c);
+			wr += w(c);
+		}
+		return [
+			...left.reverse(),
+			sorted[0],
+			...right
+		];
+	}
+	var MAGIC_MIN = 1e-12;
+	var MAGIC_MAX = 0xe8d4a51000;
+	var FOCUS_FLOOR = .25;
+	var differs = (a, learned) => !!learned && Math.abs(a - learned) > .1 * learned;
+	var magicLimits = /* @__PURE__ */ new WeakMap();
+	function adjustMagic(ud, cache) {
+		const filter = ud.args.model.filter.weightFilter;
+		if (filter === null || !cache.unculledNodes) return;
+		const focus = Math.min(cache.focusCount || 0, cache.unculledNodes.length);
+		const n = cache.unculledNodes.length - focus;
+		const λ = ud.args.transformation.state.λ;
+		const full = filter.rangeNodes;
+		const range = {
+			min: Math.max(full.min - focus, full.min * FOCUS_FLOOR),
+			max: Math.max(full.max - focus, full.max * FOCUS_FLOOR)
+		};
+		const alpha = filter.alpha;
+		const fresh = () => ({
+			up: MAGIC_MAX,
+			last: 0,
+			stoppedAt: 0
+		});
+		let b = magicLimits.get(filter);
+		if (!b || b.stoppedAt && Math.abs(n - b.stoppedAt) > .1 * b.stoppedAt) magicLimits.set(filter, b = fresh());
+		const plainOnly = ud.view.hypertree.findingInitλ;
+		if (n > range.max) {
+			if (b.last > 0) {
+				b.up = Math.min(b.up, b.lastAt || filter.magic);
+				b.upN = b.lastN;
+				b.upλ = λ;
+			}
+			const next = plainOnly ? void 0 : cache.nextHideAt, plain = filter.magic / alpha, at = next || 0;
+			const m = next === null ? 0 : !at || plain <= at ? plain : at / Math.sqrt(alpha);
+			if (m > MAGIC_MIN) {
+				filter.magic = m;
+				b.last = -1;
+				b.lastAt = at;
+				b.stoppedAt = 0;
+			} else {
+				b.last = 0;
+				b.stoppedAt = b.stoppedAt || n;
+			}
+		} else if (n < range.min) {
+			if (differs(n, b.upN) || differs(λ, b.upλ)) {
+				b.up = MAGIC_MAX;
+				b.upN = b.upλ = void 0;
+			}
+			const next = plainOnly ? void 0 : cache.nextShowAt, plain = filter.magic * alpha, at = next || 0;
+			const m = next === null ? Infinity : !at || plain > at ? plain : at * Math.sqrt(alpha);
+			if (m < b.up * .999999999) {
+				filter.magic = m;
+				b.last = 1;
+				b.lastAt = at;
+				b.stoppedAt = 0;
+			} else {
+				b.last = 0;
+				b.stoppedAt = b.stoppedAt || n;
+			}
+		} else {
+			b.last = 0;
+			b.stoppedAt = 0;
+		}
+		b.lastN = n;
+		updates.set(ud, (updates.get(ud) || 0) + 1);
+		stepping.set(ud, b.last !== 0);
+		if (b.last !== 0 && !plainOnly) settle(ud);
+	}
+	var updates = /* @__PURE__ */ new WeakMap();
+	var stepping = /* @__PURE__ */ new WeakMap();
+	var settling = /* @__PURE__ */ new WeakSet();
+	function settle(ud) {
+		if (settling.has(ud) || typeof requestAnimationFrame === "undefined") return;
+		settling.add(ud);
+		const seen = updates.get(ud);
+		requestAnimationFrame(() => {
+			settling.delete(ud);
+			if (!stepping.get(ud)) return;
+			if (updates.get(ud) === seen) ud.view.hypertree.update.transformation();
+			else settle(ud);
+		});
+	}
+	function collectNodesByWeight(ud, cache, path) {
+		const normλ = ud.args.transformation.state.λ;
+		cache.focusR = Math.min(normλ * ud.args.model.filter.focusExtension, ud.args.model.filter.maxFocusRadius);
+		console.assert(cache.focusR < 1 && cache.focusR > 0);
+		adjustMagic(ud, cache);
+		const startNode = path[0];
+		cache.unculledNodes = [];
+		cache.spezialNodes = [ud.args.data, startNode].filter((e) => e);
+		cache.emojis = [];
+		cache.cells = [];
+		const mf = ud.view.hypertree.isAnimationRunning() ? 1 : 1;
+		let nextHideAt = null, nextShowAt = null;
+		let focusCount = 0;
+		function abortfilter(n, idx, highway) {
+			const wf = ud.args.model.filter.weightFilter;
+			n.minWeight = wf === null ? 0 : highway[0].precalc.cullingWeight / wf.magic / mf;
+			peocessNodeTransformation(ud, cache, n);
+			peocessNode(ud, cache, n, cache.focusR, n.minWeight);
+			if (!n.isOut && (!n.isOutλ || n.parent && !n.parent.isOutλ)) focusCount++;
+			if (n !== startNode && !n.isOut99 && n.precalc.cullingWeight > 0) {
+				const at = highway[0].precalc.cullingWeight / n.precalc.cullingWeight;
+				if (n.isOut && n.isOutWeight) {
+					if (nextShowAt === null || at < nextShowAt) nextShowAt = at;
+				} else if (!n.isOut && n.isOutλ && (!n.parent || n.parent.isOutλ)) {
+					if (nextHideAt === null || at > nextHideAt) nextHideAt = at;
+				}
+			}
+			return !n.isOut || n === startNode;
+		}
+		const lastCenter = cache.centerNode;
+		cache.centerNode = void 0;
+		const t1 = performance.now();
+		if (ud.args.data) {
+			peocessNodeTransformation(ud, cache, ud.args.data);
+			peocessNode(ud, cache, ud.args.data, cache.focusR, 0);
+		}
+		dfs2({
+			node: startNode,
+			abortFilter: abortfilter,
+			preAction: (n) => cache.unculledNodes.push(n),
+			highway: path
+		});
+		cache.nextHideAt = nextHideAt;
+		cache.nextShowAt = nextShowAt;
+		cache.focusCount = focusCount;
+		if (lastCenter && cache.centerNode && lastCenter !== cache.centerNode && !lastCenter.isOut && lastCenter.cachep && lastCenter.cachep.r < cache.centerNode.cachep.r + .02 && cache.unculledNodes.includes(lastCenter)) cache.centerNode = lastCenter;
+		return t1;
+	}
+	function addPathToUnculled(ud, cache, p) {
+		if (p.type !== "HoverPath") {
+			const pathnodes = [];
+			let n = p.head;
+			while (n.parent && !cache.unculledNodes.includes(n)) {
+				pathnodes.push(n);
+				n = n.parent;
+			}
+			pathnodes.reverse().forEach((n) => {
+				peocessNodeTransformation(ud, cache, n);
+				peocessNode(ud, cache, n, cache.focusR, 0);
+			});
+			cache.unculledNodes = cache.unculledNodes.concat(pathnodes);
+		}
+	}
+	/**
+	* Settles weightFilter.magic before the first frame.
+	*
+	* magic decides how much smaller than the focus a node's culling weight may be
+	* before the node is hidden (minWeight = weight at the focus / magic): a larger
+	* magic shows more nodes. adjustMagic changes it by one step (× or ÷ alpha) per
+	* update until the number of visible nodes lies within rangeNodes. Done frame by
+	* frame, the visible set kept changing for many frames after loading.
+	*
+	* This runs the same steps right away, without drawing, until magic doesn't
+	* change any more: the number of visible nodes is within rangeNodes, or magic
+	* reached its internal bound, or every node is visible already. The
+	* result equals the state the frame-by-frame adaptation used to settle in.
+	* Returns the number of steps.
+	*/
+	function settleMagic(ud, cache, maxSteps = 1e3) {
+		const filter = ud.args.model.filter.weightFilter;
+		const total = ud.args.data ? ud.args.data.descendants().length : 0;
+		for (let step = 0; step < maxSteps; step++) {
+			const before = filter.magic;
+			collectNodesByWeight(ud, cache, pathToLastVisible(ud, cache));
+			if (filter.magic === before) return step;
+			if (cache.unculledNodes.length + 1 >= total && cache.unculledNodes.length < filter.rangeNodes.min) return step;
+		}
+		return maxSteps;
+	}
+	function cacheUpdate(ud, cache) {
+		const t0 = performance.now();
+		const path = pathToLastVisible(ud, cache);
+		const t1 = collectNodesByWeight(ud, cache, path);
+		const t2 = performance.now();
+		ud.args.model.objects.pathes.forEach((p) => addPathToUnculled(ud, cache, p));
+		cache.unculledNodes = ud.args.projection.project(cache.unculledNodes);
+		const root = ud.args.data;
+		if (root && root.cache && !cache.unculledNodes.includes(root)) ud.args.projection.project([root]);
+		const inView = (n) => !n.outOfView;
+		cache.emojis = cache.emojis.filter(inView);
+		cache.spezialNodes = cache.spezialNodes.filter(inView);
+		cache.links = cache.unculledNodes.slice(1);
+		cache.leafOrLazy = cache.unculledNodes.filter(ud.args.model.geometry.nodeFilter);
+		cache.paths = cache.links.filter((n) => n.pathes.partof && n.pathes.partof.length);
+		cache.weights = [];
+		const t3 = performance.now();
+		if (!ud.view.hypertree.isAnimationRunning() || ud.layerStack && ud.layerStack.layers["labels-force"] && !ud.layerStack.layers["labels-force"].args.hideOnDrag || ud.layerStack && ud.layerStack.layers["labels"] && !ud.layerStack.layers["labels"].args.hideOnDrag) doLabelStuff(ud, cache);
+		if (!ud.view.hypertree.isAnimationRunning() || ud.layerStack && ud.layerStack.layers["cells"] && !ud.layerStack.layers["cells"].args.hideOnDrag) doVoronoiStuff(ud, cache);
+		doImageStuff(ud, cache);
+		if (cache.centerNode) ud.view.hypertree.update.centernode(cache.centerNode);
+		ud.cacheMeta = {
+			minWeight: path.map((n) => ud.args.model.filter.weightFilter ? n.precalc.cullingWeight / ud.args.model.filter.weightFilter.magic : 0),
+			Δ: [
+				t1 - t0,
+				t2 - t1,
+				t3 - t2,
+				performance.now() - t3
+			]
+		};
+		if (ud.view.hypertree.transition && ud.view.hypertree.transition.currentframe) {}
+	}
+	function pathToLastVisible(ud, cache) {
+		let startNode = null;
+		let path = [];
+		if (ud.args.data) {
+			startNode = cache.centerNode || ud.args.data;
+			path.push(startNode);
+			while (true) {
+				peocessNodeTransformation(ud, cache, startNode);
+				if (startNode.cachep.r >= ud.args.model.filter.cullingRadius) {
+					path = path.slice(0, -1);
+					break;
+				}
+				if (!startNode.parent) break;
+				startNode = startNode.parent;
+				path.push(startNode);
+			}
+		}
+		return path.reverse();
+	}
+	/**
+	* Lays out n (its position and its children's wedges) unless the stored layout is
+	* still valid: computed by the same layout function, with the same λ, and from the
+	* parent's current position (setZ creates a new position object on every layout,
+	* so a relaid parent invalidates its children). Panning doesn't change λ, so while
+	* dragging the layout isn't recomputed (phase 3).
+	*/
+	function layoutNode(ht, n, λ) {
+		const type = ht.args.layout.type;
+		const L = n.layout;
+		const basis = n.parent && n.parent.layout ? n.parent.layout.z : null;
+		if (L && L.z && L.λ === λ && L.basis === basis && L.type === type) return;
+		type(n, λ, true);
+		const L2 = n.layout;
+		L2.λ = λ;
+		L2.basis = n.parent && n.parent.layout ? n.parent.layout.z : null;
+		L2.type = type;
+	}
+	function peocessNodeTransformation(ud, cache, n) {
+		n.cache = n.cache || {
+			re: 0,
+			im: 0
+		};
+		n.cacheDisk = void 0;
+		n.outOfView = void 0;
+		layoutNode(ud.view.hypertree, n, ud.args.transformation.state.λ);
+		CassignC(n.cache, ud.args.transform(n));
+		n.cachep = CktoCp(n.cache);
+	}
+	function peocessNode(ud, cache, n, focusR, minWeight) {
+		n.strCache = `${n.cache.re} ${n.cache.im}`;
+		n.transformStrCache = ` translate(${n.strCache})`;
+		n.transformStrCacheZ = ` translate(${n.layout.zStrCache})`;
+		n.isOutλ = n.cachep.r >= focusR;
+		n.isOut99 = n.cachep.r >= ud.args.model.filter.cullingRadius;
+		n.isOutWeight = n.precalc.cullingWeight <= minWeight;
+		n.distScale = ud.args.transformation.transformDist(n.cache);
+		n.dampedDistScale = n.distScale * (.5 / n.distScale + .5);
+		n.scaleStrText = ` scale(${n.dampedDistScale})`;
+		n.isOut = !(!(n.isOut99 || n.isOutWeight) || !n.isOutλ || n.parent && !n.parent.isOutλ);
+		n.hasOutPeriChildren = n.hasOutWeightChildren = n.hasOutChildren = false;
+		if (n.parent && n.isOut99) n.parent.hasOutPeriChildren = true;
+		if (n.parent && n.isOutWeight) n.parent.hasOutWeightChildren = true;
+		if (n.parent && n.isOut) n.parent.hasOutChildren = true;
+		if (!cache.centerNode || cache.centerNode.cachep.r > n.cachep.r) cache.centerNode = n;
+		if (n.precalc.icon && !n.isOut) cache.emojis.push(n);
+	}
+	function reachAt(ht, λ) {
+		ht.args.geometry.transformation.state.λ = λ;
+		ht.updateLayoutPath_(ht.data);
+		cacheUpdate(ht.unitdisk, ht.unitdisk.cache);
+		return (ht.args.geometry.transformation.cache.unculledNodes || []).reduce((m, n) => Math.max(m, n.layout && n.layout.zp ? n.layout.zp.r : 0), 0);
+	}
+	/**
+	* interaction.minFill: the lower λ bound at which the visible tree, with the root in
+	* the middle, still reaches minFill of the disk radius (the radius grows with λ, so a
+	* bisection). Zooming out further would leave the tree a small spot in the middle. A
+	* tree that never reaches it gets λbounds[1].
+	* interaction.maxLinkLength: the upper bound. In layoutBergé a link whose parent is in
+	* the middle is λ long (a normal link; leaves among many siblings get an extra length
+	* L, staggered outward, and are not the measure: bounding those made the normal links
+	* a third as long), so λ = maxLinkLength.
+	*/
+	function applyλBounds(ht) {
+		if (!ht.data) return;
+		const maxLink = ht.args.interaction.maxLinkLength;
+		if (maxLink) ht.args.interaction.λbounds = [ht.args.interaction.λbounds[0], maxLink];
+		const fill = ht.args.interaction.minFill;
+		if (!fill) {
+			const [lo, hi] = ht.args.interaction.λbounds;
+			if (lo > hi) ht.args.interaction.λbounds = [hi, hi];
+			return;
+		}
+		const max = ht.args.interaction.λbounds[1];
+		const λstart = ht.args.geometry.transformation.state.λ;
+		let λ = max;
+		if (reachAt(ht, max) > fill) {
+			let lo = 1e-5, hi = max;
+			for (let i = 0; i < 40; i++) {
+				const mid = Math.sqrt(lo * hi);
+				if (reachAt(ht, mid) >= fill) hi = mid;
+				else lo = mid;
+			}
+			λ = hi;
+		}
+		ht.args.interaction.λbounds = [λ, max];
+		ht.args.geometry.transformation.state.λ = λstart;
+		ht.updateLayoutPath_(ht.data);
+	}
+	/**
+	* The start zoom: the largest λ at which the outermost visible node stays within
+	* layout.initSize of the disk radius (within the λ bounds), the start position
+	* (geometry.startPosition), and the filter settled for the first frame.
+	*/
+	function findInitλ(ht) {
+		const initSize = ht.args.layout.initSize;
+		let fitting = void 0, tooLarge = void 0;
+		ht.findingInitλ = true;
+		for (let i = 0; i < 50; i++) {
+			const λ = .02 + sigmoid(i / 50) * .75;
+			if (reachAt(ht, λ) > initSize) {
+				tooLarge = λ;
+				break;
+			}
+			fitting = λ;
+		}
+		if (fitting !== void 0 && tooLarge !== void 0) {
+			let lo = fitting, hi = tooLarge;
+			for (let i = 0; i < 12; i++) {
+				const mid = (lo + hi) / 2;
+				if (reachAt(ht, mid) <= initSize) lo = mid;
+				else hi = mid;
+			}
+			reachAt(ht, lo);
+		}
+		ht.findingInitλ = false;
+		const fitλ = ht.args.geometry.transformation.state.λ;
+		const startλ = ht.clampλ(fitλ);
+		if (startλ !== fitλ) {
+			ht.args.geometry.transformation.state.λ = startλ;
+			ht.updateLayoutPath_(ht.data);
+			cacheUpdate(ht.unitdisk, ht.unitdisk.cache);
+		}
+		const start = ht.args.geometry.startPosition;
+		if (start) {
+			ht.args.geometry.transformation.state.P = {
+				re: start.re,
+				im: start.im
+			};
+			cacheUpdate(ht.unitdisk, ht.unitdisk.cache);
+		}
+		if (ht.args.filter.weightFilter) settleMagic(ht.unitdisk, ht.unitdisk.cache);
+	}
+	function overview(root, layout, orientation, λstart, λbounds, o = {}) {
+		const count = o.nodes || 300, fill = o.fill || .95, rounds = o.rounds || 6;
+		const inner = [];
+		root.each((n) => {
+			if (n.children && n.children.length) inner.push(n);
+		});
+		inner.sort((a, b) => b.precalc.layoutWeight - a.precalc.layoutWeight);
+		const S = inner.slice(0, count);
+		if (!S.length) return {
+			P: {
+				re: 0,
+				im: 0
+			},
+			λ: λstart
+		};
+		const down = {
+			re: -Math.cos(orientation),
+			im: -Math.sin(orientation)
+		};
+		const positions = (λ) => {
+			layout(root, λ);
+			return S.map((n) => ({
+				re: n.layout.z.re,
+				im: n.layout.z.im
+			}));
+		};
+		const moved = (z, P) => h2e(makeT(P, one), z);
+		const quantile = (a, f) => {
+			const s = a.slice().sort((x, y) => x - y);
+			return s[Math.floor(f * (s.length - 1))];
+		};
+		const MAX_R = .97;
+		const along = (p) => ({
+			re: down.re * p,
+			im: down.im * p
+		});
+		const center = (zs, _P) => {
+			let lo = 0, hi = MAX_R;
+			for (let i = 0; i < 30; i++) {
+				const p = (lo + hi) / 2;
+				let c = 0;
+				for (const z of zs) {
+					const w = moved(z, along(p));
+					c += w.re * down.re + w.im * down.im;
+				}
+				if (c < 0) lo = p;
+				else hi = p;
+			}
+			return along((lo + hi) / 2);
+		};
+		const fit = (P) => {
+			let lo = λbounds[0], hi = λbounds[1];
+			for (let i = 0; i < 25; i++) {
+				const λ = Math.sqrt(lo * hi);
+				if (quantile(positions(λ).map((z) => {
+					const w = moved(z, P);
+					return Math.hypot(w.re, w.im);
+				}), fill) < fill) lo = λ;
+				else hi = λ;
+			}
+			return Math.sqrt(lo * hi);
+		};
+		let λ = Math.min(λbounds[1], Math.max(λbounds[0], λstart));
+		let P = {
+			re: down.re * .5,
+			im: down.im * .5
+		};
+		for (let i = 0; i < rounds; i++) {
+			const P2 = center(positions(λ), P);
+			const λ2 = fit(P2);
+			const settled = Math.hypot(P2.re - P.re, P2.im - P.im) < .001 && Math.abs(λ2 - λ) < 1e-4;
+			P = P2;
+			λ = λ2;
+			if (settled) break;
+		}
+		return {
+			P,
+			λ
+		};
+	}
+	function voronoiLayout(x, y, extent) {
+		const bounds = [
+			extent[0][0],
+			extent[0][1],
+			extent[1][0],
+			extent[1][1]
+		];
+		return (data) => {
+			const c = new Float64Array(data.length * 2);
+			data.forEach((d, i) => {
+				c[2 * i] = x(d);
+				c[2 * i + 1] = y(d);
+			});
+			return collinearDiagram(data, c, bounds) || delaunayDiagram(data, c, bounds);
+		};
+	}
+	function delaunayDiagram(data, c, bounds) {
+		const delaunay = new Delaunay(c);
+		let polygons = null;
+		return {
+			polygons: () => {
+				if (polygons) return polygons;
+				const voronoi = delaunay.voronoi(bounds);
+				polygons = [];
+				for (let i = 0; i < data.length; i++) {
+					const ring = voronoi.cellPolygon(i);
+					if (!ring) continue;
+					const p = ring.slice(0, -1);
+					p.data = data[i];
+					polygons.push(p);
+				}
+				return polygons;
+			},
+			find: (px, py) => {
+				if (!data.length) return void 0;
+				const i = delaunay.find(px, py);
+				return i >= 0 ? { data: data[i] } : void 0;
+			}
+		};
+	}
+	function collinearDiagram(data, c, bounds) {
+		const n = data.length;
+		if (n < 3) return void 0;
+		let j = 1;
+		while (j < n && c[2 * j] === c[0] && c[2 * j + 1] === c[1]) j++;
+		if (j === n) return void 0;
+		const ux0 = c[2 * j] - c[0], uy0 = c[2 * j + 1] - c[1], len = Math.hypot(ux0, uy0);
+		const ux = ux0 / len, uy = uy0 / len;
+		for (let i = 0; i < n; i++) if (Math.abs(ux * (c[2 * i + 1] - c[1]) - uy * (c[2 * i] - c[0])) > 1e-9) return void 0;
+		const t = (px, py) => (px - c[0]) * ux + (py - c[1]) * uy;
+		const order = Array.from({ length: n }, (_, i) => i).sort((a, b) => t(c[2 * a], c[2 * a + 1]) - t(c[2 * b], c[2 * b + 1]));
+		const ts = order.map((i) => t(c[2 * i], c[2 * i + 1]));
+		const distinct = [];
+		for (let k = 0; k < n; k++) if (k === 0 || ts[k] !== ts[k - 1]) distinct.push(k);
+		let polygons = null;
+		return {
+			polygons: () => {
+				if (polygons) return polygons;
+				const rect = [
+					[bounds[0], bounds[1]],
+					[bounds[2], bounds[1]],
+					[bounds[2], bounds[3]],
+					[bounds[0], bounds[3]]
+				];
+				polygons = [];
+				distinct.forEach((k, m) => {
+					const lo = m === 0 ? -Infinity : (ts[distinct[m - 1]] + ts[k]) / 2;
+					const hi = m === distinct.length - 1 ? Infinity : (ts[k] + ts[distinct[m + 1]]) / 2;
+					let poly = rect;
+					if (lo > -Infinity) poly = clip(poly, (px, py) => t(px, py) - lo);
+					if (hi < Infinity) poly = clip(poly, (px, py) => hi - t(px, py));
+					if (poly.length < 3) return;
+					const p = poly;
+					p.data = data[order[k]];
+					polygons.push(p);
+				});
+				return polygons;
+			},
+			find: (px, py) => {
+				const q = t(px, py);
+				let lo = 0, hi = distinct.length - 1;
+				while (hi - lo > 1) {
+					const mid = lo + hi >> 1;
+					if (ts[distinct[mid]] < q) lo = mid;
+					else hi = mid;
+				}
+				const k = Math.abs(ts[distinct[lo]] - q) <= Math.abs(ts[distinct[hi]] - q) ? distinct[lo] : distinct[hi];
+				return { data: data[order[k]] };
+			}
+		};
+	}
+	function clip(poly, f) {
+		const out = [];
+		for (let i = 0; i < poly.length; i++) {
+			const a = poly[i], b = poly[(i + 1) % poly.length];
+			const fa = f(a[0], a[1]), fb = f(b[0], b[1]);
+			if (fa >= 0) out.push(a);
+			if (fa >= 0 !== fb >= 0) {
+				const s = fa / (fa - fb);
+				out.push([a[0] + s * (b[0] - a[0]), a[1] + s * (b[1] - a[1])]);
+			}
+		}
+		return out;
+	}
+	var LayerStack = class {
+		constructor(args) {
+			this.update = {
+				parent: () => this.updateLayers(),
+				data: () => this.frame("data"),
+				pathes: () => this.frame("style")
+			};
+			this.args = args;
+			this.mainSvgGroup = this.args.parent.append("g");
+			this.updateLayers();
+		}
+		context() {
+			const ud = this.args.unitdisk;
+			return {
+				parent: this.mainSvgGroup,
+				layerstack: this,
+				unitdisk: ud,
+				hypertree: ud.view.hypertree,
+				model: ud.args.model,
+				cache: ud.cache,
+				projection: ud.args.projection
+			};
+		}
+		/**
+		* A layer from a spec: the type's defaults, the spec's options, the model's
+		* layerOptions[name]. A string is the name of a default layer (its spec).
+		*/
+		createLayer(spec, layerOptions) {
+			const ctx = this.context();
+			if (typeof spec === "string") {
+				const name = spec;
+				spec = defaultLayers().find((s) => s.name === name);
+				if (!spec) {
+					console.warn(`d3-hypertree: no default layer ${name}`);
+					return;
+				}
+			}
+			if (typeof spec === "function") {
+				const layer = spec(ctx, this.args.unitdisk);
+				const options = layerOptions[layer.name];
+				if (options && options.removed) return void 0;
+				if (options) mergeInto(layer.args, options);
+				return layer;
+			}
+			const name = spec.name || spec.type;
+			const type = layerTypes[spec.type];
+			if (!type) {
+				console.warn(`d3-hypertree: unknown layer type ${spec.type} (layer ${name})`);
+				return;
+			}
+			const options = layerOptions[name];
+			if (spec.removed || options && options.removed) return void 0;
+			const args = mergeInto({}, type.defaults(ctx));
+			if (spec.data !== void 0) args.data = spec.data;
+			mergeInto(args, spec.options);
+			mergeInto(args, options);
+			return type.create(ctx, name, args);
+		}
+		updateLayers() {
+			this.layers = {};
+			const model = this.args.unitdisk.args.model;
+			const layerOptions = model.geometry.layerOptions || {};
+			for (const spec of model.geometry.layers) {
+				const layer = this.createLayer(spec, layerOptions);
+				if (layer) this.layers[layer.name] = layer;
+			}
+			this.mainSvgGroup.selectAll("*").remove();
+			this.planes = {};
+			for (const plane of planes) {
+				const g = this.mainSvgGroup.append("g").attr("class", `plane plane-${plane}`);
+				if (compositing.mode === "planes" && compositedPlanes.includes(plane)) g.style("will-change", "transform");
+				this.planes[plane] = g;
+			}
+			for (var l in this.layers) {
+				const layer = this.layers[l];
+				layer.view.parent = this.planes[planeOf(layer)];
+				layer.update.parent();
+			}
+		}
+		/**
+		* Draws the frame: every layer that needs the reason ('data': the visible set may
+		* have changed, 'transform': positions changed, 'style': the hover and selection
+		* state changed). A layer declares its needs (default: data and transform).
+		*/
+		frame(reason) {
+			const timings = [], names = [];
+			for (var l in this.layers) {
+				const layer = this.layers[l];
+				if (!(layer.needs || ["data", "transform"]).includes(reason)) continue;
+				const t0 = performance.now();
+				if (reason === "style") layer.update.style();
+				else layer.update.data();
+				timings.push(performance.now() - t0);
+				names.push(layer.name);
+			}
+			this.d3meta = {
+				Δ: timings,
+				names
+			};
+		}
+	};
+	var UnitDisk = class {
+		constructor(view, args) {
+			this.api = { setTransform: (t, tn) => this.mainsvg.attr("transform", t) };
+			this.update = {
+				parent: () => this.updateParent(),
+				cache: () => cacheUpdate(this, this.cache),
+				data: () => this.frame("data"),
+				layout: () => this.frame("data"),
+				transformation: () => this.frame("transform"),
+				pathes: () => this.frame("style")
+			};
+			this.view = view;
+			this.args = args;
+			this.cache = args.transformation.cache;
+			this.update.parent();
+		}
+		/**
+		* A frame. 'data' and 'transform': the filter selects the visible nodes (the
+		* frame cache), then the layers draw them; 'style': the hover and selection state
+		* changed, the filter runs (the paths are part of the visible set) and only the
+		* layers that show the state draw.
+		*/
+		frame(reason) {
+			cacheUpdate(this, this.cache);
+			this.layerStack.frame(reason);
+		}
+		updateParent() {
+			this.mainsvg = select$1(this.view.parent).append("g").attr("class", this.view.className).attr("transform", this.view.position);
+			const projection = this.args.projection, clipRadius = this.args.model.geometry.clipRadius;
+			const clip = this.mainsvg.append("clipPath").attr("id", "circle-clip" + clipRadius);
+			projection.clip(clip, clipRadius);
+			this.voronoiLayout = voronoiLayout((d) => d.cache.re, (d) => d.cache.im, projection.voronoiExtent());
+			this.layerStack = new LayerStack({
+				parent: this.mainsvg,
+				unitdisk: this
+			});
+		}
+	};
+	var Transition = class {
+		constructor(hypertree) {
+			this.frames = [];
+			this.lowdetail = true;
+			this.cancelled = false;
+			this.hypertree = hypertree;
+		}
+		begin() {
+			this.beginTime = performance.now();
+		}
+		end() {
+			this.currentframe = void 0;
+			if (this.hypertree.transition === this) this.hypertree.transition = void 0;
+		}
+		cancel() {
+			this.cancelled = true;
+		}
+	};
+	var Frame = class {
+		constructor(nr) {
+			this.nr = nr;
+			this.created = performance.now();
+		}
+	};
+	var Animation = class extends Transition {
+		constructor(args) {
+			super(args.hypertree);
+			if (args.hypertree.transition) {
+				console.warn("d3-hypertree: an animation is already running, the new one is ignored");
+				return;
+			}
+			args.hypertree.transition = this;
+			this.hypertree.log.push(this.hypertree.transition);
+			const frame = () => {
+				if (this.cancelled) {
+					this.end();
+					args.resolve();
+					return;
+				}
+				this.currentframe = new Frame(0);
+				this.frames.push(this.currentframe);
+				const now = performance.now();
+				if (!this.beginTime) {
+					this.begin();
+					this.endTime = now + args.duration;
+				}
+				const p01 = (now - this.beginTime) / args.duration;
+				if (now > this.endTime) {
+					args.frame(1);
+					this.end();
+					args.resolve();
+				} else {
+					args.frame(p01);
+					requestAnimationFrame(() => frame());
+				}
+				this.currentframe = void 0;
+			};
+			requestAnimationFrame(() => frame());
+		}
+	};
+	var pathId = (pathType, n) => `btn-path-${pathType}` + (pathType === "SelectionPath" ? `-${n.mergeId}` : "");
+	function addIfNotIn(arr, newE, side) {
+		if (!arr) return [newE];
+		if (!arr.includes(newE)) arr[side](newE);
+		return arr;
+	}
+	/** Selects or deselects n according to interaction.selection, then redraws. */
+	function select$2(ht, n, selected) {
+		const mode = ht.args.interaction.selection;
+		if (!n || mode === "none") return;
+		if (selected === ht.args.objects.selections.includes(n)) return;
+		if (selected) {
+			if (mode === "single") for (const s of [...ht.args.objects.selections]) setSelected(ht, s, false);
+			setSelected(ht, n, true);
+			const max = ht.args.interaction.maxSelections;
+			while (mode === "multi" && ht.args.objects.selections.length > max) setSelected(ht, ht.args.objects.selections[0], false);
+		} else setSelected(ht, n, false);
+		ht.update.pathes();
+	}
+	/** The single place that changes the selection state of a node. */
+	function setSelected(ht, n, selected) {
+		const selections = ht.args.objects.selections;
+		if (selected === selections.includes(n)) return;
+		if (selected) {
+			selections.push(n);
+			addPath(ht, "SelectionPath", n);
+		} else {
+			ht.args.objects.selections = selections.filter((e) => e !== n);
+			removePath(ht, "SelectionPath", n);
+		}
+		n.selected = selected;
+		if (ht.args.interaction.onNodeSelect) ht.args.interaction.onNodeSelect(n, selected);
+	}
+	/** Deselects every node and redraws. */
+	function clearSelection(ht) {
+		for (const s of [...ht.args.objects.selections]) setSelected(ht, s, false);
+		ht.update.pathes();
+	}
+	/**
+	* The head of a path type (one per type: an existing one is removed first; the
+	* hover path has the hovered node as its head, n.hovered follows).
+	*/
+	function setPathHead(ht, path, n) {
+		const pt = path ? path.type : "HoverPath";
+		const oldPathId = pathId(pt, n);
+		const oldPath = ht.args.objects.pathes.find((e) => e.id === oldPathId);
+		if (oldPath) {
+			removePath(ht, pt, oldPath.head);
+			if (pt === "HoverPath") oldPath.head.hovered = false;
+		}
+		if (n) {
+			addPath(ht, pt, n);
+			if (pt === "HoverPath") n.hovered = true;
+		}
+	}
+	/** Marks the nodes whose name or label contains the query with a Query path (all others are cleared). */
+	function selectQuery(ht, query) {
+		const lq = query ? query.toLowerCase() : null;
+		ht.data.each((n) => {
+			n.pathes.partof = [];
+			n.pathes.headof = void 0;
+			n.pathes.labelcolor = void 0;
+			n.pathes.finalcolor = void 0;
+			n.pathes.isPartOfAnyQuery = false;
+		});
+		ht.args.objects.pathes = [];
+		ht.data.each((n) => {
+			if (n.data) {
+				if (n.data.name.toLowerCase().includes(lq)) addPath(ht, "Query", n);
+				if (n.precalc && n.precalc.label) {
+					if (n.precalc.label.toLowerCase().includes(lq)) addPath(ht, "Query", n);
+				}
+			}
+		});
+		ht.update.pathes();
+	}
+	function addPath(ht, pathType, n) {
+		const plidx = stringhash(n.precalc.label);
+		const color = {
+			"HoverPath": "none",
+			"Query": googlePalette(15)
+		}[pathType] || googlePalette(plidx) || googlePalette(1);
+		const newpath = {
+			type: pathType,
+			id: pathId(pathType, n),
+			icon: { "HoverPath": "mouse" }[pathType] || "place",
+			head: n,
+			headName: n.precalc.label,
+			ancestors: n.ancestors(),
+			color
+		};
+		ht.args.objects.pathes.push(newpath);
+		n.pathes.headof = newpath;
+		if (pathType !== "HoverPath") n.pathes.finalcolor = n.pathes.labelcolor = newpath.color;
+		n.ancestors().forEach((pn) => {
+			pn.pathes.partof = addIfNotIn(pn.pathes.partof, newpath, pathType === "HoverPath" ? "push" : "unshift");
+			if (pathType !== "HoverPath") pn.pathes.finalcolor = newpath.color;
+			pn.pathes[`isPartOfAny${pathType}`] = true;
+		});
+		return newpath;
+	}
+	function removePath(ht, pathType, n) {
+		const id = pathId(pathType, n);
+		ht.args.objects.pathes = ht.args.objects.pathes.filter((e) => e.id !== id);
+		n.pathes.headof = void 0;
+		if (pathType !== "HoverPath") n.pathes.labelcolor = void 0;
+		n.ancestors().forEach((pn) => {
+			pn.pathes.partof = pn.pathes.partof.filter((e) => e.id !== id);
+			pn.pathes.finalcolor = pn.pathes.partof.length > 0 ? pn.pathes.partof[0].color : void 0;
+			if (pn.pathes.finalcolor === "none") pn.pathes.finalcolor = void 0;
+			const nodeFlagName = `isPartOfAny${pathType}`;
+			pn.pathes[nodeFlagName] = pn.pathes.partof.some((e) => e.type === pathType);
+		});
+	}
+	var globelhtid = 0;
+	var htmlpreloader = `
+    <div class="spinner">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+    </div>`;
+	var grad = [
+		255,
+		96,
+		36,
+		0
+	];
+	var bubbleSvgDef = `<defs>
+        <radialGradient id="exampleGradient">
+            <stop offset="58%"  stop-color="rgb(${grad[0]},${grad[0]},${grad[0]})" stop-opacity=".15"/>
+            <stop offset="92%"  stop-color="rgb(${grad[1]},${grad[1]},${grad[1]})" stop-opacity=".15"/>
+            <stop offset="98%"  stop-color="rgb(${grad[2]},${grad[2]},${grad[2]})" stop-opacity=".15"/>
+            <stop offset="100%" stop-color="rgb(${grad[3]},${grad[3]},${grad[3]})" stop-opacity=".15"/>
+        </radialGradient>
+    </defs>`;
+	var hypertreehtml = `<div class="unitdisk-nav">
+        <svg width="100%" height="100%" preserveAspectRatio="xMidYMid meet" viewBox="-0 0 1000 1000">
+            ${bubbleSvgDef}
+        </svg>
+        <div class="preloader"></div>
+    </div>`;
+	var effectOrder = [
+		"data",
+		"layout",
+		"labels",
+		"layers",
+		"frame",
+		"style",
+		"none"
+	];
+	/**
+	* The hypertree: wires the stages (config, data, layout, filter, projection, layers,
+	* interaction, animation) and exposes the api.
+	*
+	* Configuration: the model given to the constructor is an overlay over the defaults
+	* (config/schema.ts); args is the resolved model, provenance says where each value
+	* came from, configure() changes options at runtime.
+	*/
+	var Hypertree = class {
+		/**
+		* @param args  the application's overlay over the defaults, or a stack of named
+		*              overlays [{ name, overlay }] applied in order (the name goes into
+		*              the provenance; e.g. presets and the application's own options)
+		*/
+		constructor(view, args) {
+			this.log = [];
+			this.isInitializing = false;
+			this.lastCenterNode = void 0;
+			this.api = {
+				setModel: (model) => new Promise((ok, err) => {
+					this.isInitializing = true;
+					const stack = Array.isArray(model) ? model : [{
+						name: "app",
+						overlay: model
+					}];
+					for (const { overlay } of stack) if (overlay && overlay.filter && overlay.filter.weightFilter && overlay.filter.weightFilter.magic !== void 0) console.warn("d3-hypertree: filter.weightFilter.magic is set internally and ignored; configure the number of visible nodes with filter.weightFilter.rangeNodes");
+					const resolved = resolveModel(defaults(), stack.map((o) => ({
+						name: o.name,
+						overlay: migrate(o.overlay)
+					})));
+					this.args = resolved.model;
+					this.provenance = resolved.provenance;
+					this.projection = createProjection(this.args.geometry.view, this.args.layout.rootWedge);
+					this.update.view.parent();
+					this.api.setDataloader(ok, err, this.args.dataloader);
+					this.api.setLangloader(ok, err, this.args.langloader);
+				}),
+				setLangloader: (ok, err, ll) => {
+					this.args.langloader = ll;
+					this.args.langloader((langMap, t1, dl) => {
+						this.langMap = langMap || {};
+						this.updateLang_(dl);
+						this.update.data();
+						if (this.data) {
+							this.isInitializing = false;
+							ok();
+						}
+					});
+				},
+				setDataloader: (ok, err, dl) => {
+					this.args.dataloader = dl;
+					const t0 = performance.now();
+					this.resetData();
+					this.args.dataloader((d3h, t1, dl) => {
+						if (!d3h) {
+							this.isInitializing = false;
+							err(/* @__PURE__ */ new Error("d3-hypertree: the dataloader delivered no data"));
+							return;
+						}
+						this.initData(d3h, t0, t1, dl);
+						if (this.langMap) {
+							this.update.data();
+							this.isInitializing = false;
+							ok();
+						}
+					});
+				},
+				toggleSelection: (n) => select$2(this, n, !this.args.objects.selections.includes(n)),
+				select: (n) => select$2(this, n, true),
+				deselect: (n) => select$2(this, n, false),
+				clearSelection: () => clearSelection(this),
+				setPathHead: (pathType, n) => {
+					if (!this.isInitializing && !this.isAnimationRunning()) {
+						setPathHead(this, pathType, n);
+						this.update.pathes();
+					}
+				},
+				selectQuery: (query, prop) => selectQuery(this, query),
+				gotoHome: () => new Promise((ok, err) => this.animateTo(ok, err, {
+					re: 0,
+					im: 0
+				}, null)),
+				gotoNode: (n) => new Promise((ok, err) => this.animateTo(ok, err, CmulR({
+					re: n.layout.z.re,
+					im: n.layout.z.im
+				}, -1), null)),
+				goto: (p, l) => new Promise((ok, err) => this.animateTo(ok, err, p, l)),
+				gotoλ: (l) => new Promise((ok, err) => this.animateToλ(ok, err, l)),
+				/**
+				* A view with a good overview of the tree structure: { P, λ } with the root
+				* at the bottom, the main branchings in the middle, the branches filling the
+				* disk (layout/overview.ts). Only computes; the view stays.
+				*/
+				overview: (o) => {
+					const state = this.args.geometry.transformation.state;
+					const v = overview(this.data, (n, λ) => this.args.layout.type(n, λ), this.args.layout.rootWedge.orientation, state.λ, this.args.interaction.λbounds, o);
+					this.args.layout.type(this.data, state.λ);
+					v.P = this.projection.overviewClamp(v.P);
+					return v;
+				},
+				/** Animates to api.overview(). */
+				gotoOverview: (o) => {
+					const v = this.api.overview(o);
+					return new Promise((ok, err) => this.animateTo(ok, err, v.P, v.λ));
+				}
+			};
+			this.findingInitλ = false;
+			this.update = {
+				view: {
+					parent: () => this.updateParent(),
+					unitdisk: () => this.updateUnitdiskView()
+				},
+				data: () => this.unitdisk.update.data(),
+				transformation: () => this.unitdisk.update.transformation(),
+				pathes: () => this.unitdisk.update.pathes(),
+				centernode: (centerNode) => {
+					if (this.lastCenterNode && this.lastCenterNode.mergeId == centerNode.mergeId) return;
+					this.lastCenterNode = centerNode;
+					const pathStr = centerNode.ancestors().reduce((a, e) => `${e.precalc.label ? "  " + e.precalc.label + "  " : ""}${a ? "›" : ""}${a}`, "");
+					if (this.args.interaction.onCenterNodeChange) this.args.interaction.onCenterNodeChange(centerNode, pathStr);
+				}
+			};
+			this.onResize = null;
+			this.view_ = view;
+			this.initPromise = this.api.setModel(args);
+		}
+		/**
+		* Changes options at runtime: the overlay is merged into the model (v1 names are
+		* migrated) and what the changed options affect is updated (config/schema.ts
+		* affects: the data, the layout, the label measures, the layer stack, a frame, the
+		* styles). Returns the effect applied.
+		*/
+		configure(overlay) {
+			const migrated = migrate(overlay);
+			mergeInto(this.args, migrated, "configure", this.provenance);
+			const effects = pathsOf(migrated).map(effectOf);
+			const effect = effectOrder.find((e) => effects.includes(e)) || "none";
+			this.applyEffect(effect);
+			return effect;
+		}
+		applyEffect(effect) {
+			if (!this.data) return;
+			const state = this.args.geometry.transformation.state;
+			switch (effect) {
+				case "data":
+					this.api.setDataloader(() => {}, () => {}, this.args.dataloader);
+					this.api.setLangloader(() => {}, () => {}, this.args.langloader);
+					break;
+				case "layout":
+					computeWeights(this.data, this.args);
+					if (this.args.layout.childOrder === "balanced") balanceChildren(this.data);
+					this.args.layout.type(this.data, state.λ);
+					this.update.data();
+					break;
+				case "labels":
+					measureLabels(this);
+					this.update.data();
+					break;
+				case "layers":
+					this.projection = createProjection(this.args.geometry.view, this.args.layout.rootWedge);
+					this.update.view.unitdisk();
+					this.unitdisk.args.data = this.data;
+					this.update.data();
+					break;
+				case "frame":
+					this.update.data();
+					break;
+				case "style": this.update.pathes();
+			}
+		}
+		updateParent() {
+			this.view_.parent.innerHTML = "";
+			this.view_.html = HTML$1.parse(hypertreehtml)();
+			this.view_.parent.appendChild(this.view_.html);
+			this.updateUnitdiskView();
+		}
+		viewPosition() {
+			const svg = this.view_.html.querySelector(".unitdisk-nav > svg");
+			const s = svg.getBoundingClientRect(), p = this.view_.parent.getBoundingClientRect();
+			const r = s.width > 0 && s.height > 0 ? s : p;
+			const v = this.projection.viewBox(r.width, r.height, this.args.geometry.diskSize);
+			svg.setAttribute("viewBox", v.viewBox);
+			if (this.projection.followsSize && !this.onResize) {
+				this.onResize = () => {
+					if (!this.projection.followsSize || !this.view_.html) return;
+					const p = this.viewPosition();
+					const g = this.view_.html.querySelector(".unitdisk-nav > svg > .unitDisc");
+					if (g) g.setAttribute("transform", p);
+				};
+				window.addEventListener("resize", this.onResize);
+				if (typeof ResizeObserver !== "undefined") {
+					const o = new ResizeObserver(() => this.onResize());
+					o.observe(this.view_.parent);
+					o.observe(svg);
+				}
+			}
+			return v.transform;
+		}
+		updateUnitdiskView() {
+			var udparent = this.view_.html.querySelector(".unitdisk-nav > svg");
+			udparent.innerHTML = bubbleSvgDef;
+			this.unitdisk = new UnitDisk({
+				parent: udparent,
+				className: "unitDisc",
+				position: this.viewPosition(),
+				hypertree: this
+			}, {
+				data: null,
+				transformation: this.args.geometry.transformation,
+				transform: (n) => this.unitdisk.args.transformation.transformPoint(n.layout.z),
+				model: this.args,
+				projection: this.projection
+			});
+		}
+		resetData() {
+			this.view_.html.querySelector(".preloader").innerHTML = htmlpreloader;
+			this.unitdisk.args.data = void 0;
+			this.data = void 0;
+			this.langMap = void 0;
+			this.args.geometry.transformation.state.λ = .001;
+			this.args.geometry.transformation.state.P.re = 0;
+			this.args.geometry.transformation.state.P.im = 0;
+			if (this.args.filter.weightFilter) this.args.filter.weightFilter.magic = 20;
+			this.args.geometry.transformation.cache.centerNode = void 0;
+			this.args.objects.selections = [];
+			this.args.objects.pathes = [];
+			this.args.objects.traces = [];
+			requestAnimationFrame(() => this.update.data());
+		}
+		initData(d3h, t0, t1, dl) {
+			var t2 = performance.now();
+			var ncount = 1;
+			globelhtid++;
+			this.data = hierarchy$1(d3h).each((n) => {
+				n.globelhtid = globelhtid;
+				n.mergeId = ncount++;
+				n.data = n.data || {};
+				n.precalc = {};
+				n.pathes = {};
+				n.layout = null;
+				n.layoutReference = null;
+			});
+			this.unitdisk.args.data = this.data;
+			this.args.geometry.transformation.cache.N = this.data.descendants().length;
+			const startAngle = this.args.layout.rootWedge.orientation;
+			const defAngleWidth = this.args.layout.rootWedge.angle;
+			this.data.layout = { wedge: {
+				α: πify(startAngle - defAngleWidth / 2),
+				Ω: πify(startAngle + defAngleWidth / 2)
+			} };
+			setZ(this.data, {
+				re: 0,
+				im: 0
+			});
+			var t3 = performance.now();
+			computeWeights(this.data, this.args);
+			this.data.each((n) => n.precalc.clickable = true);
+			this.data.each((n) => this.args.dataInitBFS(this, n));
+			if (this.args.layout.childOrder === "balanced") balanceChildren(this.data);
+			const iconmap = this.args.iconmap;
+			if (iconmap) this.data.each((n) => {
+				const icon = iconmap[n.data.name] !== void 0 ? iconmap[n.data.name] : iconmap[n.data.id];
+				if (icon !== void 0) n.precalc.icon = icon;
+			});
+			this.modelMeta = {
+				Δ: [
+					t1 - t0,
+					t2 - t1,
+					t3 - t2,
+					performance.now() - t3
+				],
+				filesize: dl,
+				nodecount: ncount - 1
+			};
+			this.updateLang_();
+			applyλBounds(this);
+			findInitλ(this);
+			this.data.each((n) => n.layoutReference = clone$1(n.layout));
+			this.view_.html.querySelector(".preloader").innerHTML = "";
+		}
+		updateLang_(dl = 0) {
+			const t0 = performance.now();
+			if (this.data) {
+				this.data.each((n) => this.args.langInitBFS(this, n));
+				measureLabels(this);
+			}
+			if (dl || !this.langMeta) this.langMeta = {
+				Δ: [performance.now() - t0],
+				map: this.langMap,
+				filesize: dl
+			};
+		}
+		/** Measures the labels again (layers/label-measure.ts), e.g. after a font change. */
+		updateLabelLen_() {
+			measureLabels(this);
+		}
+		updateLayoutPath_(preservingnode) {
+			const t = this.args.geometry.transformation;
+			console.assert(!!preservingnode);
+			const t0 = performance.now();
+			preservingnode.ancestors().reverse().forEach((n) => this.args.layout.type(n, t.state.λ, true));
+			t.state.P = CmulR(preservingnode.layout.z, -1);
+			this.layoutMeta = { Δ: performance.now() - t0 };
+		}
+		drawDetailFrame() {
+			this.update.data();
+		}
+		animateUp(ok, err) {
+			const newλ = this.args.geometry.transformation.state.λ;
+			this.args.geometry.transformation.state.λ = .001;
+			this.animateToλ(ok, err, newλ);
+		}
+		/** λ limited to interaction.λbounds [min, max] (inclusive). */
+		clampλ(λ) {
+			const [min, max] = this.args.interaction.λbounds;
+			return Math.min(max, Math.max(min, λ));
+		}
+		animateToλ(ok, err, newλ) {
+			newλ = this.clampλ(newλ);
+			const way = this.args.geometry.transformation.state.λ - newλ;
+			new Animation({
+				name: "animateToλ",
+				hypertree: this,
+				duration: this.args.interaction.animationDuration,
+				resolve: ok,
+				reject: err,
+				frame: (progress01) => {
+					const waydone01 = 1 - this.args.interaction.animationEasing(progress01);
+					console.assert(waydone01 >= 0 && waydone01 <= 1);
+					const waydone = way * waydone01;
+					const λ = newλ + waydone;
+					this.args.geometry.transformation.state.λ = λ;
+					this.updateLayoutPath_(this.args.geometry.transformation.cache.centerNode);
+					this.update.transformation();
+				}
+			});
+		}
+		/** Animates the translation to newP and, if newλ is given, the zoom to newλ. */
+		animateTo(resolve, reject, newP, newλ) {
+			const state = this.args.geometry.transformation.state;
+			const initTS = clone$1(state);
+			const way = CsubC(initTS.P, newP);
+			const zoom = newλ !== null && newλ !== void 0;
+			const targetλ = zoom ? this.clampλ(newλ) : void 0;
+			const wayλ = zoom ? initTS.λ - targetλ : 0;
+			new Animation({
+				name: "animateTo",
+				resolve,
+				reject,
+				hypertree: this,
+				duration: this.args.interaction.animationDuration,
+				frame: (progress01) => {
+					const waydone01 = 1 - this.args.interaction.animationEasing(progress01);
+					console.assert(waydone01 >= 0 && waydone01 <= 1);
+					if (zoom) {
+						state.λ = targetλ + wayλ * waydone01;
+						this.updateLayoutPath_(this.args.geometry.transformation.cache.centerNode);
+					}
+					const animP = CaddC(newP, CmulR(way, waydone01));
+					state.P = {
+						re: state.P.re,
+						im: state.P.im
+					};
+					CassignC(state.P, animP);
+					this.update.transformation();
+				}
+			});
+		}
+		/**
+		* Stops a running animation (goto, gotoλ, ...) where it is. Called when a drag,
+		* pinch or wheel starts: an animation that kept running fought with the drag, both
+		* set the translation, and the tree jumped between both states on every frame
+		* (flickering branches; e.g. dragging right after a click that started a goto).
+		*/
+		stopAnimation() {
+			if (this.transition) {
+				this.transition.cancel();
+				this.transition = void 0;
+			}
+		}
+		isAnimationRunning() {
+			const view = this.unitdisk && this.unitdisk.isDraging;
+			const wheel = this.unitdisk && this.unitdisk.isWheeling;
+			const lowdetail = this.transition ? this.transition.lowdetail : false;
+			return view || wheel || lowdetail;
+		}
+	};
 	var require_defaults = /* @__PURE__ */ __commonJSMin(((exports, module, this$40) => {
 		(function() {
 			exports.defaults = {
@@ -13299,18 +16558,6 @@ var htol = (function(exports) {
 			ok(d);
 		});
 	}
-	function navdata() {
-		const createNode = (id, name) => ({
-			mergeId: id,
-			name,
-			precalc: {},
-			children: []
-		});
-		const root = createNode(1, "P");
-		root.children.push(createNode(2, "θ"));
-		root.children.push(createNode(3, "λ"));
-		return root;
-	}
 	var generators;
 	(function(_generators) {
 		_generators.star120 = deepStar;
@@ -13323,5141 +16570,6 @@ var htol = (function(exports) {
 		_generators.nT1 = nTree;
 		_generators.nT2 = nTreeAtFirst;
 	})(generators || (generators = {}));
-	function voronoiLayout(x, y, extent) {
-		const bounds = [
-			extent[0][0],
-			extent[0][1],
-			extent[1][0],
-			extent[1][1]
-		];
-		return (data) => {
-			const c = new Float64Array(data.length * 2);
-			data.forEach((d, i) => {
-				c[2 * i] = x(d);
-				c[2 * i + 1] = y(d);
-			});
-			return collinearDiagram(data, c, bounds) || delaunayDiagram(data, c, bounds);
-		};
-	}
-	function delaunayDiagram(data, c, bounds) {
-		const delaunay = new Delaunay(c);
-		let polygons = null;
-		return {
-			polygons: () => {
-				if (polygons) return polygons;
-				const voronoi = delaunay.voronoi(bounds);
-				polygons = [];
-				for (let i = 0; i < data.length; i++) {
-					const ring = voronoi.cellPolygon(i);
-					if (!ring) continue;
-					const p = ring.slice(0, -1);
-					p.data = data[i];
-					polygons.push(p);
-				}
-				return polygons;
-			},
-			find: (px, py) => {
-				if (!data.length) return void 0;
-				const i = delaunay.find(px, py);
-				return i >= 0 ? { data: data[i] } : void 0;
-			}
-		};
-	}
-	function collinearDiagram(data, c, bounds) {
-		const n = data.length;
-		if (n < 3) return void 0;
-		let j = 1;
-		while (j < n && c[2 * j] === c[0] && c[2 * j + 1] === c[1]) j++;
-		if (j === n) return void 0;
-		const ux0 = c[2 * j] - c[0], uy0 = c[2 * j + 1] - c[1], len = Math.hypot(ux0, uy0);
-		const ux = ux0 / len, uy = uy0 / len;
-		for (let i = 0; i < n; i++) if (Math.abs(ux * (c[2 * i + 1] - c[1]) - uy * (c[2 * i] - c[0])) > 1e-9) return void 0;
-		const t = (px, py) => (px - c[0]) * ux + (py - c[1]) * uy;
-		const order = Array.from({ length: n }, (_, i) => i).sort((a, b) => t(c[2 * a], c[2 * a + 1]) - t(c[2 * b], c[2 * b + 1]));
-		const ts = order.map((i) => t(c[2 * i], c[2 * i + 1]));
-		const distinct = [];
-		for (let k = 0; k < n; k++) if (k === 0 || ts[k] !== ts[k - 1]) distinct.push(k);
-		let polygons = null;
-		return {
-			polygons: () => {
-				if (polygons) return polygons;
-				const rect = [
-					[bounds[0], bounds[1]],
-					[bounds[2], bounds[1]],
-					[bounds[2], bounds[3]],
-					[bounds[0], bounds[3]]
-				];
-				polygons = [];
-				distinct.forEach((k, m) => {
-					const lo = m === 0 ? -Infinity : (ts[distinct[m - 1]] + ts[k]) / 2;
-					const hi = m === distinct.length - 1 ? Infinity : (ts[k] + ts[distinct[m + 1]]) / 2;
-					let poly = rect;
-					if (lo > -Infinity) poly = clip(poly, (px, py) => t(px, py) - lo);
-					if (hi < Infinity) poly = clip(poly, (px, py) => hi - t(px, py));
-					if (poly.length < 3) return;
-					const p = poly;
-					p.data = data[order[k]];
-					polygons.push(p);
-				});
-				return polygons;
-			},
-			find: (px, py) => {
-				const q = t(px, py);
-				let lo = 0, hi = distinct.length - 1;
-				while (hi - lo > 1) {
-					const mid = lo + hi >> 1;
-					if (ts[distinct[mid]] < q) lo = mid;
-					else hi = mid;
-				}
-				const k = Math.abs(ts[distinct[lo]] - q) <= Math.abs(ts[distinct[hi]] - q) ? distinct[lo] : distinct[hi];
-				return { data: data[order[k]] };
-			}
-		};
-	}
-	function clip(poly, f) {
-		const out = [];
-		for (let i = 0; i < poly.length; i++) {
-			const a = poly[i], b = poly[(i + 1) % poly.length];
-			const fa = f(a[0], a[1]), fb = f(b[0], b[1]);
-			if (fa >= 0) out.push(a);
-			if (fa >= 0 !== fb >= 0) {
-				const s = fa / (fa - fb);
-				out.push([a[0] + s * (b[0] - a[0]), a[1] + s * (b[1] - a[1])]);
-			}
-		}
-		return out;
-	}
-	var HyperbolicTransformation = class {
-		constructor(tp) {
-			this.cache = new TransformationCache();
-			this.maxMouseR = .95;
-			this.transformPoint = (p) => h2e(this.state, p);
-			this.transformDist = (p) => lengthDilledation(p);
-			this.onDragStart = (m) => this.dST = clone(this.state);
-			this.onDragEnd = (m) => this.dST = void 0;
-			this.isMoving = () => this.dST !== void 0;
-			this.onDragP = (s, e) => {
-				const nt = compose(this.dST, shift(this.dST, s, maxR(e, this.maxMouseR)));
-				this.state.P = nt.P;
-				this.state.θ = nt.θ;
-			};
-			this.onDragθ = (s, e) => {};
-			this.onDragλ = (l) => this.state.λ = l;
-			this.state = tp;
-		}
-	};
-	var PanTransformation = class {
-		constructor(tp) {
-			this.cache = new TransformationCache();
-			this.maxMouseR = 1e3;
-			this.transformPoint = (p) => {
-				var s = this.state.λ;
-				var w = CktoCp(this.state.θ).θ;
-				var zp = CktoCp(p);
-				return CmulR(CaddC(CptoCk({
-					θ: zp.θ + w,
-					r: zp.r
-				}), CdivR(this.state.P, s)), s);
-			};
-			this.transformDist = (p) => 1;
-			this.onDragStart = (m) => this.dST = clone(this.state);
-			this.onDragEnd = (m) => this.dST = void 0;
-			this.isMoving = () => this.dST !== void 0;
-			this.onDragP = (s, e) => CassignC(this.state.P, maxR(CaddC(this.dST.P, CsubC(e, s)), .95));
-			this.onDragθ = (s, e) => CassignC(this.state.θ, setR(e, 1));
-			this.onDragλ = (l) => this.state.λ = l;
-			this.state = tp;
-		}
-	};
-	var NegTransformation = class {
-		constructor(d) {
-			this.cache = null;
-			this.maxMouseR = 0;
-			this.transformPoint = (p) => this.decorated.transformPoint(CmulR(p, -1));
-			this.transformDist = (p) => this.decorated.transformDist(CmulR(p, -1));
-			this.onDragStart = (m) => this.decorated.onDragStart(CmulR(m, -1));
-			this.onDragEnd = (m) => this.decorated.onDragEnd(CmulR(m, -1));
-			this.isMoving = () => this.decorated.isMoving();
-			this.onDragP = (s, e) => this.decorated.onDragP(CmulR(s, -1), CmulR(e, -1));
-			this.onDragθ = (s, e) => this.decorated.onDragθ(CmulR(s, -1), CmulR(e, -1));
-			this.onDragλ = (l) => this.decorated.onDragλ(l);
-			this.decorated = d;
-			this.state = d.state;
-			this.maxMouseR = d.maxMouseR;
-			this.cache = d.cache;
-		}
-	};
-	var TransformationCache = class {
-		constructor() {
-			this.cells = [];
-		}
-	};
-	var planes = [
-		"disk",
-		"content",
-		"overlay"
-	];
-	var compositedPlanes = ["disk", "content"];
-	var compositing = { mode: "planes" };
-	var diskLayers = [
-		"background",
-		"culling-r",
-		"mouse-r",
-		"focus-r",
-		"labels-r-𝐖",
-		"λ",
-		"(0,0)"
-	];
-	var overlayLayers = [
-		"traces",
-		"interaction",
-		"interaction-2"
-	];
-	/** The plane of a layer: its option plane, else by its name (content for all others). */
-	function planeOf(layer) {
-		const option = layer.args && layer.args.plane;
-		if (option && planes.includes(option)) return option;
-		if (diskLayers.includes(layer.name)) return "disk";
-		if (overlayLayers.includes(layer.name)) return "overlay";
-		return "content";
-	}
-	var LayerStack = class {
-		constructor(args) {
-			this.update = {
-				parent: () => this.updateLayers(),
-				data: () => this.updateData(),
-				pathes: () => this.updatePath()
-			};
-			this.args = args;
-			this.mainSvgGroup = this.args.parent.append("g");
-			this.updateLayers();
-		}
-		updateLayers() {
-			this.layers = {};
-			for (var layerfactoryfunc of this.args.unitdisk.args.layers) {
-				const layer = layerfactoryfunc({
-					parent: this.mainSvgGroup,
-					layerstack: this,
-					unitdisk: this.args.unitdisk,
-					hypertree: this.args.unitdisk.view.hypertree
-				}, this.args.unitdisk);
-				const options = (this.args.unitdisk.args.layerOptions || {})[layer.name];
-				if (options && options.removed) continue;
-				if (options) mergeDeep(layer.args, options);
-				this.layers[layer.name] = layer;
-			}
-			this.mainSvgGroup.selectAll("*").remove();
-			this.planes = {};
-			for (const plane of planes) {
-				const g = this.mainSvgGroup.append("g").attr("class", `plane plane-${plane}`);
-				if (compositing.mode === "planes" && compositedPlanes.includes(plane)) g.style("will-change", "transform");
-				this.planes[plane] = g;
-			}
-			for (var l in this.layers) {
-				const layer = this.layers[l];
-				layer.view.parent = this.planes[planeOf(layer)];
-				layer.update.parent();
-			}
-		}
-		updateData() {
-			const timings = [];
-			const names = [];
-			for (var l in this.layers) {
-				var layer = this.layers[l];
-				var beginTime = performance.now();
-				layer.update.data();
-				timings.push(performance.now() - beginTime);
-				names.push(layer.name);
-			}
-			this.d3meta = {
-				Δ: timings,
-				names
-			};
-		}
-		updatePath() {
-			var t0 = performance.now();
-			if (this.layers["link-arcs"]) this.layers["link-arcs"].update.style();
-			if (this.layers["stem-arc"]) this.layers["stem-arc"].update.style();
-			if (this.layers["cells"]) this.layers["cells"].update.style();
-			if (this.layers["nodes"]) this.layers["nodes"].update.style();
-			if (this.layers["symbols"]) this.layers["symbols"].update.style();
-			if (this.layers["path-arcs"]) this.layers["path-arcs"].update.data();
-			var t1 = performance.now();
-			if (this.layers["link-arcs-focus"]) this.layers["link-arcs-focus"].update.data();
-			var t2 = performance.now();
-			if (this.layers["labels"]) this.layers["labels"].update.data();
-			for (const name of ["labels-force", "labels-placed"]) {
-				const l = this.layers[name];
-				if (!l || !l.args) continue;
-				if (l.args.hoverLabel || l.args.hoverPathLabels) l.update.data();
-				else l.update.style();
-			}
-			var t3 = performance.now();
-			this.d3meta = {
-				Δ: [
-					t1 - t0,
-					t2 - t1,
-					t3 - t2
-				],
-				names: [
-					"path-arcs",
-					"link-arcs-focus",
-					"labels"
-				]
-			};
-		}
-	};
-	var UnitdiskMeta = class {
-		constructor({ view, model }) {
-			this.update = {
-				parent: () => this.updateParent(),
-				all: () => {},
-				model: () => {
-					this.ui.updateModel();
-					this.update.layout();
-				},
-				lang: () => {
-					this.ui.updateLang();
-				},
-				layout: () => {
-					this.ui.updateLayout();
-					this.update.transformation();
-					this.ui.updateλω();
-				},
-				transformation: () => {
-					this.ui.updateSvgInfo();
-					this.ui.updateD3Info();
-					this.ui.updateTransformationInfo();
-				}
-			};
-			this.view = view;
-			this.model = model;
-			this.updateParent();
-		}
-		updateParent() {
-			this.ui = UnitdiskMeta_({
-				parent: this.view.parent,
-				className: this.view.className,
-				ud: this.model
-			});
-		}
-	};
-	var barrow = `
-    <div class="label"></div> 
-    <div class="nodes"></div> 
-    <div class="q"></div> 
-    <div class="qmax"></div> 
-    <div class="info"></div>
-    <div class="info2"></div>
-    <div class="bar-bg"></div>`;
-	var sliderrow = (id, min, max, val, classes = "") => `
-    <div class="label"> </div> 
-    <div class="sm"><sub>2</sub></div> 
-    <div class="slider">
-        <p class="range-field">
-            <input type="range" min="${min}" max="${max}" value="${val}" class="slider" id="myRange" step="0.01">
-        </p>
-    </div>     
-    <div class="q left-aligned"></div> 
-    <div class="qmax"></div> 
-    <div class="info-oneRowSpan"></div>
-    <div class="info2-oneRowSpan"></div>`;
-	var histrow = `
-    <div class="label"></div> 
-    <div class="min"><sub>1</sub></div> 
-    <div class="hist">
-        <div style="height:100%"></div>
-        <div style="height:70%"></div>
-        <div style="height:30%"></div>
-        <div style="height:45%"></div>
-
-        <div style="height:70%"></div>
-        <div style="height:60%"></div>
-        <div style="height:80%"></div>
-        <div style="height:65%"></div>
-
-        <div style="height:30%"></div>
-        <div style="height:20%"></div>
-        <div style="height:25%"></div>
-        <div style="height:15%"></div>
-    </div> 
-    <div class="q left-aligned"></div> 
-    <div class="qmax"></div> 
-    <div class="info-oneRowSpan"></div>
-    <div class="info2-oneRowSpan"></div>`;
-	var htmlinfo = `<div class="render-info">
-        ${barrow}        
-        ${histrow}
-        ${histrow}
-        ${histrow}
-        ${barrow}        
-        ${sliderrow("", .4, .9, .5)}
-        ${sliderrow("", 2, 500, 160)}        
-        ${barrow}        
-        ${barrow}                
-        ${barrow}
-        ${barrow}
-    </div>`;
-	function UnitdiskMeta_({ parent, ud, className }) {
-		var ui = HTML$1.parse(htmlinfo)();
-		ui.classList.add(className);
-		parent.appendChild(ui);
-		const sliderBindingλ = {
-			toView: (slider) => {
-				slider.value = 1 - ud.args.transformation.state.λ;
-			},
-			fromView: (slider) => {
-				ud.args.transformation.state.λ = 1 - slider.value;
-				ud.view.hypertree.updateLayoutPath_(ud.args.transformation.cache.centerNode);
-				ud.view.hypertree.update.transformation();
-			}
-		};
-		const sliderBindingω = {
-			toView: (slider) => {
-				slider.value = ud.view.hypertree.args.filter.weightFilter.magic;
-			},
-			fromView: (slider) => {
-				ud.view.hypertree.args.filter.weightFilter.magic = slider.value;
-				ud.view.hypertree.update.transformation();
-			}
-		};
-		function sliderInit(sliderHtml, binding) {
-			var slider = sliderHtml.querySelector("input");
-			binding.toView(slider);
-			slider.oninput = (e) => binding.fromView(slider);
-			slider.onmousedown = (e) => e.stopPropagation();
-			slider.onmousemove = (e) => e.stopPropagation();
-			slider.onmouseup = (e) => e.stopPropagation();
-			slider.ontouchstart = (e) => e.stopPropagation();
-			slider.ontouchmove = (e) => e.stopPropagation();
-			slider.ontouchend = (e) => e.stopPropagation();
-			slider.ontouchcanel = (e) => e.stopPropagation();
-		}
-		const λsliderInit = (sliderHtml) => sliderInit(sliderHtml, sliderBindingλ);
-		const ωsliderInit = (sliderHtml) => sliderInit(sliderHtml, sliderBindingω);
-		var e = 0;
-		var re = 7;
-		var rows = {
-			lang: new BarRow(ui, e += 0, "Lang", "<sub>s</sub>"),
-			heights: new HistRow(ui, e += 7, "τ", "<sub>79</sub>"),
-			weights: new HistRow(ui, e += 7, "ω", "<sub>34k</sub>"),
-			degree: new HistRow(ui, e += re, "δ<sup>+</sup>", "<sub>97</sub>"),
-			data: new BarRow(ui, e += 7, "Load", "<sub>s</sub>"),
-			lambda: new SliderRow(ui, e += 7, "λ", "<sub>1</sub>", λsliderInit, (v) => `<sub>.${v * 10}</sub>`),
-			cullmaxw: new SliderRow(ui, e += re, "ω<sub>cull</sub>", "<sub>.5k</sub>", ωsliderInit, (v) => `<sub>${v}</sub>`),
-			layout: new BarRow(ui, e += 7, "Filter", "<sub>ms</sub>"),
-			transform: new BarRow(ui, e += re, "∀<sub>visible</sub>", "<sub>ms</sub>"),
-			d3: new BarRow(ui, e += re, "D<sub>3</sub>", "<sub>ms</sub>"),
-			rendering: new BarRow(ui, e += re, "Σ", "<sub>ms</sub>")
-		};
-		ui.updateλω = () => {
-			rows.lambda.slider.querySelector("input").value = 1 - ud.args.transformation.state.λ;
-			rows.cullmaxw.slider.querySelector("input").value = ud.view.hypertree.args.filter.weightFilter.magic;
-		};
-		ui.updateSvgInfo = () => {
-			const layerStack = ud.layerStack;
-			const Δ = [];
-			const colors = [];
-			if (layerStack) for (var l in layerStack.layers) {
-				const d3updatePattern = layerStack.layers[l].d3updatePattern;
-				const elemCount = d3updatePattern ? d3updatePattern.data.length : 1;
-				Δ.push(elemCount);
-				colors.push(googlePalette(stringhash(layerStack.layers[l].name)));
-			}
-			const a = Δ.reduce((a, e) => a + e, 0).toFixed(0);
-			const v = rows.rendering;
-			v.q.innerHTML = `${a}`;
-			updateBar(v.bar, Δ.map((e) => e * mag_svg), colors);
-			ping$1(v.useIndic);
-			ping$1(v.overuseIndic, parseFloat(a) > maxSvg);
-		};
-		ui.updateD3Info = () => {
-			const cache = ud.args.transformation.cache;
-			const Δ = ud.layerStack.d3meta.Δ;
-			const layerlist = ud.layerStack.d3meta.names;
-			const t = Δ.reduce((a, e) => a + e).toFixed(0);
-			const colors = layerlist.map((e) => googlePalette(stringhash(e)));
-			const v = rows.d3;
-			v.info.innerHTML = `${cache.unculledNodes.length}<sub>N</sub>`;
-			v.info.title = Δ.map((e, i) => `${layerlist[i]}: ${e.toFixed(1)}ms`).join("\n");
-			v.q.innerHTML = `${t}`;
-			updateBar(v.bar, Δ.map((e) => e * mag_time), colors);
-			ping$1(v.useIndic);
-			if (parseFloat(t) > maxTime) ping$1(v.overuseIndic);
-		};
-		ui.updateTransformationInfo = () => {
-			const cache = ud.args.transformation.cache;
-			const Δ = ud.cacheMeta.Δ;
-			const minWeight = ud.cacheMeta.minWeight;
-			const t = Δ.reduce((a, e) => a + e).toFixed(0);
-			const na = cache.unculledNodes.length;
-			const hwexits = minWeight.map((n) => n.toFixed(1)).join(" ⟶ ");
-			const Δms = Δ.map((n) => n.toFixed(1));
-			const v = rows.transform;
-			v.info.innerHTML = `state, sets, voro`;
-			v.info.title = `Visible node count: ${na}\n`;
-			v.info.title += `Min weigth: ${hwexits}\n`;
-			v.info.title += `${Δms[0]} init\n${Δms[1]} culling\n${Δms[2]} pathes+sets\n${Δms[3]} voronoi+labels`;
-			v.q.innerHTML = `${t}`;
-			updateBar(v.bar, Δ.map((e) => e * mag_time), [
-				"#2196f3",
-				"#ffc107",
-				"#673ab7",
-				"#4caf50"
-			]);
-			ping$1(v.useIndic);
-			if (parseFloat(t) > maxTime) ping$1(v.overuseIndic);
-		};
-		const sep = "&nbsp; •&ensp;";
-		ui.updateLayout = () => {
-			const Δ = ud.view.hypertree.layoutMeta.Δ;
-			const v = rows.layout;
-			v.info.innerHTML = `32<sub>P</sub>${sep}77<sub>Sel</sub>${sep}4<sub>k visible</sub>`;
-			v.q.innerHTML = `${Δ.toFixed()}`;
-			updateBar(v.bar, [Δ].map((e) => e * mag_time), ["#2196f3"]);
-			ping$1(v.useIndic);
-			if (parseFloat(Δ) > maxTime) ping$1(v.overuseIndic);
-		};
-		format(".3s");
-		ui.updateModel = () => {
-			const Δ = ud.view.hypertree.modelMeta.Δ;
-			const kb = (ud.view.hypertree.modelMeta.filesize / 1024).toFixed(0);
-			const model = ud.view.hypertree.data;
-			const n = model.descendants().length;
-			const t = Δ.reduce((a, e) => a + e).toFixed(0);
-			const l = model.leaves().length;
-			const lp = (l / n).toPrecision(1);
-			const i = n - l;
-			const h = model.height;
-			let ø = 0;
-			model.each((cn) => ø += (cn.children || []).length / i);
-			const v = rows.data;
-			v.info.innerHTML = `${kb}<sub>kB</sub>${sep}${mysi(n)}<sub>N</sub>`;
-			v.info.title = `download: ${Δ[0].toFixed(0)}ms\n`;
-			v.info.title += `parse: ${Δ[1].toFixed(0)}ms\n`;
-			v.info.title += `hierarchy: ${Δ[2].toFixed(0)}ms\n`;
-			v.info.title += `weights: ${Δ[3].toFixed(0)}ms\n`;
-			v.info.title += `${lp} leaves\n`;
-			v.info.title += `↕ max: ${h}\n`;
-			v.info.title += `↕ μ: ?\n`;
-			v.info.title += `↕ ⌀: ?\n`;
-			v.info.title += `○ max: ?\n`;
-			v.info.title += `○ μ: ${ø.toPrecision(2)}\n`;
-			v.info.title += `○ ⌀: ?\n`;
-			v.q.innerHTML = `${(t / 1e3).toFixed(1)}`;
-			updateBar(v.bar, Δ.map((e) => e / mag_load), [
-				"#ff9800",
-				"#2196f3",
-				"green"
-			]);
-			ping$1(v.useIndic);
-			if (parseFloat(t) > 1e3) ping$1(v.overuseIndic);
-			const countChildren = (n) => n.children ? n.children.length : 0;
-			var δsum = 0;
-			model.each((e) => δsum += countChildren(e));
-			var ωsum = 0;
-			model.each((e) => ωsum += e.value);
-			var τsum = 0;
-			model.each((e) => τsum += e.height);
-			rows.degree.qMax.innerHTML = `<sub>μ${p1(δsum / n)}</sub>`;
-			rows.weights.qMax.innerHTML = `<sub>μ${p1(ωsum / n)}</sub>`;
-			rows.heights.qMax.innerHTML = `<sub>μ${p1(τsum / n)}</sub>`;
-			var maxδ = 0;
-			model.each((e) => maxδ = Math.max(maxδ, countChildren(e)));
-			rows.degree.q.innerHTML = `<sub>${mysi(maxδ)}</sub>`;
-			rows.weights.q.innerHTML = `<sub>${mysi(model.value)}</sub>`;
-			rows.heights.q.innerHTML = `<sub>${mysi(model.height)}</sub>`;
-		};
-		ui.updateLang = () => {
-			const Δ = ud.view.hypertree.langMeta.Δ;
-			const kb = ud.view.hypertree.langMeta.filesize ? (ud.view.hypertree.langMeta.filesize / 1024).toFixed(0) : "-";
-			ud.view.hypertree.data;
-			const Δs = Δ / 1e3;
-			const v = rows.lang;
-			v.info.innerHTML = `${kb}<sub>kB</sub>`;
-			v.q.innerHTML = Δs.toFixed(1);
-			updateBar(v.bar, Δ.map((e) => e / mag_load), [
-				"#ff9800",
-				"#2196f3",
-				"green"
-			]);
-			ping$1(v.useIndic);
-			if (Δ > 1e3) ping$1(v.overuseIndic);
-		};
-		return ui;
-	}
-	var TextRow = class {
-		constructor(ui, offset, desc, unit) {
-			this.label = ui.children[offset + 0];
-			this.info = ui.children[offset + 1];
-			this.q = ui.children[offset + 2];
-			this.qMax = ui.children[offset + 3];
-			this.w = ui.children[offset + 4];
-			this.label.innerHTML = desc;
-			this.qMax.innerHTML = unit;
-		}
-	};
-	var BarRow = class extends TextRow {
-		constructor(ui, offset, desc, unit) {
-			super(ui, offset, desc, unit);
-			this.bar = ui.children[offset + 6];
-			this.useIndic = ui.children[offset + 4];
-			this.overuseIndic = ui.children[offset + 5];
-		}
-	};
-	var SliderRow = class {
-		constructor(ui, offset, desc, unit, sliderInit, format) {
-			this.label = ui.children[offset + 0];
-			this.info = ui.children[offset + 1];
-			this.slider = ui.children[offset + 2];
-			this.qMax = ui.children[offset + 3];
-			this.w = ui.children[offset + 4];
-			this.label.innerHTML = desc;
-			var sliderinput = this.slider.querySelector("input");
-			this.info.innerHTML = format(sliderinput.min);
-			this.qMax.innerHTML = format(sliderinput.max);
-			sliderInit(this.slider);
-		}
-	};
-	var HistRow = class {
-		constructor(ui, offset, desc, unit) {
-			this.label = ui.children[offset + 0];
-			this.min = ui.children[offset + 1];
-			this.hist = ui.children[offset + 2];
-			this.q = ui.children[offset + 3];
-			this.qMax = ui.children[offset + 4];
-			this.label.innerHTML = desc;
-			this.q.innerHTML = "-";
-			this.qMax.innerHTML = "-";
-		}
-	};
-	var maxTime = 25;
-	var maxSvg = 1e3;
-	var mag_svg = .1;
-	var mag_load = 10;
-	var mag_time = 4;
-	var updateBar = (view, vec, cvec) => {
-		var c = 0;
-		var data = t([
-			vec,
-			cvec,
-			vec.map((e, i, v) => {
-				c += e;
-				return c - e;
-			})
-		]);
-		var diff = select$1(view).selectAll("div").data(data);
-		diff.enter().append("div").attr("class", "bar").merge(diff).style("left", (d) => d[2] + "%").style("width", (d) => d[0] + "%").style("background-color", (d) => d[1]);
-		diff.exit().remove();
-	};
-	linear().domain([1, 10]).range([rgb$1("#a5d6a7"), rgb$1("#e53935")]).interpolate(hcl_default).clamp(true);
-	function ping$1(v, cond = true) {
-		if (cond) {
-			v.style.opacity = 1;
-			v.style.animation = "";
-			requestAnimationFrame(() => {
-				v.style.animation = "blink-out 2s cubic-bezier(0.145, 1.130, 0.725, 0.590)";
-				v.style.opacity = 0;
-			});
-		}
-	}
-	var p1 = (n) => n.toFixed(1);
-	var mysihelper = format(".3s");
-	function mysi(n, p = 0, u = "") {
-		const d3str = mysihelper(n);
-		const lastChar = d3str.slice(-1);
-		const hasSiEx = lastChar == "k";
-		const pidx = d3str.indexOf(".");
-		const hasDot = pidx !== -1;
-		var nr = d3str;
-		if (hasDot) nr = nr.slice(0, pidx + (p > 0 ? p + 1 : 0));
-		if (hasSiEx) nr = nr.slice(-1);
-		var ex = "";
-		if (hasSiEx) ex = lastChar;
-		return nr + `<sub>${ex}${u}</sub>`;
-	}
-	var LayerStackMeta = class {
-		constructor({ view, model }) {
-			this.update = {
-				parent: () => this.updateParent(),
-				data: () => {
-					this.ui.updateSwitch(this.view.hypertree.isAnimationRunning());
-					this.ui.updateCounts(this.view.hypertree.isAnimationRunning());
-				}
-			};
-			this.view = view;
-			this.model = model;
-			this.updateParent();
-		}
-		updateParent() {
-			this.ui = LayerInfo_({
-				parent: this.view.parent,
-				className: this.view.className,
-				onCheckChange: () => this.model.layerStack.update.data()
-			});
-			Object.keys(this.model.layerStack.layers).reverse().forEach((e) => this.ui.addlayer(this.model.layerStack.layers[e]));
-			this.ui.addSwitch();
-		}
-	};
-	var ping1Html = (id) => `<div class="ping1"></div> `;
-	var ping2Html = (id) => `<div class="ping2"></div> `;
-	var labelHtml = (id) => `<div class="label"></div> `;
-	var countHtml = (id) => `<div class="nodes"></div> `;
-	var timeHtml = (id) => `<div class="time"></div> `;
-	var switchHtml = (id) => `<div class="switch"></div> `;
-	var check1Html = (id, c) => `<label class="cbx">           
-                                <input type="checkbox" id="${id}" class="filled-in" ${c ? "checked" : ""}/>
-                                <span></span>
-                            </label>`;
-	var barHtml = (id) => `<div class="bar-bg"><div class="bar"></div></div>`;
-	var html$2 = `<div class="layer-info"></div>`;
-	function ping(v, cond = true) {
-		if (cond) {
-			v.style.opacity = 1;
-			v.style.animation = "";
-			requestAnimationFrame(() => {
-				v.style.animation = "blink-out 2s cubic-bezier(0.145, 1.130, 0.725, 0.590)";
-				v.style.opacity = 0;
-			});
-		}
-	}
-	function LayerInfo_({ parent, onCheckChange, className }) {
-		var ui = HTML$1.parse(html$2)();
-		ui.classList.add(className);
-		parent.appendChild(ui);
-		var rows = [];
-		const maxElementCountGlobal = 1e3;
-		const maxTimeLayer = 10;
-		const maxTimeLayerstack = 20;
-		format(".2s");
-		const isIrrelevant = (n) => isNaN(n) || (n * 1e3).toFixed(0) === "0";
-		const d3format = (n) => isIrrelevant(n) ? "•" : (n * 1e3).toFixed(0) + "<sub>ms</sub>";
-		var sum = 0;
-		var sumtime = 0;
-		var pos = 0;
-		ui.addlayer = function(layer) {
-			var name = layer.name;
-			var color = googlePalette(stringhash(name));
-			var checked = () => !layer.args.invisible;
-			var checked2 = () => !layer.args.hideOnDrag;
-			var count = () => layer.d3updatePattern && layer.d3updatePattern.data ? layer.d3updatePattern.data.length : 1;
-			var type = () => layer.args.elementType ? layer.args.elementType.length : "";
-			const layerViews = {
-				ping2: HTML$1.parse(ping2Html(pos))(),
-				ping1: HTML$1.parse(ping1Html(pos))(),
-				label: HTML$1.parse(labelHtml(pos))(),
-				count: HTML$1.parse(countHtml(pos))(),
-				time: HTML$1.parse(timeHtml(pos))(),
-				checkNormal: HTML$1.parse(check1Html(`pos-${className}-${pos}-normal`, checked()))(),
-				checkDrag: HTML$1.parse(check1Html(`pos-${className}-${pos}-drag`, checked2()))(),
-				bar: HTML$1.parse(barHtml(pos))(),
-				updateCounts: (animationRunning) => {
-					var checker = animationRunning ? checked2() : checked();
-					var count_ = checker ? count() : 0;
-					sum += count_;
-					layerViews.count.innerHTML = checker ? `${count_} ${type()}` : ``;
-					const lsmeta = layer.view.layerstack.d3meta;
-					console.assert(layer.name);
-					const pos = lsmeta.names.indexOf(layer.name);
-					const time = checker ? lsmeta.Δ[pos] / 1e3 : 0;
-					if (!isNaN(time)) sumtime += time;
-					const timeStr = d3format(time);
-					layerViews.time.innerHTML = checker ? timeStr : ``;
-					layerViews.bar.children[0].style.width = time / maxTimeLayer * 100 * 1e3 + "%";
-					layerViews.bar.children[0].style.backgroundColor = color;
-					ping(layerViews.ping1, checker && !isIrrelevant(time));
-					ping(layerViews.ping2, checker && !isIrrelevant(time) && time * 1e3 > maxTimeLayer);
-				}
-			};
-			rows.push(layerViews);
-			ui.appendChild(layerViews.ping2);
-			ui.appendChild(layerViews.ping1);
-			ui.appendChild(layerViews.label);
-			ui.appendChild(layerViews.count);
-			ui.appendChild(layerViews.time);
-			ui.appendChild(layerViews.checkNormal);
-			ui.appendChild(layerViews.checkDrag);
-			ui.appendChild(layerViews.bar);
-			if (name === "λ") layerViews.label.style.textTransform = "none";
-			layerViews.label.innerHTML = name;
-			layerViews.checkNormal.querySelector("input").onchange = function() {
-				function updateCheck(checkBox, layer, layerViews) {
-					layer.args.invisible = !layer.args.invisible;
-					onCheckChange();
-					ui.updateCounts();
-				}
-				updateCheck(this, layer, layerViews);
-			};
-			layerViews.checkDrag.querySelector("input").onchange = function() {
-				function updateCheck(checkBox, layer, layerViews) {
-					layer.args.hideOnDrag = !layer.args.hideOnDrag;
-					onCheckChange();
-					ui.updateCounts();
-				}
-				updateCheck(this, layer, layerViews);
-			};
-			pos += 8;
-		};
-		var switchRow = null;
-		ui.addSwitch = function() {
-			const stateViews = {
-				ping2: HTML$1.parse(ping2Html(pos))(),
-				ping1: HTML$1.parse(ping1Html(pos))(),
-				label: HTML$1.parse(labelHtml(pos))(),
-				count: HTML$1.parse(countHtml(pos))(),
-				time: HTML$1.parse(timeHtml(pos))(),
-				view: HTML$1.parse(switchHtml(pos))(),
-				bar: HTML$1.parse(barHtml(pos))(),
-				updateCounts: () => {
-					stateViews.count.innerHTML = String(sum);
-					const timeStr = d3format(sumtime);
-					stateViews.time.innerHTML = timeStr;
-					stateViews.bar.children[0].style.width = sumtime / maxTimeLayerstack * 100 * 1e3 + "%";
-					stateViews.bar.children[0].style.backgroundColor = googlePalette(0);
-				}
-			};
-			switchRow = stateViews;
-			ui.appendChild(stateViews.ping2);
-			ui.appendChild(stateViews.ping1);
-			ui.appendChild(stateViews.label);
-			ui.appendChild(stateViews.count);
-			ui.appendChild(stateViews.time);
-			ui.appendChild(stateViews.view);
-			ui.appendChild(stateViews.bar);
-			stateViews.label.innerHTML = "Σ";
-			pos += 7;
-		};
-		ui.updateSwitch = function(onOff) {
-			switchRow.view.style.marginLeft = onOff ? "2.12em" : ".25em";
-		};
-		ui.updateCounts = function(onOff) {
-			sum = 0;
-			sumtime = 0;
-			rows.forEach((e) => e.updateCounts(onOff));
-			ping(switchRow.ping1);
-			ping(switchRow.ping2, sum > maxElementCountGlobal);
-			switchRow.updateCounts();
-		};
-		return ui;
-	}
-	var NoHypertreeMeta = class {
-		constructor() {
-			this.update = {
-				parent: () => {},
-				model: () => {},
-				lang: () => {},
-				layout: () => {},
-				transformation: () => {}
-			};
-		}
-	};
-	var HypertreeMeta = class {
-		constructor({ view, model }) {
-			this.update = {
-				parent: () => this.updateParent(),
-				all: () => {},
-				model: () => {
-					this.udView.update.model();
-					this.lsView.update.data();
-				},
-				lang: () => {
-					this.udView.update.lang();
-				},
-				layout: () => {
-					this.udView.update.layout();
-					this.lsView.update.data();
-				},
-				transformation: () => {
-					this.udView.update.transformation();
-					this.lsView.update.data();
-				}
-			};
-			this.view = view;
-			this.model = model;
-			this.updateParent();
-		}
-		updateParent() {
-			this.udView = new UnitdiskMeta({
-				view: {
-					parent: this.view.parent,
-					className: "data",
-					hypertree: this.model
-				},
-				model: this.model.unitdisk
-			});
-			this.lsView = new LayerStackMeta({
-				view: {
-					parent: this.view.parent,
-					className: "data",
-					hypertree: this.model
-				},
-				model: this.model.unitdisk
-			});
-		}
-	};
-	var HypertreeMetaNav = class {
-		constructor({ view, model }) {
-			this.update = {
-				parent: () => this.updateParent(),
-				model: () => {
-					this.udView.update.model();
-					this.udNav.update.model();
-					this.lsView.update.data();
-					this.lsNav.update.data();
-					this.lsNavParam.update.data();
-				},
-				lang: () => {
-					this.udView.update.lang();
-					this.udNav.update.lang();
-				},
-				layout: () => {
-					this.udView.update.layout();
-					this.udNav.update.layout();
-					this.lsView.update.data();
-					this.lsNav.update.data();
-					this.lsNavParam.update.data();
-				},
-				transformation: () => {
-					this.udView.update.transformation();
-					this.udNav.update.transformation();
-					this.lsView.update.data();
-					this.lsNav.update.data();
-					this.lsNavParam.update.data();
-				}
-			};
-			this.htmlCarUd = `
-        <div class="left carousel carousel-slider" data-indicators="true">
-            <div id="meta-ud-data" class="carousel-item"></div>
-            <div id="meta-ud-nav" class="carousel-item"></div>            
-        </div>`;
-			this.htmlCarLs = `
-        <div class="right carousel carousel-slider" data-indicators="true">
-            <div id="meta-ls-data" class="carousel-item"></div>
-            <div id="meta-ls-bg" class="carousel-item"></div>
-            <div id="meta-ls-nav" class="carousel-item"></div>
-        </div>`;
-			this.view = view;
-			this.model = model;
-			this.updateParent();
-		}
-		updateParent() {
-			this.view.html = HTML$1.parse(this.htmlCarUd)();
-			this.view.parent.appendChild(this.view.html);
-			this.view.html2 = HTML$1.parse(this.htmlCarLs)();
-			this.view.parent.appendChild(this.view.html2);
-			window.M.Carousel.init(document.querySelectorAll(".carousel"), {
-				fullWidth: true,
-				noWrap: true
-			});
-			const navUnitDisk = this.model.unitdisk;
-			this.udView = new UnitdiskMeta({
-				view: {
-					parent: this.view.html.querySelector("#meta-ud-data"),
-					className: "data",
-					hypertree: this.model
-				},
-				model: navUnitDisk.mainView
-			});
-			this.udNav = new UnitdiskMeta({
-				view: {
-					parent: this.view.html.querySelector("#meta-ud-nav"),
-					className: "nav",
-					hypertree: this.model
-				},
-				model: navUnitDisk.navParameter
-			});
-			this.lsView = new LayerStackMeta({
-				view: {
-					parent: this.view.html2.querySelector("#meta-ls-data"),
-					className: "data",
-					hypertree: this.model
-				},
-				model: navUnitDisk.mainView
-			});
-			this.lsNav = new LayerStackMeta({
-				view: {
-					parent: this.view.html2.querySelector("#meta-ls-bg"),
-					className: "navBg",
-					hypertree: this.model
-				},
-				model: navUnitDisk.navBackground
-			});
-			this.lsNavParam = new LayerStackMeta({
-				view: {
-					parent: this.view.html2.querySelector("#meta-ls-nav"),
-					className: "nav",
-					hypertree: this.model
-				},
-				model: this.model.unitdisk.navParameter
-			});
-		}
-	};
-	var D3UpdatePattern = class {
-		constructor(args) {
-			this.update = {
-				parent: () => this.updateParent(),
-				data: () => this.updateData(),
-				transformation: () => this.elements.call(this.args.updateTransform),
-				style: () => this.elements.call(this.args.updateColor)
-			};
-			this.mayEval = (d) => typeof d === "function" ? d() : d;
-			this.args = args;
-			this.updateParent();
-		}
-		updateParent() {
-			this.mainSvgGroup = this.args.parent.append("g").attr("id", this.args.name).attr("clip-path", this.args.clip ? `url(${this.args.clip})` : void 0).style("transform", compositing.mode === "layers" ? "translateZ(0)" : null);
-			this.elements = this.mainSvgGroup.selectAll(this.args.elementType);
-		}
-		updateData() {
-			this.data = [];
-			var isAnimating = this.args.layer.view.hypertree.isAnimationRunning();
-			const layerArgs = this.args.layer.args;
-			if (!layerArgs.invisible && !(isAnimating && layerArgs.hideOnDrag)) this.data = this.mayEval(this.args.data);
-			this.elements = this.elements.data(this.data, (d) => d && d.mergeId);
-			this.elements.exit().remove();
-			const newElements = this.elements.enter().append(this.args.elementType).attr("class", this.args.className).call(this.args.create);
-			this.elements = this.elements.merge(newElements).call(this.args.updateTransform).call(this.args.updateColor);
-		}
-		addTextBackgroundRects(paddingLeftRight, paddingTopBottom, height, layername, background = true) {
-			this.mainSvgGroup.selectAll("rect.caption-background").remove();
-			var svgRootHere = this.mainSvgGroup;
-			var T = this;
-			var geometry = T.args.layer.view.hypertree.args.geometry;
-			if (T.args.layer.view.unitdisk) this.mainSvgGroup.selectAll("text").each(function(d, i, v) {
-				{
-					var view = v[i];
-					var w = d.precalc[layername + "len"] || 0;
-					var lines = view.childElementCount || 1;
-					var h = geometry.captionHeight * lines;
-					const b = typeof background === "function" ? background(d) : background;
-					const text = this;
-					const prev = text.previousElementSibling;
-					const before = prev && prev.classList.contains("caption-hover") ? prev : text;
-					if (w && b) svgRootHere.insert("rect", (d) => before).attr("x", (x) => -paddingLeftRight / 2).attr("y", (x) => -paddingTopBottom - geometry.captionHeight / 2).attr("rx", (x) => .01).attr("ry", (x) => .03).attr("width", (x) => w + paddingLeftRight).attr("height", (x) => h + paddingTopBottom).attr("transform", (x) => view.attributes.transform.value).classed("caption-background", true).style("fill", typeof b === "string" ? b : null);
-				}
-			});
-		}
-	};
-	var LabelLayer = class {
-		constructor(view, args) {
-			this.update = {
-				parent: () => this.attach(),
-				data: () => {
-					this.d3updatePattern.update.data();
-					if (this.args.background) this.d3updatePattern.addTextBackgroundRects(paddingLeftRight$2, paddingTopBottom$2, .05, this.args.name, this.args.background);
-				},
-				transformation: () => {
-					this.d3updatePattern.update.transformation();
-				},
-				style: () => {
-					this.d3updatePattern.update.style();
-				}
-			};
-			this.view = view;
-			this.args = args;
-			this.name = args.name;
-		}
-		attach() {
-			const $this = this;
-			function offset(d, i, v) {
-				return $this.args.transform(d, $this.args.delta(d, i, v));
-			}
-			if (this.args.asImage) {
-				const className = this.args.className;
-				const linux = navigator.platform.includes("inux");
-				this.d3updatePattern = new D3UpdatePattern({
-					parent: this.view.parent,
-					layer: this,
-					clip: this.args.clip,
-					data: this.args.data,
-					name: this.name,
-					className: this.args.className,
-					elementType: "image",
-					create: (s) => s.each(function(d) {
-						const image = textImage(this.parentNode, className + (linux && d.precalc.icon ? " caption-icon" : ""), $this.args.text(d));
-						if (!image) return;
-						this.setAttribute("href", image.href);
-						this.setAttribute("x", String(image.x));
-						this.setAttribute("y", String(image.y));
-						this.setAttribute("width", String(image.w));
-						this.setAttribute("height", String(image.h));
-					}),
-					updateColor: (s) => s,
-					updateTransform: (s) => s.attr("transform", offset)
-				});
-				return;
-			}
-			this.d3updatePattern = new D3UpdatePattern({
-				parent: this.view.parent,
-				layer: this,
-				clip: this.args.clip,
-				data: this.args.data,
-				name: this.name,
-				className: this.args.className,
-				elementType: "text",
-				create: (s) => s.classed("P", (d) => d.name == "P").classed("caption-icon", (d) => d.precalc.icon && navigator.platform.includes("inux")).style("stroke", (d) => d.pathes && d.pathes.labelcolor).style("fill", (d) => this.args.color(d)).call((s) => setLabelText(s, this.args.text)),
-				updateColor: (s) => s.style("stroke", (d) => d.pathes && d.pathes.labelcolor).style("fill", (d) => this.args.color(d)).call(markHoveredLabel),
-				updateTransform: (s) => s.attr("transform", offset).call(markHoveredLabel)
-			});
-		}
-	};
-	var paddingLeftRight$2 = .08;
-	var paddingTopBottom$2 = .02;
-	/**
-	* Text as a bitmap (option asImage, used by the emoji layer). Emoji glyphs drawn as
-	* SVG text get re-rasterized on every update, which made the emoji layer the most
-	* expensive one. Each distinct text is measured once as SVG text in its layer (so
-	* size and position match the text it replaces), drawn once on a canvas in the same
-	* font, and then reused as an <image> with a data URL.
-	*/
-	var textImages = /* @__PURE__ */ new Map();
-	function textImage(group, className, text) {
-		const key = className + "\0" + text;
-		let image = textImages.get(key);
-		if (image) return image;
-		const svgText = document.createElementNS("http://www.w3.org/2000/svg", "text");
-		svgText.setAttribute("class", className);
-		svgText.textContent = text;
-		group.appendChild(svgText);
-		const bb = svgText.getBBox();
-		const family = getComputedStyle(svgText).fontFamily;
-		group.removeChild(svgText);
-		if (!bb.width || !bb.height) return void 0;
-		const px = 96 * (window.devicePixelRatio || 1);
-		const canvas = document.createElement("canvas");
-		const ctx = canvas.getContext("2d");
-		ctx.font = `${px}px ${family}`;
-		const m = ctx.measureText(text);
-		const ascent = m.fontBoundingBoxAscent || px * .9, descent = m.fontBoundingBoxDescent || px * .25;
-		canvas.width = Math.max(1, Math.ceil(m.width));
-		canvas.height = Math.max(1, Math.ceil(ascent + descent));
-		ctx.font = `${px}px ${family}`;
-		ctx.textBaseline = "alphabetic";
-		const inkLeft = m.actualBoundingBoxLeft || 0, inkWidth = (m.actualBoundingBoxRight || m.width) + inkLeft;
-		ctx.fillText(text, (canvas.width - inkWidth) / 2 + inkLeft, ascent);
-		image = {
-			href: canvas.toDataURL(),
-			x: bb.x,
-			y: bb.y,
-			w: bb.width,
-			h: bb.height
-		};
-		textImages.set(key, image);
-		return image;
-	}
-	/**
-	* Sets the text of label elements. A '\n' in the text gives several lines (tspans
-	* below each other, 1.2 em apart); the first line stays where a one-line label is.
-	*/
-	function setLabelText(s, text) {
-		return s.each(function(d) {
-			const t = text(d);
-			if (this.__labelText === t && this.__labelText !== void 0) return;
-			this.__labelText = t;
-			const lines = typeof t === "string" ? t.split("\n") : [t];
-			if (lines.length === 1) {
-				this.textContent = t === void 0 || t === null ? "" : t;
-				return;
-			}
-			this.textContent = "";
-			lines.forEach((line, i) => {
-				const span = document.createElementNS("http://www.w3.org/2000/svg", "tspan");
-				span.setAttribute("x", "0");
-				if (i > 0) span.setAttribute("dy", "1.2em");
-				span.textContent = line;
-				this.appendChild(span);
-			});
-		});
-	}
-	/**
-	* The label of the hovered node stands out (all label layers): class caption-hovered
-	* on its text (an opaque halo, CSS) and an opaque box with a border behind it
-	* (rect.caption-hover, in the label's group just before the text, with the text's
-	* transform). Called with the layer's text elements on every style and transform
-	* update; a label can be hovered by pointing at the label itself
-	* (interaction-layer-2.ts: labelNodeAt).
-	*/
-	function markHoveredLabel(s) {
-		s.classed("caption-hovered", (d) => Boolean(d && d.hovered));
-		const first = s.node();
-		const group = first && first.parentNode;
-		if (!group) return;
-		let hovered = null;
-		s.each(function(d) {
-			if (d && d.hovered) hovered = this;
-		});
-		let rect = group.querySelector(":scope > rect.caption-hover");
-		if (!hovered) {
-			if (rect) rect.remove();
-			return;
-		}
-		if (!rect) {
-			rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-			rect.setAttribute("class", "caption-hover");
-		}
-		if (rect.nextSibling !== hovered) group.insertBefore(rect, hovered);
-		let background = rect.previousElementSibling;
-		if (background && !background.classList.contains("caption-background")) background = null;
-		if (background) for (const a of [
-			"x",
-			"y",
-			"width",
-			"height",
-			"rx",
-			"ry"
-		]) rect.setAttribute(a, background.getAttribute(a) || "0");
-		else {
-			const b = hovered.getBBox();
-			if (!b.width) {
-				rect.setAttribute("width", "0");
-				return;
-			}
-			const pad = b.height * .25;
-			rect.setAttribute("x", String(b.x - pad));
-			rect.setAttribute("y", String(b.y - pad * .5));
-			rect.setAttribute("width", String(b.width + 2 * pad));
-			rect.setAttribute("height", String(b.height + pad));
-			rect.setAttribute("rx", String(pad));
-			rect.removeAttribute("ry");
-		}
-		const t = hovered.getAttribute("transform");
-		if (t) rect.setAttribute("transform", t);
-		else rect.removeAttribute("transform");
-	}
-	var bboxCenter = (d, cacheId = "labelslen") => {
-		var w = d.precalc[cacheId];
-		var h = .045;
-		console.assert(w);
-		return {
-			re: -w / 2,
-			im: h / 3
-		};
-	};
-	var bboxOval = (d, cacheId = "labelslen", θn = void 0) => {
-		var w = d.precalc[cacheId];
-		var h = .045;
-		console.assert(w);
-		const θ = θn ? θn.θ : d.cachep.θ;
-		const result = {
-			re: (paddingLeftRight$2 / 2 + w / 2) * Math.cos(θ) - w / 2,
-			im: (paddingTopBottom$2 / 2 + h / 2) * Math.sin(θ) + h / 3
-		};
-		console.assert(!!result.re);
-		return result;
-	};
-	var CellLayer = class {
-		constructor(view, args) {
-			this.name = "cells";
-			this.update = {
-				parent: () => this.attach(),
-				data: () => this.d3updatePattern.update.data(),
-				transformation: () => this.d3updatePattern.update.transformation(),
-				style: () => this.d3updatePattern.update.style()
-			};
-			this.view = view;
-			this.args = args;
-		}
-		attach() {
-			this.d3updatePattern = new D3UpdatePattern({
-				parent: this.view.parent,
-				layer: this,
-				clip: this.args.clip,
-				data: this.args.data,
-				name: this.name,
-				className: "cell",
-				elementType: "polygon",
-				create: (s) => s.attr("id", (d) => "cell-" + d.data.mergeId).classed("leaf", false).classed("lazy", true).style("stroke", (d) => d.pathes && d.pathes.labelcolor || this.args.stroke(d)).style("stroke-width", (d) => d.pathes && d.pathes.labelcolor || this.args.strokeWidth(d)),
-				updateColor: (s) => {
-					const showHover = this.args.hover !== false;
-					const showSelection = this.args.selection !== false;
-					return s.classed("hovered", (d) => showHover && !!d.data.hovered).classed("selected", (d) => showSelection && !!d.data.selected).style("fill", (d) => d.pathes && d.pathes.labelcolor || this.args.fill(d));
-				},
-				updateTransform: (s) => s.attr("points", (d) => {
-					return d && d.join(" ");
-				})
-			});
-		}
-	};
-	var BackgroundLayer = class {
-		constructor(view, args) {
-			this.name = "background";
-			this.update = {
-				parent: () => this.attach(),
-				data: () => this.d3updatePattern.update.data(),
-				transformation: () => this.d3updatePattern.update.transformation(),
-				style: () => this.d3updatePattern.update.style()
-			};
-			this.view = view;
-			this.args = args;
-		}
-		attach() {
-			if (this.view.hypertree.args.geometry.halfPlane) {
-				this.d3updatePattern = new D3UpdatePattern({
-					parent: this.view.parent,
-					layer: this,
-					data: [1],
-					name: this.name,
-					className: "background-halfplane",
-					elementType: "rect",
-					create: (s) => s.attr("x", -20).attr("y", -2).attr("width", 40).attr("height", 3).attr("fill", "rgba(128,128,128,.07)").attr("stroke", "rgba(128,128,128,.5)").attr("stroke-width", .003),
-					updateColor: (s) => {},
-					updateTransform: (s) => {}
-				});
-				return;
-			}
-			this.d3updatePattern = new D3UpdatePattern({
-				parent: this.view.parent,
-				layer: this,
-				data: [1],
-				name: this.name,
-				className: "background-circle",
-				elementType: "circle",
-				create: (s) => s.attr("r", 1).attr("fill", "url(#exampleGradient)"),
-				updateColor: (s) => {},
-				updateTransform: (s) => {}
-			});
-		}
-	};
-	function showsState(mode, d, kind, defaultMode = "path") {
-		if (mode === false || mode === "none" || !d) return false;
-		if ((mode === void 0 || mode === true ? defaultMode : mode) === "node") return !!(kind === "hover" ? d.hovered : d.selected);
-		return !!(d.pathes && (kind === "hover" ? d.pathes.isPartOfAnyHoverPath : d.pathes.isPartOfAnySelectionPath));
-	}
-	var d_star = Symbol$1().size(.0012).type(star$1)();
-	var SymbolLayer = class {
-		constructor(view, args) {
-			this.update = {
-				parent: () => this.attach(),
-				data: () => this.d3updatePattern.update.data(),
-				transformation: () => this.d3updatePattern.update.transformation(),
-				style: () => this.d3updatePattern.update.style()
-			};
-			this.view = view;
-			this.args = args;
-			this.name = args.name;
-		}
-		attach() {
-			this.d3updatePattern = new D3UpdatePattern({
-				parent: this.view.parent,
-				layer: this,
-				data: this.args.data,
-				name: this.args.name,
-				className: "node",
-				elementType: "path",
-				create: (s) => s.classed("root", (d) => !d.parent).classed("lazy", (d) => d.hasOutChildren).classed("leaf", (d) => d.parent).classed("exit", (d) => (!d.children || !d.children.length) && d.data && d.data.numLeafs),
-				updateColor: (s) => s.classed("hovered", (d) => showsState(this.args.hover, d, "hover") && d.parent).classed("selected", (d) => showsState(this.args.selection, d, "selection") && d.parent),
-				updateTransform: (s) => s.attr("transform", (d) => this.args.transform(d)).attr("d", (d) => d_star)
-			});
-		}
-	};
-	var ArcLayer = class {
-		constructor(view, args) {
-			this.update = {
-				parent: () => this.attach(),
-				data: () => this.d3updatePattern.update.data(),
-				transformation: () => this.d3updatePattern.update.transformation(),
-				style: () => this.d3updatePattern.update.style()
-			};
-			this.arcOptions = {
-				"+": this.svgArc("1", "0"),
-				"-": this.svgArc("0", "1"),
-				"0": (d) => this.svgArcLine(d)
-			};
-			this.view = view;
-			this.args = args;
-			this.name = args.name;
-		}
-		attach() {
-			this.d3updatePattern = new D3UpdatePattern({
-				parent: this.view.parent,
-				layer: this,
-				clip: this.args.clip,
-				data: this.args.data,
-				name: this.name,
-				className: this.args.className,
-				elementType: this.args.curvature === "l" ? "line" : "path",
-				create: (s) => s.attr("stroke-linecap", "round"),
-				updateColor: (s) => this.args.classed(s, this.args.width, this.args.stroke),
-				updateTransform: (s) => {
-					const c = (d) => this.args.curvature;
-					if (this.args.curvature == "l") s.attr("x1", (d) => this.args.nodePos(d).re).attr("y1", (d) => this.args.nodePos(d).im).attr("x2", (d) => this.args.nodePos(d.parent).re).attr("y2", (d) => this.args.nodePos(d.parent).im).attr("stroke-width", (d) => this.args.strokeWidth(d));
-					else s.attr("d", (d) => this.arcOptions[c(d)](d)).attr("stroke-width", (d) => this.args.strokeWidth(d));
-				}
-			});
-		}
-		svgArc(a, b) {
-			var $this = this;
-			return function(d) {
-				if ($this.view.hypertree.args.geometry.halfPlane) return $this.halfPlaneArc(d);
-				var arcP1 = $this.args.nodePos(d);
-				var arcP2 = d.parent ? $this.args.nodePos(d.parent) : {
-					re: arcP1.re,
-					im: 1
-				};
-				console.assert(!!arcP1);
-				console.assert(!!arcP2);
-				var arcC = arcCenter(arcP1, arcP2);
-				var r = CktoCp(CsubC(arcP2, arcC.c)).r;
-				if (isNaN(r) || r > 1e3) r = 0;
-				var f = arcC.d > 0 ? a : b;
-				var s = $this.args.nodePosStr(d);
-				var e = d.parent ? $this.args.nodePosStr(d.parent) : `${arcP1.re} 1`;
-				return `M ${s} A ${r} ${r}, 0, 0, ${f}, ${e}`;
-			};
-		}
-		halfPlaneArc(d) {
-			const p1 = this.args.nodePos(d);
-			if (!d.parent) return `M ${p1.re} ${p1.im} L ${p1.re} -3`;
-			const p2 = this.args.nodePos(d.parent);
-			const x1 = p1.re, y1 = 1 - p1.im, x2 = p2.re, y2 = 1 - p2.im;
-			if (Math.abs(x1 - x2) < 1e-9 * (1 + Math.abs(x1))) return `M ${x1} ${p1.im} L ${x2} ${p2.im}`;
-			const c = (x1 * x1 + y1 * y1 - x2 * x2 - y2 * y2) / (2 * (x1 - x2));
-			const r = Math.hypot(x1 - c, y1);
-			return `M ${x1} ${p1.im} A ${r} ${r}, 0, 0, ${x1 < x2 ? 1 : 0}, ${x2} ${p2.im}`;
-		}
-		svgArcLine(d) {
-			return `M ${this.args.nodePosStr(d)} L ${d.parent ? this.args.nodePosStr(d.parent) : `${this.args.nodePos(d).re} 1`}`;
-		}
-	};
-	var navBgNodeR = .012;
-	var arcWidth$1 = (d) => .022 * d.distScale * d.precalc.weightScale;
-	var nodeRadiusOffset = (ud) => (d) => CptoCk({
-		θ: (d.layoutReference || d.layout).zp.θ,
-		r: navBgNodeR
-	});
-	var labelDelta = (ud) => (d, i, v) => CaddC(nodeRadiusOffset(ud)(d), bboxCenter(d, "labellen-bg"));
-	var navBackgroundLayers = [
-		(v, ud) => new BackgroundLayer(v, {}),
-		(v, ud) => new CellLayer(v, {
-			invisible: true,
-			hideOnDrag: true,
-			clip: "#circle-clip" + ud.args.clipRadius,
-			data: () => ud.cache.cells
-		}),
-		(v, ud) => new ArcLayer(v, {
-			name: "link-arcs",
-			className: "arc",
-			curvature: ud.view.hypertree.args.geometry.linkCurvature,
-			data: () => ud.cache.links,
-			nodePos: (n) => (n.layoutReference || n.layout).z,
-			nodePosStr: (n) => (n.layoutReference || n.layout).zStrCache,
-			width: (n) => arcWidth$1(n),
-			classed: (s, w) => {}
-		}),
-		(v, ud) => new ArcLayer(v, {
-			name: "link-arcs-focus",
-			className: "arc-focus",
-			curvature: ud.view.hypertree.args.geometry.linkCurvature,
-			data: () => ud.cache.links.filter((n) => n.parent.cachep.r < .6),
-			nodePos: (n) => (n.layoutReference || n.layout).z,
-			nodePosStr: (n) => (n.layoutReference || n.layout).zStrCache,
-			width: (d) => arcWidth$1(d) + .005 * d.dampedDistScale,
-			classed: (s, w) => {}
-		}),
-		(v, ud) => new ArcLayer(v, {
-			name: "path-arcs",
-			className: "arc",
-			curvature: ud.view.hypertree.args.geometry.linkCurvature,
-			data: () => ud.cache.paths,
-			nodePos: (n) => (n.layoutReference || n.layout).z,
-			nodePosStr: (n) => (n.layoutReference || n.layout).zStrCache,
-			width: (d) => arcWidth$1(d) + .013 * d.dampedDistScale,
-			classed: (s) => s.classed("hovered-path-nav", (d) => d.pathes && d.pathes.isPartOfAnyHoverPath).classed("selected-path-nav", (d) => d.pathes && d.pathes.isPartOfAnySelectionPath).style("stroke", (d) => d.pathes && d.pathes.finalcolor)
-		}),
-		(v, ud) => new LabelLayer(v, {
-			invisible: true,
-			hideOnDrag: true,
-			name: "emojis",
-			className: "caption label-big",
-			data: () => ud.cache.emojis,
-			text: (d) => d.precalc.icon,
-			delta: labelDelta(ud),
-			transform: (d, delta) => ` translate(${CtoStr(CaddC((d.layoutReference || d.layout).z, delta))})`
-		}),
-		(v, ud) => new LabelLayer(v, {
-			name: "labels",
-			className: "caption label-big",
-			data: () => ud.view.hypertree.args.objects.selections,
-			text: (d) => d.precalc.label,
-			delta: labelDelta(ud),
-			transform: (d, delta) => ` translate(${CtoStr(CaddC((d.layoutReference || d.layout).z, delta))})`
-		}),
-		(v, ud) => new SymbolLayer(v, {
-			name: "symbols",
-			data: () => ud.cache.spezialNodes,
-			r: (d) => .03,
-			transform: (d) => ` translate(${(d.layoutReference || d.layout).zStrCache}) scale(${d.dampedDistScale})`
-		})
-	];
-	var NodeLayer = class {
-		constructor(view, args) {
-			this.update = {
-				parent: () => this.attach(),
-				data: () => this.d3updatePattern.update.data(),
-				transformation: () => this.d3updatePattern.update.transformation(),
-				style: () => this.d3updatePattern.update.style()
-			};
-			this.view = view;
-			this.args = args;
-			this.name = args.name;
-		}
-		radius(d) {
-			const r = this.args.r(d);
-			const k = this.args.lazyScale === void 0 || this.args.lazyScale === null ? 1.5 : this.args.lazyScale;
-			return d.hasOutChildren ? r * k : r;
-		}
-		attach() {
-			const $this = this;
-			this.d3updatePattern = new D3UpdatePattern({
-				parent: this.view.parent,
-				layer: this,
-				clip: this.args.clip,
-				data: this.args.data,
-				name: this.args.name,
-				className: this.args.className,
-				elementType: "circle",
-				create: (s) => s.attr("r", (d) => this.radius(d)).classed("root", (d) => !d.parent).classed("lazy", (d) => !!d.hasOutChildren).classed("leaf", (d) => d.parent).classed("exit", (d) => (!d.children || !d.children.length) && d.data && d.data.numLeafs).style("stroke", (d) => d.pathes && d.pathes.labelcolor || this.args.stroke(d)).style("stroke-width", (d) => d.pathes && d.pathes.labelcolor || this.args.strokeWidth(d)),
-				updateColor: (s) => s.classed("hovered", (d) => showsState(this.args.hover, d, "hover")).classed("selected", (d) => showsState(this.args.selection, d, "selection")).style("fill", (d) => d.pathes && d.pathes.labelcolor || this.args.fill(d)),
-				updateTransform: (s) => s.attr("transform", (d) => this.args.transform(d)).each(function(d) {
-					const r = $this.radius(d);
-					if (this.__r !== r) {
-						this.setAttribute("r", String(r));
-						this.__r = r;
-					}
-					const lazy = !!d.hasOutChildren;
-					if (this.__lazy !== lazy) {
-						this.classList.toggle("lazy", lazy);
-						this.__lazy = lazy;
-					}
-				})
-			});
-		}
-	};
-	var InteractionLayer = class {
-		constructor(view, args) {
-			this.name = "interaction";
-			this.update = {
-				parent: () => this.initMouseStuff(),
-				data: () => {},
-				transformation: () => {},
-				style: () => {}
-			};
-			this.ev = null;
-			this.currMousePosAsArr = () => pointer(this.ev, this.view.parent.node());
-			this.currMousePosAsC = () => ArrtoC(this.currMousePosAsArr());
-			this.findNodeByCell = () => {
-				var m = this.currMousePosAsArr();
-				var find = this.view.unitdisk.cache.voronoiDiagram.find(m[0], m[1]);
-				return find ? find.data : void 0;
-			};
-			this.onDragStart = (n, m) => {
-				this.ping(m);
-				if (!this.animationTimer) this.view.unitdisk.args.transformation.onDragStart(m);
-			};
-			this.onDragλ = (l) => {
-				this.view.unitdisk.args.transformation.onDragλ(l);
-				this.view.hypertree.updateLayoutPath_(this.view.unitdisk.args.transformation.cache.centerNode);
-				this.view.hypertree.update.transformation();
-			};
-			this.onDragByNode = (n, s, e) => {
-				if (n && n.name == "θ") {
-					this.view.unitdisk.args.transformation.onDragθ(s, e);
-					this.view.hypertree.update.transformation();
-				} else if (n && n.name == "λ") this.onDragλ(πify(CktoCp(CmulR(e, -1)).θ) / 2 / Math.PI);
-				else {
-					this.view.unitdisk.args.transformation.onDragP(s, e);
-					this.view.hypertree.update.transformation();
-					this.ping(e);
-				}
-			};
-			this.onDragEnd = (n, s, e) => {
-				const ti3 = timer(() => {
-					ti3.stop();
-					this.view.hypertree.args.objects.traces.length = 0;
-					this.view.hypertree.update.transformation();
-				}, 2e3);
-				this.ping(e);
-				var dc = CsubC(s, e);
-				if (Math.sqrt(dc.re * dc.re + dc.im * dc.im) < .006) this.onClick(n, e);
-				this.view.unitdisk.args.transformation.onDragEnd(e);
-				this.view.hypertree.update.transformation();
-			};
-			this.animationTimer = null;
-			this.cancelAnimationTimer = () => {
-				this.animationTimer.stop();
-				this.animationTimer = null;
-			};
-			this.dblClickTimer = null;
-			this.cancelClickTimer = () => {
-				clearTimeout(this.dblClickTimer);
-				this.dblClickTimer = null;
-			};
-			this.onClick = (n, m) => {
-				if (this.ev && this.ev.preventDefault) this.ev.preventDefault();
-				m = m || this.currMousePosAsC();
-				if (!this.dblClickTimer) this.dblClickTimer = setTimeout(() => {
-					this.dblClickTimer = null;
-					if (n != this.view.unitdisk.args.transformation.cache.centerNode) this.animateTo(n, m);
-					else this.args.onClick(n, m);
-				}, 300);
-				else this.cancelClickTimer();
-			};
-			this.onDblClick = (n) => {
-				this.ev.preventDefault();
-				var m = this.currMousePosAsC();
-				this.cancelClickTimer();
-				this.args.onClick(n, m);
-			};
-			this.view = view;
-			this.args = args;
-		}
-		initMouseStuff() {
-			var dragStartPoint = null;
-			var dragStartElement = null;
-			let lasttransform = null;
-			var zoom$2 = zoom().on("zoom", (e) => {
-				this.ev = e;
-				if (this.ev && this.ev.sourceEvent && this.ev.sourceEvent.type === "wheel") {
-					const λΔ = this.ev.sourceEvent.deltaY / 100 * 2 * Math.PI / 16;
-					const newλp = this.view.unitdisk.args.transformation.state.λ - λΔ;
-					if (newλp < .8 * Math.PI * 2 && newλp > .1 * Math.PI) this.onDragλ(newλp);
-				} else if (this.ev && this.ev.sourceEvent && this.ev.sourceEvent.type === "touchmove") {
-					if (this.ev.transform.k !== lasttransform) {
-						lasttransform = this.ev.transform.k;
-						const newλp = this.ev.transform.k + .5;
-						const min = .1 * Math.PI;
-						const max = .8 * Math.PI * 2;
-						if (newλp.θ < max && newλp.θ > min) this.onDragλ(newλp);
-					} else this.onDragByNode(dragStartElement, dragStartPoint, this.currMousePosAsC());
-				} else this.onDragByNode(dragStartElement, dragStartPoint, this.currMousePosAsC());
-			}).on("start", (e) => {
-				this.ev = e;
-				this.onDragStart(dragStartElement = this.findNodeByCell(), dragStartPoint = this.currMousePosAsC());
-			}).on("end", (e) => {
-				this.ev = e;
-				this.onDragEnd(dragStartElement, dragStartPoint, this.currMousePosAsC());
-			});
-			const htapi = this.view.hypertree.api;
-			const hoverpath = this.view.hypertree.args.objects.pathes[0];
-			this.view.parent.append("circle").attr("class", "mouse-circle").attr("r", this.args.mouseRadius).on("dblclick", (e) => {
-				this.ev = e;
-				this.onDblClick(this.findNodeByCell());
-			}).on("mousemove", (e) => {
-				this.ev = e;
-				htapi.setPathHead(hoverpath, this.findNodeByCell());
-			}).on("mouseout", (e) => htapi.setPathHead(hoverpath, void 0)).call(zoom$2).on("dblclick.zoom", null);
-		}
-		ping(p) {}
-		animateTo(n, m) {
-			if (this.animationTimer) return;
-			this.onDragStart(n, m);
-			var md = CktoCp(m), initR = md.r, step = 1, steps = 20;
-			this.animationTimer = timer(() => {
-				md.r = initR * (1 - sigmoid(step++ / steps));
-				if (step > steps) {
-					this.cancelAnimationTimer();
-					this.onDragEnd(n, m, CptoCk(md));
-				} else this.onDragByNode(n, m, CptoCk(md));
-			}, 1);
-		}
-	};
-	var rotate$1 = (d) => d.name === "λ" ? " rotate(-25)" : " rotate(0)";
-	var deltaMap = {
-		P: {
-			re: .0025,
-			im: .05
-		},
-		θ: {
-			re: .0025,
-			im: .019
-		},
-		λ: {
-			re: .0025,
-			im: .013
-		}
-	};
-	var Pscale = (ud) => (d) => lengthDilledation(d.cache) * (1 - ud.args.transformation.state.λ);
-	var navParameterLayers = [
-		(v, ud) => new CellLayer(v, {
-			invisible: true,
-			hideOnDrag: true,
-			clip: "#circle-clip" + ud.args.clipRadius,
-			data: () => ud.cache.cells
-		}),
-		(v, ud) => new NodeLayer(v, {
-			invisible: true,
-			hideOnDrag: true,
-			name: "nodes",
-			className: "node",
-			data: () => ud.cache.unculledNodes,
-			r: (d) => d.name === "P" ? Pscale(ud)(d) : ud.args.nodeRadius(ud, d),
-			transform: (d) => d.transformStrCache
-		}),
-		(v, ud) => new LabelLayer(v, {
-			invisible: true,
-			hideOnDrag: true,
-			name: "labels",
-			className: "caption",
-			data: () => ud.cache.unculledNodes,
-			text: (d) => ({
-				P: "+",
-				θ: "🠆",
-				λ: "⚲"
-			})[d.name],
-			delta: (d) => deltaMap[d.name],
-			transform: (d, delta) => ` translate(${d.cache.re + delta.re} ${d.cache.im + delta.im})` + rotate$1(d)
-		}),
-		(v, ud) => new InteractionLayer(v, {
-			mouseRadius: 1.5,
-			onClick: (n, m) => {}
-		})
-	];
-	var UnitDisk = class {
-		constructor(view, args) {
-			this.HypertreeMetaType = HypertreeMeta;
-			this.api = { setTransform: (t, tn) => this.mainsvg.attr("transform", t) };
-			this.update = {
-				parent: () => this.updateParent(),
-				cache: () => this.args.cacheUpdate(this, this.cache),
-				data: () => this.update.layout(),
-				layout: () => {
-					this.args.cacheUpdate(this, this.cache);
-					this.layerStack.update.data();
-				},
-				transformation: () => {
-					this.args.cacheUpdate(this, this.cache);
-					this.layerStack.update.data();
-				},
-				pathes: () => {
-					this.args.cacheUpdate(this, this.cache);
-					this.layerStack.update.pathes();
-				}
-			};
-			this.view = view;
-			this.args = args;
-			this.cache = args.transformation.cache;
-			this.update.parent();
-		}
-		updateParent() {
-			this.mainsvg = select$1(this.view.parent).append("g").attr("class", this.view.className).attr("transform", this.view.position);
-			const halfPlane = this.view.hypertree && this.view.hypertree.args.geometry.halfPlane;
-			const clip = this.mainsvg.append("clipPath").attr("id", "circle-clip" + this.args.clipRadius);
-			if (halfPlane) clip.append("rect").attr("x", -20).attr("y", -2).attr("width", 40).attr("height", 3);
-			else clip.append("circle").attr("r", this.args.clipRadius);
-			this.voronoiLayout = voronoiLayout((d) => d.cache.re, (d) => d.cache.im, halfPlane ? [[-20, -2], [20, 1]] : [[-2, -2], [2, 2]]);
-			this.layerStack = new LayerStack({
-				parent: this.mainsvg,
-				unitdisk: this
-			});
-		}
-	};
-	var UnitDiskNav = class {
-		get voronoiLayout() {
-			return this.mainView.voronoiLayout;
-		}
-		constructor(view, args) {
-			this.HypertreeMetaType = HypertreeMetaNav;
-			this.api = { setTransform: (t, tn) => {
-				this.mainView.api.setTransform(t, null);
-				this.navBackground.api.setTransform(tn, null);
-				this.navParameter.api.setTransform(tn, null);
-			} };
-			this.update = {
-				data: () => {
-					this.navBackground.args.data = this.args.data;
-					this.mainView.args.data = this.args.data;
-					this.update.layout();
-				},
-				cache: () => {
-					this.mainView.update.cache();
-					this.navParameter.update.cache();
-				},
-				layout: () => {
-					this.mainView.update.cache();
-					this.navParameter.update.cache();
-					this.navBackground.layerStack.update.data();
-					this.mainView.layerStack.update.data();
-					this.navParameter.layerStack.update.data();
-				},
-				transformation: () => {
-					this.mainView.update.cache();
-					this.navParameter.update.cache();
-					this.mainView.layerStack.update.data();
-					this.navParameter.layerStack.update.data();
-					this.navBackground.layerStack.update.pathes();
-				},
-				pathes: () => {
-					this.mainView.update.cache();
-					this.mainView.layerStack.update.data();
-					this.navBackground.layerStack.update.pathes();
-					this.navParameter.layerStack.update.data();
-				}
-			};
-			this.view = view;
-			this.args = args;
-			this.mainView = new UnitDisk(view, args);
-			this.cache = this.mainView.cache;
-			this.layerStack = this.mainView.layerStack;
-			this.navBackground = new UnitDisk({
-				parent: view.parent,
-				className: "nav-background-disc",
-				position: "translate(95,95) scale(70)",
-				hypertree: view.hypertree
-			}, {
-				data: args.data,
-				decorator: null,
-				cacheUpdate: null,
-				transformation: args.transformation,
-				transform: (n) => n.layout.z,
-				nodeRadius: () => navBgNodeR,
-				nodeScale: args.nodeScale,
-				nodeFilter: args.nodeFilter,
-				linkWidth: args.linkWidth,
-				linkCurvature: args.linkCurvature,
-				layers: navBackgroundLayers,
-				layerOptions: {},
-				offsetEmoji: args.offsetLabels,
-				offsetLabels: args.offsetLabels,
-				clipRadius: 1,
-				captionBackground: args.captionBackground,
-				captionFont: args.captionFont,
-				captionHeight: args.captionHeight
-			});
-			var navTransformation = new NegTransformation(new PanTransformation(args.transformation.state));
-			this.navParameter = new UnitDisk({
-				parent: view.parent,
-				className: "nav-parameter-disc",
-				position: "translate(95,95) scale(70)",
-				hypertree: view.hypertree
-			}, {
-				data: navdata(),
-				decorator: null,
-				layers: navParameterLayers,
-				layerOptions: {},
-				cacheUpdate: (ud, cache) => {
-					var t0 = performance.now();
-					cache.unculledNodes = dfsFlat(ud.args.data);
-					function setCacheZ(n, v) {
-						n.cache = v;
-						n.cachep = CktoCp(n.cache);
-						n.strCache = n.cache.re + " " + n.cache.im;
-						n.scaleStrText = ` scale(1)`;
-						n.transformStrCache = ` translate(${n.strCache})`;
-					}
-					setCacheZ(cache.unculledNodes[0], CmulR(args.transformation.state.P, -1));
-					setCacheZ(cache.unculledNodes[1], CmulR(args.transformation.state.θ, -1.08));
-					setCacheZ(cache.unculledNodes[2], CptoCk({
-						θ: args.transformation.state.λ * 2 * Math.PI,
-						r: -1.08
-					}));
-					cache.voronoiDiagram = ud.voronoiLayout(cache.unculledNodes);
-					cache.cells = cache.voronoiDiagram.polygons();
-					ud.cacheMeta = {
-						minWeight: [0],
-						Δ: [performance.now() - t0]
-					};
-				},
-				transformation: navTransformation,
-				transform: (n) => CmulR(n, -1),
-				nodeRadius: () => .16,
-				nodeScale: () => 1,
-				nodeFilter: () => true,
-				linkWidth: args.linkWidth,
-				linkCurvature: args.linkCurvature,
-				offsetEmoji: args.offsetLabels,
-				offsetLabels: args.offsetLabels,
-				clipRadius: 1.7,
-				captionBackground: args.captionBackground,
-				captionFont: args.captionFont,
-				captionHeight: args.captionHeight
-			});
-		}
-	};
-	/** The direction away from the center (unit vector, view coordinates). */
-	function outward(n, halfPlane) {
-		if (halfPlane) return {
-			re: 0,
-			im: 1
-		};
-		const r = Math.hypot(n.cache.re, n.cache.im);
-		return r > 1e-9 ? {
-			re: n.cache.re / r,
-			im: n.cache.im / r
-		} : {
-			re: 0,
-			im: -1
-		};
-	}
-	var smoothstep = (a, b, x) => {
-		const t = Math.max(0, Math.min(1, (x - a) / (b - a)));
-		return t * t * (3 - 2 * t);
-	};
-	/** 0 in the center (label above its node) .. 1 near the rim (label outward). */
-	function rimness(n, halfPlane) {
-		return smoothstep(.3, .85, halfPlane ? Math.max(0, n.cache.im) : Math.hypot(n.cache.re, n.cache.im));
-	}
-	/** The box of a label: width from the measured text, height from the caption height. */
-	function labelSize(n, lenprop, captionHeight, k) {
-		const lines = String(n.precalc.label || "").split("\n").length;
-		return {
-			w: (n.precalc[lenprop] || 0) * k,
-			h: captionHeight * lines * k
-		};
-	}
-	/** The center of a box at distance `gap` from the node in direction u (box edge to node). */
-	function besideNode(n, u, w, h, gap) {
-		const d = Math.abs(u.re) * w / 2 + Math.abs(u.im) * h / 2 + gap;
-		return {
-			re: n.cache.re + u.re * d,
-			im: n.cache.im + u.im * d
-		};
-	}
-	/** The rest position (box center): above the node in the center, outward toward the rim. */
-	function restCenter(n, w, h, gap, halfPlane) {
-		const t = rimness(n, halfPlane);
-		const above = besideNode(n, {
-			re: 0,
-			im: -1
-		}, w, h, gap);
-		const out = besideNode(n, outward(n, halfPlane), w, h, gap);
-		return {
-			re: above.re + (out.re - above.re) * t,
-			im: above.im + (out.im - above.im) * t
-		};
-	}
-	/** Overlap of two boxes along x and y (both > 0: they overlap), with a margin. */
-	function overlap(a, b, margin = 0) {
-		return {
-			x: (a.w + b.w) / 2 + margin - Math.abs(a.x - b.x),
-			y: (a.h + b.h) / 2 + margin - Math.abs(a.y - b.y)
-		};
-	}
-	var overlapping = (a, b, margin = 0) => {
-		const o = overlap(a, b, margin);
-		return o.x > 0 && o.y > 0;
-	};
-	/** Distance from a point to a box (0 inside). */
-	function distanceToBox(p, b) {
-		const dx = Math.max(0, Math.abs(p.re - b.x) - b.w / 2);
-		const dy = Math.max(0, Math.abs(p.im - b.y) - b.h / 2);
-		return Math.hypot(dx, dy);
-	}
-	var FOLLOW = 70;
-	var MAX_SPEED = .001;
-	var MAX_DT = 50;
-	var IDLE_DT = 16;
-	var ease = (g) => g * g * (3 - 2 * g);
-	var LabelTransitions = class {
-		/**
-		* duration: ms of growing and shrinking (0: none)
-		* redraw:   draws the layer (called on animation frames while anything moves)
-		* active:   false while the layer is invisible: no frames
-		*/
-		constructor(duration, redraw, active) {
-			this.duration = duration;
-			this.redraw = redraw;
-			this.active = active;
-			this.states = /* @__PURE__ */ new Map();
-			this.last = 0;
-			this.dt = 0;
-			this.frame = 0;
-			this.moving = false;
-		}
-		get animated() {
-			return this.duration() > 0;
-		}
-		/**
-		* Starts a frame: the shown labels grow, the others shrink. A shrinking label is
-		* dropped when it reaches 0 or its node is no longer visible (its position is no
-		* longer updated). Returns the labels to draw: the shown ones (their order), then
-		* the shrinking ones.
-		*/
-		advance(shown, visible) {
-			const now = performance.now();
-			const gap = this.last ? now - this.last : 0;
-			this.dt = gap > MAX_DT ? IDLE_DT : gap;
-			this.last = now;
-			this.moving = false;
-			const step = this.animated ? this.dt / this.duration() : 1;
-			const isShown = new Set(shown);
-			for (const n of shown) {
-				const s = this.states.get(n);
-				if (s) s.show = true;
-				else this.states.set(n, {
-					g: this.animated ? 0 : 1,
-					show: true,
-					tx: NaN,
-					ty: NaN,
-					dx: NaN,
-					dy: NaN
-				});
-			}
-			const leaving = [];
-			for (const [n, s] of this.states) {
-				if (!isShown.has(n)) s.show = false;
-				s.g = Math.max(0, Math.min(1, s.g + (s.show ? step : -step)));
-				if (s.show ? s.g < 1 : s.g > 0) this.moving = true;
-				if (!s.show) {
-					if (s.g <= 0 || !visible(n)) this.states.delete(n);
-					else leaving.push(n);
-				}
-			}
-			return leaving.length ? shown.concat(leaving) : shown;
-		}
-		/** The growth of a label, eased: 0 (not visible) .. 1 (full size). */
-		growth(n) {
-			const s = this.states.get(n);
-			return s ? ease(s.g) : 1;
-		}
-		/** The offset computed in the last frame (undefined for a new label). */
-		target(n) {
-			const s = this.states.get(n);
-			return s && !isNaN(s.tx) ? {
-				dx: s.tx,
-				dy: s.ty
-			} : void 0;
-		}
-		/**
-		* Sets the computed offset of a label from its node (undefined: keep the last one,
-		* e.g. for a shrinking label) and returns the offset to draw, which follows it
-		* smoothly (a new label starts at its computed offset).
-		*/
-		follow(n, tx, ty) {
-			const s = this.states.get(n);
-			if (!s) return {
-				dx: tx || 0,
-				dy: ty || 0
-			};
-			if (tx !== void 0) {
-				s.tx = tx;
-				s.ty = ty;
-			}
-			if (isNaN(s.dx) || !this.animated) {
-				s.dx = s.tx;
-				s.dy = s.ty;
-			} else {
-				const f = 1 - Math.exp(-this.dt / FOLLOW);
-				let mx = (s.tx - s.dx) * f, my = (s.ty - s.dy) * f;
-				const len = Math.hypot(mx, my), max = MAX_SPEED * this.dt;
-				if (len > max) {
-					mx *= max / len;
-					my *= max / len;
-				}
-				s.dx += mx;
-				s.dy += my;
-				if (Math.abs(s.tx - s.dx) + Math.abs(s.ty - s.dy) > 1e-4) this.moving = true;
-				else {
-					s.dx = s.tx;
-					s.dy = s.ty;
-				}
-			}
-			return {
-				dx: s.dx,
-				dy: s.dy
-			};
-		}
-		/** Ends a frame: while anything moves, the layer is drawn again on the next frame. */
-		finish() {
-			if (!this.moving || this.frame || typeof requestAnimationFrame === "undefined") return;
-			this.frame = requestAnimationFrame(() => {
-				this.frame = 0;
-				if (!this.active()) return;
-				if (performance.now() - this.last < 8) {
-					this.moving = true;
-					this.finish();
-					return;
-				}
-				this.redraw();
-			});
-		}
-	};
-	var paddingLeftRight$1 = .08;
-	var paddingTopBottom$1 = .02;
-	var ITERATIONS_MOVING = 8;
-	var ITERATIONS_SETTLED = 40;
-	var PULL = .25;
-	var INWARD = .25;
-	var MARGIN$1 = .004;
-	var LabelForceLayer = class {
-		constructor(view, args) {
-			this.drawn = [];
-			this.transitions = new LabelTransitions(() => {
-				const t = this.args.transition;
-				return t === void 0 || t === null ? 250 : t;
-			}, () => this.update.data(), () => !!this.d3updatePattern && !this.args.invisible);
-			this.update = {
-				parent: () => this.attach(),
-				force: () => {
-					if (this.args.invisible) return;
-					if (this.view.hypertree.isAnimationRunning() && this.args.hideOnDrag) return;
-					this.relax(this.view.hypertree.isAnimationRunning() ? ITERATIONS_MOVING : ITERATIONS_SETTLED);
-				},
-				data: () => {
-					this.update.force();
-					this.d3updatePattern.update.data();
-					this.d3updatePattern2.update.data();
-					if (this.args.background) this.d3updatePattern.addTextBackgroundRects(paddingLeftRight$1, paddingTopBottom$1, .05, this.args.name);
-				},
-				transformation: () => {
-					this.update.force();
-					this.d3updatePattern.update.transformation();
-					this.d3updatePattern2.update.transformation();
-				},
-				style: () => {
-					this.d3updatePattern.update.style();
-					this.d3updatePattern2.update.style();
-				}
-			};
-			this.view = view;
-			this.args = args;
-			this.name = args.name;
-		}
-		get halfPlane() {
-			return !!this.view.hypertree.args.geometry.halfPlane;
-		}
-		growth(n) {
-			return this.transitions.growth(n);
-		}
-		size(n) {
-			return (this.args.sizeOf ? this.args.sizeOf(n) : 1) * this.growth(n);
-		}
-		box(n) {
-			const k = this.size(n);
-			const { w, h } = labelSize(n, this.args.name + "len", this.view.hypertree.args.geometry.captionHeight, k);
-			const fp = n.forcepoints;
-			return {
-				x: fp.x,
-				y: fp.y,
-				w: w + paddingLeftRight$1 * k / 2,
-				h
-			};
-		}
-		gap(n) {
-			return .012 * this.size(n);
-		}
-		relax(iterations) {
-			const visible = new Set(this.view.unitdisk.cache.unculledNodes || []);
-			const labels = this.drawn = this.transitions.advance(this.args.data() || [], (n) => visible.has(n) && !n.outOfView);
-			const half = this.halfPlane;
-			const rest = /* @__PURE__ */ new Map();
-			for (const n of labels) {
-				const k = this.size(n);
-				const { w, h } = labelSize(n, this.args.name + "len", this.view.hypertree.args.geometry.captionHeight, k);
-				const r = restCenter(n, w, h, this.gap(n), half);
-				rest.set(n, {
-					x: r.re,
-					y: r.im
-				});
-				const t = this.transitions.target(n);
-				n.forcepoints = t ? {
-					x: n.cache.re + t.dx,
-					y: n.cache.im + t.dy
-				} : {
-					x: r.re,
-					y: r.im
-				};
-			}
-			const grown = labels.map((n) => this.growth(n));
-			for (let it = 0; it < iterations; it++) {
-				for (const n of labels) {
-					const r = rest.get(n), fp = n.forcepoints;
-					fp.x += (r.x - fp.x) * PULL;
-					fp.y += (r.y - fp.y) * PULL;
-				}
-				const boxes = labels.map((n) => this.box(n));
-				for (let i = 0; i < labels.length; i++) for (let j = i + 1; j < labels.length; j++) {
-					const a = boxes[i], b = boxes[j];
-					const o = overlap(a, b, MARGIN$1 * Math.min(grown[i], grown[j]));
-					if (o.x <= 0 || o.y <= 0) continue;
-					const alongX = o.x < o.y;
-					const s = alongX ? o.x : o.y;
-					const sign = alongX ? Math.sign(a.x - b.x || 1) : Math.sign(a.y - b.y || 1);
-					const da = alongX ? {
-						re: sign,
-						im: 0
-					} : {
-						re: 0,
-						im: sign
-					};
-					const ua = outward(labels[i], half), ub = outward(labels[j], half);
-					const wa = da.re * ua.re + da.im * ua.im < 0 ? INWARD : 1;
-					const wb = -da.re * ub.re - da.im * ub.im < 0 ? INWARD : 1;
-					const sa = s * wa / (wa + wb), sb = s * wb / (wa + wb);
-					const fa = labels[i].forcepoints, fb = labels[j].forcepoints;
-					fa.x += da.re * sa;
-					fa.y += da.im * sa;
-					fb.x -= da.re * sb;
-					fb.y -= da.im * sb;
-					a.x = fa.x;
-					a.y = fa.y;
-					b.x = fb.x;
-					b.y = fb.y;
-				}
-			}
-			for (const n of labels) {
-				const o = this.transitions.follow(n, n.forcepoints.x - n.cache.re, n.forcepoints.y - n.cache.im);
-				n.forcepoints = {
-					x: n.cache.re + o.dx,
-					y: n.cache.im + o.dy
-				};
-			}
-			this.transitions.finish();
-		}
-		labellen(d) {
-			return d.precalc[this.args.name + "len"] || 0;
-		}
-		showsLine(d) {
-			const mode = this.args.leaderLines || "auto";
-			if (mode === "never" || !d.forcepoints) return false;
-			if (mode === "always") return true;
-			return distanceToBox({
-				re: d.cache.re,
-				im: d.cache.im
-			}, this.box(d)) > this.gap(d) * 1.8;
-		}
-		attach() {
-			const T = this;
-			function calctransform(d, i, v) {
-				if (!d.forcepoints) return ` translate(${d.cache.re} ${d.cache.im})`;
-				const k = T.size(d);
-				return ` translate(${(d.forcepoints.x || 0) - T.labellen(d) / 2 * k} ${d.forcepoints.y || 0}) scale(${k})`;
-			}
-			this.d3updatePattern = new D3UpdatePattern({
-				parent: this.view.parent,
-				layer: this,
-				clip: this.args.clip,
-				data: () => this.drawn,
-				name: this.name,
-				className: this.args.className,
-				elementType: "text",
-				create: (s) => s.classed("P", (d) => d.name == "P").classed("caption-icon", (d) => d.precalc.icon && navigator.platform.includes("inux")).style("fill", (d) => d.pathes && d.pathes.labelcolor).call((s) => setLabelText(s, this.args.text)).attr("transform", calctransform),
-				updateColor: (s) => s.style("fill", (d) => d.pathes && d.pathes.labelcolor).call(markHoveredLabel),
-				updateTransform: (s) => s.attr("transform", calctransform).call((s) => setLabelText(s, this.args.text)).call(markHoveredLabel)
-			});
-			const lineEnd = (d) => {
-				const b = this.box(d);
-				return {
-					x: Math.max(b.x - b.w / 2, Math.min(b.x + b.w / 2, d.cache.re)),
-					y: Math.max(b.y - b.h / 2, Math.min(b.y + b.h / 2, d.cache.im))
-				};
-			};
-			this.d3updatePattern2 = new D3UpdatePattern({
-				parent: this.view.parent,
-				layer: this,
-				clip: this.args.clip,
-				data: () => this.drawn,
-				name: "label-link",
-				className: "label-link",
-				elementType: "line",
-				create: (s) => {},
-				updateColor: (s) => {},
-				updateTransform: (s) => s.style("display", (d) => this.showsLine(d) ? null : "none").style("opacity", (d) => {
-					const g = this.growth(d);
-					return g < 1 ? g : null;
-				}).attr("x1", (d) => d.forcepoints ? lineEnd(d).x : d.cache.re).attr("y1", (d) => d.forcepoints ? lineEnd(d).y : d.cache.im).attr("x2", (d) => d.cache.re).attr("y2", (d) => d.cache.im)
-			});
-		}
-	};
-	function doVoronoiStuff(ud, cache) {
-		cache.voronoiDiagram = ud.voronoiLayout(cache.unculledNodes.filter((n) => n.precalc.clickable));
-		cache.cells = cache.voronoiDiagram.polygons();
-	}
-	function doLabelStuff(ud, cache) {
-		cache.labels = selectLabels(ud, cache, ud.view.hypertree.args.filter.maxlabels);
-		cache.labelsByMax = {};
-	}
-	/**
-	* The labels of a label layer with the layer option maxLabels (default:
-	* filter.maxlabels, which gives cache.labels). Computed once per update and limit.
-	*/
-	function labelsFor(ud, max) {
-		const cache = ud.cache;
-		if (max === void 0 || max === null || max === ud.view.hypertree.args.filter.maxlabels) return cache.labels;
-		if (!cache.labelsByMax) cache.labelsByMax = {};
-		return cache.labelsByMax[max] || (cache.labelsByMax[max] = selectLabels(ud, cache, max));
-	}
-	/**
-	* The labels of a label layer: labelsFor(maxLabels), plus as its options ask
-	*   hoverLabel:      the node under the mouse (n.hovered)
-	*   hoverPathLabels: every node on the path from it to the root
-	* if they are visible and have a label. These come on top of the limit. Nodes with
-	* precalc.labelOnHover show their label only this way.
-	*/
-	function labelsWithHover(ud, args) {
-		const base = labelsFor(ud, args.maxLabels);
-		if (!args.hoverLabel && !args.hoverPathLabels) return base;
-		const extra = ud.cache.unculledNodes.filter((n) => n.precalc.label && !n.outOfView && (args.hoverLabel && n.hovered || args.hoverPathLabels && n.pathes && n.pathes.isPartOfAnyHoverPath));
-		if (!extra.length) return base;
-		const inBase = new Set(base);
-		return base.concat(extra.filter((n) => !inBase.has(n)));
-	}
-	/**
-	* The weight of a node when choosing labels (label layers, labels-placed priority):
-	* filter.labelScore (e.g. a felt importance), else (or when it gives undefined, null
-	* or NaN) the subtree weight precalc.cullingWeight.
-	*/
-	function labelWeight(ud, n) {
-		const labelScore = ud.view.hypertree.args.filter.labelScore;
-		const s = labelScore ? labelScore(n) : void 0;
-		return s === void 0 || s === null || isNaN(s) ? n.precalc.cullingWeight || 1 : s;
-	}
-	function selectLabels(ud, cache, max) {
-		const candidates = cache.unculledNodes.filter((n) => n.precalc.label && !n.outOfView && !n.precalc.labelOnHover);
-		const root = candidates.find((n) => !n.parent);
-		const others = candidates.filter((n) => n !== root);
-		const score = (n) => labelWeight(ud, n) * n.distScale * n.distScale;
-		if (others.length > max) others.sort((a, b) => score(b) - score(a));
-		const n = Math.max(0, root ? max - 1 : max);
-		const nearest = others.length > n ? others.slice(0, n) : others;
-		return root ? [root, ...nearest] : nearest;
-	}
-	function doImageStuff(ud, cache) {
-		cache.images = cache.unculledNodes.filter((e) => e.precalc.imageHref);
-	}
-	var paddingLeftRight = .08;
-	var paddingTopBottom = .02;
-	var MARGIN = .004;
-	var LabelPlacementLayer = class {
-		constructor(view, args) {
-			this.placed = [];
-			this.drawn = [];
-			this.boxes = /* @__PURE__ */ new Map();
-			this.last = /* @__PURE__ */ new Map();
-			this.transitions = new LabelTransitions(() => {
-				const t = this.args.transition;
-				return t === void 0 || t === null ? 250 : t;
-			}, () => this.update.data(), () => !!this.d3updatePattern && !this.args.invisible);
-			this.update = {
-				parent: () => this.attach(),
-				data: () => {
-					this.place();
-					this.redraw(true);
-				},
-				transformation: () => {
-					if (this.place()) this.redraw(true);
-					else this.redraw(false);
-				},
-				style: () => {
-					this.d3updatePattern.update.style();
-					this.d3updatePattern2.update.style();
-				}
-			};
-			this.view = view;
-			this.args = args;
-			this.name = args.name;
-		}
-		get halfPlane() {
-			return !!this.view.hypertree.args.geometry.halfPlane;
-		}
-		size(n) {
-			return this.args.sizeOf ? this.args.sizeOf(n) : 1;
-		}
-		gap(n) {
-			return .012 * this.size(n);
-		}
-		drawnBox(n) {
-			const b = this.boxes.get(n), g = this.transitions.growth(n);
-			return b && {
-				x: b.x,
-				y: b.y,
-				w: b.w * g,
-				h: b.h * g
-			};
-		}
-		priority(n) {
-			if (n.hovered) return 0xaa87bee538000;
-			if (n.pathes && n.pathes.isPartOfAnyHoverPath) return 0x71afd498d0000 + (1e3 - n.depth);
-			if (!n.parent) return 0x38d7ea4c68000;
-			return labelWeight(this.view.unitdisk, n) * n.distScale * n.distScale;
-		}
-		candidates(n, w, h) {
-			const gap = this.gap(n), half = this.halfPlane;
-			const rest = restCenter(n, w, h, gap, half);
-			const list = [{
-				id: "rest",
-				c: rest
-			}];
-			for (let i = 0; i < 8; i++) {
-				const a = -Math.PI / 2 + i * Math.PI / 4;
-				list.push({
-					id: "d" + i,
-					c: besideNode(n, {
-						re: Math.cos(a),
-						im: Math.sin(a)
-					}, w, h, gap)
-				});
-			}
-			const u = outward(n, half);
-			for (const turn of [
-				0,
-				.45,
-				-.45
-			]) for (const far of [
-				1,
-				1.8,
-				2.6
-			]) {
-				const v = {
-					re: u.re * Math.cos(turn) - u.im * Math.sin(turn),
-					im: u.re * Math.sin(turn) + u.im * Math.cos(turn)
-				};
-				list.push({
-					id: `o${turn}:${far}`,
-					c: besideNode(n, v, w, h, gap + (far - 1) * (h + w * .3))
-				});
-			}
-			const d = (c) => Math.hypot(c.re - rest.re, c.im - rest.im);
-			return list.sort((a, b) => d(a.c) - d(b.c));
-		}
-		/** Places the labels; returns true if the set of drawn labels changed. */
-		place() {
-			this.placed;
-			const labels = (this.args.data() || []).slice().sort((a, b) => this.priority(b) - this.priority(a));
-			const captionHeight = this.view.hypertree.args.geometry.captionHeight;
-			const boxes = [];
-			const placed = [];
-			const last = /* @__PURE__ */ new Map();
-			for (const n of labels) {
-				const k = this.size(n);
-				const { w, h } = labelSize(n, this.args.name + "len", captionHeight, k);
-				if (!w) continue;
-				const W = w + paddingLeftRight * k / 2;
-				const cands = this.candidates(n, W, h);
-				const prev = this.last.get(n);
-				if (prev) {
-					const i = cands.findIndex((c) => c.id === prev);
-					if (i > 0) cands.unshift(cands.splice(i, 1)[0]);
-				}
-				for (const cand of cands) {
-					const b = {
-						x: cand.c.re,
-						y: cand.c.im,
-						w: W,
-						h
-					};
-					if (boxes.some((o) => overlapping(o, b, MARGIN))) continue;
-					boxes.push(b);
-					placed.push(n);
-					n.placedLabel = b;
-					last.set(n, cand.id);
-					break;
-				}
-			}
-			this.last = last;
-			this.placed = placed;
-			const visible = new Set(this.view.unitdisk.cache.unculledNodes || []);
-			const drawn = this.transitions.advance(placed, (n) => visible.has(n) && !n.outOfView);
-			const isPlaced = new Set(placed);
-			const drawnBoxes = /* @__PURE__ */ new Map();
-			for (const n of drawn) {
-				const b = isPlaced.has(n) ? n.placedLabel : this.boxes.get(n);
-				if (!b) continue;
-				const o = isPlaced.has(n) ? this.transitions.follow(n, b.x - n.cache.re, b.y - n.cache.im) : this.transitions.follow(n);
-				drawnBoxes.set(n, {
-					x: n.cache.re + o.dx,
-					y: n.cache.im + o.dy,
-					w: b.w,
-					h: b.h
-				});
-			}
-			const prev = this.drawn;
-			this.drawn = drawn.filter((n) => drawnBoxes.has(n));
-			this.boxes = drawnBoxes;
-			this.transitions.finish();
-			return prev.length !== this.drawn.length || prev.some((n, i) => n !== this.drawn[i]);
-		}
-		redraw(dataChanged) {
-			if (dataChanged) {
-				this.d3updatePattern.update.data();
-				this.d3updatePattern2.update.data();
-				if (this.args.background) this.d3updatePattern.addTextBackgroundRects(paddingLeftRight, paddingTopBottom, .05, this.args.name, this.args.background);
-			} else {
-				this.d3updatePattern.update.transformation();
-				this.d3updatePattern2.update.transformation();
-			}
-		}
-		showsLine(d) {
-			const mode = this.args.leaderLines || "auto";
-			const b = this.drawnBox(d);
-			if (mode === "never" || !b) return false;
-			if (mode === "always") return true;
-			return distanceToBox({
-				re: d.cache.re,
-				im: d.cache.im
-			}, b) > this.gap(d) * 1.8;
-		}
-		attach() {
-			const transform = (d) => {
-				const b = this.boxes.get(d), k = this.size(d) * this.transitions.growth(d);
-				const w = (d.precalc[this.args.name + "len"] || 0) * k;
-				return b ? ` translate(${b.x - w / 2} ${b.y}) scale(${k})` : ` translate(${d.cache.re} ${d.cache.im})`;
-			};
-			this.d3updatePattern = new D3UpdatePattern({
-				parent: this.view.parent,
-				layer: this,
-				clip: this.args.clip,
-				data: () => this.drawn,
-				name: this.name,
-				className: this.args.className,
-				elementType: "text",
-				create: (s) => s.style("fill", (d) => d.pathes && d.pathes.labelcolor).call((s) => setLabelText(s, this.args.text)).attr("transform", transform),
-				updateColor: (s) => s.style("fill", (d) => d.pathes && d.pathes.labelcolor).call(markHoveredLabel),
-				updateTransform: (s) => s.attr("transform", transform).call((s) => setLabelText(s, this.args.text)).call(markHoveredLabel)
-			});
-			const lineEnd = (d) => {
-				const b = this.drawnBox(d);
-				return {
-					x: Math.max(b.x - b.w / 2, Math.min(b.x + b.w / 2, d.cache.re)),
-					y: Math.max(b.y - b.h / 2, Math.min(b.y + b.h / 2, d.cache.im))
-				};
-			};
-			this.d3updatePattern2 = new D3UpdatePattern({
-				parent: this.view.parent,
-				layer: this,
-				clip: this.args.clip,
-				data: () => this.drawn,
-				name: this.name + "-link",
-				className: "label-link",
-				elementType: "line",
-				create: (s) => {},
-				updateColor: (s) => {},
-				updateTransform: (s) => s.style("display", (d) => this.showsLine(d) ? null : "none").style("opacity", (d) => {
-					const g = this.transitions.growth(d);
-					return g < 1 ? g : null;
-				}).attr("x1", (d) => lineEnd(d).x).attr("y1", (d) => lineEnd(d).y).attr("x2", (d) => d.cache.re).attr("y2", (d) => d.cache.im)
-			});
-		}
-	};
-	var ONE = {
-		re: 1,
-		im: 0
-	};
-	var rotate = (z, g) => ({
-		re: z.re * g.re - z.im * g.im,
-		im: z.re * g.im + z.im * g.re
-	});
-	var unrotate = (z, g) => ({
-		re: z.re * g.re + z.im * g.im,
-		im: z.im * g.re - z.re * g.im
-	});
-	function toHalfPlane(z, g = ONE) {
-		z = unrotate(z, g);
-		const d = (1 - z.re) * (1 - z.re) + z.im * z.im;
-		return {
-			re: -2 * z.im / d,
-			im: (1 - z.re * z.re - z.im * z.im) / d
-		};
-	}
-	function toView(z, g = ONE) {
-		const w = toHalfPlane(z, g);
-		return {
-			re: w.re,
-			im: 1 - w.im
-		};
-	}
-	/** The direction that goes to infinity: the middle of the gap of the root wedge. */
-	function infinityOf(rootWedge) {
-		const a = rootWedge ? rootWedge.orientation + Math.PI : Math.PI / 2;
-		return {
-			re: Math.cos(a),
-			im: Math.sin(a)
-		};
-	}
-	/** A point of the view (pointer position) back into the disk: z = (w − i) / (w + i). */
-	function viewToDisk(p, g = ONE) {
-		const wr = p.re, wi = 1 - p.im;
-		const nr = wr, ni = wi - 1;
-		const dr = wr, di = wi + 1;
-		const d = dr * dr + di * di;
-		return rotate({
-			re: (nr * dr + ni * di) / d,
-			im: (ni * dr - nr * di) / d
-		}, g);
-	}
-	/** Local scale of the map |dw/dz| = 2 / |1 − z|²: sizes in the view. */
-	function viewScale(z, g = ONE) {
-		z = unrotate(z, g);
-		return 2 / ((1 - z.re) * (1 - z.re) + z.im * z.im);
-	}
-	var maxHeight = 3;
-	var maxDrawnHeight = 1e6;
-	/**
-	* Maps the visible nodes of a frame into the view (call after culling): keeps the disk
-	* position in n.cacheDisk (interaction), sets n.cache and the derived strings to the
-	* view position and multiplies the distance scale with the scale of the map (capped).
-	* Every node is mapped (a link needs both ends in the view coordinates); nodes far
-	* above the view get n.outOfView.
-	*/
-	function mapToView(nodes, g = ONE) {
-		for (const n of nodes) {
-			const z = {
-				re: n.cache.re,
-				im: n.cache.im
-			};
-			const w = toHalfPlane(z, g);
-			if (!(w.im < maxDrawnHeight)) {
-				w.im = maxDrawnHeight;
-				if (!isFinite(w.re)) w.re = 0;
-			}
-			n.outOfView = w.im > maxHeight;
-			n.cacheDisk = z;
-			n.cache = {
-				re: w.re,
-				im: 1 - w.im
-			};
-			n.cachep = CktoCp(n.cache);
-			n.distScale = Math.min(n.distScale * viewScale(z, g) / 2, 1);
-			n.dampedDistScale = n.distScale * (.5 / n.distScale + .5);
-			n.strCache = `${n.cache.re} ${n.cache.im}`;
-			n.transformStrCache = ` translate(${n.strCache})`;
-			n.scaleStrText = ` scale(${n.dampedDistScale})`;
-		}
-		return nodes;
-	}
-	/** The disk position of a node (n.cache holds the view position in the half-plane view). */
-	var diskPos = (n) => n.cacheDisk || n.cache;
-	var _InteractionLayer;
-	var NODE_HIT_PX = 8;
-	var InteractionLayer2 = class InteractionLayer2 {
-		constructor(view, args) {
-			this.name = "interaction-2";
-			this.wheelSettleTimer = void 0;
-			this.update = {
-				parent: () => this.updateParent(),
-				data: () => {},
-				transformation: () => {},
-				style: () => {}
-			};
-			this.hoverNode = void 0;
-			this.holdTimer = null;
-			this.held = false;
-			this.pointerQueue = [];
-			this.pointerFlushScheduled = false;
-			this.panStart = null;
-			this.pinchInitDist = null;
-			this.pinchInitλp = null;
-			this.nopinch = null;
-			this.pinchcenter = null;
-			this.pinchPreservingNode = null;
-			this.toDisk = (p) => this.halfPlane ? viewToDisk(p, this.infinity) : p;
-			this.toViewPos = (z) => this.halfPlane ? toView(z, this.infinity) : z;
-			this.mousePosAsC = (e) => ArrtoC(pointer(e, this.view.parent.node()));
-			this.findNodeAt = (m) => {
-				var find = this.view.unitdisk.cache.voronoiDiagram.find(m.re, m.im);
-				return find ? find.data : void 0;
-			};
-			this.nodeAt = (v, cellToo = true) => {
-				const q = this.view.unitdisk.cache.voronoiDiagram && this.view.unitdisk.cache.voronoiDiagram.find(v.re, v.im);
-				const cell = q ? q.data : void 0;
-				if (cell && cell.cache && this.screenDistance(v, cell.cache) <= NODE_HIT_PX) return cell;
-				return this.labelNodeAt(v) || (cellToo ? cell : void 0);
-			};
-			this.findUnculledNodeByCell = (m) => {
-				let best = void 0, bestD = Infinity;
-				for (const n of this.view.unitdisk.cache.unculledNodes) {
-					const z = diskPos(n);
-					const dx = z.re - m.re, dy = z.im - m.im;
-					const d = dx * dx + dy * dy;
-					if (d < bestD) {
-						bestD = d;
-						best = n;
-					}
-				}
-				return best;
-			};
-			this.view = view;
-			this.args = args;
-			this.htapi = this.view.hypertree.api;
-			this.hoverpath = this.view.hypertree.args.objects.pathes[0];
-			this.mousedown = false;
-		}
-		updateParent() {
-			const mousehandlers = (de) => de.on("wheel", (e) => this.fireMouseWheelEvent(e)).on("mousedown", (e) => this.fireMouseDown(e)).on("mousemove", (e) => this.fireMouseMove(e)).on("mouseup", (e) => this.fireMouseUp(e)).on("mouseout", (e) => {
-				this.setHoverNode(void 0);
-				this.htapi.setPathHead(this.hoverpath, void 0);
-			}).on("touchstart", (e) => this.fireTouchEvent(e, "onPointerStart")).on("touchmove", (e) => this.fireTouchEvent(e, "onPointerMove")).on("touchend", (e) => this.fireTouchEvent(e, "onPointerEnd")).on("touchcancel", (e) => this.fireTouchEvent(e, "onPointerEnd"));
-			this.view.parent.append("circle").attr("class", "mouse-circle").attr("r", 5).call(mousehandlers);
-			this.view.parent.append("circle").attr("class", "mouse-circle-cursor").attr("r", this.args.mouseRadius).call(mousehandlers);
-		}
-		fireMouseDown(e) {
-			this.mousedown = true;
-			this.fireMouseEvent(e, "onPointerStart");
-		}
-		fireMouseMove(e) {
-			if (this.mousedown) this.fireMouseEvent(e, "onPointerMove");
-			else if (!this.view.hypertree.isInitializing && !this.view.hypertree.isAnimationRunning()) {
-				const p = this.mousePosAsC(e), m = this.toDisk(p);
-				const n = !(this.view.hypertree.args.interaction.hover !== "none") ? void 0 : this.nodeAt(p, m.re * m.re + m.im * m.im <= 1);
-				this.setHoverNode(n);
-				this.htapi.setPathHead(this.hoverpath, n);
-			}
-		}
-		setHoverNode(n) {
-			if (n === this.hoverNode) return;
-			this.hoverNode = n;
-			const i = this.view.hypertree.args.interaction;
-			if (i.onNodeHover) i.onNodeHover(n);
-			if (i.onHoverNodeChange) i.onHoverNodeChange(n);
-		}
-		startHoldTimer(m) {
-			this.cancelHoldTimer();
-			this.held = false;
-			const i = this.view.hypertree.args.interaction;
-			if (!i.onNodeHold) return;
-			this.holdTimer = setTimeout(() => {
-				this.holdTimer = null;
-				if (this.view.hypertree.args.objects.traces.length !== 1 || !this.nopinch) return;
-				const v = this.toViewPos(m);
-				this.held = true;
-				i.onNodeHold(this.nodeAt(v), v, this);
-			}, i.holdDuration || 500);
-		}
-		cancelHoldTimer() {
-			if (this.holdTimer) clearTimeout(this.holdTimer);
-			this.holdTimer = null;
-		}
-		fireMouseUp(e) {
-			this.mousedown = false;
-			this.fireMouseEvent(e, "onPointerEnd");
-		}
-		fireMouseEvent(e, eventName) {
-			e.stopPropagation();
-			e.preventDefault();
-			this.enqueuePointerEvent(eventName, "mouse", this.toDisk(this.mousePosAsC(e)));
-		}
-		enqueuePointerEvent(name, pid, m) {
-			const last = this.pointerQueue[this.pointerQueue.length - 1];
-			if (name === "onPointerMove" && last && last.name === name && last.pid === pid) last.m = m;
-			else this.pointerQueue.push({
-				name,
-				pid,
-				m
-			});
-			if (this.pointerFlushScheduled) return;
-			this.pointerFlushScheduled = true;
-			requestAnimationFrame(() => {
-				this.pointerFlushScheduled = false;
-				const queue = this.pointerQueue;
-				this.pointerQueue = [];
-				let update = false;
-				for (const e of queue) update = this[e.name](e.pid, e.m) || update;
-				if (update) this.view.hypertree.update.transformation();
-			});
-		}
-		fireMouseWheelEvent(e) {
-			e.stopPropagation();
-			e.preventDefault();
-			this.view.hypertree.stopAnimation();
-			const mΔ = e.deltaY;
-			const oldλp = this.view.unitdisk.args.transformation.state.λ;
-			const Δsens = this.view.hypertree.args.interaction.wheelFactor;
-			const newλp = this.view.hypertree.clampλ(mΔ >= 0 ? oldλp / Δsens : oldλp * Δsens);
-			if (newλp !== oldλp) {
-				const m = this.toDisk(this.mousePosAsC(e));
-				const ud = this.view.unitdisk;
-				ud.isWheeling = true;
-				clearTimeout(this.wheelSettleTimer);
-				this.wheelSettleTimer = setTimeout(() => {
-					ud.isWheeling = false;
-					this.view.hypertree.update.transformation();
-				}, InteractionLayer2.wheelSettle);
-				requestAnimationFrame(() => {
-					const t = this.view.unitdisk.args.transformation;
-					const preservingNode = this.findUnculledNodeByCell(m);
-					t.onDragλ(newλp);
-					this.view.hypertree.updateLayoutPath_(preservingNode);
-					t.state.P = compose(t.state, shift(t.state, {
-						re: 0,
-						im: 0
-					}, diskPos(preservingNode))).P;
-					this.view.hypertree.update.transformation();
-				});
-			}
-		}
-		fireTouchEvent(e, eventName) {
-			e.stopPropagation();
-			e.preventDefault();
-			const changedTouches = e.changedTouches;
-			for (let i = 0; i < changedTouches.length; ++i) this.enqueuePointerEvent(eventName, changedTouches[i].identifier, this.toDisk(this.mousePosAsC(changedTouches[i])));
-		}
-		onPointerStart(pid, m) {
-			if (CktoCp(m).r >= 1) return false;
-			this.view.hypertree.args.objects.traces.push({
-				id: pid,
-				points: [m]
-			});
-			if (this.view.hypertree.args.objects.traces.length === 1) {
-				this.view.hypertree.stopAnimation();
-				this.dST = clone(this.view.unitdisk.args.transformation.state);
-				this.view.unitdisk.isDraging = true;
-				this.panStart = m;
-				this.nopinch = true;
-				this.startHoldTimer(m);
-			} else if (this.view.hypertree.args.objects.traces.length === 2) {
-				this.cancelHoldTimer();
-				const t0 = this.view.hypertree.args.objects.traces[0];
-				const t0e = t0.points[t0.points.length - 1];
-				this.pinchcenter = CmulR(CaddC(t0e, m), .5);
-				this.view.unitdisk.pinchcenter = this.pinchcenter;
-				this.pinchPreservingNode = this.findUnculledNodeByCell(this.pinchcenter);
-				this.pinchInitDist = this.dist(t0e, m);
-				this.pinchInitλp = this.view.unitdisk.args.transformation.state.λ;
-				this.nopinch = false;
-			}
-			return false;
-		}
-		onPointerMove(pid, m) {
-			const trace = this.findTrace(pid);
-			if (!trace) return false;
-			trace.points.push(m);
-			if (this.holdTimer && this.dist(this.panStart, m) >= .006) this.cancelHoldTimer();
-			if (this.view.hypertree.args.objects.traces.length === 1) {
-				const t = this.view.unitdisk.args.transformation;
-				t.state.P = compose(this.dST, shift(this.dST, this.panStart, maxR(m, .9))).P;
-			} else if (this.view.hypertree.args.objects.traces.length === 2) {
-				const t0 = this.view.hypertree.args.objects.traces[0];
-				const t0e = t0.points[t0.points.length - 1];
-				const t1 = this.view.hypertree.args.objects.traces[1];
-				const t1e = t1.points[t1.points.length - 1];
-				const f = this.dist(t0e, t1e) / this.pinchInitDist;
-				const newλp = this.view.hypertree.clampλ(this.pinchInitλp * f);
-				{
-					const pinchcenter2 = maxR(CmulR(CaddC(t0e, t1e), .5), this.args.mouseRadius);
-					const t = this.view.unitdisk.args.transformation;
-					t.onDragλ(newλp);
-					this.view.hypertree.updateLayoutPath_(this.pinchPreservingNode);
-					t.state.P = compose(t.state, shift(t.state, {
-						re: 0,
-						im: 0
-					}, diskPos(this.pinchPreservingNode))).P;
-					t.state.P = compose(t.state, shift(t.state, this.pinchcenter, pinchcenter2)).P;
-					this.pinchcenter = CmulR(CaddC(this.pinchcenter, pinchcenter2), .5);
-					this.view.unitdisk.pinchcenter = this.pinchcenter;
-				}
-			}
-			return true;
-		}
-		onPointerEnd(pid, m) {
-			this.view.hypertree.args.objects.traces = this.view.hypertree.args.objects.traces.filter((e) => e.id !== pid);
-			this.pinchcenter = void 0;
-			this.view.unitdisk.pinchcenter = this.pinchcenter;
-			this.pinchPreservingNode = void 0;
-			if (this.view.hypertree.args.objects.traces.length === 0) {
-				this.dST = void 0;
-				this.view.unitdisk.isDraging = false;
-				this.cancelHoldTimer();
-				if (this.held) {
-					this.held = false;
-					return false;
-				}
-				if (this.dist(this.panStart, m) < .006 && this.nopinch) {
-					if (CktoCp(m).r < 1) {
-						this.click(m);
-						return false;
-					}
-				}
-			} else if (this.view.hypertree.args.objects.traces.length === 1) {
-				const otherPoints = this.view.hypertree.args.objects.traces[0].points;
-				this.panStart = otherPoints[otherPoints.length - 1];
-				this.dST = clone(this.view.unitdisk.args.transformation.state);
-				this.view.unitdisk.isDraging = true;
-			}
-			return true;
-		}
-		ripple(n, m, ok, useClip = true) {
-			if (useClip && this.view.unitdisk.layerStack.layers["cells"] && !this.view.unitdisk.layerStack.layers["cells"].args.invisible) {
-				const rippleClip = this.view.parent.append("clipPath").attr("id", `cell-clip-${n.mergeId}`).html(`<use xlink:href="#cell-${n.mergeId}"></use>`);
-				const rippleCircle = this.view.parent.insert("g", ":first-child").attr("class", "ripple-world").attr("clip-path", `url(#cell-clip-${n.mergeId})`).append("circle").attr("class", "ripple-circle").attr("r", .1).attr("cx", m.re).attr("cy", m.im).attr("transform-origin", `${m.re}  ${m.im}`).on("animationend", () => {
-					rippleCircle.remove();
-					rippleClip.remove();
-					ok();
-				});
-			} else {
-				const rippleCircle = this.view.parent.insert("g", ":first-child").attr("class", "ripple-world").append("circle").attr("class", "ripple-circle").attr("r", .1).attr("cx", m.re).attr("cy", m.im).attr("transform-origin", `${m.re}  ${m.im}`).on("animationend", () => {
-					rippleCircle.remove();
-					ok();
-				});
-			}
-		}
-		click(m) {
-			const v = this.toViewPos(m);
-			const n = this.nodeAt(v);
-			if (!this.view.hypertree.isAnimationRunning()) {
-				const i = this.view.hypertree.args.interaction;
-				if (n && i.clickAction === "select") this.view.hypertree.api.toggleSelection(n);
-				if (n && i.clickAction === "goto") this.view.hypertree.api.gotoNode(n);
-				i.onNodeClick(n, v, this);
-			}
-		}
-		findTrace(pid) {
-			return this.view.hypertree.args.objects.traces.find((e) => e.id === pid);
-		}
-		get halfPlane() {
-			return !!this.view.hypertree.args.geometry.halfPlane;
-		}
-		get infinity() {
-			return infinityOf(this.view.hypertree.args.layout.rootWedge);
-		}
-		screenDistance(a, b) {
-			const plane = this.view.parent && this.view.parent.node && this.view.parent.node();
-			const ctm = plane && plane.getScreenCTM && plane.getScreenCTM();
-			const scale = ctm ? Math.hypot(ctm.a, ctm.b) : 1;
-			return Math.hypot(a.re - b.re, a.im - b.im) * scale;
-		}
-		labelNodeAt(v) {
-			const plane = this.view.parent && this.view.parent.node && this.view.parent.node();
-			const stack = plane && plane.parentNode;
-			const ctm = plane && plane.getScreenCTM && plane.getScreenCTM();
-			if (!stack || !ctm) return void 0;
-			const x = ctm.a * v.re + ctm.c * v.im + ctm.e;
-			const y = ctm.b * v.re + ctm.d * v.im + ctm.f;
-			const PAD = 2;
-			let hit = void 0;
-			const texts = stack.querySelectorAll("[id=\"labels\"] text, [id=\"labels-force\"] text, [id=\"labels-placed\"] text");
-			for (let i = 0; i < texts.length; i++) {
-				const t = texts[i];
-				if (!t.__data__) continue;
-				const r = t.getBoundingClientRect();
-				if (r.width < 2 || r.height < 2) continue;
-				if (x >= r.left - PAD && x <= r.right + PAD && y >= r.top - PAD && y <= r.bottom + PAD) hit = t.__data__;
-			}
-			return hit;
-		}
-		dist(a, b) {
-			const diff = CsubC(a, b);
-			return Math.sqrt(diff.re * diff.re + diff.im * diff.im);
-		}
-	};
-	_InteractionLayer = InteractionLayer2;
-	_InteractionLayer.wheelSettle = 150;
-	var TraceLayer = class {
-		constructor(view, args) {
-			this.update = {
-				parent: () => this.attach(),
-				data: () => this.d3updatePattern.update.data(),
-				transformation: () => this.d3updatePattern.update.transformation(),
-				style: () => this.d3updatePattern.update.style()
-			};
-			this.view = view;
-			this.args = args;
-			this.name = args.name;
-		}
-		attach() {
-			this.d3updatePattern = new D3UpdatePattern({
-				parent: this.view.parent,
-				layer: this,
-				data: this.args.data,
-				name: this.args.name,
-				className: "trace-polyline",
-				elementType: "polyline",
-				create: (s) => {},
-				updateColor: (s) => {},
-				updateTransform: (s) => s.attr("points", (d) => d.points.map((e) => `${e.re}, ${e.im}`).join(" "))
-			});
-		}
-	};
-	var ImageLayer = class {
-		constructor(view, args) {
-			this.update = {
-				parent: () => this.attach(),
-				data: () => this.d3updatePattern.update.data(),
-				transformation: () => this.d3updatePattern.update.transformation(),
-				style: () => this.d3updatePattern.update.style()
-			};
-			this.view = view;
-			this.args = args;
-			this.args.width = this.args.width || .05;
-			this.args.height = this.args.height || .05;
-			this.name = args.name;
-		}
-		attach() {
-			this.d3updatePattern = new D3UpdatePattern({
-				parent: this.view.parent,
-				layer: this,
-				data: this.args.data,
-				name: this.args.name,
-				className: "node",
-				elementType: "image",
-				create: (s) => s.attr("xlink:href", (d) => this.args.imagehref(d)).attr("width", this.args.width).attr("height", this.args.height),
-				updateColor: (s) => {},
-				updateTransform: (s) => s.attr("transform", (d, i, v) => {
-					const delta = CmulR({
-						re: -this.args.width,
-						im: -this.args.height
-					}, d.distScale / 2);
-					return ` translate(${delta.re} ${delta.im})` + this.args.transform(d, delta);
-				})
-			});
-		}
-	};
-	var FocusLayer = class {
-		constructor(view, args) {
-			this.update = {
-				parent: () => this.attach(),
-				data: () => this.d3updatePattern.update.data(),
-				transformation: () => this.d3updatePattern.update.transformation(),
-				style: () => this.d3updatePattern.update.style()
-			};
-			this.view = view;
-			this.args = args;
-			this.name = args.name;
-		}
-		transform() {
-			const r = this.args.r(), c = this.args.center();
-			if (!this.view.hypertree.args.geometry.halfPlane || c !== "0 0" || !(r < 1)) return `translate(${c}) scale(${r})`;
-			const top = (1 + r) / (1 - r), bottom = (1 - r) / (1 + r);
-			return `translate(0 ${1 - (top + bottom) / 2}) scale(${(top - bottom) / 2})`;
-		}
-		attach() {
-			this.d3updatePattern = new D3UpdatePattern({
-				parent: this.view.parent,
-				layer: this,
-				data: [1],
-				name: this.name,
-				className: this.args.className || "focus-circle",
-				elementType: "circle",
-				create: (s) => s.attr("r", 1),
-				updateColor: (s) => {},
-				updateTransform: (s) => s.attr("transform", this.transform())
-			});
-		}
-	};
-	var StemLayer = class {
-		constructor(view, args) {
-			this.update = {
-				parent: () => this.attach(),
-				data: () => {
-					this.d3updatePattern.update.data();
-					this.d3updatePattern2.update.data();
-				},
-				transformation: () => {
-					this.d3updatePattern.update.transformation();
-					this.d3updatePattern2.update.transformation();
-				},
-				style: () => {
-					this.d3updatePattern.update.style();
-					this.d3updatePattern2.update.style();
-				}
-			};
-			this.arcOptions = {
-				"+": this.svgArc("1", "0"),
-				"-": this.svgArc("0", "1"),
-				"0": (d) => this.svgArcLine(d)
-			};
-			this.view = view;
-			this.args = args;
-			this.name = args.name;
-		}
-		attach() {
-			this.d3updatePattern = new D3UpdatePattern({
-				parent: this.view.parent,
-				layer: this,
-				clip: this.args.clip,
-				data: () => this.view.hypertree.data ? [this.view.hypertree.data] : [],
-				name: "stem-link",
-				className: this.args.className,
-				elementType: "path",
-				create: (s) => s.attr("stroke-linecap", "round"),
-				updateColor: (s) => this.args.classed(s, this.args.width),
-				updateTransform: (s) => {
-					s.attr("d", (d) => this.arcOptions[this.args.curvature](d)).attr("stroke-width", (d) => this.args.width(d) + .015);
-				}
-			});
-			this.d3updatePattern2 = new D3UpdatePattern({
-				parent: this.view.parent,
-				layer: this,
-				clip: this.args.clip,
-				data: () => this.view.hypertree.data ? [this.view.hypertree.data] : [],
-				name: "stem-path",
-				className: this.args.className,
-				elementType: "path",
-				create: (s) => s.attr("stroke-linecap", "round"),
-				updateColor: (s) => this.args.classed2(s, this.args.width),
-				updateTransform: (s) => {
-					s.attr("d", (d) => this.arcOptions[this.args.curvature](d)).attr("stroke-width", (d) => this.args.width(d) + .015);
-				}
-			});
-		}
-		svgArc(a, b) {
-			var $this = this;
-			return function(d) {
-				var arcP1 = $this.args.nodePos(d);
-				if (!d.parent && $this.view.hypertree.args.geometry.halfPlane) return `M ${$this.args.nodePosStr(d)} L ${arcP1.re} -3`;
-				var arcP2 = d.parent ? $this.args.nodePos(d.parent) : {
-					re: arcP1.re,
-					im: 1
-				};
-				console.assert(!!arcP1);
-				console.assert(!!arcP2);
-				var arcC = arcCenter(arcP1, arcP2);
-				var r = CktoCp(CsubC(arcP2, arcC.c)).r;
-				if (isNaN(r) || r > 1e3) r = 0;
-				var f = arcC.d > 0 ? a : b;
-				var s = $this.args.nodePosStr(d);
-				var e = d.parent ? $this.args.nodePosStr(d.parent) : `${arcP1.re} 1`;
-				return `M ${s} A ${r} ${r}, 0, 0, ${f}, ${e}`;
-			};
-		}
-		svgArcLine(d) {
-			return `M ${this.args.nodePosStr(d)} L ${d.parent ? this.args.nodePosStr(d.parent) : `${this.args.nodePos(d).re} 1`}`;
-		}
-	};
-	var layerArgs = (ud, name) => ud.layerStack && ud.layerStack.layers[name] && ud.layerStack.layers[name].args || {};
-	var rimScale = (ud, d) => {
-		const mode = ud.view.hypertree.args.geometry.shrinkAtRim;
-		return mode === "none" ? 1 : mode === "full" ? d.distScale : d.dampedDistScale;
-	};
-	var layerScale = (ud, name, d) => {
-		const s = layerArgs(ud, name).scale;
-		return s === void 0 || s === null ? 1 : typeof s === "function" ? s(d) : s;
-	};
-	var sizeAt = (ud, name, d) => rimScale(ud, d) * layerScale(ud, name, d);
-	var offsetFactor = (ud, d) => rimScale(ud, d) / d.dampedDistScale;
-	var labeloffsets = {
-		centerOffset: (cache) => (d, i, v) => bboxCenter(d, cache),
-		nodeRadiusOffset: (ls) => (d) => CptoCk({
-			θ: d.cachep.θ,
-			r: ls.args.nodeRadius(ls, d) * d.distScale * 1.5
-		}),
-		labeloffset: (ud) => (d, i, v) => CaddC(labeloffsets.nodeRadiusOffset(ud)(d), bboxOval(d)),
-		outwards: void 0,
-		outwardsPlusNodeRadius: void 0
-	};
-	labeloffsets.outwards = labeloffsets.nodeRadiusOffset;
-	labeloffsets.outwardsPlusNodeRadius = labeloffsets.labeloffset;
-	var layerSrc = [
-		(v, ud) => new BackgroundLayer(v, {}),
-		(v, ud) => new CellLayer(v, {
-			invisible: true,
-			hideOnDrag: true,
-			clip: "#circle-clip" + ud.args.clipRadius,
-			data: () => ud.cache.cells,
-			hover: true,
-			selection: true,
-			fill: (n) => void 0,
-			stroke: (n) => void 0,
-			strokeWidth: (n) => void 0
-		}),
-		(v, ud) => new FocusLayer(v, {
-			invisible: true,
-			hideOnDrag: true,
-			name: "culling-r",
-			r: () => ud.view.hypertree.args.filter.cullingRadius,
-			center: () => "0 0"
-		}),
-		(v, ud) => new FocusLayer(v, {
-			invisible: true,
-			hideOnDrag: true,
-			name: "mouse-r",
-			r: () => ud.view.hypertree.args.interaction.mouseRadius,
-			center: () => "0 0"
-		}),
-		(v, ud) => new FocusLayer(v, {
-			invisible: true,
-			hideOnDrag: true,
-			name: "focus-r",
-			r: () => ud.cache.focusR,
-			center: () => "0 0"
-		}),
-		(v, ud) => new FocusLayer(v, {
-			invisible: true,
-			hideOnDrag: true,
-			name: "labels-r-𝐖",
-			r: () => ud.view.hypertree.args.filter.wikiRadius,
-			center: () => "0 0"
-		}),
-		(v, ud) => new FocusLayer(v, {
-			invisible: false,
-			hideOnDrag: false,
-			name: "λ",
-			r: () => ud.args.transformation.state.λ,
-			center: () => `${(ud.pinchcenter || { re: 0 }).re} ${(ud.pinchcenter || { im: 0 }).im}`
-		}),
-		(v, ud) => new FocusLayer(v, {
-			invisible: false,
-			className: "zerozero-circle",
-			name: "(0,0)",
-			r: () => .004,
-			center: () => "0 0"
-		}),
-		(v, ud) => new NodeLayer(v, {
-			invisible: true,
-			hideOnDrag: true,
-			name: "center-node",
-			className: "center-node",
-			fill: (n) => void 0,
-			stroke: (n) => void 0,
-			strokeWidth: (n) => void 0,
-			data: () => ud.cache.centerNode ? [ud.cache.centerNode] : [],
-			r: (d) => .1,
-			transform: (d) => d.transformStrCache + ` scale(${ud.args.nodeScale(d)})`
-		}),
-		(v, ud) => new ArcLayer(v, {
-			invisible: false,
-			hideOnDrag: false,
-			name: "path-arcs",
-			className: "arc",
-			curvature: ud.view.hypertree.args.geometry.linkCurvature,
-			data: () => {
-				const a = layerArgs(ud, "path-arcs");
-				const off = (m) => m === false || m === "none";
-				if (!off(a.hover) && !off(a.selection)) return ud.cache.paths;
-				return ud.cache.paths.filter((d) => d.pathes.partof.some((p) => p.type === "HoverPath" ? !off(a.hover) : p.type === "SelectionPath" ? !off(a.selection) : true));
-			},
-			nodePos: (n) => n.cache,
-			nodePosStr: (n) => n.strCache,
-			stroke: (n) => void 0,
-			strokeWidth: (d) => ud.args.linkWidth(d) + .013 * d.dampedDistScale,
-			classed: (s) => s.classed("hovered-path", (d) => d.pathes && d.pathes.isPartOfAnyHoverPath).classed("selected-path", (d) => d.pathes && d.pathes.isPartOfAnySelectionPath).style("stroke", (d) => d.pathes && d.pathes.finalcolor)
-		}),
-		(v, ud) => new ArcLayer(v, {
-			invisible: false,
-			hideOnDrag: false,
-			name: "link-arcs",
-			className: "arc",
-			curvature: ud.view.hypertree.args.geometry.linkCurvature,
-			clip: "#circle-clip" + ud.args.clipRadius,
-			data: () => ud.cache.links,
-			nodePos: (n) => n.cache,
-			nodePosStr: (n) => n.strCache,
-			stroke: (n) => void 0,
-			strokeWidth: (d) => ud.args.linkWidth(d),
-			classed: (s, w, c) => s.style("stroke", (d) => (d.pathes && d.pathes.isPartOfAnyHoverPath ? d.pathes && d.pathes.finalcolor : d.pathes && d.pathes.finalcolor) || c(d)).classed("hovered", (d) => showsState(layerArgs(ud, "link-arcs").hover, d, "hover")).classed("selected", (d) => showsState(layerArgs(ud, "link-arcs").selection, d, "selection"))
-		}),
-		(v, ud) => new StemLayer(v, {
-			invisible: false,
-			hideOnDrag: false,
-			name: "stem-arc",
-			className: "arc",
-			curvature: "+",
-			clip: "#circle-clip" + ud.args.clipRadius,
-			data: () => [],
-			nodePos: (n) => n.cache,
-			nodePosStr: (n) => n.strCache,
-			width: (d) => ud.args.linkWidth(d) + .001,
-			classed: (s, w) => s.classed("hovered", (d) => d.pathes && d.pathes.isPartOfAnyHoverPath).classed("selected", (d) => d.pathes && d.pathes.isPartOfAnySelectionPath).style("stroke", (d) => d.pathes && d.pathes.finalcolor).attr("stroke-width", (d) => w(d)),
-			classed2: (s, w) => s.classed("hovered-path", (d) => d.pathes && d.pathes.isPartOfAnyHoverPath).classed("selected-path", (d) => d.pathes && d.pathes.isPartOfAnySelectionPath).style("stroke", (d) => d.pathes && d.pathes.finalcolor).attr("stroke-width", (d) => w(d) + (d.pathes && d.pathes.isPartOfAnySelectionPath || d.pathes && d.pathes.isPartOfAnyHoverPath ? .015 : 0))
-		}),
-		(v, ud) => new NodeLayer(v, {
-			invisible: false,
-			hideOnDrag: false,
-			name: "nodes",
-			className: "node",
-			data: () => {
-				const layer = ud.layerStack && ud.layerStack.layers["nodes"];
-				const show = layer && layer.args.show;
-				if (!show || show === "leaves") return ud.cache.leafOrLazy;
-				if (show === "all") return ud.cache.unculledNodes;
-				return ud.cache.unculledNodes.filter(show);
-			},
-			fill: (n) => void 0,
-			stroke: (n) => void 0,
-			strokeWidth: (n) => void 0,
-			r: (d) => ud.args.nodeRadius(ud, d),
-			transform: (d) => d.transformStrCache + ` scale(${ud.args.nodeScale(d)})`
-		}),
-		(v, ud) => new SymbolLayer(v, {
-			invisible: false,
-			hideOnDrag: false,
-			name: "symbols",
-			data: () => ud.cache.spezialNodes,
-			transform: (d) => d.transformStrCache + ` scale(${d.dampedDistScale})`
-		}),
-		(v, ud) => new ImageLayer(v, {
-			name: "images",
-			data: () => ud.cache.images,
-			width: .05,
-			height: .05,
-			imagehref: (d) => d.precalc.imageHref,
-			delta: (d) => CmulR({
-				re: -.05,
-				im: -.05
-			}, d.distScale),
-			transform: (d, delta) => ` translate(${d.cache.re} ${d.cache.im}) scale(${d.distScale})`
-		}),
-		(v, ud) => new LabelLayer(v, {
-			name: "emojis",
-			className: "caption",
-			asImage: true,
-			data: () => ud.cache.emojis,
-			text: (d) => d.precalc.icon,
-			delta: labeloffsets.centerOffset("emojislen"),
-			color: () => void 0,
-			background: void 0,
-			transform: (d, delta) => {
-				const f = offsetFactor(ud, d);
-				return ` translate(${d.cache.re + delta.re * f} ${d.cache.im + delta.im * f})scale(${sizeAt(ud, "emojis", d) * 2})`;
-			}
-		}),
-		(v, ud) => new LabelLayer(v, {
-			invisible: false,
-			hideOnDrag: false,
-			name: "labels",
-			className: "caption",
-			data: () => labelsWithHover(ud, layerArgs(ud, "labels")),
-			text: (d) => d.precalc.label,
-			delta: labeloffsets.labeloffset(ud),
-			color: () => void 0,
-			background: void 0,
-			transform: (d, delta) => {
-				const f = offsetFactor(ud, d);
-				return ` translate(${d.cache.re + delta.re * f} ${d.cache.im + delta.im * f}) scale(${sizeAt(ud, "labels", d)})`;
-			}
-		}),
-		(v, ud) => new LabelForceLayer(v, {
-			invisible: true,
-			hideOnDrag: true,
-			name: "labels-force",
-			className: "caption caption-label",
-			data: () => labelsWithHover(ud, layerArgs(ud, "labels-force")),
-			text: (d) => d.precalc.label,
-			background: (n) => !n.parent,
-			sizeOf: (d) => sizeAt(ud, "labels-force", d),
-			transform: (d, delta) => ` translate(${d.cache.re + delta.re} ${d.cache.im + delta.im})` + d.scaleStrText
-		}),
-		(v, ud) => new LabelPlacementLayer(v, {
-			invisible: true,
-			hideOnDrag: false,
-			name: "labels-placed",
-			className: "caption caption-label",
-			data: () => labelsWithHover(ud, layerArgs(ud, "labels-placed")),
-			text: (d) => d.precalc.label,
-			sizeOf: (d) => sizeAt(ud, "labels-placed", d)
-		}),
-		(v, ud) => new InteractionLayer2(v, { mouseRadius: ud.view.hypertree.args.interaction.mouseRadius }),
-		(v, ud) => new TraceLayer(v, {
-			invisible: true,
-			hideOnDrag: true,
-			name: "traces",
-			data: () => ud.view.hypertree.args.objects.traces
-		})
-	];
-	var MAGIC_MIN = 1e-12;
-	var MAGIC_MAX = 0xe8d4a51000;
-	var magicLimits = /* @__PURE__ */ new WeakMap();
-	function viewKey(ud) {
-		const s = ud.view.hypertree.args.geometry.transformation.state;
-		return `${s.λ.toFixed(4)},${s.P.re.toFixed(4)},${s.P.im.toFixed(4)}`;
-	}
-	function adjustMagic(ud, cache) {
-		const filter = ud.view.hypertree.args.filter.weightFilter;
-		if (filter === null || !cache.unculledNodes) return;
-		const n = cache.unculledNodes.length;
-		const range = filter.rangeNodes;
-		const alpha = filter.alpha;
-		const fresh = () => ({
-			up: MAGIC_MAX,
-			down: MAGIC_MIN,
-			last: 0,
-			stoppedAt: 0,
-			focusDown: MAGIC_MIN
-		});
-		let b = magicLimits.get(filter);
-		if (!b || b.stoppedAt && Math.abs(n - b.stoppedAt) > .1 * b.stoppedAt) magicLimits.set(filter, b = fresh());
-		const view = viewKey(ud);
-		if (b.focusView !== view) {
-			b.focusDown = MAGIC_MIN;
-			b.focusView = view;
-		}
-		if (n > range.max) {
-			if (b.last > 0) b.up = Math.min(b.up, filter.magic);
-			if (b.last < 0 && b.lastN !== void 0 && n >= b.lastN) b.focusDown = Math.max(b.focusDown, filter.magic);
-			const m = filter.magic / alpha;
-			if (m > Math.max(b.down, b.focusDown) * 1.000000001) {
-				filter.magic = m;
-				b.last = -1;
-				b.stoppedAt = 0;
-			} else {
-				b.last = 0;
-				b.stoppedAt = n;
-			}
-		} else if (n < range.min) {
-			if (b.last < 0) b.down = Math.max(b.down, filter.magic);
-			const m = filter.magic * alpha;
-			if (m < b.up * .999999999) {
-				filter.magic = m;
-				b.last = 1;
-				b.stoppedAt = 0;
-			} else {
-				b.last = 0;
-				b.stoppedAt = n;
-			}
-		} else {
-			b.last = 0;
-			b.stoppedAt = 0;
-		}
-		b.lastN = n;
-	}
-	function collectNodesByWeight(ud, cache, path) {
-		const normλ = ud.args.transformation.state.λ;
-		cache.focusR = Math.min(normλ * ud.view.hypertree.args.filter.focusExtension, ud.view.hypertree.args.filter.maxFocusRadius);
-		console.assert(cache.focusR < 1 && cache.focusR > 0);
-		adjustMagic(ud, cache);
-		const startNode = path[0];
-		cache.unculledNodes = [];
-		cache.spezialNodes = [ud.args.data, startNode].filter((e) => e);
-		cache.emojis = [];
-		cache.cells = [];
-		const mf = ud.view.hypertree.isAnimationRunning() ? 1 : 1;
-		function abortfilter(n, idx, highway) {
-			const wf = ud.view.hypertree.args.filter.weightFilter;
-			n.minWeight = wf === null ? 0 : highway[0].precalc.cullingWeight / wf.magic / mf;
-			peocessNodeTransformation(ud, cache, n);
-			peocessNode(ud, cache, n, cache.focusR, n.minWeight);
-			return !n.isOut || n === startNode;
-		}
-		const lastCenter = cache.centerNode;
-		cache.centerNode = void 0;
-		const t1 = performance.now();
-		if (ud.args.data) {
-			peocessNodeTransformation(ud, cache, ud.args.data);
-			peocessNode(ud, cache, ud.args.data, cache.focusR, 0);
-		}
-		dfs2({
-			node: startNode,
-			abortFilter: abortfilter,
-			preAction: (n) => cache.unculledNodes.push(n),
-			highway: path
-		});
-		if (lastCenter && cache.centerNode && lastCenter !== cache.centerNode && !lastCenter.isOut && lastCenter.cachep && lastCenter.cachep.r < cache.centerNode.cachep.r + .02 && cache.unculledNodes.includes(lastCenter)) cache.centerNode = lastCenter;
-		return t1;
-	}
-	function addPathToUnculled(ud, cache, p) {
-		if (p.type !== "HoverPath") {
-			const pathnodes = [];
-			let n = p.head;
-			while (n.parent && !cache.unculledNodes.includes(n)) {
-				pathnodes.push(n);
-				n = n.parent;
-			}
-			pathnodes.reverse().forEach((n) => {
-				peocessNodeTransformation(ud, cache, n);
-				peocessNode(ud, cache, n, cache.focusR, 0);
-			});
-			cache.unculledNodes = cache.unculledNodes.concat(pathnodes);
-		}
-	}
-	/**
-	* Settles weightFilter.magic before the first frame.
-	*
-	* magic decides how much smaller than the focus a node's culling weight may be
-	* before the node is hidden (minWeight = weight at the focus / magic): a larger
-	* magic shows more nodes. adjustMagic changes it by one step (× or ÷ alpha) per
-	* update until the number of visible nodes lies within rangeNodes. Done frame by
-	* frame, the visible set kept changing for many frames after loading.
-	*
-	* This runs the same steps right away, without drawing, until magic doesn't
-	* change any more: the number of visible nodes is within rangeNodes, or magic
-	* reached its internal bound, or every node is visible already. The
-	* result equals the state the frame-by-frame adaptation used to settle in.
-	* Returns the number of steps.
-	*/
-	function settleMagic(ud, cache, maxSteps = 1e3) {
-		const filter = ud.view.hypertree.args.filter.weightFilter;
-		const total = ud.args.data ? ud.args.data.descendants().length : 0;
-		for (let step = 0; step < maxSteps; step++) {
-			const before = filter.magic;
-			collectNodesByWeight(ud, cache, pathToLastVisible(ud, cache));
-			if (filter.magic === before) return step;
-			if (cache.unculledNodes.length + 1 >= total && cache.unculledNodes.length < filter.rangeNodes.min) return step;
-		}
-		return maxSteps;
-	}
-	function cacheUpdate(ud, cache) {
-		const t0 = performance.now();
-		const path = pathToLastVisible(ud, cache);
-		const t1 = collectNodesByWeight(ud, cache, path);
-		const t2 = performance.now();
-		ud.view.hypertree.args.objects.pathes.forEach((p) => addPathToUnculled(ud, cache, p));
-		if (ud.view.hypertree.args.geometry.halfPlane) {
-			cache.unculledNodes = mapToView(cache.unculledNodes, infinityOf(ud.view.hypertree.args.layout.rootWedge));
-			const inView = (n) => !!n.cacheDisk && !n.outOfView;
-			cache.emojis = cache.emojis.filter(inView);
-			cache.spezialNodes = cache.spezialNodes.filter(inView);
-		}
-		cache.links = cache.unculledNodes.slice(1);
-		cache.leafOrLazy = cache.unculledNodes.filter(ud.args.nodeFilter);
-		cache.paths = cache.links.filter((n) => n.pathes.partof && n.pathes.partof.length);
-		cache.weights = [];
-		const t3 = performance.now();
-		if (!ud.view.hypertree.isAnimationRunning() || ud.layerStack && ud.layerStack.layers["labels-force"] && !ud.layerStack.layers["labels-force"].args.hideOnDrag || ud.layerStack && ud.layerStack.layers["labels"] && !ud.layerStack.layers["labels"].args.hideOnDrag) doLabelStuff(ud, cache);
-		if (!ud.view.hypertree.isAnimationRunning() || ud.layerStack && ud.layerStack.layers["cells"] && !ud.layerStack.layers["cells"].args.hideOnDrag) doVoronoiStuff(ud, cache);
-		doImageStuff(ud, cache);
-		if (cache.centerNode) ud.view.hypertree.update.centernode(cache.centerNode);
-		ud.cacheMeta = {
-			minWeight: path.map((n) => ud.view.hypertree.args.filter.weightFilter ? n.precalc.cullingWeight / ud.view.hypertree.args.filter.weightFilter.magic : 0),
-			Δ: [
-				t1 - t0,
-				t2 - t1,
-				t3 - t2,
-				performance.now() - t3
-			]
-		};
-		if (ud.view.hypertree.transition && ud.view.hypertree.transition.currentframe) {}
-	}
-	function pathToLastVisible(ud, cache) {
-		let startNode = null;
-		let path = [];
-		if (ud.args.data) {
-			startNode = cache.centerNode || ud.args.data;
-			path.push(startNode);
-			while (true) {
-				peocessNodeTransformation(ud, cache, startNode);
-				if (startNode.cachep.r >= ud.view.hypertree.args.filter.cullingRadius) {
-					path = path.slice(0, -1);
-					break;
-				}
-				if (!startNode.parent) break;
-				startNode = startNode.parent;
-				path.push(startNode);
-			}
-		}
-		return path.reverse();
-	}
-	/**
-	* Lays out n (its position and its children's wedges) unless the stored layout is
-	* still valid: computed by the same layout function, with the same λ, and from the
-	* parent's current position (setZ creates a new position object on every layout,
-	* so a relaid parent invalidates its children). Panning doesn't change λ, so while
-	* dragging the layout isn't recomputed (phase 3).
-	*/
-	function layoutNode(ht, n, λ) {
-		const type = ht.args.layout.type;
-		const L = n.layout;
-		const basis = n.parent && n.parent.layout ? n.parent.layout.z : null;
-		if (L && L.z && L.λ === λ && L.basis === basis && L.type === type) return;
-		type(n, λ, true);
-		const L2 = n.layout;
-		L2.λ = λ;
-		L2.basis = n.parent && n.parent.layout ? n.parent.layout.z : null;
-		L2.type = type;
-	}
-	function peocessNodeTransformation(ud, cache, n) {
-		n.cache = n.cache || {
-			re: 0,
-			im: 0
-		};
-		n.cacheDisk = void 0;
-		n.outOfView = void 0;
-		layoutNode(ud.view.hypertree, n, ud.args.transformation.state.λ);
-		CassignC(n.cache, ud.args.transform(n));
-		n.cachep = CktoCp(n.cache);
-	}
-	function peocessNode(ud, cache, n, focusR, minWeight) {
-		n.strCache = `${n.cache.re} ${n.cache.im}`;
-		n.transformStrCache = ` translate(${n.strCache})`;
-		n.transformStrCacheZ = ` translate(${n.layout.zStrCache})`;
-		n.isOutλ = n.cachep.r >= focusR;
-		n.isOut99 = n.cachep.r >= ud.view.hypertree.args.filter.cullingRadius;
-		n.isOutWeight = n.precalc.cullingWeight <= minWeight;
-		n.distScale = ud.args.transformation.transformDist(n.cache);
-		n.dampedDistScale = n.distScale * (.5 / n.distScale + .5);
-		n.scaleStrText = ` scale(${n.dampedDistScale})`;
-		n.isOut = !(!(n.isOut99 || n.isOutWeight) || !n.isOutλ || n.parent && !n.parent.isOutλ);
-		n.hasOutPeriChildren = n.hasOutWeightChildren = n.hasOutChildren = false;
-		if (n.parent && n.isOut99) n.parent.hasOutPeriChildren = true;
-		if (n.parent && n.isOutWeight) n.parent.hasOutWeightChildren = true;
-		if (n.parent && n.isOut) n.parent.hasOutChildren = true;
-		if (!cache.centerNode || cache.centerNode.cachep.r > n.cachep.r) cache.centerNode = n;
-		if (n.precalc.icon && !n.isOut) cache.emojis.push(n);
-	}
-	var nodeValues = {
-		weight: (n) => n.precalc.visWeight || 1,
-		depth: (n) => n.depth,
-		height: (n) => n.height,
-		value: (n) => n.data && typeof n.data.value === "number" ? n.data.value : NaN
-	};
-	var dataValues = /* @__PURE__ */ new Map();
-	var dataValue = (key) => {
-		if (!dataValues.has(key)) dataValues.set(key, (n) => n.data && typeof n.data[key] === "number" ? n.data[key] : NaN);
-		return dataValues.get(key);
-	};
-	var extents = /* @__PURE__ */ new Map();
-	function extentOf(value, n, scale) {
-		let root = n;
-		while (root.parent) root = root.parent;
-		if (!extents.has(scale)) extents.set(scale, /* @__PURE__ */ new WeakMap());
-		const perScale = extents.get(scale);
-		let perRoot = perScale.get(value);
-		if (!perRoot) perScale.set(value, perRoot = /* @__PURE__ */ new WeakMap());
-		let e = perRoot.get(root);
-		if (!e) {
-			const ok = (v) => isFinite(v) && (scale !== "log" || v > 0);
-			const [lo, hi] = extent(root.descendants(), (d) => {
-				const v = value(d);
-				return ok(v) ? v : void 0;
-			});
-			e = [lo === void 0 ? 1 : lo, hi === void 0 ? 2 : hi];
-			if (e[0] === e[1]) e = [e[0], e[0] * 2 || 1];
-			perRoot.set(root, e);
-		}
-		return e;
-	}
-	function unit(value, n, scale, v) {
-		const domain = extentOf(value, n, scale);
-		return (scale === "log" ? log() : sqrt$1()).domain(domain).range([0, 1]).clamp(true)(scale === "log" ? Math.max(v, domain[0]) : v);
-	}
-	/** A color per node: the value over the tree's range (sqrt or log scale) into a d3 color interpolator. */
-	function colorBy(value, interpolator = viridis, opacity = 1, scale = "sqrt") {
-		const cache = /* @__PURE__ */ new WeakMap();
-		return (n) => {
-			if (!n) return void 0;
-			if (cache.has(n)) return cache.get(n);
-			const v = value(n);
-			let s = void 0;
-			if (isFinite(v)) {
-				const c = color(interpolator(unit(value, n, scale, v)));
-				if (opacity < 1) c.opacity = opacity;
-				s = c.formatRgb();
-			}
-			cache.set(n, s);
-			return s;
-		};
-	}
-	/** A size per node: the value over the tree's range (sqrt: area true to the value, or log) into [min, max]. */
-	function sizeBy(value, range, scale = "sqrt") {
-		const cache = /* @__PURE__ */ new WeakMap();
-		return (n) => {
-			if (cache.has(n)) return cache.get(n);
-			const v = value(n);
-			const s = isFinite(v) ? range[0] + (range[1] - range[0]) * unit(value, n, scale, v) : range[0];
-			cache.set(n, s);
-			return s;
-		};
-	}
-	var toValue = (v, d) => typeof v === "function" ? v : typeof v === "string" && v.startsWith("data.") ? dataValue(v.slice(5)) : typeof v === "string" && nodeValues[v] || d;
-	var radiusRange = [.006, .035];
-	var widthRange = [.002, .03];
-	/**
-	* infovis: a value as node radius and link width, a (second) value as color of the
-	* links, node disks (every node), voronoi cells and label backgrounds; each color
-	* target can have its own value and interpolator (options.colors).
-	*/
-	function infovisModel(o = {}) {
-		const scale = o.scale || "sqrt";
-		const value = toValue(o.value, nodeValues.weight);
-		const colorValue = toValue(o.colorValue, value);
-		const colorOf = (target, opacity = 1) => {
-			const c = o.colors && o.colors[target];
-			if (c === false) return void 0;
-			const spec = c && typeof c === "object" ? c : {
-				value: c,
-				interpolator: void 0
-			};
-			return colorBy(toValue(spec.value, colorValue), spec.interpolator || o.interpolator, opacity, scale);
-		};
-		const cells = colorOf("cells", .25);
-		const radius = sizeBy(toValue(o.radiusValue, value), radiusRange, scale);
-		const width = sizeBy(toValue(o.widthValue, value), widthRange, scale);
-		return {
-			geometry: {
-				nodeRadius: (ud, n) => radius(n),
-				linkWidth: (n) => width(n) * n.distScale,
-				shrinkAtRim: "full",
-				layerOptions: {
-					"nodes": {
-						show: "all",
-						fill: colorOf("nodes"),
-						hover: "node"
-					},
-					"link-arcs": { stroke: colorOf("links") },
-					"cells": {
-						invisible: false,
-						fill: cells ? (p) => cells(p && p.data) : void 0
-					},
-					"labels": { background: colorOf("labels", .25) || false }
-				}
-			},
-			interaction: {
-				clickAction: "select",
-				selection: "multi",
-				maxSelections: 5
-			}
-		};
-	}
-	var formatBytes = (b) => {
-		const units = [
-			"B",
-			"KB",
-			"MB",
-			"GB",
-			"TB"
-		];
-		let i = 0;
-		while (b >= 1024 && i < units.length - 1) {
-			b /= 1024;
-			i++;
-		}
-		return `${b < 10 && i ? b.toFixed(1) : Math.round(b)} ${units[i]}`;
-	};
-	/**
-	* infovis for a file system tree (nodes with data.size in bytes and data.files, the
-	* number of files below; see test/fixtures/filesystem.d3.json): the size as cell
-	* color and disk radius, the number of files as link color and width (log scales);
-	* folder labels on two lines with their size.
-	*/
-	function infovisFilesModel(o = {}) {
-		const model = infovisModel(Object.assign({
-			scale: "log",
-			radiusValue: "data.size",
-			widthValue: "data.files",
-			colorValue: "data.size",
-			colors: {
-				cells: "data.size",
-				nodes: "data.size",
-				links: {
-					value: "data.files",
-					interpolator: (t) => YlOrRd(.3 + .7 * t)
-				},
-				labels: false
-			}
-		}, o));
-		model.langInitBFS = (ht, n) => {
-			const d = n.data || {};
-			n.precalc.label = d.type === "dir" && typeof d.size === "number" ? `${d.name}\n${formatBytes(d.size)}` : d.name;
-		};
-		return model;
-	}
-	/**
-	* infovis with emojis: emoji size bound to the value, labels without background,
-	* links and disks colored by the (color) value.
-	*/
-	function infovisEmojiModel(o = {}) {
-		const scale = o.scale || "sqrt";
-		const value = toValue(o.value, nodeValues.weight);
-		const color = colorBy(toValue(o.colorValue, value), o.interpolator, 1, scale);
-		const width = sizeBy(value, widthRange, scale);
-		return {
-			geometry: {
-				linkWidth: (n) => width(n) * n.distScale,
-				linkCurvature: "0",
-				shrinkAtRim: "none",
-				layerOptions: {
-					"nodes": { fill: color },
-					"link-arcs": { stroke: color },
-					"path-arcs": { hover: "none" },
-					"emojis": {
-						invisible: false,
-						scale: sizeBy(value, [.7, 1.8], scale)
-					},
-					"images": { invisible: false },
-					"labels": { background: false }
-				}
-			},
-			interaction: {
-				clickAction: "select",
-				selection: "single"
-			}
-		};
-	}
-	var π = Math.PI;
-	var hasLazy = (n) => n.hasOutChildren && n.isOutλ;
-	var isLeaf = (n) => !n.children || !n.children.length;
-	var isRoot = (n) => !n.parent;
-	var hasCircle = (n) => hasLazy(n) || isRoot(n) || isLeaf(n);
-	var nodeInitR = (c) => (ud, d) => c * (d.children && d.parent ? innerNodeScale(d) : 1);
-	var nodeInitRNoInner = (c) => (ud, d) => c;
-	var nodeRadiusOfLink = (ud, d) => {
-		return ud.args.linkWidth(d) / (d.distScale > 1e-9 ? d.distScale : 1) * (isLeaf(d) ? 1.5 : .5);
-	};
-	var nodeScale = (d) => d.distScale * (hasLazy(d) ? .8 : 1);
-	var nodeScaleNoInner = (d) => d.distScale;
-	var innerNodeScale = (d) => d.precalc.weightScale;
-	var arcWidth = (d) => .025 * d.distScale * d.precalc.weightScale;
-	var capitalize$1 = (s) => s.charAt(0).toUpperCase() + s.slice(1);
-	var modelBase = () => ({
-		langloader: (ok) => ok(),
-		dataInitBFS: (ht, n) => {
-			n.precalc.imageHref = void 0;
-			n.precalc.icon = void 0;
-			n.precalc.clickable = true;
-			n.precalc.cell = true;
-		},
-		langInitBFS: (ht, n) => {
-			n.precalc.label = ht.langMap && n.data ? ht.langMap[n.data.name] : void 0;
-			n.precalc.wiki = void 0;
-		},
-		objects: {
-			selections: [],
-			pathes: [],
-			traces: []
-		},
-		layout: {
-			type: layoutBergé,
-			weight: (n) => isLeaf(n) ? 1 : 0,
-			initSize: .97,
-			rootWedge: {
-				orientation: 3 * π / 2,
-				angle: 3 * π / 2
-			}
-		},
-		filter: {
-			type: "magic",
-			cullingRadius: .99,
-			weightFilter: {
-				alpha: 1.05,
-				weight: (n) => isLeaf(n) ? 1 : n.height * n.height,
-				rangeNodes: {
-					min: 150,
-					max: 500
-				}
-			},
-			focusExtension: 1.6,
-			maxFocusRadius: .85,
-			wikiRadius: .85,
-			maxlabels: 25
-		},
-		geometry: {
-			decorator: UnitDisk,
-			cacheUpdate,
-			layers: layerSrc,
-			layerOptions: {},
-			clipRadius: 1,
-			nodeRadius: nodeRadiusOfLink,
-			nodeScale,
-			nodeFilter: hasCircle,
-			offsetEmoji: labeloffsets.labeloffset,
-			offsetLabels: labeloffsets.labeloffset,
-			linkWidth: arcWidth,
-			linkCurvature: "-",
-			shrinkAtRim: "damped",
-			captionBackground: "all",
-			captionFont: "6.5px Roboto",
-			captionHeight: .04,
-			transformation: new HyperbolicTransformation({
-				P: {
-					re: 0,
-					im: 0
-				},
-				θ: {
-					re: 1,
-					im: 0
-				},
-				λ: .1
-			})
-		},
-		interaction: {
-			mouseRadius: .9,
-			onNodeClick: (n, m) => {},
-			onCenterNodeChange: (n) => {},
-			onWikiCenterNodeChange: (n) => {},
-			onHoverNodeChange: (n) => {},
-			onNodeSelect: () => {},
-			onNodeHold: () => {},
-			holdDuration: 500,
-			onNodeHover: () => {},
-			λbounds: [1 / 40, .45],
-			wheelFactor: 1.175
-		}
-	});
-	var treeOfLifeLabels = (ht, n) => {
-		const id = n.data && n.data.name;
-		const l = ht.langMap && ht.langMap[id] && "𝐖 " + ht.langMap[id];
-		n.precalc.wiki = l;
-		n.precalc.label = l || id;
-		n.precalc.clickable = Boolean(l);
-	};
-	var treeOfLife = () => ({
-		langInitBFS: treeOfLifeLabels,
-		layout: {
-			weight: (n) => isLeaf(n) ? 1 : 0,
-			rootWedge: {
-				orientation: 3 * π / 2,
-				angle: 1.8 * π / 2
-			}
-		},
-		filter: { weightFilter: { rangeNodes: {
-			min: 1e3,
-			max: 1500
-		} } },
-		geometry: {
-			nodeRadius: nodeInitR(.0075),
-			captionFont: "8px Roboto",
-			captionHeight: .05,
-			layerOptions: {
-				"emojis": { invisible: false },
-				"labels": {
-					background: false,
-					hoverLabel: true,
-					hoverPathLabels: true
-				}
-			}
-		},
-		interaction: {
-			λbounds: [1 / 40, .55],
-			clickAction: "goto",
-			selection: "none"
-		}
-	});
-	var treeOfLifeMain = () => mergeDeep(treeOfLife(), {
-		layout: { rootWedge: {
-			orientation: 3 * π / 2,
-			angle: .7 * π / 2
-		} },
-		filter: { weightFilter: { rangeNodes: {
-			min: 350,
-			max: 650
-		} } },
-		geometry: { layerOptions: {
-			"cells": {
-				invisible: false,
-				hideOnDrag: false,
-				strokeWidth: (n) => 0
-			},
-			"labels": {
-				invisible: true,
-				hideOnDrag: true
-			},
-			"labels-force": {
-				invisible: false,
-				hideOnDrag: false,
-				maxLabels: 30,
-				hoverLabel: true,
-				hoverPathLabels: true
-			}
-		} },
-		interaction: {
-			λbounds: [1 / 40, 1 / 10],
-			clickAction: "none"
-		}
-	});
-	var warned$1 = /* @__PURE__ */ new Set();
-	var deprecatedPreset = (name, use, f) => () => {
-		if (!warned$1.has(name)) {
-			warned$1.add(name);
-			console.warn(`d3-hypertree: presets.${name} is deprecated, use ${use}`);
-		}
-		return f();
-	};
-	var otolModel = () => ({
-		langInitBFS: (ht, n) => {
-			const id = n.data && n.data.name;
-			const l = ht.langMap && ht.langMap[id] && "𝐖 " + ht.langMap[id];
-			n.precalc.wiki = l;
-			n.precalc.label = l || id;
-			n.precalc.clickable = Boolean(l);
-		},
-		layout: {
-			weight: (n) => isLeaf(n) ? 1 : 0,
-			rootWedge: {
-				orientation: 3 * π / 2,
-				angle: .7 * π / 2
-			}
-		},
-		geometry: { nodeRadius: nodeInitR(.0075) },
-		interaction: { λbounds: [1 / 40, .55] }
-	});
-	var oldPresets = {
-		generatorModel: () => ({
-			interaction: { λbounds: [1 / 10, .6] },
-			layout: { rootWedge: {
-				orientation: π / 4,
-				angle: 1.99999 * π
-			} },
-			geometry: { layerOptions: { "stem-arc": {
-				invisible: true,
-				hideOnDrag: true
-			} } }
-		}),
-		generatorSpiralModel: () => ({
-			layout: { type: layoutSpiral },
-			filter: {}
-		}),
-		stackoverflowModel: () => ({
-			langInitBFS: (ht, n) => n.precalc.label = n.data.name,
-			interaction: { λbounds: [1 / 14, .5] }
-		}),
-		acmflareModel: () => ({
-			langInitBFS: (ht, n) => n.precalc.label = n.data.name,
-			geometry: { nodeRadius: nodeInitR(.0075) },
-			interaction: { λbounds: [1 / 7, .9] }
-		}),
-		fsModel: () => ({
-			geometry: {
-				nodeRadius: () => 0,
-				nodeScale: nodeScaleNoInner,
-				nodeFilter: (n) => true
-			},
-			interaction: { λbounds: [1 / 7, .7] },
-			langInitBFS: (ht, n) => {
-				n.precalc.label = n.data && n.data.name;
-				n.precalc.clickable = true;
-			}
-		}),
-		mainModel: () => {
-			return mergeDeep(otolModel(), {
-				filter: {
-					focusExtension: 2.5,
-					maxlabels: 25
-				},
-				layout: {
-					initSize: .9,
-					weight: (n) => {
-						if (isLeaf(n)) return 1;
-						else if (n.data && n.data.name == "Open-Tree-of-Life") return 30;
-						else return 0;
-					},
-					rootWedge: {
-						orientation: 3 * π / 2,
-						angle: 3 * π / 2
-					}
-				},
-				geometry: {
-					nodeRadius: nodeInitRNoInner(1e-4),
-					nodeScale: nodeScaleNoInner,
-					nodeFilter: (n) => true
-				},
-				interaction: {
-					onNodeSelect: (s) => {},
-					onNodeHover: (s) => {},
-					λbounds: [.25, .6]
-				},
-				langInitBFS: (ht, n) => {
-					const id = n.data.name;
-					n.precalc.clickable = n.parent && id !== "Open-Tree-of-Life" && id !== "Generators" && id !== "Example-files" && id !== "stackoverflow";
-					if (n.precalc.clickable) {
-						const lid = capitalize$1(id);
-						const l = ht.langMap && ht.langMap[lid] && ht.langMap[lid];
-						n.precalc.label = l || lid;
-					}
-				}
-			});
-		}
-	};
-	var presets = {
-		modelBase: () => modelBase(),
-		treeOfLifeMain: () => treeOfLifeMain(),
-		treeOfLife: () => treeOfLife(),
-		infovis: (o) => infovisModel(o),
-		infovisEmoji: (o) => infovisEmojiModel(o),
-		infovisFiles: (o) => infovisFilesModel(o),
-		otolModel: deprecatedPreset("otolModel", "presets.treeOfLife", otolModel),
-		mainModel: deprecatedPreset("mainModel", "presets.treeOfLifeMain", oldPresets.mainModel),
-		generatorModel: deprecatedPreset("generatorModel", "presets.modelBase", oldPresets.generatorModel),
-		generatorSpiralModel: deprecatedPreset("generatorSpiralModel", "presets.modelBase with layout.type", oldPresets.generatorSpiralModel),
-		stackoverflowModel: deprecatedPreset("stackoverflowModel", "presets.modelBase", oldPresets.stackoverflowModel),
-		acmflareModel: deprecatedPreset("acmflareModel", "presets.infovis", oldPresets.acmflareModel),
-		fsModel: deprecatedPreset("fsModel", "presets.infovis", oldPresets.fsModel)
-	};
-	var warned = /* @__PURE__ */ new Set();
-	function deprecated(old, now) {
-		if (warned.has(old)) return;
-		warned.add(old);
-		console.warn(`d3-hypertree: ${old} is deprecated, use ${now}`);
-	}
-	var removedLineLayers = {
-		"link-lines": "link-arcs",
-		"path-lines": "path-arcs"
-	};
-	/**
-	* Returns a copy of the model (only the touched branches are copied) with:
-	* - renamed options mapped to their current names (with a deprecation warning):
-	*   layerOptions[*].nodeColor -> fill, linkColor -> stroke,
-	*   interaction.wheelSensitivity -> wheelFactor,
-	*   geometry.animateUpRadius -> layout.initSize,
-	*   filter.cullingWeight -> filter.weightFilter.rangeNodes,
-	*   filter.transformation.P -> geometry.startPosition
-	* - geometry.addLayer / removeLayer (layer names) as layerOptions; the removed
-	*   layers link-lines / path-lines become link-arcs / path-arcs with linkCurvature 'l'
-	* - langmap as the language loader's result (unless a langloader is given)
-	* - filter.weightFilter: null taken out (merging can't express null); reported
-	*   in the result and applied after the merge
-	*/
-	function applyDocumentedOptions(input) {
-		const model = Object.assign({}, input || {});
-		const branch = (k) => model[k] = Object.assign({}, model[k] || {});
-		if (input && input.interaction && input.interaction.wheelSensitivity !== void 0) {
-			deprecated("interaction.wheelSensitivity", "interaction.wheelFactor");
-			const i = branch("interaction");
-			if (i.wheelFactor === void 0) i.wheelFactor = i.wheelSensitivity;
-			delete i.wheelSensitivity;
-		}
-		const g = input && input.geometry;
-		if (g) {
-			if (g.animateUpRadius !== void 0) {
-				deprecated("geometry.animateUpRadius", "layout.initSize");
-				const l = branch("layout");
-				if (l.initSize === void 0) l.initSize = g.animateUpRadius;
-				delete branch("geometry").animateUpRadius;
-			}
-			if (g.layerOptions || g.addLayer || g.removeLayer) {
-				const geometry = branch("geometry");
-				const layerOptions = geometry.layerOptions = Object.assign({}, g.layerOptions || {});
-				const layer = (name) => layerOptions[name] = Object.assign({}, layerOptions[name] || {});
-				for (const name of Object.keys(layerOptions)) {
-					const o = layerOptions[name];
-					if (o && o.nodeColor !== void 0) {
-						deprecated("layerOptions[...].nodeColor", "fill");
-						const l = layer(name);
-						if (l.fill === void 0) l.fill = l.nodeColor;
-						delete l.nodeColor;
-					}
-					if (o && o.linkColor !== void 0) {
-						deprecated("layerOptions[...].linkColor", "stroke");
-						const l = layer(name);
-						if (l.stroke === void 0) l.stroke = l.linkColor;
-						delete l.linkColor;
-					}
-				}
-				for (const name of g.addLayer || []) {
-					const arcs = removedLineLayers[name];
-					if (arcs) {
-						deprecated(`layer ${name}`, `${arcs} with geometry.linkCurvature: 'l'`);
-						if (geometry.linkCurvature === void 0) geometry.linkCurvature = "l";
-						layer(arcs).invisible = false;
-					} else layer(name).invisible = false;
-				}
-				for (const name of g.removeLayer || []) layer(name).removed = true;
-				delete geometry.addLayer;
-				delete geometry.removeLayer;
-			}
-		}
-		const f = input && input.filter;
-		let weightFilterNull = false;
-		if (f) {
-			if (f.cullingWeight !== void 0) {
-				deprecated("filter.cullingWeight", "filter.weightFilter.rangeNodes");
-				const filter = branch("filter");
-				if (filter.weightFilter !== null) {
-					filter.weightFilter = Object.assign({}, filter.weightFilter || {});
-					if (filter.weightFilter.rangeNodes === void 0) filter.weightFilter.rangeNodes = f.cullingWeight;
-				}
-				delete filter.cullingWeight;
-			}
-			if (f.transformation && f.transformation.P !== void 0) {
-				deprecated("filter.transformation.P", "geometry.startPosition");
-				const geometry = branch("geometry");
-				if (geometry.startPosition === void 0) geometry.startPosition = f.transformation.P;
-				const filter = branch("filter");
-				delete filter.transformation;
-			}
-			if (f.weightFilter === null) {
-				weightFilterNull = true;
-				delete branch("filter").weightFilter;
-			}
-		}
-		if (input && input.langmap && !input.langloader) model.langloader = (ok) => ok(input.langmap);
-		return {
-			model,
-			weightFilterNull
-		};
-	}
-	/** Orders the children of every node of the tree (weights: precalc.layoutWeight). */
-	function balanceChildren(root) {
-		const todo = [root];
-		while (todo.length) {
-			const n = todo.pop();
-			if (!n.children || !n.children.length) continue;
-			if (n.children.length > 1) n.children = balanced(n.children, n.depth % 2 === 0);
-			for (const c of n.children) todo.push(c);
-		}
-	}
-	/** The balanced order of a list of children (exported for the tests). */
-	function balanced(children, firstLeft) {
-		const w = (c) => c.precalc.layoutWeight || 0;
-		const sorted = children.map((c, i) => ({
-			c,
-			i
-		})).sort((a, b) => w(b.c) - w(a.c) || a.i - b.i).map((x) => x.c);
-		const left = [], right = [];
-		let wl = 0, wr = 0;
-		for (const c of sorted.slice(1)) if (wl < wr || wl === wr && firstLeft) {
-			left.push(c);
-			wl += w(c);
-		} else {
-			right.push(c);
-			wr += w(c);
-		}
-		return [
-			...left.reverse(),
-			sorted[0],
-			...right
-		];
-	}
-	function overview(root, layout, orientation, λstart, λbounds, o = {}) {
-		const count = o.nodes || 300, fill = o.fill || .95, rounds = o.rounds || 6;
-		const inner = [];
-		root.each((n) => {
-			if (n.children && n.children.length) inner.push(n);
-		});
-		inner.sort((a, b) => b.precalc.layoutWeight - a.precalc.layoutWeight);
-		const S = inner.slice(0, count);
-		if (!S.length) return {
-			P: {
-				re: 0,
-				im: 0
-			},
-			λ: λstart
-		};
-		const down = {
-			re: -Math.cos(orientation),
-			im: -Math.sin(orientation)
-		};
-		const positions = (λ) => {
-			layout(root, λ);
-			return S.map((n) => ({
-				re: n.layout.z.re,
-				im: n.layout.z.im
-			}));
-		};
-		const moved = (z, P) => h2e(makeT(P, one), z);
-		const quantile = (a, f) => {
-			const s = a.slice().sort((x, y) => x - y);
-			return s[Math.floor(f * (s.length - 1))];
-		};
-		const MAX_R = .97;
-		const along = (p) => ({
-			re: down.re * p,
-			im: down.im * p
-		});
-		const center = (zs, _P) => {
-			let lo = 0, hi = MAX_R;
-			for (let i = 0; i < 30; i++) {
-				const p = (lo + hi) / 2;
-				let c = 0;
-				for (const z of zs) {
-					const w = moved(z, along(p));
-					c += w.re * down.re + w.im * down.im;
-				}
-				if (c < 0) lo = p;
-				else hi = p;
-			}
-			return along((lo + hi) / 2);
-		};
-		const fit = (P) => {
-			let lo = λbounds[0], hi = λbounds[1];
-			for (let i = 0; i < 25; i++) {
-				const λ = Math.sqrt(lo * hi);
-				if (quantile(positions(λ).map((z) => {
-					const w = moved(z, P);
-					return Math.hypot(w.re, w.im);
-				}), fill) < fill) lo = λ;
-				else hi = λ;
-			}
-			return Math.sqrt(lo * hi);
-		};
-		let λ = Math.min(λbounds[1], Math.max(λbounds[0], λstart));
-		let P = {
-			re: down.re * .5,
-			im: down.im * .5
-		};
-		for (let i = 0; i < rounds; i++) {
-			const P2 = center(positions(λ), P);
-			const λ2 = fit(P2);
-			const settled = Math.hypot(P2.re - P.re, P2.im - P.im) < .001 && Math.abs(λ2 - λ) < 1e-4;
-			P = P2;
-			λ = λ2;
-			if (settled) break;
-		}
-		return {
-			P,
-			λ
-		};
-	}
-	var globelhtid = 0;
-	var htmlpreloader = `
-    <div class="spinner">
-        <div class="double-bounce1"></div>
-        <div class="double-bounce2"></div>
-    </div>`;
-	var grad = [
-		255,
-		96,
-		36,
-		0
-	];
-	var bubbleSvgDef$1 = `<defs>
-        <radialGradient id="exampleGradient">            
-            <stop offset="58%"  stop-color="rgb(${grad[0]},${grad[0]},${grad[0]})" stop-opacity=".15"/>            
-            <stop offset="92%"  stop-color="rgb(${grad[1]},${grad[1]},${grad[1]})" stop-opacity=".15"/>
-            <stop offset="98%"  stop-color="rgb(${grad[2]},${grad[2]},${grad[2]})" stop-opacity=".15"/>
-            <stop offset="100%" stop-color="rgb(${grad[3]},${grad[3]},${grad[3]})" stop-opacity=".15"/>
-        </radialGradient>
-    </defs>`;
-	var hypertreehtml$1 = `<div class="unitdisk-nav">        
-        <svg width="100%" height="100%" preserveAspectRatio="xMidYMid meet" viewBox="-0 0 1000 1000">
-            ${bubbleSvgDef$1}
-        </svg>
-        <div class="preloader"></div>
-    </div>`;
-	var Hypertree = class {
-		constructor(view, args) {
-			this.log = [];
-			this.isInitializing = false;
-			this.lastCenterNode = void 0;
-			this.api = {
-				setModel: (model) => new Promise((ok, err) => {
-					this.isInitializing = true;
-					const base = presets.modelBase();
-					if (model && model.filter && model.filter.weightFilter && model.filter.weightFilter.magic !== void 0) console.warn("d3-hypertree: filter.weightFilter.magic is set internally and ignored; configure the number of visible nodes with filter.weightFilter.rangeNodes");
-					const compat = applyDocumentedOptions(model);
-					this.args = mergeDeep(base, compat.model);
-					if (compat.weightFilterNull) this.args.filter.weightFilter = null;
-					this.update.view.parent();
-					this.api.setDataloader(ok, err, this.args.dataloader);
-					this.api.setLangloader(ok, err, this.args.langloader);
-				}),
-				setLangloader: (ok, err, ll) => {
-					this.args.langloader = ll;
-					this.args.langloader((langMap, t1, dl) => {
-						this.langMap = langMap || {};
-						this.updateLang_(dl);
-						this.update.data();
-						if (this.data) {
-							this.isInitializing = false;
-							ok();
-						}
-					});
-				},
-				setDataloader: (ok, err, dl) => {
-					this.args.dataloader = dl;
-					const t0 = performance.now();
-					this.resetData();
-					this.args.dataloader((d3h, t1, dl) => {
-						if (!d3h) {
-							this.isInitializing = false;
-							err(/* @__PURE__ */ new Error("d3-hypertree: the dataloader delivered no data"));
-							return;
-						}
-						this.initData(d3h, t0, t1, dl);
-						if (this.langMap) {
-							this.update.data();
-							this.isInitializing = false;
-							ok();
-						}
-					});
-				},
-				toggleSelection: (n) => this.select_(n, !this.args.objects.selections.includes(n)),
-				select: (n) => this.select_(n, true),
-				deselect: (n) => this.select_(n, false),
-				clearSelection: () => {
-					for (const s of [...this.args.objects.selections]) this.setSelected_(s, false);
-					this.update.pathes();
-				},
-				setPathHead: (pathType, n) => {
-					if (!this.isInitializing && !this.isAnimationRunning()) {
-						this.setPathHead(pathType, n);
-						this.update.pathes();
-					}
-				},
-				selectQuery: (query, prop) => {
-					const lq = query ? query.toLowerCase() : null;
-					this.data.each((n) => {
-						n.pathes.partof = [];
-						n.pathes.headof = void 0;
-						n.pathes.labelcolor = void 0;
-						n.pathes.finalcolor = void 0;
-						n.pathes.isPartOfAnyQuery = false;
-					});
-					this.args.objects.pathes = [];
-					this.data.each((n) => {
-						if (n.data) {
-							if (n.data.name.toLowerCase().includes(lq)) this.addPath("Query", n);
-							if (n.precalc && n.precalc.label) {
-								if (n.precalc.label.toLowerCase().includes(lq)) this.addPath("Query", n);
-							}
-						}
-					});
-					this.update.pathes();
-				},
-				gotoHome: () => new Promise((ok, err) => this.animateTo(ok, err, {
-					re: 0,
-					im: 0
-				}, null)),
-				gotoNode: (n) => new Promise((ok, err) => this.animateTo(ok, err, CmulR({
-					re: n.layout.z.re,
-					im: n.layout.z.im
-				}, -1), null)),
-				goto: (p, l) => new Promise((ok, err) => this.animateTo(ok, err, p, l)),
-				gotoλ: (l) => new Promise((ok, err) => this.animateToλ(ok, err, l)),
-				/**
-				* A view with a good overview of the tree structure: { P, λ } with the root
-				* at the bottom, the main branchings in the middle, the branches filling the
-				* disk (models/hypertree/overview.ts). Only computes; the view stays.
-				*/
-				overview: (o) => {
-					const state = this.args.geometry.transformation.state;
-					const v = overview(this.data, (n, λ) => this.args.layout.type(n, λ), this.args.layout.rootWedge.orientation, state.λ, this.args.interaction.λbounds, o);
-					this.args.layout.type(this.data, state.λ);
-					return v;
-				},
-				/** Animates to api.overview(). */
-				gotoOverview: (o) => {
-					const v = this.api.overview(o);
-					return new Promise((ok, err) => this.animateTo(ok, err, v.P, v.λ));
-				}
-			};
-			this.update = {
-				view: {
-					parent: () => this.updateParent(),
-					unitdisk: () => this.updateUnitdiskView()
-				},
-				data: () => this.unitdisk.update.data(),
-				transformation: () => this.unitdisk.update.transformation(),
-				pathes: () => this.unitdisk.update.pathes(),
-				centernode: (centerNode) => {
-					if (this.lastCenterNode && this.lastCenterNode.mergeId == centerNode.mergeId) return;
-					this.lastCenterNode = centerNode;
-					const pathStr = centerNode.ancestors().reduce((a, e) => `${e.precalc.label ? "  " + e.precalc.label + "  " : ""}${a ? "›" : ""}${a}`, "");
-					if (this.args.interaction.onCenterNodeChange) this.args.interaction.onCenterNodeChange(centerNode, pathStr);
-				}
-			};
-			this.onResize = null;
-			this.virtualCanvas = void 0;
-			this.virtualCanvasContext = void 0;
-			this.waitingForFonts = false;
-			this.btnPathId = (pathType, n) => `btn-path-${pathType}` + (pathType === "SelectionPath" ? `-${n.mergeId}` : "");
-			this.view_ = view;
-			this.initPromise = this.api.setModel(args);
-		}
-		updateParent() {
-			this.view_.parent.innerHTML = "";
-			this.view_.html = HTML$1.parse(hypertreehtml$1)();
-			this.view_.parent.appendChild(this.view_.html);
-			this.updateUnitdiskView();
-		}
-		viewPosition() {
-			const svg = this.view_.html.querySelector(".unitdisk-nav > svg");
-			if (!this.args.geometry.halfPlane) {
-				svg.setAttribute("viewBox", "0 0 1000 1000");
-				return "translate(500,500) scale(480)";
-			}
-			const r = this.view_.parent.getBoundingClientRect();
-			const aspect = r.width > 0 && r.height > 0 ? r.width / r.height : 1.6;
-			const w = Math.round(1e3 * aspect);
-			svg.setAttribute("viewBox", `0 0 ${w} 1000`);
-			if (!this.onResize) {
-				this.onResize = () => {
-					if (!this.args.geometry.halfPlane || !this.view_.html) return;
-					const p = this.viewPosition();
-					const g = this.view_.html.querySelector(".unitdisk-nav > svg > .unitDisc");
-					if (g) g.setAttribute("transform", p);
-				};
-				window.addEventListener("resize", this.onResize);
-			}
-			return `translate(${w / 2},500) scale(480)`;
-		}
-		updateUnitdiskView() {
-			var udparent = this.view_.html.querySelector(".unitdisk-nav > svg");
-			udparent.innerHTML = bubbleSvgDef$1;
-			this.unitdisk = new this.args.geometry.decorator({
-				parent: udparent,
-				className: "unitDisc",
-				position: this.viewPosition(),
-				hypertree: this
-			}, {
-				data: null,
-				decorator: null,
-				transformation: this.args.geometry.transformation,
-				transform: (n) => this.unitdisk.args.transformation.transformPoint(n.layout.z),
-				layers: this.args.geometry.layers,
-				layerOptions: this.args.geometry.layerOptions,
-				cacheUpdate: this.args.geometry.cacheUpdate,
-				clipRadius: this.args.geometry.clipRadius,
-				nodeRadius: this.args.geometry.nodeRadius,
-				nodeScale: this.args.geometry.nodeScale,
-				nodeFilter: this.args.geometry.nodeFilter,
-				linkWidth: this.args.geometry.linkWidth,
-				linkCurvature: this.args.geometry.linkCurvature,
-				offsetEmoji: this.args.geometry.offsetLabels,
-				offsetLabels: this.args.geometry.offsetLabels,
-				captionBackground: this.args.geometry.captionBackground,
-				captionFont: this.args.geometry.captionFont,
-				captionHeight: this.args.geometry.captionHeight
-			});
-		}
-		resetData() {
-			this.view_.html.querySelector(".preloader").innerHTML = htmlpreloader;
-			this.unitdisk.args.data = void 0;
-			this.data = void 0;
-			this.langMap = void 0;
-			this.args.geometry.transformation.state.λ = .001;
-			this.args.geometry.transformation.state.P.re = 0;
-			this.args.geometry.transformation.state.P.im = 0;
-			if (this.args.filter.weightFilter) this.args.filter.weightFilter.magic = 20;
-			this.args.geometry.transformation.cache.centerNode = void 0;
-			this.args.objects.selections = [];
-			this.args.objects.pathes = [];
-			this.args.objects.traces = [];
-			requestAnimationFrame(() => this.update.data());
-		}
-		initData(d3h, t0, t1, dl) {
-			var t2 = performance.now();
-			var ncount = 1;
-			globelhtid++;
-			this.data = hierarchy$1(d3h).each((n) => {
-				n.globelhtid = globelhtid;
-				n.mergeId = ncount++;
-				n.data = n.data || {};
-				n.precalc = {};
-				n.pathes = {};
-				n.layout = null;
-				n.layoutReference = null;
-			});
-			this.unitdisk.args.data = this.data;
-			this.args.geometry.transformation.cache.N = this.data.descendants().length;
-			const startAngle = this.args.layout.rootWedge.orientation;
-			const defAngleWidth = this.args.layout.rootWedge.angle;
-			this.data.layout = { wedge: {
-				α: πify(startAngle - defAngleWidth / 2),
-				Ω: πify(startAngle + defAngleWidth / 2)
-			} };
-			setZ(this.data, {
-				re: 0,
-				im: 0
-			});
-			var t3 = performance.now();
-			this.updateWeights_();
-			this.data.each((n) => n.precalc.clickable = true);
-			this.data.each((n) => this.args.dataInitBFS(this, n));
-			if (this.args.layout.childOrder === "balanced") balanceChildren(this.data);
-			const iconmap = this.args.iconmap;
-			if (iconmap) this.data.each((n) => {
-				const icon = iconmap[n.data.name] !== void 0 ? iconmap[n.data.name] : iconmap[n.data.id];
-				if (icon !== void 0) n.precalc.icon = icon;
-			});
-			this.modelMeta = {
-				Δ: [
-					t1 - t0,
-					t2 - t1,
-					t3 - t2,
-					performance.now() - t3
-				],
-				filesize: dl,
-				nodecount: ncount - 1
-			};
-			this.updateLang_();
-			this.applyMinFill_();
-			this.findInitλ_();
-			this.view_.html.querySelector(".preloader").innerHTML = "";
-		}
-		updateWeights_() {
-			this.sum(this.data, this.args.layout.weight, "layoutWeight");
-			this.sum(this.data, this.args.filter.weightFilter ? this.args.filter.weightFilter.weight : ((n) => 1), "cullingWeight");
-			this.sum(this.data, this.args.layout.weight, "visWeight");
-			this.data.each((n) => n.precalc.weightScale = (Math.log2(n.precalc.visWeight) || 1) / (Math.log2(this.data.precalc.visWeight || this.data.children.length) || 1));
-		}
-		sum(data, value, target) {
-			data.eachAfter((node) => {
-				let sum = +value(node) || 0;
-				const children = node.children;
-				var i = children && children.length;
-				while (--i >= 0) sum += children[i].precalc[target];
-				node.precalc[target] = sum;
-			});
-		}
-		updateLang_(dl = 0) {
-			const t0 = performance.now();
-			if (this.data) {
-				this.data.each((n) => this.args.langInitBFS(this, n));
-				this.updateLabelLen_();
-			}
-			if (dl || !this.langMeta) this.langMeta = {
-				Δ: [performance.now() - t0],
-				map: this.langMap,
-				filesize: dl
-			};
-		}
-		/**
-		* interaction.minFill: the lower λ bound at which the visible tree, with the root in
-		* the middle, still reaches minFill of the disk radius (its farthest visible node:
-		* the filter decides what is visible at that zoom, as in findInitλ_; the radius
-		* grows with λ, so a bisection). Zooming out further would leave the tree a small
-		* spot in the middle. A tree that never reaches it gets λbounds[1].
-		*/
-		applyMinFill_() {
-			if (!this.data) return;
-			const maxLink = this.args.interaction.maxLinkLength;
-			if (maxLink) this.args.interaction.λbounds = [this.args.interaction.λbounds[0], maxLink];
-			const fill = this.args.interaction.minFill;
-			if (!fill) {
-				const [lo, hi] = this.args.interaction.λbounds;
-				if (lo > hi) this.args.interaction.λbounds = [hi, hi];
-				return;
-			}
-			const max = this.args.interaction.λbounds[1];
-			const λstart = this.args.geometry.transformation.state.λ;
-			const reach = (λ) => {
-				this.args.geometry.transformation.state.λ = λ;
-				this.updateLayoutPath_(this.data);
-				this.unitdisk.args.cacheUpdate(this.unitdisk, this.unitdisk.cache);
-				return (this.args.geometry.transformation.cache.unculledNodes || []).reduce((m, n) => Math.max(m, n.layout && n.layout.zp ? n.layout.zp.r : 0), 0);
-			};
-			let λ = max;
-			if (reach(max) > fill) {
-				let lo = 1e-5, hi = max;
-				for (let i = 0; i < 40; i++) {
-					const mid = Math.sqrt(lo * hi);
-					if (reach(mid) >= fill) hi = mid;
-					else lo = mid;
-				}
-				λ = hi;
-			}
-			this.args.interaction.λbounds = [λ, max];
-			this.args.geometry.transformation.state.λ = λstart;
-			this.updateLayoutPath_(this.data);
-		}
-		findInitλ_() {
-			const initSize = this.args.layout.initSize || .95;
-			const maxRAt = (λ) => {
-				this.args.geometry.transformation.state.λ = λ;
-				this.updateLayoutPath_(this.data);
-				this.unitdisk.args.cacheUpdate(this.unitdisk, this.unitdisk.cache);
-				return this.args.geometry.transformation.cache.unculledNodes.reduce((max, n) => Math.max(max, n.layout.zp.r), 0);
-			};
-			let fitting = void 0, tooLarge = void 0;
-			for (let i = 0; i < 50; i++) {
-				const λ = .02 + sigmoid(i / 50) * .75;
-				if (maxRAt(λ) > initSize) {
-					tooLarge = λ;
-					break;
-				}
-				fitting = λ;
-			}
-			if (fitting !== void 0 && tooLarge !== void 0) {
-				let lo = fitting, hi = tooLarge;
-				for (let i = 0; i < 12; i++) {
-					const mid = (lo + hi) / 2;
-					if (maxRAt(mid) <= initSize) lo = mid;
-					else hi = mid;
-				}
-				maxRAt(lo);
-			}
-			const fitλ = this.args.geometry.transformation.state.λ;
-			const startλ = this.clampλ(fitλ);
-			if (startλ !== fitλ) {
-				this.args.geometry.transformation.state.λ = startλ;
-				this.updateLayoutPath_(this.data);
-				this.unitdisk.args.cacheUpdate(this.unitdisk, this.unitdisk.cache);
-			}
-			const start = this.args.geometry.startPosition;
-			if (start) {
-				this.args.geometry.transformation.state.P = {
-					re: start.re,
-					im: start.im
-				};
-				this.unitdisk.args.cacheUpdate(this.unitdisk, this.unitdisk.cache);
-			}
-			if (this.args.filter.weightFilter) settleMagic(this.unitdisk, this.unitdisk.cache);
-			this.data.each((n) => n.layoutReference = clone$1(n.layout));
-		}
-		/**
-		* The canvas font and the factor from canvas pixels to the units of the SVG labels,
-		* from a caption measured in this tree's SVG: the font the labels are drawn with
-		* (family, weight and size from the CSS, e.g. the larger :lang(zh) size), so the
-		* widths fit for every language and screen scaling. Until v1 the widths came from
-		* geometry.captionFont divided by devicePixelRatio: too narrow on scaled screens
-		* (125 %, 150 %) and with the CSS weight 300 vs 400, so label backgrounds were too
-		* small for their text.
-		*/
-		captionMetrics(context) {
-			const html = this.view_ && this.view_.html;
-			const svg = html && (html.querySelector(".unitdisk-nav svg") || html.querySelector("svg"));
-			if (!svg) return null;
-			const sample = "Hyperbolic Tree of Life 0123456789";
-			const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
-			text.setAttribute("class", "caption");
-			text.textContent = sample;
-			const parent = svg.querySelector(".unitDisc") || svg;
-			parent.appendChild(text);
-			let width = 0, cs;
-			try {
-				width = text.getBBox().width;
-				cs = getComputedStyle(text);
-			} catch (e) {
-				width = 0;
-			}
-			parent.removeChild(text);
-			if (!width || !cs) return null;
-			const font = `${cs.fontStyle} ${cs.fontWeight} 100px ${cs.fontFamily}`;
-			context.font = font;
-			const canvasWidth = context.measureText(sample).width;
-			return canvasWidth ? {
-				font,
-				factor: width / canvasWidth,
-				probe: `${cs.fontStyle} ${cs.fontWeight} 16px ${cs.fontFamily}`
-			} : null;
-		}
-		updateLabelLen_() {
-			var canvas = this.virtualCanvas || (this.virtualCanvas = document.createElement("canvas"));
-			var context = this.virtualCanvasContext || (this.virtualCanvasContext = canvas.getContext("2d"));
-			const metrics = this.captionMetrics(context);
-			const font = metrics ? metrics.font : this.args.geometry.captionFont;
-			const factor = metrics ? metrics.factor : 1 / 200;
-			context.font = font;
-			const fonts = document.fonts;
-			if (metrics && fonts && !this.waitingForFonts) {
-				let missing = false;
-				try {
-					missing = !fonts.check(metrics.probe);
-				} catch (e) {
-					missing = false;
-				}
-				if (missing) {
-					this.waitingForFonts = true;
-					fonts.load(metrics.probe).catch(() => {}).then(() => {
-						this.waitingForFonts = false;
-						if (!this.data) return;
-						let still = false;
-						try {
-							still = !fonts.check(metrics.probe);
-						} catch (e) {}
-						if (still) return;
-						this.updateLabelLen_();
-						this.update.data();
-					});
-				}
-			}
-			const updateLabelLen_ = (txtprop, lenprop) => {
-				this.data.each((n) => {
-					if (n.precalc[txtprop]) {
-						const lines = String(n.precalc[txtprop]).split("\n");
-						const width = Math.max(...lines.map((l) => context.measureText(l).width));
-						n.precalc[lenprop] = width * factor;
-						console.assert(typeof n.precalc[lenprop] === "number");
-					} else n.precalc[lenprop] = void 0;
-				});
-			};
-			updateLabelLen_("label", "labels-forcelen");
-			updateLabelLen_("label", "labelslen");
-			updateLabelLen_("label", "labels-placedlen");
-			updateLabelLen_("icon", "emojislen");
-		}
-		updateLayoutPath_(preservingnode) {
-			const t = this.args.geometry.transformation;
-			console.assert(!!preservingnode);
-			const t0 = performance.now();
-			preservingnode.ancestors().reverse().forEach((n) => this.args.layout.type(n, t.state.λ, true));
-			t.state.P = CmulR(preservingnode.layout.z, -1);
-			this.layoutMeta = { Δ: performance.now() - t0 };
-		}
-		addIfNotInSafe(arr, newE, side = "unshift") {
-			if (!arr) return [newE];
-			if (!arr.includes(newE)) arr[side](newE);
-			return arr;
-		}
-		toggleSelection(n) {
-			this.setSelected_(n, !this.args.objects.selections.includes(n));
-		}
-		/** Selects or deselects n according to interaction.selection, then redraws. */
-		select_(n, selected) {
-			const mode = this.args.interaction.selection || "multi";
-			if (!n || mode === "none") return;
-			if (selected === this.args.objects.selections.includes(n)) return;
-			if (selected) {
-				if (mode === "single") for (const s of [...this.args.objects.selections]) this.setSelected_(s, false);
-				this.setSelected_(n, true);
-				const max = this.args.interaction.maxSelections || 10;
-				while (mode === "multi" && this.args.objects.selections.length > max) this.setSelected_(this.args.objects.selections[0], false);
-			} else this.setSelected_(n, false);
-			this.update.pathes();
-		}
-		/** The single place that changes the selection state of a node. */
-		setSelected_(n, selected) {
-			const selections = this.args.objects.selections;
-			if (selected === selections.includes(n)) return;
-			if (selected) {
-				selections.push(n);
-				this.addPath("SelectionPath", n);
-			} else {
-				this.args.objects.selections = selections.filter((e) => e !== n);
-				this.removePath("SelectionPath", n);
-			}
-			n.selected = selected;
-			if (this.args.interaction.onNodeSelect) this.args.interaction.onNodeSelect(n, selected);
-		}
-		setPathHead(path, n) {
-			const pt = path ? path.type : "HoverPath";
-			const oldPathId = this.btnPathId(pt, n);
-			const oldPath = this.args.objects.pathes.find((e) => e.id === oldPathId);
-			if (oldPath) {
-				this.removePath(pt, oldPath.head);
-				if (pt === "HoverPath") oldPath.head.hovered = false;
-			}
-			if (n) {
-				this.addPath(pt, n);
-				if (pt === "HoverPath") n.hovered = true;
-			}
-		}
-		addPath(pathType, n) {
-			const plidx = stringhash(n.precalc.label);
-			const color = {
-				"HoverPath": "none",
-				"Query": googlePalette(15)
-			}[pathType] || googlePalette(plidx) || googlePalette(1);
-			const newpath = {
-				type: pathType,
-				id: this.btnPathId(pathType, n),
-				icon: { "HoverPath": "mouse" }[pathType] || "place",
-				head: n,
-				headName: n.precalc.label,
-				ancestors: n.ancestors(),
-				color
-			};
-			this.args.objects.pathes.push(newpath);
-			n.pathes.headof = newpath;
-			if (pathType !== "HoverPath") n.pathes.finalcolor = n.pathes.labelcolor = newpath.color;
-			n.ancestors().forEach((pn) => {
-				pn.pathes.partof = this.addIfNotInSafe(pn.pathes.partof, newpath, pathType === "HoverPath" ? "push" : "unshift");
-				if (pathType !== "HoverPath") pn.pathes.finalcolor = newpath.color;
-				pn.pathes[`isPartOfAny${pathType}`] = true;
-			});
-			return newpath;
-		}
-		removePath(pathType, n) {
-			const pathId = this.btnPathId(pathType, n);
-			this.args.objects.pathes = this.args.objects.pathes.filter((e) => e.id !== pathId);
-			n.pathes.headof = void 0;
-			if (pathType !== "HoverPath") n.pathes.labelcolor = void 0;
-			n.ancestors().forEach((pn) => {
-				pn.pathes.partof = pn.pathes.partof.filter((e) => e.id !== pathId);
-				pn.pathes.finalcolor = pn.pathes.partof.length > 0 ? pn.pathes.partof[0].color : void 0;
-				if (pn.pathes.finalcolor === "none") pn.pathes.finalcolor = void 0;
-				const nodeFlagName = `isPartOfAny${pathType}`;
-				pn.pathes[nodeFlagName] = pn.pathes.partof.some((e) => e.type === pathType);
-			});
-		}
-		drawDetailFrame() {
-			this.update.data();
-		}
-		animateUp(ok, err) {
-			const newλ = this.args.geometry.transformation.state.λ;
-			this.args.geometry.transformation.state.λ = .001;
-			this.animateToλ(ok, err, newλ);
-		}
-		/** λ limited to interaction.λbounds [min, max] (inclusive). */
-		clampλ(λ) {
-			const [min, max] = this.args.interaction.λbounds;
-			return Math.min(max, Math.max(min, λ));
-		}
-		animateToλ(ok, err, newλ) {
-			newλ = this.clampλ(newλ);
-			const way = this.args.geometry.transformation.state.λ - newλ;
-			new Animation({
-				name: "animateToλ",
-				hypertree: this,
-				duration: 750,
-				resolve: ok,
-				reject: err,
-				frame: (progress01) => {
-					const waydone01 = 1 - sigmoid01(progress01);
-					console.assert(waydone01 >= 0 && waydone01 <= 1);
-					const waydone = way * waydone01;
-					const λ = newλ + waydone;
-					this.args.geometry.transformation.state.λ = λ;
-					this.updateLayoutPath_(this.args.geometry.transformation.cache.centerNode);
-					this.update.transformation();
-				}
-			});
-		}
-		/** Animates the translation to newP and, if newλ is given, the zoom to newλ. */
-		animateTo(resolve, reject, newP, newλ) {
-			const state = this.args.geometry.transformation.state;
-			const initTS = clone$1(state);
-			const way = CsubC(initTS.P, newP);
-			const zoom = newλ !== null && newλ !== void 0;
-			const targetλ = zoom ? this.clampλ(newλ) : void 0;
-			const wayλ = zoom ? initTS.λ - targetλ : 0;
-			new Animation({
-				name: "animateTo",
-				resolve,
-				reject,
-				hypertree: this,
-				duration: 750,
-				frame: (progress01) => {
-					const waydone01 = 1 - sigmoid01(progress01);
-					console.assert(waydone01 >= 0 && waydone01 <= 1);
-					if (zoom) {
-						state.λ = targetλ + wayλ * waydone01;
-						this.updateLayoutPath_(this.args.geometry.transformation.cache.centerNode);
-					}
-					const animP = CaddC(newP, CmulR(way, waydone01));
-					state.P = {
-						re: state.P.re,
-						im: state.P.im
-					};
-					CassignC(state.P, animP);
-					this.update.transformation();
-				}
-			});
-		}
-		/**
-		* Stops a running animation (goto, gotoλ, ...) where it is. Called when a drag,
-		* pinch or wheel starts: an animation that kept running fought with the drag, both
-		* set the translation, and the tree jumped between both states on every frame
-		* (flickering branches; e.g. dragging right after a click that started a goto).
-		*/
-		stopAnimation() {
-			if (this.transition) {
-				this.transition.cancel();
-				this.transition = void 0;
-			}
-		}
-		isAnimationRunning() {
-			const view = this.unitdisk && this.unitdisk.isDraging;
-			const nav = this.unitdisk && this.unitdisk.isDraging;
-			const wheel = this.unitdisk && this.unitdisk.isWheeling;
-			const lowdetail = this.transition ? this.transition.lowdetail : false;
-			return view || nav || wheel || lowdetail;
-		}
-	};
-	var Transition = class {
-		constructor(hypertree) {
-			this.frames = [];
-			this.lowdetail = true;
-			this.cancelled = false;
-			this.hypertree = hypertree;
-		}
-		begin() {
-			this.beginTime = performance.now();
-		}
-		end() {
-			this.currentframe = void 0;
-			if (this.hypertree.transition === this) this.hypertree.transition = void 0;
-		}
-		cancel() {
-			this.cancelled = true;
-		}
-	};
-	var Frame = class {
-		constructor(nr) {
-			this.nr = nr;
-			this.created = performance.now();
-		}
-	};
-	var Animation = class extends Transition {
-		constructor(args) {
-			super(args.hypertree);
-			if (args.hypertree.transition) {
-				console.warn("d3-hypertree: an animation is already running, the new one is ignored");
-				return;
-			}
-			args.hypertree.transition = this;
-			this.hypertree.log.push(this.hypertree.transition);
-			const frame = () => {
-				if (this.cancelled) {
-					this.end();
-					args.resolve();
-					return;
-				}
-				this.currentframe = new Frame(0);
-				this.frames.push(this.currentframe);
-				const now = performance.now();
-				if (!this.beginTime) {
-					this.begin();
-					this.endTime = now + args.duration;
-				}
-				const p01 = (now - this.beginTime) / args.duration;
-				if (now > this.endTime) {
-					args.frame(1);
-					this.end();
-					args.resolve();
-				} else {
-					args.frame(p01);
-					requestAnimationFrame(() => frame());
-				}
-				this.currentframe = void 0;
-			};
-			requestAnimationFrame(() => frame());
-		}
-	};
-	var bubbleSvgDef = `<defs>
-        <radialGradient id="exampleGradient">            
-            <stop offset="0%"   stop-color="rgb(255,255,255)" stop-opacity=".08"/>
-            <stop offset="30%"  stop-color="rgb(243,243,243)" stop-opacity=".08"/>
-            <stop offset="48%"  stop-color="rgb(224,224,224)" stop-opacity=".08"/>
-            <stop offset="58%"  stop-color="rgb(208,208,208)" stop-opacity=".08"/>
-            <stop offset="82%"  stop-color="rgb(146,146,146)" stop-opacity=".08"/>
-            <stop offset="92%"  stop-color="rgb(100,100,100)" stop-opacity=".08"/>
-            <stop offset="98%"  stop-color="rgb( 51, 51, 51)" stop-opacity=".08"/>
-            <stop offset="100%" stop-color="rgb(  0,  0,  0)" stop-opacity=".08"/>
-        </radialGradient>
-    </defs>`;
-	var btn = (name, icon, classes = "", iconColor = void 0) => `<button id="${name}" class="btn btn-small waves-effect waves-orange pn ${classes}">        
-        <i class="material-icons" ${iconColor ? "style=\"color:" + iconColor + ";\"" : ""}>${icon}</i>
-    </button>`;
-	var maintoobarHTML = `
-    <!--
-    ${btn("btnundo", "undo")}
-    ${btn("btncommit", "check")}
-    -->            
-    <!--
-    ${btn("btndownload", "file_download", "tool-seperator disabled")}
-    ${btn("btnupload", "cloud_upload", "disabled")}            
-    -->
-
-    ${btn("btnhome", "home", "disabled")}
-    ${btn("btnquery", "search")}
-    
-    
-    <!--
-    ,530, 470
-    ${btn("btncut", "content_cut")}
-    ${btn("btncopy", "content_copy")}
-    ${btn("btnpaste", "content_paste")}
-    ${btn("btnbrowse", "open_with", "tool-seperator tool-active")}
-    ${btn("btnadd", "add")}
-    ${btn("btnedit", "border_color")}
-    ${btn("btndelte", "delete")}
-
-    swap
-    open
-    search from here
-    -->`;
-	var pathtoobarHTML = `
-    ${btn("btnnav", "explore")}
-    <!--${btn("btnsize", "all_out")}-->
-    ${btn("btnmeta", "layers")}
-    <!--
-    ${btn("btn-path-home", "grade", "tool-seperator")}
-    -->
-    ${btn("btn-path-center", "add_circle", "disabled tool-seperator")}`;
-	var hypertreehtml = `<div class="unitdisk-nav">
-        <div id="path"></div>
-        <div id="main-toolbar" class="tool-bar">${maintoobarHTML}</div> 
-        <div id="path-toolbar" class="tool-bar path-bar">${pathtoobarHTML}</div>        
-        <svg width="100%" height="100%" preserveAspectRatio="xMidYMid meet" viewBox="-0 0 1000 1000">
-            ${bubbleSvgDef}
-        </svg>
-        <div id="query-input">
-            <input id="query" type="text" class="browser-default">
-        </div>
-        <div id="meta"></div>        
-        <div class="preloader"></div>
-    </div>`;
-	var HypertreeEx = class extends Hypertree {
-		constructor(view, args) {
-			super(view, args);
-			this.apiex = {
-				toggleNav: () => {
-					this.args.geometry.decorator = this.args.geometry.decorator === UnitDiskNav ? UnitDisk : UnitDiskNav;
-					this.update.view.unitdisk();
-					this.update.data();
-					this.hypertreeMeta.update.model();
-					this.hypertreeMeta.update.layout();
-					this.hypertreeMeta.update.transformation();
-				},
-				toggleMeta: () => {
-					this.noHypertreeMeta = this.noHypertreeMeta ? void 0 : new NoHypertreeMeta();
-					this.update.view.meta();
-					this.hypertreeMeta.update.model();
-					this.hypertreeMeta.update.layout();
-					this.hypertreeMeta.update.transformation();
-				}
-			};
-			this.requestAnimationFrameDummyDummy = (f) => f();
-			this.update = {
-				view: {
-					parent: () => this.updateParent(),
-					unitdisk: () => {
-						this.updateUnitdiskView();
-						this.updateMetaView();
-					},
-					meta: () => this.updateMetaView()
-				},
-				data: () => {
-					this.unitdisk.update.data();
-					this.hypertreeMeta.update.transformation();
-					this.hypertreeMeta.update.layout();
-					this.hypertreeMeta.update.model();
-				},
-				transformation: () => {
-					this.unitdisk.update.transformation();
-					this.hypertreeMeta.update.layout();
-					this.hypertreeMeta.update.transformation();
-				},
-				pathes: () => {
-					this.unitdisk.update.pathes();
-					this.hypertreeMeta.update.transformation();
-				},
-				centernode: (centerNode) => {
-					const pathStr = centerNode.ancestors().reduce((a, e) => `${e.precalc.label ? "  " + e.precalc.label + "  " : ""}${a ? "›" : ""}${a}`, "");
-					if (this.args.interaction.onCenterNodeChange) this.args.interaction.onCenterNodeChange(centerNode, pathStr);
-					if (centerNode === this.data && !this.view_.btnHome.classList.contains("disabled")) this.view_.btnHome.classList.add("disabled");
-					if (centerNode !== this.data && this.view_.btnHome.classList.contains("disabled")) this.view_.btnHome.classList.remove("disabled");
-					if (!this.isAnimationRunning() && centerNode.data.name !== "Root") {
-						const find = this.unitdisk.cache.voronoiDiagram.find(0, 0);
-						if (find) this.args.interaction.onNodeSelect(find.data);
-					}
-				}
-			};
-			this.api["toggleMeta"] = this.apiex.toggleMeta;
-			this.api["toggleNav"] = this.apiex.toggleNav;
-		}
-		updateParent() {
-			this.view_.parent.innerHTML = "";
-			this.view_.html = HTML$1.parse(hypertreehtml)();
-			this.view_.parent.appendChild(this.view_.html);
-			this.noHypertreeMeta = new NoHypertreeMeta();
-			this.view_.path = this.view_.html.querySelector("#path");
-			this.view_.pathesToolbar = this.view_.html.querySelector("#path-toolbar");
-			this.view_.mainToolbar = this.view_.html.querySelector("#main-toolbar");
-			this.updateUnitdiskView();
-			this.updateMetaView();
-		}
-		updateMetaView() {
-			var metaparent = this.view_.html.querySelector(".unitdisk-nav > #meta");
-			metaparent.innerHTML = "";
-			this.hypertreeMeta = this.noHypertreeMeta || new this.unitdisk.HypertreeMetaType({
-				view: { parent: metaparent },
-				model: this
-			});
-		}
-		resetData() {
-			super.resetData();
-			this.view_.path.innerText = "";
-			this.view_.pathesToolbar.innerHTML = pathtoobarHTML;
-			this.view_.mainToolbar.innerHTML = maintoobarHTML;
-			this.view_.btnMeta = this.view_.html.querySelector("#btnmeta");
-			this.view_.btnNav = this.view_.html.querySelector("#btnnav");
-			this.view_.btnHome = this.view_.html.querySelector("#btnhome");
-			this.view_.btnQuery = this.view_.html.querySelector("#btnquery");
-			this.view_.queryDiv = this.view_.html.querySelector("#query-input");
-			this.view_.inputQuery = this.view_.html.querySelector("#query-input > input");
-			this.view_.btnHome.onclick = () => this.api.gotoHome();
-			this.view_.btnMeta.onclick = () => this.api["toggleMeta"]();
-			this.view_.btnNav.onclick = () => this.api["toggleNav"]();
-			this.view_.btnQuery.onclick = () => {
-				this.view_.queryDiv.style.visibility = this.view_.queryDiv.style.visibility === "visible" ? "hidden" : "visible";
-				if (this.view_.queryDiv.style.visibility === "visible") this.view_.inputQuery.focus();
-			};
-			this.view_.queryDiv = this.view_.html.querySelector("#query-input");
-			this.view_.queryDiv.onkeyup = (e) => {
-				event.preventDefault();
-				if (e.keyCode === 13) {
-					this.api.selectQuery(this.view_.inputQuery.value, void 0);
-					this.view_.queryDiv.style.visibility = "hidden";
-				}
-			};
-		}
-		addPath(pathType, n) {
-			const newpath = super.addPath(pathType, n);
-			if (pathType === "Query") return;
-			const btnElem = HTML$1.parse(btn(newpath.id, newpath.icon, pathType === "HoverPath" ? "disabled" : "", newpath.color))();
-			btnElem.onclick = () => {
-				this.args.interaction.onNodeSelect(n);
-				this.api.goto(CmulR({
-					re: n.layout.z.re,
-					im: n.layout.z.im
-				}, -1), null).then(() => this.drawDetailFrame());
-			};
-			btnElem.title = `${n.precalc.label}`;
-			if (pathType === "HoverPath") this.view_.pathesToolbar.insertBefore(btnElem, null);
-			else this.view_.mainToolbar.appendChild(btnElem);
-			return newpath;
-		}
-		removePath(pathType, n) {
-			super.removePath(pathType, n);
-			const pathId = this.btnPathId(pathType, n);
-			if (pathType === "HoverPath") {
-				const btnElem = this.view_.pathesToolbar.querySelector(`#${pathId}`);
-				this.view_.pathesToolbar.removeChild(btnElem);
-			} else {
-				const btnElem = this.view_.mainToolbar.querySelector(`#${pathId}`);
-				this.view_.mainToolbar.removeChild(btnElem);
-			}
-		}
-	};
 	var layers;
 	(function(_layers) {
 		_layers.CellLayer = CellLayer;
@@ -18470,7 +16582,6 @@ var htol = (function(exports) {
 		_layers.LabelPlacementLayer = LabelPlacementLayer;
 		_layers.BackgroundLayer = BackgroundLayer;
 		_layers.FocusLayer = FocusLayer;
-		_layers.InteractionLayer = InteractionLayer;
 		_layers.InteractionLayer2 = InteractionLayer2;
 	})(layers || (layers = {}));
 	// src/settings.ts
@@ -18478,8 +16589,13 @@ var htol = (function(exports) {
 		applyTheme: () => applyTheme,
 		chooseLanguage: () => chooseLanguage,
 		chooseTheme: () => chooseTheme,
+		labelPx: () => labelPx,
 		language: () => language,
 		onThemeChange: () => onThemeChange,
+		phone: () => phone$1,
+		phoneLabelPx: () => phoneLabelPx,
+		sizeLabels: () => sizeLabels,
+		sizePhoneLabels: () => sizePhoneLabels,
 		theme: () => theme,
 		updateLinks: () => updateLinks,
 		wikipediaLanguage: () => wikipediaLanguage,
@@ -18574,6 +16690,56 @@ var htol = (function(exports) {
 			if (kept !== href) a.setAttribute("href", kept);
 		}
 	}
+	/** The phone layout is in use. */
+	function phone$1() {
+		const p = params().get("phone");
+		if (p === "1") return true;
+		if (p === "0") return false;
+		return !!(window.matchMedia && window.matchMedia("only screen and (max-width: 760px)").matches);
+	}
+	document.documentElement.classList.toggle("phone", phone$1());
+	var LABEL_PX = 13;
+	var LABEL_SCRIPT_FACTOR = {
+		zh: 1.15,
+		ko: 1.15,
+		fa: 1.2,
+		ar: 1.2,
+		he: 1.1
+	};
+	var CAPTION_RATIO = 1.25;
+	/** The label size for a language, in screen pixels. */
+	function labelPx(lang) {
+		return LABEL_PX * (LABEL_SCRIPT_FACTOR[lang] || 1);
+	}
+	var phoneLabelPx = labelPx;
+	/**
+	* Sizes the labels of a hypertree in screen pixels: the font of its labels (CSS, in em:
+	* the font size of the svg scales them) so they have labelPx(lang) on the screen, and
+	* geometry.captionHeight (the boxes) CAPTION_RATIO times that font. Call when the tree
+	* is drawn, after a language switch and when the size changes.
+	*/
+	function sizeLabels(ht, lang) {
+		const ud = ht.view_ && ht.view_.html && ht.view_.html.querySelector(".unitDisc");
+		const svg = ud && ud.ownerSVGElement;
+		if (!ud || !svg) return;
+		svg.style.fontSize = "";
+		const probe = document.createElementNS("http://www.w3.org/2000/svg", "text");
+		probe.setAttribute("class", "caption");
+		probe.textContent = "M";
+		ud.appendChild(probe);
+		const m = probe.getScreenCTM();
+		const font = parseFloat(getComputedStyle(probe).fontSize);
+		const px = m ? font * Math.hypot(m.a, m.b) : 0;
+		ud.removeChild(probe);
+		if (!(px > 0)) return;
+		const s = labelPx(lang) / px;
+		svg.style.fontSize = `${parseFloat(getComputedStyle(svg).fontSize) * s}px`;
+		ht.configure({ geometry: { captionHeight: font * s * CAPTION_RATIO } });
+	}
+	/** sizeLabels (until 2026-11: for the phone only, captionHeight scaled from the given one). */
+	function sizePhoneLabels(ht, lang, captionHeight) {
+		sizeLabels(ht, lang);
+	}
 	if (window.matchMedia) {
 		const m = window.matchMedia("(prefers-color-scheme: dark)");
 		const follow = () => {
@@ -18582,21 +16748,155 @@ var htol = (function(exports) {
 		if (m.addEventListener) m.addEventListener("change", follow);
 	}
 	applyTheme();
-	// src/ducd.ts
-	var HTML = class {
-		static parse(htmlstr) {
-			return function() {
-				if (navigator.userAgent.includes("Edge") || navigator.userAgent.includes("MSIE")) {
-					var div = document.createElement("div");
-					div.innerHTML = htmlstr;
-					return div.firstChild;
-				} else {
-					var template = document.createElement("template");
-					template.innerHTML = htmlstr;
-					return template.content.firstElementChild;
-				}
-			};
+	// src/presets.ts
+	var π = Math.PI;
+	var isLeaf = (n) => !n.children || !n.children.length;
+	var innerNodeScale = (d) => d.precalc.weightScale;
+	/** The node radius of the pages: c for leaves and the root, scaled by the subtree weight for inner nodes. */
+	var nodeInitR = (c) => (ud, d) => c * (d.children && d.parent ? innerNodeScale(d) : 1);
+	var EASE_K = 4.5;
+	var EASE_C = .38;
+	var easeRaw = (t) => Math.tanh(EASE_K * (t - EASE_C));
+	var EASE_0 = easeRaw(0);
+	var EASE_1 = easeRaw(1);
+	var fastStart = (t) => (easeRaw(t) - EASE_0) / (EASE_1 - EASE_0);
+	var LABEL_WIDTHS = [
+		"labelslen",
+		"labels-forcelen",
+		"labels-placedlen"
+	];
+	var borrower = null;
+	function borrowLabel(n) {
+		if (borrower) {
+			borrower.precalc.label = "";
+			for (const k of LABEL_WIDTHS) borrower.precalc[k] = void 0;
+			borrower = null;
 		}
+		if (!n || n.data && n.data.name) return;
+		let a = n.parent;
+		while (a && !(a.data && a.data.name)) a = a.parent;
+		if (!a || !a.precalc.label) return;
+		n.precalc.label = a.precalc.label;
+		n.precalc.labelOnHover = true;
+		for (const k of LABEL_WIDTHS) n.precalc[k] = a.precalc[k];
+		borrower = n;
+	}
+	/** What both pages share. */
+	var base = () => ({
+		layout: { weight: (n) => isLeaf(n) ? 1 : 0 },
+		filter: { labelScore: (n) => n.data.importance === void 0 ? void 0 : Math.expm1(n.data.importance) },
+		geometry: {
+			nodeRadius: nodeInitR(.0075),
+			captionFont: "8px Roboto",
+			captionHeight: .05,
+			layerOptions: {
+				"cells": {
+					invisible: false,
+					hideOnDrag: false,
+					strokeWidth: (n) => 0
+				},
+				"labels": {
+					invisible: true,
+					hideOnDrag: true
+				},
+				"labels-force": {
+					invisible: false,
+					hideOnDrag: false,
+					hoverLabel: true,
+					hoverTransition: false
+				},
+				"emojis": { scale: .69 },
+				"emoji-backgrounds": {
+					invisible: false,
+					padding: 1.4,
+					stroke: () => "none"
+				}
+			}
+		},
+		interaction: {
+			onHoverNodeChange: (n) => borrowLabel(n),
+			minFill: .9,
+			animationDuration: 525,
+			animationEasing: fastStart
+		}
+	});
+	/** A branch page: one clade of the Open Tree of Life. */
+	var branch = (o = {}) => ({
+		layout: {
+			childOrder: o.childOrder || "balanced",
+			rootLinkLength: o.view === "rect" ? .1 : null,
+			rootWedge: {
+				orientation: 3 * π / 2,
+				angle: 1.8 * π / 2
+			}
+		},
+		filter: { weightFilter: { rangeNodes: {
+			min: 750,
+			max: 1e3
+		} } },
+		geometry: {
+			view: o.view === "rect" ? "halfplane" : "disk",
+			layerOptions: {
+				"labels-force": { hoverPathLabels: true },
+				"cells": {
+					strokeWidth: (n) => void 0,
+					fill: (d) => d.data.hasOutChildren && !d.data.hovered && !d.data.selected ? "var(--htol-filtered-cell)" : void 0
+				}
+			}
+		},
+		interaction: {
+			λbounds: [1 / 40, .55],
+			maxLinkLength: .25
+		}
+	});
+	/**
+	* The main page: the overview of all branches, a label only for the node under the
+	* mouse (every node labelOnHover, the page's langInitBFS; on a phone see phone()).
+	*/
+	var main = () => ({
+		layout: { rootWedge: {
+			orientation: 3 * π / 2,
+			angle: .7 * π / 2
+		} },
+		filter: { weightFilter: { rangeNodes: {
+			min: 1e3,
+			max: 1500
+		} } },
+		geometry: { layerOptions: {
+			"labels-force": {
+				maxLabels: 0,
+				hoverPathLabels: true,
+				color: (n) => n.hovered && n.precalc.branchPage ? "var(--htol-link-label)" : void 0
+			},
+			"cells": { fill: (d) => d.data.precalc.branchPage && !d.data.hovered && !d.data.selected ? "var(--htol-branch-cell)" : void 0 }
+		} },
+		interaction: {
+			λbounds: [1 / 40, 1 / 10],
+			maxLinkLength: .08
+		}
+	});
+	/**
+	* The phone version: fewer nodes, fewer labels, the disk a little wider than the
+	* screen. Nothing can be hovered on a phone: the main page shows the labels of all its
+	* branches all the time (the page's langInitBFS drops labelOnHover for them).
+	*/
+	var phone = (page) => ({
+		filter: { weightFilter: { rangeNodes: {
+			min: 250,
+			max: 400
+		} } },
+		geometry: {
+			diskSize: 1.05,
+			layerOptions: { "labels-force": { maxLabels: page === "branch" ? 12 : 500 } }
+		}
+	});
+	var treeOfLife = {
+		base,
+		branch,
+		main,
+		phone,
+		/** The overlay of a page: base, the page, the phone version if asked. */
+		page: (which, o = {}) => composeOverlays(base(), which === "main" ? main() : branch(o), o.phone ? phone(which) : {})
 	};
 	// node_modules/d3-selection/dist/d3-selection.mjs
 	var xhtml = "http://www.w3.org/1999/xhtml";
@@ -19516,6 +17816,336 @@ var htol = (function(exports) {
 		};
 		return resquarify;
 	})(phi);
+	// src/models/navigation/demos-fs.ts
+	var files = {
+		"name": "hierarchies",
+		"birthtime": "2018-08-04T13:11:35.020Z",
+		"size": 4096,
+		"type": "dir",
+		"children": [{
+			"name": "Example-files",
+			"birthtime": "2018-08-04T13:11:35.024Z",
+			"size": 4096,
+			"type": "dir",
+			"children": [
+				{
+					"name": "fs.d3.json",
+					"birthtime": "2018-08-04T13:11:35.024Z",
+					"size": 143249,
+					"type": "file"
+				},
+				{
+					"name": "stackoverflow",
+					"birthtime": "2018-08-04T13:11:35.696Z",
+					"size": 4096,
+					"type": "dir",
+					"children": [
+						{
+							"name": "LDA24.d3.json",
+							"birthtime": "2018-08-04T13:11:35.008Z",
+							"size": 7753933,
+							"type": "file"
+						},
+						{
+							"name": "PCA12.d3.json",
+							"birthtime": "2018-08-04T13:11:35.016Z",
+							"size": 5870871,
+							"type": "file"
+						},
+						{
+							"name": "_SVD24.d3.json",
+							"birthtime": "2018-08-04T13:11:35.020Z",
+							"size": 6087509,
+							"type": "file"
+						}
+					]
+				},
+				{
+					"name": "flare.d3.csv",
+					"birthtime": "2018-08-04T13:11:35.024Z",
+					"size": 7989,
+					"type": "file"
+				},
+				{
+					"name": "sample.treeml.xml",
+					"birthtime": "2018-08-04T13:11:35.028Z",
+					"size": 21342,
+					"type": "file"
+				},
+				{
+					"name": "sample.skos.xml",
+					"birthtime": "2018-08-04T13:11:35.028Z",
+					"size": 1270700,
+					"type": "file"
+				}
+			]
+		}, {
+			"name": "Open-Tree-of-Life",
+			"birthtime": "2018-08-03T21:44:46.888Z",
+			"size": 4096,
+			"type": "dir",
+			"children": [
+				{
+					"name": "eukaryota.d3.json",
+					"birthtime": "2018-08-03T14:49:58.959Z",
+					"size": 60162984,
+					"type": "file"
+				},
+				{
+					"name": "embryophyta.d3.json",
+					"birthtime": "2018-08-03T18:23:18.199Z",
+					"size": 44663266,
+					"type": "file"
+				},
+				{
+					"name": "metazoa.d3.json",
+					"birthtime": "2018-08-03T14:50:14.923Z",
+					"size": 109320174,
+					"type": "file"
+				},
+				{
+					"name": "vertebrata.d3.json",
+					"birthtime": "2018-08-03T19:35:45.666Z",
+					"size": 177541402,
+					"type": "file"
+				},
+				{
+					"name": "lophotrochozoa.d3.json",
+					"birthtime": "2018-08-03T18:19:03.648Z",
+					"size": 3729039,
+					"type": "file"
+				},
+				{
+					"name": "araneae.d3.json",
+					"birthtime": "2018-08-03T14:50:26.995Z",
+					"size": 24115129,
+					"type": "file"
+				},
+				{
+					"name": "insecta.d3.json",
+					"birthtime": "2018-08-03T20:18:13.183Z",
+					"size": 66731320,
+					"type": "file"
+				},
+				{
+					"name": "hymenoptera.d3.json",
+					"birthtime": "2018-08-03T14:52:09.615Z",
+					"size": 12169249,
+					"type": "file"
+				},
+				{
+					"name": "chondrichthyes.d3.json",
+					"birthtime": "2018-08-03T16:50:02.663Z",
+					"size": 1348372,
+					"type": "file"
+				},
+				{
+					"name": "tetrapoda.d3.json",
+					"birthtime": "2018-08-03T12:18:14.707Z",
+					"size": 93837151,
+					"type": "file"
+				},
+				{
+					"name": "aves.d3.json",
+					"birthtime": "2018-08-03T14:52:20.199Z",
+					"size": 14493059,
+					"type": "file"
+				},
+				{
+					"name": "mammalia.d3.json",
+					"birthtime": "2018-08-03T12:18:20.051Z",
+					"size": 13443633,
+					"type": "file"
+				},
+				{
+					"name": "metatheria.d3.json",
+					"birthtime": "2018-08-03T12:18:20.055Z",
+					"size": 521794,
+					"type": "file"
+				},
+				{
+					"name": "xenarthra.d3.json",
+					"birthtime": "2018-08-03T21:23:37.506Z",
+					"size": 119145,
+					"type": "file"
+				},
+				{
+					"name": "laurasiatheria.d3.json",
+					"birthtime": "2018-08-03T16:42:26.820Z",
+					"size": 4863836,
+					"type": "file"
+				},
+				{
+					"name": "carnivora.d3.json",
+					"birthtime": "2018-08-03T16:42:15.564Z",
+					"size": 467474,
+					"type": "file"
+				},
+				{
+					"name": "sciuridae.d3.json",
+					"birthtime": "2018-08-03T20:18:23.623Z",
+					"size": 433706,
+					"type": "file"
+				},
+				{
+					"name": "primates.d3.json",
+					"birthtime": "2018-08-03T12:18:27.943Z",
+					"size": 681241,
+					"type": "file"
+				}
+			]
+		}]
+	};
+	// src/models/navigation/model.ts
+	var capitalize = (s) => s.charAt(0).toUpperCase() + s.slice(1);
+	var iconmap = new Icons();
+	var alllanguages = [
+		"sci",
+		"de",
+		"en",
+		"es",
+		"nl",
+		"ro",
+		"ru",
+		"zh",
+		"fa"
+	];
+	var isOtolNode = (n) => n.parent && n.parent.data.name === treesource || n.parent && n.parent.parent && n.parent.parent.data.name === treesource;
+	var treesource = "Open-Tree-of-Life";
+	function alldemos() {
+		files.children[1].name = treesource;
+		dfs(files, (n) => {
+			if (n.children) n.children = n.children.filter((c) => !c.name.startsWith("_") && !c.name.endsWith(".lang.json"));
+		});
+		const treeFilesAsArray = hierarchy(files).descendants().filter((n) => n.data.type !== "dir");
+		treeFilesAsArray.forEach((e, i) => e.data.idx = i);
+		treeFilesAsArray.forEach((n, i) => {
+			if (isOtolNode(n)) {
+				n.data.name = n.data.name.replace(".d3.json", "");
+				if (n.name) n.name = n.name.replace(".d3.json", "");
+			}
+		});
+		const fileDemos = treeFilesAsArray.map((n) => n.ancestors().map((n) => n.data.name).reverse()).map((demopath) => ({
+			path: demopath.map((s) => capitalize(s).replace(".d3.json", "")),
+			loader: fromFile(demopath.join("/") + (demopath[1] === treesource ? ".d3.json" : "")),
+			languages: demopath[1] === treesource ? alllanguages : [],
+			langloader: (lang) => demopath[1] === treesource ? fromLangFile("langmaps/" + lang + ".lang.json") : (ok) => ok({}),
+			nodeInit: demopath[1] === treesource ? (ht, n) => {
+				const id = n.data.name;
+				n.precalc.imageHref = iconmap.fileName2IconUrl(id, n.data.type);
+				n.precalc.icon = iconmap.emojimap[id];
+				if (n.children) {
+					if (n.height % 2 || n.parent && n.parent.data.name === "Bilateria" || n.data.name === "Opisthokonta") n.children = n.children.reverse();
+				}
+			} : (ht, n) => {
+				const id = n.data.name;
+				n.precalc.imageHref = iconmap.fileName2IconUrl(id, n.data.type);
+				n.precalc.icon = iconmap.emojimap[id];
+			},
+			hypertreeModel: demopath[2] === "fs.d3.json" ? presets.fsModel() : demopath[2] === "sample.skos.xml" || demopath[2] === "flare.d3.csv" ? presets.acmflareModel() : demopath[2] === "stackoverflow" ? presets.stackoverflowModel() : presets.otolModel()
+		}));
+		const generatorDemos = Object.values(generators).map((generator, idx) => ({
+			path: ["Generators", capitalize(generator.name)],
+			loader: generator,
+			languages: [],
+			langloader: (lang) => (ok) => ok({}),
+			nodeInit: (ht, n) => {},
+			hypertreeModel: generator.name === "spiral" ? presets.generatorSpiralModel() : presets.generatorModel()
+		}));
+		const stem = [{
+			path: ["Entry", "Hyperbolic Forest"],
+			loader: (ok) => ok({
+				name: "Root",
+				children: [
+					files.children[1],
+					{
+						name: "Generators",
+						children: [
+							{
+								name: "Unitvectors",
+								idx: fileDemos.length + 0
+							},
+							{
+								name: "Full Binary Tree",
+								idx: fileDemos.length + 3
+							},
+							{
+								name: "Path",
+								idx: fileDemos.length + 4
+							}
+						]
+					},
+					files.children[0]
+				]
+			}, performance.now()),
+			languages: alllanguages,
+			langloader: (lang) => fromLangFile("langmaps/" + lang + ".lang.json"),
+			nodeInit: (ht, n) => {
+				const id = n.data.name;
+				n.precalc.imageHref = iconmap.fileName2IconUrl(id, n.data.type);
+				n.precalc.icon = iconmap.emojimap[id];
+			},
+			hypertreeModel: presets.mainModel()
+		}];
+		return fileDemos.concat(generatorDemos).concat(stem);
+	}
+	var NavigationModel = class {
+		constructor(languageCode = "en", demoIdx = 0) {
+			this.alldemos = alldemos();
+			this.splitterProportion = [68, 32];
+			if (window.matchMedia("only screen and (max-width: 30cm)").matches) this.splitterProportion = [100, 0];
+			this.currentdemoeIdx = (demoIdx + this.alldemos.length) % this.alldemos.length;
+			this.currentdemo = this.alldemos[this.currentdemoeIdx];
+			this.currentlang = languageCode;
+			console.log("Navigation model created (set of hypertreee models)", this.alldemos);
+		}
+		next(Δ) {
+			this.setidx(this.currentdemoeIdx + Δ + this.alldemos.length);
+		}
+		last() {
+			this.setidx(this.alldemos.length - 1);
+		}
+		islast() {
+			return this.currentdemoeIdx === this.alldemos.length - 1;
+		}
+		setidx(idx) {
+			this.currentdemoeIdx = idx;
+			this.currentdemo = this.alldemos[this.currentdemoeIdx % this.alldemos.length];
+			console.assert(this.currentdemo);
+			console.log("Navigation setidx", idx, this.currentdemo);
+		}
+	};
+	var OtolSetModel = class {
+		constructor() {
+			this.fileExistsTable = {};
+		}
+		OtolSetModel() {
+			console.log("ALL FILES", files);
+		}
+		fileExists(cladename) {
+			let e = false;
+			dfs(files, (n) => {
+				if (n.name.toLowerCase() === (cladename + ".d3.json").toLowerCase()) e = true;
+			});
+			return e;
+		}
+	};
+	// src/ducd.ts
+	var HTML = class {
+		static parse(htmlstr) {
+			return function() {
+				if (navigator.userAgent.includes("Edge") || navigator.userAgent.includes("MSIE")) {
+					var div = document.createElement("div");
+					div.innerHTML = htmlstr;
+					return div.firstChild;
+				} else {
+					var template = document.createElement("template");
+					template.innerHTML = htmlstr;
+					return template.content.firstElementChild;
+				}
+			};
+		}
+	};
 	// src/components/navigation/navigation-sidebar.html.ts
 	var htmlnavheader = `<li>
         <div class="user-view">
@@ -19634,7 +18264,7 @@ var htol = (function(exports) {
 	* Released under the MIT license
 	* https://github.com/fians/Waves/blob/master/LICENSE
 	*/
-	// src/components/navigation/navigation.html.ts
+	// src/components/overlay/strings.ts
 	var import_materialize = /* @__PURE__ */ __toESM((/* @__PURE__ */ __commonJSMin$1(((exports, module, this$41) => {
 		var _get = function get(object, property, receiver) {
 			if (object === null) object = Function.prototype;
@@ -28829,6 +27459,106 @@ var htol = (function(exports) {
 			Range.init($("input[type=range]"));
 		})(cash, M.anime);
 	})))());
+	var texts = {
+		en: {
+			loading: "Loading the tree",
+			building: "Building the tree",
+			failed: "The tree could not be loaded.",
+			search: "Search",
+			searchPlaceholder: "Search a species or group",
+			noResults: "Nothing found",
+			home: "To the root",
+			barTree: "Tree data",
+			barNames: "Names",
+			barBuild: "Building"
+		},
+		de: {
+			loading: "Lade den Baum",
+			building: "Baue den Baum auf",
+			failed: "Der Baum konnte nicht geladen werden.",
+			search: "Suchen",
+			searchPlaceholder: "Art oder Gruppe suchen",
+			noResults: "Nichts gefunden",
+			home: "Zur Wurzel",
+			barTree: "Baumdaten",
+			barNames: "Namen",
+			barBuild: "Aufbau"
+		},
+		es: {
+			loading: "Cargando el árbol",
+			building: "Construyendo el árbol",
+			failed: "No se pudo cargar el árbol.",
+			search: "Buscar",
+			searchPlaceholder: "Buscar una especie o un grupo",
+			noResults: "Sin resultados",
+			home: "A la raíz",
+			barTree: "Datos del árbol",
+			barNames: "Nombres",
+			barBuild: "Construcción"
+		},
+		nl: {
+			loading: "De boom wordt geladen",
+			building: "De boom wordt opgebouwd",
+			failed: "De boom kon niet worden geladen.",
+			search: "Zoeken",
+			searchPlaceholder: "Zoek een soort of groep",
+			noResults: "Niets gevonden",
+			home: "Naar de wortel",
+			barTree: "Boomgegevens",
+			barNames: "Namen",
+			barBuild: "Opbouw"
+		},
+		ro: {
+			loading: "Se încarcă arborele",
+			building: "Se construiește arborele",
+			failed: "Arborele nu a putut fi încărcat.",
+			search: "Caută",
+			searchPlaceholder: "Caută o specie sau un grup",
+			noResults: "Niciun rezultat",
+			home: "La rădăcină",
+			barTree: "Datele arborelui",
+			barNames: "Nume",
+			barBuild: "Construire"
+		},
+		ru: {
+			loading: "Загрузка дерева",
+			building: "Построение дерева",
+			failed: "Не удалось загрузить дерево.",
+			search: "Поиск",
+			searchPlaceholder: "Найти вид или группу",
+			noResults: "Ничего не найдено",
+			home: "К корню",
+			barTree: "Данные дерева",
+			barNames: "Названия",
+			barBuild: "Построение"
+		},
+		zh: {
+			loading: "正在加载生命之树",
+			building: "正在构建生命之树",
+			failed: "无法加载这棵树。",
+			search: "搜索",
+			searchPlaceholder: "搜索物种或类群",
+			noResults: "没有找到",
+			home: "回到根部",
+			barTree: "树数据",
+			barNames: "名称",
+			barBuild: "构建"
+		},
+		fa: {
+			loading: "در حال بارگذاری درخت",
+			building: "در حال ساختن درخت",
+			failed: "درخت بارگذاری نشد.",
+			search: "جستجو",
+			searchPlaceholder: "جستجوی گونه یا گروه",
+			noResults: "چیزی یافت نشد",
+			home: "به ریشه",
+			barTree: "داده‌های درخت",
+			barNames: "نام‌ها",
+			barBuild: "ساختن"
+		}
+	};
+	var strings = (lang) => texts[lang] || texts.en;
+	// src/components/navigation/navigation.html.ts
 	var langsmeta = [
 		{
 			id: "de",
@@ -28908,6 +27638,12 @@ var htol = (function(exports) {
                 </p>
                 --> 
                 
+                <a id='btn_home' class='btn btn-small waves-effect' style='display:none'>
+        <i class="material-icons">home</i>
+    </a>
+                <a id='btn_search' class='btn btn-small waves-effect' style='display:none'>
+        <i class="material-icons">search</i>
+    </a>
                 <a id='btn_view' class='btn btn-small waves-effect' style='display:none'>
         <i class="material-icons">crop_landscape</i>
     </a>
@@ -28953,6 +27689,21 @@ var htol = (function(exports) {
 	function NavigationHTML(args) {
 		var ui = HTML.parse(html$1)();
 		args.parent.appendChild(ui);
+		const s = strings(language(args.languages || ["en"]));
+		const btnHome = ui.querySelector("#btn_home");
+		if (args.onHome) {
+			btnHome.style.display = "";
+			btnHome.title = s.home;
+			btnHome.setAttribute("aria-label", s.home);
+			btnHome.onclick = () => args.onHome();
+		}
+		const btnSearch = ui.querySelector("#btn_search");
+		if (args.onSearch) {
+			btnSearch.style.display = "";
+			btnSearch.title = s.search;
+			btnSearch.setAttribute("aria-label", s.search);
+			btnSearch.onclick = () => args.onSearch();
+		}
 		const btnView = ui.querySelector("#btn_view");
 		if (args.onViewChange) {
 			btnView.style.display = "";
@@ -28994,6 +27745,40 @@ var htol = (function(exports) {
 		});
 		return ui;
 	}
+	// src/components/navigation/navigation2.ts
+	var Navigation2 = class {
+		constructor(view, model) {
+			this.updateLang = (langId, lang) => {
+				this.model.currentlang = langId;
+				document.body.lang = this.model.currentlang;
+				chooseLanguage(langId);
+				this.model.onLangChange(this.model.currentlang);
+			};
+			this.view = view;
+			this.model = model;
+			this.view.ui = NavigationHTML({
+				parent: this.view.parent,
+				onNextClick: {},
+				onPrevClick: {},
+				onLangChange: this.updateLang,
+				onQuery: {},
+				view: this.model.view,
+				onViewChange: this.model.onViewChange,
+				onHome: this.model.onHome,
+				onSearch: this.model.onSearch,
+				languages: this.model.languages
+			});
+			this.view.ui.updateLangs(this.model.languages);
+			if (this.model.path) this.updateBreadcrumbView(this.model.path);
+			model.content(this.view.ui.content);
+			applyTheme();
+			updateLinks();
+		}
+		updateBreadcrumbView(path) {
+			this.view.ui.breadcrumb.innerHTML = "";
+			select(this.view.ui.breadcrumb).selectAll("a").data(path.slice(1)).enter().append("a").classed("breadcrumb", true).attr("href", (d) => withChoices(d.href)).attr("target", (d) => d.target).text((d) => d.label.split("-").join(" "));
+		}
+	};
 	// node_modules/split.js/dist/split.es.js
 	var global$1 = typeof window !== "undefined" ? window : null;
 	var ssr = global$1 === null;
@@ -29367,15 +28152,26 @@ var htol = (function(exports) {
 		constructor(args) {
 			this.args = args;
 			this.ui = SplitterHTML({ parent: args.parent });
+			const vertical = args.direction === "vertical";
+			this.ui.classList.toggle("vertical", vertical);
+			const gutterSize = vertical ? 14 : 74;
 			this.splitterJs = Split([this.ui.left, this.ui.right], {
-				sizes: [this.args.splitterProportion, 100 - this.args.splitterProportion],
-				gutterSize: 74,
+				sizes: vertical ? this.squareSizes(gutterSize) : [this.args.splitterProportion, 100 - this.args.splitterProportion],
+				direction: vertical ? "vertical" : "horizontal",
+				gutterSize,
 				minSize: 0,
-				snapOffset: 100,
-				cursor: "e-resize",
+				snapOffset: vertical ? 30 : 100,
+				cursor: vertical ? "n-resize" : "e-resize",
 				onDragStart: this.args.onDragStart,
 				onDragEnd: this.args.onDragEnd
 			});
+			if (vertical) window.addEventListener("resize", () => this.splitterJs.setSizes(this.squareSizes(gutterSize)));
+		}
+		squareSizes(gutterSize) {
+			const r = this.ui.getBoundingClientRect();
+			const h = r.height || window.innerHeight, w = r.width || window.innerWidth;
+			const p = Math.max(0, Math.min(100, 100 * (w + gutterSize / 2) / h));
+			return [p, 100 - p];
 		}
 		setSizes(s, ballback) {
 			const ist = this.splitterJs.getSizes();
@@ -29427,8 +28223,11 @@ var htol = (function(exports) {
 		constructor(args) {
 			this.ui = document.createElement("iframe");
 			this.ui.id = "wiki";
-			this.ui.className = "wiki";
-			this.ui.src = "https://en.m.wikipedia.org/wiki/Mammal";
+			this.ui.className = "wiki loading";
+			this.ui.addEventListener("load", () => {
+				if (this.ui.getAttribute("src")) this.ui.classList.remove("loading");
+			});
+			if (args.src) this.ui.src = args.src;
 			args.parent.appendChild(this.ui);
 		}
 	};
@@ -29465,498 +28264,419 @@ var htol = (function(exports) {
 	_StringUi = StringUi;
 	_StringUi.loading = false;
 	_StringUi.queue = [];
-	// src/components/navigation/navigation.ts
-	var Navigation = class {
-		constructor(view, model) {
-			this.iconmap = new Icons();
-			this.golast = () => {
-				if (this.view.hypertree.isAnimationRunning()) return;
-				gtag("config", "UA-124333733-1", {
-					"page_title": "/",
-					"page_path": "/"
+	// src/components/overlay/overlay.ts
+	function overTree(card, tree) {
+		const place = () => {
+			const r = tree.getBoundingClientRect();
+			card.style.left = `${r.left + r.width / 2}px`;
+			card.style.top = `${r.top + r.height / 2}px`;
+		};
+		place();
+		window.addEventListener("resize", place);
+		return () => window.removeEventListener("resize", place);
+	}
+	var BARS = [
+		"tree",
+		"names",
+		"build"
+	];
+	/** The loading card: title, three progress bars (0..1) a few pixels apart, a message. */
+	var LoadingOverlay = class {
+		constructor(tree, title, lang) {
+			this.bars = {};
+			const s = strings(lang);
+			const label = {
+				tree: s.barTree,
+				names: s.barNames,
+				build: s.barBuild
+			};
+			this.ui = document.createElement("div");
+			this.ui.className = "htol-overlay htol-loading";
+			this.ui.setAttribute("role", "progressbar");
+			this.ui.setAttribute("aria-valuemin", "0");
+			this.ui.setAttribute("aria-valuemax", "100");
+			this.ui.setAttribute("aria-label", s.loading);
+			this.ui.innerHTML = `
+            <div class="htol-overlay-title"></div>
+            <div class="htol-bars">${BARS.map((b) => `
+                <div class="htol-bar-row" data-bar="${b}">
+                    <span class="htol-bar-label"></span>
+                    <div class="htol-progress"><div class="htol-progress-bar"></div></div>
+                </div>`).join("")}
+            </div>
+            <div class="htol-overlay-step"></div>`;
+			this.ui.querySelector(".htol-overlay-title").textContent = title;
+			for (const b of BARS) {
+				const row = this.ui.querySelector(`[data-bar="${b}"]`);
+				row.querySelector(".htol-bar-label").textContent = label[b];
+				this.bars[b] = {
+					el: row.querySelector(".htol-progress-bar"),
+					value: 0
+				};
+			}
+			this.step = this.ui.querySelector(".htol-overlay-step");
+			document.body.appendChild(this.ui);
+			this.unplace = overTree(this.ui, tree);
+		}
+		/**
+		* The progress of a bar (0..1, never backwards). creep: a step that blocks the page
+		* (parsing, building the tree) and is expected to take about that many ms: the bar
+		* moves on towards f during it, slowing down. The bar is a transform (scaleX),
+		* whose transitions the compositor runs on while the page's script blocks; a width
+		* would stand still.
+		*/
+		set(bar, f, creep) {
+			const b = this.bars[bar], v = Math.max(0, Math.min(1, f));
+			if (!b || v < b.value) return;
+			b.el.style.transition = creep ? `transform ${Math.round(creep)}ms cubic-bezier(.2,.6,.35,1)` : "";
+			b.el.style.transform = `scaleX(${v})`;
+			b.value = v;
+			const mean = BARS.reduce((s, k) => s + this.bars[k].value, 0) / BARS.length;
+			this.ui.setAttribute("aria-valuenow", String(Math.round(mean * 100)));
+		}
+		/** Fades out and removes the card. */
+		done() {
+			for (const b of BARS) this.set(b, 1);
+			this.ui.classList.add("htol-overlay-done");
+			setTimeout(() => {
+				this.unplace();
+				this.ui.remove();
+			}, 300);
+		}
+		/** The data could not be loaded. */
+		failed(text) {
+			this.ui.classList.add("htol-overlay-failed");
+			this.step.textContent = text;
+		}
+	};
+	var PACK_RATIO = (url) => /\.lang\.json$|\.wiki\.json$/.test(url) ? 4 : 6;
+	/**
+	* Fetches a text, reporting onProgress(bytes, total): total the expected unpacked size
+	* (Content-Length, or estimated for a compressed response, then grown if the bytes
+	* pass it; 0 if unknown).
+	*/
+	async function fetchText(url, onProgress) {
+		const r = await fetch(url);
+		if (!r.ok) throw new Error(`${url}: ${r.status}`);
+		const length = Number(r.headers.get("content-length")) || 0;
+		let total = Boolean(r.headers.get("content-encoding")) ? length * PACK_RATIO(url) : length;
+		onProgress(0, total);
+		if (!r.body || !r.body.getReader) {
+			const text = await r.text();
+			onProgress(text.length, text.length);
+			return text;
+		}
+		const reader = r.body.getReader(), chunks = [];
+		let bytes = 0;
+		for (;;) {
+			const { done, value } = await reader.read();
+			if (done) break;
+			chunks.push(value);
+			bytes += value.length;
+			if (total && bytes > total * .97) total = bytes / .97;
+			onProgress(bytes, total);
+		}
+		onProgress(bytes, bytes);
+		const all = new Uint8Array(bytes);
+		let at = 0;
+		for (const c of chunks) {
+			all.set(c, at);
+			at += c.length;
+		}
+		return new TextDecoder().decode(all);
+	}
+	var nextFrame = () => new Promise((ok) => requestAnimationFrame(() => setTimeout(ok, 0)));
+	var BLOCKING_MS_PER_BYTE = 1 / 2500;
+	/**
+	* The loading card's bars for the downloads of a page (the tree and the names load side
+	* by side; the names are the larger part): the bar 'tree' for the tree's file, 'names'
+	* for the language map and the Wikipedia titles, each by its bytes; 'build' for the
+	* steps that block the page once a group has arrived (parsing it, building the tree or
+	* putting the names into it): it creeps on (LoadingOverlay set creep), its share of the
+	* bar and its time estimated from the bytes of the group.
+	*
+	*   const progress = new LoadProgress(loading)
+	*   dataloader: progress.loader(treeUrl, 'tree'),  langloader: ... progress.loader(url, 'names')
+	*/
+	var LoadProgress = class {
+		constructor(overlay) {
+			this.overlay = overlay;
+			this.parts = [];
+			this.built = 0;
+			this.arrived = /* @__PURE__ */ new Set();
+		}
+		/**
+		* A d3-hypertree dataloader / langloader for a JSON file of a group (the .d3.json
+		* tree: 'tree', a .lang.json or .wiki.json map: 'names'): ok(data, t0, bytes),
+		* ok(undefined) if it failed. The part counts from now, so create the loaders
+		* before the downloads start.
+		*/
+		loader(url, group = "tree") {
+			const part = {
+				group,
+				bytes: 0,
+				total: 0,
+				done: false
+			};
+			this.parts.push(part);
+			return (ok) => {
+				const t0 = performance.now();
+				Promise.resolve(url).then((u) => fetchText(u, (bytes, total) => {
+					part.bytes = bytes;
+					part.total = total;
+					this.report(group);
+				})).then(async (text) => {
+					part.done = true;
+					this.report(group);
+					await nextFrame();
+					ok(JSON.parse(text), t0, text.length);
+				}).catch((e) => {
+					console.error(e);
+					part.done = true;
+					this.report(group);
+					ok(void 0);
 				});
-				this.model.last();
-				this.updatecurrent();
 			};
-			this.goidx = (idx) => () => {
-				this.model.setidx(idx);
-				this.updatecurrent();
-			};
-			this.next = (Δ) => () => {
-				this.model.next(Δ);
-				this.updatecurrent();
-			};
-			this.updatecurrent = () => {
-				const hypertreemodel = this.model.currentdemo.hypertreeModel;
-				hypertreemodel.dataInitBFS = this.model.currentdemo.nodeInit;
-				hypertreemodel.interaction = hypertreemodel.interaction || {};
-				hypertreemodel.interaction.onNodeSelect = this.updateFocusView;
-				hypertreemodel.interaction.onCenterNodeChange = (n, s) => {
-					this.view.ui.breadcrumb2.innerText = s;
-				};
-				hypertreemodel.interaction.onNodeClick = (n, m, l) => {
-					if (this.model.islast() && n && n.data) {
-						gtag("config", "UA-124333733-1", {
-							"page_title": n.data.name,
-							"page_path": "/" + n.data.name
-						});
-						this.goidx(n.data.idx)();
-					} else if (n.mergeId !== l.view.unitdisk.args.transformation.cache.centerNode.mergeId) l.view.hypertree.api.goto(CmulR({
-						re: n.layout.z.re,
-						im: n.layout.z.im
-					}, -1), null).then(() => l.view.hypertree.drawDetailFrame());
-				};
-				hypertreemodel.dataloader = this.model.currentdemo.loader;
-				hypertreemodel.langloader = this.model.currentdemo.langloader(this.model.currentlang);
-				const setModelPromise = this.view.hypertree.api.setModel(hypertreemodel);
-				if (this.model.islast()) setModelPromise.then(() => new Promise((ok, err) => this.view.hypertree.animateUp(ok, err))).then(() => this.view.hypertree.api.goto({
-					re: .25,
-					im: .24
-				}, null)).then(() => this.view.hypertree.drawDetailFrame());
-				else setModelPromise.then(() => new Promise((ok, err) => this.view.hypertree.animateUp(ok, err))).then(() => this.view.hypertree.api.goto({
-					re: 0,
-					im: .34
-				}, null)).then(() => this.view.hypertree.api.gotoλ(.17)).then(() => this.view.hypertree.drawDetailFrame());
-				this.view.ui.updateLangs(this.model.currentdemo.languages);
-				this.updateFocusView();
-				this.updateBreadcrumbView(this.model.currentdemo.path);
-			};
-			this.updateLang = (langId, lang) => {
-				this.model.currentlang = langId;
-				const newlangloader = this.model.currentdemo.langloader(this.model.currentlang);
-				this.view.hypertree.api.setLangloader(() => {}, () => {}, newlangloader);
-				document.body.lang = this.model.currentlang;
-				this.updateFocusView();
-			};
-			this.updateFocusView = (n) => {
-				this.updateAutoView(n);
-				this.view.splitter.setSizes(this.model.splitterProportion, () => {});
-			};
-			this.view = view;
-			this.model = model;
-			this.view.ui = NavigationHTML({
-				parent: this.view.parent,
-				onNextClick: this.next(1),
-				onPrevClick: this.next(-1),
-				onLangChange: this.updateLang,
-				onQuery: (queryStr) => this.view.hypertree.api.selectQuery(queryStr, void 0)
+		}
+		report(group) {
+			const parts = this.parts.filter((p) => p.group === group);
+			const all = parts.every((p) => p.done);
+			if (!all && parts.some((p) => !p.done && !p.total)) return;
+			const total = parts.reduce((s, p) => s + (p.done ? p.bytes : p.total), 0);
+			const bytes = parts.reduce((s, p) => s + p.bytes, 0);
+			this.overlay.set(group, all ? 1 : total ? bytes / total : 0);
+			if (all && !this.arrived.has(group)) {
+				this.arrived.add(group);
+				this.building(bytes);
+			}
+		}
+		building(bytes) {
+			this.built += bytes;
+			const expected = this.parts.reduce((s, p) => s + (p.done ? p.bytes : p.total), 0);
+			const share = expected ? Math.min(1, this.built / expected) : 1;
+			this.overlay.set("build", .98 * share, Math.max(400, bytes * BLOCKING_MS_PER_BYTE));
+		}
+	};
+	/**
+	* d3-hypertree's fromFile for a .d3.json file, with the download's progress:
+	* onProgress(f, bytes) with f 0..1 of the download (the size estimated for a
+	* compressed response, fetchText).
+	*/
+	function fromFileWithProgress(url, onProgress) {
+		return (ok) => {
+			const t0 = performance.now();
+			fetchText(url, (bytes, total) => onProgress(total ? bytes / total : 0, bytes)).then(async (text) => {
+				await nextFrame();
+				ok(JSON.parse(text), t0, text.length);
+			}).catch((e) => {
+				console.error(e);
+				ok(void 0);
 			});
-			this.view.splitter = new Splitter({
-				parent: this.view.ui.content,
-				splitterProportion: this.model.splitterProportion[0],
-				onDragStart: () => this.view.stringUi.enableResizeListener(false),
-				onDragEnd: () => {
-					this.model.splitterProportion = this.view.splitter.getSizes();
-					this.view.stringUi.enableResizeListener(true);
+		};
+	}
+	var normalize = (s) => s.replace(/^𝐖\s*/, "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().trim();
+	/**
+	* The search card: a text field; as the user types, up to eight matching nodes
+	* (names starting with the text first, then names containing it, shorter names
+	* first). Enter or a click chooses one; Escape or a click beside the card closes it.
+	*/
+	var SearchOverlay = class {
+		constructor(args) {
+			this.results = [];
+			this.active = 0;
+			this.unplace = () => {};
+			this.index = null;
+			this.indexed = null;
+			this.outside = (e) => {
+				if (!this.ui.contains(e.target)) this.close();
+			};
+			this.args = args;
+			this.ui = document.createElement("div");
+			this.ui.className = "htol-overlay htol-search";
+			this.ui.setAttribute("role", "dialog");
+			this.ui.innerHTML = `
+            <input type="search" class="browser-default htol-search-input" autocomplete="off" spellcheck="false">
+            <ul class="htol-search-results" role="listbox"></ul>
+            <div class="htol-overlay-step htol-search-empty"></div>`;
+			this.input = this.ui.querySelector("input");
+			this.list = this.ui.querySelector("ul");
+			this.input.addEventListener("input", () => this.update());
+			this.input.addEventListener("keydown", (e) => {
+				if (e.key === "Escape") this.close();
+				else if (e.key === "Enter" && this.results.length) this.choose(this.results[this.active]);
+				else if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+					e.preventDefault();
+					if (!this.results.length) return;
+					this.active = (this.active + (e.key === "ArrowDown" ? 1 : -1) + this.results.length) % this.results.length;
+					this.render();
 				}
 			});
-			this.view.wiki = new WikiUi({
-				parent: this.view.splitter.ui.right,
-				visible: false
-			});
-			this.view.stringUi = new StringUi({
-				parent: this.view.splitter.ui.right,
-				visible: false
-			});
-			const hypertreemodel = this.model.currentdemo.hypertreeModel;
-			hypertreemodel.dataInitBFS = this.model.currentdemo.nodeInit;
-			hypertreemodel.interaction = hypertreemodel.interaction || {};
-			hypertreemodel.interaction.onNodeClick = (n, m, l) => {
-				if (this.model.islast() && n && n.data) {
-					this.goidx(n.data.idx)();
-					console.log("##########", n.data.name, n);
-					gtag("config", "UA-124333733-1", {
-						"page_title": n.data.name,
-						"page_path": "/" + n.data.name
-					});
-				} else if (n.mergeId !== l.view.unitdisk.args.transformation.cache.centerNode.mergeId) l.view.hypertree.api.goto(CmulR({
-					re: n.layout.z.re,
-					im: n.layout.z.im
-				}, -1), null).then(() => l.view.hypertree.drawDetailFrame());
-			};
-			hypertreemodel.interaction.onNodeSelect = (n) => {
-				this.updateFocusView(n);
-			};
-			hypertreemodel.dataloader = this.model.currentdemo.loader;
-			hypertreemodel.langloader = this.model.currentdemo.langloader(this.model.currentlang);
-			hypertreemodel.interaction.onCenterNodeChange = (n, s) => {
-				this.view.ui.breadcrumb2.innerText = s;
-			};
-			this.view.hypertree = new HypertreeEx({ parent: this.view.splitter.ui.left }, hypertreemodel);
-			this.view.hypertree.initPromise.then(() => new Promise((ok, err) => this.view.hypertree.animateUp(ok, err))).then(() => this.view.hypertree.api.goto({
-				re: .25,
-				im: .24
-			}, null)).then(() => this.view.hypertree.drawDetailFrame());
-			this.view.ui.updateLangs(this.model.currentdemo.languages);
-			this.updateFocusView();
-			this.updateBreadcrumbView(this.model.currentdemo.path);
 		}
-		updateAutoView(n) {
-			if (!n) {
-				this.view.stringUi.ui.style.display = "none";
-				this.view.wiki.ui.style.display = "none";
+		get isOpen() {
+			return Boolean(this.ui.parentNode);
+		}
+		open() {
+			if (this.isOpen) {
+				this.input.focus();
 				return;
 			}
-			const articleNode = n ? n : this.view.hypertree.args.objects.selections.slice(-1)[0];
-			if (articleNode.data.type == "file" || articleNode.data.type == "dir") {
-				this.view.stringUi.ui.style.display = "inherit";
-				this.view.wiki.ui.style.display = "none";
-			} else {
-				this.view.stringUi.ui.style.display = "none";
-				this.view.wiki.ui.style.display = "inherit";
-				const newSrc = `https://${this.model.currentlang}.m.wikipedia.org/wiki/${articleNode.data.name}`;
-				if (this.view.wiki && newSrc !== this.view.wiki.ui.src) this.view.wiki.ui.src = newSrc;
-			}
+			const s = strings(this.args.lang());
+			this.input.placeholder = s.searchPlaceholder;
+			this.input.setAttribute("aria-label", s.search);
+			document.body.appendChild(this.ui);
+			this.unplace = overTree(this.ui, this.args.tree);
+			this.input.value = "";
+			this.update();
+			this.input.focus();
+			setTimeout(() => document.addEventListener("pointerdown", this.outside), 0);
 		}
-		updateBreadcrumbView(path) {
-			this.view.ui.breadcrumb.innerHTML = "";
-			select(this.view.ui.breadcrumb).selectAll("a").data(path).enter().append("a").classed("breadcrumb", true).text((d) => d.split("-").join(" "));
+		close() {
+			if (!this.isOpen) return;
+			document.removeEventListener("pointerdown", this.outside);
+			this.unplace();
+			this.ui.remove();
+		}
+		toggle() {
+			this.isOpen ? this.close() : this.open();
+		}
+		nodesIndex() {
+			const nodes = this.args.nodes();
+			const key = nodes.length + "\0" + this.args.lang();
+			if (this.index && this.indexed === key) return this.index;
+			this.index = nodes.map((n) => {
+				const shown = this.args.names(n).filter(Boolean).map((s) => s.replace(/^𝐖\s*/, ""));
+				return {
+					n,
+					shown: [...new Set(shown)],
+					names: shown.map(normalize)
+				};
+			}).filter((e) => e.names.length);
+			this.indexed = key;
+			return this.index;
+		}
+		update() {
+			const q = normalize(this.input.value);
+			this.active = 0;
+			if (q.length < 2) {
+				this.results = [];
+				this.render();
+				return;
+			}
+			const scored = [];
+			for (const e of this.nodesIndex()) {
+				let best = Infinity;
+				for (const name of e.names) {
+					const i = name.indexOf(q);
+					if (i < 0) continue;
+					const s = (i === 0 ? 0 : name[i - 1] === " " ? 1e3 : 2e3) + name.length;
+					if (s < best) best = s;
+				}
+				if (best < Infinity) scored.push({
+					e,
+					best
+				});
+			}
+			scored.sort((a, b) => a.best - b.best);
+			this.results = scored.slice(0, 8).map((s) => s.e);
+			this.render();
+		}
+		render() {
+			const s = strings(this.args.lang());
+			this.list.innerHTML = "";
+			this.results.forEach((e, i) => {
+				const li = document.createElement("li");
+				li.setAttribute("role", "option");
+				li.className = i === this.active ? "active" : "";
+				const icon = this.args.icon(e.n);
+				const main = document.createElement("span");
+				main.className = "htol-search-name";
+				main.textContent = (icon ? icon + " " : "") + e.shown[e.shown.length - 1];
+				li.appendChild(main);
+				if (e.shown.length > 1) {
+					const sci = document.createElement("span");
+					sci.className = "htol-search-sci";
+					sci.textContent = e.shown[0];
+					li.appendChild(sci);
+				}
+				li.addEventListener("pointerdown", (ev) => {
+					ev.preventDefault();
+					this.choose(e);
+				});
+				this.list.appendChild(li);
+			});
+			const empty = this.ui.querySelector(".htol-search-empty");
+			empty.textContent = normalize(this.input.value).length >= 2 && !this.results.length ? s.noResults : "";
+		}
+		choose(e) {
+			this.close();
+			this.args.choose(e.n);
 		}
 	};
-	// src/models/navigation/demos-fs.ts
-	var files = {
-		"name": "hierarchies",
-		"birthtime": "2018-08-04T13:11:35.020Z",
-		"size": 4096,
-		"type": "dir",
-		"children": [{
-			"name": "Example-files",
-			"birthtime": "2018-08-04T13:11:35.024Z",
-			"size": 4096,
-			"type": "dir",
-			"children": [
-				{
-					"name": "fs.d3.json",
-					"birthtime": "2018-08-04T13:11:35.024Z",
-					"size": 143249,
-					"type": "file"
-				},
-				{
-					"name": "stackoverflow",
-					"birthtime": "2018-08-04T13:11:35.696Z",
-					"size": 4096,
-					"type": "dir",
-					"children": [
-						{
-							"name": "LDA24.d3.json",
-							"birthtime": "2018-08-04T13:11:35.008Z",
-							"size": 7753933,
-							"type": "file"
-						},
-						{
-							"name": "PCA12.d3.json",
-							"birthtime": "2018-08-04T13:11:35.016Z",
-							"size": 5870871,
-							"type": "file"
-						},
-						{
-							"name": "_SVD24.d3.json",
-							"birthtime": "2018-08-04T13:11:35.020Z",
-							"size": 6087509,
-							"type": "file"
-						}
-					]
-				},
-				{
-					"name": "flare.d3.csv",
-					"birthtime": "2018-08-04T13:11:35.024Z",
-					"size": 7989,
-					"type": "file"
-				},
-				{
-					"name": "sample.treeml.xml",
-					"birthtime": "2018-08-04T13:11:35.028Z",
-					"size": 21342,
-					"type": "file"
-				},
-				{
-					"name": "sample.skos.xml",
-					"birthtime": "2018-08-04T13:11:35.028Z",
-					"size": 1270700,
-					"type": "file"
-				}
-			]
-		}, {
-			"name": "Open-Tree-of-Life",
-			"birthtime": "2018-08-03T21:44:46.888Z",
-			"size": 4096,
-			"type": "dir",
-			"children": [
-				{
-					"name": "eukaryota.d3.json",
-					"birthtime": "2018-08-03T14:49:58.959Z",
-					"size": 60162984,
-					"type": "file"
-				},
-				{
-					"name": "embryophyta.d3.json",
-					"birthtime": "2018-08-03T18:23:18.199Z",
-					"size": 44663266,
-					"type": "file"
-				},
-				{
-					"name": "metazoa.d3.json",
-					"birthtime": "2018-08-03T14:50:14.923Z",
-					"size": 109320174,
-					"type": "file"
-				},
-				{
-					"name": "vertebrata.d3.json",
-					"birthtime": "2018-08-03T19:35:45.666Z",
-					"size": 177541402,
-					"type": "file"
-				},
-				{
-					"name": "lophotrochozoa.d3.json",
-					"birthtime": "2018-08-03T18:19:03.648Z",
-					"size": 3729039,
-					"type": "file"
-				},
-				{
-					"name": "araneae.d3.json",
-					"birthtime": "2018-08-03T14:50:26.995Z",
-					"size": 24115129,
-					"type": "file"
-				},
-				{
-					"name": "insecta.d3.json",
-					"birthtime": "2018-08-03T20:18:13.183Z",
-					"size": 66731320,
-					"type": "file"
-				},
-				{
-					"name": "hymenoptera.d3.json",
-					"birthtime": "2018-08-03T14:52:09.615Z",
-					"size": 12169249,
-					"type": "file"
-				},
-				{
-					"name": "chondrichthyes.d3.json",
-					"birthtime": "2018-08-03T16:50:02.663Z",
-					"size": 1348372,
-					"type": "file"
-				},
-				{
-					"name": "tetrapoda.d3.json",
-					"birthtime": "2018-08-03T12:18:14.707Z",
-					"size": 93837151,
-					"type": "file"
-				},
-				{
-					"name": "aves.d3.json",
-					"birthtime": "2018-08-03T14:52:20.199Z",
-					"size": 14493059,
-					"type": "file"
-				},
-				{
-					"name": "mammalia.d3.json",
-					"birthtime": "2018-08-03T12:18:20.051Z",
-					"size": 13443633,
-					"type": "file"
-				},
-				{
-					"name": "metatheria.d3.json",
-					"birthtime": "2018-08-03T12:18:20.055Z",
-					"size": 521794,
-					"type": "file"
-				},
-				{
-					"name": "xenarthra.d3.json",
-					"birthtime": "2018-08-03T21:23:37.506Z",
-					"size": 119145,
-					"type": "file"
-				},
-				{
-					"name": "laurasiatheria.d3.json",
-					"birthtime": "2018-08-03T16:42:26.820Z",
-					"size": 4863836,
-					"type": "file"
-				},
-				{
-					"name": "carnivora.d3.json",
-					"birthtime": "2018-08-03T16:42:15.564Z",
-					"size": 467474,
-					"type": "file"
-				},
-				{
-					"name": "sciuridae.d3.json",
-					"birthtime": "2018-08-03T20:18:23.623Z",
-					"size": 433706,
-					"type": "file"
-				},
-				{
-					"name": "primates.d3.json",
-					"birthtime": "2018-08-03T12:18:27.943Z",
-					"size": 681241,
-					"type": "file"
-				}
-			]
-		}]
-	};
-	// src/models/navigation/model.ts
-	var capitalize = (s) => s.charAt(0).toUpperCase() + s.slice(1);
-	var iconmap = new Icons();
-	var alllanguages = [
-		"sci",
-		"de",
-		"en",
-		"es",
-		"nl",
-		"ro",
-		"ru",
-		"zh",
-		"fa"
-	];
-	var isOtolNode = (n) => n.parent && n.parent.data.name === treesource || n.parent && n.parent.parent && n.parent.parent.data.name === treesource;
-	var treesource = "Open-Tree-of-Life";
-	function alldemos() {
-		files.children[1].name = treesource;
-		dfs(files, (n) => {
-			if (n.children) n.children = n.children.filter((c) => !c.name.startsWith("_") && !c.name.endsWith(".lang.json"));
+	/**
+	* Animates a node of the tree to the center: its path from the root is laid out at
+	* the current zoom (the layout is computed lazily for visible nodes only), then the
+	* view moves there; the node is selected, so its path to the root is marked.
+	*/
+	function gotoNode(ht, n) {
+		const λ = ht.args.geometry.transformation.state.λ;
+		for (const a of n.ancestors().reverse()) ht.args.layout.type(a, λ, true);
+		ht.api.clearSelection();
+		return ht.api.goto({
+			re: -n.layout.z.re,
+			im: -n.layout.z.im
+		}, null).then(() => {
+			ht.api.select(n);
+			ht.drawDetailFrame();
 		});
-		const treeFilesAsArray = hierarchy(files).descendants().filter((n) => n.data.type !== "dir");
-		treeFilesAsArray.forEach((e, i) => e.data.idx = i);
-		treeFilesAsArray.forEach((n, i) => {
-			if (isOtolNode(n)) {
-				n.data.name = n.data.name.replace(".d3.json", "");
-				if (n.name) n.name = n.name.replace(".d3.json", "");
-			}
-		});
-		const fileDemos = treeFilesAsArray.map((n) => n.ancestors().map((n) => n.data.name).reverse()).map((demopath) => ({
-			path: demopath.map((s) => capitalize(s).replace(".d3.json", "")),
-			loader: fromFile(demopath.join("/") + (demopath[1] === treesource ? ".d3.json" : "")),
-			languages: demopath[1] === treesource ? alllanguages : [],
-			langloader: (lang) => demopath[1] === treesource ? fromLangFile("langmaps/" + lang + ".lang.json") : (ok) => ok({}),
-			nodeInit: demopath[1] === treesource ? (ht, n) => {
-				const id = n.data.name;
-				n.precalc.imageHref = iconmap.fileName2IconUrl(id, n.data.type);
-				n.precalc.icon = iconmap.emojimap[id];
-				if (n.children) {
-					if (n.height % 2 || n.parent && n.parent.data.name === "Bilateria" || n.data.name === "Opisthokonta") n.children = n.children.reverse();
-				}
-			} : (ht, n) => {
-				const id = n.data.name;
-				n.precalc.imageHref = iconmap.fileName2IconUrl(id, n.data.type);
-				n.precalc.icon = iconmap.emojimap[id];
-			},
-			hypertreeModel: demopath[2] === "fs.d3.json" ? presets.fsModel() : demopath[2] === "sample.skos.xml" || demopath[2] === "flare.d3.csv" ? presets.acmflareModel() : demopath[2] === "stackoverflow" ? presets.stackoverflowModel() : presets.otolModel()
-		}));
-		const generatorDemos = Object.values(generators).map((generator, idx) => ({
-			path: ["Generators", capitalize(generator.name)],
-			loader: generator,
-			languages: [],
-			langloader: (lang) => (ok) => ok({}),
-			nodeInit: (ht, n) => {},
-			hypertreeModel: generator.name === "spiral" ? presets.generatorSpiralModel() : presets.generatorModel()
-		}));
-		const stem = [{
-			path: ["Entry", "Hyperbolic Forest"],
-			loader: (ok) => ok({
-				name: "Root",
-				children: [
-					files.children[1],
-					{
-						name: "Generators",
-						children: [
-							{
-								name: "Unitvectors",
-								idx: fileDemos.length + 0
-							},
-							{
-								name: "Full Binary Tree",
-								idx: fileDemos.length + 3
-							},
-							{
-								name: "Path",
-								idx: fileDemos.length + 4
-							}
-						]
-					},
-					files.children[0]
-				]
-			}, performance.now()),
-			languages: alllanguages,
-			langloader: (lang) => fromLangFile("langmaps/" + lang + ".lang.json"),
-			nodeInit: (ht, n) => {
-				const id = n.data.name;
-				n.precalc.imageHref = iconmap.fileName2IconUrl(id, n.data.type);
-				n.precalc.icon = iconmap.emojimap[id];
-			},
-			hypertreeModel: presets.mainModel()
-		}];
-		return fileDemos.concat(generatorDemos).concat(stem);
 	}
-	var NavigationModel = class {
-		constructor(languageCode = "en", demoIdx = 0) {
-			this.alldemos = alldemos();
-			this.splitterProportion = [68, 32];
-			if (window.matchMedia("only screen and (max-width: 30cm)").matches) this.splitterProportion = [100, 0];
-			this.currentdemoeIdx = (demoIdx + this.alldemos.length) % this.alldemos.length;
-			this.currentdemo = this.alldemos[this.currentdemoeIdx];
-			this.currentlang = languageCode;
-			console.log("Navigation model created (set of hypertreee models)", this.alldemos);
-		}
-		next(Δ) {
-			this.setidx(this.currentdemoeIdx + Δ + this.alldemos.length);
-		}
-		last() {
-			this.setidx(this.alldemos.length - 1);
-		}
-		islast() {
-			return this.currentdemoeIdx === this.alldemos.length - 1;
-		}
-		setidx(idx) {
-			this.currentdemoeIdx = idx;
-			this.currentdemo = this.alldemos[this.currentdemoeIdx % this.alldemos.length];
-			console.assert(this.currentdemo);
-			console.log("Navigation setidx", idx, this.currentdemo);
-		}
-	};
-	var OtolSetModel = class {
-		constructor() {
-			this.fileExistsTable = {};
-		}
-		OtolSetModel() {
-			console.log("ALL FILES", files);
-		}
-		fileExists(cladename) {
-			let e = false;
-			dfs(files, (n) => {
-				if (n.name.toLowerCase() === (cladename + ".d3.json").toLowerCase()) e = true;
-			});
-			return e;
-		}
-	};
-	// src/components/navigation/navigation2.ts
-	var Navigation2 = class {
-		constructor(view, model) {
-			this.updateLang = (langId, lang) => {
-				this.model.currentlang = langId;
-				document.body.lang = this.model.currentlang;
-				chooseLanguage(langId);
-				this.model.onLangChange(this.model.currentlang);
+	// src/labels.ts
+	var labels_exports = /* @__PURE__ */ __exportAll$1({
+		articleName: () => articleName,
+		labelText: () => labelText,
+		langWithWikiLoader: () => langWithWikiLoader
+	});
+	/** The label of a node: n.data.name (scientific), langMap, titles (null: no file). */
+	function labelText(n, langMap, titles) {
+		const id = n && n.data && n.data.name;
+		if (!id) return "";
+		const name = langMap && langMap[id];
+		if (!titles) return name ? "𝐖 " + name : id;
+		const title = titles[id] && articleName(titles[id]);
+		return title ? "𝐖 " + title : name || id;
+	}
+	/** An article title as a name: spaces, no disambiguation in parentheses at the end. */
+	function articleName(title) {
+		return String(title).replace(/_/g, " ").replace(/\s*\([^()]*\)\s*$/, "").trim() || String(title);
+	}
+	/**
+	* The language loader of a page (d3-hypertree langloader): the names of the language
+	* and which of its Wikipedia's articles exist, both loaded before ok(langMap), so the
+	* labels know about the 𝐖. load(url, parse?) loads a JSON file (LoadProgress.loader for
+	* the loading card, else fetch); onTitles gets the titles (the Wikipedia panel uses them).
+	*/
+	function langWithWikiLoader(lang, wikiLang, onTitles, load = fetchJson) {
+		const names = load(`langmaps/${lang}.lang.json`);
+		const titles = load(`langmaps/${wikiLang}.wiki.json`);
+		return (ok) => {
+			let m, t, got = 0;
+			const done = () => {
+				if (++got === 2) {
+					onTitles(t || null);
+					ok(m || {});
+				}
 			};
-			this.view = view;
-			this.model = model;
-			this.view.ui = NavigationHTML({
-				parent: this.view.parent,
-				onNextClick: {},
-				onPrevClick: {},
-				onLangChange: this.updateLang,
-				onQuery: {},
-				view: this.model.view,
-				onViewChange: this.model.onViewChange
+			names((d) => {
+				m = d;
+				done();
 			});
-			this.view.ui.updateLangs(this.model.languages);
-			if (this.model.path) this.updateBreadcrumbView(this.model.path);
-			model.content(this.view.ui.content);
-			applyTheme();
-			updateLinks();
-		}
-		updateBreadcrumbView(path) {
-			this.view.ui.breadcrumb.innerHTML = "";
-			select(this.view.ui.breadcrumb).selectAll("a").data(path.slice(1)).enter().append("a").classed("breadcrumb", true).attr("href", (d) => withChoices(d.href)).attr("target", (d) => d.target).text((d) => d.label.split("-").join(" "));
-		}
+			titles((d) => {
+				t = d;
+				done();
+			});
+		};
+	}
+	var fetchJson = (url) => (ok) => {
+		fetch(url).then((r) => r.ok ? r.json() : void 0).catch(() => void 0).then(ok);
 	};
 	// src/index.ts
 	var layouts = {
@@ -30052,19 +28772,30 @@ var htol = (function(exports) {
 		}, null)).then(() => t.api.gotoλ(.1)).then(() => t.drawDetailFrame())
 	};
 	exports.Hypertree = Hypertree;
-	exports.HypertreeEx = HypertreeEx;
 	exports.Icons = Icons;
-	exports.Navigation = Navigation;
+	exports.LoadProgress = LoadProgress;
+	exports.LoadingOverlay = LoadingOverlay;
 	exports.Navigation2 = Navigation2;
 	exports.NavigationModel = NavigationModel;
 	exports.OtolSetModel = OtolSetModel;
+	exports.SearchOverlay = SearchOverlay;
 	exports.Splitter = Splitter;
 	exports.StringUi = StringUi;
 	exports.WikiUi = WikiUi;
 	exports.alllanguages = alllanguages;
+	exports.composeOverlays = composeOverlays;
+	exports.fromFileWithProgress = fromFileWithProgress;
+	exports.gotoNode = gotoNode;
 	exports.initpromise = initpromise;
+	Object.defineProperty(exports, "labels", {
+		enumerable: true,
+		get: function() {
+			return labels_exports;
+		}
+	});
 	exports.layouts = layouts;
 	exports.loaders = loaders;
+	exports.nodeInitR = nodeInitR;
 	exports.options = options;
 	Object.defineProperty(exports, "settings", {
 		enumerable: true,
@@ -30072,6 +28803,8 @@ var htol = (function(exports) {
 			return settings_exports;
 		}
 	});
+	exports.strings = strings;
+	exports.treeOfLife = treeOfLife;
 	return exports;
 })({});
 

@@ -25,7 +25,7 @@
     <body>
         <script>
             const c = new URLSearchParams(document.location.search.substring(1)).get('c')
-            // view=rect: the rectangular view (half-plane, d3-hypertree geometry.halfPlane)
+            // view=rect: the rectangular view (half-plane, d3-hypertree geometry.view 'halfplane')
             const view = new URLSearchParams(document.location.search.substring(1)).get('view') === 'rect' ? 'rect' : 'disk'
             // order of the children: 'balanced' (d3-hypertree layout.childOrder: the heaviest
             // child in the middle, the heaviest path runs straight), order=data: the old rule
@@ -33,6 +33,11 @@
             const childOrder = new URLSearchParams(document.location.search.substring(1)).get('order') === 'data' ? 'data' : 'balanced'
             // ?lang= of a choice, else the system language (settings.ts)
             const l = htol.settings.language(htol.alllanguages)
+            // the phone version (settings.ts: up to 760 px wide, ?phone=1): the tree above,
+            // square, a little wider than the screen, the Wikipedia panel below; fewer
+            // nodes, fewer and larger labels (sized per script, settings.sizeLabels)
+            const phone = htol.settings.phone()
+            const captionHeight = .05
             // The Wikipedia panel: the article of the node next to the center, in the language
             // in use, only if that Wikipedia has one (langmaps/<lang>.wiki.json from
             // npm run otol:wikidata: scientific name -> article title); otherwise the page
@@ -42,12 +47,20 @@
                 titles: undefined,         // undefined: loading, null: no file, else the map
                 shown:  null,              // { lang, title } in the panel
                 pending: null,             // the node name waiting for the titles
-                load(lang) {
-                    this.lang = lang
-                    this.titles = undefined
-                    return fetch(`langmaps/${htol.settings.wikipediaLanguage(lang)}.wiki.json`)
-                        .then(r=> r.ok ? r.json() : null).catch(()=> null)
-                        .then(t=> { if (this.lang === lang) this.titles = t })
+                // the language changes: the titles come with its names (langloader)
+                expect(lang) { this.lang = lang; this.titles = undefined },
+                // the titles of a language (from the langloader, labels.ts), and the
+                // article waiting for them
+                setTitles(lang, t) {
+                    if (this.lang !== lang) return
+                    this.titles = t
+                    if (this.pending) { const p = this.pending; this.pending = null; this.show(p) }
+                },
+                // the language loader of the tree: the names and which articles exist (the
+                // 𝐖 of the labels); the Wikipedia panel uses the same titles
+                loader(lang, load) {
+                    this.expect(lang)
+                    return htol.labels.langWithWikiLoader(lang, htol.settings.wikipediaLanguage(lang), t=> this.setTitles(lang, t), load)
                 },
                 title(name) { return this.titles === null ? name : this.titles[name] },
                 show(name) {
@@ -63,7 +76,6 @@
                     if (src !== app.focusview.ui.src) app.focusview.ui.src = src
                 },
             }
-            wiki.load(l).then(()=> { if (wiki.pending) wiki.show(wiki.pending) })
 
             function createHypertree(p, file) {
                 const π = Math.PI
@@ -78,66 +90,42 @@
                 const nodeScaleNoInner = d=> d.distScale    
                 const innerNodeScale =   d=> d.precalc.weightScale
 
+                // the loading card over the tree: the download, then building the tree
+                const s = htol.strings(l)
+                const title = c.replace(/-[\d.]+$/, '').replace(/^./, x=> x.toUpperCase())
+                const loading = new htol.LoadingOverlay(p, title, l)
+                // three bars: the tree file, the names (language map, Wikipedia titles), building
+                const progress = new htol.LoadProgress(loading)
+
+                // the page's configuration (src/presets.ts: branch page, phone version)
+                // and what only this page knows: the files, the labels, the callbacks
                 const htree = new htol.Hypertree(
-                    { parent:p }, 
-                    {
-                        dataloader: htol.loaders.fromFile(`hierarchies/Open-Tree-of-Life/${c}.d3.json`),
-                        langloader: htol.loaders.fromLangFile(`langmaps/${l}.lang.json`),
+                    { parent:p },
+                    htol.composeOverlays(htol.treeOfLife.page('branch', { phone, view, childOrder }), {
+                        dataloader: progress.loader(`hierarchies/Open-Tree-of-Life/${c}.d3.json`, 'tree'),
+                        langloader: wiki.loader(l, url=> progress.loader(url, 'names')),
                         dataInitBFS: (ht, n)=> {
                             const id = n.data.name
                             n.precalc.imageHref = iconmap.fileName2IconUrl(id, n.data.type)
-                            n.precalc.icon = iconmap.emojimap[id]    
-                            
+                            n.precalc.icon = iconmap.emojimap[id]
+
                             if (childOrder === 'data' && n.children && n.height%2 === 0)
                                 n.children = n.children.reverse()
                         },
-                        langInitBFS: (ht, n)=> {                
-                            const id = n.data && n.data.name
-                            const l  = ht.langMap && ht.langMap[id] && '𝐖 ' + ht.langMap[id] 
-                            n.precalc.wiki = l
-                            n.precalc.label = l || id
-                            n.precalc.clickable = Boolean(l)              
-                        },
-                        layout: {
-                            weight: (n)=> (isLeaf(n)?1:0),
-                            childOrder,
-                            rootWedge: {
-                                orientation: 3*π/2,
-                                angle: 1.8*π/2
-                            }
-                        },
-                        filter: {
-                            weightFilter: {
-                                rangeNodes: { min:750, max:1000 }
-                            },
-                            // labels: the felt importance (npm run otol:wikidata: from the
-                            // number of Wikipedias with an article) instead of the subtree
-                            // size, linear again (importance is log(1 + articles); in log
-                            // the position decided and a hedgehog group took the center);
-                            // old tree files have none (undefined: the subtree size)
-                            labelScore: n=> n.data.importance === undefined ? undefined : Math.expm1(n.data.importance)
-                        },
-                        geometry: {
-                            halfPlane: view === 'rect',
-                            nodeRadius: nodeInitR(.0075),
-                            captionFont: '8px Roboto',
-                            captionHeight: .05,
-                            // always a label for the node under the mouse and the path
-                            // from it to the root
-                            layerOptions: {
-                                'labels': { hoverLabel: true, hoverPathLabels: true },
-                            }
+                        langInitBFS: (ht, n)=> {
+                            // 𝐖 and the article's title with an article in the language, else
+                            // the name in the language or the scientific name; unnamed nodes
+                            // nothing (labels.ts)
+                            const text = htol.labels.labelText(n, ht.langMap, wiki.titles)
+                            n.precalc.wiki = text.startsWith('𝐖') ? text : ""
+                            n.precalc.label = text
+                            // every node has its voronoi cell (the click goes there), also
+                            // the unnamed ones
+                            n.precalc.clickable = true
                         },
                         interaction: {
-                            λbounds: [1/40, .55],
-                            // the tree never fills less than 90 % of the disk: the lower λ
-                            // bound per tree (d3-hypertree minFill)
-                            minFill: .9,
-                            // a link in the middle at most a quarter of the radius (set by
-                            // hand): the upper λ bound (d3-hypertree maxLinkLength)
-                            maxLinkLength: .25,
-                            onCenterNodeChange: (n, s)=> {                                
-                                app.navigation.view.ui.breadcrumb2.innerText = s                                
+                            onCenterNodeChange: (n, s)=> {
+                                app.navigation.view.ui.breadcrumb2.innerText = s
                                 const a = n.data.name
                                 if (a) {
                                     app.currentNode = a
@@ -147,12 +135,21 @@
                             },
                             onNodeClick: (n, m, l)=> {
                                 htree.api.goto({ re:-n.layout.z.re, im:-n.layout.z.im }, null)
-                                    .then(()=> l.view.hypertree.drawDetailFrame())                                
+                                    .then(()=> l.view.hypertree.drawDetailFrame())
                             }
                         }
-                    }
+                    })
                 )
-                console.log(c)
+                htree.initPromise.then(()=> loading.done(), ()=> loading.failed(s.failed))
+                // the search: the node's own (scientific) name and its name in the language in use
+                app.search = new htol.SearchOverlay({
+                    tree:   p,
+                    lang:   ()=> app.lang,
+                    nodes:  ()=> htree.data ? htree.data.descendants() : [],
+                    names:  n=> [n.data.name, htree.langMap && htree.langMap[n.data.name]],
+                    icon:   n=> n.precalc.icon,
+                    choose: n=> htol.gotoNode(htree, n),
+                })
                 // start view: the hand-set one of an old tree file (htol.initpromise[c]);
                 // otherwise (the files of the data pipeline, <clade>-16.1) computed: the
                 // root at the bottom, the main branchings in the middle, the branches
@@ -166,6 +163,11 @@
                         return new Promise((ok, err)=> htree.animateUp(ok, err)).then(()=> htree.api.goto(v.P, null))
                     })
                     .then(()=> htree.drawDetailFrame())
+                // the labels in screen pixels for the language, as large as the main
+                // page's (settings.sizeLabels; again after a language switch and when the
+                // size changes)
+                htree.initPromise.then(()=> htol.settings.sizeLabels(htree, app.lang))
+                window.addEventListener('resize', ()=> htol.settings.sizeLabels(htree, app.lang))
                 return htree
             }
             
@@ -175,13 +177,18 @@
                 splitter: null,
                 hypertree: null,
                 focusview: null,
-                currentNode: null
-            }           
+                search: null,
+                currentNode: null,
+                lang: l
+            }
 
             app.navigation = new htol.Navigation2(                 
                 { parent: app.root }, 
                 {
                     languages: htol.alllanguages,
+                    // the root to the center; the search card over the tree
+                    onHome:    ()=> app.hypertree && app.hypertree.api.gotoHome().then(()=> app.hypertree.drawDetailFrame()),
+                    onSearch:  ()=> app.search && app.search.toggle(),
                     // the view button: reload with the other view (the tree measures its
                     // element when it is built)
                     view:          view,
@@ -192,14 +199,17 @@
                     },
                     onLangChange:  l=> {
                         console.log("lang change", l)                        
-                        // the article in the new language, if there is one (else it stays)
-                        wiki.load(l).then(()=> wiki.show(app.currentNode))
-                        const nl = htol.loaders.fromLangFile(`langmaps/${l}.lang.json`)
+                        // the names and which articles exist in the new language; then
+                        // its article, if there is one (else the page shown stays)
+                        const nl = wiki.loader(l)
+                        app.lang = l
                         app.hypertree.api.setLangloader(()=> {
+                            wiki.show(app.currentNode)
                             app.hypertree.unitdisk.layerStack.updateLayers()
                             app.hypertree.update.data()
-                        }, ()=>{}, nl)                        
-                    },                    
+                            htol.settings.sizeLabels(app.hypertree, l)
+                        }, ()=>{}, nl)
+                    },
                     path:      [
                         { label:'mgl', href:'' },
                         { label:'Hyperbolic Map', href:'/' },
@@ -210,7 +220,9 @@
                     content: (p)=> {
                         app.splitter = new htol.Splitter({
                             parent: p,
-                            splitterProportion: 68
+                            splitterProportion: 68,
+                            // phone: the tree above (square), the Wikipedia panel below
+                            direction: phone ? 'vertical' : 'horizontal'
                         })
                         app.hypertree = createHypertree(app.splitter.ui.left)
                         app.focusview = new htol.WikiUi({

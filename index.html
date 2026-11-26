@@ -53,27 +53,41 @@
 
             const app = {
                 text: null,
-                hypertree: null
+                hypertree: null,
+                search: null,
+                lang: null
             }
             function initMainPage() {
                 // ?lang= of a choice, else the system language (settings.ts)
                 const l = htol.settings.language(htol.alllanguages)
+                app.lang = l
+                // the phone version (settings.ts: up to 760 px wide, ?phone=1): the tree
+                // above, square, a little wider than the screen, the text below; fewer
+                // nodes, fewer and larger labels (sized per script)
+                const phone = htol.settings.phone()
+                const captionHeight = .05
 
                 this.controllerTree = new htol.Navigation2(
-                    { parent: document.body }, 
-                    { 
+                    { parent: document.body },
+                    {
                         title: "Hyperbolic Tree of Life",
                         language: l,
                         languages: htol.alllanguages,
+                        // the root to the center; the search card over the tree
+                        onHome:    ()=> app.hypertree && app.hypertree.api.gotoHome().then(()=> app.hypertree.drawDetailFrame()),
+                        onSearch:  ()=> app.search && app.search.toggle(),
                         onLangChange:  l=> {
                             console.log("lang change", l)
                             showText(l)
+                            app.lang = l
 
-                            const nl = htol.loaders.fromLangFile(`langmaps/${l}.lang.json`)
+                            // the names and which articles exist (the 𝐖) in the new language
+                            const nl = htol.labels.langWithWikiLoader(l, htol.settings.wikipediaLanguage(l), t=> app.titles = t)
                             app.hypertree.api.setLangloader(()=> {
                                 app.hypertree.unitdisk.layerStack.updateLayers()
                                 app.hypertree.update.data()
-                            }, ()=>{}, nl)  
+                                htol.settings.sizeLabels(app.hypertree, l)
+                            }, ()=>{}, nl)
                         }, 
                         content: p=> {
                             var d = document.createElement('div')
@@ -122,11 +136,22 @@
                             const hasBranchPage = name=> branchIndex ? Boolean(name && branchIndex[name]) : otolSetModel.fileExists(name)
                             const branchFile = name=> branchIndex && branchIndex[name] ? branchIndex[name].file : name.toLowerCase()
 
+                            // the loading card over the tree: the download, then building the tree
+                            const treeElement = document.querySelector('#maintree')
+                            const s = htol.strings(l)
+                            const loading = new htol.LoadingOverlay(treeElement, 'Hyperbolic Tree of Life', l)
+                            // three bars: the tree file, the names (language map, Wikipedia titles), building
+                            const progress = new htol.LoadProgress(loading)
+
+                            // the page's configuration (src/presets.ts: main page, phone version)
+                            // and what only this page knows: the files, the labels, the click
                             app.hypertree = new htol.Hypertree(
-                                { parent:document.querySelector('#maintree') }, 
-                                {
-                                    dataloader: ok=> branchIndexLoaded.then(()=> htol.loaders.fromFile(`hierarchies/${mainTree}.d3.json`)(ok)),
-                                    langloader: htol.loaders.fromLangFile(`langmaps/${l}.lang.json`),
+                                { parent:document.querySelector('#maintree') },
+                                htol.composeOverlays(htol.treeOfLife.page('main', { phone }), {
+                                    dataloader: progress.loader(branchIndexLoaded.then(()=> `hierarchies/${mainTree}.d3.json`), 'tree'),
+                                    // the names and which articles exist in the language (the 𝐖)
+                                    langloader: htol.labels.langWithWikiLoader(l, htol.settings.wikipediaLanguage(l),
+                                        t=> app.titles = t, url=> progress.loader(url, 'names')),
                                     dataInitBFS: (ht, n)=> {
                                         const id = n.data.name
                                         n.precalc.imageHref = iconmap.fileName2IconUrl(id, n.data.type)
@@ -140,95 +165,55 @@
                                     },
                                     langInitBFS: (ht, n)=> {                
                                         const id = n.data && n.data.name
-                                        const l  = ht.langMap && ht.langMap[id] && '𝐖 ' + ht.langMap[id] 
+                                        // 𝐖 and the article title with an article in the language, else the name
+                                        // in the language or the scientific name; unnamed nodes
+                                        // nothing (labels.ts)
+                                        const text = htol.labels.labelText(n, ht.langMap, app.titles)
+                                        const l = text.startsWith('𝐖') ? text : ""
                                         if (!hasBranchPage(id)) {
-                                            // no branch page: labelled only when it is the node
-                                            // under the mouse (labelOnHover); if it has a name it is
-                                            // clickable, so it has a voronoi cell and can be hovered
-                                            // at all (unnamed nodes, many in the Open Tree, have
-                                            // nothing to show); a click opens the branch page of its
-                                            // nearest ancestor (onNodeClick)
+                                            // no branch page: its label only while it is the node
+                                            // under the mouse (labelOnHover). Like every node it
+                                            // has its voronoi cell (clickable): a click on it is
+                                            // passed on to the branch page of its nearest
+                                            // ancestor (onNodeClick)
                                             n.precalc.wiki = ""
-                                            n.precalc.label = l || id || ""
+                                            n.precalc.label = text
                                             n.precalc.labelOnHover = true
-                                            n.precalc.clickable = Boolean(n.precalc.label)
-                                        }
-                                        else {
-                                            n.precalc.wiki = l
-                                            n.precalc.label = l || id
                                             n.precalc.clickable = true
                                         }
-                                    },
-                                    layout: {
-                                        weight: (n)=> (isLeaf(n)?1:0),
-                                        rootWedge: {
-                                            orientation: 3*π/2,
-                                            angle: .7*π/2
+                                        else {
+                                            // a branch page: on the desktop its label only under
+                                            // the mouse too; on a phone, where nothing can be
+                                            // hovered, always (presets.ts phone: maxLabels high
+                                            // enough for every branch)
+                                            n.precalc.wiki = l
+                                            n.precalc.label = text
+                                            n.precalc.clickable = true
+                                            n.precalc.labelOnHover = !phone
+                                            n.precalc.branchPage = true
                                         }
                                     },
-                                    filter: {
-                                        // labels by felt importance (Wikipedia articles), when
-                                        // the tree has it; else by subtree size
-                                        labelScore: n=> n.data.importance === undefined ? undefined : Math.expm1(n.data.importance),
-                                        weightFilter: {
-                                            //rangeCullingWeight: { min:0, max:1 },
-                                            rangeNodes:         { min:1000, max:1500 }                                            
-                                        }
-                                    },
-                                    geometry: {
-                                        nodeRadius: nodeInitR(.0075),
-                                        captionFont: '8px Roboto',
-                                        captionHeight: .05,
-                                        layerOptions: {
-                                            'cells': {
-                                                hideOnDrag: false,
-                                                invisible: false,
-                                                strokeWidth: n=> 0
-                                            },
-                                            // hoverLabel: always a label for the node under the
-                                            // mouse (not for its path, unlike the branch pages)
-                                            'labels': {
-                                                hideOnDrag: true,
-                                                invisible: true,
-                                                hoverLabel: true
-                                            },
-                                            'labels-force': {
-                                                hideOnDrag: false,
-                                                invisible: false,
-                                                hoverLabel: true,
-                                                // every linked branch (49) gets a label; only
-                                                // those have permanent labels (labelOnHover)
-                                                maxLabels: 50
-                                            },
-                                        }
-                                    },
-                                    interaction: {              
-                                        λbounds: [1/40, 1/10],
-                                        // the tree never fills less than 90 % of the disk: the
-                                        // lower λ bound per tree (d3-hypertree minFill)
-                                        minFill: .9,
-                                        // a link in the middle at most 8 % of the radius (set by
-                                        // hand): the main page tree is long chains (1-2 children
-                                        // per node, 69 levels); with longer links (λ > .15) the
-                                        // chains reach the rim in two or three links, the tree
-                                        // falls apart at the rim and the hovered cell grows
-                                        // huge (d3-hypertree maxLinkLength; branch pages .25)
-                                        maxLinkLength: .08,
+                                    interaction: {
                                         onNodeClick: (n, m, l)=> {
                                             // the node itself or its nearest ancestor with a branch page
                                             const page = n && n.ancestors().find(a=> hasBranchPage(a.data.name))
                                             if (page)
                                                 window.location.href = htol.settings.withChoices(`/otol.html?c=${branchFile(page.data.name)}`)
-                                            /*
-                                            l.ripple(n, m, ()=> {
-                                                console.log("+++++++++++", n.data.name, m)                                                
-                                                
-                                            })
-                                            */
-                                        }                                        
+                                        }
                                     }
-                                }
-                            )                            
+                                })
+                            )
+                            // the search: the node's own (scientific) name and its name in
+                            // the language in use
+                            app.search = new htol.SearchOverlay({
+                                tree:   treeElement,
+                                lang:   ()=> app.lang,
+                                nodes:  ()=> app.hypertree.data ? app.hypertree.data.descendants() : [],
+                                names:  n=> [n.data.name, app.hypertree.langMap && app.hypertree.langMap[n.data.name]],
+                                icon:   n=> n.precalc.icon,
+                                choose: n=> htol.gotoNode(app.hypertree, n),
+                            })
+                            app.hypertree.initPromise.then(()=> loading.done(), ()=> loading.failed(s.failed))
                             app.hypertree.initPromise
                                 .then(()=> new Promise((ok, err)=> app.hypertree.animateUp(ok, err)))
                                 // start view (2026-11-24, fitted to a screenshot: the root at
@@ -236,6 +221,11 @@
                                 // gotoλ after goto would move the view again
                                 .then(()=> app.hypertree.api.goto({ re: .025, im: .755 }, .0525))
                                 .then(()=> app.hypertree.drawDetailFrame())
+                            // the labels in screen pixels for the language, as large as on
+                            // the branch pages (settings.sizeLabels; again after a language
+                            // switch and when the size changes)
+                            app.hypertree.initPromise.then(()=> htol.settings.sizeLabels(app.hypertree, app.lang))
+                            window.addEventListener('resize', ()=> htol.settings.sizeLabels(app.hypertree, app.lang))
                         }
                     }            
                 )
