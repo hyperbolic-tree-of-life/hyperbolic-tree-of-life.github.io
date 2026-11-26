@@ -925,6 +925,14 @@ html.phone .slides-header > .content .patron {
   stroke: rgb(20.3132472501%, 61.956001913%, 95.3730272597%);
 }
 
+.unitdisk-nav svg .highlight-marker {
+  fill: rgba(100, 181, 246, 0.55);
+  stroke: rgba(100, 181, 246, 0.9);
+  stroke-width: 1px;
+  vector-effect: non-scaling-stroke;
+  pointer-events: none;
+}
+
 .unitdisk-nav svg .selected.arc {
   stroke: orange;
 }
@@ -1039,6 +1047,7 @@ body {
   --htol-filtered-cell: rgba(255, 167, 38, .08);
   --htol-branch-link-cell: rgba(76, 175, 80, .12);
   --htol-link-label: #2e7d32;
+  --htol-marker-link-fill: rgba(76, 175, 80, .55);
 }
 /* css/intro-light.scss */
 body {

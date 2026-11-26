@@ -44,11 +44,6 @@
             const app = {
                 text: null,
                 hypertree: null,
-                // the start view (2026-11-24, fitted to a screenshot: the root at the
-                // bottom, Passeriformes at the top): a goto there, when the page opens
-                // and from the home button
-                startView: ()=> app.hypertree.api.goto({ re: .025, im: .755 }, .0525)
-                    .then(()=> app.hypertree.drawDetailFrame()),
                 search: null,
                 lang: null
             }
@@ -71,8 +66,9 @@
                         language: l,
                         languages: htol.alllanguages,
                         // the root to the center; the search card over the tree
-                        // home: a goto to the start view, as when the page opens (startView)
-                        onHome:    ()=> app.hypertree && app.startView(),
+                        // home: a goto to the start view, as when the page opens
+                        // (presets.ts main: d3-hypertree geometry.startView)
+                        onHome:    ()=> app.hypertree && app.hypertree.api.gotoStart(),
                         onSearch:  ()=> app.search && app.search.toggle(),
                         onLangChange:  l=> {
                             console.log("lang change", l)
@@ -80,12 +76,11 @@
                             app.lang = l
 
                             // the names and which articles exist (the 𝐖) in the new language
-                            const nl = htol.labels.langWithWikiLoader(l, htol.settings.wikipediaLanguage(l), t=> app.titles = t)
-                            app.hypertree.api.setLangloader(()=> {
-                                app.hypertree.unitdisk.layerStack.updateLayers()
-                                app.hypertree.update.data()
-                                htol.settings.sizeLabels(app.hypertree, l)
-                            }, ()=>{}, nl)
+                            const nl = htol.labels.langWithWikiLoader(l, htol.settings.wikipediaLanguage(l), t=> app.titles = t, undefined, app.mainTree)
+                            // the label size of its script (d3-hypertree captionPx); the
+                            // library redraws when the names are there
+                            app.hypertree.configure({ geometry: { captionPx: htol.settings.labelPx(l) } })
+                            app.hypertree.api.setLangloader(()=> {}, ()=>{}, nl)
                         }, 
                         content: p=> {
                             var d = document.createElement('div')
@@ -105,17 +100,7 @@
                             showText(l)
                             
 
-                            const π = Math.PI
                             const iconmap = new htol.Icons()
-                            const hasLazy =          n=> (n.hasOutChildren && n.isOutλ)
-                            const isLeaf =           n=> !n.children || !n.children.length
-                            const isRoot =           n=> !n.parent 
-                            const hasCircle =        n=> hasLazy(n) || isRoot(n) || isLeaf(n)
-                            const nodeInitR =        (c)=> (ud, d)=> c * ((d.children && d.parent) ? innerNodeScale(d) : 1)     
-                            const nodeInitRNoInner = (c)=> (ud, d)=> c
-                            const nodeScale =        d=> d.distScale * (hasLazy(d) ? .8 : 1)    
-                            const nodeScaleNoInner = d=> d.distScale    
-                            const innerNodeScale =   d=> d.precalc.weightScale
                             
                             const otolSetModel = new htol.OtolSetModel()
                             // Branch pages: the clades of the new data pipeline
@@ -130,6 +115,9 @@
                             const branchIndexLoaded = fetch('hierarchies/Open-Tree-of-Life/clades-16.1.json')
                                 .then(r=> r.ok ? r.json() : null)
                                 .then(j=> { branchIndex = j && j.clades; mainTree = (j && j.main) || mainTree })
+                            // the main page tree's file, for its names (labels.ts: only the names of
+                            // this tree, langmaps/<lang>/<tree>.json)
+                            app.mainTree = branchIndexLoaded.then(()=> mainTree)
                                 .catch(()=> {})
                             const hasBranchPage = name=> branchIndex ? Boolean(name && branchIndex[name]) : otolSetModel.fileExists(name)
                             const branchFile = name=> branchIndex && branchIndex[name] ? branchIndex[name].file : name.toLowerCase()
@@ -145,21 +133,15 @@
                             // and what only this page knows: the files, the labels, the click
                             app.hypertree = new htol.Hypertree(
                                 { parent:document.querySelector('#maintree') },
-                                htol.composeOverlays(htol.treeOfLife.page('main', { phone }), {
+                                htol.composeOverlays(htol.treeOfLife.page('main', { phone, highlight: htol.settings.highlightUpdate(), captionPx: htol.settings.labelPx(l) }), {
                                     dataloader: progress.loader(branchIndexLoaded.then(()=> `hierarchies/${mainTree}.d3.json`), 'tree'),
                                     // the names and which articles exist in the language (the 𝐖)
                                     langloader: htol.labels.langWithWikiLoader(l, htol.settings.wikipediaLanguage(l),
-                                        t=> app.titles = t, url=> progress.loader(url, 'names')),
+                                        t=> app.titles = t, url=> progress.loader(url, 'names'), app.mainTree),
                                     dataInitBFS: (ht, n)=> {
                                         const id = n.data.name
                                         n.precalc.imageHref = iconmap.fileName2IconUrl(id, n.data.type)
-                                        n.precalc.icon = iconmap.emojimap[id]    
-                                        
-                                        // the main page tree is balanced by hand (its file);
-                                        // no layout.childOrder 'balanced' here
-                                        if (n.children)
-                                            if (n.height%2 === 0)
-                                                n.children = n.children.reverse()
+                                        n.precalc.icon = iconmap.emojimap[id]
                                     },
                                     langInitBFS: (ht, n)=> {                
                                         const id = n.data && n.data.name
@@ -198,7 +180,7 @@
                                             const page = n && n.ancestors().find(a=> hasBranchPage(a.data.name))
                                             if (page)
                                                 window.location.href = htol.settings.withChoices(`/otol.html?c=${branchFile(page.data.name)}`)
-                                        }
+                                        },
                                     }
                                 })
                             )
@@ -213,17 +195,6 @@
                                 choose: n=> htol.gotoNode(app.hypertree, n),
                             })
                             app.hypertree.initPromise.then(()=> loading.done(), ()=> loading.failed(s.failed))
-                            app.hypertree.initPromise
-                                .then(()=> new Promise((ok, err)=> app.hypertree.animateUp(ok, err)))
-                                // start view (2026-11-24, fitted to a screenshot: the root at
-                                // the bottom, Passeriformes at the top); P and λ together, a
-                                // gotoλ after goto would move the view again
-                                .then(()=> app.startView())
-                            // the labels in screen pixels for the language, as large as on
-                            // the branch pages (settings.sizeLabels; again after a language
-                            // switch and when the size changes)
-                            app.hypertree.initPromise.then(()=> htol.settings.sizeLabels(app.hypertree, app.lang))
-                            window.addEventListener('resize', ()=> htol.settings.sizeLabels(app.hypertree, app.lang))
                         }
                     }            
                 )

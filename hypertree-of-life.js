@@ -6689,6 +6689,8 @@ var htol = (function(exports) {
 			captionBackground: "all",
 			captionFont: "6.5px Roboto",
 			captionHeight: .04,
+			captionPx: null,
+			captionRatio: 1.25,
 			transformation: new HyperbolicTransformation({
 				P: {
 					re: 0,
@@ -6700,11 +6702,15 @@ var htol = (function(exports) {
 				},
 				λ: .1
 			}),
-			startPosition: null
+			startPosition: null,
+			startView: null
 		},
 		interaction: {
 			mouseRadius: .9,
-			hover: "pointer",
+			highlightNode: "mousehover",
+			highlightUpdate: "live",
+			highlightDelay: 0,
+			highlightLabelFallback: "none",
 			selection: "multi",
 			maxSelections: 10,
 			clickAction: "none",
@@ -6742,6 +6748,9 @@ var htol = (function(exports) {
 		"geometry.layerOptions": "layers",
 		"geometry.captionFont": "labels",
 		"geometry.captionHeight": "labels",
+		"geometry.captionPx": "none",
+		"geometry.captionRatio": "none",
+		"geometry.startView": "none",
 		"geometry.diskSize": "layers",
 		"geometry.clipRadius": "layers",
 		"geometry.linkCurvature": "layers",
@@ -6851,6 +6860,12 @@ var htol = (function(exports) {
 			const i = branch("interaction");
 			if (i.wheelFactor === void 0) i.wheelFactor = i.wheelSensitivity;
 			delete i.wheelSensitivity;
+		}
+		if (input && input.interaction && input.interaction.hover !== void 0) {
+			deprecated("interaction.hover", "interaction.highlightNode");
+			const i = branch("interaction");
+			if (i.highlightNode === void 0) i.highlightNode = i.hover === "none" ? "none" : "mousehover";
+			delete i.hover;
 		}
 		const g = input && input.geometry;
 		if (g) {
@@ -6978,7 +6993,8 @@ var htol = (function(exports) {
 	}
 	function rimScale(ctx, d) {
 		const mode = ctx.model.geometry.shrinkAtRim;
-		return mode === "none" ? 1 : mode === "full" ? d.distScale : d.dampedDistScale;
+		const growth = ctx.hypertree ? ctx.hypertree.growth : 1;
+		return (mode === "none" ? 1 : mode === "full" ? d.distScale : d.dampedDistScale) * growth;
 	}
 	function sizeAt(ctx, scale, d) {
 		const s = scale === void 0 || scale === null ? 1 : typeof scale === "function" ? scale(d) : scale;
@@ -7078,8 +7094,9 @@ var htol = (function(exports) {
 	var centers = /* @__PURE__ */ new WeakMap();
 	/**
 	* Where a caption's text sits: center (the middle of its first line's box above the
-	* baseline, negative) and line (the distance of its lines), in label units. undefined
-	* until the labels were measured in an SVG.
+	* baseline, negative), line (the distance of its lines) and height (the box of one
+	* line, as getBBox gives it), in label units. undefined until the labels were measured
+	* in an SVG.
 	*/
 	function captionBox(ht) {
 		return centers.get(ht);
@@ -7112,7 +7129,8 @@ var htol = (function(exports) {
 		if (!width || !cs || !cs.fontFamily) return null;
 		centers.set(ht, {
 			center: bb.y + bb.height / 2,
-			line: 1.2 * parseFloat(cs.fontSize)
+			line: 1.2 * parseFloat(cs.fontSize),
+			height: bb.height
 		});
 		const font = `${cs.fontStyle} ${cs.fontWeight} 100px ${cs.fontFamily}`;
 		context.font = font;
@@ -7268,6 +7286,23 @@ var htol = (function(exports) {
 		if (typeof data === "string") return ctx.cache[data] || [];
 		return [];
 	}
+	/** The class on or off, if it changed since the last call for this element. */
+	function setClass(el, name, on) {
+		const key = "__class_" + name, v = Boolean(on);
+		if (el[key] === v) return;
+		el.classList.toggle(name, v);
+		el[key] = v;
+	}
+	/** The inline style property (null, undefined or '' removes it), if it changed. */
+	function setStyle(el, prop, value) {
+		const key = "__style_" + prop;
+		const v = value === null || value === void 0 || value === "" ? null : String(value);
+		if (el[key] === v) return;
+		const style = el.style;
+		if (v === null) style.removeProperty(prop);
+		else style.setProperty(prop, v);
+		el[key] = v;
+	}
 	var _CellLayer;
 	var CellLayer = class {
 		constructor(view, name, args) {
@@ -7299,7 +7334,12 @@ var htol = (function(exports) {
 				updateColor: (s) => {
 					const showHover = this.args.hover !== false;
 					const showSelection = this.args.selection !== false;
-					return s.classed("hovered", (d) => showHover && !!d.data.hovered).classed("selected", (d) => showSelection && !!d.data.selected).style("fill", (d) => d.pathes && d.pathes.labelcolor || this.args.fill(d));
+					const fill = this.args.fill;
+					return s.each(function(d) {
+						setClass(this, "hovered", showHover && !!d.data.hovered);
+						setClass(this, "selected", showSelection && !!d.data.selected);
+						setStyle(this, "fill", d.pathes && d.pathes.labelcolor || fill(d));
+					});
 				},
 				updateTransform: (s) => s.attr("points", (d) => d && d.join(" "))
 			});
@@ -7409,7 +7449,11 @@ var htol = (function(exports) {
 				className: this.args.className,
 				elementType: "circle",
 				create: (s) => s.attr("r", (d) => this.radius(d)).classed("root", (d) => !d.parent).classed("lazy", (d) => !!d.hasOutChildren).classed("leaf", (d) => d.parent).classed("exit", (d) => (!d.children || !d.children.length) && d.data && d.data.numLeafs).style("stroke", (d) => d.pathes && d.pathes.labelcolor || this.args.stroke(d)).style("stroke-width", (d) => d.pathes && d.pathes.labelcolor || this.args.strokeWidth(d)),
-				updateColor: (s) => s.classed("hovered", (d) => showsState(this.args.hover, d, "hover")).classed("selected", (d) => showsState(this.args.selection, d, "selection")).style("fill", (d) => d.pathes && d.pathes.labelcolor || this.args.fill(d)),
+				updateColor: (s) => s.each(function(d) {
+					setClass(this, "hovered", showsState($this.args.hover, d, "hover"));
+					setClass(this, "selected", showsState($this.args.selection, d, "selection"));
+					setStyle(this, "fill", d.pathes && d.pathes.labelcolor || $this.args.fill(d));
+				}),
 				updateTransform: (s) => s.attr("transform", (d) => this.args.transform(d)).each(function(d) {
 					const r = $this.radius(d);
 					if (this.__r !== r) {
@@ -7473,7 +7517,16 @@ var htol = (function(exports) {
 			return d.parent ? p.geodesic(d.cache, d.parent.cache, this.args.curvature) : p.stem(d.cache, this.args.curvature);
 		}
 		attach() {
-			const style = this.args.role === "paths" ? (s) => s.classed("hovered-path", (d) => d.pathes && d.pathes.isPartOfAnyHoverPath).classed("selected-path", (d) => d.pathes && d.pathes.isPartOfAnySelectionPath).style("stroke", (d) => d.pathes && d.pathes.finalcolor) : (s) => s.style("stroke", (d) => d.pathes && d.pathes.finalcolor || this.args.stroke(d)).classed("hovered", (d) => showsState(this.args.hover, d, "hover")).classed("selected", (d) => showsState(this.args.selection, d, "selection"));
+			const args = this.args;
+			const style = this.args.role === "paths" ? (s) => s.each(function(d) {
+				setClass(this, "hovered-path", d.pathes && d.pathes.isPartOfAnyHoverPath);
+				setClass(this, "selected-path", d.pathes && d.pathes.isPartOfAnySelectionPath);
+				setStyle(this, "stroke", d.pathes && d.pathes.finalcolor);
+			}) : (s) => s.each(function(d) {
+				setStyle(this, "stroke", d.pathes && d.pathes.finalcolor || args.stroke(d));
+				setClass(this, "hovered", showsState(args.hover, d, "hover"));
+				setClass(this, "selected", showsState(args.selection, d, "selection"));
+			});
 			this.d3updatePattern = new D3UpdatePattern({
 				parent: this.view.parent,
 				layer: this,
@@ -7699,19 +7752,27 @@ var htol = (function(exports) {
 		return cache.labelsByMax[max] || (cache.labelsByMax[max] = selectLabels(ud, cache, max));
 	}
 	/**
-	* The labels of a label layer: labelsFor(maxLabels), plus as its options ask
-	*   hoverLabel:      the node under the mouse (n.hovered)
-	*   hoverPathLabels: every node on the path from it to the root
-	* if they are visible and have a label. These come on top of the limit. Nodes with
-	* precalc.labelOnHover show their label only this way.
+	* The labels of a label layer, at most maxLabels, as its options ask:
+	*   hoverLabel:      the node under the mouse (n.hovered): always, it counts
+	*   hoverPathLabels: the nodes on the path from it to the root, nearest first, as far
+	*                    as the limit goes (the ones near the root are left out first)
+	*   the rest of the limit: the labels by weight and nearness (labelsFor)
+	* only visible nodes with a label. Nodes with precalc.labelOnHover show their label only
+	* on the hover path.
 	*/
 	function labelsWithHover(ud, args) {
-		const base = labelsFor(ud, args.maxLabels);
-		if (!args.hoverLabel && !args.hoverPathLabels) return base;
-		const extra = ud.cache.unculledNodes.filter((n) => n.precalc.label && !n.outOfView && (args.hoverLabel && n.hovered || args.hoverPathLabels && n.pathes && n.pathes.isPartOfAnyHoverPath));
-		if (!extra.length) return base;
-		const inBase = new Set(base);
-		return base.concat(extra.filter((n) => !inBase.has(n)));
+		if (!args.hoverLabel && !args.hoverPathLabels) return labelsFor(ud, args.maxLabels);
+		const max = args.maxLabels === void 0 || args.maxLabels === null ? 25 : args.maxLabels;
+		const shown = (n) => n.precalc.label && !n.outOfView;
+		const unculled = ud.cache.unculledNodes;
+		const hover = args.hoverLabel ? unculled.filter((n) => n.hovered && shown(n)) : [];
+		const path = !args.hoverPathLabels ? [] : unculled.filter((n) => !hover.includes(n) && n.pathes && n.pathes.isPartOfAnyHoverPath && shown(n)).sort((a, b) => b.depth - a.depth).slice(0, Math.max(0, max - hover.length));
+		const taken = /* @__PURE__ */ new Set([...hover, ...path]);
+		const rest = Math.max(0, max - taken.size);
+		let base = rest ? labelsFor(ud, rest) : [];
+		const twice = base.filter((n) => taken.has(n)).length;
+		if (twice) base = labelsFor(ud, rest + twice);
+		return base.filter((n) => !taken.has(n)).slice(0, rest).concat(hover, path);
 	}
 	/**
 	* The weight of a node when choosing labels (label layers, labels-placed priority):
@@ -7795,8 +7856,11 @@ var htol = (function(exports) {
 				className: this.args.className,
 				elementType: "text",
 				create: (s) => s.classed("P", (d) => d.name == "P").classed("caption-icon", (d) => d.precalc.icon && navigator.platform.includes("inux")).attr("text-anchor", this.args.kind === "emoji" ? "middle" : null).attr("dominant-baseline", this.args.kind === "emoji" ? "central" : null).style("stroke", (d) => d.pathes && d.pathes.labelcolor).style("fill", (d) => this.args.color(d)).call((s) => setLabelText(s, this.args.text)),
-				updateColor: (s) => s.style("stroke", (d) => d.pathes && d.pathes.labelcolor).style("fill", (d) => this.args.color(d)).call(markHoveredLabel),
-				updateTransform: (s) => s.attr("transform", offset).call(markHoveredLabel)
+				updateColor: (s) => s.each(function(d) {
+					setStyle(this, "stroke", d.pathes && d.pathes.labelcolor);
+					setStyle(this, "fill", $this.args.color(d));
+				}).call(markHoveredLabel, this),
+				updateTransform: (s) => s.attr("transform", offset).call(markHoveredLabel, this)
 			});
 		}
 	};
@@ -7938,9 +8002,14 @@ var htol = (function(exports) {
 	* transform). Called with the layer's text elements on every style and transform
 	* update; a label can be hovered by pointing at the label itself
 	* (interaction-layer-2.ts: labelNodeAt).
+	*
+	* layer: the label layer (its name: the measured width precalc.<name>len), for the box
+	* without measuring in the DOM (hoveredBox).
 	*/
-	function markHoveredLabel(s) {
-		s.classed("caption-hovered", (d) => Boolean(d && d.hovered));
+	function markHoveredLabel(s, layer) {
+		s.each(function(d) {
+			setClass(this, "caption-hovered", d && d.hovered);
+		});
 		const first = s.node();
 		const group = first && first.parentNode;
 		if (!group) return;
@@ -7969,22 +8038,57 @@ var htol = (function(exports) {
 			"ry"
 		]) rect.setAttribute(a, background.getAttribute(a) || "0");
 		else {
-			const b = hovered.getBBox();
-			if (!b.width) {
+			const b = hoveredBox(hovered, layer);
+			if (!b) {
 				rect.setAttribute("width", "0");
 				return;
 			}
-			const pad = b.height * .25;
-			rect.setAttribute("x", String(b.x - pad));
-			rect.setAttribute("y", String(b.y - pad * .5));
-			rect.setAttribute("width", String(b.width + 2 * pad));
-			rect.setAttribute("height", String(b.height + pad));
-			rect.setAttribute("rx", String(pad));
-			rect.removeAttribute("ry");
+			if (rect.dataset.box !== b.key) {
+				const pad = b.height * .25;
+				rect.setAttribute("x", String(b.x - pad));
+				rect.setAttribute("y", String(b.y - pad * .5));
+				rect.setAttribute("width", String(b.width + 2 * pad));
+				rect.setAttribute("height", String(b.height + pad));
+				rect.setAttribute("rx", String(pad));
+				rect.removeAttribute("ry");
+				rect.dataset.box = b.key;
+			}
 		}
 		const t = hovered.getAttribute("transform");
 		if (t) rect.setAttribute("transform", t);
 		else rect.removeAttribute("transform");
+	}
+	var boxes = /* @__PURE__ */ new WeakMap();
+	function hoveredBox(text, layer) {
+		const d = text.__data__;
+		const w = layer && d && d.precalc && d.precalc[layer.name + "len"];
+		const m = layer && captionBox(layer.view.hypertree);
+		if (w && m && text.__labelText === d.precalc.label) {
+			const lines = text.childElementCount || 1;
+			const height = m.height + (lines - 1) * m.line;
+			const x = text.getAttribute("text-anchor") === "middle" ? -w / 2 : 0;
+			return {
+				key: `${w}\0${lines}\0${m.center}\0${m.height}`,
+				x,
+				y: m.center - m.height / 2,
+				width: w,
+				height
+			};
+		}
+		const svg = text.ownerSVGElement;
+		const key = `${text.textContent}\0${text.getAttribute("class")}\0${svg ? svg.style.fontSize : ""}`;
+		const known = boxes.get(text);
+		if (known && known.key === key) return known.width ? known : null;
+		const b = text.getBBox();
+		const box = {
+			key,
+			x: b.x,
+			y: b.y,
+			width: b.width,
+			height: b.height
+		};
+		boxes.set(text, box);
+		return box.width ? box : null;
 	}
 	var FOLLOW = 70;
 	var MAX_SPEED = .001;
@@ -8290,8 +8394,10 @@ var htol = (function(exports) {
 				className: this.args.className,
 				elementType: "text",
 				create: (s) => s.classed("P", (d) => d.name == "P").classed("caption-icon", (d) => d.precalc.icon && navigator.platform.includes("inux")).style("fill", (d) => d.pathes && d.pathes.labelcolor || this.args.color(d)).call((s) => setLabelText(s, this.args.text)).attr("transform", calctransform),
-				updateColor: (s) => s.style("fill", (d) => d.pathes && d.pathes.labelcolor || this.args.color(d)).call(markHoveredLabel),
-				updateTransform: (s) => s.attr("transform", calctransform).call((s) => setLabelText(s, this.args.text)).call(markHoveredLabel)
+				updateColor: (s) => s.each(function(d) {
+					setStyle(this, "fill", d.pathes && d.pathes.labelcolor || T.args.color(d));
+				}).call(markHoveredLabel, T),
+				updateTransform: (s) => s.attr("transform", calctransform).call((s) => setLabelText(s, this.args.text)).call(markHoveredLabel, T)
 			});
 			const lineEnd = (d) => {
 				const b = this.box(d);
@@ -8526,8 +8632,10 @@ var htol = (function(exports) {
 				className: this.args.className,
 				elementType: "text",
 				create: (s) => s.style("fill", (d) => d.pathes && d.pathes.labelcolor).call((s) => setLabelText(s, this.args.text)).attr("transform", transform),
-				updateColor: (s) => s.style("fill", (d) => d.pathes && d.pathes.labelcolor).call(markHoveredLabel),
-				updateTransform: (s) => s.attr("transform", transform).call((s) => setLabelText(s, this.args.text)).call(markHoveredLabel)
+				updateColor: (s) => s.each(function(d) {
+					setStyle(this, "fill", d.pathes && d.pathes.labelcolor);
+				}).call(markHoveredLabel, this),
+				updateTransform: (s) => s.attr("transform", transform).call((s) => setLabelText(s, this.args.text)).call(markHoveredLabel, this)
 			});
 			const lineEnd = (d) => {
 				const b = this.drawnBox(d);
@@ -8757,7 +8865,6 @@ var htol = (function(exports) {
 				transformation: () => {},
 				style: () => {}
 			};
-			this.hoverNode = void 0;
 			this.holdTimer = null;
 			this.held = false;
 			this.pointerQueue = [];
@@ -8793,8 +8900,6 @@ var htol = (function(exports) {
 			this.view = view;
 			this.args = args;
 			this.name = name;
-			this.htapi = this.view.hypertree.api;
-			this.hoverpath = this.view.model.objects.pathes[0];
 			this.mousedown = false;
 		}
 		get interaction() {
@@ -8811,8 +8916,7 @@ var htol = (function(exports) {
 		}
 		updateParent() {
 			const mousehandlers = (de) => de.on("wheel", (e) => this.fireMouseWheelEvent(e)).on("mousedown", (e) => this.fireMouseDown(e)).on("mousemove", (e) => this.fireMouseMove(e)).on("mouseup", (e) => this.fireMouseUp(e)).on("mouseout", (e) => {
-				this.setHoverNode(void 0);
-				this.htapi.setPathHead(this.hoverpath, void 0);
+				if (this.mousehover) this.view.hypertree.highlighting.clear();
 			}).on("touchstart", (e) => this.fireTouchEvent(e, "onPointerStart")).on("touchmove", (e) => this.fireTouchEvent(e, "onPointerMove")).on("touchend", (e) => this.fireTouchEvent(e, "onPointerEnd")).on("touchcancel", (e) => this.fireTouchEvent(e, "onPointerEnd"));
 			this.view.parent.append("circle").attr("class", "mouse-circle").attr("r", 5).call(mousehandlers);
 			this.view.parent.append("circle").attr("class", "mouse-circle-cursor").attr("r", this.args.mouseRadius).call(mousehandlers);
@@ -8823,19 +8927,13 @@ var htol = (function(exports) {
 		}
 		fireMouseMove(e) {
 			if (this.mousedown) this.fireMouseEvent(e, "onPointerMove");
-			else if (!this.view.hypertree.isInitializing && !this.view.hypertree.isAnimationRunning()) {
+			else if (this.mousehover && !this.view.hypertree.isInitializing && !this.view.hypertree.isAnimationRunning()) {
 				const p = this.mousePosAsC(e), m = this.toDisk(p);
-				const n = !(this.interaction.hover !== "none") ? void 0 : this.nodeAt(p, m.re * m.re + m.im * m.im <= 1);
-				this.setHoverNode(n);
-				this.htapi.setPathHead(this.hoverpath, n);
+				this.view.hypertree.highlighting.offer(this.nodeAt(p, m.re * m.re + m.im * m.im <= 1));
 			}
 		}
-		setHoverNode(n) {
-			if (n === this.hoverNode) return;
-			this.hoverNode = n;
-			const i = this.interaction;
-			if (i.onNodeHover) i.onNodeHover(n);
-			if (i.onHoverNodeChange) i.onHoverNodeChange(n);
+		get mousehover() {
+			return this.interaction.highlightNode === "mousehover";
 		}
 		startHoldTimer(m) {
 			this.cancelHoldTimer();
@@ -9102,6 +9200,243 @@ var htol = (function(exports) {
 		}),
 		create: (ctx, name, args) => new _TraceLayer(ctx, name, args)
 	};
+	function _typeof(o) {
+		"@babel/helpers - typeof";
+		return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o) {
+			return typeof o;
+		} : function(o) {
+			return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
+		}, _typeof(o);
+	}
+	function toPrimitive(t, r) {
+		if ("object" != _typeof(t) || !t) return t;
+		var e = t[Symbol.toPrimitive];
+		if (void 0 !== e) {
+			var i = e.call(t, r || "default");
+			if ("object" != _typeof(i)) return i;
+			throw new TypeError("@@toPrimitive must return a primitive value.");
+		}
+		return ("string" === r ? String : Number)(t);
+	}
+	function toPropertyKey(t) {
+		var i = toPrimitive(t, "string");
+		return "symbol" == _typeof(i) ? i : i + "";
+	}
+	function _defineProperty(e, r, t) {
+		return (r = toPropertyKey(r)) in e ? Object.defineProperty(e, r, {
+			value: t,
+			enumerable: !0,
+			configurable: !0,
+			writable: !0
+		}) : e[r] = t, e;
+	}
+	function ownKeys(e, r) {
+		var t = Object.keys(e);
+		if (Object.getOwnPropertySymbols) {
+			var o = Object.getOwnPropertySymbols(e);
+			r && (o = o.filter(function(r) {
+				return Object.getOwnPropertyDescriptor(e, r).enumerable;
+			})), t.push.apply(t, o);
+		}
+		return t;
+	}
+	function _objectSpread2(e) {
+		for (var r = 1; r < arguments.length; r++) {
+			var t = null != arguments[r] ? arguments[r] : {};
+			r % 2 ? ownKeys(Object(t), !0).forEach(function(r) {
+				_defineProperty(e, r, t[r]);
+			}) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function(r) {
+				Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r));
+			});
+		}
+		return e;
+	}
+	var _HighlightMarkerLayer;
+	var HighlightMarkerLayer = class {
+		constructor(view, name, args) {
+			this.needs = [
+				"data",
+				"transform",
+				"style"
+			];
+			this.update = {
+				parent: () => this.attach(),
+				data: () => this.draw(),
+				transformation: () => this.draw(),
+				style: () => this.draw()
+			};
+			this.circle = null;
+			this.target = void 0;
+			this.from = null;
+			this.way = [];
+			this.start = 0;
+			this.animating = false;
+			this.view = view;
+			this.args = args;
+			this.name = name;
+		}
+		attach() {
+			const g = this.view.parent.append("g").attr("class", this.name).node();
+			this.circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+			this.circle.setAttribute("class", this.args.className);
+			this.circle.style.display = "none";
+			g.appendChild(this.circle);
+		}
+		hidden() {
+			return this.args.invisible || this.args.hideOnDrag && this.view.hypertree.isAnimationRunning();
+		}
+		ease(t) {
+			return 1 - Math.pow(1 - t, 3);
+		}
+		progress() {
+			const d = this.args.duration || 0;
+			return d <= 0 ? 1 : Math.min(1, (performance.now() - this.start) / d);
+		}
+		/** The highlight changed: the way from where the marker is to the new target. */
+		retarget(n) {
+			const at = this.target && n && this.from ? this.at(this.ease(this.progress())) : null;
+			this.target = n;
+			if (!n) {
+				this.from = null;
+				this.way = [];
+				return;
+			}
+			if (!at) {
+				this.from = {
+					a: n,
+					b: n,
+					f: 0
+				};
+				this.way = [n];
+				this.start = 0;
+				return;
+			}
+			const first = at.f + treePath(at.a, n).length <= 1 - at.f + treePath(at.b, n).length ? at.a : at.b;
+			this.from = at;
+			this.way = treePath(first, n);
+			this.start = performance.now();
+		}
+		points() {
+			const pos = (n) => n.cache && isFinite(n.cache.re) ? {
+				x: n.cache.re,
+				y: n.cache.im
+			} : null;
+			const a = pos(this.from.a), b = pos(this.from.b);
+			if (!a || !b) return null;
+			const pts = [{
+				at: this.from,
+				x: a.x + (b.x - a.x) * this.from.f,
+				y: a.y + (b.y - a.y) * this.from.f
+			}];
+			for (const n of this.way) {
+				const p = pos(n);
+				if (!p) return null;
+				pts.push(_objectSpread2({ at: {
+					a: n,
+					b: n,
+					f: 0
+				} }, p));
+			}
+			return pts;
+		}
+		at(s) {
+			const pts = this.points();
+			if (!pts) return {
+				a: this.target,
+				b: this.target,
+				f: 0
+			};
+			const len = pts.slice(1).map((p, i) => Math.hypot(p.x - pts[i].x, p.y - pts[i].y));
+			let rest = s * len.reduce((x, y) => x + y, 0);
+			for (let i = 0; i < len.length; i++) {
+				if (rest <= len[i] && len[i] > 0) {
+					const q = rest / len[i];
+					if (i === 0) {
+						const to = this.way[0] === this.from.a ? 0 : 1;
+						return {
+							a: this.from.a,
+							b: this.from.b,
+							f: this.from.f + (to - this.from.f) * q
+						};
+					}
+					return {
+						a: this.way[i - 1],
+						b: this.way[i],
+						f: q
+					};
+				}
+				rest -= len[i];
+			}
+			const last = this.way[this.way.length - 1];
+			return {
+				a: last,
+				b: last,
+				f: 0
+			};
+		}
+		draw() {
+			const c = this.circle;
+			if (!c) return;
+			const n = this.view.hypertree.highlighted;
+			if (n !== this.target) this.retarget(n);
+			if (!this.target || this.hidden()) {
+				c.style.display = "none";
+				return;
+			}
+			const at = this.at(this.ease(this.progress()));
+			const ca = at.a.cache, cb = at.b.cache;
+			if (!ca || !cb || !isFinite(ca.re) || !isFinite(cb.re)) {
+				c.style.display = "none";
+				return;
+			}
+			const x = ca.re + (cb.re - ca.re) * at.f, y = ca.im + (cb.im - ca.im) * at.f;
+			const k = rimScale(this.view, at.a) + (rimScale(this.view, at.b) - rimScale(this.view, at.a)) * at.f;
+			c.setAttribute("cx", String(x));
+			c.setAttribute("cy", String(y));
+			const r = typeof this.args.r === "function" ? this.args.r(this.view) : this.args.r;
+			c.setAttribute("r", String(r * k));
+			setStyle(c, "fill", this.args.fill(this.target));
+			setStyle(c, "stroke", this.args.stroke(this.target));
+			c.style.display = "";
+			if (this.progress() < 1) this.animate();
+		}
+		animate() {
+			if (this.animating) return;
+			this.animating = true;
+			requestAnimationFrame(() => {
+				this.animating = false;
+				this.draw();
+			});
+		}
+	};
+	_HighlightMarkerLayer = HighlightMarkerLayer;
+	_HighlightMarkerLayer.type = {
+		defaults: () => ({
+			invisible: true,
+			hideOnDrag: false,
+			className: "highlight-marker",
+			r: .012,
+			duration: 250,
+			fill: (n) => void 0,
+			stroke: (n) => void 0
+		}),
+		create: (ctx, name, args) => new _HighlightMarkerLayer(ctx, name, args)
+	};
+	/** The nodes from u to v along the tree (u first, v last): up to the nearest common ancestor, down to v. */
+	function treePath(u, v) {
+		const vUp = v.ancestors();
+		const inV = new Set(vUp);
+		const up = [];
+		let a = u;
+		while (a && !inV.has(a)) {
+			up.push(a);
+			a = a.parent;
+		}
+		if (!a) return [u, v];
+		up.push(a);
+		const down = vUp.slice(0, vUp.indexOf(a)).reverse();
+		return up.concat(down);
+	}
 	var layerTypes = {
 		"background": BackgroundLayer.type,
 		"cells": CellLayer.type,
@@ -9118,7 +9453,8 @@ var htol = (function(exports) {
 		"labels-force": LabelForceLayer.type,
 		"labels-placed": LabelPlacementLayer.type,
 		"interaction": InteractionLayer2.type,
-		"traces": TraceLayer.type
+		"traces": TraceLayer.type,
+		"highlight-marker": HighlightMarkerLayer.type
 	};
 	/** The default layer stack, in drawing order (a fresh list on every call). */
 	var defaultLayers = () => [
@@ -9203,6 +9539,10 @@ var htol = (function(exports) {
 		{
 			type: "symbols",
 			name: "symbols"
+		},
+		{
+			type: "highlight-marker",
+			name: "highlight-marker"
 		},
 		{
 			type: "images",
@@ -9437,8 +9777,36 @@ var htol = (function(exports) {
 		modelBase: () => defaults(),
 		infovis: (o) => infovisModel(o),
 		infovisEmoji: (o) => infovisEmojiModel(o),
-		infovisFiles: (o) => infovisFilesModel(o)
+		infovisFiles: (o) => infovisFilesModel(o),
+		highlightCell: () => highlightCell(),
+		highlightDisk: (o) => highlightDisk(o)
 	};
+	/** The highlighted node shown by its voronoi cell (the theme's .hovered.cell), no disk. */
+	function highlightCell() {
+		return { geometry: { layerOptions: {
+			"cells": {
+				invisible: false,
+				hover: true
+			},
+			"highlight-marker": { invisible: true }
+		} } };
+	}
+	/**
+	* The highlighted node shown by a disk on it (layer highlight-marker), size times the
+	* label font high in the center of the disk; it moves along the tree to the next
+	* highlighted node. The cells do not show it (they keep their own colors).
+	*/
+	function highlightDisk(o = {}) {
+		const size = o.size || 3;
+		return { geometry: { layerOptions: {
+			"cells": { hover: false },
+			"highlight-marker": {
+				invisible: false,
+				duration: o.duration === void 0 ? 250 : o.duration,
+				r: (ctx) => size / 2 * ctx.model.geometry.captionHeight / ctx.model.geometry.captionRatio
+			}
+		} } };
+	}
 	var DiskProjection = class {
 		constructor() {
 			this.kind = "disk";
@@ -9510,57 +9878,6 @@ var htol = (function(exports) {
 			return P;
 		}
 	};
-	function _typeof(o) {
-		"@babel/helpers - typeof";
-		return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o) {
-			return typeof o;
-		} : function(o) {
-			return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
-		}, _typeof(o);
-	}
-	function toPrimitive(t, r) {
-		if ("object" != _typeof(t) || !t) return t;
-		var e = t[Symbol.toPrimitive];
-		if (void 0 !== e) {
-			var i = e.call(t, r || "default");
-			if ("object" != _typeof(i)) return i;
-			throw new TypeError("@@toPrimitive must return a primitive value.");
-		}
-		return ("string" === r ? String : Number)(t);
-	}
-	function toPropertyKey(t) {
-		var i = toPrimitive(t, "string");
-		return "symbol" == _typeof(i) ? i : i + "";
-	}
-	function _defineProperty(e, r, t) {
-		return (r = toPropertyKey(r)) in e ? Object.defineProperty(e, r, {
-			value: t,
-			enumerable: !0,
-			configurable: !0,
-			writable: !0
-		}) : e[r] = t, e;
-	}
-	function ownKeys(e, r) {
-		var t = Object.keys(e);
-		if (Object.getOwnPropertySymbols) {
-			var o = Object.getOwnPropertySymbols(e);
-			r && (o = o.filter(function(r) {
-				return Object.getOwnPropertyDescriptor(e, r).enumerable;
-			})), t.push.apply(t, o);
-		}
-		return t;
-	}
-	function _objectSpread2(e) {
-		for (var r = 1; r < arguments.length; r++) {
-			var t = null != arguments[r] ? arguments[r] : {};
-			r % 2 ? ownKeys(Object(t), !0).forEach(function(r) {
-				_defineProperty(e, r, t[r]);
-			}) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function(r) {
-				Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r));
-			});
-		}
-		return e;
-	}
 	var HalfPlaneProjection = class {
 		constructor(rootWedge) {
 			this.kind = "halfplane";
@@ -9790,38 +10107,71 @@ var htol = (function(exports) {
 		sumUp(root, model.layout.weight, "visWeight");
 		root.each((n) => n.precalc.weightScale = (Math.log2(n.precalc.visWeight) || 1) / (Math.log2(root.precalc.visWeight || root.children.length) || 1));
 	}
+	var dataOrder = /* @__PURE__ */ new WeakMap();
+	/**
+	* Orders the children of every node by layout.childOrder: 'data' as given, 'balanced'
+	* (balanceChildren), 'alternating' as given on odd heights, reversed on even heights
+	* (n.height: the distance to the deepest leaf; the old rule of the Tree of Life, whose
+	* branches then alternate from level to level). Called after dataInitBFS and when the
+	* option changes.
+	*/
+	function orderChildren(root, mode) {
+		root.each((n) => {
+			if (!n.children || n.children.length < 2) return;
+			let order = dataOrder.get(n);
+			if (!order) dataOrder.set(n, order = n.children.slice());
+			const next = mode === "alternating" && n.height % 2 === 0 ? order.slice().reverse() : order;
+			n.children.splice(0, n.children.length, ...next);
+		});
+		if (mode === "balanced") balanceChildren(root);
+	}
+	var weight = (c) => (c.precalc.angleWeight !== void 0 ? c.precalc.angleWeight : c.precalc.layoutWeight) || 0;
 	/** Orders the children of every node of the tree (weights: precalc.angleWeight, the
 	*  part of the wedge; precalc.layoutWeight without it). */
 	function balanceChildren(root) {
+		const lean = /* @__PURE__ */ new Map();
 		const todo = [root];
 		while (todo.length) {
 			const n = todo.pop();
 			if (!n.children || !n.children.length) continue;
-			if (n.children.length > 1) n.children = balanced(n.children, n.depth % 2 === 0);
+			if (n.children.length > 1) {
+				const s = balancedSides(n.children, n.depth % 2 === 0);
+				const before = lean.get(n) || 0;
+				const turn = (l, r) => (l.reduce((a, c) => a + weight(c), 0) - r.reduce((a, c) => a + weight(c), 0)) / s.total;
+				const t = turn(s.left, s.right);
+				const swap = before * t > 0;
+				const left = swap ? s.right : s.left, right = swap ? s.left : s.right;
+				n.children = [
+					...[...left].reverse(),
+					s.heaviest,
+					...right
+				];
+				if (s.total) lean.set(s.heaviest, before + (swap ? -t : t));
+			} else lean.set(n.children[0], lean.get(n) || 0);
 			for (const c of n.children) todo.push(c);
 		}
 	}
-	/** The balanced order of a list of children (exported for the tests). */
-	function balanced(children, firstLeft) {
-		const w = (c) => (c.precalc.angleWeight !== void 0 ? c.precalc.angleWeight : c.precalc.layoutWeight) || 0;
+	/** The heaviest child and the others on its sides, each side from the middle out. */
+	function balancedSides(children, firstLeft) {
 		const sorted = children.map((c, i) => ({
 			c,
 			i
-		})).sort((a, b) => w(b.c) - w(a.c) || a.i - b.i).map((x) => x.c);
+		})).sort((a, b) => weight(b.c) - weight(a.c) || a.i - b.i).map((x) => x.c);
 		const left = [], right = [];
 		let wl = 0, wr = 0;
 		for (const c of sorted.slice(1)) if (wl < wr || wl === wr && firstLeft) {
 			left.push(c);
-			wl += w(c);
+			wl += weight(c);
 		} else {
 			right.push(c);
-			wr += w(c);
+			wr += weight(c);
 		}
-		return [
-			...left.reverse(),
-			sorted[0],
-			...right
-		];
+		return {
+			heaviest: sorted[0],
+			left,
+			right,
+			total: wl + wr + weight(sorted[0])
+		};
 	}
 	var MAGIC_MIN = 1e-12;
 	var MAGIC_MAX = 0xe8d4a51000;
@@ -10192,70 +10542,81 @@ var htol = (function(exports) {
 			},
 			λ: λstart
 		};
-		const down = {
-			re: -Math.cos(orientation),
-			im: -Math.sin(orientation)
-		};
-		const positions = (λ) => {
-			layout(root, λ);
-			return S.map((n) => ({
-				re: n.layout.z.re,
-				im: n.layout.z.im
-			}));
-		};
-		const moved = (z, P) => h2e(makeT(P, one), z);
-		const quantile = (a, f) => {
-			const s = a.slice().sort((x, y) => x - y);
-			return s[Math.floor(f * (s.length - 1))];
-		};
-		const MAX_R = .97;
-		const along = (p) => ({
-			re: down.re * p,
-			im: down.im * p
-		});
-		const center = (zs, _P) => {
-			let lo = 0, hi = MAX_R;
-			for (let i = 0; i < 30; i++) {
-				const p = (lo + hi) / 2;
-				let c = 0;
-				for (const z of zs) {
-					const w = moved(z, along(p));
-					c += w.re * down.re + w.im * down.im;
-				}
-				if (c < 0) lo = p;
-				else hi = p;
-			}
-			return along((lo + hi) / 2);
-		};
-		const fit = (P) => {
-			let lo = λbounds[0], hi = λbounds[1];
-			for (let i = 0; i < 25; i++) {
-				const λ = Math.sqrt(lo * hi);
-				if (quantile(positions(λ).map((z) => {
-					const w = moved(z, P);
-					return Math.hypot(w.re, w.im);
-				}), fill) < fill) lo = λ;
-				else hi = λ;
-			}
-			return Math.sqrt(lo * hi);
-		};
-		let λ = Math.min(λbounds[1], Math.max(λbounds[0], λstart));
-		let P = {
-			re: down.re * .5,
-			im: down.im * .5
-		};
-		for (let i = 0; i < rounds; i++) {
-			const P2 = center(positions(λ), P);
-			const λ2 = fit(P2);
-			const settled = Math.hypot(P2.re - P.re, P2.im - P.im) < .001 && Math.abs(λ2 - λ) < 1e-4;
-			P = P2;
-			λ = λ2;
-			if (settled) break;
+		const keep = /* @__PURE__ */ new Set();
+		for (const n of S) for (let a = n; a && !keep.has(a); a = a.parent) keep.add(a);
+		const hidden = inner.filter((n) => !keep.has(n)).map((n) => [n, n.children]);
+		for (const [n] of hidden) n.children = void 0;
+		try {
+			return search();
+		} finally {
+			for (const [n, c] of hidden) n.children = c;
 		}
-		return {
-			P,
-			λ
-		};
+		function search() {
+			const down = {
+				re: -Math.cos(orientation),
+				im: -Math.sin(orientation)
+			};
+			const positions = (λ) => {
+				layout(root, λ);
+				return S.map((n) => ({
+					re: n.layout.z.re,
+					im: n.layout.z.im
+				}));
+			};
+			const moved = (z, P) => h2e(makeT(P, one), z);
+			const quantile = (a, f) => {
+				const s = a.slice().sort((x, y) => x - y);
+				return s[Math.floor(f * (s.length - 1))];
+			};
+			const MAX_R = .97;
+			const along = (p) => ({
+				re: down.re * p,
+				im: down.im * p
+			});
+			const center = (zs, _P) => {
+				let lo = 0, hi = MAX_R;
+				for (let i = 0; i < 30; i++) {
+					const p = (lo + hi) / 2;
+					let c = 0;
+					for (const z of zs) {
+						const w = moved(z, along(p));
+						c += w.re * down.re + w.im * down.im;
+					}
+					if (c < 0) lo = p;
+					else hi = p;
+				}
+				return along((lo + hi) / 2);
+			};
+			const fit = (P) => {
+				let lo = λbounds[0], hi = λbounds[1];
+				for (let i = 0; i < 25; i++) {
+					const λ = Math.sqrt(lo * hi);
+					if (quantile(positions(λ).map((z) => {
+						const w = moved(z, P);
+						return Math.hypot(w.re, w.im);
+					}), fill) < fill) lo = λ;
+					else hi = λ;
+				}
+				return Math.sqrt(lo * hi);
+			};
+			let λ = Math.min(λbounds[1], Math.max(λbounds[0], λstart));
+			let P = {
+				re: down.re * .5,
+				im: down.im * .5
+			};
+			for (let i = 0; i < rounds; i++) {
+				const P2 = center(positions(λ), P);
+				const λ2 = fit(P2);
+				const settled = Math.hypot(P2.re - P.re, P2.im - P.im) < .001 && Math.abs(λ2 - λ) < 1e-4;
+				P = P2;
+				λ = λ2;
+				if (settled) break;
+			}
+			return {
+				P,
+				λ
+			};
+		}
 	}
 	function voronoiLayout(x, y, extent) {
 		const bounds = [
@@ -10485,6 +10846,7 @@ var htol = (function(exports) {
 		* layers that show the state draw.
 		*/
 		frame(reason) {
+			this.view.hypertree.highlighting.framePending = false;
 			cacheUpdate(this, this.cache);
 			this.layerStack.frame(reason);
 		}
@@ -10500,6 +10862,54 @@ var htol = (function(exports) {
 			});
 		}
 	};
+	/** Sizes the labels to geometry.captionPx (nothing without it, or without an SVG yet). */
+	function sizeCaptions(ht) {
+		const html = ht.view_ && ht.view_.html;
+		const ud = html && html.querySelector(".unitDisc");
+		const svg = ud && ud.ownerSVGElement;
+		if (!ud || !svg) return;
+		const want = ht.args.geometry.captionPx;
+		if (!want) {
+			if (svg.style.fontSize) {
+				svg.style.fontSize = "";
+				ht.configure({ geometry: { captionHeight: ht.args.geometry.captionHeight } });
+			}
+			return;
+		}
+		const before = svg.style.fontSize;
+		const BIG = 1e4;
+		svg.style.fontSize = `${BIG}px`;
+		const probe = document.createElementNS("http://www.w3.org/2000/svg", "text");
+		probe.setAttribute("class", "caption");
+		probe.textContent = "M";
+		ud.appendChild(probe);
+		const m = probe.getScreenCTM();
+		const em = parseFloat(getComputedStyle(probe).fontSize) / BIG;
+		const scale = m ? Math.hypot(m.a, m.b) : 0;
+		ud.removeChild(probe);
+		if (!(em > 0) || !(scale > 0)) {
+			svg.style.fontSize = before;
+			return;
+		}
+		const font = want / scale;
+		svg.style.fontSize = `${font / em}px`;
+		const captionHeight = font * ht.args.geometry.captionRatio;
+		if (svg.style.fontSize === before && Math.abs(captionHeight - ht.args.geometry.captionHeight) < 1e-9) return;
+		ht.configure({ geometry: { captionHeight } });
+	}
+	/** Sizes the labels again whenever the tree's element changes its size (one per frame). */
+	function watchCaptionSize(ht) {
+		if (typeof ResizeObserver === "undefined" || !ht.view_ || !ht.view_.parent) return;
+		let pending = false;
+		new ResizeObserver(() => {
+			if (pending || !ht.args.geometry.captionPx) return;
+			pending = true;
+			requestAnimationFrame(() => {
+				pending = false;
+				sizeCaptions(ht);
+			});
+		}).observe(ht.view_.parent);
+	}
 	var Transition = class {
 		constructor(hypertree) {
 			this.frames = [];
@@ -10550,6 +10960,7 @@ var htol = (function(exports) {
 				if (now > this.endTime) {
 					args.frame(1);
 					this.end();
+					if (args.done) args.done();
 					args.resolve();
 				} else {
 					args.frame(p01);
@@ -10674,6 +11085,101 @@ var htol = (function(exports) {
 			pn.pathes[nodeFlagName] = pn.pathes.partof.some((e) => e.type === pathType);
 		});
 	}
+	var Highlight = class {
+		constructor(ht) {
+			this.ht = ht;
+			this.node = void 0;
+			this.framePending = false;
+			this.candidate = void 0;
+			this.candidateAt = 0;
+			this.settling = false;
+			this.lent = null;
+		}
+		/**
+		* A source offers n. inFrame: called from inside a frame (after the filter): the
+		* frame's layers draw the new state, no redraw here.
+		*/
+		offer(n, inFrame = false) {
+			if (this.ht.args.interaction.highlightUpdate === "settled") {
+				this.candidate = n;
+				this.candidateAt = performance.now();
+				this.settle();
+				return;
+			}
+			this.set(n, !inFrame);
+			if (inFrame) this.requestFrame();
+		}
+		/** No node (the mouse left the tree): at once, also with 'settled'. */
+		clear() {
+			this.candidate = void 0;
+			this.set(void 0);
+		}
+		/**
+		* Highlights n: when it changes the label fallback and the callbacks onNodeHover /
+		* onHoverNodeChange, then the hover path (n.hovered). redraw: a style frame.
+		*/
+		set(n, redraw = true) {
+			const i = this.ht.args.interaction;
+			if (n !== this.node) {
+				this.node = n;
+				this.lendLabel(n);
+				if (i.onNodeHover) i.onNodeHover(n);
+				if (i.onHoverNodeChange) i.onHoverNodeChange(n);
+			} else if (!n || this.ht.args.objects.pathes.some((p) => p.type === "HoverPath" && p.head === n)) return;
+			setPathHead(this.ht, void 0, n);
+			if (redraw) this.ht.update.pathes();
+		}
+		requestFrame() {
+			if (this.framePending || this.ht.isAnimationRunning()) return;
+			this.framePending = true;
+			requestAnimationFrame(() => {
+				if (!this.framePending) return;
+				this.framePending = false;
+				this.ht.update.pathes();
+			});
+		}
+		settle() {
+			if (this.settling) return;
+			this.settling = true;
+			let busyAt = 0;
+			const tick = () => {
+				const now = performance.now();
+				if (this.ht.isInitializing || this.ht.isAnimationRunning()) busyAt = now;
+				const rest = this.ht.args.interaction.highlightDelay || 0;
+				if (busyAt === now || now - Math.max(this.candidateAt, busyAt) < rest) {
+					requestAnimationFrame(tick);
+					return;
+				}
+				this.settling = false;
+				this.set(this.candidate);
+			};
+			requestAnimationFrame(tick);
+		}
+		lendLabel(n) {
+			if (this.lent) {
+				Object.assign(this.lent.n.precalc, this.lent.saved);
+				this.lent = null;
+			}
+			if (!n || !n.precalc || n.precalc.label || this.ht.args.interaction.highlightLabelFallback !== "ancestor") return;
+			let a = n.parent;
+			while (a && !(a.precalc && a.precalc.label)) a = a.parent;
+			if (!a) return;
+			const widths = Object.keys(a.precalc).filter((k) => k.endsWith("len") && k !== "emojislen");
+			const saved = {};
+			for (const k of [
+				"label",
+				"labelOnHover",
+				...widths
+			]) saved[k] = n.precalc[k];
+			n.precalc.label = a.precalc.label;
+			n.precalc.labelOnHover = true;
+			for (const k of widths) n.precalc[k] = a.precalc[k];
+			this.lent = {
+				n,
+				saved
+			};
+		}
+	};
 	var globelhtid = 0;
 	var htmlpreloader = `
     <div class="spinner">
@@ -10718,15 +11224,16 @@ var htol = (function(exports) {
 	* came from, configure() changes options at runtime.
 	*/
 	var Hypertree = class {
-		/**
-		* @param args  the application's overlay over the defaults, or a stack of named
-		*              overlays [{ name, overlay }] applied in order (the name goes into
-		*              the provenance; e.g. presets and the application's own options)
-		*/
+		/** the highlighted node (undefined: none) */
+		get highlighted() {
+			return this.highlighting.node;
+		}
 		constructor(view, args) {
 			this.log = [];
 			this.isInitializing = false;
 			this.lastCenterNode = void 0;
+			this.highlighting = new Highlight(this);
+			this.startView_ = null;
 			this.api = {
 				setModel: (model) => new Promise((ok, err) => {
 					this.isInitializing = true;
@@ -10791,6 +11298,11 @@ var htol = (function(exports) {
 					re: 0,
 					im: 0
 				}, null)),
+				/** Animates to the start view (startView(): geometry.startView), e.g. for a home button. */
+				gotoStart: () => {
+					const v = this.startView();
+					return new Promise((ok, err) => this.animateTo(ok, err, v.P, v.λ));
+				},
 				gotoNode: (n) => new Promise((ok, err) => this.animateTo(ok, err, CmulR({
 					re: n.layout.z.re,
 					im: n.layout.z.im
@@ -10827,13 +11339,51 @@ var htol = (function(exports) {
 				centernode: (centerNode) => {
 					if (this.lastCenterNode && this.lastCenterNode.mergeId == centerNode.mergeId) return;
 					this.lastCenterNode = centerNode;
+					if (this.args.interaction.highlightNode === "center") this.highlighting.offer(centerNode, true);
 					const pathStr = centerNode.ancestors().reduce((a, e) => `${e.precalc.label ? "  " + e.precalc.label + "  " : ""}${a ? "›" : ""}${a}`, "");
 					if (this.args.interaction.onCenterNodeChange) this.args.interaction.onCenterNodeChange(centerNode, pathStr);
 				}
 			};
 			this.onResize = null;
+			this.growTo = null;
 			this.view_ = view;
 			this.initPromise = this.api.setModel(args);
+			this.startPromise = this.initPromise.then(() => this.playStart());
+			this.initPromise.then(() => sizeCaptions(this), () => {});
+			watchCaptionSize(this);
+			this.startPromise.catch(() => {});
+		}
+		/**
+		* The start view { P, λ }: geometry.startView ('overview': api.overview(), or a
+		* given { P, λ }), without one the view the tree started with (startPosition, the
+		* zoom of the initialization). Computed once per tree.
+		*/
+		startView() {
+			if (this.startView_) return this.startView_;
+			const s = this.args.geometry.startView;
+			const v = s === "overview" ? this.api.overview() : s ? {
+				P: s.P,
+				λ: s.λ
+			} : {
+				P: this.args.geometry.startPosition || {
+					re: 0,
+					im: 0
+				},
+				λ: this.initλ
+			};
+			return this.startView_ = {
+				P: {
+					re: v.P.re,
+					im: v.P.im
+				},
+				λ: this.clampλ(v.λ)
+			};
+		}
+		playStart() {
+			if (!this.args.geometry.startView || !this.data) return Promise.resolve();
+			const v = this.startView();
+			this.args.geometry.transformation.state.λ = v.λ;
+			return new Promise((ok, err) => this.animateUp(ok, err)).then(() => this.api.goto(v.P, null)).then(() => {});
 		}
 		/**
 		* Changes options at runtime: the overlay is merged into the model (v1 names are
@@ -10847,6 +11397,8 @@ var htol = (function(exports) {
 			const effects = pathsOf(migrated).map(effectOf);
 			const effect = effectOrder.find((e) => effects.includes(e)) || "none";
 			this.applyEffect(effect);
+			const g = migrated && migrated.geometry;
+			if (g && this.data && ("captionPx" in g || "captionRatio" in g)) sizeCaptions(this);
 			return effect;
 		}
 		applyEffect(effect) {
@@ -10859,7 +11411,7 @@ var htol = (function(exports) {
 					break;
 				case "layout":
 					computeWeights(this.data, this.args);
-					if (this.args.layout.childOrder === "balanced") balanceChildren(this.data);
+					orderChildren(this.data, this.args.layout.childOrder);
 					this.args.layout.type(this.data, state.λ);
 					this.update.data();
 					break;
@@ -10928,6 +11480,7 @@ var htol = (function(exports) {
 			this.unitdisk.args.data = void 0;
 			this.data = void 0;
 			this.langMap = void 0;
+			this.startView_ = null;
 			this.args.geometry.transformation.state.λ = .001;
 			this.args.geometry.transformation.state.P.re = 0;
 			this.args.geometry.transformation.state.P.im = 0;
@@ -10967,7 +11520,7 @@ var htol = (function(exports) {
 			computeWeights(this.data, this.args);
 			this.data.each((n) => n.precalc.clickable = true);
 			this.data.each((n) => this.args.dataInitBFS(this, n));
-			if (this.args.layout.childOrder === "balanced") balanceChildren(this.data);
+			orderChildren(this.data, this.args.layout.childOrder);
 			const iconmap = this.args.iconmap;
 			if (iconmap) this.data.each((n) => {
 				const icon = iconmap[n.data.name] !== void 0 ? iconmap[n.data.name] : iconmap[n.data.id];
@@ -10986,6 +11539,12 @@ var htol = (function(exports) {
 			this.updateLang_();
 			applyλBounds(this);
 			findInitλ(this);
+			this.initλ = this.args.geometry.transformation.state.λ;
+			this.startView_ = null;
+			if (this.args.geometry.startView) {
+				this.growTo = this.initλ;
+				this.args.geometry.transformation.state.λ = .001;
+			}
 			this.data.each((n) => n.layoutReference = clone$1(n.layout));
 			this.view_.html.querySelector(".preloader").innerHTML = "";
 		}
@@ -11016,10 +11575,28 @@ var htol = (function(exports) {
 		drawDetailFrame() {
 			this.update.data();
 		}
+		detailFrameAfterAnimation() {
+			requestAnimationFrame(() => {
+				if (!this.transition && !this.isAnimationRunning()) this.drawDetailFrame();
+			});
+		}
 		animateUp(ok, err) {
 			const newλ = this.args.geometry.transformation.state.λ;
 			this.args.geometry.transformation.state.λ = .001;
-			this.animateToλ(ok, err, newλ);
+			this.growTo = this.clampλ(newλ);
+			const grown = (f) => (...a) => {
+				this.growTo = null;
+				f(...a);
+			};
+			this.animateToλ(grown(ok), grown(err), newλ);
+		}
+		/**
+		* 1, or while the tree zooms up from a point (animateUp) the share of the zoom
+		* reached: the size factor of labels, emojis and the highlight marker
+		* (layers/label-geometry.ts rimScale).
+		*/
+		get growth() {
+			return this.growTo ? Math.min(1, this.args.geometry.transformation.state.λ / this.growTo) : 1;
 		}
 		/** λ limited to interaction.λbounds [min, max] (inclusive). */
 		clampλ(λ) {
@@ -11035,6 +11612,7 @@ var htol = (function(exports) {
 				duration: this.args.interaction.animationDuration,
 				resolve: ok,
 				reject: err,
+				done: () => this.detailFrameAfterAnimation(),
 				frame: (progress01) => {
 					const waydone01 = 1 - this.args.interaction.animationEasing(progress01);
 					console.assert(waydone01 >= 0 && waydone01 <= 1);
@@ -11058,6 +11636,7 @@ var htol = (function(exports) {
 				name: "animateTo",
 				resolve,
 				reject,
+				done: () => this.detailFrameAfterAnimation(),
 				hypertree: this,
 				duration: this.args.interaction.animationDuration,
 				frame: (progress01) => {
@@ -16589,13 +17168,11 @@ var htol = (function(exports) {
 		applyTheme: () => applyTheme,
 		chooseLanguage: () => chooseLanguage,
 		chooseTheme: () => chooseTheme,
+		highlightUpdate: () => highlightUpdate,
 		labelPx: () => labelPx,
 		language: () => language,
 		onThemeChange: () => onThemeChange,
 		phone: () => phone$1,
-		phoneLabelPx: () => phoneLabelPx,
-		sizeLabels: () => sizeLabels,
-		sizePhoneLabels: () => sizePhoneLabels,
 		theme: () => theme,
 		updateLinks: () => updateLinks,
 		wikipediaLanguage: () => wikipediaLanguage,
@@ -16698,6 +17275,14 @@ var htol = (function(exports) {
 		return !!(window.matchMedia && window.matchMedia("only screen and (max-width: 760px)").matches);
 	}
 	document.documentElement.classList.toggle("phone", phone$1());
+	/**
+	* When the highlight is set (d3-hypertree highlightUpdate): 'live' (default) at once,
+	* also while dragging; ?highlight=settled only when the view stands still (cheaper on
+	* slow phones, for comparing).
+	*/
+	function highlightUpdate() {
+		return params().get("highlight") === "settled" ? "settled" : "live";
+	}
 	var LABEL_PX = 13;
 	var LABEL_SCRIPT_FACTOR = {
 		zh: 1.15,
@@ -16706,39 +17291,9 @@ var htol = (function(exports) {
 		ar: 1.2,
 		he: 1.1
 	};
-	var CAPTION_RATIO = 1.25;
-	/** The label size for a language, in screen pixels. */
+	/** The label size for a language, in screen pixels (d3-hypertree geometry.captionPx). */
 	function labelPx(lang) {
 		return LABEL_PX * (LABEL_SCRIPT_FACTOR[lang] || 1);
-	}
-	var phoneLabelPx = labelPx;
-	/**
-	* Sizes the labels of a hypertree in screen pixels: the font of its labels (CSS, in em:
-	* the font size of the svg scales them) so they have labelPx(lang) on the screen, and
-	* geometry.captionHeight (the boxes) CAPTION_RATIO times that font. Call when the tree
-	* is drawn, after a language switch and when the size changes.
-	*/
-	function sizeLabels(ht, lang) {
-		const ud = ht.view_ && ht.view_.html && ht.view_.html.querySelector(".unitDisc");
-		const svg = ud && ud.ownerSVGElement;
-		if (!ud || !svg) return;
-		svg.style.fontSize = "";
-		const probe = document.createElementNS("http://www.w3.org/2000/svg", "text");
-		probe.setAttribute("class", "caption");
-		probe.textContent = "M";
-		ud.appendChild(probe);
-		const m = probe.getScreenCTM();
-		const font = parseFloat(getComputedStyle(probe).fontSize);
-		const px = m ? font * Math.hypot(m.a, m.b) : 0;
-		ud.removeChild(probe);
-		if (!(px > 0)) return;
-		const s = labelPx(lang) / px;
-		svg.style.fontSize = `${parseFloat(getComputedStyle(svg).fontSize) * s}px`;
-		ht.configure({ geometry: { captionHeight: font * s * CAPTION_RATIO } });
-	}
-	/** sizeLabels (until 2026-11: for the phone only, captionHeight scaled from the given one). */
-	function sizePhoneLabels(ht, lang, captionHeight) {
-		sizeLabels(ht, lang);
 	}
 	if (window.matchMedia) {
 		const m = window.matchMedia("(prefers-color-scheme: dark)");
@@ -16760,27 +17315,149 @@ var htol = (function(exports) {
 	var EASE_0 = easeRaw(0);
 	var EASE_1 = easeRaw(1);
 	var fastStart = (t) => (easeRaw(t) - EASE_0) / (EASE_1 - EASE_0);
-	var LABEL_WIDTHS = [
-		"labelslen",
-		"labels-forcelen",
-		"labels-placedlen"
-	];
-	var borrower = null;
-	function borrowLabel(n) {
-		if (borrower) {
-			borrower.precalc.label = "";
-			for (const k of LABEL_WIDTHS) borrower.precalc[k] = void 0;
-			borrower = null;
+	/**
+	* The start views set by hand for the old tree files (until 2026-11: a goto chain per
+	* file in index.ts); every other tree (the files of the data pipeline, <clade>-16.1)
+	* starts at the computed overview (d3-hypertree startView 'overview': the root at the
+	* bottom, the main branchings in the middle, the branches filling the disk). The tree
+	* zooms up to it at the start, the home button goes back (api.gotoStart).
+	*/
+	var startViews = {
+		"eukaryota": {
+			P: {
+				re: 0,
+				im: .25
+			},
+			λ: .08
+		},
+		"metazoa": {
+			P: {
+				re: 0,
+				im: .5
+			},
+			λ: .07
+		},
+		"insecta": {
+			P: {
+				re: 0,
+				im: .35
+			},
+			λ: .15
+		},
+		"hymenoptera": {
+			P: {
+				re: 0,
+				im: .5
+			},
+			λ: .15
+		},
+		"lophotrochozoa": {
+			P: {
+				re: 0,
+				im: .5
+			},
+			λ: .22
+		},
+		"araneae": {
+			P: {
+				re: 0,
+				im: .5
+			},
+			λ: .4
+		},
+		"embryophyta": {
+			P: {
+				re: 0,
+				im: .65
+			},
+			λ: .1
+		},
+		"chondrichthyes": {
+			P: {
+				re: 0,
+				im: .4
+			},
+			λ: .25
+		},
+		"tetrapoda": {
+			P: {
+				re: 0,
+				im: .5
+			},
+			λ: .1
+		},
+		"vertebrata": {
+			P: {
+				re: 0,
+				im: .5
+			},
+			λ: .1
+		},
+		"mammalia": {
+			P: {
+				re: 0,
+				im: .7
+			},
+			λ: .2
+		},
+		"laurasiatheria": {
+			P: {
+				re: .05,
+				im: .3
+			},
+			λ: .32
+		},
+		"carnivora": {
+			P: {
+				re: 0,
+				im: .5
+			},
+			λ: .2
+		},
+		"primates": {
+			P: {
+				re: 0,
+				im: .5
+			},
+			λ: .22
+		},
+		"sciuridae": {
+			P: {
+				re: 0,
+				im: .5
+			},
+			λ: .15
+		},
+		"metatheria": {
+			P: {
+				re: 0,
+				im: .5
+			},
+			λ: .15
+		},
+		"aves": {
+			P: {
+				re: .03,
+				im: .73
+			},
+			λ: .1
 		}
-		if (!n || n.data && n.data.name) return;
-		let a = n.parent;
-		while (a && !(a.data && a.data.name)) a = a.parent;
-		if (!a || !a.precalc.label) return;
-		n.precalc.label = a.precalc.label;
-		n.precalc.labelOnHover = true;
-		for (const k of LABEL_WIDTHS) n.precalc[k] = a.precalc[k];
-		borrower = n;
-	}
+	};
+	/**
+	* The fill of the voronoi cells, a lambda of the node (the colors: the theme's CSS
+	* variables, css/index-browser-light / -dark). A group with its own branch page (a
+	* link; the page's langInitBFS: precalc.branchPage) the page's link color; on a branch
+	* page a touch lighter where children are filtered out (n.hasOutChildren: hidden by the
+	* weight filter or beyond the culling radius). The highlighted node is shown by the
+	* disk (d3-hypertree preset highlightDisk), not by its cell. Selected cells keep the
+	* theme's fill.
+	*/
+	var cellFill = (page) => (d) => {
+		const n = d.data;
+		if (n.selected) return void 0;
+		if (n.precalc.branchPage) return page === "main" ? "var(--htol-branch-cell)" : "var(--htol-branch-link-cell)";
+		if (page === "branch" && n.hasOutChildren) return "var(--htol-filtered-cell)";
+	};
 	/** What both pages share. */
 	var base = () => ({
 		layout: { weight: (n) => isLeaf(n) ? 1 : 0 },
@@ -16795,6 +17472,10 @@ var htol = (function(exports) {
 					hideOnDrag: false,
 					strokeWidth: (n) => 0
 				},
+				"highlight-marker": {
+					fill: (n) => n && n.precalc.branchPage ? "var(--htol-marker-link-fill)" : void 0,
+					stroke: (n) => n && n.precalc.branchPage ? "var(--htol-link-label)" : void 0
+				},
 				"labels": {
 					invisible: true,
 					hideOnDrag: true
@@ -16804,7 +17485,8 @@ var htol = (function(exports) {
 					hideOnDrag: false,
 					hoverLabel: true,
 					hoverTransition: false,
-					background: false
+					background: false,
+					color: (n) => n.hovered && n.precalc.branchPage ? "var(--htol-link-label)" : void 0
 				},
 				"emojis": { scale: .69 },
 				"emoji-backgrounds": {
@@ -16815,7 +17497,7 @@ var htol = (function(exports) {
 			}
 		},
 		interaction: {
-			onHoverNodeChange: (n) => borrowLabel(n),
+			highlightLabelFallback: "ancestor",
 			minFill: .9,
 			animationDuration: 525,
 			animationEasing: fastStart
@@ -16837,18 +17519,17 @@ var htol = (function(exports) {
 		} } },
 		geometry: {
 			view: o.view === "rect" ? "halfplane" : "disk",
+			startView: o.clade && startViews[o.clade] || "overview",
 			layerOptions: {
-				"labels-force": {
-					hoverPathLabels: true,
-					color: (n) => n.hovered && n.precalc.branchPage ? "var(--htol-link-label)" : void 0
-				},
+				"labels-force": { hoverPathLabels: true },
 				"cells": {
 					strokeWidth: (n) => void 0,
-					fill: (d) => d.data.hovered || d.data.selected ? void 0 : d.data.precalc.branchPage ? "var(--htol-branch-link-cell)" : d.data.hasOutChildren ? "var(--htol-filtered-cell)" : void 0
+					fill: cellFill("branch")
 				}
 			}
 		},
 		interaction: {
+			clickAction: "goto",
 			λbounds: [1 / 40, .55],
 			maxLinkLength: .25
 		}
@@ -16858,22 +17539,33 @@ var htol = (function(exports) {
 	* mouse (every node labelOnHover, the page's langInitBFS; on a phone see phone()).
 	*/
 	var main = () => ({
-		layout: { rootWedge: {
-			orientation: 3 * π / 2,
-			angle: .7 * π / 2
-		} },
+		layout: {
+			childOrder: "balanced",
+			rootWedge: {
+				orientation: 3 * π / 2,
+				angle: .7 * π / 2
+			}
+		},
 		filter: { weightFilter: { rangeNodes: {
 			min: 1e3,
 			max: 1500
 		} } },
-		geometry: { layerOptions: {
-			"labels-force": {
-				maxLabels: 0,
-				hoverPathLabels: true,
-				color: (n) => n.hovered && n.precalc.branchPage ? "var(--htol-link-label)" : void 0
+		geometry: {
+			startView: {
+				P: {
+					re: .025,
+					im: .755
+				},
+				λ: .0525
 			},
-			"cells": { fill: (d) => d.data.precalc.branchPage && !d.data.hovered && !d.data.selected ? "var(--htol-branch-cell)" : void 0 }
-		} },
+			layerOptions: {
+				"labels-force": {
+					maxLabels: 25,
+					hoverPathLabels: true
+				},
+				"cells": { fill: cellFill("main") }
+			}
+		},
 		interaction: {
 			λbounds: [1 / 40, 1 / 10],
 			maxLinkLength: .08
@@ -16884,23 +17576,35 @@ var htol = (function(exports) {
 	* screen. Nothing can be hovered on a phone: the main page shows the labels of all its
 	* branches all the time (the page's langInitBFS drops labelOnHover for them).
 	*/
-	var phone = (page) => ({
+	var phone = (page, highlight = centerHighlight()) => composeOverlays({
 		filter: { weightFilter: { rangeNodes: {
 			min: 250,
 			max: 400
 		} } },
 		geometry: {
 			diskSize: 1.05,
-			layerOptions: { "labels-force": { maxLabels: page === "branch" ? 12 : 500 } }
+			layerOptions: { "labels-force": { maxLabels: page === "branch" ? 6 : 12 } }
 		}
-	});
+	}, highlight);
+	/**
+	* No mouse: the node nearest to the center is highlighted, as the node under the mouse
+	* on the desktop (the hover path, its labels, the label fallback, the marker that moves
+	* along the tree to the next center node; d3-hypertree highlightNode). update 'live':
+	* also while dragging;
+	* 'settled': when the view stands still (settings.highlightUpdate, ?highlight=settled).
+	*/
+	var centerHighlight = (update = "live") => ({ interaction: {
+		highlightNode: "center",
+		highlightUpdate: update
+	} });
 	var treeOfLife = {
 		base,
 		branch,
 		main,
 		phone,
+		centerHighlight,
 		/** The overlay of a page: base, the page, the phone version if asked. */
-		page: (which, o = {}) => composeOverlays(base(), which === "main" ? main() : branch(o), o.phone ? phone(which) : {})
+		page: (which, o = {}) => composeOverlays(presets.highlightDisk({ size: 2.3 }), base(), which === "main" ? main() : branch(o), o.phone ? phone(which, centerHighlight(o.highlight)) : {}, o.captionPx ? { geometry: { captionPx: o.captionPx } } : {})
 	};
 	// node_modules/d3-selection/dist/d3-selection.mjs
 	var xhtml = "http://www.w3.org/1999/xhtml";
@@ -28690,10 +29394,7 @@ var htol = (function(exports) {
 		return ht.api.goto({
 			re: -n.layout.z.re,
 			im: -n.layout.z.im
-		}, null).then(() => {
-			ht.api.select(n);
-			ht.drawDetailFrame();
-		});
+		}, null).then(() => ht.api.select(n));
 	}
 	// src/labels.ts
 	var labels_exports = /* @__PURE__ */ __exportAll$1({
@@ -28722,32 +29423,60 @@ var htol = (function(exports) {
 	/**
 	* The language loader of a page (d3-hypertree langloader): the names of the language
 	* and which of its Wikipedia's articles exist, both loaded before ok(langMap), so the
-	* labels know about the 𝐖. load(url, parse?) loads a JSON file (LoadProgress.loader for
-	* the loading card, else fetch); onTitles gets the titles (the Wikipedia panel uses them).
+	* labels know about the 𝐖. load(url) loads a JSON file (LoadProgress.loader for the
+	* loading card, else fetch); onTitles gets the titles (the Wikipedia panel uses them).
+	*
+	* clade (the tree file without .d3.json, or a promise of it): a tree of the data
+	* pipeline (<clade>-16.1) loads only its own names, langmaps/<lang>/<clade>.json
+	* (scientific name -> [name or null, article title or 0, importance]; Mammalia 0.14 MB
+	* gzip instead of 4.4 MB for every name of the language: on a phone seconds of
+	* download, parsing and measuring); without that file, or for other trees, the files of
+	* the whole language, langmaps/<lang>.lang.json and <wikiLang>.wiki.json. sci (the
+	* scientific names) has no names, only the titles of its Wikipedia.
 	*/
-	function langWithWikiLoader(lang, wikiLang, onTitles, load = fetchJson) {
-		const names = load(`langmaps/${lang}.lang.json`);
-		const titles = load(`langmaps/${wikiLang}.wiki.json`);
+	function langWithWikiLoader(lang, wikiLang, onTitles, load = fetchJson, clade = null) {
+		const own = Promise.resolve(clade).then((c) => c && /-16\.1$/.test(c) ? c : null);
+		const url = (l, whole) => own.then((c) => c ? `langmaps/${l}/${c}.json` : `langmaps/${l}.${whole}.json`);
+		const names = lang === "sci" ? null : load(url(lang, "lang"));
+		const titles = wikiLang === lang && names ? names : load(url(wikiLang, "wiki"));
 		return (ok) => {
-			let m, t, got = 0;
-			const done = () => {
-				if (++got === 2) {
-					onTitles(t || null);
-					ok(m || {});
-				}
+			let m = lang === "sci" ? {} : void 0, t, got = 0;
+			const need = names && titles !== names ? 2 : 1;
+			const done = async () => {
+				if (++got < need) return;
+				const c = await own;
+				if (c && m === void 0 && lang !== "sci") m = await fetchJsonOnce(`langmaps/${lang}.lang.json`);
+				else if (c && isClade(m)) m = cladeNames(m);
+				if (c && t === void 0) t = await fetchJsonOnce(`langmaps/${wikiLang}.wiki.json`);
+				else if (c && isClade(t)) t = cladeTitles(t);
+				onTitles(t || null);
+				ok(m || {});
 			};
-			names((d) => {
+			if (names) names((d) => {
 				m = d;
+				if (titles === names) t = d;
 				done();
 			});
-			titles((d) => {
+			if (titles !== names) titles((d) => {
 				t = d;
 				done();
 			});
 		};
 	}
+	var isClade = (d) => Boolean(d) && Object.values(d).some((v) => Array.isArray(v));
+	function cladeNames(d) {
+		const m = {};
+		for (const k in d) if (Array.isArray(d[k]) && d[k][0]) m[k] = d[k][0];
+		return m;
+	}
+	function cladeTitles(d) {
+		const t = {};
+		for (const k in d) if (Array.isArray(d[k]) && d[k][1]) t[k] = d[k][1];
+		return t;
+	}
+	var fetchJsonOnce = (url) => fetch(url).then((r) => r.ok ? r.json() : void 0).catch(() => void 0);
 	var fetchJson = (url) => (ok) => {
-		fetch(url).then((r) => r.ok ? r.json() : void 0).catch(() => void 0).then(ok);
+		Promise.resolve(url).then(fetchJsonOnce).then(ok);
 	};
 	// src/components/consent/consent.ts
 	var consent_exports = /* @__PURE__ */ __exportAll$1({
@@ -28896,79 +29625,6 @@ var htol = (function(exports) {
 		iconmap: new Icons()
 	};
 	window.app = {};
-	var initpromise = {
-		"eukaryota": (p, t) => p.then(() => new Promise((ok, err) => t.animateUp(ok, err))).then(() => t.api.goto({
-			re: 0,
-			im: .25
-		}, null)).then(() => t.api.gotoλ(.08)).then(() => t.drawDetailFrame()),
-		"metazoa": (p, t) => p.then(() => new Promise((ok, err) => t.animateUp(ok, err))).then(() => t.api.goto({
-			re: 0,
-			im: .5
-		}, null)).then(() => t.api.gotoλ(.07)).then(() => t.drawDetailFrame()),
-		"insecta": (p, t) => p.then(() => new Promise((ok, err) => t.animateUp(ok, err))).then(() => t.api.goto({
-			re: 0,
-			im: .35
-		}, null)).then(() => t.api.gotoλ(.15)).then(() => t.drawDetailFrame()),
-		"hymenoptera": (p, t) => p.then(() => new Promise((ok, err) => t.animateUp(ok, err))).then(() => t.api.goto({
-			re: 0,
-			im: .5
-		}, null)).then(() => t.api.gotoλ(.15)).then(() => t.drawDetailFrame()),
-		"lophotrochozoa": (p, t) => p.then(() => new Promise((ok, err) => t.animateUp(ok, err))).then(() => t.api.goto({
-			re: 0,
-			im: .5
-		}, null)).then(() => t.api.gotoλ(.22)).then(() => t.drawDetailFrame()),
-		"araneae": (p, t) => p.then(() => new Promise((ok, err) => t.animateUp(ok, err))).then(() => t.api.goto({
-			re: 0,
-			im: .5
-		}, null)).then(() => t.api.gotoλ(.4)).then(() => t.drawDetailFrame()),
-		"embryophyta": (p, t) => p.then(() => new Promise((ok, err) => t.animateUp(ok, err))).then(() => t.api.goto({
-			re: 0,
-			im: .65
-		}, null)).then(() => t.api.gotoλ(.1)).then(() => t.drawDetailFrame()),
-		"chondrichthyes": (p, t) => p.then(() => new Promise((ok, err) => t.animateUp(ok, err))).then(() => t.api.goto({
-			re: 0,
-			im: .4
-		}, null)).then(() => t.api.gotoλ(.25)).then(() => t.drawDetailFrame()),
-		"tetrapoda": (p, t) => p.then(() => new Promise((ok, err) => t.animateUp(ok, err))).then(() => t.api.goto({
-			re: 0,
-			im: .5
-		}, null)).then(() => t.api.gotoλ(.1)).then(() => t.drawDetailFrame()),
-		"vertebrata": (p, t) => p.then(() => new Promise((ok, err) => t.animateUp(ok, err))).then(() => t.api.goto({
-			re: 0,
-			im: .5
-		}, null)).then(() => t.api.gotoλ(.1)).then(() => t.drawDetailFrame()),
-		"mammalia": (p, t) => p.then(() => new Promise((ok, err) => t.animateUp(ok, err))).then(() => t.api.goto({
-			re: 0,
-			im: .3
-		}, null)).then(() => t.api.gotoλ(.2)).then(() => t.api.goto({
-			re: 0,
-			im: .7
-		}, null)).then(() => t.drawDetailFrame()),
-		"laurasiatheria": (p, t) => p.then(() => new Promise((ok, err) => t.animateUp(ok, err))).then(() => t.api.goto({
-			re: .05,
-			im: .3
-		}, null)).then(() => t.api.gotoλ(.32)).then(() => t.drawDetailFrame()),
-		"carnivora": (p, t) => p.then(() => new Promise((ok, err) => t.animateUp(ok, err))).then(() => t.api.goto({
-			re: 0,
-			im: .5
-		}, null)).then(() => t.api.gotoλ(.2)).then(() => t.drawDetailFrame()),
-		"primates": (p, t) => p.then(() => new Promise((ok, err) => t.animateUp(ok, err))).then(() => t.api.goto({
-			re: 0,
-			im: .5
-		}, null)).then(() => t.api.gotoλ(.22)).then(() => t.drawDetailFrame()),
-		"sciuridae": (p, t) => p.then(() => new Promise((ok, err) => t.animateUp(ok, err))).then(() => t.api.goto({
-			re: 0,
-			im: .5
-		}, null)).then(() => t.api.gotoλ(.15)).then(() => t.drawDetailFrame()),
-		"metatheria": (p, t) => p.then(() => new Promise((ok, err) => t.animateUp(ok, err))).then(() => t.api.goto({
-			re: 0,
-			im: .5
-		}, null)).then(() => t.api.gotoλ(.15)).then(() => t.drawDetailFrame()),
-		"aves": (p, t) => p.then(() => new Promise((ok, err) => t.animateUp(ok, err))).then(() => t.api.goto({
-			re: .03,
-			im: .73
-		}, null)).then(() => t.api.gotoλ(.1)).then(() => t.drawDetailFrame())
-	};
 	exports.Hypertree = Hypertree;
 	exports.Icons = Icons;
 	exports.LoadProgress = LoadProgress;
@@ -28990,7 +29646,6 @@ var htol = (function(exports) {
 	});
 	exports.fromFileWithProgress = fromFileWithProgress;
 	exports.gotoNode = gotoNode;
-	exports.initpromise = initpromise;
 	Object.defineProperty(exports, "labels", {
 		enumerable: true,
 		get: function() {
