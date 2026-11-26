@@ -8,16 +8,6 @@
         <link rel="icon"       href="img/avatar-light.png"/>
         <link rel="stylesheet" href="hypertree-of-life-light.css" id="ldswitch">
 
-        <!--
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124333733-1"></script>        
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());            
-            gtag('config', 'UA-124333733-1', { 'page_title' : '/', 'page_path': '/' })
-        </script>        
-        -->    
-
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:site" content="@GlatzhoferM">
         <meta name="twitter:creator" content="@GlatzhoferM">
@@ -61,6 +51,8 @@
                 // ?lang= of a choice, else the system language (settings.ts)
                 const l = htol.settings.language(htol.alllanguages)
                 app.lang = l
+                // Google Analytics only after consent (the cookie card, consent.ts)
+                htol.consent.init(l)
                 // the phone version (settings.ts: up to 760 px wide, ?phone=1): the tree
                 // above, square, a little wider than the screen, the text below; fewer
                 // nodes, fewer and larger labels (sized per script)
@@ -189,7 +181,8 @@
                                             n.precalc.wiki = l
                                             n.precalc.label = text
                                             n.precalc.clickable = true
-                                            n.precalc.labelOnHover = !phone
+                                            // (more than 5 siblings: no permanent label, labels.ts manySiblings)
+                                            n.precalc.labelOnHover = !phone || htol.labels.manySiblings(n)
                                             n.precalc.branchPage = true
                                         }
                                     },

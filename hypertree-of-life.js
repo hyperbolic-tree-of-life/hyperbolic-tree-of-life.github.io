@@ -1881,13 +1881,13 @@ var htol = (function(exports) {
 		return typeof selector === "string" ? new Selection$1([[document.querySelector(selector)]], [document.documentElement]) : new Selection$1([[selector]], root$1);
 	}
 	var nextId$1 = 0;
-	function local$1() {
+	function local$2() {
 		return new Local$1();
 	}
 	function Local$1() {
 		this._ = "@" + (++nextId$1).toString(36);
 	}
-	Local$1.prototype = local$1.prototype = {
+	Local$1.prototype = local$2.prototype = {
 		constructor: Local$1,
 		get: function(node) {
 			var id = this._;
@@ -17532,13 +17532,13 @@ var htol = (function(exports) {
 		return typeof selector === "string" ? new Selection([[document.querySelector(selector)]], [document.documentElement]) : new Selection([[selector]], root);
 	}
 	var nextId = 0;
-	function local() {
+	function local$1() {
 		return new Local();
 	}
 	function Local() {
 		this._ = "@" + (++nextId).toString(36);
 	}
-	Local.prototype = local.prototype = {
+	Local.prototype = local$1.prototype = {
 		constructor: Local,
 		get: function(node) {
 			var id = this._;
@@ -27470,7 +27470,13 @@ var htol = (function(exports) {
 			home: "To the root",
 			barTree: "Tree data",
 			barNames: "Names",
-			barBuild: "Building"
+			barBuild: "Building",
+			consentTitle: "Cookies",
+			consentText: "We would like to use Google Analytics to see how the tree is used. It sets cookies and sends usage data to Google.",
+			consentMore: "More",
+			consentDecline: "Decline",
+			consentAccept: "Accept",
+			consentLink: "Cookies"
 		},
 		de: {
 			loading: "Lade den Baum",
@@ -27482,7 +27488,13 @@ var htol = (function(exports) {
 			home: "Zur Wurzel",
 			barTree: "Baumdaten",
 			barNames: "Namen",
-			barBuild: "Aufbau"
+			barBuild: "Aufbau",
+			consentTitle: "Cookies",
+			consentText: "Wir möchten Google Analytics verwenden, um zu sehen, wie der Baum genutzt wird. Dabei werden Cookies gesetzt und Nutzungsdaten an Google übertragen.",
+			consentMore: "Mehr",
+			consentDecline: "Ablehnen",
+			consentAccept: "Akzeptieren",
+			consentLink: "Cookies"
 		},
 		es: {
 			loading: "Cargando el árbol",
@@ -27494,7 +27506,13 @@ var htol = (function(exports) {
 			home: "A la raíz",
 			barTree: "Datos del árbol",
 			barNames: "Nombres",
-			barBuild: "Construcción"
+			barBuild: "Construcción",
+			consentTitle: "Cookies",
+			consentText: "Nos gustaría usar Google Analytics para ver cómo se usa el árbol. Instala cookies y envía datos de uso a Google.",
+			consentMore: "Más",
+			consentDecline: "Rechazar",
+			consentAccept: "Aceptar",
+			consentLink: "Cookies"
 		},
 		nl: {
 			loading: "De boom wordt geladen",
@@ -27506,7 +27524,13 @@ var htol = (function(exports) {
 			home: "Naar de wortel",
 			barTree: "Boomgegevens",
 			barNames: "Namen",
-			barBuild: "Opbouw"
+			barBuild: "Opbouw",
+			consentTitle: "Cookies",
+			consentText: "We willen Google Analytics gebruiken om te zien hoe de boom wordt gebruikt. Daarbij worden cookies geplaatst en gebruiksgegevens naar Google gestuurd.",
+			consentMore: "Meer",
+			consentDecline: "Weigeren",
+			consentAccept: "Accepteren",
+			consentLink: "Cookies"
 		},
 		ro: {
 			loading: "Se încarcă arborele",
@@ -27518,7 +27542,13 @@ var htol = (function(exports) {
 			home: "La rădăcină",
 			barTree: "Datele arborelui",
 			barNames: "Nume",
-			barBuild: "Construire"
+			barBuild: "Construire",
+			consentTitle: "Cookie-uri",
+			consentText: "Am dori să folosim Google Analytics pentru a vedea cum este folosit arborele. Setează cookie-uri și trimite date de utilizare către Google.",
+			consentMore: "Mai mult",
+			consentDecline: "Refuz",
+			consentAccept: "Accept",
+			consentLink: "Cookie-uri"
 		},
 		ru: {
 			loading: "Загрузка дерева",
@@ -27530,7 +27560,13 @@ var htol = (function(exports) {
 			home: "К корню",
 			barTree: "Данные дерева",
 			barNames: "Названия",
-			barBuild: "Построение"
+			barBuild: "Построение",
+			consentTitle: "Файлы cookie",
+			consentText: "Мы хотели бы использовать Google Analytics, чтобы видеть, как используется дерево. Он сохраняет файлы cookie и передаёт данные об использовании в Google.",
+			consentMore: "Подробнее",
+			consentDecline: "Отклонить",
+			consentAccept: "Принять",
+			consentLink: "Cookie"
 		},
 		zh: {
 			loading: "正在加载生命之树",
@@ -27542,7 +27578,13 @@ var htol = (function(exports) {
 			home: "回到根部",
 			barTree: "树数据",
 			barNames: "名称",
-			barBuild: "构建"
+			barBuild: "构建",
+			consentTitle: "Cookie",
+			consentText: "我们希望使用 Google Analytics 了解这棵树的使用情况。它会设置 Cookie 并向 Google 发送使用数据。",
+			consentMore: "详情",
+			consentDecline: "拒绝",
+			consentAccept: "接受",
+			consentLink: "Cookie"
 		},
 		fa: {
 			loading: "در حال بارگذاری درخت",
@@ -27554,7 +27596,13 @@ var htol = (function(exports) {
 			home: "به ریشه",
 			barTree: "داده‌های درخت",
 			barNames: "نام‌ها",
-			barBuild: "ساختن"
+			barBuild: "ساختن",
+			consentTitle: "کوکی‌ها",
+			consentText: "می‌خواهیم از Google Analytics استفاده کنیم تا ببینیم درخت چگونه استفاده می‌شود. این سرویس کوکی ذخیره می‌کند و داده‌های استفاده را به Google می‌فرستد.",
+			consentMore: "بیشتر",
+			consentDecline: "رد کردن",
+			consentAccept: "پذیرفتن",
+			consentLink: "کوکی‌ها"
 		}
 	};
 	var strings = (lang) => texts[lang] || texts.en;
@@ -28631,9 +28679,11 @@ var htol = (function(exports) {
 	}
 	// src/labels.ts
 	var labels_exports = /* @__PURE__ */ __exportAll$1({
+		MAX_SIBLINGS_FOR_LABEL: () => 5,
 		articleName: () => articleName,
 		labelText: () => labelText,
-		langWithWikiLoader: () => langWithWikiLoader
+		langWithWikiLoader: () => langWithWikiLoader,
+		manySiblings: () => manySiblings
 	});
 	/** The label of a node: n.data.name (scientific), langMap, titles (null: no file). */
 	function labelText(n, langMap, titles) {
@@ -28643,6 +28693,9 @@ var htol = (function(exports) {
 		if (!titles) return name ? "𝐖 " + name : id;
 		const title = titles[id] && articleName(titles[id]);
 		return title ? "𝐖 " + title : name || id;
+	}
+	function manySiblings(n) {
+		return Boolean(n && n.parent && n.parent.children && n.parent.children.length - 1 > 5);
 	}
 	/** An article title as a name: spaces, no disambiguation in parentheses at the end. */
 	function articleName(title) {
@@ -28678,6 +28731,133 @@ var htol = (function(exports) {
 	var fetchJson = (url) => (ok) => {
 		fetch(url).then((r) => r.ok ? r.json() : void 0).catch(() => void 0).then(ok);
 	};
+	// src/components/consent/consent.ts
+	var consent_exports = /* @__PURE__ */ __exportAll$1({
+		GA_ID: () => GA_ID,
+		init: () => init,
+		show: () => show
+	});
+	/** The GA4 measurement id of the property (Google Analytics: Admin, Data streams). */
+	var GA_ID = "G-2FRY5QV8EZ";
+	var KEY = "htol-consent";
+	function stored() {
+		try {
+			const v = localStorage.getItem(KEY);
+			return v === "granted" || v === "denied" ? v : null;
+		} catch (e) {
+			return null;
+		}
+	}
+	function store(c) {
+		try {
+			localStorage.setItem(KEY, c);
+		} catch (e) {}
+	}
+	var local = () => /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname);
+	var id = "";
+	var lang = "en";
+	var loaded = false;
+	var card = null;
+	var link = null;
+	/** Shows the card (no choice yet) or the corner link (a choice), loads the tag if granted. */
+	function init(language, measurementId = "HTOL_GA_ID" in window ? window.HTOL_GA_ID : GA_ID) {
+		id = measurementId;
+		lang = language;
+		if (!id) return;
+		const c = stored();
+		if (c === "granted") load();
+		if (c) showLink();
+		else show();
+	}
+	/** The card again (the corner link). */
+	function show() {
+		if (!id) return;
+		if (link) link.style.display = "none";
+		if (card) {
+			card.style.display = "";
+			return;
+		}
+		const s = strings(lang);
+		card = document.createElement("div");
+		card.className = "htol-consent";
+		card.setAttribute("role", "dialog");
+		card.setAttribute("aria-label", s.consentTitle);
+		card.innerHTML = `
+        <div class="htol-consent-text"></div>
+        <div class="htol-consent-buttons">
+            <button type="button" data-choice="denied"></button>
+            <button type="button" data-choice="granted"></button>
+        </div>`;
+		const text = card.querySelector(".htol-consent-text");
+		text.textContent = s.consentText + " ";
+		const more = document.createElement("a");
+		more.href = "https://policies.google.com/technologies/partner-sites";
+		more.target = "_blank";
+		more.rel = "noopener";
+		more.textContent = s.consentMore;
+		text.appendChild(more);
+		const [no, yes] = [...card.querySelectorAll("button")];
+		no.textContent = s.consentDecline;
+		yes.textContent = s.consentAccept;
+		no.onclick = () => choose("denied");
+		yes.onclick = () => choose("granted");
+		document.body.appendChild(card);
+	}
+	function choose(c) {
+		const before = stored();
+		store(c);
+		card.style.display = "none";
+		if (c === "granted") load();
+		else if (before === "granted" || loaded) revoke();
+		showLink();
+	}
+	function showLink() {
+		if (!link) {
+			link = document.createElement("button");
+			link.type = "button";
+			link.className = "htol-consent-link";
+			link.textContent = strings(lang).consentLink;
+			link.onclick = () => show();
+			document.body.appendChild(link);
+		}
+		link.style.display = "";
+	}
+	function gtag(...a) {
+		const w = window;
+		(w.dataLayer = w.dataLayer || []).push(arguments);
+	}
+	function load() {
+		if (loaded) {
+			gtag("consent", "update", { analytics_storage: "granted" });
+			return;
+		}
+		loaded = true;
+		if (local()) {
+			console.log("analytics: consent granted, tag not loaded on localhost");
+			return;
+		}
+		gtag("consent", "default", {
+			analytics_storage: "granted",
+			ad_storage: "denied",
+			ad_user_data: "denied",
+			ad_personalization: "denied"
+		});
+		gtag("js", /* @__PURE__ */ new Date());
+		gtag("config", id, {
+			allow_google_signals: false,
+			allow_ad_personalization_signals: false
+		});
+		const script = document.createElement("script");
+		script.async = true;
+		script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(id)}`;
+		document.head.appendChild(script);
+	}
+	function revoke() {
+		if (loaded && !local()) gtag("consent", "update", { analytics_storage: "denied" });
+		const parts = location.hostname.split(".");
+		const domains = parts.map((_, i) => parts.slice(i).join(".")).filter((d) => d.includes("."));
+		for (const c of document.cookie.split(";").map((c) => c.split("=")[0].trim()).filter((n) => /^_ga/.test(n))) for (const d of ["", ...domains.map((d) => `; domain=.${d}`)]) document.cookie = `${c}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/${d}`;
+	}
 	// src/index.ts
 	var layouts = {
 		layoutBergé,
@@ -28784,6 +28964,12 @@ var htol = (function(exports) {
 	exports.WikiUi = WikiUi;
 	exports.alllanguages = alllanguages;
 	exports.composeOverlays = composeOverlays;
+	Object.defineProperty(exports, "consent", {
+		enumerable: true,
+		get: function() {
+			return consent_exports;
+		}
+	});
 	exports.fromFileWithProgress = fromFileWithProgress;
 	exports.gotoNode = gotoNode;
 	exports.initpromise = initpromise;
