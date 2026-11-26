@@ -44,6 +44,11 @@
             const app = {
                 text: null,
                 hypertree: null,
+                // the start view (2026-11-24, fitted to a screenshot: the root at the
+                // bottom, Passeriformes at the top): a goto there, when the page opens
+                // and from the home button
+                startView: ()=> app.hypertree.api.goto({ re: .025, im: .755 }, .0525)
+                    .then(()=> app.hypertree.drawDetailFrame()),
                 search: null,
                 lang: null
             }
@@ -66,7 +71,8 @@
                         language: l,
                         languages: htol.alllanguages,
                         // the root to the center; the search card over the tree
-                        onHome:    ()=> app.hypertree && app.hypertree.api.gotoHome().then(()=> app.hypertree.drawDetailFrame()),
+                        // home: a goto to the start view, as when the page opens (startView)
+                        onHome:    ()=> app.hypertree && app.startView(),
                         onSearch:  ()=> app.search && app.search.toggle(),
                         onLangChange:  l=> {
                             console.log("lang change", l)
@@ -212,8 +218,7 @@
                                 // start view (2026-11-24, fitted to a screenshot: the root at
                                 // the bottom, Passeriformes at the top); P and λ together, a
                                 // gotoλ after goto would move the view again
-                                .then(()=> app.hypertree.api.goto({ re: .025, im: .755 }, .0525))
-                                .then(()=> app.hypertree.drawDetailFrame())
+                                .then(()=> app.startView())
                             // the labels in screen pixels for the language, as large as on
                             // the branch pages (settings.sizeLabels; again after a language
                             // switch and when the size changes)

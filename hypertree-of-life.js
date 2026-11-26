@@ -16803,7 +16803,8 @@ var htol = (function(exports) {
 					invisible: false,
 					hideOnDrag: false,
 					hoverLabel: true,
-					hoverTransition: false
+					hoverTransition: false,
+					background: false
 				},
 				"emojis": { scale: .69 },
 				"emoji-backgrounds": {
@@ -16837,10 +16838,13 @@ var htol = (function(exports) {
 		geometry: {
 			view: o.view === "rect" ? "halfplane" : "disk",
 			layerOptions: {
-				"labels-force": { hoverPathLabels: true },
+				"labels-force": {
+					hoverPathLabels: true,
+					color: (n) => n.hovered && n.precalc.branchPage ? "var(--htol-link-label)" : void 0
+				},
 				"cells": {
 					strokeWidth: (n) => void 0,
-					fill: (d) => d.data.hasOutChildren && !d.data.hovered && !d.data.selected ? "var(--htol-filtered-cell)" : void 0
+					fill: (d) => d.data.hovered || d.data.selected ? void 0 : d.data.precalc.branchPage ? "var(--htol-branch-link-cell)" : d.data.hasOutChildren ? "var(--htol-filtered-cell)" : void 0
 				}
 			}
 		},
@@ -28371,25 +28375,30 @@ var htol = (function(exports) {
 		* (parsing, building the tree) and is expected to take about that many ms: the bar
 		* moves on towards f during it, slowing down. The bar is a transform (scaleX),
 		* whose transitions the compositor runs on while the page's script blocks; a width
-		* would stand still.
+		* would stand still. easing: the curve of the creep (default: slowing down).
 		*/
-		set(bar, f, creep) {
+		set(bar, f, creep, easing = "cubic-bezier(.2,.6,.35,1)") {
 			const b = this.bars[bar], v = Math.max(0, Math.min(1, f));
 			if (!b || v < b.value) return;
-			b.el.style.transition = creep ? `transform ${Math.round(creep)}ms cubic-bezier(.2,.6,.35,1)` : "";
+			b.el.style.transition = creep ? `transform ${Math.round(creep)}ms ${easing}` : "";
 			b.el.style.transform = `scaleX(${v})`;
 			b.value = v;
 			const mean = BARS.reduce((s, k) => s + this.bars[k].value, 0) / BARS.length;
 			this.ui.setAttribute("aria-valuenow", String(Math.round(mean * 100)));
 		}
-		/** Fades out and removes the card. */
+		/**
+		* The bars fill up quickly but smoothly (from where their creep is, FINISH_MS), then
+		* the card fades out and is removed.
+		*/
 		done() {
-			for (const b of BARS) this.set(b, 1);
-			this.ui.classList.add("htol-overlay-done");
+			for (const b of BARS) this.set(b, 1, FINISH_MS, "cubic-bezier(.25,.6,.4,1)");
 			setTimeout(() => {
-				this.unplace();
-				this.ui.remove();
-			}, 300);
+				this.ui.classList.add("htol-overlay-done");
+				setTimeout(() => {
+					this.unplace();
+					this.ui.remove();
+				}, 300);
+			}, FINISH_MS);
 		}
 		/** The data could not be loaded. */
 		failed(text) {
@@ -28434,7 +28443,13 @@ var htol = (function(exports) {
 		return new TextDecoder().decode(all);
 	}
 	var nextFrame = () => new Promise((ok) => requestAnimationFrame(() => setTimeout(ok, 0)));
-	var BLOCKING_MS_PER_BYTE = 1 / 2500;
+	var BLOCKING_MS_PER_BYTE = {
+		tree: 1 / 450,
+		names: 1 / 2e4
+	};
+	var PHONE_FACTOR = 7;
+	var BUILD_TARGET = .92;
+	var FINISH_MS = 350;
 	/**
 	* The loading card's bars for the downloads of a page (the tree and the names load side
 	* by side; the names are the larger part): the bar 'tree' for the tree's file, 'names'
@@ -28452,6 +28467,7 @@ var htol = (function(exports) {
 			this.parts = [];
 			this.built = 0;
 			this.arrived = /* @__PURE__ */ new Set();
+			this.factor = phone$1() ? PHONE_FACTOR : 1;
 		}
 		/**
 		* A d3-hypertree dataloader / langloader for a JSON file of a group (the .d3.json
@@ -28495,14 +28511,16 @@ var htol = (function(exports) {
 			this.overlay.set(group, all ? 1 : total ? bytes / total : 0);
 			if (all && !this.arrived.has(group)) {
 				this.arrived.add(group);
-				this.building(bytes);
+				this.building(group, bytes);
 			}
 		}
-		building(bytes) {
-			this.built += bytes;
-			const expected = this.parts.reduce((s, p) => s + (p.done ? p.bytes : p.total), 0);
-			const share = expected ? Math.min(1, this.built / expected) : 1;
-			this.overlay.set("build", .98 * share, Math.max(400, bytes * BLOCKING_MS_PER_BYTE));
+		building(group, bytes) {
+			const ms = (g, b) => b * (BLOCKING_MS_PER_BYTE[g] || 0) * this.factor;
+			const own = Math.max(400, ms(group, bytes));
+			this.built += own;
+			const pending = this.parts.filter((p) => !this.arrived.has(p.group)).reduce((s, p) => s + ms(p.group, p.done ? p.bytes : p.total), 0);
+			const share = Math.min(1, this.built / (this.built + pending));
+			this.overlay.set("build", BUILD_TARGET * share, own, "cubic-bezier(.3,.45,.65,1)");
 		}
 	};
 	/**

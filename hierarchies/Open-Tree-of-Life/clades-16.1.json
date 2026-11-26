@@ -4,92 +4,92 @@
   "Eukaryota": {
    "file": "eukaryota-16.1",
    "ottId": "ott304358",
-   "nodes": 49263,
-   "leafs": 31214
+   "nodes": 48071,
+   "leafs": 30092
   },
   "Metazoa": {
    "file": "metazoa-16.1",
    "ottId": "ott691846",
-   "nodes": 47340,
-   "leafs": 32277
+   "nodes": 45062,
+   "leafs": 30109
   },
   "Insecta": {
    "file": "insecta-16.1",
    "ottId": "ott1062253",
-   "nodes": 47851,
-   "leafs": 36579
+   "nodes": 32179,
+   "leafs": 23153
   },
   "Araneae": {
    "file": "araneae-16.1",
    "ottId": "ott614523",
-   "nodes": 4573,
-   "leafs": 4118
+   "nodes": 3162,
+   "leafs": 2864
   },
   "Hymenoptera": {
    "file": "hymenoptera-16.1",
    "ottId": "ott753726",
-   "nodes": 13611,
-   "leafs": 9834
+   "nodes": 10884,
+   "leafs": 7133
   },
   "Embryophyta": {
    "file": "embryophyta-16.1",
    "ottId": "ott56610",
-   "nodes": 46667,
-   "leafs": 25697
+   "nodes": 45740,
+   "leafs": 24981
   },
   "Dikarya": {
    "file": "dikarya-16.1",
    "ottId": "ott656316",
-   "nodes": 9035,
-   "leafs": 7396
+   "nodes": 7652,
+   "leafs": 6127
   },
   "Lophotrochozoa": {
    "file": "lophotrochozoa-16.1",
    "ottId": "ott155737",
-   "nodes": 18435,
-   "leafs": 15758
+   "nodes": 17001,
+   "leafs": 14325
   },
   "Aves": {
    "file": "aves-16.1",
    "ottId": "ott81461",
-   "nodes": 30172,
-   "leafs": 18888
+   "nodes": 28449,
+   "leafs": 17191
   },
   "Vertebrata": {
    "file": "vertebrata-16.1",
    "ottId": "ott801601",
-   "nodes": 34739,
-   "leafs": 18917
+   "nodes": 34562,
+   "leafs": 18772
   },
   "Tetrapoda": {
    "file": "tetrapoda-16.1",
    "ottId": "ott229562",
-   "nodes": 21805,
-   "leafs": 11634
+   "nodes": 21675,
+   "leafs": 11531
   },
   "Mammalia": {
    "file": "mammalia-16.1",
    "ottId": "ott244265",
-   "nodes": 12731,
-   "leafs": 8609
+   "nodes": 12200,
+   "leafs": 8078
   },
   "Carnivora": {
    "file": "carnivora-16.1",
    "ottId": "ott44565",
-   "nodes": 950,
-   "leafs": 619
+   "nodes": 892,
+   "leafs": 561
   },
   "Laurasiatheria": {
    "file": "laurasiatheria-16.1",
    "ottId": "ott392223",
-   "nodes": 5506,
-   "leafs": 3788
+   "nodes": 5102,
+   "leafs": 3384
   },
   "Chondrichthyes": {
    "file": "chondrichthyes-16.1",
    "ottId": "ott278108",
-   "nodes": 2132,
-   "leafs": 1437
+   "nodes": 2107,
+   "leafs": 1412
   },
   "Xenarthra": {
    "file": "xenarthra-16.1",
@@ -100,8 +100,8 @@
   "Metatheria": {
    "file": "metatheria-16.1",
    "ottId": "ott16033",
-   "nodes": 754,
-   "leafs": 512
+   "nodes": 732,
+   "leafs": 490
   },
   "Sciuridae": {
    "file": "sciuridae-16.1",
@@ -118,14 +118,14 @@
   "Porifera": {
    "file": "porifera-16.1",
    "ottId": "ott67819",
-   "nodes": 10687,
-   "leafs": 9601
+   "nodes": 8845,
+   "leafs": 7815
   },
   "Cnidaria": {
    "file": "cnidaria-16.1",
    "ottId": "ott641033",
-   "nodes": 16940,
-   "leafs": 14285
+   "nodes": 15124,
+   "leafs": 12491
   },
   "Crocodylia": {
    "file": "crocodylia-16.1",
@@ -136,128 +136,128 @@
   "Testudines": {
    "file": "testudines-16.1",
    "ottId": "ott639666",
-   "nodes": 1313,
-   "leafs": 868
+   "nodes": 1221,
+   "leafs": 776
   },
   "Lepidosauria": {
    "file": "lepidosauria-16.1",
    "ottId": "ott35881",
-   "nodes": 16445,
-   "leafs": 11413
+   "nodes": 15699,
+   "leafs": 10817
   },
   "Actinopteri": {
    "file": "actinopteri-16.1",
    "ottId": "ott285821",
-   "nodes": 49343,
-   "leafs": 34738
+   "nodes": 45110,
+   "leafs": 31193
   },
   "Equisetales": {
    "file": "equisetales-16.1",
    "ottId": "ott719029",
-   "nodes": 97,
-   "leafs": 73
+   "nodes": 77,
+   "leafs": 53
   },
   "Bryophyta": {
    "file": "bryophyta-16.1",
    "ottId": "ott246594",
-   "nodes": 18184,
-   "leafs": 16894
+   "nodes": 12963,
+   "leafs": 11677
   },
   "Acrogymnospermae": {
    "file": "acrogymnospermae-16.1",
    "ottId": "ott5296507",
-   "nodes": 2976,
-   "leafs": 2045
+   "nodes": 2543,
+   "leafs": 1614
   },
   "Teleostei": {
    "file": "teleostei-16.1",
    "ottId": "ott212201",
-   "nodes": 49255,
-   "leafs": 34690
+   "nodes": 45022,
+   "leafs": 31145
   },
   "Cypriniformes": {
    "file": "cypriniformes-16.1",
    "ottId": "ott1005931",
-   "nodes": 6713,
-   "leafs": 4874
+   "nodes": 5947,
+   "leafs": 4128
   },
   "Percomorphaceae": {
    "file": "percomorphaceae-16.1",
    "ottId": "ott5551466",
-   "nodes": 26944,
-   "leafs": 18706
+   "nodes": 24740,
+   "leafs": 16882
   },
   "Gobiiformes": {
    "file": "gobiiformes-16.1",
    "ottId": "ott5554918",
-   "nodes": 3017,
-   "leafs": 2338
+   "nodes": 1325,
+   "leafs": 1001
   },
   "Elasmobranchii": {
    "file": "elasmobranchii-16.1",
    "ottId": "ott278117",
-   "nodes": 2048,
-   "leafs": 1380
+   "nodes": 2023,
+   "leafs": 1355
   },
   "Selachii": {
    "file": "selachii-16.1",
    "ottId": "ott78477",
-   "nodes": 961,
-   "leafs": 618
+   "nodes": 958,
+   "leafs": 615
   },
   "Batoidea": {
    "file": "batoidea-16.1",
    "ottId": "ott195928",
-   "nodes": 1086,
-   "leafs": 762
+   "nodes": 1064,
+   "leafs": 740
   },
   "Amphibia": {
    "file": "amphibia-16.1",
    "ottId": "ott544595",
-   "nodes": 13495,
-   "leafs": 8842
+   "nodes": 12297,
+   "leafs": 7780
   },
   "Anura": {
    "file": "anura-16.1",
    "ottId": "ott991547",
-   "nodes": 11679,
-   "leafs": 7763
+   "nodes": 10507,
+   "leafs": 6727
   },
   "Caudata": {
    "file": "caudata-16.1",
    "ottId": "ott984716",
-   "nodes": 1419,
-   "leafs": 850
+   "nodes": 1393,
+   "leafs": 824
   },
   "Squamata": {
    "file": "squamata-16.1",
    "ottId": "ott35888",
-   "nodes": 16441,
-   "leafs": 11411
+   "nodes": 15695,
+   "leafs": 10815
   },
   "Serpentes": {
    "file": "serpentes-16.1",
    "ottId": "ott186816",
-   "nodes": 5709,
-   "leafs": 4082
+   "nodes": 5614,
+   "leafs": 3987
   },
   "Passeriformes": {
    "file": "passeriformes-16.1",
    "ottId": "ott1041547",
-   "nodes": 18026,
-   "leafs": 11174
+   "nodes": 17029,
+   "leafs": 10194
   },
   "Psittaciformes": {
    "file": "psittaciformes-16.1",
    "ottId": "ott1020133",
-   "nodes": 1187,
-   "leafs": 719
+   "nodes": 1147,
+   "leafs": 679
   },
   "Galliformes": {
    "file": "galliformes-16.1",
    "ottId": "ott837585",
-   "nodes": 931,
-   "leafs": 592
+   "nodes": 903,
+   "leafs": 565
   },
   "Anseriformes": {
    "file": "anseriformes-16.1",
@@ -268,62 +268,62 @@
   "Columbiformes": {
    "file": "columbiformes-16.1",
    "ottId": "ott363030",
-   "nodes": 765,
-   "leafs": 506
+   "nodes": 683,
+   "leafs": 428
   },
   "Piciformes": {
    "file": "piciformes-16.1",
    "ottId": "ott472432",
-   "nodes": 1041,
-   "leafs": 650
+   "nodes": 963,
+   "leafs": 573
   },
   "Strigiformes": {
    "file": "strigiformes-16.1",
    "ottId": "ott1028829",
-   "nodes": 622,
-   "leafs": 420
+   "nodes": 601,
+   "leafs": 399
   },
   "Trochilidae": {
    "file": "trochilidae-16.1",
    "ottId": "ott810751",
-   "nodes": 935,
-   "leafs": 595
+   "nodes": 841,
+   "leafs": 503
   },
   "Coleoptera": {
    "file": "coleoptera-16.1",
    "ottId": "ott865243",
-   "nodes": 29784,
-   "leafs": 25742
+   "nodes": 13554,
+   "leafs": 9882
   },
   "Lepidoptera": {
    "file": "lepidoptera-16.1",
    "ottId": "ott965954",
-   "nodes": 23421,
-   "leafs": 19863
+   "nodes": 681,
+   "leafs": 539
   },
   "Diptera": {
    "file": "diptera-16.1",
    "ottId": "ott661378",
-   "nodes": 12541,
-   "leafs": 10627
+   "nodes": 8853,
+   "leafs": 6956
   },
   "Hemiptera": {
    "file": "hemiptera-16.1",
    "ottId": "ott603650",
-   "nodes": 15440,
-   "leafs": 13937
+   "nodes": 8580,
+   "leafs": 7090
   },
   "Orthoptera": {
    "file": "orthoptera-16.1",
    "ottId": "ott1095594",
-   "nodes": 31025,
-   "leafs": 27628
+   "nodes": 18584,
+   "leafs": 16627
   },
   "Formicidae": {
    "file": "formicidae-16.1",
    "ottId": "ott7376225",
-   "nodes": 16169,
-   "leafs": 13779
+   "nodes": 10010,
+   "leafs": 7797
   }
  },
  "updated": "2026-11-24T00:06:55.791Z",

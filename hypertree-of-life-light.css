@@ -1037,6 +1037,7 @@ body {
 :root {
   --htol-branch-cell: rgba(100, 181, 246, .075);
   --htol-filtered-cell: rgba(255, 167, 38, .08);
+  --htol-branch-link-cell: rgba(76, 175, 80, .12);
   --htol-link-label: #2e7d32;
 }
 /* css/intro-light.scss */

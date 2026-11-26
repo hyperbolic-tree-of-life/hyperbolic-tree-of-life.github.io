@@ -88,6 +88,23 @@
                 const loading = new htol.LoadingOverlay(p, title, l)
                 // three bars: the tree file, the names (language map, Wikipedia titles), building
                 const progress = new htol.LoadProgress(loading)
+                // the branch pages of the synthesis (clades-16.1.json): a click on a group
+                // with its own branch page opens it, a click on any other node moves it to
+                // the center (onNodeClick); such a group has a pale green cell and a green
+                // hover label (precalc.branchPage, presets.ts branch); not for older tree
+                // files. The names wait for the list (langloader), langInitBFS needs it.
+                let clades = {}
+                const cladesLoaded = !/-16\.1$/.test(c || '') ? Promise.resolve() :
+                    fetch('hierarchies/Open-Tree-of-Life/clades-16.1.json')
+                        .then(r=> r.ok ? r.json() : null)
+                        .then(j=> { clades = (j && j.clades) || {} })
+                        .catch(()=> {})
+                const afterClades = loader=> ok=> cladesLoaded.then(()=> loader(ok))
+                const branchPageOf = n=> {
+                    // by name and OTT id (a beetle genus is called Xenarthra too)
+                    const b = n && n.data.name && clades[n.data.name]
+                    return b && b.ottId === n.data.ottId && b.file !== c ? b.file : null   // not the page itself
+                }
 
                 // the page's configuration (src/presets.ts: branch page, phone version)
                 // and what only this page knows: the files, the labels, the callbacks
@@ -95,7 +112,7 @@
                     { parent:p },
                     htol.composeOverlays(htol.treeOfLife.page('branch', { phone, view, childOrder }), {
                         dataloader: progress.loader(`hierarchies/Open-Tree-of-Life/${c}.d3.json`, 'tree'),
-                        langloader: wiki.loader(l, url=> progress.loader(url, 'names')),
+                        langloader: afterClades(wiki.loader(l, url=> progress.loader(url, 'names'))),
                         dataInitBFS: (ht, n)=> {
                             const id = n.data.name
                             n.precalc.imageHref = iconmap.fileName2IconUrl(id, n.data.type)
@@ -117,6 +134,8 @@
                             // more than 5 siblings: no permanent label, only under the mouse
                             // and on the hover path (labels.ts manySiblings)
                             n.precalc.labelOnHover = htol.labels.manySiblings(n)
+                            // a group with its own branch page (a link, onNodeClick)
+                            n.precalc.branchPage = Boolean(branchPageOf(n))
                         },
                         interaction: {
                             onCenterNodeChange: (n, s)=> {
@@ -129,6 +148,11 @@
                                 }
                             },
                             onNodeClick: (n, m, l)=> {
+                                const page = branchPageOf(n)
+                                if (page) {
+                                    window.location.href = htol.settings.withChoices(`/otol.html?c=${page}`)
+                                    return
+                                }
                                 htree.api.goto({ re:-n.layout.z.re, im:-n.layout.z.im }, null)
                                     .then(()=> l.view.hypertree.drawDetailFrame())
                             }
@@ -149,15 +173,23 @@
                 // otherwise (the files of the data pipeline, <clade>-16.1) computed: the
                 // root at the bottom, the main branchings in the middle, the branches
                 // filling the disk (d3-hypertree api.overview); zoomed up, then moved there
+                // The home button: a goto to the computed start view (app.startView); an old
+                // tree file's hand-set view: the library's home
                 const init = htol.initpromise[c]
-                if (init) init(htree.initPromise, htree)
-                else htree.initPromise
-                    .then(()=> {
-                        const v = htree.api.overview()
-                        htree.args.geometry.transformation.state.λ = v.λ
-                        return new Promise((ok, err)=> htree.animateUp(ok, err)).then(()=> htree.api.goto(v.P, null))
-                    })
-                    .then(()=> htree.drawDetailFrame())
+                if (init) {
+                    init(htree.initPromise, htree)
+                    app.startView = ()=> htree.api.gotoHome().then(()=> htree.drawDetailFrame())
+                }
+                else {
+                    app.startView = ()=> htree.api.gotoOverview().then(()=> htree.drawDetailFrame())
+                    htree.initPromise
+                        .then(()=> {
+                            const v = htree.api.overview()
+                            htree.args.geometry.transformation.state.λ = v.λ
+                            return new Promise((ok, err)=> htree.animateUp(ok, err)).then(()=> htree.api.goto(v.P, null))
+                        })
+                        .then(()=> htree.drawDetailFrame())
+                }
                 // the labels in screen pixels for the language, as large as the main
                 // page's (settings.sizeLabels; again after a language switch and when the
                 // size changes)
@@ -182,7 +214,8 @@
                 {
                     languages: htol.alllanguages,
                     // the root to the center; the search card over the tree
-                    onHome:    ()=> app.hypertree && app.hypertree.api.gotoHome().then(()=> app.hypertree.drawDetailFrame()),
+                    // home: a goto to the start view, as when the page opens (startView)
+                    onHome:    ()=> app.hypertree && app.startView && app.startView(),
                     onSearch:  ()=> app.search && app.search.toggle(),
                     // the view button: reload with the other view (the tree measures its
                     // element when it is built)
