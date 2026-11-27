@@ -15,7 +15,7 @@
     <body>
         <script>
             const c = new URLSearchParams(document.location.search.substring(1)).get('c')
-            // view=rect: the rectangular view (half-plane, d3-hypertree geometry.view 'halfplane')
+            // view=rect: the rectangular view (d3-hypertree geometry.view 'rectangle', presets.ts)
             const view = new URLSearchParams(document.location.search.substring(1)).get('view') === 'rect' ? 'rect' : 'disk'
             // order of the children: 'balanced' (d3-hypertree layout.childOrder: the heaviest
             // child in the middle, the heaviest path runs straight), order=data: as in the file

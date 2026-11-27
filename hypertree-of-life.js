@@ -8774,16 +8774,16 @@ var htol = (function(exports) {
 		re: 1,
 		im: 0
 	};
-	var rotate = (z, g) => ({
+	var rotate$1 = (z, g) => ({
 		re: z.re * g.re - z.im * g.im,
 		im: z.re * g.im + z.im * g.re
 	});
-	var unrotate = (z, g) => ({
+	var unrotate$1 = (z, g) => ({
 		re: z.re * g.re + z.im * g.im,
 		im: z.im * g.re - z.re * g.im
 	});
 	function toHalfPlane(z, g = ONE) {
-		z = unrotate(z, g);
+		z = unrotate$1(z, g);
 		const d = (1 - z.re) * (1 - z.re) + z.im * z.im;
 		return {
 			re: -2 * z.im / d,
@@ -8838,14 +8838,14 @@ var htol = (function(exports) {
 		const nr = wr, ni = wi - 1;
 		const dr = wr, di = wi + 1;
 		const d = dr * dr + di * di;
-		return rotate({
+		return rotate$1({
 			re: (nr * dr + ni * di) / d,
 			im: (ni * dr - nr * di) / d
 		}, g);
 	}
 	/** Local scale of the map |dw/dz| = 2 / |1 − z|²: sizes in the view. */
 	function viewScale(z, g = ONE) {
-		z = unrotate(z, g);
+		z = unrotate$1(z, g);
 		return 2 / ((1 - z.re) * (1 - z.re) + z.im * z.im);
 	}
 	var maxHeight = 3;
@@ -10069,10 +10069,394 @@ var htol = (function(exports) {
 			}), label);
 		}
 	}
-	/** The projection of geometry.view: 'disk', 'halfplane' or an own Projection. */
+	var cmul = (a, b) => ({
+		re: a.re * b.re - a.im * b.im,
+		im: a.re * b.im + a.im * b.re
+	});
+	var cdiv = (a, b) => {
+		const d = b.re * b.re + b.im * b.im;
+		return {
+			re: (a.re * b.re + a.im * b.im) / d,
+			im: (a.im * b.re - a.re * b.im) / d
+		};
+	};
+	var cabs = (a) => Math.hypot(a.re, a.im);
+	/** the principal square root (Re ≥ 0) */
+	var csqrt = (a) => {
+		const r = cabs(a);
+		const re = Math.sqrt(Math.max(0, (r + a.re) / 2)), im = Math.sqrt(Math.max(0, (r - a.re) / 2));
+		return {
+			re,
+			im: a.im < 0 ? -im : im
+		};
+	};
+	var csin = (a) => ({
+		re: Math.sin(a.re) * Math.cosh(a.im),
+		im: Math.cos(a.re) * Math.sinh(a.im)
+	});
+	var ccos = (a) => ({
+		re: Math.cos(a.re) * Math.cosh(a.im),
+		im: -Math.sin(a.re) * Math.sinh(a.im)
+	});
+	/** The complete elliptic integral of the first kind K(k), by the arithmetic-geometric mean. */
+	function ellipticK(k) {
+		let a = 1, b = Math.sqrt(1 - k * k);
+		for (let i = 0; i < 40 && Math.abs(a - b) > 1e-15 * a; i++) {
+			const m = (a + b) / 2;
+			b = Math.sqrt(a * b);
+			a = m;
+		}
+		return Math.PI / (2 * a);
+	}
+	/**
+	* Carlson's symmetric integral RF(x, y, z) for complex arguments off the negative real
+	* axis (the duplication theorem until the arguments agree, then the Taylor series).
+	*/
+	function carlsonRF(x, y, z) {
+		for (let i = 0; i < 60; i++) {
+			const mu = {
+				re: (x.re + y.re + z.re) / 3,
+				im: (x.im + y.im + z.im) / 3
+			};
+			const m = cabs(mu);
+			if (Math.max(cabs({
+				re: x.re - mu.re,
+				im: x.im - mu.im
+			}), cabs({
+				re: y.re - mu.re,
+				im: y.im - mu.im
+			}), cabs({
+				re: z.re - mu.re,
+				im: z.im - mu.im
+			})) <= 2e-4 * m) {
+				const X = cdiv({
+					re: mu.re - x.re,
+					im: mu.im - x.im
+				}, mu), Y = cdiv({
+					re: mu.re - y.re,
+					im: mu.im - y.im
+				}, mu);
+				const Z = {
+					re: -X.re - Y.re,
+					im: -X.im - Y.im
+				};
+				const XY = cmul(X, Y), E2 = {
+					re: XY.re - Z.re * Z.re + Z.im * Z.im,
+					im: XY.im - 2 * Z.re * Z.im
+				};
+				const E3 = cmul(XY, Z);
+				const E22 = cmul(E2, E2), E23 = cmul(E2, E3);
+				return cdiv({
+					re: 1 - E2.re / 10 + E3.re / 14 + E22.re / 24 - 3 * E23.re / 44,
+					im: -E2.im / 10 + E3.im / 14 + E22.im / 24 - 3 * E23.im / 44
+				}, csqrt(mu));
+			}
+			const sx = csqrt(x), sy = csqrt(y), sz = csqrt(z);
+			const l = {
+				re: 0,
+				im: 0
+			};
+			for (const p of [
+				cmul(sx, sy),
+				cmul(sy, sz),
+				cmul(sz, sx)
+			]) {
+				l.re += p.re;
+				l.im += p.im;
+			}
+			x = {
+				re: (x.re + l.re) / 4,
+				im: (x.im + l.im) / 4
+			};
+			y = {
+				re: (y.re + l.re) / 4,
+				im: (y.im + l.im) / 4
+			};
+			z = {
+				re: (z.re + l.re) / 4,
+				im: (z.im + l.im) / 4
+			};
+		}
+		return cdiv({
+			re: 1,
+			im: 0
+		}, csqrt({
+			re: (x.re + y.re + z.re) / 3,
+			im: (x.im + y.im + z.im) / 3
+		}));
+	}
+	var THETA_TERMS = 8;
+	/** The map of the disk onto the rectangle of an aspect ratio (width : height). */
+	var RectangleMap = class {
+		constructor(aspect) {
+			this.aspect = aspect;
+			const q = Math.exp(-Math.PI * 2 / aspect);
+			let t2 = 0, t3 = 1;
+			for (let n = 0; n < THETA_TERMS; n++) {
+				t2 += Math.pow(q, (n + .5) * (n + .5));
+				if (n > 0) t3 += Math.pow(q, n * n);
+			}
+			t2 *= 2;
+			t3 = 1 + 2 * (t3 - 1);
+			this.q = q;
+			this.t2 = t2;
+			this.t3 = t3;
+			this.k = t2 / t3 * (t2 / t3);
+			this.K = ellipticK(this.k);
+			this.Kp = ellipticK(Math.sqrt(1 - this.k * this.k));
+			this.a = 1 / Math.sqrt(this.k);
+		}
+		/** The half-plane point of a disk point: ζ = i·a·(1 + z) / (1 − z). */
+		zeta(z) {
+			const d = (1 - z.re) * (1 - z.re) + z.im * z.im;
+			return {
+				re: -2 * this.a * z.im / d,
+				im: this.a * (1 - z.re * z.re - z.im * z.im) / d
+			};
+		}
+		/** A disk point into the rectangle: x ∈ [−1, 1], y ∈ ±K'/2K (y grows toward the edge that z = 1 maps to). */
+		map(z) {
+			const zt = this.zeta(z);
+			if (!isFinite(zt.re) || !isFinite(zt.im) || cabs(zt) > 1e8) return {
+				re: 0,
+				im: this.Kp / (2 * this.K)
+			};
+			const z2 = cmul(zt, zt), k2 = this.k * this.k;
+			const w = cmul(zt, carlsonRF({
+				re: 1 - z2.re,
+				im: -z2.im
+			}, {
+				re: 1 - k2 * z2.re,
+				im: -k2 * z2.im
+			}, {
+				re: 1,
+				im: 0
+			}));
+			return {
+				re: w.re / this.K,
+				im: (w.im - this.Kp / 2) / this.K
+			};
+		}
+		/** A rectangle point back into the disk: ζ = sn(w, k) by the theta series, z = (ζ − i·a) / (ζ + i·a). */
+		unmap(v) {
+			const w = {
+				re: v.re * this.K,
+				im: v.im * this.K + this.Kp / 2
+			};
+			const u = {
+				re: Math.PI * w.re / (2 * this.K),
+				im: Math.PI * w.im / (2 * this.K)
+			};
+			const q = this.q;
+			const t1 = {
+				re: 0,
+				im: 0
+			}, t4 = {
+				re: 1,
+				im: 0
+			};
+			for (let n = 0; n < THETA_TERMS; n++) {
+				const s = csin({
+					re: (2 * n + 1) * u.re,
+					im: (2 * n + 1) * u.im
+				}), f = (n % 2 ? -2 : 2) * Math.pow(q, (n + .5) * (n + .5));
+				t1.re += f * s.re;
+				t1.im += f * s.im;
+				if (n > 0) {
+					const c = ccos({
+						re: 2 * n * u.re,
+						im: 2 * n * u.im
+					}), g = (n % 2 ? -2 : 2) * Math.pow(q, n * n);
+					t4.re += g * c.re;
+					t4.im += g * c.im;
+				}
+			}
+			const zt = cdiv(t1, t4);
+			zt.re *= this.t3 / this.t2;
+			zt.im *= this.t3 / this.t2;
+			return cdiv({
+				re: zt.re,
+				im: zt.im - this.a
+			}, {
+				re: zt.re,
+				im: zt.im + this.a
+			});
+		}
+		/** The local scale |dw/dz| / K of the map at a disk point (view units per disk unit). */
+		scale(z) {
+			const zt = this.zeta(z);
+			const d = (1 - z.re) * (1 - z.re) + z.im * z.im;
+			const z2 = cmul(zt, zt), k2 = this.k * this.k;
+			const f = cmul({
+				re: 1 - z2.re,
+				im: -z2.im
+			}, {
+				re: 1 - k2 * z2.re,
+				im: -k2 * z2.im
+			});
+			const s = 2 * this.a / d / Math.sqrt(cabs(f)) / this.K;
+			return isFinite(s) ? s : 0;
+		}
+		/** The height of the rectangle in view units (its width is 2). */
+		get height() {
+			return this.Kp / this.K;
+		}
+	};
+	var rotate = (z, g) => ({
+		re: z.re * g.re - z.im * g.im,
+		im: z.re * g.im + z.im * g.re
+	});
+	var unrotate = (z, g) => ({
+		re: z.re * g.re + z.im * g.im,
+		im: z.im * g.re - z.re * g.im
+	});
+	var RectangleProjection = class {
+		constructor(rootWedge, aspect = 1.6) {
+			this.kind = "rectangle";
+			this.followsSize = true;
+			this.g = infinityOf(rootWedge);
+			this.setAspect(aspect);
+		}
+		/** The map for an aspect ratio (width : height) of the drawn box. */
+		setAspect(aspect) {
+			const a = Math.max(.2, Math.min(5, aspect || 1.6));
+			if (this.map && this.map.aspect === a) return;
+			this.map = new RectangleMap(a);
+			this.scale0 = this.map.scale({
+				re: 0,
+				im: 0
+			});
+		}
+		/** The rectangle: width 2, this height (view units). */
+		get height() {
+			return this.map.height;
+		}
+		toView(disk) {
+			const v = this.map.map(unrotate(disk, this.g));
+			return {
+				re: v.re,
+				im: v.im,
+				disk: {
+					re: disk.re,
+					im: disk.im
+				}
+			};
+		}
+		toDisk(view) {
+			return rotate(this.map.unmap(view), this.g);
+		}
+		project(nodes) {
+			for (const n of nodes) {
+				const z = {
+					re: n.cache.re,
+					im: n.cache.im
+				};
+				const zr = unrotate(z, this.g);
+				const v = this.map.map(zr);
+				n.cacheDisk = z;
+				n.outOfView = false;
+				n.cache = {
+					re: v.re,
+					im: v.im,
+					disk: z
+				};
+				n.cachep = CktoCp(n.cache);
+				n.distScale = Math.min(n.distScale * this.map.scale(zr) / this.scale0, 1);
+				n.dampedDistScale = n.distScale * (.5 / n.distScale + .5);
+				n.strCache = `${n.cache.re} ${n.cache.im}`;
+				n.transformStrCache = ` translate(${n.strCache})`;
+				n.scaleStrText = ` scale(${n.dampedDistScale})`;
+			}
+			return nodes;
+		}
+		diskOf(v) {
+			return v.disk || this.toDisk(v);
+		}
+		/** The midpoint of the disk geodesic from a to b (the circle orthogonal to the rim). */
+		arcMiddle(a, b) {
+			const m = {
+				re: (a.re + b.re) / 2,
+				im: (a.im + b.im) / 2
+			};
+			const c = arcCenter(a, b).c;
+			const r = Math.hypot(a.re - c.re, a.im - c.im);
+			const d = Math.hypot(m.re - c.re, m.im - c.im);
+			if (!isFinite(r) || r > 1e3 || d < 1e-12) return m;
+			return {
+				re: c.re + (m.re - c.re) * r / d,
+				im: c.im + (m.im - c.im) * r / d
+			};
+		}
+		geodesic(a, b, curvature) {
+			if (curvature === "0" || curvature === "l") return `M ${a.re} ${a.im} L ${b.re} ${b.im}`;
+			const mid = this.toView(this.arcMiddle(this.diskOf(a), this.diskOf(b)));
+			let cx = 2 * mid.re - (a.re + b.re) / 2, cy = 2 * mid.im - (a.im + b.im) / 2;
+			if (curvature === "-") {
+				cx = a.re + b.re - cx;
+				cy = a.im + b.im - cy;
+			}
+			return `M ${a.re} ${a.im} Q ${cx} ${cy}, ${b.re} ${b.im}`;
+		}
+		stem(root, curvature) {
+			return this.geodesic(root, this.toView({
+				re: .9999 * this.g.re,
+				im: .9999 * this.g.im
+			}), curvature);
+		}
+		circle(center, r) {
+			if (!(r > 0) || r > .5) return null;
+			const v = this.toView(center);
+			return {
+				cx: v.re,
+				cy: v.im,
+				r: r * this.map.scale(unrotate(center, this.g))
+			};
+		}
+		outward(view) {
+			const r = Math.hypot(view.re, view.im);
+			return r > 1e-9 ? {
+				re: view.re / r,
+				im: view.im / r
+			} : {
+				re: 0,
+				im: -1
+			};
+		}
+		rim(view) {
+			if (view.disk) return Math.hypot(view.disk.re, view.disk.im);
+			return Math.min(1, Math.max(Math.abs(view.re), Math.abs(view.im) * 2 / this.height));
+		}
+		viewBox(width, height, diskSize) {
+			const aspect = width > 0 && height > 0 ? width / height : 1.6;
+			this.setAspect(aspect);
+			const w = Math.round(1e3 * aspect);
+			return {
+				viewBox: `0 0 ${w} 1000`,
+				transform: `translate(${w / 2},500) scale(${500 * aspect * (diskSize || 1)})`
+			};
+		}
+		clip(clipPath, clipRadius) {
+			clipPath.append("rect").attr("x", -1.01).attr("y", -3).attr("width", 2.02).attr("height", 6);
+		}
+		voronoiExtent() {
+			return [[-2, -3], [2, 3]];
+		}
+		background() {
+			return {
+				elementType: "rect",
+				className: "background-rectangle",
+				create: (s) => s.attr("x", -1).attr("y", -3).attr("width", 2).attr("height", 6).attr("fill", "rgba(128,128,128,.07)")
+			};
+		}
+		overviewClamp(P) {
+			return P;
+		}
+	};
+	/** The projection of geometry.view: 'disk', 'halfplane', 'rectangle' or an own Projection. */
 	function createProjection(view, rootWedge) {
 		if (view && typeof view === "object") return view;
 		if (view === "halfplane") return new HalfPlaneProjection(rootWedge);
+		if (view === "rectangle") return new RectangleProjection(rootWedge);
 		return new DiskProjection();
 	}
 	/** Leaves per run of the staircase of k leaf children (one or two leaves: no
@@ -10980,7 +11364,7 @@ var htol = (function(exports) {
 	* view is invalid. Returns true if P changed (the filter has to run again).
 	*/
 	function keepTreeInView(ud) {
-		if (!ud.args.model.interaction.keepTreeInView || ud.args.projection.kind !== "disk") return false;
+		if (!ud.args.model.interaction.keepTreeInView || ud.args.projection.kind !== "disk" && ud.args.projection.kind !== "rectangle") return false;
 		if (!ud.isDraging && !ud.isWheeling) return false;
 		const root = ud.args.data;
 		if (!root || !root.cache) return false;
@@ -11685,6 +12069,7 @@ var htol = (function(exports) {
 					const p = this.viewPosition();
 					const g = this.view_.html.querySelector(".unitdisk-nav > svg > .unitDisc");
 					if (g) g.setAttribute("transform", p);
+					if (this.data && !this.isInitializing) this.update.transformation();
 				};
 				window.addEventListener("resize", this.onResize);
 				if (typeof ResizeObserver !== "undefined") {
@@ -17743,7 +18128,6 @@ var htol = (function(exports) {
 	var branch = (o = {}) => ({
 		layout: {
 			childOrder: o.childOrder || "balanced",
-			rootLinkLength: o.view === "rect" ? .1 : null,
 			rootWedge: {
 				orientation: 3 * π / 2,
 				angle: 1.8 * π / 2
@@ -17754,7 +18138,7 @@ var htol = (function(exports) {
 			max: 1e3
 		} } },
 		geometry: {
-			view: o.view === "rect" ? "halfplane" : "disk",
+			view: o.view === "rect" ? "rectangle" : "disk",
 			startView: o.clade && startViews[o.clade] || "overview",
 			layerOptions: {
 				"labels-force": { hoverPathLabels: true },
