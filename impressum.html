@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <title>Impressum · Hyperbolic Tree of Life</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="robots" content="noindex"/>
+        <link rel="icon"       href="img/avatar-light.png"/>
+        <link rel="stylesheet" href="hypertree-of-life-light.css" id="ldswitch">
+        <script src="hypertree-of-life.js"></script>
+        <style>
+            body { margin: 0; overflow: auto; }
+            main.htol-legal-page { max-width: 46em; margin: 0 auto; padding: 24px 20px 64px; font-family: Roboto, sans-serif; line-height: 1.55; }
+            main.htol-legal-page h1 { font-size: 1.6em; font-weight: 400; margin: .2em 0 .8em; }
+            main.htol-legal-page h2 { font-size: 1.15em; font-weight: 500; margin: 1.6em 0 .4em; }
+            main.htol-legal-page .back { font-size: .9em; }
+            main.htol-legal-page hr { margin: 2.5em 0; border: 0; border-top: 1px solid rgba(128,128,128,.35); }
+        </style>
+    </head>
+    <body>
+        <!--
+            Betreiber in Graz, Österreich:
+            Österreich: Offenlegung nach § 25 Mediengesetz (kleine Website: Name, Wohnort,
+            Gegenstand); bei einem wirtschaftlichen Angebot zusätzlich § 5 E-Commerce-Gesetz
+            (Anschrift, E-Mail). Deutschland: § 5 DDG bei geschäftsmäßigen Angeboten.
+        -->
+        <main class="htol-legal-page">
+            <p class="back"><a href="/">← Hyperbolic Tree of Life</a></p>
+
+            <h1>Impressum</h1>
+
+            <h2>Medieninhaber und Betreiber</h2>
+            <p>
+                Michael Glatzhofer<br/>
+                Graz, Österreich
+            </p>
+
+            <h2>Kontakt</h2>
+            <p>E-Mail: <span class="htol-mail" data-u="refohztalg.leahcim" data-d="moc.kooltuo"></span><noscript>michael.glatzhofer (at) outlook (dot) com</noscript></p>
+
+            <h2>Gegenstand der Website</h2>
+            <p>
+                Nichtkommerzielles Projekt: eine interaktive Darstellung des Stammbaums des Lebens
+                (Open Tree of Life) als hyperbolischer Baum, mit den Artikeln der Wikipedia zu den
+                Arten und Gruppen. Weiterentwicklung einer Masterarbeit; der Programmcode ist offen
+                (<a href="https://github.com/glouwa/hypertree-of-life">hypertree-of-life</a>,
+                <a href="https://github.com/glouwa/d3-hypertree">d3-hypertree</a>).
+            </p>
+
+            <h2>Daten und Inhalte</h2>
+            <p>
+                Der Baum beruht auf der Synthese des <a href="https://tree.opentreeoflife.org">Open Tree
+                of Life</a> und Daten aus <a href="https://www.wikidata.org">Wikidata</a>. Die Artikel im
+                Seitenbereich sind Seiten der <a href="https://www.wikipedia.org">Wikipedia</a>, mit deren
+                Lizenzhinweisen; für ihren Inhalt sind die jeweiligen Autorinnen und Autoren verantwortlich.
+            </p>
+
+            <h2>Haftung für Links</h2>
+            <p>
+                Die Website verlinkt auf und zeigt Seiten anderer Anbieter. Für deren Inhalte sind
+                ausschließlich die jeweiligen Anbieter verantwortlich; bei Bekanntwerden von
+                Rechtsverletzungen werden entsprechende Links entfernt.
+            </p>
+
+            <p><a href="datenschutz.html">Datenschutzerklärung</a></p>
+
+            <hr/>
+
+            <h1 lang="en">Legal notice</h1>
+            <div lang="en">
+                <h2>Owner and operator</h2>
+                <p>Michael Glatzhofer<br/>Graz, Austria</p>
+                <h2>Contact</h2>
+                <p>E-mail: <span class="htol-mail" data-u="refohztalg.leahcim" data-d="moc.kooltuo"></span><noscript>michael.glatzhofer (at) outlook (dot) com</noscript></p>
+                <h2>Purpose</h2>
+                <p>
+                    A non-commercial project: an interactive view of the tree of life (Open Tree of Life)
+                    as a hyperbolic tree, with the Wikipedia articles about the species and groups; the
+                    continuation of a master's thesis. The data come from the Open Tree of Life and
+                    Wikidata; the articles shown are Wikipedia pages under their own licenses.
+                </p>
+                <p><a href="datenschutz.html">Privacy policy</a></p>
+            </div>
+        </main>
+        <script>
+            // the e-mail address: only in the browser, from its reversed parts (not in the page's
+            // text, against address harvesters; without JavaScript the <noscript> form)
+            for (const s of document.querySelectorAll('.htol-mail')) {
+                const m = [s.dataset.u, s.dataset.d].map(p=> [...p].reverse().join('')).join('@')
+                const a = document.createElement('a')
+                a.href = 'mailto:' + m
+                a.textContent = m
+                s.replaceWith(a)
+            }
+            // the language and theme choices of the other pages (?lang, ?theme): the theme,
+            // and kept in the links back
+            htol.settings.applyTheme()
+            htol.settings.updateLinks()
+            // the corner links and the cookie card as on the other pages
+            htol.consent.init(htol.settings.language(htol.alllanguages))
+        </script>
+    </body>
+</html>

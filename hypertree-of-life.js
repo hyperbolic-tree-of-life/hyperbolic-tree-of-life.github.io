@@ -29861,11 +29861,14 @@ var htol = (function(exports) {
 			barNames: "Names",
 			barBuild: "Building",
 			consentTitle: "Cookies",
-			consentText: "We would like to use Google Analytics to see how the tree is used. It sets cookies and sends usage data to Google.",
+			consentText: "This site would like to show Wikipedia articles next to the tree (Wikipedia then receives your IP address) and use Google Analytics to see how the tree is used (cookies, usage data to Google).",
 			consentMore: "More",
 			consentDecline: "Decline",
 			consentAccept: "Accept",
-			consentLink: "Cookies"
+			consentLink: "Cookies",
+			consentWiki: "Only Wikipedia",
+			wikiBlocked: "The article is loaded from Wikipedia (Wikimedia Foundation, USA), which then receives your IP address.",
+			wikiShow: "Show Wikipedia articles"
 		},
 		de: {
 			loading: "Lade den Baum",
@@ -29879,11 +29882,14 @@ var htol = (function(exports) {
 			barNames: "Namen",
 			barBuild: "Aufbau",
 			consentTitle: "Cookies",
-			consentText: "Wir möchten Google Analytics verwenden, um zu sehen, wie der Baum genutzt wird. Dabei werden Cookies gesetzt und Nutzungsdaten an Google übertragen.",
+			consentText: "Diese Seite möchte neben dem Baum Wikipedia-Artikel anzeigen (dabei erhält Wikipedia Ihre IP-Adresse) und mit Google Analytics sehen, wie der Baum genutzt wird (Cookies, Nutzungsdaten an Google).",
 			consentMore: "Mehr",
 			consentDecline: "Ablehnen",
 			consentAccept: "Akzeptieren",
-			consentLink: "Cookies"
+			consentLink: "Cookies",
+			consentWiki: "Nur Wikipedia",
+			wikiBlocked: "Der Artikel wird von Wikipedia geladen (Wikimedia Foundation, USA); dabei erhält Wikipedia Ihre IP-Adresse.",
+			wikiShow: "Wikipedia-Artikel anzeigen"
 		},
 		es: {
 			loading: "Cargando el árbol",
@@ -29897,11 +29903,14 @@ var htol = (function(exports) {
 			barNames: "Nombres",
 			barBuild: "Construcción",
 			consentTitle: "Cookies",
-			consentText: "Nos gustaría usar Google Analytics para ver cómo se usa el árbol. Instala cookies y envía datos de uso a Google.",
+			consentText: "Este sitio quiere mostrar artículos de Wikipedia junto al árbol (Wikipedia recibe entonces su dirección IP) y usar Google Analytics para ver cómo se usa el árbol (cookies, datos de uso a Google).",
 			consentMore: "Más",
 			consentDecline: "Rechazar",
 			consentAccept: "Aceptar",
-			consentLink: "Cookies"
+			consentLink: "Cookies",
+			consentWiki: "Solo Wikipedia",
+			wikiBlocked: "El artículo se carga desde Wikipedia (Wikimedia Foundation, EE. UU.), que recibe así su dirección IP.",
+			wikiShow: "Mostrar artículos de Wikipedia"
 		},
 		nl: {
 			loading: "De boom wordt geladen",
@@ -29915,11 +29924,14 @@ var htol = (function(exports) {
 			barNames: "Namen",
 			barBuild: "Opbouw",
 			consentTitle: "Cookies",
-			consentText: "We willen Google Analytics gebruiken om te zien hoe de boom wordt gebruikt. Daarbij worden cookies geplaatst en gebruiksgegevens naar Google gestuurd.",
+			consentText: "Deze site wil naast de boom Wikipedia-artikelen tonen (Wikipedia ontvangt dan uw IP-adres) en met Google Analytics zien hoe de boom wordt gebruikt (cookies, gebruiksgegevens naar Google).",
 			consentMore: "Meer",
 			consentDecline: "Weigeren",
 			consentAccept: "Accepteren",
-			consentLink: "Cookies"
+			consentLink: "Cookies",
+			consentWiki: "Alleen Wikipedia",
+			wikiBlocked: "Het artikel wordt van Wikipedia geladen (Wikimedia Foundation, VS), die daarbij uw IP-adres ontvangt.",
+			wikiShow: "Wikipedia-artikelen tonen"
 		},
 		ro: {
 			loading: "Se încarcă arborele",
@@ -29933,11 +29945,14 @@ var htol = (function(exports) {
 			barNames: "Nume",
 			barBuild: "Construire",
 			consentTitle: "Cookie-uri",
-			consentText: "Am dori să folosim Google Analytics pentru a vedea cum este folosit arborele. Setează cookie-uri și trimite date de utilizare către Google.",
+			consentText: "Acest site ar dori să afișeze articole Wikipedia lângă arbore (Wikipedia primește atunci adresa dvs. IP) și să folosească Google Analytics pentru a vedea cum este folosit arborele (cookie-uri, date de utilizare către Google).",
 			consentMore: "Mai mult",
 			consentDecline: "Refuz",
 			consentAccept: "Accept",
-			consentLink: "Cookie-uri"
+			consentLink: "Cookie-uri",
+			consentWiki: "Doar Wikipedia",
+			wikiBlocked: "Articolul este încărcat de pe Wikipedia (Wikimedia Foundation, SUA), care primește astfel adresa dvs. IP.",
+			wikiShow: "Afișează articolele Wikipedia"
 		},
 		ru: {
 			loading: "Загрузка дерева",
@@ -29951,11 +29966,14 @@ var htol = (function(exports) {
 			barNames: "Названия",
 			barBuild: "Построение",
 			consentTitle: "Файлы cookie",
-			consentText: "Мы хотели бы использовать Google Analytics, чтобы видеть, как используется дерево. Он сохраняет файлы cookie и передаёт данные об использовании в Google.",
+			consentText: "Этот сайт хотел бы показывать статьи Википедии рядом с деревом (Википедия при этом получает ваш IP-адрес) и использовать Google Analytics, чтобы видеть, как используется дерево (файлы cookie, данные об использовании в Google).",
 			consentMore: "Подробнее",
 			consentDecline: "Отклонить",
 			consentAccept: "Принять",
-			consentLink: "Cookie"
+			consentLink: "Cookie",
+			consentWiki: "Только Википедия",
+			wikiBlocked: "Статья загружается с Википедии (Wikimedia Foundation, США), которая при этом получает ваш IP-адрес.",
+			wikiShow: "Показывать статьи Википедии"
 		},
 		zh: {
 			loading: "正在加载生命之树",
@@ -29969,11 +29987,14 @@ var htol = (function(exports) {
 			barNames: "名称",
 			barBuild: "构建",
 			consentTitle: "Cookie",
-			consentText: "我们希望使用 Google Analytics 了解这棵树的使用情况。它会设置 Cookie 并向 Google 发送使用数据。",
+			consentText: "本网站希望在树旁显示维基百科文章（维基百科会因此获得您的 IP 地址），并使用 Google Analytics 了解这棵树的使用情况（Cookie，向 Google 发送使用数据）。",
 			consentMore: "详情",
 			consentDecline: "拒绝",
 			consentAccept: "接受",
-			consentLink: "Cookie"
+			consentLink: "Cookie",
+			consentWiki: "仅维基百科",
+			wikiBlocked: "文章从维基百科（维基媒体基金会，美国）加载，维基百科会因此获得您的 IP 地址。",
+			wikiShow: "显示维基百科文章"
 		},
 		fa: {
 			loading: "در حال بارگذاری درخت",
@@ -29987,11 +30008,14 @@ var htol = (function(exports) {
 			barNames: "نام‌ها",
 			barBuild: "ساختن",
 			consentTitle: "کوکی‌ها",
-			consentText: "می‌خواهیم از Google Analytics استفاده کنیم تا ببینیم درخت چگونه استفاده می‌شود. این سرویس کوکی ذخیره می‌کند و داده‌های استفاده را به Google می‌فرستد.",
+			consentText: "این سایت می‌خواهد مقاله‌های ویکی‌پدیا را کنار درخت نشان دهد (ویکی‌پدیا در این صورت نشانی IP شما را دریافت می‌کند) و از Google Analytics استفاده کند تا ببیند درخت چگونه استفاده می‌شود (کوکی‌ها، ارسال داده‌های استفاده به Google).",
 			consentMore: "بیشتر",
 			consentDecline: "رد کردن",
 			consentAccept: "پذیرفتن",
-			consentLink: "کوکی‌ها"
+			consentLink: "کوکی‌ها",
+			consentWiki: "فقط ویکی‌پدیا",
+			wikiBlocked: "مقاله از ویکی‌پدیا (بنیاد ویکی‌مدیا، آمریکا) بارگذاری می‌شود که در این صورت نشانی IP شما را دریافت می‌کند.",
+			wikiShow: "نمایش مقاله‌های ویکی‌پدیا"
 		}
 	};
 	var strings = (lang) => texts[lang] || texts.en;
@@ -30654,32 +30678,250 @@ var htol = (function(exports) {
 		ui.right = ui.children[1];
 		return ui;
 	}
+	// src/components/consent/consent.ts
+	var consent_exports = /* @__PURE__ */ __exportAll$1({
+		GA_ID: () => GA_ID,
+		IMPRINT_PAGE: () => IMPRINT_PAGE,
+		PRIVACY_PAGE: () => PRIVACY_PAGE,
+		allowWiki: () => allowWiki,
+		init: () => init,
+		onWikiChange: () => onWikiChange,
+		placeCorner: () => placeCorner,
+		show: () => show,
+		wikiAllowed: () => wikiAllowed
+	});
+	/** The GA4 measurement id of the property (Google Analytics: Admin, Data streams). */
+	var GA_ID = "G-2FRY5QV8EZ";
+	var KEY = "htol-consent-2";
+	function stored() {
+		try {
+			const v = localStorage.getItem(KEY);
+			return v === "all" || v === "wiki" || v === "none" ? v : null;
+		} catch (e) {
+			return null;
+		}
+	}
+	function store(c) {
+		try {
+			localStorage.setItem(KEY, c);
+		} catch (e) {}
+	}
+	var local = () => /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname);
+	var id = "";
+	var lang = "en";
+	var loaded = false;
+	var card = null;
+	var link = null;
+	var corner = null;
+	var choice = null;
+	var wikiListeners = [];
+	var LEGAL = {
+		en: {
+			imprint: "Legal notice",
+			privacy: "Privacy"
+		},
+		de: {
+			imprint: "Impressum",
+			privacy: "Datenschutz"
+		}
+	};
+	var IMPRINT_PAGE = "impressum.html";
+	var PRIVACY_PAGE = "datenschutz.html";
+	/**
+	* The bottom right corner: the links to the legal notice and the privacy policy (always),
+	* and after a choice the cookie link (in the same row, the same style).
+	*/
+	function ensureCorner() {
+		if (corner) return corner;
+		const t = LEGAL[lang] || LEGAL.en;
+		corner = document.createElement("div");
+		corner.className = "htol-corner";
+		for (const [href, text] of [[IMPRINT_PAGE, t.imprint], [PRIVACY_PAGE, t.privacy]]) {
+			const a = document.createElement("a");
+			a.className = "htol-legal-link";
+			a.href = withChoices(href);
+			a.textContent = text;
+			corner.appendChild(a);
+		}
+		document.body.appendChild(corner);
+		return corner;
+	}
+	/**
+	* Puts the corner into a pane (its bottom right corner) instead of the window's: the
+	* branch pages put it into the tree's pane, where it was over the Wikipedia panel and
+	* hard to see. The pane must be positioned (relative or absolute).
+	*/
+	function placeCorner(pane) {
+		if (!pane) return;
+		const c = ensureCorner();
+		c.classList.add("htol-corner-pane");
+		pane.appendChild(c);
+	}
+	/** Whether the Wikipedia articles may be loaded (no measurement id: always, development and tests). */
+	function wikiAllowed() {
+		return !id || choice === "all" || choice === "wiki";
+	}
+	/** Calls f(allowed) whenever the Wikipedia consent changes. */
+	function onWikiChange(f) {
+		wikiListeners.push(f);
+	}
+	/** Shows the legal links; the card (no choice yet) or the cookie link (a choice); loads the tag if granted. */
+	function init(language, measurementId = "HTOL_GA_ID" in window ? window.HTOL_GA_ID : GA_ID) {
+		id = measurementId;
+		lang = language;
+		if (document.body) ensureCorner();
+		else document.addEventListener("DOMContentLoaded", () => ensureCorner());
+		if (!id) return;
+		choice = stored();
+		if (choice === "all") load();
+		if (choice) showLink();
+		else show();
+	}
+	/** The card again (the corner link). */
+	function show() {
+		if (!id) return;
+		if (link) link.style.display = "none";
+		if (card) {
+			card.style.display = "";
+			return;
+		}
+		const s = strings(lang);
+		card = document.createElement("div");
+		card.className = "htol-consent";
+		card.setAttribute("role", "dialog");
+		card.setAttribute("aria-label", s.consentTitle);
+		card.innerHTML = `
+        <div class="htol-consent-text"></div>
+        <div class="htol-consent-buttons">
+            <button type="button" data-choice="none"></button>
+            <button type="button" data-choice="wiki"></button>
+            <button type="button" data-choice="all"></button>
+        </div>`;
+		const text = card.querySelector(".htol-consent-text");
+		text.textContent = s.consentText + " ";
+		const more = document.createElement("a");
+		more.href = withChoices(PRIVACY_PAGE);
+		more.textContent = s.consentMore;
+		text.appendChild(more);
+		const [no, wiki, yes] = [...card.querySelectorAll("button")];
+		no.textContent = s.consentDecline;
+		wiki.textContent = s.consentWiki;
+		yes.textContent = s.consentAccept;
+		no.onclick = () => choose("none");
+		wiki.onclick = () => choose("wiki");
+		yes.onclick = () => choose("all");
+		document.body.appendChild(card);
+	}
+	/** The Wikipedia articles allowed from the panel's button (Analytics as chosen before, else not). */
+	function allowWiki() {
+		if (wikiAllowed()) return;
+		choose(choice === "all" ? "all" : "wiki");
+	}
+	function choose(c) {
+		const wikiBefore = wikiAllowed(), analyticsBefore = choice === "all" || loaded;
+		choice = c;
+		store(c);
+		if (card) card.style.display = "none";
+		if (c === "all") load();
+		else if (analyticsBefore) revoke();
+		if (wikiAllowed() !== wikiBefore) for (const f of wikiListeners) f(wikiAllowed());
+		showLink();
+	}
+	function showLink() {
+		if (!link) {
+			link = document.createElement("button");
+			link.type = "button";
+			link.className = "htol-consent-link";
+			link.textContent = strings(lang).consentLink;
+			link.onclick = () => show();
+			ensureCorner().appendChild(link);
+		}
+		link.style.display = "";
+	}
+	function gtag(...a) {
+		const w = window;
+		(w.dataLayer = w.dataLayer || []).push(arguments);
+	}
+	function load() {
+		if (loaded) {
+			gtag("consent", "update", { analytics_storage: "granted" });
+			return;
+		}
+		loaded = true;
+		if (local()) {
+			console.log("analytics: consent granted, tag not loaded on localhost");
+			return;
+		}
+		gtag("consent", "default", {
+			analytics_storage: "granted",
+			ad_storage: "denied",
+			ad_user_data: "denied",
+			ad_personalization: "denied"
+		});
+		gtag("js", /* @__PURE__ */ new Date());
+		gtag("config", id, {
+			allow_google_signals: false,
+			allow_ad_personalization_signals: false
+		});
+		const script = document.createElement("script");
+		script.async = true;
+		script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(id)}`;
+		document.head.appendChild(script);
+	}
+	function revoke() {
+		if (loaded && !local()) gtag("consent", "update", { analytics_storage: "denied" });
+		const parts = location.hostname.split(".");
+		const domains = parts.map((_, i) => parts.slice(i).join(".")).filter((d) => d.includes("."));
+		for (const c of document.cookie.split(";").map((c) => c.split("=")[0].trim()).filter((n) => /^_ga/.test(n))) for (const d of ["", ...domains.map((d) => `; domain=.${d}`)]) document.cookie = `${c}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/${d}`;
+	}
 	// src/components/primitive/index.ts
 	var _StringUi;
 	var WikiUi = class {
 		constructor(args) {
+			this.loadedUrl = "";
 			this.ui = document.createElement("iframe");
 			this.ui.id = "wiki";
 			this.ui.className = "wiki loading";
 			this.ui.addEventListener("load", () => {
 				if (this.ui.getAttribute("src")) this.ui.classList.remove("loading");
 			});
+			const s = strings(args.lang || "en");
+			this.notice = document.createElement("div");
+			this.notice.className = "htol-wiki-notice";
+			this.notice.style.display = "none";
+			const p = document.createElement("p");
+			p.textContent = s.wikiBlocked;
+			const button = document.createElement("button");
+			button.type = "button";
+			button.textContent = s.wikiShow;
+			button.onclick = () => allowWiki();
+			this.notice.append(p, button);
+			onWikiChange((allowed) => this.apply(allowed));
 			if (args.src) this.show(args.src);
 			args.parent.appendChild(this.ui);
+			args.parent.appendChild(this.notice);
 		}
-		/** The page shown (data-src; the src attribute keeps the first page). */
+		/** The page wanted (data-src; the src attribute keeps the first page loaded). */
 		get url() {
 			return this.ui.dataset.src || "";
 		}
 		/**
-		* Shows a page. The first one by src; every further one replaces the iframe's
-		* current page (location.replace): a src change adds an entry to the browser
-		* history for every article, so the back button stepped through the articles
-		* instead of leaving the page. The page shown is in data-src.
+		* Shows a page (when Wikipedia is allowed; else the notice, and the page waits). The
+		* first one by src; every further one replaces the iframe's current page
+		* (location.replace): a src change adds an entry to the browser history for every
+		* article, so the back button stepped through the articles instead of leaving the
+		* page. The page wanted is in data-src.
 		*/
 		show(url) {
-			if (url === this.url) return;
 			this.ui.dataset.src = url;
+			this.apply(wikiAllowed());
+		}
+		apply(allowed) {
+			this.notice.style.display = allowed ? "none" : "";
+			this.ui.style.display = allowed ? "" : "none";
+			const url = allowed ? this.url : this.loadedUrl ? "about:blank" : "";
+			if (!url || url === this.loadedUrl) return;
+			this.loadedUrl = allowed ? url : "";
 			const w = this.ui.contentWindow;
 			if (!this.ui.getAttribute("src") || !w) {
 				this.ui.src = url;
@@ -31183,133 +31425,6 @@ var htol = (function(exports) {
 	var fetchJson = (url) => (ok) => {
 		Promise.resolve(url).then(fetchJsonOnce).then(ok);
 	};
-	// src/components/consent/consent.ts
-	var consent_exports = /* @__PURE__ */ __exportAll$1({
-		GA_ID: () => GA_ID,
-		init: () => init,
-		show: () => show
-	});
-	/** The GA4 measurement id of the property (Google Analytics: Admin, Data streams). */
-	var GA_ID = "G-2FRY5QV8EZ";
-	var KEY = "htol-consent";
-	function stored() {
-		try {
-			const v = localStorage.getItem(KEY);
-			return v === "granted" || v === "denied" ? v : null;
-		} catch (e) {
-			return null;
-		}
-	}
-	function store(c) {
-		try {
-			localStorage.setItem(KEY, c);
-		} catch (e) {}
-	}
-	var local = () => /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname);
-	var id = "";
-	var lang = "en";
-	var loaded = false;
-	var card = null;
-	var link = null;
-	/** Shows the card (no choice yet) or the corner link (a choice), loads the tag if granted. */
-	function init(language, measurementId = "HTOL_GA_ID" in window ? window.HTOL_GA_ID : GA_ID) {
-		id = measurementId;
-		lang = language;
-		if (!id) return;
-		const c = stored();
-		if (c === "granted") load();
-		if (c) showLink();
-		else show();
-	}
-	/** The card again (the corner link). */
-	function show() {
-		if (!id) return;
-		if (link) link.style.display = "none";
-		if (card) {
-			card.style.display = "";
-			return;
-		}
-		const s = strings(lang);
-		card = document.createElement("div");
-		card.className = "htol-consent";
-		card.setAttribute("role", "dialog");
-		card.setAttribute("aria-label", s.consentTitle);
-		card.innerHTML = `
-        <div class="htol-consent-text"></div>
-        <div class="htol-consent-buttons">
-            <button type="button" data-choice="denied"></button>
-            <button type="button" data-choice="granted"></button>
-        </div>`;
-		const text = card.querySelector(".htol-consent-text");
-		text.textContent = s.consentText + " ";
-		const more = document.createElement("a");
-		more.href = "https://policies.google.com/technologies/partner-sites";
-		more.target = "_blank";
-		more.rel = "noopener";
-		more.textContent = s.consentMore;
-		text.appendChild(more);
-		const [no, yes] = [...card.querySelectorAll("button")];
-		no.textContent = s.consentDecline;
-		yes.textContent = s.consentAccept;
-		no.onclick = () => choose("denied");
-		yes.onclick = () => choose("granted");
-		document.body.appendChild(card);
-	}
-	function choose(c) {
-		const before = stored();
-		store(c);
-		card.style.display = "none";
-		if (c === "granted") load();
-		else if (before === "granted" || loaded) revoke();
-		showLink();
-	}
-	function showLink() {
-		if (!link) {
-			link = document.createElement("button");
-			link.type = "button";
-			link.className = "htol-consent-link";
-			link.textContent = strings(lang).consentLink;
-			link.onclick = () => show();
-			document.body.appendChild(link);
-		}
-		link.style.display = "";
-	}
-	function gtag(...a) {
-		const w = window;
-		(w.dataLayer = w.dataLayer || []).push(arguments);
-	}
-	function load() {
-		if (loaded) {
-			gtag("consent", "update", { analytics_storage: "granted" });
-			return;
-		}
-		loaded = true;
-		if (local()) {
-			console.log("analytics: consent granted, tag not loaded on localhost");
-			return;
-		}
-		gtag("consent", "default", {
-			analytics_storage: "granted",
-			ad_storage: "denied",
-			ad_user_data: "denied",
-			ad_personalization: "denied"
-		});
-		gtag("js", /* @__PURE__ */ new Date());
-		gtag("config", id, {
-			allow_google_signals: false,
-			allow_ad_personalization_signals: false
-		});
-		const script = document.createElement("script");
-		script.async = true;
-		script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(id)}`;
-		document.head.appendChild(script);
-	}
-	function revoke() {
-		if (loaded && !local()) gtag("consent", "update", { analytics_storage: "denied" });
-		const parts = location.hostname.split(".");
-		const domains = parts.map((_, i) => parts.slice(i).join(".")).filter((d) => d.includes("."));
-		for (const c of document.cookie.split(";").map((c) => c.split("=")[0].trim()).filter((n) => /^_ga/.test(n))) for (const d of ["", ...domains.map((d) => `; domain=.${d}`)]) document.cookie = `${c}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/${d}`;
-	}
 	// src/index.ts
 	var layouts = {
 		layoutBergé,

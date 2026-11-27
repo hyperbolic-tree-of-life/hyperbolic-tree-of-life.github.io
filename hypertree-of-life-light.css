@@ -39,21 +39,72 @@
   cursor: pointer;
 }
 
-.htol-consent-link {
+.htol-wiki-notice {
+  box-sizing: border-box;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 24px;
+  text-align: center;
+  font-family: Roboto, sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.htol-wiki-notice p {
+  max-width: 26em;
+  margin: 0;
+}
+
+.htol-wiki-notice button {
+  padding: 6px 14px;
+  border: 1px solid;
+  border-radius: 6px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.htol-corner {
   position: fixed;
   z-index: 1100;
   right: 6px;
   bottom: 4px;
+  display: flex;
+  gap: 2px;
+  align-items: baseline;
+}
+
+.htol-corner.htol-corner-pane {
+  position: absolute;
+  z-index: 1100;
+}
+
+.splitter:not(.vertical) > .left > .htol-corner.htol-corner-pane {
+  right: calc(1em - 74px);
+}
+
+.htol-consent-link,
+.htol-legal-link {
   padding: 2px 4px;
   border: 0;
   background: transparent;
   font-family: Roboto, sans-serif;
   font-size: 11px;
+  line-height: normal;
+  text-decoration: none;
   opacity: 0.45;
   cursor: pointer;
 }
 
-.htol-consent-link:hover {
+.htol-consent-link:hover,
+.htol-legal-link:hover {
   opacity: 0.9;
   text-decoration: underline;
 }
@@ -78,7 +129,15 @@
   background: rgba(76, 175, 80, 0.12);
 }
 
-.htol-consent-link {
+.htol-consent-buttons button[data-choice=all] {
+  background: rgba(76, 175, 80, 0.12);
+}
+
+.htol-consent-buttons button[data-choice=all]:hover {
+  background: rgba(76, 175, 80, 0.22);
+}
+
+.htol-consent-link, .htol-legal-link {
   color: #333;
 }
 /* components/navigation/navigation-light.scss */

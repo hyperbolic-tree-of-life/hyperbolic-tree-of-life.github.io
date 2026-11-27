@@ -211,8 +211,12 @@
                             direction: phone ? 'vertical' : 'horizontal'
                         })
                         app.hypertree = createHypertree(app.splitter.ui.left)
+                        // the legal and cookie links in the tree's bottom right corner (over
+                        // the Wikipedia panel they were hard to see)
+                        htol.consent.placeCorner(app.splitter.ui.left)
                         app.focusview = new htol.WikiUi({
                             parent: app.splitter.ui.right,
+                            lang:   l,
                             visible: false
                         })
                         // light/dark switched (by the user or the system): the article
