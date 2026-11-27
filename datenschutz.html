@@ -9,7 +9,8 @@
         <link rel="stylesheet" href="hypertree-of-life-light.css" id="ldswitch">
         <script src="hypertree-of-life.js"></script>
         <style>
-            body { margin: 0; overflow: auto; }
+            /* the app's body: overflow hidden, touch-action none (for the tree): here the page scrolls, also by touch */
+            body { margin: 0; overflow: auto; touch-action: auto; }
             main.htol-legal-page { max-width: 46em; margin: 0 auto; padding: 24px 20px 64px; font-family: Roboto, sans-serif; line-height: 1.55; }
             main.htol-legal-page h1 { font-size: 1.6em; font-weight: 400; margin: .2em 0 .8em; }
             main.htol-legal-page h2 { font-size: 1.15em; font-weight: 500; margin: 1.6em 0 .4em; }

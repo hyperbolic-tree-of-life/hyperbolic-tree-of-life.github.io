@@ -44,7 +44,8 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: safe center;
+  overflow-y: auto;
   align-items: center;
   gap: 12px;
   padding: 24px;
@@ -528,6 +529,17 @@ html.phone .slides-header > .content .patron {
 }
 .splitter.vertical > .gutter {
   cursor: n-resize;
+  position: relative;
+  z-index: 1000;
+  touch-action: none;
+}
+.splitter.vertical > .gutter::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -34px;
+  bottom: -34px;
 }
 .splitter.vertical > .left {
   width: 100%;
@@ -538,6 +550,7 @@ html.phone .slides-header > .content .patron {
 }
 .splitter.vertical > .right {
   width: 100%;
+  overflow: hidden;
 }
 
 .splitter > .gutter {
@@ -597,80 +610,6 @@ html.phone .slides-header > .content .patron {
   position: absolute;
 }
 
-.unitdisk-nav > .preloader {
-  pointer-events: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
-.unitdisk-nav > .preloader > .preloader-wrapper {
-  position: absolute;
-  /*left: calc(50% - 1.5em);
-  top: calc(50% - 1.5em);*/
-  left: 45%;
-  top: 45%;
-  width: 10%;
-  height: 10%;
-}
-
-.unitdisk-nav {
-  /*
-      unitdisk-nav .spinner {
-      width: 10%;
-      height: 10%;
-      margin: 46% 45%;
-      position: relative;
-  }
-      */
-}
-
-.unitdisk-nav .spinner {
-  width: 7%;
-  height: 7%;
-  position: relative;
-  top: 50%;
-  margin: 0 50%;
-}
-
-.unitdisk-nav .double-bounce1, .unitdisk-nav .double-bounce2 {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background-color: #333;
-  opacity: 0.6;
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  -webkit-animation: sk-bounce 1s infinite ease-in-out;
-  animation: sk-bounce 1s infinite ease-in-out;
-}
-
-.unitdisk-nav .double-bounce2 {
-  -webkit-animation-delay: -0.5s;
-  animation-delay: -0.5s;
-}
-
-@-webkit-keyframes sk-bounce {
-  0%, 100% {
-    -webkit-transform: scale(0);
-  }
-  50% {
-    -webkit-transform: scale(1);
-  }
-}
-@keyframes sk-bounce {
-  0%, 100% {
-    transform: scale(0);
-    -webkit-transform: scale(0);
-  }
-  50% {
-    transform: scale(1);
-    -webkit-transform: scale(1);
-  }
-}
 .absolute-center {
   margin: auto;
   position: absolute;
@@ -679,10 +618,6 @@ html.phone .slides-header > .content .patron {
   bottom: 0.2em;
   right: 0;
   text-align: center;
-}
-
-.unitdisk-nav .double-bounce1, .unitdisk-nav .double-bounce2 {
-  background-color: #bbb;
 }
 
 /* styles/unitdisk-light.scss */

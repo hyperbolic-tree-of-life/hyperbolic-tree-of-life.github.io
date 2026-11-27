@@ -8926,11 +8926,11 @@ var htol = (function(exports) {
 			this.toDisk = (p) => this.view.projection.toDisk(p);
 			this.toViewPos = (z) => this.view.projection.toView(z);
 			this.mousePosAsC = (e) => ArrtoC(pointer(e, this.view.parent.node()));
-			this.nodeAt = (v, cellToo = true) => {
+			this.nodeAt = (v, cellToo = true, labelsToo = true) => {
 				const q = this.view.cache.voronoiDiagram && this.view.cache.voronoiDiagram.find(v.re, v.im);
 				const cell = q ? q.data : void 0;
 				if (cell && cell.cache && this.screenDistance(v, cell.cache) <= NODE_HIT_PX) return cell;
-				return this.labelNodeAt(v) || (cellToo ? cell : void 0);
+				return labelsToo && this.labelNodeAt(v) || (cellToo ? cell : void 0);
 			};
 			this.findUnculledNodeByCell = (m) => {
 				let best = void 0, bestD = Infinity;
@@ -8970,6 +8970,7 @@ var htol = (function(exports) {
 			this.view.parent.append("circle").attr("class", "mouse-circle-cursor").attr("r", this.args.mouseRadius).call(mousehandlers);
 		}
 		fireMouseDown(e) {
+			if (InteractionLayer2.browserButton(e)) return;
 			this.mousedown = true;
 			this.fireMouseEvent(e, "onPointerStart");
 		}
@@ -8977,7 +8978,7 @@ var htol = (function(exports) {
 			if (this.mousedown) this.fireMouseEvent(e, "onPointerMove");
 			else if (this.mousehover && !this.view.hypertree.isInitializing && !this.view.hypertree.isAnimationRunning()) {
 				const p = this.mousePosAsC(e), m = this.toDisk(p);
-				this.view.hypertree.highlighting.offer(this.nodeAt(p, m.re * m.re + m.im * m.im <= 1));
+				this.view.hypertree.highlighting.offer(this.nodeAt(p, m.re * m.re + m.im * m.im <= 1, false));
 			}
 		}
 		get mousehover() {
@@ -9001,6 +9002,7 @@ var htol = (function(exports) {
 			this.holdTimer = null;
 		}
 		fireMouseUp(e) {
+			if (InteractionLayer2.browserButton(e)) return;
 			this.mousedown = false;
 			this.fireMouseEvent(e, "onPointerEnd");
 		}
@@ -9211,6 +9213,7 @@ var htol = (function(exports) {
 		create: (ctx, name, args) => new _InteractionLayer(ctx, name, args)
 	};
 	_InteractionLayer.wheelSettle = 150;
+	_InteractionLayer.browserButton = (e) => e.button === 3 || e.button === 4;
 	var _TraceLayer;
 	var TraceLayer = class {
 		constructor(view, name, args) {
@@ -9248,37 +9251,37 @@ var htol = (function(exports) {
 		}),
 		create: (ctx, name, args) => new _TraceLayer(ctx, name, args)
 	};
-	function _typeof(o) {
+	function _typeof$1(o) {
 		"@babel/helpers - typeof";
-		return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o) {
+		return _typeof$1 = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o) {
 			return typeof o;
 		} : function(o) {
 			return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
-		}, _typeof(o);
+		}, _typeof$1(o);
 	}
-	function toPrimitive(t, r) {
-		if ("object" != _typeof(t) || !t) return t;
+	function toPrimitive$1(t, r) {
+		if ("object" != _typeof$1(t) || !t) return t;
 		var e = t[Symbol.toPrimitive];
 		if (void 0 !== e) {
 			var i = e.call(t, r || "default");
-			if ("object" != _typeof(i)) return i;
+			if ("object" != _typeof$1(i)) return i;
 			throw new TypeError("@@toPrimitive must return a primitive value.");
 		}
 		return ("string" === r ? String : Number)(t);
 	}
-	function toPropertyKey(t) {
-		var i = toPrimitive(t, "string");
-		return "symbol" == _typeof(i) ? i : i + "";
+	function toPropertyKey$1(t) {
+		var i = toPrimitive$1(t, "string");
+		return "symbol" == _typeof$1(i) ? i : i + "";
 	}
-	function _defineProperty(e, r, t) {
-		return (r = toPropertyKey(r)) in e ? Object.defineProperty(e, r, {
+	function _defineProperty$1(e, r, t) {
+		return (r = toPropertyKey$1(r)) in e ? Object.defineProperty(e, r, {
 			value: t,
 			enumerable: !0,
 			configurable: !0,
 			writable: !0
 		}) : e[r] = t, e;
 	}
-	function ownKeys(e, r) {
+	function ownKeys$1(e, r) {
 		var t = Object.keys(e);
 		if (Object.getOwnPropertySymbols) {
 			var o = Object.getOwnPropertySymbols(e);
@@ -9288,12 +9291,12 @@ var htol = (function(exports) {
 		}
 		return t;
 	}
-	function _objectSpread2(e) {
+	function _objectSpread2$1(e) {
 		for (var r = 1; r < arguments.length; r++) {
 			var t = null != arguments[r] ? arguments[r] : {};
-			r % 2 ? ownKeys(Object(t), !0).forEach(function(r) {
-				_defineProperty(e, r, t[r]);
-			}) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function(r) {
+			r % 2 ? ownKeys$1(Object(t), !0).forEach(function(r) {
+				_defineProperty$1(e, r, t[r]);
+			}) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys$1(Object(t)).forEach(function(r) {
 				Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r));
 			});
 		}
@@ -9379,7 +9382,7 @@ var htol = (function(exports) {
 			for (const n of this.way) {
 				const p = pos(n);
 				if (!p) return null;
-				pts.push(_objectSpread2({ at: {
+				pts.push(_objectSpread2$1({ at: {
 					a: n,
 					b: n,
 					f: 0
@@ -10036,12 +10039,12 @@ var htol = (function(exports) {
 			"stroke-width": h === 0 ? .004 : h % 1 ? .0015 : .0025,
 			"class": "halfplane-grid"
 		});
-		for (let x = -20; x <= X; x++) if (Math.abs(x) > 1) add("text", _objectSpread2(_objectSpread2({
+		for (let x = -20; x <= X; x++) if (Math.abs(x) > 1) add("text", _objectSpread2$1(_objectSpread2$1({
 			x: x + .01,
 			y: -.965,
 			fill: ink
 		}, font), {}, { "class": "halfplane-grid-label" }), num(x));
-		for (let h = 2; h <= 3; h++) add("text", _objectSpread2(_objectSpread2({
+		for (let h = 2; h <= 3; h++) add("text", _objectSpread2$1(_objectSpread2$1({
 			x: .01,
 			y: top + h - .01,
 			fill: ink
@@ -10075,7 +10078,7 @@ var htol = (function(exports) {
 				fill: ink,
 				"class": "halfplane-grid-point"
 			});
-			add("text", _objectSpread2(_objectSpread2({
+			add("text", _objectSpread2$1(_objectSpread2$1({
 				x: x + .012,
 				y: top + h + (h === 0 ? .035 : -.012),
 				fill: ink
@@ -10407,7 +10410,7 @@ var htol = (function(exports) {
 			if (curvature === "0" || curvature === "l") return `M ${a.re} ${a.im} L ${b.re} ${b.im}`;
 			const mid = this.toView(this.arcMiddle(this.diskOf(a), this.diskOf(b)));
 			let cx = 2 * mid.re - (a.re + b.re) / 2, cy = 2 * mid.im - (a.im + b.im) / 2;
-			if (curvature === "-") {
+			if (curvature === "+") {
 				cx = a.re + b.re - cx;
 				cy = a.im + b.im - cy;
 			}
@@ -10574,7 +10577,7 @@ var htol = (function(exports) {
 			if (curvature === "0" || curvature === "l") return `M ${a.re} ${a.im} L ${b.re} ${b.im}`;
 			const mid = this.toView(this.arcMiddle(this.diskOf(a), this.diskOf(b)));
 			let cx = 2 * mid.re - (a.re + b.re) / 2, cy = 2 * mid.im - (a.im + b.im) / 2;
-			if (curvature === "-") {
+			if (curvature === "+") {
 				cx = a.re + b.re - cx;
 				cy = a.im + b.im - cy;
 			}
@@ -10745,7 +10748,7 @@ var htol = (function(exports) {
 			if (curvature === "0" || curvature === "l") return `M ${a.re} ${a.im} L ${b.re} ${b.im}`;
 			const mid = this.toView(this.arcMiddle(this.diskOf(a), this.diskOf(b)));
 			let cx = 2 * mid.re - (a.re + b.re) / 2, cy = 2 * mid.im - (a.im + b.im) / 2;
-			if (curvature === "-") {
+			if (curvature === "+") {
 				cx = a.re + b.re - cx;
 				cy = a.im + b.im - cy;
 			}
@@ -10952,7 +10955,7 @@ var htol = (function(exports) {
 			if (curvature === "0" || curvature === "l") return `M ${a.re} ${a.im} L ${b.re} ${b.im}`;
 			const mid = this.toView(this.arcMiddle(this.diskOf(a), this.diskOf(b)));
 			let cx = 2 * mid.re - (a.re + b.re) / 2, cy = 2 * mid.im - (a.im + b.im) / 2;
-			if (curvature === "-") {
+			if (curvature === "+") {
 				cx = a.re + b.re - cx;
 				cy = a.im + b.im - cy;
 			}
@@ -11098,7 +11101,7 @@ var htol = (function(exports) {
 			if (curvature === "0" || curvature === "l") return `M ${a.re} ${a.im} L ${b.re} ${b.im}`;
 			const mid = this.map(this.arcMiddle(this.diskOf(a), this.diskOf(b)));
 			let cx = 2 * mid.re - (a.re + b.re) / 2, cy = 2 * mid.im - (a.im + b.im) / 2;
-			if (curvature === "-") {
+			if (curvature === "+") {
 				cx = a.re + b.re - cx;
 				cy = a.im + b.im - cy;
 			}
@@ -12847,11 +12850,6 @@ var htol = (function(exports) {
 		}
 	};
 	var globelhtid = 0;
-	var htmlpreloader = `
-    <div class="spinner">
-        <div class="double-bounce1"></div>
-        <div class="double-bounce2"></div>
-    </div>`;
 	var grad = [
 		255,
 		96,
@@ -12870,7 +12868,6 @@ var htol = (function(exports) {
         <svg width="100%" height="100%" preserveAspectRatio="xMidYMid meet" viewBox="-0 0 1000 1000">
             ${bubbleSvgDef}
         </svg>
-        <div class="preloader"></div>
     </div>`;
 	var effectOrder = [
 		"data",
@@ -13143,7 +13140,6 @@ var htol = (function(exports) {
 			});
 		}
 		resetData() {
-			this.view_.html.querySelector(".preloader").innerHTML = htmlpreloader;
 			this.unitdisk.args.data = void 0;
 			this.data = void 0;
 			this.langMap = void 0;
@@ -13213,7 +13209,6 @@ var htol = (function(exports) {
 				this.args.geometry.transformation.state.λ = .001;
 			}
 			this.data.each((n) => n.layoutReference = clone$1(n.layout));
-			this.view_.html.querySelector(".preloader").innerHTML = "";
 		}
 		updateLang_(dl = 0) {
 			const t0 = performance.now();
@@ -18840,6 +18835,7 @@ var htol = (function(exports) {
 		highlightUpdate: () => highlightUpdate,
 		labelPx: () => labelPx,
 		language: () => language,
+		onLanguageChange: () => onLanguageChange,
 		onThemeChange: () => onThemeChange,
 		phone: () => phone$1,
 		theme: () => theme,
@@ -18916,8 +18912,15 @@ var htol = (function(exports) {
 	}
 	/** The user switched the language: keep it in the URL and the links. */
 	function chooseLanguage(l) {
+		const changed = chosen.lang !== l;
 		chosen.lang = l;
 		keepInUrl();
+		if (changed) for (const f of languageListeners) f(l);
+	}
+	var languageListeners = [];
+	/** Calls f with the new language whenever the user switches it. */
+	function onLanguageChange(f) {
+		languageListeners.push(f);
 	}
 	/** An internal link with the user's choices (?lang, ?theme, ?view); other links unchanged. */
 	function withChoices(href) {
@@ -18985,6 +18988,62 @@ var htol = (function(exports) {
 		if (m.addEventListener) m.addEventListener("change", follow);
 	}
 	applyTheme();
+	// \0@oxc-project+runtime@0.156.0/helpers/esm/typeof.js
+	function _typeof(o) {
+		"@babel/helpers - typeof";
+		return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o) {
+			return typeof o;
+		} : function(o) {
+			return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
+		}, _typeof(o);
+	}
+	// \0@oxc-project+runtime@0.156.0/helpers/esm/toPrimitive.js
+	function toPrimitive(t, r) {
+		if ("object" != _typeof(t) || !t) return t;
+		var e = t[Symbol.toPrimitive];
+		if (void 0 !== e) {
+			var i = e.call(t, r || "default");
+			if ("object" != _typeof(i)) return i;
+			throw new TypeError("@@toPrimitive must return a primitive value.");
+		}
+		return ("string" === r ? String : Number)(t);
+	}
+	// \0@oxc-project+runtime@0.156.0/helpers/esm/toPropertyKey.js
+	function toPropertyKey(t) {
+		var i = toPrimitive(t, "string");
+		return "symbol" == _typeof(i) ? i : i + "";
+	}
+	// \0@oxc-project+runtime@0.156.0/helpers/esm/defineProperty.js
+	function _defineProperty(e, r, t) {
+		return (r = toPropertyKey(r)) in e ? Object.defineProperty(e, r, {
+			value: t,
+			enumerable: !0,
+			configurable: !0,
+			writable: !0
+		}) : e[r] = t, e;
+	}
+	// \0@oxc-project+runtime@0.156.0/helpers/esm/objectSpread2.js
+	function ownKeys(e, r) {
+		var t = Object.keys(e);
+		if (Object.getOwnPropertySymbols) {
+			var o = Object.getOwnPropertySymbols(e);
+			r && (o = o.filter(function(r) {
+				return Object.getOwnPropertyDescriptor(e, r).enumerable;
+			})), t.push.apply(t, o);
+		}
+		return t;
+	}
+	function _objectSpread2(e) {
+		for (var r = 1; r < arguments.length; r++) {
+			var t = null != arguments[r] ? arguments[r] : {};
+			r % 2 ? ownKeys(Object(t), !0).forEach(function(r) {
+				_defineProperty(e, r, t[r]);
+			}) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function(r) {
+				Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r));
+			});
+		}
+		return e;
+	}
 	// src/presets.ts
 	var π = Math.PI;
 	var isLeaf = (n) => !n.children || !n.children.length;
@@ -19176,7 +19235,8 @@ var htol = (function(exports) {
 					invisible: false,
 					padding: 1.4,
 					stroke: () => "none"
-				}
+				},
+				"symbols": { invisible: true }
 			}
 		},
 		interaction: {
@@ -19202,18 +19262,15 @@ var htol = (function(exports) {
 		geometry: {
 			projection: o.view === "rect" ? "schwarz-christoffel" : o.view === "glatzhofer" ? "glatzhofer" : o.view === "band" ? "band" : o.view === "half-band" ? "half-band" : "poincare",
 			startView: o.clade && startViews[o.clade] || "overview",
-			layerOptions: {
-				"labels-force": { hoverPathLabels: true },
-				"cells": {
-					strokeWidth: (n) => void 0,
-					fill: cellFill("branch")
-				}
-			}
+			layerOptions: _objectSpread2(_objectSpread2(_objectSpread2({ "labels-force": _objectSpread2({ hoverPathLabels: true }, o.view === "rect" ? { scale: 1.15 } : {}) }, o.view === "rect" ? { "λ": { invisible: true } } : {}), o.view === "rect" && !o.phone ? { "emojis": { scale: .69 * 1.3 } } : {}), {}, { "cells": {
+				strokeWidth: (n) => void 0,
+				fill: cellFill("branch")
+			} })
 		},
 		interaction: {
 			clickAction: "goto",
 			λbounds: [1 / 40, .55],
-			maxLinkLength: .25
+			maxLinkLength: o.view === "rect" ? .4375 : .25
 		}
 	});
 	/**
@@ -30687,6 +30744,7 @@ var htol = (function(exports) {
 		init: () => init,
 		onWikiChange: () => onWikiChange,
 		placeCorner: () => placeCorner,
+		setLanguage: () => setLanguage,
 		show: () => show,
 		wikiAllowed: () => wikiAllowed
 	});
@@ -30723,6 +30781,30 @@ var htol = (function(exports) {
 		de: {
 			imprint: "Impressum",
 			privacy: "Datenschutz"
+		},
+		es: {
+			imprint: "Aviso legal",
+			privacy: "Privacidad"
+		},
+		nl: {
+			imprint: "Colofon",
+			privacy: "Privacy"
+		},
+		ro: {
+			imprint: "Informații legale",
+			privacy: "Confidențialitate"
+		},
+		ru: {
+			imprint: "Правовая информация",
+			privacy: "Конфиденциальность"
+		},
+		zh: {
+			imprint: "法律声明",
+			privacy: "隐私"
+		},
+		fa: {
+			imprint: "اطلاعات حقوقی",
+			privacy: "حریم خصوصی"
 		}
 	};
 	var IMPRINT_PAGE = "impressum.html";
@@ -30765,10 +30847,31 @@ var htol = (function(exports) {
 	function onWikiChange(f) {
 		wikiListeners.push(f);
 	}
+	/**
+	* The user switched the language (without reload): the corner links, the cookie link and
+	* the card (rebuilt, shown again if it was open) in the new one.
+	*/
+	function setLanguage(language) {
+		lang = language;
+		if (corner) {
+			const t = LEGAL[lang] || LEGAL.en;
+			const [imprint, privacy] = [...corner.querySelectorAll(".htol-legal-link")];
+			if (imprint) imprint.textContent = t.imprint;
+			if (privacy) privacy.textContent = t.privacy;
+		}
+		if (link) link.textContent = strings(lang).consentLink;
+		if (card) {
+			const open = card.style.display !== "none";
+			card.remove();
+			card = null;
+			if (open) show();
+		}
+	}
 	/** Shows the legal links; the card (no choice yet) or the cookie link (a choice); loads the tag if granted. */
 	function init(language, measurementId = "HTOL_GA_ID" in window ? window.HTOL_GA_ID : GA_ID) {
 		id = measurementId;
 		lang = language;
+		onLanguageChange(setLanguage);
 		if (document.body) ensureCorner();
 		else document.addEventListener("DOMContentLoaded", () => ensureCorner());
 		if (!id) return;
@@ -30896,6 +30999,11 @@ var htol = (function(exports) {
 			button.textContent = s.wikiShow;
 			button.onclick = () => allowWiki();
 			this.notice.append(p, button);
+			onLanguageChange((l) => {
+				const t = strings(l);
+				p.textContent = t.wikiBlocked;
+				button.textContent = t.wikiShow;
+			});
 			onWikiChange((allowed) => this.apply(allowed));
 			if (args.src) this.show(args.src);
 			args.parent.appendChild(this.ui);
