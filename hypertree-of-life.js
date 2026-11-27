@@ -6594,6 +6594,11 @@ var htol = (function(exports) {
 		}
 		layoutNode(n);
 	}
+	var TransformationCache = class {
+		constructor() {
+			this.cells = [];
+		}
+	};
 	var HyperbolicTransformation = class {
 		constructor(tp) {
 			this.cache = new TransformationCache();
@@ -6611,11 +6616,6 @@ var htol = (function(exports) {
 			this.onDragθ = (s, e) => {};
 			this.onDragλ = (l) => this.state.λ = l;
 			this.state = tp;
-		}
-	};
-	var TransformationCache = class {
-		constructor() {
-			this.cells = [];
 		}
 	};
 	var π$1 = Math.PI;
@@ -6673,7 +6673,7 @@ var htol = (function(exports) {
 			labelScore: null
 		},
 		geometry: {
-			view: "disk",
+			projection: "poincare",
 			diskSize: .96,
 			layers: [],
 			layerOptions: {},
@@ -6744,7 +6744,7 @@ var htol = (function(exports) {
 		"filter.weightFilter.weight": "layout",
 		"filter.labelScore": "frame",
 		"geometry": "frame",
-		"geometry.view": "layers",
+		"geometry.projection": "layers",
 		"geometry.layers": "layers",
 		"geometry.layerOptions": "layers",
 		"geometry.captionFont": "labels",
@@ -6843,7 +6843,7 @@ var htol = (function(exports) {
 	*   layerOptions[*].nodeColor -> fill, linkColor -> stroke,
 	*   interaction.wheelSensitivity -> wheelFactor,
 	*   geometry.animateUpRadius -> layout.initSize,
-	*   geometry.halfPlane -> geometry.view 'halfplane',
+	*   geometry.halfPlane -> geometry.projection 'cayley', geometry.view -> geometry.projection,
 	*   filter.cullingWeight -> filter.weightFilter.rangeNodes,
 	*   filter.maxlabels -> layerOptions[label layers].maxLabels,
 	*   filter.transformation.P -> geometry.startPosition
@@ -6877,13 +6877,29 @@ var htol = (function(exports) {
 				delete branch("geometry").animateUpRadius;
 			}
 			if (g.halfPlane !== void 0) {
-				deprecated("geometry.halfPlane", "geometry.view: 'halfplane'");
+				deprecated("geometry.halfPlane", "geometry.projection: 'cayley'");
 				const geometry = branch("geometry");
-				if (geometry.view === void 0) geometry.view = g.halfPlane ? "halfplane" : "disk";
+				if (geometry.projection === void 0) geometry.projection = g.halfPlane ? "cayley" : "poincare";
 				delete geometry.halfPlane;
 			}
+			if (g.view !== void 0) {
+				deprecated("geometry.view", "geometry.projection");
+				const geometry = branch("geometry");
+				if (geometry.projection === void 0) geometry.projection = g.view;
+				delete geometry.view;
+			}
+			const oldNames = {
+				disk: "poincare",
+				halfplane: "cayley",
+				rectangle: "schwarz-christoffel"
+			};
+			const p = branch("geometry").projection;
+			if (typeof p === "string" && oldNames[p]) {
+				deprecated(`geometry.projection: '${p}'`, `geometry.projection: '${oldNames[p]}'`);
+				branch("geometry").projection = oldNames[p];
+			}
 			if (g.decorator !== void 0) {
-				deprecated("geometry.decorator", "geometry.view (a Projection)");
+				deprecated("geometry.decorator", "geometry.projection (a Projection)");
 				delete branch("geometry").decorator;
 			}
 			if (g.cacheUpdate !== void 0) {
@@ -9839,9 +9855,9 @@ var htol = (function(exports) {
 			}
 		} } };
 	}
-	var DiskProjection = class {
+	var PoincareProjection = class {
 		constructor() {
-			this.kind = "disk";
+			this.kind = "poincare";
 			this.followsSize = false;
 		}
 		project(nodes) {
@@ -9910,9 +9926,9 @@ var htol = (function(exports) {
 			return P;
 		}
 	};
-	var HalfPlaneProjection = class {
+	var CayleyProjection = class {
 		constructor(rootWedge) {
-			this.kind = "halfplane";
+			this.kind = "cayley";
 			this.followsSize = true;
 			this.g = infinityOf(rootWedge);
 		}
@@ -10082,7 +10098,7 @@ var htol = (function(exports) {
 	};
 	var cabs = (a) => Math.hypot(a.re, a.im);
 	/** the principal square root (Re ≥ 0) */
-	var csqrt = (a) => {
+	var csqrt$1 = (a) => {
 		const r = cabs(a);
 		const re = Math.sqrt(Math.max(0, (r + a.re) / 2)), im = Math.sqrt(Math.max(0, (r - a.re) / 2));
 		return {
@@ -10149,9 +10165,9 @@ var htol = (function(exports) {
 				return cdiv({
 					re: 1 - E2.re / 10 + E3.re / 14 + E22.re / 24 - 3 * E23.re / 44,
 					im: -E2.im / 10 + E3.im / 14 + E22.im / 24 - 3 * E23.im / 44
-				}, csqrt(mu));
+				}, csqrt$1(mu));
 			}
-			const sx = csqrt(x), sy = csqrt(y), sz = csqrt(z);
+			const sx = csqrt$1(x), sy = csqrt$1(y), sz = csqrt$1(z);
 			const l = {
 				re: 0,
 				im: 0
@@ -10180,7 +10196,7 @@ var htol = (function(exports) {
 		return cdiv({
 			re: 1,
 			im: 0
-		}, csqrt({
+		}, csqrt$1({
 			re: (x.re + y.re + z.re) / 3,
 			im: (x.im + y.im + z.im) / 3
 		}));
@@ -10310,9 +10326,9 @@ var htol = (function(exports) {
 		re: z.re * g.re + z.im * g.im,
 		im: z.im * g.re - z.re * g.im
 	});
-	var RectangleProjection = class {
+	var SchwarzChristoffelProjection = class {
 		constructor(rootWedge, aspect = 1.6) {
-			this.kind = "rectangle";
+			this.kind = "schwarz-christoffel";
 			this.followsSize = true;
 			this.g = infinityOf(rootWedge);
 			this.setAspect(aspect);
@@ -10361,7 +10377,7 @@ var htol = (function(exports) {
 					disk: z
 				};
 				n.cachep = CktoCp(n.cache);
-				n.distScale = Math.min(n.distScale * this.map.scale(zr) / this.scale0, 1);
+				n.distScale = n.distScale * this.scale0;
 				n.dampedDistScale = n.distScale * (.5 / n.distScale + .5);
 				n.strCache = `${n.cache.re} ${n.cache.im}`;
 				n.transformStrCache = ` translate(${n.strCache})`;
@@ -10452,13 +10468,1020 @@ var htol = (function(exports) {
 			return P;
 		}
 	};
-	/** The projection of geometry.view: 'disk', 'halfplane', 'rectangle' or an own Projection. */
+	var EPS = 1e-9;
+	var GlatzhoferProjection = class {
+		constructor(rootWedge, aspect = 1.6) {
+			this.kind = "glatzhofer";
+			this.followsSize = true;
+			this.g = infinityOf(rootWedge);
+			this.setAspect(aspect);
+		}
+		setAspect(aspect) {
+			this.A = Math.max(.2, Math.min(5, aspect || 1.6));
+		}
+		/** The rectangle: height 2 (y ∈ ±1), this width (x ∈ ±A). */
+		get width() {
+			return 2 * this.A;
+		}
+		get aspect() {
+			return this.A;
+		}
+		halfPlane(z) {
+			const w = toHalfPlane(z, this.g);
+			if (!isFinite(w.im) || w.im > 0xe8d4a51000) return {
+				re: 0,
+				im: 0xe8d4a51000
+			};
+			if (!isFinite(w.re)) w.re = 0;
+			return w;
+		}
+		compress(w) {
+			const A = this.A, s = 1 + w.im;
+			const X = A / 2 * Math.tanh(2 * w.re / (A * s * s)), Y = w.im / s;
+			return {
+				re: 2 * X,
+				im: 2 * Y - 1
+			};
+		}
+		/** The local scale of the view per disk unit, 1 at the center (√det of the map times the Cayley scale). */
+		scale(z, w) {
+			const s = 1 + w.im, u = 2 * w.re / (this.A * s * s);
+			return 2 * viewScale(z, this.g) / (Math.cosh(u) * s * s);
+		}
+		toView(disk) {
+			const v = this.compress(this.halfPlane(disk));
+			return {
+				re: v.re,
+				im: v.im,
+				disk: {
+					re: disk.re,
+					im: disk.im
+				}
+			};
+		}
+		toDisk(view) {
+			const A = this.A;
+			const Y = Math.min(.999999999, Math.max(EPS, (view.im + 1) / 2));
+			const y = Y / (1 - Y), s = 1 + y;
+			const t = Math.max(-.999999999, Math.min(.999999999, view.re / A));
+			return viewToDisk({
+				re: A * s * s / 2 * Math.atanh(t),
+				im: y - 1
+			}, this.g);
+		}
+		project(nodes) {
+			for (const n of nodes) {
+				const z = {
+					re: n.cache.re,
+					im: n.cache.im
+				};
+				const w = this.halfPlane(z), v = this.compress(w);
+				n.cacheDisk = z;
+				n.outOfView = false;
+				n.cache = {
+					re: v.re,
+					im: v.im,
+					disk: z
+				};
+				n.cachep = CktoCp(n.cache);
+				n.distScale = Math.min(n.distScale * this.scale(z, w), 1);
+				n.dampedDistScale = n.distScale * (.5 / n.distScale + .5);
+				n.strCache = `${n.cache.re} ${n.cache.im}`;
+				n.transformStrCache = ` translate(${n.strCache})`;
+				n.scaleStrText = ` scale(${n.dampedDistScale})`;
+			}
+			return nodes;
+		}
+		diskOf(v) {
+			return v.disk || this.toDisk(v);
+		}
+		/** The midpoint of the disk geodesic from a to b (the circle orthogonal to the rim). */
+		arcMiddle(a, b) {
+			const m = {
+				re: (a.re + b.re) / 2,
+				im: (a.im + b.im) / 2
+			};
+			const c = arcCenter(a, b).c;
+			const r = Math.hypot(a.re - c.re, a.im - c.im);
+			const d = Math.hypot(m.re - c.re, m.im - c.im);
+			if (!isFinite(r) || r > 1e3 || d < 1e-12) return m;
+			return {
+				re: c.re + (m.re - c.re) * r / d,
+				im: c.im + (m.im - c.im) * r / d
+			};
+		}
+		geodesic(a, b, curvature) {
+			if (curvature === "0" || curvature === "l") return `M ${a.re} ${a.im} L ${b.re} ${b.im}`;
+			const mid = this.toView(this.arcMiddle(this.diskOf(a), this.diskOf(b)));
+			let cx = 2 * mid.re - (a.re + b.re) / 2, cy = 2 * mid.im - (a.im + b.im) / 2;
+			if (curvature === "-") {
+				cx = a.re + b.re - cx;
+				cy = a.im + b.im - cy;
+			}
+			return `M ${a.re} ${a.im} Q ${cx} ${cy}, ${b.re} ${b.im}`;
+		}
+		stem(root, curvature) {
+			if (curvature === "0" || curvature === "l") return `M ${root.re} ${root.im} L 0 1`;
+			const w = this.halfPlane(this.diskOf(root));
+			let d = `M ${root.re} ${root.im}`;
+			for (let y = w.im * 2; y < 1e6; y *= 2) {
+				const v = this.compress({
+					re: w.re,
+					im: y
+				});
+				d += ` L ${v.re} ${v.im}`;
+			}
+			return d + " L 0 1";
+		}
+		circle(center, r) {
+			if (!(r > 0) || r > .5) return null;
+			const v = this.toView(center);
+			return {
+				cx: v.re,
+				cy: v.im,
+				r: r * this.scale(center, this.halfPlane(center))
+			};
+		}
+		outward(view) {
+			return {
+				re: 0,
+				im: -1
+			};
+		}
+		rim(view) {
+			if (view.disk) return Math.hypot(view.disk.re, view.disk.im);
+			return Math.min(1, Math.max(Math.abs(view.re) / this.A, Math.abs(view.im)));
+		}
+		viewBox(width, height, diskSize) {
+			const aspect = width > 0 && height > 0 ? width / height : 1.6;
+			this.setAspect(aspect);
+			const w = Math.round(1e3 * aspect);
+			return {
+				viewBox: `0 0 ${w} 1000`,
+				transform: `translate(${w / 2},500) scale(${500 * (diskSize || 1)})`
+			};
+		}
+		clip(clipPath, clipRadius) {
+			clipPath.append("rect").attr("x", -6).attr("y", -1.01).attr("width", 12).attr("height", 2.02);
+		}
+		voronoiExtent() {
+			return [[-6, -1.5], [6, 1.5]];
+		}
+		background() {
+			return {
+				elementType: "rect",
+				className: "background-rectangle",
+				create: (s) => s.attr("x", -6).attr("y", -1).attr("width", 12).attr("height", 2).attr("fill", "rgba(128,128,128,.07)")
+			};
+		}
+		overviewClamp(P) {
+			return P;
+		}
+	};
+	var S$1 = 2 / Math.PI;
+	var MIN_R = 1e-12;
+	var MAX_R$1 = 0xe8d4a51000;
+	var BandProjection = class {
+		constructor(rootWedge) {
+			this.kind = "band";
+			this.followsSize = true;
+			this.A = 1.6;
+			this.g = infinityOf(rootWedge);
+			this.scale0 = this.scaleOf({
+				re: 0,
+				im: 0
+			});
+		}
+		/** The strip: height 2 (y ∈ ±1); this much of its length is drawn (x ∈ ±aspect). */
+		get aspect() {
+			return this.A;
+		}
+		halfPlane(z) {
+			const w = toHalfPlane(z, this.g);
+			if (!isFinite(w.re) || !isFinite(w.im)) return {
+				re: 0,
+				im: MAX_R$1
+			};
+			return w;
+		}
+		band(w) {
+			const r = Math.min(MAX_R$1, Math.max(MIN_R, Math.hypot(w.re, w.im)));
+			const φ = Math.atan2(w.im, w.re);
+			return {
+				re: -S$1 * Math.log(r),
+				im: -S$1 * (φ - Math.PI / 2)
+			};
+		}
+		/** The local scale of the view per disk unit: the log's 1/|w| times the Cayley scale. */
+		scaleOf(z) {
+			const w = this.halfPlane(z);
+			return S$1 * viewScale(z, this.g) / Math.max(MIN_R, Math.hypot(w.re, w.im));
+		}
+		toView(disk) {
+			const v = this.band(this.halfPlane(disk));
+			return {
+				re: v.re,
+				im: v.im,
+				disk: {
+					re: disk.re,
+					im: disk.im
+				}
+			};
+		}
+		toDisk(view) {
+			const r = Math.exp(-view.re / S$1);
+			const φ = Math.min(Math.PI - 1e-9, Math.max(1e-9, Math.PI / 2 - view.im / S$1));
+			const w = {
+				re: r * Math.cos(φ),
+				im: r * Math.sin(φ)
+			};
+			return viewToDisk({
+				re: w.re,
+				im: w.im - 1
+			}, this.g);
+		}
+		project(nodes) {
+			for (const n of nodes) {
+				const z = {
+					re: n.cache.re,
+					im: n.cache.im
+				};
+				const v = this.band(this.halfPlane(z));
+				n.cacheDisk = z;
+				n.outOfView = Math.abs(v.re) > this.A + 1;
+				n.cache = {
+					re: v.re,
+					im: v.im,
+					disk: z
+				};
+				n.cachep = CktoCp(n.cache);
+				n.distScale = Math.min(n.distScale * this.scaleOf(z) / this.scale0, 1);
+				n.dampedDistScale = n.distScale * (.5 / n.distScale + .5);
+				n.strCache = `${n.cache.re} ${n.cache.im}`;
+				n.transformStrCache = ` translate(${n.strCache})`;
+				n.scaleStrText = ` scale(${n.dampedDistScale})`;
+			}
+			return nodes;
+		}
+		diskOf(v) {
+			return v.disk || this.toDisk(v);
+		}
+		/** The midpoint of the disk geodesic from a to b (the circle orthogonal to the rim). */
+		arcMiddle(a, b) {
+			const m = {
+				re: (a.re + b.re) / 2,
+				im: (a.im + b.im) / 2
+			};
+			const c = arcCenter(a, b).c;
+			const r = Math.hypot(a.re - c.re, a.im - c.im);
+			const d = Math.hypot(m.re - c.re, m.im - c.im);
+			if (!isFinite(r) || r > 1e3 || d < 1e-12) return m;
+			return {
+				re: c.re + (m.re - c.re) * r / d,
+				im: c.im + (m.im - c.im) * r / d
+			};
+		}
+		geodesic(a, b, curvature) {
+			if (curvature === "0" || curvature === "l") return `M ${a.re} ${a.im} L ${b.re} ${b.im}`;
+			const mid = this.toView(this.arcMiddle(this.diskOf(a), this.diskOf(b)));
+			let cx = 2 * mid.re - (a.re + b.re) / 2, cy = 2 * mid.im - (a.im + b.im) / 2;
+			if (curvature === "-") {
+				cx = a.re + b.re - cx;
+				cy = a.im + b.im - cy;
+			}
+			return `M ${a.re} ${a.im} Q ${cx} ${cy}, ${b.re} ${b.im}`;
+		}
+		stem(root, curvature) {
+			const end = -(this.A + 1);
+			if (curvature === "0" || curvature === "l") return `M ${root.re} ${root.im} L ${end} 0`;
+			const w = this.halfPlane(this.diskOf(root));
+			let d = `M ${root.re} ${root.im}`;
+			for (let y = w.im * 2;; y *= 2) {
+				const v = this.band({
+					re: w.re,
+					im: y
+				});
+				if (v.re < end || y > MAX_R$1) break;
+				d += ` L ${v.re} ${v.im}`;
+			}
+			return d + ` L ${end} 0`;
+		}
+		circle(center, r) {
+			if (!(r > 0) || r > .5) return null;
+			const v = this.toView(center);
+			return {
+				cx: v.re,
+				cy: v.im,
+				r: r * this.scaleOf(center)
+			};
+		}
+		outward(view) {
+			return {
+				re: 0,
+				im: view.im < 0 ? -1 : 1
+			};
+		}
+		rim(view) {
+			if (view.disk) return Math.hypot(view.disk.re, view.disk.im);
+			return Math.min(1, Math.abs(view.im));
+		}
+		viewBox(width, height, diskSize) {
+			const aspect = width > 0 && height > 0 ? width / height : 1.6;
+			this.A = Math.max(.2, Math.min(5, aspect));
+			const w = Math.round(1e3 * aspect);
+			return {
+				viewBox: `0 0 ${w} 1000`,
+				transform: `translate(${w / 2},500) scale(${500 * (diskSize || 1)})`
+			};
+		}
+		clip(clipPath, clipRadius) {
+			clipPath.append("rect").attr("x", -20).attr("y", -1.01).attr("width", 40).attr("height", 2.02);
+		}
+		voronoiExtent() {
+			return [[-20, -1.5], [20, 1.5]];
+		}
+		background() {
+			return {
+				elementType: "rect",
+				className: "background-band",
+				create: (s) => s.attr("x", -20).attr("y", -1).attr("width", 40).attr("height", 2).attr("fill", "rgba(128,128,128,.07)")
+			};
+		}
+		overviewClamp(P) {
+			return P;
+		}
+	};
+	var S = 2 / Math.PI;
+	var C0 = Math.log(1 + Math.SQRT2);
+	var HALF_BAND_END = S * C0;
+	var MAX_RE = 30;
+	var csqrt = (z) => {
+		const r = Math.hypot(z.re, z.im), re = Math.sqrt(Math.max(0, (r + z.re) / 2)), im = Math.sqrt(Math.max(0, (r - z.re) / 2));
+		return {
+			re,
+			im: z.im < 0 ? -im : im
+		};
+	};
+	/** arccosh w for Im w > 0: Re ≥ 0, 0 < Im < π. */
+	function acosh(w) {
+		const s = csqrt({
+			re: w.re * w.re - w.im * w.im - 1,
+			im: 2 * w.re * w.im
+		});
+		let a = {
+			re: w.re + s.re,
+			im: w.im + s.im
+		};
+		if (Math.hypot(a.re, a.im) < 1) a = {
+			re: w.re - s.re,
+			im: w.im - s.im
+		};
+		return {
+			re: Math.min(MAX_RE, Math.log(Math.hypot(a.re, a.im))),
+			im: Math.atan2(a.im, a.re)
+		};
+	}
+	var HalfBandProjection = class {
+		constructor(rootWedge) {
+			this.kind = "half-band";
+			this.followsSize = true;
+			this.A = 1.6;
+			this.g = infinityOf(rootWedge);
+			this.scale0 = this.scaleOf({
+				re: 0,
+				im: 0
+			});
+		}
+		/** The aspect ratio of the drawn box: it shows x from end − 2·aspect to the closed end. */
+		get aspect() {
+			return this.A;
+		}
+		/** The view x of the closed rim end. */
+		get end() {
+			return HALF_BAND_END;
+		}
+		/** The view x of the left edge of the drawn box. */
+		get left() {
+			return HALF_BAND_END - 2 * this.A;
+		}
+		halfPlane(z) {
+			const w = toHalfPlane(z, this.g);
+			if (!isFinite(w.re) || !isFinite(w.im)) return {
+				re: 0,
+				im: 0xe8d4a51000
+			};
+			return w;
+		}
+		strip(w) {
+			const ξ = acosh(w);
+			return {
+				re: -S * (ξ.re - C0),
+				im: -S * (ξ.im - Math.PI / 2)
+			};
+		}
+		/** The local scale of the view per disk unit: |dξ/dw| = 1/|√(w² − 1)| times the Cayley scale. */
+		scaleOf(z) {
+			const w = this.halfPlane(z);
+			const d = Math.hypot(w.re * w.re - w.im * w.im - 1, 2 * w.re * w.im);
+			return S * viewScale(z, this.g) / Math.max(1e-12, Math.sqrt(d));
+		}
+		toView(disk) {
+			const v = this.strip(this.halfPlane(disk));
+			return {
+				re: v.re,
+				im: v.im,
+				disk: {
+					re: disk.re,
+					im: disk.im
+				}
+			};
+		}
+		toDisk(view) {
+			const x = Math.max(0, -view.re / S + C0), y = Math.min(Math.PI - 1e-9, Math.max(1e-9, Math.PI / 2 - view.im / S));
+			const w = {
+				re: Math.cosh(x) * Math.cos(y),
+				im: Math.sinh(x) * Math.sin(y)
+			};
+			return viewToDisk({
+				re: w.re,
+				im: Math.max(1e-12, w.im) - 1
+			}, this.g);
+		}
+		project(nodes) {
+			for (const n of nodes) {
+				const z = {
+					re: n.cache.re,
+					im: n.cache.im
+				};
+				const v = this.strip(this.halfPlane(z));
+				n.cacheDisk = z;
+				n.outOfView = v.re < this.left - 1;
+				n.cache = {
+					re: v.re,
+					im: v.im,
+					disk: z
+				};
+				n.cachep = CktoCp(n.cache);
+				n.distScale = Math.min(n.distScale * this.scaleOf(z) / this.scale0, 1);
+				n.dampedDistScale = n.distScale * (.5 / n.distScale + .5);
+				n.strCache = `${n.cache.re} ${n.cache.im}`;
+				n.transformStrCache = ` translate(${n.strCache})`;
+				n.scaleStrText = ` scale(${n.dampedDistScale})`;
+			}
+			return nodes;
+		}
+		diskOf(v) {
+			return v.disk || this.toDisk(v);
+		}
+		/** The midpoint of the disk geodesic from a to b (the circle orthogonal to the rim). */
+		arcMiddle(a, b) {
+			const m = {
+				re: (a.re + b.re) / 2,
+				im: (a.im + b.im) / 2
+			};
+			const c = arcCenter(a, b).c;
+			const r = Math.hypot(a.re - c.re, a.im - c.im);
+			const d = Math.hypot(m.re - c.re, m.im - c.im);
+			if (!isFinite(r) || r > 1e3 || d < 1e-12) return m;
+			return {
+				re: c.re + (m.re - c.re) * r / d,
+				im: c.im + (m.im - c.im) * r / d
+			};
+		}
+		geodesic(a, b, curvature) {
+			if (curvature === "0" || curvature === "l") return `M ${a.re} ${a.im} L ${b.re} ${b.im}`;
+			const mid = this.toView(this.arcMiddle(this.diskOf(a), this.diskOf(b)));
+			let cx = 2 * mid.re - (a.re + b.re) / 2, cy = 2 * mid.im - (a.im + b.im) / 2;
+			if (curvature === "-") {
+				cx = a.re + b.re - cx;
+				cy = a.im + b.im - cy;
+			}
+			return `M ${a.re} ${a.im} Q ${cx} ${cy}, ${b.re} ${b.im}`;
+		}
+		stem(root, curvature) {
+			const end = this.left - 1;
+			if (curvature === "0" || curvature === "l") return `M ${root.re} ${root.im} L ${end} 0`;
+			const w = this.halfPlane(this.diskOf(root));
+			let d = `M ${root.re} ${root.im}`;
+			for (let y = w.im * 2; y < 0xe8d4a51000; y *= 2) {
+				const v = this.strip({
+					re: w.re,
+					im: y
+				});
+				if (v.re < end) break;
+				d += ` L ${v.re} ${v.im}`;
+			}
+			return d + ` L ${end} 0`;
+		}
+		circle(center, r) {
+			if (!(r > 0) || r > .5) return null;
+			const v = this.toView(center);
+			return {
+				cx: v.re,
+				cy: v.im,
+				r: r * this.scaleOf(center)
+			};
+		}
+		outward(view) {
+			return HALF_BAND_END - view.re < 1 - Math.abs(view.im) ? {
+				re: 1,
+				im: 0
+			} : {
+				re: 0,
+				im: view.im < 0 ? -1 : 1
+			};
+		}
+		rim(view) {
+			if (view.disk) return Math.hypot(view.disk.re, view.disk.im);
+			return Math.min(1, Math.max(Math.abs(view.im), 1 - (HALF_BAND_END - view.re)));
+		}
+		viewBox(width, height, diskSize) {
+			const aspect = width > 0 && height > 0 ? width / height : 1.6;
+			this.A = Math.max(.2, Math.min(5, aspect));
+			const w = Math.round(1e3 * aspect), k = 500 * (diskSize || 1);
+			return {
+				viewBox: `0 0 ${w} 1000`,
+				transform: `translate(${w - k * HALF_BAND_END - (1e3 - 2 * k) / 2},500) scale(${k})`
+			};
+		}
+		clip(clipPath, clipRadius) {
+			clipPath.append("rect").attr("x", -20).attr("y", -1.01).attr("width", 20 + HALF_BAND_END + .01).attr("height", 2.02);
+		}
+		voronoiExtent() {
+			return [[-20, -1.5], [HALF_BAND_END + .5, 1.5]];
+		}
+		background() {
+			return {
+				elementType: "rect",
+				className: "background-band",
+				create: (s) => s.attr("x", -20).attr("y", -1).attr("width", 20 + HALF_BAND_END).attr("height", 2).attr("fill", "rgba(128,128,128,.07)")
+			};
+		}
+		overviewClamp(P) {
+			return P;
+		}
+	};
+	var MappedProjection = class {
+		constructor(rootWedge) {
+			this.followsSize = false;
+			this.A = 1;
+			this.g = infinityOf(rootWedge);
+		}
+		/** Whether a view position is in the picture (else the node gets outOfView). */
+		inView(v) {
+			return true;
+		}
+		get aspect() {
+			return this.A;
+		}
+		toView(disk) {
+			const v = this.map(disk);
+			return {
+				re: v.re,
+				im: v.im,
+				disk: {
+					re: disk.re,
+					im: disk.im
+				}
+			};
+		}
+		toDisk(view) {
+			return this.unmap(view);
+		}
+		project(nodes) {
+			const s0 = this.scaleAt({
+				re: 0,
+				im: 0
+			});
+			for (const n of nodes) {
+				const z = {
+					re: n.cache.re,
+					im: n.cache.im
+				};
+				const v = this.map(z);
+				n.cacheDisk = z;
+				n.outOfView = !this.inView(v);
+				n.cache = {
+					re: v.re,
+					im: v.im,
+					disk: z
+				};
+				n.cachep = CktoCp(n.cache);
+				const s = this.scaleAt(z);
+				n.distScale = Math.max(1e-6, Math.min(n.distScale * (isFinite(s) ? s : 0) / s0, 1));
+				n.dampedDistScale = n.distScale * (.5 / n.distScale + .5);
+				n.strCache = `${n.cache.re} ${n.cache.im}`;
+				n.transformStrCache = ` translate(${n.strCache})`;
+				n.scaleStrText = ` scale(${n.dampedDistScale})`;
+			}
+			return nodes;
+		}
+		diskOf(v) {
+			return v.disk || this.unmap(v);
+		}
+		/** The midpoint of the disk geodesic from a to b (the circle orthogonal to the rim). */
+		arcMiddle(a, b) {
+			const m = {
+				re: (a.re + b.re) / 2,
+				im: (a.im + b.im) / 2
+			};
+			const c = arcCenter(a, b).c;
+			const r = Math.hypot(a.re - c.re, a.im - c.im);
+			const d = Math.hypot(m.re - c.re, m.im - c.im);
+			if (!isFinite(r) || r > 1e3 || d < 1e-12) return m;
+			return {
+				re: c.re + (m.re - c.re) * r / d,
+				im: c.im + (m.im - c.im) * r / d
+			};
+		}
+		geodesic(a, b, curvature) {
+			if (curvature === "0" || curvature === "l") return `M ${a.re} ${a.im} L ${b.re} ${b.im}`;
+			const mid = this.map(this.arcMiddle(this.diskOf(a), this.diskOf(b)));
+			let cx = 2 * mid.re - (a.re + b.re) / 2, cy = 2 * mid.im - (a.im + b.im) / 2;
+			if (curvature === "-") {
+				cx = a.re + b.re - cx;
+				cy = a.im + b.im - cy;
+			}
+			return `M ${a.re} ${a.im} Q ${cx} ${cy}, ${b.re} ${b.im}`;
+		}
+		stem(root, curvature) {
+			return this.geodesic(root, this.toView({
+				re: .9999 * this.g.re,
+				im: .9999 * this.g.im
+			}), curvature);
+		}
+		circle(center, r) {
+			if (!(r > 0) || r > .5) return null;
+			const v = this.map(center), s = this.scaleAt(center);
+			return isFinite(v.re) && isFinite(s) ? {
+				cx: v.re,
+				cy: v.im,
+				r: r * s
+			} : null;
+		}
+		outward(view) {
+			const r = Math.hypot(view.re, view.im);
+			return r > 1e-9 ? {
+				re: view.re / r,
+				im: view.im / r
+			} : {
+				re: 0,
+				im: -1
+			};
+		}
+		rim(view) {
+			if (view.disk) return Math.hypot(view.disk.re, view.disk.im);
+			return Math.min(1, Math.hypot(view.re, view.im));
+		}
+		viewBox(width, height, diskSize) {
+			return {
+				viewBox: "0 0 1000 1000",
+				transform: `translate(500,500) scale(${500 * diskSize})`
+			};
+		}
+		clip(clipPath, clipRadius) {
+			clipPath.append("circle").attr("r", clipRadius);
+		}
+		voronoiExtent() {
+			return [[-2, -2], [2, 2]];
+		}
+		background() {
+			return {
+				elementType: "circle",
+				className: "background-circle",
+				create: (s) => s.attr("r", 1).attr("fill", "url(#exampleGradient)")
+			};
+		}
+		overviewClamp(P) {
+			return P;
+		}
+	};
+	/** The box of a wide projection: y ∈ ±1 fills the height, x ∈ ±aspect the width. */
+	function wideViewBox(self, width, height, diskSize) {
+		const aspect = width > 0 && height > 0 ? width / height : 1.6;
+		self.A = Math.max(.2, Math.min(5, aspect));
+		const w = Math.round(1e3 * aspect);
+		return {
+			viewBox: `0 0 ${w} 1000`,
+			transform: `translate(${w / 2},500) scale(${500 * (diskSize || 1)})`
+		};
+	}
+	var MAX_R = 1 - 1e-12;
+	var RADIAL = {
+		"klein": {
+			f: (r) => 2 * r / (1 + r * r),
+			inv: (f) => f < 1e-12 ? f / 2 : (1 - Math.sqrt(Math.max(0, 1 - f * f))) / f,
+			df: (r) => 2 * (1 - r * r) / ((1 + r * r) * (1 + r * r)),
+			f0: 2
+		},
+		"equal-area": {
+			f: (r) => 2 * r / Math.sqrt(1 + 3 * r * r),
+			inv: (f) => Math.sqrt(f * f / Math.max(1e-12, 4 - 3 * f * f)),
+			df: (r) => 2 / Math.pow(1 + 3 * r * r, 1.5),
+			f0: 2
+		},
+		"equidistant": {
+			f: (r) => Math.tanh(Math.atanh(Math.min(r, MAX_R)) / 2),
+			inv: (f) => Math.tanh(2 * Math.atanh(Math.min(f, MAX_R))),
+			df: (r) => {
+				const f = Math.tanh(Math.atanh(Math.min(r, MAX_R)) / 2);
+				return (1 - f * f) / (2 * (1 - r * r));
+			},
+			f0: .5
+		},
+		"gans": {
+			f: (r) => 2 * r / (1 - r * r) / 4,
+			inv: (f) => {
+				const F = 4 * f;
+				return F < 1e-12 ? F / 2 : (Math.sqrt(1 + F * F) - 1) / F;
+			},
+			df: (r) => 2 * (1 + r * r) / ((1 - r * r) * (1 - r * r)) / 4,
+			f0: .5
+		}
+	};
+	var RadialProjection = class extends MappedProjection {
+		constructor(kind, rootWedge) {
+			super(rootWedge);
+			this.kind = kind;
+			this.R = RADIAL[kind];
+		}
+		map(z) {
+			const r = Math.min(Math.hypot(z.re, z.im), MAX_R);
+			if (r < 1e-15) return {
+				re: z.re * this.R.f0,
+				im: z.im * this.R.f0
+			};
+			const k = this.R.f(r) / r;
+			return {
+				re: z.re * k,
+				im: z.im * k
+			};
+		}
+		unmap(v) {
+			const f = Math.hypot(v.re, v.im);
+			if (f < 1e-15) return {
+				re: v.re / this.R.f0,
+				im: v.im / this.R.f0
+			};
+			const k = Math.min(this.R.inv(f), MAX_R) / f;
+			return {
+				re: v.re * k,
+				im: v.im * k
+			};
+		}
+		scaleAt(z) {
+			const r = Math.min(Math.hypot(z.re, z.im), MAX_R);
+			if (r < 1e-9) return this.R.f0;
+			return Math.sqrt(this.R.df(r) * this.R.f(r) / r);
+		}
+		inView(v) {
+			return this.kind !== "gans" || Math.max(Math.abs(v.re), Math.abs(v.im)) < 1.3;
+		}
+		geodesic(a, b, curvature) {
+			if (this.kind === "klein") return `M ${a.re} ${a.im} L ${b.re} ${b.im}`;
+			return super.geodesic(a, b, curvature);
+		}
+		clip(clipPath, clipRadius) {
+			if (this.kind === "gans") clipPath.append("rect").attr("x", -1.02).attr("y", -1.02).attr("width", 2.04).attr("height", 2.04);
+			else super.clip(clipPath, clipRadius);
+		}
+		background() {
+			if (this.kind !== "gans") return super.background();
+			return {
+				elementType: "rect",
+				className: "background-rectangle",
+				create: (s) => s.attr("x", -1).attr("y", -1).attr("width", 2).attr("height", 2).attr("fill", "rgba(128,128,128,.07)")
+			};
+		}
+	};
+	/** The disk stretched affinely to an ellipse that fills a wide box. */
+	var StretchProjection = class extends MappedProjection {
+		constructor(..._args) {
+			super(..._args);
+			this.kind = "stretch";
+			this.followsSize = true;
+		}
+		map(z) {
+			return {
+				re: this.A * z.re,
+				im: z.im
+			};
+		}
+		unmap(v) {
+			return {
+				re: v.re / this.A,
+				im: v.im
+			};
+		}
+		scaleAt(z) {
+			return Math.sqrt(this.A);
+		}
+		outward(view) {
+			const x = view.re / this.A, r = Math.hypot(x, view.im);
+			return r > 1e-9 ? {
+				re: x / r,
+				im: view.im / r
+			} : {
+				re: 0,
+				im: -1
+			};
+		}
+		viewBox(width, height, diskSize) {
+			return wideViewBox(this, width, height, diskSize);
+		}
+		clip(clipPath, clipRadius) {
+			clipPath.append("ellipse").attr("rx", 5 * clipRadius).attr("ry", clipRadius);
+		}
+		voronoiExtent() {
+			return [[-6, -2], [6, 2]];
+		}
+		background() {
+			return {
+				elementType: "rect",
+				className: "background-rectangle",
+				create: (s) => s.attr("x", -6).attr("y", -1).attr("width", 12).attr("height", 2).attr("fill", "rgba(128,128,128,.07)")
+			};
+		}
+	};
+	var SQ2 = 2 * Math.SQRT2;
+	function diskToSquare(u, v) {
+		const a = 2 + u * u - v * v, b = 2 - u * u + v * v;
+		return {
+			re: .5 * Math.sqrt(Math.max(0, a + SQ2 * u)) - .5 * Math.sqrt(Math.max(0, a - SQ2 * u)),
+			im: .5 * Math.sqrt(Math.max(0, b + SQ2 * v)) - .5 * Math.sqrt(Math.max(0, b - SQ2 * v))
+		};
+	}
+	var squareToDisk = (x, y) => ({
+		re: x * Math.sqrt(1 - y * y / 2),
+		im: y * Math.sqrt(1 - x * x / 2)
+	});
+	/** The disk onto the box by the elliptic grid map (the rim on all four edges), stretched to the aspect ratio. */
+	var SquircleProjection = class extends MappedProjection {
+		constructor(..._args2) {
+			super(..._args2);
+			this.kind = "squircle";
+			this.followsSize = true;
+		}
+		map(z) {
+			const r = Math.hypot(z.re, z.im), k = r > MAX_R ? MAX_R / r : 1;
+			const s = diskToSquare(z.re * k, z.im * k);
+			return {
+				re: this.A * s.re,
+				im: s.im
+			};
+		}
+		unmap(v) {
+			return squareToDisk(Math.max(-.999999999999, Math.min(MAX_R, v.re / this.A)), Math.max(-.999999999999, Math.min(MAX_R, v.im)));
+		}
+		scaleAt(z) {
+			const s = this.map(z), x = s.re / this.A, y = s.im;
+			const px = Math.sqrt(Math.max(1e-12, 1 - y * y / 2)), py = Math.sqrt(Math.max(1e-12, 1 - x * x / 2));
+			const det = Math.abs(px * py - x * y / (2 * px) * (x * y / (2 * py)));
+			return Math.sqrt(this.A / Math.max(1e-12, det));
+		}
+		viewBox(width, height, diskSize) {
+			return wideViewBox(this, width, height, diskSize);
+		}
+		clip(clipPath, clipRadius) {
+			clipPath.append("rect").attr("x", -6).attr("y", -1.01).attr("width", 12).attr("height", 2.02);
+		}
+		voronoiExtent() {
+			return [[-6, -1.5], [6, 1.5]];
+		}
+		background() {
+			return {
+				elementType: "rect",
+				className: "background-rectangle",
+				create: (s) => s.attr("x", -6).attr("y", -1).attr("width", 12).attr("height", 2).attr("fill", "rgba(128,128,128,.07)")
+			};
+		}
+	};
+	/** A conformal wedge: ζ = (−1/w)^α of the Cayley half-plane, the gap at the apex (bottom middle). */
+	var SectorProjection = class extends MappedProjection {
+		constructor(..._args3) {
+			super(..._args3);
+			this.kind = "sector";
+			this.followsSize = true;
+			this.alpha = 2 / 3;
+			this.rot = -Math.PI / 2 - this.alpha * Math.PI / 2;
+		}
+		wp(z) {
+			const w = toHalfPlane(z, this.g);
+			if (!isFinite(w.re) || !isFinite(w.im)) return {
+				re: 0,
+				im: 0
+			};
+			const d = w.re * w.re + w.im * w.im;
+			return d < 1e-300 ? {
+				re: 0,
+				im: 1e150
+			} : {
+				re: -w.re / d,
+				im: w.im / d
+			};
+		}
+		map(z) {
+			const p = this.wp(z), ρ = Math.pow(Math.hypot(p.re, p.im), this.alpha), θ = this.alpha * Math.atan2(p.im, p.re) + this.rot;
+			return {
+				re: ρ * Math.cos(θ),
+				im: ρ * Math.sin(θ) + 1
+			};
+		}
+		unmap(v) {
+			const x = v.re, y = v.im - 1, ρ = Math.hypot(x, y);
+			const θ = Math.min(this.alpha * Math.PI - 1e-9, Math.max(1e-9, Math.atan2(y, x) - this.rot));
+			const R = Math.pow(ρ, 1 / this.alpha), φ = θ / this.alpha;
+			const p = {
+				re: R * Math.cos(φ),
+				im: R * Math.sin(φ)
+			};
+			const d = p.re * p.re + p.im * p.im;
+			const w = d < 1e-300 ? {
+				re: 0,
+				im: 0xe8d4a51000
+			} : {
+				re: -p.re / d,
+				im: p.im / d
+			};
+			return viewToDisk({
+				re: w.re,
+				im: w.im - 1
+			}, this.g);
+		}
+		scaleAt(z) {
+			const p = this.wp(z);
+			return this.alpha * Math.pow(Math.hypot(p.re, p.im), this.alpha + 1) * viewScale(z, this.g);
+		}
+		inView(v) {
+			return Math.abs(v.re) < this.A + .5 && v.im > -1.5;
+		}
+		outward(view) {
+			const x = view.re, y = view.im - 1, r = Math.hypot(x, y);
+			return r > 1e-9 ? {
+				re: x / r,
+				im: y / r
+			} : {
+				re: 0,
+				im: -1
+			};
+		}
+		viewBox(width, height, diskSize) {
+			return wideViewBox(this, width, height, diskSize);
+		}
+		clip(clipPath, clipRadius) {
+			clipPath.append("rect").attr("x", -6).attr("y", -1.01).attr("width", 12).attr("height", 2.02);
+		}
+		voronoiExtent() {
+			return [[-8, -3], [8, 1.5]];
+		}
+		background() {
+			const a = this.alpha * Math.PI / 2, L = 20;
+			const d = `M 0 1 L ${-20 * Math.sin(a)} ${1 - L * Math.cos(a)} L ${L * Math.sin(a)} ${1 - L * Math.cos(a)} Z`;
+			return {
+				elementType: "path",
+				className: "background-rectangle",
+				create: (s) => s.attr("d", d).attr("fill", "rgba(128,128,128,.07)")
+			};
+		}
+	};
+	/** The projection of geometry.projection: a ProjectionName or an own Projection. */
 	function createProjection(view, rootWedge) {
 		if (view && typeof view === "object") return view;
-		if (view === "halfplane") return new HalfPlaneProjection(rootWedge);
-		if (view === "rectangle") return new RectangleProjection(rootWedge);
-		return new DiskProjection();
+		switch (view) {
+			case "cayley": return new CayleyProjection(rootWedge);
+			case "schwarz-christoffel": return new SchwarzChristoffelProjection(rootWedge);
+			case "glatzhofer": return new GlatzhoferProjection(rootWedge);
+			case "band": return new BandProjection(rootWedge);
+			case "half-band": return new HalfBandProjection(rootWedge);
+			case "klein":
+			case "equal-area":
+			case "equidistant":
+			case "gans": return new RadialProjection(view, rootWedge);
+			case "stretch": return new StretchProjection(rootWedge);
+			case "squircle": return new SquircleProjection(rootWedge);
+			case "sector": return new SectorProjection(rootWedge);
+		}
+		return new PoincareProjection();
 	}
+	/**
+	* The projections whose view center is the disk's center and that map the whole disk
+	* bijectively: interaction.keepTreeInView applies its disk rules there (not in the
+	* half-plane, whose focus is no visible point, nor in own projections).
+	*/
+	var KEEP_IN_VIEW_KINDS = /* @__PURE__ */ new Set([
+		"poincare",
+		"schwarz-christoffel",
+		"glatzhofer",
+		"band",
+		"half-band",
+		"klein",
+		"equal-area",
+		"equidistant",
+		"gans",
+		"stretch",
+		"squircle",
+		"sector"
+	]);
 	/** Leaves per run of the staircase of k leaf children (one or two leaves: no
 	*  compression, each its own angle; the layout as until v1). */
 	function fanRun(k) {
@@ -10827,23 +11850,46 @@ var htol = (function(exports) {
 		};
 		return true;
 	}
+	/**
+	* The path the selection starts from: the ancestors of the center node (the nearest
+	* node of the last frame; the root before the first) that lie within the culling
+	* radius, from the highest one down to the center. path[0] is the start node of the
+	* DFS and the branch point whose weight the others are compared with.
+	*
+	* The whole chain root → center is laid out and transformed top-down first, so every
+	* node is placed from a parent that has the current λ. Before, the chain was walked
+	* upward from the center and each node laid out from its stale parent: after a wheel
+	* step at depth 40 (old λ on the parent, new λ on the link) the center landed beyond
+	* the culling radius, the path was empty, nothing was selected, the root became the
+	* center and kept the path empty. The tree was gone until a reload.
+	*
+	* The path is never empty: when the center is outside the radius (also after a large
+	* jump of P), the nearest node of the chain starts, else the nearest of the last
+	* visible nodes (their chains laid out the same way), else the root. The start node is
+	* always drawn (abortfilter), so the selection refills as nodes come into the radius.
+	*/
 	function pathToLastVisible(ud, cache) {
-		let startNode = null;
-		let path = [];
-		if (ud.args.data) {
-			startNode = cache.centerNode || ud.args.data;
-			path.push(startNode);
-			while (true) {
-				peocessNodeTransformation(ud, cache, startNode);
-				if (startNode.cachep.r >= ud.args.model.filter.cullingRadius) {
-					path = path.slice(0, -1);
-					break;
-				}
-				if (!startNode.parent) break;
-				startNode = startNode.parent;
-				path.push(startNode);
-			}
+		if (!ud.args.data) return [];
+		const R = ud.args.model.filter.cullingRadius;
+		const placed = /* @__PURE__ */ new Set();
+		const place = (n) => n.ancestors().reverse().forEach((a) => {
+			if (placed.has(a)) return;
+			placed.add(a);
+			peocessNodeTransformation(ud, cache, a);
+		});
+		const nearest = (ns) => ns.reduce((a, n) => !a || n.cachep.r < a.cachep.r ? n : a, null);
+		const center = cache.centerNode || ud.args.data;
+		place(center);
+		let start = center;
+		if (start.cachep.r >= R) start = nearest(center.ancestors());
+		if (start.cachep.r >= R && cache.unculledNodes && cache.unculledNodes.length) {
+			cache.unculledNodes.forEach(place);
+			start = nearest(cache.unculledNodes);
 		}
+		if (start.cachep.r >= R) start = ud.args.data;
+		const path = [];
+		for (let n = start; n && n.cachep.r < R; n = n.parent) path.push(n);
+		if (!path.length) path.push(start);
 		return path.reverse();
 	}
 	/**
@@ -11364,7 +12410,7 @@ var htol = (function(exports) {
 	* view is invalid. Returns true if P changed (the filter has to run again).
 	*/
 	function keepTreeInView(ud) {
-		if (!ud.args.model.interaction.keepTreeInView || ud.args.projection.kind !== "disk" && ud.args.projection.kind !== "rectangle") return false;
+		if (!ud.args.model.interaction.keepTreeInView || !KEEP_IN_VIEW_KINDS.has(ud.args.projection.kind)) return false;
 		if (!ud.isDraging && !ud.isWheeling) return false;
 		const root = ud.args.data;
 		if (!root || !root.cache) return false;
@@ -11868,7 +12914,7 @@ var htol = (function(exports) {
 					})));
 					this.args = resolved.model;
 					this.provenance = resolved.provenance;
-					this.projection = createProjection(this.args.geometry.view, this.args.layout.rootWedge);
+					this.projection = createProjection(this.args.geometry.projection, this.args.layout.rootWedge);
 					this.update.view.parent();
 					this.api.setDataloader(ok, err, this.args.dataloader);
 					this.api.setLangloader(ok, err, this.args.langloader);
@@ -12040,7 +13086,7 @@ var htol = (function(exports) {
 					this.update.data();
 					break;
 				case "layers":
-					this.projection = createProjection(this.args.geometry.view, this.args.layout.rootWedge);
+					this.projection = createProjection(this.args.geometry.projection, this.args.layout.rootWedge);
 					this.update.view.unitdisk();
 					this.unitdisk.args.data = this.data;
 					this.update.data();
@@ -12191,6 +13237,7 @@ var htol = (function(exports) {
 			const t0 = performance.now();
 			preservingnode.ancestors().reverse().forEach((n) => this.args.layout.type(n, t.state.λ, true));
 			t.state.P = CmulR(preservingnode.layout.z, -1);
+			t.cache.centerNode = preservingnode;
 			this.layoutMeta = { Δ: performance.now() - t0 };
 		}
 		drawDetailFrame() {
@@ -17786,6 +18833,7 @@ var htol = (function(exports) {
 	})(layers || (layers = {}));
 	// src/settings.ts
 	var settings_exports = /* @__PURE__ */ __exportAll$1({
+		VIEWS: () => VIEWS,
 		applyTheme: () => applyTheme,
 		chooseLanguage: () => chooseLanguage,
 		chooseTheme: () => chooseTheme,
@@ -17796,17 +18844,29 @@ var htol = (function(exports) {
 		phone: () => phone$1,
 		theme: () => theme,
 		updateLinks: () => updateLinks,
+		view: () => view,
 		wikipediaLanguage: () => wikipediaLanguage,
 		wikipediaUrl: () => wikipediaUrl,
 		withChoices: () => withChoices
 	});
 	var params = () => new URLSearchParams(window.location.search);
 	var THEMES = ["light", "dark"];
+	var VIEWS = [
+		"rect",
+		"glatzhofer",
+		"band",
+		"half-band"
+	];
 	var chosen = {};
 	{
 		const p = params();
 		if (p.get("lang")) chosen.lang = p.get("lang");
 		if (THEMES.includes(p.get("theme"))) chosen.theme = p.get("theme");
+		if (VIEWS.includes(p.get("view"))) chosen.view = p.get("view");
+	}
+	/** The view of the branch pages: the chosen one (?view=), else 'disk'. */
+	function view() {
+		return chosen.view || "disk";
 	}
 	/** The language: the chosen one, else the first system language in `available`, else en. */
 	function language(available) {
@@ -17859,12 +18919,13 @@ var htol = (function(exports) {
 		chosen.lang = l;
 		keepInUrl();
 	}
-	/** An internal link with the user's choices (?lang, ?theme); other links unchanged. */
+	/** An internal link with the user's choices (?lang, ?theme, ?view); other links unchanged. */
 	function withChoices(href) {
-		if (!href || !internal(href) || !chosen.lang && !chosen.theme) return href;
+		if (!href || !internal(href) || !chosen.lang && !chosen.theme && !chosen.view) return href;
 		const u = new URL(href, window.location.href);
 		if (chosen.lang) u.searchParams.set("lang", chosen.lang);
 		if (chosen.theme) u.searchParams.set("theme", chosen.theme);
+		if (chosen.view && !u.searchParams.has("view")) u.searchParams.set("view", chosen.view);
 		return u.origin === window.location.origin ? u.pathname + u.search + u.hash : u.toString();
 	}
 	var internal = (href) => {
@@ -18069,13 +19130,14 @@ var htol = (function(exports) {
 	* variables, css/index-browser-light / -dark). A group with its own branch page (a
 	* link; the page's langInitBFS: precalc.branchPage) the page's link color; on a branch
 	* page a touch lighter where children are filtered out (n.hasOutChildren: hidden by the
-	* weight filter or beyond the culling radius). The highlighted node is shown by the
-	* disk (d3-hypertree preset highlightDisk), not by its cell. Selected cells keep the
-	* theme's fill.
+	* weight filter or beyond the culling radius). The highlighted node is shown by its
+	* cell (d3-hypertree preset highlightCell: the theme's .hovered.cell). Selected cells
+	* keep the theme's fill.
 	*/
 	var cellFill = (page) => (d) => {
 		const n = d.data;
 		if (n.selected) return void 0;
+		if (n.hovered) return n.precalc.branchPage ? "var(--htol-highlight-link-cell)" : void 0;
 		if (n.precalc.branchPage) return page === "main" ? "var(--htol-branch-cell)" : "var(--htol-branch-link-cell)";
 		if (page === "branch" && n.hasOutChildren) return "var(--htol-filtered-cell)";
 	};
@@ -18138,7 +19200,7 @@ var htol = (function(exports) {
 			max: 1e3
 		} } },
 		geometry: {
-			view: o.view === "rect" ? "rectangle" : "disk",
+			projection: o.view === "rect" ? "schwarz-christoffel" : o.view === "glatzhofer" ? "glatzhofer" : o.view === "band" ? "band" : o.view === "half-band" ? "half-band" : "poincare",
 			startView: o.clade && startViews[o.clade] || "overview",
 			layerOptions: {
 				"labels-force": { hoverPathLabels: true },
@@ -18224,7 +19286,7 @@ var htol = (function(exports) {
 		phone,
 		centerHighlight,
 		/** The overlay of a page: base, the page, the phone version if asked. */
-		page: (which, o = {}) => composeOverlays(presets.highlightDisk({ size: 2.3 }), base(), which === "main" ? main() : branch(o), o.phone ? phone(which, centerHighlight(o.highlight)) : {}, o.captionPx ? { geometry: { captionPx: o.captionPx } } : {})
+		page: (which, o = {}) => composeOverlays(presets.highlightCell(), base(), which === "main" ? main() : branch(o), o.phone ? phone(which, centerHighlight(o.highlight)) : {}, o.captionPx ? { geometry: { captionPx: o.captionPx } } : {})
 	};
 	// node_modules/d3-selection/dist/d3-selection.mjs
 	var xhtml = "http://www.w3.org/1999/xhtml";
@@ -19439,7 +20501,6 @@ var htol = (function(exports) {
 		setidx(idx) {
 			this.currentdemoeIdx = idx;
 			this.currentdemo = this.alldemos[this.currentdemoeIdx % this.alldemos.length];
-			console.assert(this.currentdemo);
 			console.log("Navigation setidx", idx, this.currentdemo);
 		}
 	};
@@ -29603,8 +30664,32 @@ var htol = (function(exports) {
 			this.ui.addEventListener("load", () => {
 				if (this.ui.getAttribute("src")) this.ui.classList.remove("loading");
 			});
-			if (args.src) this.ui.src = args.src;
+			if (args.src) this.show(args.src);
 			args.parent.appendChild(this.ui);
+		}
+		/** The page shown (data-src; the src attribute keeps the first page). */
+		get url() {
+			return this.ui.dataset.src || "";
+		}
+		/**
+		* Shows a page. The first one by src; every further one replaces the iframe's
+		* current page (location.replace): a src change adds an entry to the browser
+		* history for every article, so the back button stepped through the articles
+		* instead of leaving the page. The page shown is in data-src.
+		*/
+		show(url) {
+			if (url === this.url) return;
+			this.ui.dataset.src = url;
+			const w = this.ui.contentWindow;
+			if (!this.ui.getAttribute("src") || !w) {
+				this.ui.src = url;
+				return;
+			}
+			try {
+				w.location.replace(url);
+			} catch (e) {
+				this.ui.src = url;
+			}
 		}
 	};
 	var StringUi = class StringUi {

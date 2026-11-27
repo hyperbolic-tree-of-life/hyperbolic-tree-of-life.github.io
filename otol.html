@@ -15,8 +15,9 @@
     <body>
         <script>
             const c = new URLSearchParams(document.location.search.substring(1)).get('c')
-            // view=rect: the rectangular view (d3-hypertree geometry.view 'rectangle', presets.ts)
-            const view = new URLSearchParams(document.location.search.substring(1)).get('view') === 'rect' ? 'rect' : 'disk'
+            // view=rect: the rectangular view (d3-hypertree geometry.projection 'schwarz-christoffel',
+            // presets.ts); also glatzhofer, band, half-band; kept in the links (settings.ts)
+            const view = htol.settings.view()
             // order of the children: 'balanced' (d3-hypertree layout.childOrder: the heaviest
             // child in the middle, the heaviest path runs straight), order=data: as in the file
             const childOrder = new URLSearchParams(document.location.search.substring(1)).get('order') === 'data' ? 'data' : 'balanced'
@@ -64,8 +65,8 @@
                 },
                 open(lang, title) {
                     this.shown = { lang, title }
-                    const src = htol.settings.wikipediaUrl(lang, title)
-                    if (src !== app.focusview.ui.src) app.focusview.ui.src = src
+                    // replaces the panel's page: no entry in the browser history (WikiUi.show)
+                    app.focusview.show(htol.settings.wikipediaUrl(lang, title))
                 },
             }
 

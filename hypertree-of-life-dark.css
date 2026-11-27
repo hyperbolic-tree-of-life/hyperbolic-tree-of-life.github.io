@@ -1044,6 +1044,7 @@ body {
   --htol-branch-link-cell: rgba(129, 199, 132, .12);
   --htol-link-label: #81c784;
   --htol-marker-link-fill: rgba(129, 199, 132, .6);
+  --htol-highlight-link-cell: rgba(129, 199, 132, .6);
 }
 /* css/intro-dark.scss */
 body {

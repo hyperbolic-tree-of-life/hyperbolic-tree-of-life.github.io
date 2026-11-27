@@ -1048,6 +1048,7 @@ body {
   --htol-branch-link-cell: rgba(76, 175, 80, .12);
   --htol-link-label: #2e7d32;
   --htol-marker-link-fill: rgba(76, 175, 80, .55);
+  --htol-highlight-link-cell: rgba(76, 175, 80, .55);
 }
 /* css/intro-light.scss */
 body {
