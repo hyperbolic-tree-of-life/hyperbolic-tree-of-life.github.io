@@ -6722,6 +6722,7 @@ var htol = (function(exports) {
 			onHoverNodeChange: (n) => {},
 			onCenterNodeChange: (n) => {},
 			λbounds: [1 / 40, .45],
+			keepTreeInView: true,
 			minFill: null,
 			maxLinkLength: null,
 			animationDuration: 750,
@@ -7191,6 +7192,7 @@ var htol = (function(exports) {
 		measure("label", "labels-placedlen");
 		measure("icon", "emojislen");
 	}
+	var mergeKey = (d) => d && (d.mergeId !== void 0 ? d.mergeId : d.data && d.data.mergeId);
 	var D3UpdatePattern = class {
 		constructor(args) {
 			this.update = {
@@ -7212,7 +7214,7 @@ var htol = (function(exports) {
 			var isAnimating = this.args.layer.view.hypertree.isAnimationRunning();
 			const layerArgs = this.args.layer.args;
 			if (!layerArgs.invisible && !(isAnimating && layerArgs.hideOnDrag)) this.data = this.mayEval(this.args.data);
-			this.elements = this.elements.data(this.data, (d) => d && d.mergeId);
+			this.elements = this.elements.data(this.data, mergeKey);
 			this.elements.exit().remove();
 			const newElements = this.elements.enter().append(this.args.elementType).attr("class", this.args.className).call(this.args.create);
 			this.elements = this.elements.merge(newElements).call(this.args.updateTransform).call(this.args.updateColor);
@@ -7911,6 +7913,35 @@ var htol = (function(exports) {
 	* font, and then reused as an <image> with a data URL.
 	*/
 	var textImages = /* @__PURE__ */ new Map();
+	var PX = () => 96 * (window.devicePixelRatio || 1);
+	var classFonts = /* @__PURE__ */ new Map();
+	function classFont(group, className) {
+		const svg = group.ownerSVGElement;
+		const key = className + "\0" + (svg && svg.style.fontSize || "");
+		let f = classFonts.get(key);
+		if (f) return f;
+		const probe = document.createElementNS("http://www.w3.org/2000/svg", "text");
+		probe.setAttribute("class", className);
+		probe.textContent = "M";
+		group.appendChild(probe);
+		const bb = probe.getBBox();
+		const family = getComputedStyle(probe).fontFamily;
+		group.removeChild(probe);
+		if (!bb.width || !bb.height || !family) return void 0;
+		const px = PX();
+		const ctx = document.createElement("canvas").getContext("2d");
+		ctx.font = `${px}px ${family}`;
+		const m = ctx.measureText("M");
+		const ascent = m.fontBoundingBoxAscent || px * .9, descent = m.fontBoundingBoxDescent || px * .25;
+		classFonts.set(key, f = {
+			family,
+			unit: bb.height / (ascent + descent),
+			ascent,
+			descent,
+			y: bb.y
+		});
+		return f;
+	}
 	/**
 	* centered: the bitmap holds only the ink of the text and is centered on the origin
 	* (the emojis: their middle exactly on the node). Otherwise it covers the text's box
@@ -7920,30 +7951,23 @@ var htol = (function(exports) {
 		const key = className + "\0" + text + (centered ? "\0c" : "");
 		let image = textImages.get(key);
 		if (image) return image;
-		const svgText = document.createElementNS("http://www.w3.org/2000/svg", "text");
-		svgText.setAttribute("class", className);
-		svgText.textContent = text;
-		group.appendChild(svgText);
-		const bb = svgText.getBBox();
-		const family = getComputedStyle(svgText).fontFamily;
-		group.removeChild(svgText);
-		if (!bb.width || !bb.height) return void 0;
-		const px = 96 * (window.devicePixelRatio || 1);
+		const font = classFont(group, className);
+		if (!font) return void 0;
+		const px = PX();
 		const canvas = document.createElement("canvas");
 		const ctx = canvas.getContext("2d");
-		ctx.font = `${px}px ${family}`;
+		ctx.font = `${px}px ${font.family}`;
 		const m = ctx.measureText(text);
-		const ascent = m.fontBoundingBoxAscent || px * .9, descent = m.fontBoundingBoxDescent || px * .25;
+		const { ascent, descent, unit } = font;
 		if (centered) {
 			const left = m.actualBoundingBoxLeft || 0, right = m.actualBoundingBoxRight || m.width;
 			const up = m.actualBoundingBoxAscent || ascent, down = m.actualBoundingBoxDescent || descent;
 			const pad = 1, inkW = left + right, inkH = up + down;
 			canvas.width = Math.max(1, Math.ceil(inkW + 2));
 			canvas.height = Math.max(1, Math.ceil(inkH + 2));
-			ctx.font = `${px}px ${family}`;
+			ctx.font = `${px}px ${font.family}`;
 			ctx.textBaseline = "alphabetic";
 			ctx.fillText(text, pad + left, pad + up);
-			const unit = bb.height / (ascent + descent);
 			const w = canvas.width * unit, h = canvas.height * unit;
 			image = {
 				href: canvas.toDataURL(),
@@ -7957,16 +7981,16 @@ var htol = (function(exports) {
 		}
 		canvas.width = Math.max(1, Math.ceil(m.width));
 		canvas.height = Math.max(1, Math.ceil(ascent + descent));
-		ctx.font = `${px}px ${family}`;
+		ctx.font = `${px}px ${font.family}`;
 		ctx.textBaseline = "alphabetic";
 		const inkLeft = m.actualBoundingBoxLeft || 0, inkWidth = (m.actualBoundingBoxRight || m.width) + inkLeft;
 		ctx.fillText(text, (canvas.width - inkWidth) / 2 + inkLeft, ascent);
 		image = {
 			href: canvas.toDataURL(),
-			x: bb.x,
-			y: bb.y,
-			w: bb.width,
-			h: bb.height
+			x: 0,
+			y: font.y,
+			w: canvas.width * unit,
+			h: canvas.height * unit
 		};
 		textImages.set(key, image);
 		return image;
@@ -8094,19 +8118,25 @@ var htol = (function(exports) {
 	var MAX_SPEED = .001;
 	var MAX_DT = 50;
 	var IDLE_DT = 16;
+	var SNAP = 5e-4;
 	var ease = (g) => g * g * (3 - 2 * g);
 	var LabelTransitions = class {
 		/**
 		* duration: ms of growing and shrinking (0: none)
 		* redraw:   draws the layer (called on animation frames while anything moves)
 		* active:   false while the layer is invisible: no frames
+		* busy:     true while the view moves (dragging, pinching, the wheel, an animation):
+		*           the hypertree draws every frame anyway, no frames of our own (they ran
+		*           the relaxation and the join a second time per frame, and after the
+		*           interaction's end the hypertree draws a frame that continues here)
 		* instant:  labels without animation (e.g. the hovered node's, layer option
 		*           hoverTransition false): full size and in place at once, gone at once
 		*/
-		constructor(duration, redraw, active, instant = () => false) {
+		constructor(duration, redraw, active, busy = () => false, instant = () => false) {
 			this.duration = duration;
 			this.redraw = redraw;
 			this.active = active;
+			this.busy = busy;
 			this.instant = instant;
 			this.states = /* @__PURE__ */ new Map();
 			this.last = 0;
@@ -8204,7 +8234,7 @@ var htol = (function(exports) {
 				}
 				s.dx += mx;
 				s.dy += my;
-				if (Math.abs(s.tx - s.dx) + Math.abs(s.ty - s.dy) > 1e-4) this.moving = true;
+				if (Math.abs(s.tx - s.dx) + Math.abs(s.ty - s.dy) > SNAP) this.moving = true;
 				else {
 					s.dx = s.tx;
 					s.dy = s.ty;
@@ -8218,6 +8248,7 @@ var htol = (function(exports) {
 		/** Ends a frame: while anything moves, the layer is drawn again on the next frame. */
 		finish() {
 			if (!this.moving || this.frame || typeof requestAnimationFrame === "undefined") return;
+			if (this.busy()) return;
 			this.frame = requestAnimationFrame(() => {
 				this.frame = 0;
 				if (!this.active()) return;
@@ -8244,7 +8275,7 @@ var htol = (function(exports) {
 				"style"
 			];
 			this.drawn = [];
-			this.transitions = new LabelTransitions(() => this.args.transition, () => this.update.data(), () => !!this.d3updatePattern && !this.args.invisible, (n) => this.args.hoverTransition === false && !!n.hovered);
+			this.transitions = new LabelTransitions(() => this.args.transition, () => this.update.data(), () => !!this.d3updatePattern && !this.args.invisible, () => this.view.hypertree.isAnimationRunning(), (n) => this.args.hoverTransition === false && !!n.hovered);
 			this.update = {
 				parent: () => this.attach(),
 				force: () => {
@@ -8455,14 +8486,15 @@ var htol = (function(exports) {
 			this.drawn = [];
 			this.boxes = /* @__PURE__ */ new Map();
 			this.last = /* @__PURE__ */ new Map();
-			this.transitions = new LabelTransitions(() => this.args.transition, () => this.update.data(), () => !!this.d3updatePattern && !this.args.invisible);
+			this.transitions = new LabelTransitions(() => this.args.transition, () => this.update.data(), () => !!this.d3updatePattern && !this.args.invisible, () => this.view.hypertree.isAnimationRunning());
 			this.update = {
 				parent: () => this.attach(),
 				data: () => {
-					this.place();
+					if (!this.args.invisible) this.place();
 					this.redraw(true);
 				},
 				transformation: () => {
+					if (this.args.invisible) return;
 					if (this.place()) this.redraw(true);
 					else this.redraw(false);
 				},
@@ -10243,6 +10275,7 @@ var htol = (function(exports) {
 	var updates = /* @__PURE__ */ new WeakMap();
 	var stepping = /* @__PURE__ */ new WeakMap();
 	var settling = /* @__PURE__ */ new WeakSet();
+	var SETTLE_STEPS = 50;
 	function settle(ud) {
 		if (settling.has(ud) || typeof requestAnimationFrame === "undefined") return;
 		settling.add(ud);
@@ -10250,8 +10283,12 @@ var htol = (function(exports) {
 		requestAnimationFrame(() => {
 			settling.delete(ud);
 			if (!stepping.get(ud)) return;
-			if (updates.get(ud) === seen) ud.view.hypertree.update.transformation();
-			else settle(ud);
+			if (updates.get(ud) !== seen) {
+				settle(ud);
+				return;
+			}
+			if (!ud.view.hypertree.isAnimationRunning()) settleMagic(ud, ud.cache, SETTLE_STEPS);
+			ud.view.hypertree.update.transformation();
 		});
 	}
 	function collectNodesByWeight(ud, cache, path) {
@@ -10373,7 +10410,38 @@ var htol = (function(exports) {
 				performance.now() - t3
 			]
 		};
-		if (ud.view.hypertree.transition && ud.view.hypertree.transition.currentframe) {}
+		const sig = updateSignature(ud);
+		if (sig === null) fullUpdates.delete(cache);
+		else fullUpdates.set(cache, {
+			sig,
+			data: ud.args.data
+		});
+	}
+	var fullUpdates = /* @__PURE__ */ new WeakMap();
+	function updateSignature(ud) {
+		if (ud.view.hypertree.isAnimationRunning()) return null;
+		const s = ud.args.transformation.state;
+		const wf = ud.args.model.filter.weightFilter;
+		const paths = ud.args.model.objects.pathes.filter((p) => p.type !== "HoverPath").map((p) => p.type + ":" + (p.head ? p.head.mergeId : "")).join(",");
+		return `${s.P.re}|${s.P.im}|${s.θ}|${s.λ}|${wf ? wf.magic : ""}|${paths}`;
+	}
+	/** The light update of a 'style' frame; false: the full cacheUpdate is needed. */
+	function cacheUpdateStyle(ud, cache) {
+		const last = fullUpdates.get(cache), sig = updateSignature(ud);
+		if (!last || sig === null || last.sig !== sig || last.data !== ud.args.data || !cache.unculledNodes) return false;
+		const t0 = performance.now();
+		doLabelStuff(ud, cache);
+		cache.paths = cache.links.filter((n) => n.pathes.partof && n.pathes.partof.length);
+		ud.cacheMeta = {
+			minWeight: ud.cacheMeta ? ud.cacheMeta.minWeight : [],
+			Δ: [
+				0,
+				0,
+				0,
+				performance.now() - t0
+			]
+		};
+		return true;
 	}
 	function pathToLastVisible(ud, cache) {
 		let startNode = null;
@@ -10823,6 +10891,171 @@ var htol = (function(exports) {
 			};
 		}
 	};
+	var COS_TIP = Math.cos(Math.PI / 3);
+	var BISECTION_STEPS = 8;
+	var CENTER_EPS = 1e-4;
+	var STEM_PROBE = .02;
+	/** The tree ends at n, seen from the center: a leaf (parent given, no visible child) with its parent behind it. */
+	function isTip(n, parent, hasVisibleChild) {
+		const r = Math.hypot(n.re, n.im);
+		if (r < CENTER_EPS || !parent || hasVisibleChild) return false;
+		const ax = n.re / r, ay = n.im / r;
+		const dx = parent.re - n.re, dy = parent.im - n.im, d = Math.hypot(dx, dy);
+		return d < 1e-9 || (dx * ax + dy * ay) / d >= COS_TIP;
+	}
+	/**
+	* How far the view is from invalid, in disk units (≥ 0 valid): a tip's distance
+	* beyond the Thales circle of center–root*; 1 for a node that is no tip.
+	*/
+	function viewMargin(n, parent, hasVisibleChild, root) {
+		if (!isTip(n, parent, hasVisibleChild)) return 1;
+		const r = Math.hypot(root.re, root.im);
+		if (r < 1e-6) return 1;
+		const mx = root.re / r / 2, my = root.im / r / 2;
+		return Math.hypot(n.re - mx, n.im - my) - .5;
+	}
+	/**
+	* The root rule's margin (radians, ≥ 0 valid): the angle between the direction from
+	* the root to the center and the stem's direction, minus half the stem gap
+	* (2π − rootWedge.angle). 1 with the root in the center.
+	*/
+	function rootMargin(rootPos, stemDir, wedgeAngle) {
+		const r = Math.hypot(rootPos.re, rootPos.im);
+		if (r < CENTER_EPS) return 1;
+		const cos = (-rootPos.re * stemDir.re - rootPos.im * stemDir.im) / r;
+		return Math.acos(Math.max(-1, Math.min(1, cos))) - (2 * Math.PI - wedgeAngle) / 2;
+	}
+	function stemDirection(ud, rootPos) {
+		const o = ud.args.model.layout.rootWedge.orientation + Math.PI;
+		const p = ud.args.transformation.transformPoint({
+			re: STEM_PROBE * Math.cos(o),
+			im: STEM_PROBE * Math.sin(o)
+		});
+		const dx = p.re - rootPos.re, dy = p.im - rootPos.im, d = Math.hypot(dx, dy);
+		return d < 1e-9 ? null : {
+			re: dx / d,
+			im: dy / d
+		};
+	}
+	function currentRootMargin(ud) {
+		const root = ud.args.data;
+		const stem = stemDirection(ud, diskPos(root));
+		return stem ? rootMargin(diskPos(root), stem, ud.args.model.layout.rootWedge.angle) : 1;
+	}
+	function visible(ud) {
+		const root = ud.args.data;
+		const set = new Set(ud.cache.unculledNodes.filter((n) => !n.isOut));
+		if (root) set.add(root);
+		return {
+			nodes: [...set],
+			parent: (n) => n.parent && set.has(n.parent) ? n.parent : null,
+			hasChild: (n) => !!n.children && n.children.some((c) => set.has(c))
+		};
+	}
+	function nearestTo(nodes, pos) {
+		let best = null, bestPos = null, d0 = Infinity;
+		for (const n of nodes) {
+			const p = pos(n), d = Math.hypot(p.re, p.im);
+			if (d < d0) {
+				d0 = d;
+				best = n;
+				bestPos = p;
+			}
+		}
+		return best ? {
+			n: best,
+			p: bestPos
+		} : null;
+	}
+	function currentTipMargin(ud) {
+		const root = ud.args.data;
+		const v = visible(ud);
+		const near = nearestTo(v.nodes, diskPos);
+		if (!near) return 1;
+		const parent = v.parent(near.n);
+		return viewMargin(near.p, parent ? diskPos(parent) : null, v.hasChild(near.n), diskPos(root));
+	}
+	/**
+	* After an interaction set the transformation and the filter ran: corrects P if the
+	* view is invalid. Returns true if P changed (the filter has to run again).
+	*/
+	function keepTreeInView(ud) {
+		if (!ud.args.model.interaction.keepTreeInView || ud.args.projection.kind !== "disk") return false;
+		if (!ud.isDraging && !ud.isWheeling) return false;
+		const root = ud.args.data;
+		if (!root || !root.cache) return false;
+		const rootViolated = currentRootMargin(ud) < -.01;
+		if (!rootViolated && currentTipMargin(ud) >= -.001) return false;
+		const v = visible(ud);
+		const state = ud.args.transformation.state;
+		const P0 = {
+			re: state.P.re,
+			im: state.P.im
+		};
+		const wedge = ud.args.model.layout.rootWedge.angle;
+		let from, dx, dy;
+		const rootNow = diskPos(root);
+		if (rootViolated) {
+			const stem = stemDirection(ud, rootNow);
+			from = {
+				re: rootNow.re,
+				im: rootNow.im
+			};
+			dx = stem.re;
+			dy = stem.im;
+		} else {
+			const near = nearestTo(v.nodes, diskPos);
+			from = {
+				re: near.p.re,
+				im: near.p.im
+			};
+			const rr = Math.hypot(rootNow.re, rootNow.im);
+			dx = -rootNow.re / rr;
+			dy = -rootNow.im / rr;
+		}
+		const marginAt = (s) => {
+			state.P.re = P0.re;
+			state.P.im = P0.im;
+			const to = maxR({
+				re: from.re + s * dx,
+				im: from.im + s * dy
+			}, .95);
+			const t = compose(state, shift(state, from, to));
+			state.P.re = t.P.re;
+			state.P.im = t.P.im;
+			const positions = /* @__PURE__ */ new Map();
+			const pos = (n) => {
+				let p = positions.get(n);
+				if (!p) positions.set(n, p = ud.args.transform(n));
+				return p;
+			};
+			if (rootViolated) {
+				const stem = stemDirection(ud, pos(root));
+				return stem ? rootMargin(pos(root), stem, wedge) : 1;
+			}
+			const nearest = nearestTo(v.nodes, pos);
+			const parent = v.parent(nearest.n);
+			return viewMargin(nearest.p, parent ? pos(parent) : null, v.hasChild(nearest.n), pos(root));
+		};
+		let lo = 0, hi = Math.max(.01, Math.hypot(from.re, from.im) / 2), found = false;
+		for (let i = 0; i < 20 && !found; i++) if (marginAt(hi) >= 0) found = true;
+		else {
+			lo = hi;
+			hi *= 1.3;
+		}
+		if (!found) {
+			state.P.re = P0.re;
+			state.P.im = P0.im;
+			return false;
+		}
+		for (let i = 0; i < BISECTION_STEPS; i++) {
+			const m = (lo + hi) / 2;
+			if (marginAt(m) >= 0) hi = m;
+			else lo = m;
+		}
+		marginAt(hi);
+		return state.P.re !== P0.re || state.P.im !== P0.im;
+	}
 	var UnitDisk = class {
 		constructor(view, args) {
 			this.api = { setTransform: (t, tn) => this.mainsvg.attr("transform", t) };
@@ -10847,7 +11080,10 @@ var htol = (function(exports) {
 		*/
 		frame(reason) {
 			this.view.hypertree.highlighting.framePending = false;
-			cacheUpdate(this, this.cache);
+			if (reason !== "style" || !cacheUpdateStyle(this, this.cache)) {
+				cacheUpdate(this, this.cache);
+				if (reason === "transform" && keepTreeInView(this)) cacheUpdate(this, this.cache);
+			}
 			this.layerStack.frame(reason);
 		}
 		updateParent() {
